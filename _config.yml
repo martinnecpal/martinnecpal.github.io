@@ -22,13 +22,13 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Martin Necpal"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : "Lecturer at Slovak University of Techchnology in Bratislava"
+  location         : "Slovakia"
+  employer         : "Slovak University of Techchnology in Bratislava"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "martin.necpal@stuba.sk" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
