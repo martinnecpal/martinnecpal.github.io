@@ -8,11 +8,11 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Martin Necpal / Site Title"
+title                    : "Martin Necpal"
 title_separator          : "-"
 name                     : &name "Martin Necpal"
 description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://martinnecpal.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
 
@@ -27,7 +27,7 @@ author:
   bio              : "Lecturer at Slovak University of Techchnology"
   location         : "Slovakia"
   employer         : "Slovak University of Techchnology"
-  uri              : # URL
+  uri              : "https://www.stuba.sk/english.html?page_id=132" # URL
   email            : "martin.necpal@stuba.sk" 
 
   # Academic websites
@@ -57,7 +57,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "martinnecpal"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -70,7 +70,7 @@ author:
   weibo            : # Username
   wikipedia        : # Username
   xing             : # Username
-  youtube          : # Username
+  youtube          : "martinnecpal3726" # Username
   zhihu            : # Username
 
 # Publication Category - The following the list of publication categories and their headings
