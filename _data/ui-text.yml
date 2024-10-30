@@ -350,5 +350,44 @@ zh-HK: &DEFAULT_ZH_HK
 zh-TW:
   <<: *DEFAULT_ZH_HK
 
-# Another locale
-# --------------
+# Slovanksy
+# -----------------
+sk: &DEFAULT_SK
+  page                       : "Strana"
+  pagination_previous        : "Predošlá"
+  pagination_next            : "Ďalšia"
+  breadcrumb_home_label      : "Domov"
+  breadcrumb_separator       : "/"
+  toc_label                  : "Na tejto stránke"
+  ext_link_label             : "Priamy odkz"
+  less_than                  : "menej ako"
+  minute_read                : "minúta čítania"
+  share_on_label             : "Zdielať na"
+  meta_label                 :
+  tags_label                 : "Tagy:"
+  categories_label           : "Kategórie:"
+  date_label                 : "Publikované:"
+  comments_label             : "Nechaj komentár"
+  comments_title             : "Komentáre"
+  more_label                 : "Nauč viac"
+  related_label              : "Môže sa tiež páčiť"
+  follow_label               : "Nasleduj:"
+  feed_label                 : "Stopa"
+  powered_by                 : "Powered by"
+  website_label              : "Website"
+  email_label                : "Email"
+  recent_posts               : "Nedávna Správa"
+  undefined_wpm              : "Nedefinovaný parameter words_per_minute v _config.yml"
+  comment_form_info          : "Tvoja emailová adresa nebude publikovaná. Požadované pole je zvýraznené"
+  comment_form_comment_label : "Komentár"
+  comment_form_md_info       : "Markdown nieje podporovaný."
+  comment_form_name_label    : "Meno"
+  comment_form_email_label   : "Emailová adresa"
+  comment_form_website_label : "Webstránka (volitelné)"
+  comment_btn_submit         : "Odoslať komentár"
+  comment_btn_submitted      : "Odoslaný"
+  comment_success_msg        : "Ďakujeme za váš komentár! Zobrazí sa na stránke, keď bude schválený."
+  comment_error_msg          : "Ospravedlňujem sa, pri odosielaní došlo k chybe. Uisti sa, že si vyplnili všetky požadované polia a skús to znova."
+  loading_label              : "Nahrávam..."
+sk-SK:
+  <<: *DEFAULT_SK
