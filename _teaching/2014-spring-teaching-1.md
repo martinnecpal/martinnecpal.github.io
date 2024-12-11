@@ -1,20 +1,16 @@
 ---
-title: "Teaching experience 1"
+title: "Assembly manufacturring simulation using Tecnomatix plant simulation"
 collection: teaching
-type: "Undergraduate course"
+type: "course"
 permalink: /teaching/2014-spring-teaching-1
-venue: "University 1, Department"
+venue: "Slovak University of Technology, Faculty of Material Science and Technology in Trnava, Institute of Production Technology"
 date: 2014-01-01
-location: "City, Country"
+location: "Trnava, Slovakia"
 ---
+As part of my role as a university lecturer, I manage classes focused on assembly and manufacturing technology using *Tecnomatix Plant Simulation* software. These classes emphasize the practical application of simulation tools to optimize manufacturing processes and assembly procedures.
 
-This is a description of a teaching experience. You can use markdown like any other post.
+To support my students and a broader audience, I have created tutorial videos that demonstrate how to use *Tecnomatix Plant Simulation*. These videos are available on my [YouTube channel](https://www.youtube.com/playlist?list=PLhlArjTkqa-8cQdzVz-SJvd4C9XmhhdGL), providing step-by-step.
 
-Heading 1
-======
+Additionally, I authored a textbook on assembly and manufacturing technology using simulation tools, which is accessible on [GitBook](http://stuba.gitbook.io/montaz). This resource serves as a comprehensive guide, covering theoretical concepts and practical applications.
 
-Heading 2
-======
-
-Heading 3
-======
+Feel free to explore these resources to learn more about the tools and methods I use in my teaching and research.

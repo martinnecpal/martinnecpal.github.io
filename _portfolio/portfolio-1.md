@@ -1,6 +1,6 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Laser machine LASERTEC 80 Shape"
+excerpt: "Laser machining in [CE5AM](https://www.mtf.stuba.sk/english/development-and-eu-structural-funds/centers-of-excellence/center-of-excellence-5-axis-machining.html?page_id=10353#title) Institute of Production Technology MTF STU<br/><img src='/images/laser.png'>"
 collection: portfolio
 ---
 
