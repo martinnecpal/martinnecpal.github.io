@@ -5,6 +5,8 @@ en:
     url: "/en/contact/"
   - title: "Teaching"
     url: "/en/teaching/"
+  - title: "Talks"
+    url: "/en/presentation/"
 
 sk:
   - title: "O mne"
