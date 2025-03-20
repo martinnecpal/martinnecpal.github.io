@@ -1,0 +1,42 @@
+---
+layout: none
+permalink: /
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex">
+    <title>Redirecting...</title>
+
+    <script>
+        // Function to detect location and redirect
+        async function detectLocationAndRedirect() {
+            try {
+                // Fetch user country info using a free IP location API
+                let response = await fetch("https://ipapi.co/json/");
+                let data = await response.json();
+
+                let countryCode = data.country_code; // Get country code (e.g., "SK" for Slovakia)
+
+                // Redirect logic based on country
+                if (countryCode === "SK") {
+                    window.location.href = "{{ site.baseurl }}/sk/";
+                } else {
+                    window.location.href = "{{ site.baseurl }}/en/";
+                }
+            } catch (error) {
+                console.error("Location detection failed:", error);
+                // Fallback to English version if detection fails
+                window.location.href = "{{ site.baseurl }}/en/";
+            }
+        }
+
+        // Call function on page load
+        detectLocationAndRedirect();
+    </script>
+</head>
+<body>
+    <p>If you are not redirected, <a href="{{ site.baseurl }}/en/about/">click here</a>.</p>
+</body>
+</html>

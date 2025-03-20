@@ -1,0 +1,200 @@
+/* General Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E3F2FD; /* Soft Ice Blue */
+    color: #2C2C2C; /* Deep Charcoal */
+}
+
+
+.lang-container {
+    margin: 10px 0; /* Adds spacing around the language switcher */
+    display: flex;
+    justify-content: center; /* Ensures inner elements are centered */
+    width: 100%; /* Makes sure it spans the full width */
+}
+
+.lang-switcher {
+    display: flex;
+    gap: 10px;
+}
+
+.lang-switcher a, .lang-switcher .selected-lang {
+    text-decoration: none;
+    color: rgb(167, 23, 23);
+    font-weight: bold;
+}
+
+.lang-switcher a:hover {
+    color: #00bfff;
+}
+
+.selected-lang {
+    color: #ffcc00; /* Highlight selected language */
+}
+
+
+/* Container Layout */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Sidebar (Side Menu) */
+.sidebar {
+    background-color: #f4f5eb; /* Snowy White */
+    color: #002B5B; /* Midnight Blue */
+    padding: 20px;
+    min-height: 100vh;
+    width: 350px;
+    min-height: 100vh; /* Full height */
+    position: fixed; /* Sticks it to the left */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.sidebar-content h2 {
+    font-size: 1.5em;
+}
+
+.sidebar-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-content li {
+    margin-bottom: 10px;
+    padding-left: 20px; /* Moves text slightly left */
+}
+
+.sidebar-content a {
+    text-decoration: none;
+    color: #002B5B; /* Midnight Blue */
+    font-weight: bold;
+}
+
+.sidebar-content a:hover {
+    text-decoration: underline;
+    color: #FFD700; /* Sunshine Yellow */
+}
+
+/* Main Content */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #E3F2FD; /* Soft Ice Blue */
+    padding: 20px;
+    font-size: large;
+}
+
+/* Top Menu */
+.top-menu {
+    background-color: #1E90FF; /* Sky Blue */
+    color: white;
+    padding: 20px 20px;
+    text-align: center;
+}
+
+.top-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.top-menu li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.top-menu a {
+    text-decoration: none;
+    color: rgb(22, 1, 83);
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.top-menu a:hover {
+    color: #00bfff;
+}
+
+/* Links */
+a {
+    color: #1E90FF; /* Sky Blue */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFD700; /* Sunshine Yellow */
+}
+
+.author__avatar {
+    display: table-cell;
+    vertical-align: top;
+    width: max-content;
+    /* set width only, for non-square avatars
+     height: 36px;*/
+  
+    img {
+      max-width: 300px;  
+      border-radius: 50%;
+    }
+  }
+
+/* Image Preview Styling */
+.image-preview {
+    display: none;
+    position: absolute;
+    border: 2px solid #ccc;
+    background: white;
+    padding: 5px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-preview.show {
+    opacity: 1;
+}
+
+/* Social Menu */
+.social-menu {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Display links top-down */
+    align-items: center; /* Center items */
+    gap: 10px; /* Space between links */
+}
+
+.social-menu li {
+    display: flex;
+    align-items: center;
+}
+
+.social-menu a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-menu i {
+    font-size: 24px;
+}
+
+/* Style for Centering and Enlarging the Name */
+.name-item {
+    text-align: center;  /* Centers text */
+    font-size: 34px;     /* Increases font size */
+    font-weight: bold;   /* Makes text bold */
+    margin-bottom: 15px; /* Adds spacing below */
+}

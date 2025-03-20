@@ -1,0 +1,15 @@
+en:
+  - title: "About me"
+    url: "/en/"
+  - title: "Contacs"
+    url: "/en/contact/"
+  - title: "Teaching"
+    url: "/en/teaching/"
+
+sk:
+  - title: "O mne"
+    url: "/sk/"
+  - title: "Kontakty"
+    url: "/sk/contact/"
+  - title: "Výučba"
+    url: "/sk/teaching/"

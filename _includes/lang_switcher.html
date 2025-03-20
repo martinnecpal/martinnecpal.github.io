@@ -1,0 +1,10 @@
+<div class="lang-switcher">
+    {% for lang in site.languages %}
+        {% if lang == page.lang %}
+            <span class="selected-lang">[{{ lang | upcase }}]</span>
+        {% else %}
+            {% assign new_url = page.url | remove_first: '/' | split: '/' | shift | join: '/' %}
+            <a href="{{ site.baseurl }}/{{ lang }}/{{ new_url }}">[{{ lang | upcase }}]</a>
+        {% endif %}
+    {% endfor %}
+</div>

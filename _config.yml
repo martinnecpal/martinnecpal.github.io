@@ -1,0 +1,19 @@
+title: "My Multilingual Jekyll Site"
+description: "A simple multilingual Jekyll site with navigation"
+baseurl: ""
+url: "http://localhost:4000"
+
+# Multilingual settings
+languages: ["en", "sk"]  # Add more languages if needed
+default_lang: "en"
+
+defaults:
+  - scope:
+      path: "en"
+    values:
+      lang: "en"
+
+  - scope:
+      path: "sk"
+    values:
+      lang: "sk"

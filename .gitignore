@@ -1,0 +1,25 @@
+# Ignore the directory for local files during development
+local/
+
+# Ingore files created by npm
+node_modules/
+package-lock.json/
+
+
+# Jekyll specific files
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+vendor/
+
+# Log files
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Bundler dependencies (if using GitHub Pages)
+vendor/bundle/

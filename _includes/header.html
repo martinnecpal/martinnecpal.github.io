@@ -1,0 +1,9 @@
+
+<nav class="top-menu">
+    <ul>
+        {% assign menu = site.data.navigation[page.lang] %}
+        {% for item in menu %}
+            <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+        {% endfor %}
+        
+    </ul>
