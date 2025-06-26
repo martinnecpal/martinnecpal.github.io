@@ -1,48 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reveal.js Presentation</title>
 
-    <!-- Reveal.js CSS -->
-    <link rel="stylesheet" href="../assets/vendor/revealjs/dist/reveal.css">
-    <link rel="stylesheet" href="../assets/vensor/revealjs/dist/theme/black.css">
-</head>
-<body>
+	<head>
+		<meta charset="utf-8">
 
-    <div class="reveal">
-        <div class="slides">
-            <section>
-                <h2>Welcome to My Presentation</h2>
-                <p>This is the first slide.</p>
-            </section>
+		<title>reveal.js - Video, Audio and Iframes</title>
 
-            <section>
-                <h2>Second Slide</h2>
-                <p>Here is some more content.</p>
-            </section>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-            <section>
-                <h2>Final Slide</h2>
-                <p>Thank you for watching!</p>
-            </section>
-        </div>
-    </div>
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/white.css" id="theme">
+	</head>
 
-    <!-- Reveal.js Scripts -->
-    <script src="../assets/vendor/revealjs/dist/reveal.js"></script>
-    <script>
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            slideNumber: true,
-            history: true,
-            keyboard: true,
-            overview: true,
-            center: true
-        });
-    </script>
+	<body>
 
-</body>
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section>
+					<h2>Examples of embedded Video, Audio and Iframes</h2>
+				</section>
+
+				<section>
+					<h2>Iframe</h2>
+					<iframe data-autoplay width="700" height="540" src="https://slides.com/news/auto-animate/embed" frameborder="0"></iframe>
+				</section>
+
+				<section data-background-iframe="https://www.youtube.com/embed/h1_nyI3z8gI" data-background-interactive>
+					<h2 style="color: #fff;">Iframe Background</h2>
+				</section>
+
+				<section>
+					<h2>Video</h2>
+					<video src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" data-autoplay></video>
+				</section>
+
+				<section data-background-video="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4">
+					<h2>Background Video</h2>
+				</section>
+
+				<section>
+					<h2>Auto-playing audio</h2>
+					<audio src="assets/beeping.wav" data-autoplay></audio>
+				</section>
+
+				<section>
+					<h2>Audio inside slide fragments</h2>
+					<div class="fragment">
+						Beep 1
+						<audio src="assets/beeping.wav" data-autoplay></audio>
+					</div>
+					<div class="fragment">
+						Beep 2
+						<audio src="assets/beeping.wav" data-autoplay></audio>
+					</div>
+				</section>
+
+				<section>
+					<h2>Audio with controls</h2>
+					<audio src="assets/beeping.wav" controls></audio>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script>
+			Reveal.initialize({hash: true});
+		</script>
+
+	</body>
 </html>
