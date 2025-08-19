@@ -1,6 +1,6 @@
 title: "My Multilingual Jekyll Site"
 description: "A simple multilingual Jekyll site with navigation"
-baseurl: "/martinnecpal.github.io"
+baseurl: ""
 url: "https://martinnecpal.github.io"
 
 # Multilingual settings
