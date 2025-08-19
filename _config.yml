@@ -1,7 +1,7 @@
 title: "My Multilingual Jekyll Site"
 description: "A simple multilingual Jekyll site with navigation"
-baseurl: ""
-url: "http://localhost:4000"
+baseurl: "/martinnecpal.github.io"
+url: "https://martinnecpal.github.io"
 
 # Multilingual settings
 languages: ["en", "sk"]  # Add more languages if needed
