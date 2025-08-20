@@ -1,7 +1,17 @@
 title: "My Multilingual Jekyll Site"
-description: "A simple multilingual Jekyll site with navigation"
+description: "My personal webpage with multilingual support using Jekyll"
+
 baseurl: ""
 url: "https://martinnecpal.github.io"
+
+# buld settingsfor GitHub Pages
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
 # Multilingual settings
 languages: ["en", "sk"]  # Add more languages if needed
