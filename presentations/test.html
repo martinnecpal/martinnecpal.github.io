@@ -1,75 +1,163 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-	<head>
-		<meta charset="utf-8">
-
-		<title>reveal.js - Video, Audio and Iframes</title>
-
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<link rel="stylesheet" href="../dist/reveal.css">
-		<link rel="stylesheet" href="../dist/theme/white.css" id="theme">
-	</head>
-
-	<body>
-
-		<div class="reveal">
-
-			<div class="slides">
-
-				<section>
-					<h2>Examples of embedded Video, Audio and Iframes</h2>
-				</section>
-
-				<section>
-					<h2>Iframe</h2>
-					<iframe data-autoplay width="700" height="540" src="https://slides.com/news/auto-animate/embed" frameborder="0"></iframe>
-				</section>
-
-				<section data-background-iframe="https://www.youtube.com/embed/h1_nyI3z8gI" data-background-interactive>
-					<h2 style="color: #fff;">Iframe Background</h2>
-				</section>
-
-				<section>
-					<h2>Video</h2>
-					<video src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" data-autoplay></video>
-				</section>
-
-				<section data-background-video="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4">
-					<h2>Background Video</h2>
-				</section>
-
-				<section>
-					<h2>Auto-playing audio</h2>
-					<audio src="assets/beeping.wav" data-autoplay></audio>
-				</section>
-
-				<section>
-					<h2>Audio inside slide fragments</h2>
-					<div class="fragment">
-						Beep 1
-						<audio src="assets/beeping.wav" data-autoplay></audio>
-					</div>
-					<div class="fragment">
-						Beep 2
-						<audio src="assets/beeping.wav" data-autoplay></audio>
-					</div>
-				</section>
-
-				<section>
-					<h2>Audio with controls</h2>
-					<audio src="assets/beeping.wav" controls></audio>
-				</section>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Presentation</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        img {
+            max-width: 80%;
+            max-height: 60vh;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+		#slideBar {
+    		margin-top: 20px;
+    		display: flex;
+    		gap: 10px;
+    		justify-content: center;
+		}
+		.slide-indicator {
+    		width: 20px;
+    		height: 20px;
+    		background-color: gray;
+    		border-radius: 50%;
+    		cursor: pointer;
+		}
+		.slide-indicator.active {
+    		background-color: orange; /* Highlight current slide */
+		}
+    </style>
+</head>
+<body>
+    
+	<div id="highlightArea" style="position: relative;">
+    	<img id="slide" alt="Presentation Slide">
+    		<div id="pointer" style="position: absolute; width: 20px; height: 20px; 
+         		background: red; border-radius: 50%; display: none;"></div>
 			</div>
 
-		</div>
+    <audio id="audio" src="audio1.wav"></audio>
+	<div id="slideBar"></div>
+    <div>
+   		<button id="startBtn">Start Presentation</button>
+    	<button id="prevBtn" onclick="prevSlide()">Previous</button>
+    	<button id="playBtn" onclick="playAudio()">Play Audio</button>
+    	<button id="nextBtn" onclick="nextSlide()">Next</button>
+    </div>
 
-		<script src="../dist/reveal.js"></script>
-		<script>
-			Reveal.initialize({hash: true});
-		</script>
+<script src="pointer.js"></script>
 
-	</body>
+    <script>
+		document.getElementById("prevBtn").style.display = "none";
+		document.getElementById("playBtn").style.display = "none";
+		document.getElementById("nextBtn").style.display = "none";
+
+        const slides = ["slide1.png", "slide2.png", "slide3.png"];
+        const audios = ["audio1.wav", "audio2.wav", "audio3.wav"];
+        let index = 0;
+
+		function updateButtons() {
+			const prevBtn = document.getElementById("prevBtn");
+			const nextBtn = document.getElementById("nextBtn");
+			const playBtn = document.getElementById("playBtn");
+			const startBtn = document.getElementById("startBtn");
+
+			// Hide start button and show controls after start
+			startBtn.style.display = "none";
+			playBtn.style.display = "inline-block";
+
+			// First slide
+			if (index === 0) {
+				prevBtn.style.display = "none";
+				nextBtn.style.display = "inline-block";
+			}
+			// Last slide
+			else if (index === slides.length - 1) {
+				prevBtn.style.display = "inline-block";
+				nextBtn.style.display = "none";
+			}
+			// Middle slides
+			else {
+				prevBtn.style.display = "inline-block";
+				nextBtn.style.display = "inline-block";
+			}
+		}
+
+        function prevSlide() {
+            index = (index - 1 + slides.length) % slides.length;
+            updateSlide();
+        }
+
+        function nextSlide() {
+            index = (index + 1) % slides.length;
+            updateSlide();
+        }
+
+        function playAudio() {
+            document.getElementById("audio").play();
+        }
+		
+		document.getElementById("startBtn").addEventListener("click", () => {
+    		updateSlide(); // loads first slide and plays audio
+    		updateButtons();
+		});
+
+		const slideBar = document.getElementById("slideBar");
+		slides.forEach((_, i) => {
+    		const dot = document.createElement("div");
+    		dot.classList.add("slide-indicator");
+    		dot.addEventListener("click", () => {
+        		index = i;
+        		updateSlide();
+    		});
+    		slideBar.appendChild(dot);
+		});
+
+		function updateSlide() {
+			window.currentSlideIndex = index; // store current index globally for pointer.js
+
+    		document.getElementById("slide").src = slides[index];
+    		const audioEl = document.getElementById("audio");
+    		audioEl.src = audios[index];
+    		audioEl.play().catch(() => {});
+
+    		// Update buttons visibility
+    		updateButtons();
+			// reset pointer highlights for this slide
+			if (typeof window.resetHighlightEvents === "function") {
+				window.resetHighlightEvents(index);
+			}
+
+    		// Highlight current indicator
+    		const dots = document.querySelectorAll(".slide-indicator");
+    		dots.forEach((dot, i) => {
+        	dot.classList.toggle("active", i === index);
+		});
+}
+    </script>
+</body>
 </html>
