@@ -4,160 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Presentation</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background: #f4f4f4;
-            font-family: Arial, sans-serif;
-        }
-        img {
-            max-width: 80%;
-            max-height: 60vh;
-            margin: 10px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
-        }
-        button {
-            margin: 5px;
-            padding: 10px 20px;
-            font-size: 18px;
-            border: none;
-            border-radius: 5px;
-            background: #4CAF50;
-            color: white;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #45a049;
-        }
-		#slideBar {
-    		margin-top: 20px;
-    		display: flex;
-    		gap: 10px;
-    		justify-content: center;
-		}
-		.slide-indicator {
-    		width: 20px;
-    		height: 20px;
-    		background-color: gray;
-    		border-radius: 50%;
-    		cursor: pointer;
-		}
-		.slide-indicator.active {
-    		background-color: orange; /* Highlight current slide */
-		}
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-	<div id="highlightArea" style="position: relative;">
-    	<img id="slide" alt="Presentation Slide">
-    		<div id="pointer" style="position: absolute; width: 20px; height: 20px; 
-         		background: red; border-radius: 50%; display: none;"></div>
-			</div>
-
-    <audio id="audio" src="audio1.wav"></audio>
-	<div id="slideBar"></div>
-    <div>
-   		<button id="startBtn">Start Presentation</button>
-    	<button id="prevBtn" onclick="prevSlide()">Previous</button>
-    	<button id="playBtn" onclick="playAudio()">Play Audio</button>
-    	<button id="nextBtn" onclick="nextSlide()">Next</button>
+    <div id="slideContainer">
+        <img id="slide" src="slide1.jpg">
+        <canvas id="pointerCanvas"></canvas>
     </div>
 
-<script src="pointer.js"></script>
+    <audio id="audio" src="audio1.wav"></audio>
+    
+    <div id="slideBar"></div>
+    
+    <div class="controls">
+        <button id="startBtn">Start Presentation</button>
+        <button id="prevBtn">Previous</button>
+        <button id="playBtn">Play Audio</button>
+        <button id="nextBtn">Next</button>
+        <div class="auto-play-control">
+            <label>
+            <input type="checkbox" id="autoPlayToggle" checked>
+            Auto-play slides
+            </label>
+            </div>
+    </div>
 
-    <script>
-		document.getElementById("prevBtn").style.display = "none";
-		document.getElementById("playBtn").style.display = "none";
-		document.getElementById("nextBtn").style.display = "none";
-
-        const slides = ["slide1.png", "slide2.png", "slide3.png"];
-        const audios = ["audio1.wav", "audio2.wav", "audio3.wav"];
-        let index = 0;
-
-		function updateButtons() {
-			const prevBtn = document.getElementById("prevBtn");
-			const nextBtn = document.getElementById("nextBtn");
-			const playBtn = document.getElementById("playBtn");
-			const startBtn = document.getElementById("startBtn");
-
-			// Hide start button and show controls after start
-			startBtn.style.display = "none";
-			playBtn.style.display = "inline-block";
-
-			// First slide
-			if (index === 0) {
-				prevBtn.style.display = "none";
-				nextBtn.style.display = "inline-block";
-			}
-			// Last slide
-			else if (index === slides.length - 1) {
-				prevBtn.style.display = "inline-block";
-				nextBtn.style.display = "none";
-			}
-			// Middle slides
-			else {
-				prevBtn.style.display = "inline-block";
-				nextBtn.style.display = "inline-block";
-			}
-		}
-
-        function prevSlide() {
-            index = (index - 1 + slides.length) % slides.length;
-            updateSlide();
-        }
-
-        function nextSlide() {
-            index = (index + 1) % slides.length;
-            updateSlide();
-        }
-
-        function playAudio() {
-            document.getElementById("audio").play();
-        }
-		
-		document.getElementById("startBtn").addEventListener("click", () => {
-    		updateSlide(); // loads first slide and plays audio
-    		updateButtons();
-		});
-
-		const slideBar = document.getElementById("slideBar");
-		slides.forEach((_, i) => {
-    		const dot = document.createElement("div");
-    		dot.classList.add("slide-indicator");
-    		dot.addEventListener("click", () => {
-        		index = i;
-        		updateSlide();
-    		});
-    		slideBar.appendChild(dot);
-		});
-
-		function updateSlide() {
-			window.currentSlideIndex = index; // store current index globally for pointer.js
-
-    		document.getElementById("slide").src = slides[index];
-    		const audioEl = document.getElementById("audio");
-    		audioEl.src = audios[index];
-    		audioEl.play().catch(() => {});
-
-    		// Update buttons visibility
-    		updateButtons();
-			// reset pointer highlights for this slide
-			if (typeof window.resetHighlightEvents === "function") {
-				window.resetHighlightEvents(index);
-			}
-
-    		// Highlight current indicator
-    		const dots = document.querySelectorAll(".slide-indicator");
-    		dots.forEach((dot, i) => {
-        	dot.classList.toggle("active", i === index);
-		});
-}
-    </script>
+    <script src="config.js"></script>
+    <script src="pointer.js"></script>
+    <script src="presentation.js"></script>
 </body>
 </html>
