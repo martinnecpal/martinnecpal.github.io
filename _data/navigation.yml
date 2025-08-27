@@ -15,3 +15,5 @@ sk:
     url: "/sk/contact/"
   - title: "Výučba"
     url: "/sk/teaching/"
+  - title: "Prezentácie"
+    url: "/sk/presentation/"

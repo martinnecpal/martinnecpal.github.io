@@ -1,16 +1,14 @@
 ---
-layout: presentation
-title: "My Reveal.js Presentation"
-permalink: /presentation/
+layout: page
+title: "Moje prednášký a prezentácie"
 lang: "sk"
+#permalink: /presentation/
 ---
 
-<section>
-    <h2>Vytaj</h2>
-    <p>Ttoto je prv7 slide .</p>
-</section>
+<a href="#" onclick="openPresentation(); return false;">Open Presentation</a>
 
-<section>
-    <h2>Nedalsi slide </h2>
-    <p>MViav obsahu tue!</p>
-</section>
+<script>
+function openPresentation() {
+    window.open('/sk/presentations/mtm-2025-borovets/test.html', 'PresentationWindow', 'width=800,height=600,top=300,left=300,noopener,noreferrer');
+}
+</script>
