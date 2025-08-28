@@ -1,6 +1,9 @@
 # Ignore the directory for local files during development
 local/
 
+# my utility scripts
+my_utils/
+
 # Ingore files created by npm
 node_modules/
 package-lock.json/
