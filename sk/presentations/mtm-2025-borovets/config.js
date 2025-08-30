@@ -1,7 +1,7 @@
 // Configuration file for the presentation
 
 // Slide and audio files
-const SLIDES = ["slide1.png", "slide2.png", "slide3.png", "slide4.png"];
+const SLIDES = ["slide_001.jpg", "slide_002.jpg", "slide_003.jpg", "slide_004.jpg"];
 const AUDIOS = ["audio1.wav", "audio2.wav", "audio3.wav", "audio4.wav"];
 
 // Timeline per slide - defines when and where pointer animations appear
