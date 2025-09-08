@@ -22,7 +22,7 @@
     "location": "Borovets, Bulgaria",
     "description": "Interactive presentation with synchronized audio and pointer animations for mathematical modeling conference.",
     "photo": "/sk/presentations/mtm-2025-borovets/slide_000.jpg",
-    "presentationUrl": "/sk/presentations/mtm-2025-borovets/test.html",
+    "presentationUrl": "/sk/presentations/mtm-2025-borovets/index.html",
     "type": "conference",
     "tags": ["mathematics", "modeling", "interactive"]
   },

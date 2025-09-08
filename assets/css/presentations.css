@@ -1,0 +1,129 @@
+/**
+ * Presentations Page Styles
+ * Styles for the presentation listing page with hover effects and image tooltips
+ */
+
+.presentation-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.presentation-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Presentation card base styling */
+.presentation-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    background: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Presentation image styling */
+.presentation-image {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    float: left;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.presentation-placeholder {
+    width: 200px;
+    height: 150px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    float: left;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+/* Content area styling */
+.presentation-content {
+    overflow: hidden;
+}
+
+.presentation-title {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.presentation-title a {
+    color: #1976d2;
+    text-decoration: none;
+}
+
+.presentation-meta {
+    margin: 5px 0;
+    color: #666;
+}
+
+.presentation-description {
+    margin: 10px 0;
+    color: #555;
+}
+
+.presentation-notes {
+    margin: 10px 0;
+    padding: 8px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    color: #666;
+    font-size: 14px;
+}
+
+.presentation-tags {
+    margin: 10px 0;
+}
+
+.presentation-tag {
+    background: #e1f5fe;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-right: 5px;
+    color: #0277bd;
+}
+
+.presentation-button {
+    display: inline-block;
+    background: #1976d2;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.presentation-clearfix {
+    clear: both;
+}
+
+/* Full image tooltip styling */
+#full-image-tooltip {
+    position: fixed;
+    z-index: 1000;
+    background: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    padding: 5px;
+    pointer-events: none;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+#full-image-tooltip img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    border-radius: 4px;
+}
