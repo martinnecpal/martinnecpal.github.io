@@ -4,7 +4,9 @@
     "_fields": {
       "id": "Unique identifier for the presentation",
       "name": "Title of the presentation (becomes clickable link if conferenceUrl exists)",
-      "date": "Date in YYYY-MM-DD format",
+      "start_date": "Start date in YYYY-MM-DD format",
+      "end_date": "(Optional) End date in YYYY-MM-DD format for multi-day events",
+      "date": "(Deprecated) Use start_date instead - maintained for backwards compatibility",
       "location": "Location/venue of the presentation",
       "description": "Main description text (supports HTML)",
       "photo": "Path to preview image",
@@ -18,7 +20,8 @@
   {
     "id": "mtm-2025-borovets",
     "name": "Mathematical Modeling Conference",
-    "date": "2025-04-27",
+    "start_date": "2025-04-27",
+    "end_date": "2025-04-29",
     "location": "Borovets, Bulgaria",
     "description": "Interactive presentation with synchronized audio and pointer animations for mathematical modeling conference.",
     "photo": "/sk/presentations/mtm-2025-borovets/slide_000.jpg",
@@ -29,7 +32,7 @@
   {
     "id": "albania",
     "name": "Albania Conference Presentation",
-    "date": "2025-06-24",
+    "start_date": "2025-06-24",
     "conferenceUrl": "https://cit.edu.al/cit-conferences-english/",
     "location": "Albania",
     "description": "Conference presentation in Albania (content to be added).",

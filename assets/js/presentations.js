@@ -14,7 +14,11 @@ async function loadPresentations() {
         const presentations = await response.json();
         
         // Sort presentations by date (newest first)
-        presentations.sort((a, b) => new Date(b.date) - new Date(a.date));
+        presentations.sort((a, b) => {
+            const dateA = new Date(a.start_date || a.date);
+            const dateB = new Date(b.start_date || b.date);
+            return dateB - dateA;
+        });
         
         const container = document.getElementById('presentations-container');
         container.innerHTML = '';
@@ -56,7 +60,7 @@ function createPresentationElement(presentation) {
         ${imageHtml}
         <div class="presentation-content">
             ${titleHtml}
-            <p class="presentation-meta"><strong>Dátum:</strong> ${new Date(presentation.date).toLocaleDateString('sk-SK')}</p>
+            <p class="presentation-meta"><strong>Dátum:</strong> ${formatDateRange(presentation)}</p>
             <p class="presentation-meta"><strong>Miesto:</strong> ${presentation.location}</p>
             <p class="presentation-description">${presentation.description}</p>
             ${notesHtml}
@@ -140,6 +144,31 @@ function createTagsHtml(presentation) {
     return presentation.tags.map(tag => 
         `<span class="presentation-tag">${tag}</span>`
     ).join('');
+}
+
+/**
+ * Formats date range for presentation display
+ * Handles both single dates and date ranges with backwards compatibility
+ * @param {Object} presentation - Presentation data object
+ * @returns {string} - Formatted date string
+ */
+function formatDateRange(presentation) {
+    const startDate = presentation.start_date || presentation.date;
+    const endDate = presentation.end_date;
+    
+    if (!startDate) {
+        return 'Dátum nie je uvedený';
+    }
+    
+    const formatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
+    const startFormatted = new Date(startDate).toLocaleDateString('sk-SK', formatOptions);
+    
+    if (endDate && endDate !== startDate) {
+        const endFormatted = new Date(endDate).toLocaleDateString('sk-SK', formatOptions);
+        return `${startFormatted} - ${endFormatted}`;
+    }
+    
+    return startFormatted;
 }
 
 /**
