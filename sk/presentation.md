@@ -26,7 +26,7 @@ async function loadPresentations() {
             return;
         }
         
-        presentations.forEach(presentation => {
+        presentations.filter(presentation => !presentation._help).forEach(presentation => {
             const presentationDiv = document.createElement('div');
             presentationDiv.className = 'presentation-item';
             presentationDiv.style.cssText = `
@@ -48,17 +48,21 @@ async function loadPresentations() {
             presentationDiv.innerHTML = `
                 ${imageHtml}
                 <div style="overflow: hidden;">
-                    <h3 style="margin: 0 0 10px 0; color: #333;">${presentation.name}</h3>
+                    ${presentation.conferenceUrl ? 
+                        `<h3 style="margin: 0 0 10px 0;"><a href="${presentation.conferenceUrl}" target="_blank" style="color: #1976d2; text-decoration: none;">${presentation.name}</a></h3>` : 
+                        `<h3 style="margin: 0 0 10px 0; color: #333;">${presentation.name}</h3>`
+                    }
                     <p style="margin: 5px 0; color: #666;"><strong>Dátum:</strong> ${new Date(presentation.date).toLocaleDateString('sk-SK')}</p>
                     <p style="margin: 5px 0; color: #666;"><strong>Miesto:</strong> ${presentation.location}</p>
                     <p style="margin: 10px 0; color: #555;">${presentation.description}</p>
+                    ${presentation.notes ? `<div style="margin: 10px 0; padding: 8px; background: #f5f5f5; border-radius: 4px; color: #666; font-size: 14px;"><strong>Poznámky:</strong> ${presentation.notes}</div>` : ''}
                     <div style="margin: 10px 0;">
                         ${presentation.tags.map(tag => `<span style="background: #e1f5fe; padding: 3px 8px; border-radius: 12px; font-size: 12px; margin-right: 5px; color: #0277bd;">${tag}</span>`).join('')}
                     </div>
-                    <a href="#" onclick="openPresentation('${presentation.presentationUrl}', '${presentation.name}'); return false;" 
+                    ${presentation.presentationUrl ? `<a href="#" onclick="openPresentation('${presentation.presentationUrl}', '${presentation.name}'); return false;" 
                        style="display: inline-block; background: #1976d2; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; margin-top: 10px;">
                         Otvoriť prezentáciu
-                    </a>
+                    </a>` : ''}
                 </div>
                 <div style="clear: both;"></div>
             `;

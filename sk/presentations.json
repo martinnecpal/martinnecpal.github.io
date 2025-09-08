@@ -1,5 +1,21 @@
 [
   {
+    "_help": "JSON Structure Guide",
+    "_fields": {
+      "id": "Unique identifier for the presentation",
+      "name": "Title of the presentation (becomes clickable link if conferenceUrl exists)",
+      "date": "Date in YYYY-MM-DD format",
+      "location": "Location/venue of the presentation",
+      "description": "Main description text (supports HTML)",
+      "photo": "Path to preview image",
+      "presentationUrl": "(Optional) Path to interactive presentation - creates 'Otvoriť prezentáciu' button",
+      "conferenceUrl": "(Optional) URL to conference website - makes title clickable",
+      "notes": "(Optional) Additional notes with links (supports HTML) - appears in gray box",
+      "type": "Type of presentation (e.g., 'conference')",
+      "tags": "Array of tags for categorization"
+    }
+  },
+  {
     "id": "mtm-2025-borovets",
     "name": "Mathematical Modeling Conference",
     "date": "2025-04-27",
@@ -14,10 +30,11 @@
     "id": "albania",
     "name": "Albania Conference Presentation",
     "date": "2025-06-24",
+    "conferenceUrl": "https://cit.edu.al/cit-conferences-english/",
     "location": "Albania",
     "description": "Conference presentation in Albania (content to be added).",
+    "notes": "Available resources: <a href='/presentations/paper.pdf' target='_blank'>Research Paper (PDF)</a>, <a href='/images/poster.jpg' target='_blank'>Conference Poster</a>, <a href='https://example.com' target='_blank'>Project Website</a>",
     "photo": "/sk/presentations/albania/slide1.png",
-    "presentationUrl": "/sk/presentations/albania/index.html",
     "type": "conference",
     "tags": ["conference"]
   }
