@@ -19,15 +19,17 @@
   },
   {
     "id": "mtm-2025-borovets",
-    "name": "Mathematical Modeling Conference",
-    "start_date": "2025-04-27",
-    "end_date": "2025-04-29",
-    "location": "Borovets, Bulgaria",
-    "description": "Interactive presentation with synchronized audio and pointer animations for mathematical modeling conference.",
-    "photo": "/sk/presentations/mtm-2025-borovets/slide_000.jpg",
+    "name": "XXII INTERNATIONAL CONGRESS MACHINЕS, TECHNOLОGIES, MATERIALS WINTER SESSION",
+    "conferenceUrl": "https://mtmcongress.com/winter/",
+    "start_date": "2025-03-19",
+    "end_date": "2025-03-22",
+    "location": "BOROVETS, BULGARIA",
+    "description": "I presented the article “Thermal Effects of High-Speed Machining: Analysis of Cutting Zone Temperatures, Tool Behavior, and Cutting Forces in C45 Steel Turning at Elevated Speeds” at this conference. The event focuses on bringing together researchers and industry experts to discuss innovations, exchange knowledge, and explore the latest developments in machines, technologies, and materials.",
+    "photo": "/sk/presentations/mtm-2025-borovets/MTM_logo.jpg",
     "presentationUrl": "/sk/presentations/mtm-2025-borovets/index.html",
-    "type": "conference",
-    "tags": ["mathematics", "modeling", "interactive"]
+    "type": "congress",
+    "notes": "Available resources: <a href='https://mtmcongress.com/winter/sbornik/1-2025.pdf' target='_blank'>Proceedings (PDF)</a>",
+    "tags": ["machines", "technologies", "materials"]
   },
   {
     "id": "albania",
