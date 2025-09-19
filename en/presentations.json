@@ -1,0 +1,46 @@
+[
+  {
+    "_help": "JSON Structure Guide",
+    "_fields": {
+      "id": "Unique identifier for the presentation",
+      "name": "Title of the presentation (becomes clickable link if conferenceUrl exists)",
+      "start_date": "Start date in YYYY-MM-DD format",
+      "end_date": "(Optional) End date in YYYY-MM-DD format for multi-day events",
+      "date": "(Deprecated) Use start_date instead - maintained for backwards compatibility",
+      "location": "Location/venue of the presentation",
+      "description": "Main description text (supports HTML)",
+      "photo": "Path to preview image",
+      "presentationUrl": "(Optional) Path to interactive presentation - creates 'Otvoriť prezentáciu' button",
+      "conferenceUrl": "(Optional) URL to conference website - makes title clickable",
+      "notes": "(Optional) Additional notes with links (supports HTML) - appears in gray box",
+      "type": "Type of presentation (e.g., 'conference')",
+      "tags": "Array of tags for categorization"
+    }
+  },
+  {
+    "id": "mtm-2025-borovets",
+    "name": "XXII INTERNATIONAL CONGRESS MACHINЕS, TECHNOLОGIES, MATERIALS WINTER SESSION",
+    "conferenceUrl": "https://mtmcongress.com/winter/",
+    "start_date": "2025-03-19",
+    "end_date": "2025-03-22",
+    "location": "BOROVETS, BULGARIA",
+    "description": "I presented the article “Thermal Effects of High-Speed Machining: Analysis of Cutting Zone Temperatures, Tool Behavior, and Cutting Forces in C45 Steel Turning at Elevated Speeds” at this conference. The event focuses on bringing together researchers and industry experts to discuss innovations, exchange knowledge, and explore the latest developments in machines, technologies, and materials.",
+    "photo": "/sk/presentations/mtm-2025-borovets/MTM_logo.jpg",
+    "presentationUrl": "/sk/presentations/mtm-2025-borovets/index.html",
+    "type": "congress",
+    "notes": "Available resources: <a href='https://mtmcongress.com/winter/sbornik/1-2025.pdf' target='_blank'>Proceedings (PDF)</a>",
+    "tags": ["machines", "technologies", "materials"]
+  },
+  {
+    "id": "albania",
+    "name": "Albania Conference Presentation",
+    "start_date": "2025-06-24",
+    "conferenceUrl": "https://cit.edu.al/cit-conferences-english/",
+    "location": "Albania",
+    "description": "Conference presentation in Albania (content to be added).",
+    "notes": "Available resources: <a href='/presentations/paper.pdf' target='_blank'>Research Paper (PDF)</a>, <a href='/images/poster.jpg' target='_blank'>Conference Poster</a>, <a href='https://example.com' target='_blank'>Project Website</a>",
+    "photo": "/sk/presentations/albania/slide1.png",
+    "type": "conference",
+    "tags": ["conference"]
+  }
+]

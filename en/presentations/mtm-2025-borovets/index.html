@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Presentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="slideContainer">
+        <img id="slide" src="slide1.jpg">
+        <canvas id="pointerCanvas"></canvas>
+    </div>
+
+    <audio id="audio" src="audio1.wav"></audio>
+    
+    <div id="slideBar"></div>
+    
+    <div class="controls">
+        <button id="startBtn">Start Presentation</button>
+        <button id="prevBtn">Previous</button>
+        <button id="playBtn">Play Audio</button>
+        <button id="nextBtn">Next</button>
+        <div class="auto-play-control">
+            <label>
+            <input type="checkbox" id="autoPlayToggle" checked>
+            Auto-play slides
+            </label>
+            </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="pointer.js"></script>
+    <script src="presentation.js"></script>
+</body>
+</html>
