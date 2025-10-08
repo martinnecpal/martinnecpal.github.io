@@ -8,8 +8,8 @@ lang: "sk"
 
 
 | -------   | ------------------------------- | ---------------------------------------------------------- |
-| email:    | [martin.necpal@stuba.sk](mailto:martin.necpal@stuba.sk) |<a href="/assets/images/mail%20draft.png" target="_blank"><img src="/assets/images/mail%20draft.png" alt="Email ikona" width="100"></a>|
-| phone:    |+421 903 551 878                 |<a href="/assets/images/Phone%20call.png" target="_blank"><img src="/assets/images/Phone%20call.png" alt="Telefón ikona" width="100"></a>|
+| email:    | [martin.necpal@stuba.sk](mailto:martin.necpal@stuba.sk) |<a href="/assets/images/mail-draft.png" target="_blank"><img src="/assets/images/mail-draft.png" alt="Email ikona" width="100"></a>|
+| phone:    |+421 903 551 878                 |<a href="/assets/images/phone-call.png" target="_blank"><img src="/assets/images/phone-call.png" alt="Telefón ikona" width="100"></a>|
 | WhatsApp  |<img src="/assets/images/whatsAppLogo.svg" alt="WhatsApp logo" width="100">|<a href="/assets/images/Vatsap.png" target="_blank"><img src="/assets/images/Vatsap.png" alt="WhatsApp QR kód" width="100"></a>|
 | Telegram  |                                 | <a href="/assets/images/telegram.jpg" target="_blank"><img src="/assets/images/telegram.jpg" alt="Telegram QR kód" width="100"></a>|
 | Viber     |                                 | Description of the item in the list                          |
