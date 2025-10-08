@@ -1,0 +1,61 @@
+<!-- Slide 11: Discussion -->
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Critical Evaluation: Analytical vs. Numerical Approaches</h2>
+    </div>
+    <div class="slide-content">
+        <div class="two-column">
+            <div class="column">
+                <h3>Oxley Analytical Model</h3>
+                <p style="margin: 15px 0;"><strong class="strengths">Strengths:</strong></p>
+                <ul style="font-size: 0.9em;">
+                    <li>Computationally fast (&lt;1 second)</li>
+                    <li>Provides fundamental insights</li>
+                    <li>Good for initial predictions</li>
+                    <li>Captures trends correctly</li>
+                </ul>
+                <p style="margin: 15px 0;"><strong class="limitations">Limitations:</strong></p>
+                <ul style="font-size: 0.9em;">
+                    <li>Constant strain assumption invalid</li>
+                    <li>2D orthogonal only</li>
+                    <li>Typically 20-30% error in forces</li>
+                    <li>Cannot predict chip segmentation</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>FEM Simulation</h3>
+                <p style="margin: 15px 0;"><strong class="strengths">Strengths:</strong></p>
+                <ul style="font-size: 0.9em;">
+                    <li>Accurate predictions (±5-10%)</li>
+                    <li>Visualizes hidden phenomena</li>
+                    <li>Captures complex material behavior</li>
+                    <li>Flexible for 3D, special processes</li>
+                </ul>
+                <p style="margin: 15px 0;"><strong class="limitations">Limitations:</strong></p>
+                <ul style="font-size: 0.9em;">
+                    <li>Computationally expensive (4-8 hours)</li>
+                    <li>Requires expert setup</li>
+                    <li>Sensitive to material model</li>
+                    <li>Mesh dependency issues</li>
+                </ul>
+            </div>
+        </div>
+        <div class="highlight-box" style="margin-top: 30px; background: rgba(74, 158, 255, 0.2);">
+            <div class="box-title">🎯 Integrated Approach - Best Practice</div>
+            <div class="two-column" style="margin-top: 15px;">
+                <ul style="font-size: 1em;">
+                    <li>Use Oxley for rapid screening and optimization</li>
+                    <li>Validate with FEM for critical applications</li>
+                </ul>
+                <ul style="font-size: 1em;">
+                    <li>Both complement experimental work</li>
+                    <li>Select method based on accuracy needs vs. resources</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Orthogonal Cutting Investigation</span>
+        <span>Necpal, Jurina, Kuruc</span>
+    </div>
+</div>

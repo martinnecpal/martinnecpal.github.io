@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Navigation</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #1a1a2e; color: white; }
+        .status { margin: 10px 0; padding: 10px; background: #0f3460; border-radius: 5px; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Presentation Test</h1>
+
+    <div class="status">
+        <strong>File Check:</strong>
+        <div id="fileCheck">Checking files...</div>
+    </div>
+
+    <div class="status">
+        <strong>Instructions:</strong>
+        <ol>
+            <li>Open <code>index-combined.html</code> in your browser</li>
+            <li>Check if you see the first slide (title slide)</li>
+            <li>Click the "Next →" button or press the right arrow key</li>
+            <li>The slide should change to slide 2</li>
+        </ol>
+    </div>
+
+    <button onclick="window.open('index-combined.html', '_blank')">Open Presentation</button>
+
+    <script>
+        // Simple file check
+        fetch('index-combined.html')
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('fileCheck').innerHTML =
+                        '✓ index-combined.html exists<br>✓ Ready to present!';
+                } else {
+                    document.getElementById('fileCheck').innerHTML =
+                        '✗ Error loading index-combined.html';
+                }
+            })
+            .catch(err => {
+                document.getElementById('fileCheck').innerHTML =
+                    '⚠️ Run this from a web server (python3 serve.py) or just open index-combined.html directly';
+            });
+    </script>
+</body>
+</html>

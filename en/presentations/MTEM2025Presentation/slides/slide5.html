@@ -1,0 +1,47 @@
+<!-- Slide 5: Oxley Model -->
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Extended Oxley Analytical Model: Shear Plane Theory</h2>
+    </div>
+    <div class="slide-content">
+        <div class="two-column">
+            <div class="image-placeholder">
+                <p><strong>IMAGE: Figure 1 - Oxley Cutting Model</strong></p>
+                <p>Insert schematic showing:</p>
+                <ul style="list-style: disc; margin-left: 20px; text-align: left;">
+                    <li>Tool with rake angle α</li>
+                    <li>Shear plane AB at angle φ</li>
+                    <li>Primary & secondary zones</li>
+                    <li>Force vectors (F<sub>C</sub>, F<sub>T</sub>, R)</li>
+                </ul>
+            </div>
+            <div>
+                <div class="highlight-box">
+                    <div class="box-title">Model Assumptions</div>
+                    <ul style="font-size: 0.95em;">
+                        <li>Orthogonal 2D cutting</li>
+                        <li>Constant strain along shear plane</li>
+                        <li>Uniform stress distribution</li>
+                    </ul>
+                </div>
+                <div class="equation">
+                    <p><strong>Flow Stress in Primary Zone:</strong></p>
+                    k<sub>AB</sub> = (1/√3) σ<sup>y</sup>(ε<sub>AB</sub>, ε̇<sub>AB</sub>, T<sub>AB</sub>)
+                </div>
+                <div class="equation">
+                    <p><strong>Equilibrium Conditions:</strong></p>
+                    σ<sub>N</sub> = σ<sub>N,max</sub><br>
+                    τ<sub>int</sub> = k<sub>chip</sub>
+                </div>
+                <div class="highlight-box" style="margin-top: 20px;">
+                    <p><strong>Implementation:</strong> Python + LMFIT library</p>
+                    <p><strong>Computation time:</strong> &lt;1 second per condition</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Orthogonal Cutting Investigation</span>
+        <span>Necpal, Jurina, Kuruc</span>
+    </div>
+</div>

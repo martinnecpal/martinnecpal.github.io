@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orthogonal Cutting Process Investigation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="slide-counter">
+        <span id="currentSlide">1</span> / <span id="totalSlides">13</span>
+    </div>
+    
+    <div class="presentation" id="presentation">
+<!-- Slide 1: Title -->
+<div class="slide active title-slide">
+    <div class="logo-placeholder">
+        <img src="MTF_logo.png" alt="Oxley Model">
+    </div>
+    <h1 class="main-title">Numerical and Analytical Investigation<br>of the Orthogonal Cutting Process<br>of C45 Medium Carbon Steel</h1>
+    <div class="authors">
+        Martin NECPAL, Ing., PhD.<br>
+        František JURINA, Ing., PhD.<br>
+        Marcel KURUC, doc. Ing., PhD.
+    </div>
+    <div class="institution">
+        Slovak University of Technology in Bratislava<br>
+        Faculty of Materials Science and Technology in Trnava<br>
+        Institute of Production Technologies
+    </div>
+</div>
+
+<!-- Slide 2: Introduction -->
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Understanding Chip Formation: Foundation of Machining Optimization</h2>
+    </div>
+    <div class="slide-content">
+        <div class="two-column">
+            <div>
+                <ul>
+                    <li>Critical for optimizing machining processes</li>
+                    <li>Enables improved tool design and performance</li>
+                    <li>Affects surface integrity and quality</li>
+                    <li>Influences production efficiency and costs</li>
+                </ul>
+                <div class="highlight-box" style="margin-top: 40px;">
+                    <div class="box-title">Key Research Questions</div>
+                    <ul style="font-size: 1em;">
+                        <li>How does material deform in cutting zone?</li>
+                        <li>What controls chip formation mechanics?</li>
+                        <li>Can we predict cutting forces accurately?</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="image-placeholder">
+                
+                <p><strong>IMAGE: Chip Formation Schematic</strong></p>
+                <p>Metallographic cross-sections through the orthogonal cutting plane</p>
+                <img src="chip_microscope.png" alt="Chip Formation">
+              <!--  <ul style="list-style: disc; margin-left: 20px; text-align: left;">
+                    <li>Cutting tool</li>
+                    <li>Workpiece</li>
+                    <li>Chip formation</li>
+                    <li>Deformation zones</li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Orthogonal Cutting Investigation</span>
+        <span>Necpal, Jurina, Kuruc</span>
+    </div>
+</div>
+
+<!-- Slide 3: Research Approaches -->
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Three Complementary Approaches to Machining Research</h2>
+    </div>
+    <div class="slide-content">
+        <div class="three-column">
+            <div class="column">
+                <h3>🔬 Experimental</h3>
+                <p><strong>Methods:</strong></p>
+                <ul style="font-size: 0.95em;">
+                    <li>Force measurement</li>
+                    <li>Metallographic analysis</li>
+                    <li>Chip morphology</li>
+                </ul>
+                <p style="margin-top: 20px;"><strong class="strengths">Advantages:</strong></p>
+                <ul style="font-size: 0.9em;">
+                    <li>Real data</li>
+                    <li>Validation</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong class="limitations">Limitations:</strong></p>
+                <ul style="font-size: 0.9em;">
+                    <li>Time-consuming</li>
+                    <li>Costly</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>📐 Analytical (Oxley)</h3>
+                <p><strong>Methods:</strong></p>
+                <ul style="font-size: 0.95em;">
+                    <li>Shear plane theory</li>
+                    <li>Simplified mechanics</li>
+                </ul>
+                <p style="margin-top: 20px;"><strong class="strengths">Advantages:</strong></p>
+                <ul style="font-size: 0.9em;">
+                    <li>Fast predictions</li>
+                    <li>Fundamental insights</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong class="limitations">Limitations:</strong></p>
+                <ul style="font-size: 0.9em;">
+                    <li>Simplified assumptions</li>
+                    <li>2D only</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>💻 Numerical (FEM)</h3>
+                <p><strong>Methods:</strong></p>
+                <ul style="font-size: 0.95em;">
+                    <li>Finite Element Analysis</li>
+                    <li>Detailed modeling</li>
+                </ul>
+                <p style="margin-top: 20px;"><strong class="strengths">Advantages:</strong></p>
+                <ul style="font-size: 0.9em;">
+                    <li>Detailed visualization</li>
+                    <li>3D effects</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong class="limitations">Limitations:</strong></p>
+                <ul style="font-size: 0.9em;">
+                    <li>Computationally intensive</li>
+                    <li>Setup complexity</li>
+                </ul>
+            </div>
+        </div>
+        <div class="highlight-box" style="margin-top: 30px; text-align: center;">
+            <div class="box-title">→ Integrated Approach: Combining All Three Methods →</div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Orthogonal Cutting Investigation</span>
+        <span>Necpal, Jurina, Kuruc</span>
+    </div>
+</div>
+
+<!-- Slide 4: Experimental Setup -->
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Experimental Basis: C45 Steel Orthogonal Cutting Tests</h2>
+    </div>
+    <div class="slide-content">
+        <div class="three-column">
+        <div class="highlight-box">
+            <div class="box-title">9 Cutting Experiments - Systematic Parameter Variation</div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Exp. No.</th>
+                    <th>v<sub>c</sub> (m/min)</th>
+                    <th>f (mm)</th>
+                    <th>φ (°)</th>
+                    <th>ε (-)</th>
+                    <th>K (-)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>110</td><td>0.2</td><td>37</td><td>0.681</td><td>2.010</td></tr>
+                <tr><td>2</td><td>110</td><td>0.4</td><td>39</td><td>0.638</td><td>1.880</td></tr>
+                <tr><td>3</td><td>110</td><td>0.6</td><td>49</td><td>0.603</td><td>1.156</td></tr>
+                <tr><td>4</td><td>145</td><td>0.2</td><td>37</td><td>0.650</td><td>1.560</td></tr>
+                <tr><td>5</td><td>145</td><td>0.4</td><td>39</td><td>0.586</td><td>1.345</td></tr>
+                <tr><td>6</td><td>145</td><td>0.6</td><td>49</td><td>0.699</td><td>1.120</td></tr>
+                <tr><td>7</td><td>180</td><td>0.2</td><td>37</td><td>0.331</td><td>1.348</td></tr>
+                <tr><td>8</td><td>180</td><td>0.4</td><td>39</td><td>0.294</td><td>1.260</td></tr>
+                <tr><td>9</td><td>180</td><td>0.6</td><td>49</td><td>0.215</td><td>1.000</td></tr>
+            </tbody>
+        </table>
+        </div>
+            <div class="image-placeholder" style="min-height: 200px;">
+                <p><strong>IMAGE: Orthogonal Cutting Setup</strong></p>
+                <img src="turning_setup.png" alt="Cutting Setup">
+            </div>
+            <div class="image-placeholder" style="min-height: 200px;">
+                <p><strong>IMAGE: Chip Samples</strong></p>
+                <img src="chip_samples.png" alt="Chip Samples">
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Orthogonal Cutting Investigation</span>
+        <span>Necpal, Jurina, Kuruc</span>
+    </div>
+</div>
+
+<!-- Slide 5: Oxley Model -->
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Extended Oxley Analytical Model: Shear Plane Theory</h2>
+    </div>
+    <div class="slide-content">
+        <div class="two-column">
+            <div class="image-placeholder">
+                <p><strong>Oxley Cutting Model</strong></p>
+                <img src="oxley.png" alt="Oxley Model">
+            </div>
+            <div>
+                <div class="highlight-box">
+                    <div class="box-title">Model Assumptions</div>
+                    <ul style="font-size: 0.95em;">
+                        <li>Orthogonal 2D cutting</li>
+                        <li>Constant strain along shear plane</li>
+                        <li>Uniform stress distribution</li>
+                    </ul>
+                </div>
+                <div class="equation">
+                    <p><strong>Flow Stress in Primary Zone:</strong></p>
+                    k<sub>AB</sub> = (1/√3) σ<sup>y</sup>(ε<sub>AB</sub>, ε̇<sub>AB</sub>, T<sub>AB</sub>)
+                </div>
+                <div class="equation">
+                    <p><strong>Equilibrium Conditions:</strong></p>
+                    σ<sub>N</sub> = σ<sub>N,max</sub><br>
+                    τ<sub>int</sub> = k<sub>chip</sub>
+                </div>
+                <div class="highlight-box" style="margin-top: 20px;">
+                    <p><strong>Implementation:</strong> Python + LMFIT library</p>
+                    <p><strong>Computation time:</strong> &lt;1 second per condition</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Orthogonal Cutting Investigation</span>
+        <span>Necpal, Jurina, Kuruc</span>
+    </div>
+</div>
+
+<!-- Slide 6: Johnson-Cook Model -->
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Johnson-Cook Material Model for C45 Steel</h2>
+    </div>
+    <div class="slide-content">
+        <div class="equation" style="font-size: 1.2em;">
+            <p><strong>Johnson-Cook Constitutive Equation:</strong></p>
+            σ<sup>y</sup> = [A + Bε<sup>n</sup>] · [1 + C·ln(ε̇/ε̇<sub>0</sub>)] · [1 - ((T-T<sub>w</sub>)/(T<sub>m</sub>-T<sub>w</sub>))<sup>m</sup>]
+            <p style="margin-top: 15px; font-size: 0.9em; color: #4a9eff;">
+                <span style="color: #4ade80;">[Strain Hardening]</span> ·
+                <span style="color: #fbbf24;">[Strain Rate]</span> ·
+                <span style="color: #f87171;">[Temperature Softening]</span>
+            </p>
+        </div>
+        <div class="two-column">
+            <div>
+                <table style="margin: 30px 0;">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Value</th>
+                    <th>Unit</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>A</td><td>553.1</td><td>MPa</td><td>Yield strength</td></tr>
+                <tr><td>B</td><td>600.8</td><td>MPa</td><td>Hardening modulus</td></tr>
+                <tr><td>C</td><td>0.0134</td><td>-</td><td>Strain rate sensitivity</td></tr>
+                <tr><td>n</td><td>0.234</td><td>-</td><td>Hardening exponent</td></tr>
+                <tr><td>m</td><td>1</td><td>-</td><td>Thermal softening exponent</td></tr>
+                <tr><td>ε̇<sub>0</sub></td><td>1</td><td>s<sup>-1</sup></td><td>Reference strain rate</td></tr>
+                <tr><td>T<sub>w</sub></td><td>25</td><td>°C</td><td>Room temperature</td></tr>
+                <tr><td>T<sub>m</sub></td><td>1460</td><td>°C</td><td>Melting temperature</td></tr>
+            </tbody>
+                </table>
+            </div>
+            <div class="image-placeholder" style="min-height: 360px;">
+                <img src="JC_model.png">
+                <p><strong>IMAGE: Flow Stress vs. Strain Graph</strong></p>
+                <p>Multiple curves showing flow stress at different temperatures:</p>
+                <p>25°C, 200°C, 400°C, 600°C, 800°C</p>
+                <p>Demonstrating thermal softening effect</p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Orthogonal Cutting Investigation</span>
+        <span>Necpal, Jurina, Kuruc</span>
+    </div>
+</div>
+
+<!-- Slide 7: FEM Setup -->
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">2D Orthogonal FEM Cutting Model Configuration</h2>
+    </div>
+    <div class="slide-content">
+        <div class="two-column">
+            <div class="image-placeholder" justify-content="margin-top: 20px;">                
+                <div class="column" style="margin-top: 0px;">
+                    <h3>Model Specifications</h3>
+                    <p><strong>Software:</strong> DEFORM 2D</p>
+                    <p><strong>Solver:</strong> Implicit Lagrangian</p>
+                </div>
+
+                <img src="nastavenie_modelu.png" alt="FEM Setup">
+            </div>
+            <div>
+                <div class="column" style="margin-top: 20px;">
+                    <h3>Workpiece</h3>
+                    <ul style="font-size: 0.9em;">
+                        <li>Material: C45 (Johnson-Cook)</li>
+                        <li>Element type: Visco-plastic</li>
+                        <li>Mesh: 0.025-0.5 mm</li>
+                        <li>Boundary: Fixed on left</li>
+                    </ul>
+                </div>
+                <div class="column" style="margin-top: 20px;">
+                    <h3>Tool</h3>
+                    <ul style="font-size: 0.9em;">
+                        <li>Rigid body</li>
+                        <li>Thermal properties included</li>
+                        <li>Moving boundary (v<sub>c</sub>)</li>
+                    </ul>
+                </div>
+                <div class="column" style="margin-top: 20px;">
+                    <h3>Contact Properties</h3>
+                    <ul style="font-size: 0.9em;">
+                        <li>Friction coefficient: 0.5</li>
+                        <li>Heat transfer: 45 kW/m²°C</li>
+                        <li>Chip separation: Remeshing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Orthogonal Cutting Investigation</span>
+        <span>Necpal, Jurina, Kuruc</span>
+    </div>
+</div>
+
+<!-- Slide 8: Results Comparison -->
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Comparison of Predicted vs. Measured Cutting Parameters</h2>
+    </div>
+    <div class="slide-content">
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">Exp. No.</th>
+                    <th colspan="3">Experiment</th>
+                    <th colspan="3">Oxley Model</th>
+                    <th colspan="2">FEM Simulation</th>
+                </tr>
+                <tr>
+                    <th>φ (°)</th>
+                    <th>ε (-)</th>
+                    <th>t<sub>2</sub> (mm)</th>
+                    <th>φ (°)</th>
+                    <th>ε (-)</th>
+                    <th>t<sub>2</sub> (mm)</th>
+                    <th>φ (°)</th>
+                    <th>t<sub>2</sub> (mm)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>37</td><td>0.68</td><td>0.11</td><td style="color: #fbbf24;">31.8</td><td>0.56</td><td>0.36</td><td style="color: #fbbf24;">29.7</td><td style="color: #4ade80;">0.32</td></tr>
+                <tr><td>2</td><td>39</td><td>0.64</td><td>0.25</td><td style="color: #fbbf24;">35.3</td><td>0.53</td><td>0.64</td><td style="color: #fbbf24;">32.9</td><td style="color: #4ade80;">0.60</td></tr>
+                <tr><td>3</td><td>49</td><td>0.60</td><td>0.58</td><td style="color: #fbbf24;">37.3</td><td>0.51</td><td>0.90</td><td style="color: #4ade80;">37.3</td><td style="color: #4ade80;">0.92</td></tr>
+                <tr><td>4</td><td>37</td><td>0.65</td><td>0.11</td><td style="color: #fbbf24;">33.3</td><td>0.55</td><td>0.34</td><td style="color: #fbbf24;">30.0</td><td style="color: #4ade80;">0.32</td></tr>
+                <tr><td>5</td><td>39</td><td>0.59</td><td>0.25</td><td style="color: #fbbf24;">36.7</td><td>0.51</td><td>0.61</td><td style="color: #4ade80;">35.1</td><td style="color: #4ade80;">0.60</td></tr>
+                <tr><td>6</td><td>49</td><td>0.70</td><td>0.58</td><td style="color: #fbbf24;">38.6</td><td>0.50</td><td>0.87</td><td style="color: #fbbf24;">37.2</td><td style="color: #4ade80;">0.90</td></tr>
+                <tr><td>7</td><td>37</td><td>0.33</td><td>0.11</td><td style="color: #fbbf24;">34.5</td><td>0.53</td><td>0.33</td><td style="color: #fbbf24;">32.1</td><td style="color: #4ade80;">0.32</td></tr>
+                <tr><td>8</td><td>39</td><td>0.29</td><td>0.25</td><td style="color: #fbbf24;">37.8</td><td>0.51</td><td>0.59</td><td style="color: #4ade80;">35.0</td><td style="color: #4ade80;">0.60</td></tr>
+                <tr><td>9</td><td>49</td><td>0.21</td><td>0.58</td><td style="color: #fbbf24;">39.0</td><td>0.50</td><td>0.85</td><td style="color: #4ade80;">38.4</td><td style="color: #4ade80;">0.88</td></tr>
+            </tbody>
+        </table>
+        <div style="margin-top: 20px; font-size: 0.9em; color: #999;">
+            Color coding: <span style="color: #4ade80;">● Close match</span> | <span style="color: #fbbf24;">● Moderate deviation</span>
+        </div>
+        <div class="two-column" style="margin-top: 30px;">
+            <div class="image-placeholder" style="min-height: 250px;">
+                <img src="shear_angle_comparison.png" alt="Shear Angle Comparison">
+            </div>
+            <div class="image-placeholder" style="min-height: 250px;">
+                <p><strong>BAR CHART: Chip Thickness t<sub>2</sub> Comparison</strong></p>
+                <img src="chip_thickness.png" alt="Chip Thickness Comparison">
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Orthogonal Cutting Investigation</span>
+        <span>Necpal, Jurina, Kuruc</span>
+    </div>
+</div>
+
+<!-- Slide 9: Video Demonstration -->
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Shear stress in cutting zone </h2>
+    </div>
+    <div class="slide-content">
+        <!-- Video Player -->
+        <div class="video-container" style="min-height: 400px; margin-bottom: 20px; text-align: center;">
+            <video width="1150" controls poster="thumbnail.jpg">
+                <source src="output_video.mp4" type="video/mp4">
+                <source src="strain_simulation.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            <p><strong>VIDEO: FEM Simulation of Shear stress distribution</strong></p>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Orthogonal Cutting Investigation</span>
+        <span>Necpal, Jurina, Kuruc</span>
+    </div>
+</div>
+
+<!-- Slide 10: Strain Distribution Discovery -->
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Key Finding: Non-Uniform Strain Distribution Along Shear Plane in Cutting Zone</h2>
+    </div>
+    <div class="slide-content">
+        <div class="image-placeholder" style="min-height: 200px; margin-bottom: 20px;">
+            <img src="strain_deform.png" alt="Strain Distribution" width="1000">
+            <!--<p><strong>IMAGE: Figure 3 - Strain Distribution in Cutting Zone</strong></p>
+            <p>Insert FEM visualization showing:</p>
+            <ul style="list-style: disc; margin-left: 20px; text-align: left;">
+                <li>Shear plane AB marked clearly</li>
+                <li>Strain contour plot with color scale</li>
+                <li>Thick orange curved line (constant strain locus)</li>
+                <li>Tool cutting edge visible</li>
+                <li>Annotations: Point A, Point B, strain gradient</li>
+            </ul>-->
+        </div>
+        <div class="two-column">
+            <div class="column">
+                <h3>Oxley Model Assumption</h3>
+                <ul style="font-size: 0.95em;">
+                    <li>Straight shear plane</li>
+                    <li><strong style="color: #f87171;">Constant strain along Shear Plane</strong></li>
+                    <li>Simplified analysis</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>FEM Reality</h3>
+                <ul style="font-size: 0.95em;">
+                    <li><strong style="color: #4ade80;">Strain increases toward cutting edge</strong></li>
+                    <li>Non-uniform distribution</li>
+                    <li>Curved constant-strain contour</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Orthogonal Cutting Investigation</span>
+        <span>Necpal, Jurina, Kuruc</span>
+    </div>
+</div>
+
+<!-- Slide 11: Strain Profiles -->
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Strain Distribution: Effect of Cutting Speed and Feed Rate</h2>
+    </div>
+    <div class="slide-content">
+        <div class="two-column" style="grid-template-columns: 70% 30%;">
+            <div class="image-placeholder" style="min-height: 450px;">
+                <p><strong>Strain Dependencies on Shear Plane</strong></p>
+                <img src="grafy.png" alt="Strain Profiles" width="1000">
+                <!-- 
+                <p><strong>Main graph specifications:</strong></p>
+                <ul style="list-style: disc; margin-left: 20px; text-align: left;">
+                    <li>X-axis: Distance along shear plane from A to B (mm)</li>
+                    <li>Y-axis: Equivalent plastic strain ε (-)</li>
+                    <li>9 curves total in different colors/styles:</li>
+                    <ul style="margin-left: 20px;">
+                        <li>Line styles: 110 m/min (solid) | 145 m/min (dashed) | 180 m/min (dotted)</li>
+                        <li>Colors: 0.2 mm feed (blue) | 0.4 mm feed (green) | 0.6 mm feed (red)</li>
+                    </ul>
+                    <li>Show clear separation by feed rate</li>
+                    <li>Annotations: "Increasing feed rate" and "Near cutting edge effect"</li>
+                </ul>-->
+            </div>
+                <div class="highlight-box">
+                    <div class="box-title">Feed Rate Effect</div>
+                    <p>Dominates shear plane length</p>
+                    <p>Higher feed → Longer shear plane</p>
+                    <p>0.2 mm: ~0.4 mm | 0.6 mm: ~1.0 mm</p>
+                    <div class="box-title"> Cutting speed effect</div>
+                    <p>Minimal influence on strain distribution</p>
+                    <p>Curves nearly overlap within feed groups</p>
+                    <p>Geometry > Kinematics</p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Orthogonal Cutting Investigation</span>
+        <span>Necpal, Jurina, Kuruc</span>
+    </div>
+</div>
+
+<!-- Slide 12: Discussion -->
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Critical Evaluation: Analytical vs. Numerical Approaches</h2>
+    </div>
+    <div class="slide-content">
+        <div class="two-column">
+            <div class="column">
+                <h3>Oxley Analytical Model</h3>
+                <p style="margin: 15px 0;"><strong class="strengths">Strengths:</strong></p>
+                <ul style="font-size: 0.9em;">
+                    <li>Computationally fast (&lt;1 second)</li>
+                    <li>Provides fundamental insights</li>
+                    <li>Good for initial predictions</li>
+                    <li>Captures trends correctly</li>
+                </ul>
+                <p style="margin: 15px 0;"><strong class="limitations">Limitations:</strong></p>
+                <ul style="font-size: 0.9em;">
+                    <li>Constant strain assumption invalid</li>
+                    <li>2D orthogonal only</li>
+                    <li>Typically 20-30% error in forces</li>
+                    <li>Cannot predict chip segmentation</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>FEM Simulation</h3>
+                <p style="margin: 15px 0;"><strong class="strengths">Strengths:</strong></p>
+                <ul style="font-size: 0.9em;">
+                    <li>Accurate predictions (±5-10%)</li>
+                    <li>Visualizes hidden phenomena</li>
+                    <li>Captures complex material behavior</li>
+                    <li>Flexible for 3D, special processes</li>
+                </ul>
+                <p style="margin: 15px 0;"><strong class="limitations">Limitations:</strong></p>
+                <ul style="font-size: 0.9em;">
+                    <li>Computationally expensive (4-8 hours)</li>
+                    <li>Requires expert setup</li>
+                    <li>Sensitive to material model</li>
+                    <li>Mesh dependency issues</li>
+                </ul>
+            </div>
+        </div>
+        <div class="highlight-box" style="margin-top: 30px; background: rgba(74, 158, 255, 0.2);">
+            <div class="box-title">🎯 Integrated Approach - Best Practice</div>
+            <div class="two-column" style="margin-top: 15px;">
+                <ul style="font-size: 1em;">
+                    <li>Use Oxley for rapid screening and optimization</li>
+                    <li>Validate with FEM for critical applications</li>
+                </ul>
+                <ul style="font-size: 1em;">
+                    <li>Both complement experimental work</li>
+                    <li>Select method based on accuracy needs vs. resources</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Orthogonal Cutting Investigation</span>
+        <span>Necpal, Jurina, Kuruc</span>
+    </div>
+</div>
+
+<!-- Slide 13: Conclusions -->
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Key Findings and Contributions</h2>
+    </div>
+    <div class="slide-content">
+        <div class="conclusion-item">
+            <span class="number">1</span>
+            <div style="margin-left: 60px;">
+                <strong style="color: #4a9eff;">Primary Finding</strong>
+                <p>FEM reveals non-uniform strain distribution along shear plane, contrary to Oxley's constant strain assumption. Strain increases systematically from free surface toward cutting edge.</p>
+            </div>
+        </div>
+        <div class="conclusion-item">
+            <span class="number">2</span>
+            <div style="margin-left: 60px;">
+                <strong style="color: #4a9eff;">Model Accuracy</strong>
+                <p>FEM predictions closely match experimental results (±5-10%). Oxley provides useful trends with 20-30% deviation in absolute values.</p>
+            </div>
+        </div>
+        <div class="conclusion-item">
+            <span class="number">3</span>
+            <div style="margin-left: 60px;">
+                <strong style="color: #4a9eff;">Parameter Effects</strong>
+                <p>Feed rate dominates strain distribution geometry through shear plane length. Cutting speed has minimal influence on strain distribution patterns.</p>
+            </div>
+        </div>
+        <div class="conclusion-item">
+            <span class="number">4</span>
+            <div style="margin-left: 60px;">
+                <strong style="color: #4a9eff;">Practical Implications</strong>
+                <p>Constant strain assumption valid only for curved shear plane. Guides selection of modeling approach: Oxley for screening, FEM for critical applications.</p>
+            </div>
+        </div>
+        <div class="highlight-box" style="margin-top: 20px;">
+            <div class="box-title">Industrial Relevance</div>
+            <p>Supports improved tool design • Enables process optimization • Foundation for advanced machining strategies</p>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Orthogonal Cutting Investigation</span>
+        <span>Necpal, Jurina, Kuruc</span>
+    </div>
+</div>
+
+<!-- Slide 14: Acknowledgments -->
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Acknowledgments and References</h2>
+    </div>
+    <div class="slide-content">
+        <div class="highlight-box" style="text-align: center; margin-bottom: 40px;">
+            <div class="box-title">This work was supported by:</div>
+            <p style="font-size: 1.2em; margin: 15px 0;">Science Grant Agency – Project <strong>VEGA 1/0391/24</strong></p>
+            <p style="font-size: 1.2em; margin: 15px 0;">Project <strong>KEGA 0007STU-4/2025</strong></p>
+        </div>
+
+        <div class="two-column">
+            <div>
+                <h3 style="color: #4a9eff; margin-bottom: 15px;">Key References</h3>
+                <ul style="font-size: 0.85em; line-height: 1.8;">
+                    <li>Merchant (1998) - Machining theory foundations</li>
+                    <li>Oxley (1989) - Original analytical model</li>
+                    <li>Lalwani et al. (2009) - Extended Oxley for J-C model</li>
+                    <li>Pantalé et al. (2022) - Python implementation</li>
+                    <li>Kuruc et al. (2022) - Experimental C45 data</li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="color: #4a9eff; margin-bottom: 15px;">Additional References</h3>
+                <ul style="font-size: 0.85em; line-height: 1.8;">
+                    <li>Ortiz-de-Zarate et al. (2021) - Friction analysis</li>
+                    <li>Afrasiabi et al. (2021) - FEM-SPH comparison</li>
+                    <li>Denkena et al. (2020) - Chip formation monitoring</li>
+                    <li>Pimenov & Guzeev (2016) - Flank wear modeling</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 10px; text-align: center;">
+            <h3 style="color: #4a9eff; margin-bottom: 15px;">Contact Information</h3>
+            <p>martin.necpal@stuba.sk</p>
+            <p>Institute of Production Technologies</p>
+            <p>Faculty of Materials Science and Technology</p>
+            <p>Slovak University of Technology in Bratislava</p>
+            <p style="margin-top: 30px; font-size: 1.5em; color: #4a9eff;"><strong>Thank you for your attention!</strong></p>
+            <p style="margin-top: 10px;">Questions?</p>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Orthogonal Cutting Investigation</span>
+        <span>Necpal, Jurina, Kuruc</span>
+    </div>
+</div>
+
+    </div>
+
+    <div class="nav-buttons">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

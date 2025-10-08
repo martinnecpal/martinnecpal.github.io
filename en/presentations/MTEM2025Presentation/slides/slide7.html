@@ -1,0 +1,56 @@
+<!-- Slide 7: FEM Setup -->
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">2D Orthogonal FEM Cutting Model Configuration</h2>
+    </div>
+    <div class="slide-content">
+        <div class="two-column">
+            <div class="image-placeholder">
+                <p><strong>IMAGE: Figure 2 - DEFORM Model Setup</strong></p>
+                <p>Insert image showing:</p>
+                <ul style="list-style: disc; margin-left: 20px; text-align: left;">
+                    <li>FEM mesh (refined in cutting zone)</li>
+                    <li>Tool geometry</li>
+                    <li>Boundary conditions with arrows</li>
+                    <li>Color-coded mesh density</li>
+                </ul>
+            </div>
+            <div>
+                <div class="column">
+                    <h3>Model Specifications</h3>
+                    <p><strong>Software:</strong> DEFORM 2D</p>
+                    <p><strong>Solver:</strong> Implicit Lagrangian</p>
+                </div>
+                <div class="column" style="margin-top: 20px;">
+                    <h3>Workpiece</h3>
+                    <ul style="font-size: 0.9em;">
+                        <li>Material: C45 (Johnson-Cook)</li>
+                        <li>Element type: Visco-plastic</li>
+                        <li>Mesh: 0.025-0.5 mm</li>
+                        <li>Boundary: Fixed on left</li>
+                    </ul>
+                </div>
+                <div class="column" style="margin-top: 20px;">
+                    <h3>Tool</h3>
+                    <ul style="font-size: 0.9em;">
+                        <li>Rigid body</li>
+                        <li>Thermal properties included</li>
+                        <li>Moving boundary (v<sub>c</sub>)</li>
+                    </ul>
+                </div>
+                <div class="column" style="margin-top: 20px;">
+                    <h3>Contact Properties</h3>
+                    <ul style="font-size: 0.9em;">
+                        <li>Friction coefficient: 0.5</li>
+                        <li>Heat transfer: 45 kW/m²°C</li>
+                        <li>Chip separation: Remeshing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Orthogonal Cutting Investigation</span>
+        <span>Necpal, Jurina, Kuruc</span>
+    </div>
+</div>

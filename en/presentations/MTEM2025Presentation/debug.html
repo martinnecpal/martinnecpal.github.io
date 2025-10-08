@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Debug Presentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .debug-panel {
+            position: fixed;
+            top: 60px;
+            right: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #4ade80;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #4ade80;
+            z-index: 2000;
+            font-family: monospace;
+            font-size: 0.9em;
+            max-width: 300px;
+        }
+        .debug-panel h3 {
+            margin: 0 0 10px 0;
+            color: #4a9eff;
+        }
+        .debug-panel button {
+            margin: 5px 0;
+            padding: 5px 10px;
+            background: #0f3460;
+            border: 1px solid #4a9eff;
+            color: #4a9eff;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .debug-panel button:hover {
+            background: #4a9eff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-counter">
+        <span id="currentSlide">1</span> / <span id="totalSlides">?</span>
+    </div>
+
+    <div class="debug-panel">
+        <h3>Debug Panel</h3>
+        <div id="debugInfo">Loading...</div>
+        <button onclick="testNavigation()">Test Navigation</button>
+        <button onclick="location.reload()">Reload Page</button>
+    </div>
+
+    <div class="presentation" id="presentation">
+        <div class="slide active title-slide">
+            <h1 class="main-title">Debug Test Slide 1</h1>
+            <p>This is slide 1</p>
+        </div>
+        <div class="slide">
+            <div class="slide-header">
+                <h2 class="slide-title">Test Slide 2</h2>
+            </div>
+            <div class="slide-content">
+                <p>This is slide 2</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-header">
+                <h2 class="slide-title">Test Slide 3</h2>
+            </div>
+            <div class="slide-content">
+                <p>This is slide 3</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        function updateDebugInfo() {
+            const slides = document.querySelectorAll('.slide');
+            let info = `
+                Slides found: ${slides.length}<br>
+                Current slide: ${currentSlide + 1}<br>
+                Total slides: ${totalSlides}<br>
+                <br>
+                Active slide: ${document.querySelector('.slide.active') ? 'Yes' : 'No'}<br>
+                <br>
+                Functions defined:<br>
+                - initPresentation: ${typeof initPresentation}<br>
+                - changeSlide: ${typeof changeSlide}<br>
+                - showSlide: ${typeof showSlide}<br>
+            `;
+            document.getElementById('debugInfo').innerHTML = info;
+        }
+
+        function testNavigation() {
+            console.log('Testing navigation...');
+            console.log('Current slide:', currentSlide);
+            console.log('Total slides:', totalSlides);
+            changeSlide(1);
+            setTimeout(updateDebugInfo, 100);
+        }
+
+        // Update debug info every second
+        setInterval(updateDebugInfo, 1000);
+        setTimeout(updateDebugInfo, 100);
+    </script>
+</body>
+</html>
