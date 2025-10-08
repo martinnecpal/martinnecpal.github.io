@@ -1,10 +1,46 @@
 /* General Page Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
     background-color: #E3F2FD; /* Soft Ice Blue */
     color: #2C2C2C; /* Deep Charcoal */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+/* Typography - Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    color: #1a1a1a;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1.1rem; }
+
+/* Typography - Paragraphs */
+p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+/* Typography - Links */
+a {
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+strong, b {
+    font-weight: 600;
+}
 
 .lang-container {
     margin: 10px 0; /* Adds spacing around the language switcher */
@@ -55,7 +91,9 @@ body {
 }
 
 .sidebar-content h2 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .sidebar-content ul {
@@ -71,7 +109,8 @@ body {
 .sidebar-content a {
     text-decoration: none;
     color: #002B5B; /* Midnight Blue */
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 1.05rem;
 }
 
 .sidebar-content a:hover {
@@ -84,8 +123,8 @@ body {
     flex-grow: 1;
     padding: 20px;
     background-color: #E3F2FD; /* Soft Ice Blue */
-    padding: 20px;
-    font-size: large;
+    font-size: 1.05rem; /* Slightly larger for better readability */
+    line-height: 1.7;
 }
 
 /* Top Menu */
@@ -110,8 +149,9 @@ body {
 .top-menu a {
     text-decoration: none;
     color: rgb(22, 1, 83);
-    font-size: xx-large;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.3px;
 }
 
 .top-menu a:hover {
@@ -194,7 +234,9 @@ a:hover {
 /* Style for Centering and Enlarging the Name */
 .name-item {
     text-align: center;  /* Centers text */
-    font-size: 34px;     /* Increases font size */
-    font-weight: bold;   /* Makes text bold */
-    margin-bottom: 15px; /* Adds spacing below */
+    font-size: 1.875rem; /* 30px - Professional size */
+    font-weight: 700;    /* Makes text bold */
+    margin-bottom: 20px; /* Adds spacing below */
+    letter-spacing: -0.5px; /* Tighter spacing for better look */
+    line-height: 1.2;
 }
