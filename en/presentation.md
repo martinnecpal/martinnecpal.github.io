@@ -8,7 +8,8 @@ lang: "en"
 <link rel="stylesheet" href="/assets/css/presentations.css">
 
 <div id="presentations-container">
-    <p>Načítavam prezentácie...</p>
+    <p>Loading presentations...</p>
 </div>
 
-<script src="/assets/js/presentations.js"></script>
+<script src="/assets/js/presentations-core.js"></script>
+<script src="/assets/js/presentations-en.js"></script>

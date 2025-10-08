@@ -11,4 +11,5 @@ lang: "sk"
     <p>Načítavam prezentácie...</p>
 </div>
 
-<script src="/assets/js/presentations.js"></script>
+<script src="/assets/js/presentations-core.js"></script>
+<script src="/assets/js/presentations-sk.js"></script>

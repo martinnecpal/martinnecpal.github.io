@@ -42,5 +42,18 @@
     "photo": "/sk/presentations/albania/slide1.png",
     "type": "conference",
     "tags": ["conference"]
+  },
+  {
+    "id": "MTEM2025",
+    "name": "MODERN TECHNOLOGIES IN MANUFACTURING",
+    "start_date": "2025-10-08",
+    "conferenceUrl": "https://mtem.utcluj.ro/",
+    "location": "Cluj Napoca, Romania",
+    "description": "Conference presentation in Cluj Napoca Romania (content to be added).",
+    "notes": "Available resources: <a href='/presentations/paper.pdf' target='_blank'>Research Paper (PDF)</a>, <a href='/images/poster.jpg' target='_blank'>Conference Poster</a>, <a href='https://example.com' target='_blank'>Project Website</a>",
+    "photo": "/sk/presentations/albania/slide1.png",
+    "presentationUrl": "/en/presentations/MTEM2025Presentation/index-combined.html",
+    "type": "conference",
+    "tags": ["conference"]
   }
 ]
