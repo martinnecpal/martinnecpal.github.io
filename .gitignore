@@ -24,8 +24,9 @@ vendor/
 .DS_Store
 Thumbs.db
 
-# Claude Code documentation
+# Claude Code documentation and memory
 CLAUDE.md
+.claude/
 
 # Bundler dependencies (if using GitHub Pages)
 vendor/bundle/
