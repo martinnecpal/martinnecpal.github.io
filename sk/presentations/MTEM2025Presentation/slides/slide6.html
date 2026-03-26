@@ -1,0 +1,52 @@
+<!-- Slide 6: Johnson-Cook Model -->
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Johnson-Cook Material Model for C45 Steel</h2>
+    </div>
+    <div class="slide-content">
+        <div class="equation" style="font-size: 1.2em;">
+            <p><strong>Johnson-Cook Constitutive Equation:</strong></p>
+            σ<sup>y</sup> = [A + Bε<sup>n</sup>] · [1 + C·ln(ε̇/ε̇<sub>0</sub>)] · [1 - ((T-T<sub>w</sub>)/(T<sub>m</sub>-T<sub>w</sub>))<sup>m</sup>]
+            <p style="margin-top: 15px; font-size: 0.9em; color: #4a9eff;">
+                <span style="color: #4ade80;">[Strain Hardening]</span> ·
+                <span style="color: #fbbf24;">[Strain Rate]</span> ·
+                <span style="color: #f87171;">[Temperature Softening]</span>
+            </p>
+        </div>
+        <div class="two-column">
+            <div>
+                <table style="margin: 30px 0;">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Value</th>
+                    <th>Unit</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>A</td><td>553.1</td><td>MPa</td><td>Yield strength</td></tr>
+                <tr><td>B</td><td>600.8</td><td>MPa</td><td>Hardening modulus</td></tr>
+                <tr><td>C</td><td>0.0134</td><td>-</td><td>Strain rate sensitivity</td></tr>
+                <tr><td>n</td><td>0.234</td><td>-</td><td>Hardening exponent</td></tr>
+                <tr><td>m</td><td>1</td><td>-</td><td>Thermal softening exponent</td></tr>
+                <tr><td>ε̇<sub>0</sub></td><td>1</td><td>s<sup>-1</sup></td><td>Reference strain rate</td></tr>
+                <tr><td>T<sub>w</sub></td><td>25</td><td>°C</td><td>Room temperature</td></tr>
+                <tr><td>T<sub>m</sub></td><td>1460</td><td>°C</td><td>Melting temperature</td></tr>
+            </tbody>
+                </table>
+            </div>
+            <div class="image-placeholder" style="min-height: 360px;">
+                <img src="JC_model.png">
+                <p><strong>IMAGE: Flow Stress vs. Strain Graph</strong></p>
+                <p>Multiple curves showing flow stress at different temperatures:</p>
+                <p>25°C, 200°C, 400°C, 600°C, 800°C</p>
+                <p>Demonstrating thermal softening effect</p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Orthogonal Cutting Investigation</span>
+        <span>Necpal, Jurina, Kuruc</span>
+    </div>
+</div>
