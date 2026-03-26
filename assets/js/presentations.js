@@ -11,6 +11,9 @@
 async function loadPresentations() {
     try {
         const response = await fetch('/sk/presentations.json');
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status} fetching /sk/presentations.json`);
+        }
         const presentations = await response.json();
         
         // Sort presentations by date (newest first)
@@ -113,7 +116,7 @@ function createTitleHtml(presentation) {
  */
 function createButtonHtml(presentation) {
     if (presentation.presentationUrl) {
-        return `<a href="#" onclick="openPresentation('${presentation.presentationUrl}', '${presentation.name}'); return false;" 
+        return `<a href="#" onclick="openPresentation('${presentation.presentationUrl}'); return false;"
                    class="presentation-button">
                     Otvoriť prezentáciu
                 </a>`;
@@ -141,7 +144,7 @@ function createNotesHtml(presentation) {
  * @returns {string} - Tags HTML string
  */
 function createTagsHtml(presentation) {
-    return presentation.tags.map(tag => 
+    return (presentation.tags || []).map(tag =>
         `<span class="presentation-tag">${tag}</span>`
     ).join('');
 }
@@ -176,9 +179,10 @@ function formatDateRange(presentation) {
  * @param {string} url - URL of the presentation to open
  * @param {string} name - Name for the window title
  */
-function openPresentation(url, name) {
-    window.open(url, 'PresentationWindow', 
-        `width=1200,height=800,top=100,left=100,noopener,noreferrer,titlebar=yes,title=${encodeURIComponent(name)}`);
+function openPresentation(url) {
+    const win = window.open(url, 'PresentationWindow',
+        'width=1200,height=800,top=100,left=100');
+    if (win) win.opener = null;
 }
 
 // Image tooltip functionality
