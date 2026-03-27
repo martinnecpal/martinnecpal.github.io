@@ -1,5 +1,16 @@
 :root {
     --header-height: 70px;
+
+    /* Unified color palette */
+    --primary:     #2563eb;
+    --primary-lt:  #dbeafe;
+    --accent:      #0ea5e9;
+    --text-dark:   #1e293b;
+    --text-muted:  #64748b;
+    --bg-page:     #f8fafc;
+    --bg-sidebar:  #f1f5f9;
+    --bg-card:     #ffffff;
+    --border:      #e2e8f0;
 }
 
 /* General Page Styles */
@@ -7,8 +18,8 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     font-size: 20px;
     line-height: 1.8;
-    background-color: #E3F2FD; /* Soft Ice Blue */
-    color: #2C2C2C; /* Deep Charcoal */
+    background-color: var(--bg-page);
+    color: var(--text-dark);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -20,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.3;
     margin-bottom: 1rem;
     margin-top: 1.5rem;
-    color: #1a1a1a;
+    color: var(--text-dark);
 }
 
 h1 { font-size: clamp(1.75rem, 5vw, 2.5rem); }
@@ -34,23 +45,31 @@ h6 { font-size: clamp(1rem, 1.5vw, 1.1rem); }
 p {
     margin-bottom: 1.25rem;
     line-height: 1.85;
+    color: var(--text-dark);
 }
 
-/* Typography - Links */
+/* Links */
 a {
+    color: var(--primary);
     font-weight: 500;
+    text-decoration: none;
     transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent);
 }
 
 strong, b {
     font-weight: 600;
 }
 
+/* Language switcher */
 .lang-container {
-    margin: 10px 0; /* Adds spacing around the language switcher */
+    margin: 10px 0;
     display: flex;
-    justify-content: center; /* Ensures inner elements are centered */
-    width: 100%; /* Makes sure it spans the full width */
+    justify-content: center;
+    width: 100%;
 }
 
 .lang-switcher {
@@ -60,18 +79,17 @@ strong, b {
 
 .lang-switcher a, .lang-switcher .selected-lang {
     text-decoration: none;
-    color: rgb(167, 23, 23);
+    color: var(--primary);
     font-weight: bold;
 }
 
 .lang-switcher a:hover {
-    color: #00bfff;
+    color: var(--accent);
 }
 
 .selected-lang {
-    color: #ffcc00; /* Highlight selected language */
+    color: var(--text-muted);
 }
-
 
 /* Container Layout */
 .container {
@@ -83,26 +101,30 @@ strong, b {
     padding-top: var(--header-height);
 }
 
-/* Sidebar (Side Menu) */
+/* Sidebar */
 .sidebar {
-    background-color: #f4f5eb; /* Snowy White */
-    color: #002B5B; /* Midnight Blue */
-    padding: 20px;
-    width: 300px;
-    min-width: 240px;
-    max-width: 300px;
+    background-color: var(--bg-sidebar);
+    color: var(--text-dark);
+    padding: 24px 20px;
+    width: 250px;
+    min-width: 220px;
+    max-width: 250px;
     position: fixed;
     top: var(--header-height);
     left: 0;
     height: calc(100vh - var(--header-height));
-    overflow-y: auto; /* Allow scrolling if content overflows */
-    overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-right: 1px solid #e2e8f0;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
 }
 
 .sidebar-content h2 {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.5px;
+    color: var(--text-dark);
 }
 
 .sidebar-content ul {
@@ -112,27 +134,28 @@ strong, b {
 
 .sidebar-content li {
     margin-bottom: 10px;
-    padding-left: 20px; /* Moves text slightly left */
+    padding-left: 8px;
 }
 
 .sidebar-content a {
     text-decoration: none;
-    color: #002B5B; /* Midnight Blue */
+    color: var(--text-dark);
     font-weight: 500;
     font-size: 1.05rem;
+    transition: color 0.2s ease;
 }
 
 .sidebar-content a:hover {
-    text-decoration: underline;
-    color: #FFD700; /* Sunshine Yellow */
+    color: var(--primary);
+    text-decoration: none;
 }
 
 /* Main Content */
 .content {
     flex-grow: 1;
-    margin-left: 300px; /* Match sidebar width to prevent overlap */
-    padding: 20px 40px;
-    background-color: #E3F2FD; /* Soft Ice Blue */
+    margin-left: 250px;
+    padding: 32px 40px;
+    background-color: var(--bg-page);
     font-size: 1.05rem;
     line-height: 1.85;
     min-width: 0;
@@ -140,7 +163,7 @@ strong, b {
     box-sizing: border-box;
 }
 
-/* Centered inner wrapper for main content */
+/* Centered inner wrapper */
 .content-inner {
     max-width: 1000px;
     margin: 0 auto;
@@ -148,46 +171,58 @@ strong, b {
 
 /* Card-style section */
 .card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 24px 28px;
-    margin-bottom: 24px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    background-color: var(--bg-card);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
 }
 
 .card h2 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #1565C0;
+    font-size: 1.15rem;
+    color: #1e40af;
+    font-weight: 600;
     margin-top: 0;
     margin-bottom: 0.75rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #BBDEFB;
+    border-bottom: 2px solid var(--primary-lt);
 }
 
-/* Keyword highlight badge */
+/* Keyword / tag badge */
 .keyword {
-    background-color: #BBDEFB;
-    color: #0D47A1;
+    background: #dbeafe;
+    color: #1d4ed8;
     font-weight: 600;
-    padding: 1px 7px;
-    border-radius: 4px;
+    padding: 2px 6px;
+    border-radius: 6px;
     white-space: nowrap;
-    font-size: 0.95em;
+    font-size: 0.92em;
 }
 
-/* Top Menu */
+/* Top Menu — Option A: white + bottom border */
 .top-menu {
-    background-color: #1E90FF; /* Sky Blue */
-    color: white;
-    padding: 20px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
     text-align: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: var(--header-height);
     z-index: 1000;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
 }
 
 .top-menu ul {
@@ -198,55 +233,51 @@ strong, b {
 
 .top-menu li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 18px;
 }
 
 .top-menu a {
     text-decoration: none;
-    color: rgb(22, 1, 83);
-    font-size: 1.5rem;
+    color: var(--text-dark);
+    font-size: 1.1rem;
     font-weight: 600;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.2px;
+    transition: color 0.2s ease;
 }
 
 .top-menu a:hover {
-    color: #00bfff;
+    color: var(--primary);
 }
 
-/* Links */
-a {
-    color: #1E90FF; /* Sky Blue */
-    text-decoration: none;
+.top-menu a.active {
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 2px;
 }
 
-a:hover {
-    color: #FFD700; /* Sunshine Yellow */
-}
-
+/* Profile avatar */
 .author__avatar {
     display: table-cell;
     vertical-align: top;
     width: max-content;
-    /* set width only, for non-square avatars
-     height: 36px;*/
-  
+
     img {
       max-width: 100%;
-      width: 220px;
+      width: 200px;
       border-radius: 50%;
     }
-  }
+}
 
 /* Image Preview Styling */
 .image-preview {
     display: none;
     position: absolute;
-    border: 2px solid #ccc;
+    border: 1px solid var(--border);
     background: white;
     padding: 5px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.2s ease;
 }
 
 .image-preview.show {
@@ -256,16 +287,16 @@ a:hover {
 /* Social Menu */
 .social-menu {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 24px;
 }
 
 .social-menu ul {
     list-style: none;
     padding: 0;
     display: flex;
-    flex-direction: column; /* Display links top-down */
-    align-items: center; /* Center items */
-    gap: 10px; /* Space between links */
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .social-menu li {
@@ -275,29 +306,35 @@ a:hover {
 
 .social-menu a {
     text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    color: #333;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-dark);
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: color 0.2s ease;
+}
+
+.social-menu a:hover {
+    color: var(--primary);
 }
 
 .social-menu i {
-    font-size: 24px;
+    font-size: 1.1rem;
 }
 
-/* Style for Centering and Enlarging the Name */
+/* Name item in sidebar */
 .name-item {
-    text-align: center;  /* Centers text */
-    font-size: 1.875rem; /* 30px - Professional size */
-    font-weight: 700;    /* Makes text bold */
-    margin-bottom: 20px; /* Adds spacing below */
-    letter-spacing: -0.5px; /* Tighter spacing for better look */
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
     line-height: 1.2;
+    color: var(--text-dark);
 }
 
-/* Responsive Design - Mobile and Extreme Zoom Levels */
+/* Responsive Design */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -306,10 +343,13 @@ a:hover {
 
     .sidebar {
         position: relative;
+        top: 0;
         width: 100%;
         max-width: 100%;
         height: auto;
         min-width: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
     }
 
     .content {
@@ -323,18 +363,18 @@ a:hover {
     }
 
     .top-menu a {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .name-item {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 }
 
-/* Extra small screens and very high zoom levels */
+/* Extra small screens */
 @media (max-width: 480px) {
     body {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .sidebar {
@@ -346,15 +386,19 @@ a:hover {
     }
 
     .top-menu {
-        padding: 15px 10px;
+        padding: 0 16px;
     }
 
-    .top-menu a {
-        font-size: 1rem;
+    .top-menu li {
         margin: 0 10px;
     }
 
+    .card {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
     .sidebar-content li {
-        padding-left: 10px;
+        padding-left: 4px;
     }
 }

@@ -3,7 +3,7 @@
     <ul>
         {% assign menu = site.data.navigation[page.lang] %}
         {% for item in menu %}
-          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+          <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a></li>
         {% endfor %}
 
     </ul>
