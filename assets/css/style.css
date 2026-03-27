@@ -84,9 +84,9 @@ strong, b {
     background-color: #f4f5eb; /* Snowy White */
     color: #002B5B; /* Midnight Blue */
     padding: 20px;
-    width: min(350px, 30vw); /* Adapts to viewport width */
-    min-width: 250px; /* Prevents too narrow */
-    max-width: 400px; /* Prevents too wide */
+    width: 280px;
+    min-width: 220px;
+    max-width: 280px;
     position: fixed; /* Sticks it to the left */
     top: 0;
     left: 0;
@@ -126,15 +126,29 @@ strong, b {
 /* Main Content */
 .content {
     flex-grow: 1;
-    margin-left: min(350px, 30vw); /* Match sidebar width to prevent overlap */
-    padding: 20px 40px; /* More horizontal padding for better text flow */
+    margin-left: 280px; /* Match sidebar width to prevent overlap */
+    padding: 20px 40px;
     background-color: #E3F2FD; /* Soft Ice Blue */
-    font-size: 1.05rem; /* Slightly larger for better readability */
+    font-size: 1.05rem;
     line-height: 1.7;
-    width: calc(100vw - min(350px, 30vw)); /* Use full available width */
-    min-width: 0; /* Allow content to shrink if needed */
-    overflow-wrap: break-word; /* Break long words if needed */
+    min-width: 0;
+    overflow-wrap: break-word;
     box-sizing: border-box;
+}
+
+/* Centered inner wrapper for main content */
+.content-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Card-style section */
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
 }
 
 /* Top Menu */
@@ -268,8 +282,12 @@ a:hover {
 
     .content {
         margin-left: 0;
-        max-width: 100%;
         width: 100%;
+        padding: 16px 20px;
+    }
+
+    .content-inner {
+        max-width: 100%;
     }
 
     .top-menu a {
