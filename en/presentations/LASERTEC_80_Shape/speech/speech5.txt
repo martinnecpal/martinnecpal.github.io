@@ -1,0 +1,14 @@
+SLIDE 5 — Machine Construction: High-Dynamic Linear Drive System
+================================================================
+
+The LASERTEC 80 Shape is classified as a highly dynamic laser machining centre. The key reason for this is the use of linear drives in the X and Y axes.
+
+Linear drives have no rotating parts, no ball screws, and no mechanical backlash. The result is exceptional dynamic performance: the rapid traverse speed in X and Y reaches 120 metres per minute, and the acceleration exceeds 1.2 g — that means the axes accelerate faster than gravitational acceleration. For the Z axis, the rapid traverse is 30 metres per minute.
+
+The scanning speed of the laser beam itself is adjustable between 100 and 4000 millimetres per second. This wide range allows the machine to optimise between material removal rate at high speed and precision at lower speeds.
+
+The fourth and fifth axes — B and C — use water-cooled torque disc motors. These direct-drive motors eliminate gear backlash and the water cooling prevents thermal distortion during long machining runs. This is especially important when structuring large injection molds where machining can last several hours.
+
+This combination of linear drives and torque discs is what allows the LASERTEC 80 Shape to perform five-axis laser structuring of large forming tools and to machine narrow molds with exhaust channels — geometries that would be inaccessible with simpler kinematics.
+
+[Estimated speaking time: ~60 seconds]

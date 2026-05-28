@@ -1,0 +1,16 @@
+SLIDE 12 — LASERTEC 80 vs. 210 Shape: Size Comparison
+======================================================
+
+The LASERTEC 80 Shape belongs to a product family. Its larger counterpart is the LASERTEC 210 Shape. This table shows the key differences.
+
+In terms of working volume, the 210 Shape is dramatically larger: 1800 mm in X versus 800 mm, 2100 mm in Y versus 500 mm. The five-axis table diameter grows from 200 or 400 mm on the 80 Shape to 1850 mm on the 210 Shape. Maximum table load increases from 40 kg to 10 tonnes.
+
+However, the LASERTEC 80 Shape has a clear advantage in dynamics. Its rapid traverse in X and Y is 120 metres per minute, compared to only 60 and 40 metres per minute for the 210 Shape. The 80 Shape achieves over 1.2 g acceleration, which is not specified for the larger machine. In other words, the 80 Shape is significantly faster and more agile for small to medium workpieces.
+
+Both machines use the same fiber laser technology with the same power options — 100 or 200 watts.
+
+The weight difference is enormous: 7 tonnes for the 80 Shape versus 42 tonnes for the 210 Shape. The installation footprint grows from 4.5 by 6 metres to 10 by 12 metres.
+
+In summary: the LASERTEC 80 Shape is the right choice for precision parts, cutting inserts, and injection molds of medium size — which is exactly the application domain at CE5AM MTF STU Trnava. The 210 Shape is designed for large automotive stamping dies and body panels.
+
+[Estimated speaking time: ~70 seconds]

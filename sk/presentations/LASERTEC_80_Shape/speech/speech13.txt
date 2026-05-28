@@ -1,0 +1,20 @@
+SLIDE 13 — Experimental Parameters: Typical Process Parameters
+===============================================================
+
+This table summarises the parameter ranges actually used in experiments conducted on the LASERTEC 80 Shape at CE5AM MTF STU Trnava. These are not theoretical values from the datasheet — they are the real settings used in published student research on sintered carbide, titanium alloys, and tool steel.
+
+Laser power was varied between 10 and 100 watts, which corresponds to 10 to 100 percent of the machine maximum. In several experiments, power was expressed as a percentage rather than absolute watts, because the relative setting directly controls the peak pulse energy.
+
+Pulse frequency ranged from 20 to 100 kilohertz. Higher frequencies mean shorter intervals between pulses and generally lower peak power per pulse. The choice of frequency strongly influences the ablation rate and surface roughness.
+
+Scanning speed ranged from 200 to 4000 millimetres per second. Speed interacts with pulse frequency to determine the overlap between consecutive pulses — a critical parameter for surface quality.
+
+The focal distance most commonly used for micro-machining was 100 millimetres, giving a spot diameter in the range of 25 to 100 micrometres depending on exact settings.
+
+Layer removal depth was approximately 1 micrometre per pass. Final texture depths achieved ranged up to 40 micrometres per feature.
+
+Pulse duration varied significantly by mode — from 10 milliseconds in some configurations down to 120 nanoseconds in short-pulse mode. Shorter pulses reduce thermal effects but also reduce the energy per pulse.
+
+These parameter combinations formed the basis of Taguchi method design-of-experiment studies conducted on this machine.
+
+[Estimated speaking time: ~75 seconds]

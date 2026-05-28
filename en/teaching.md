@@ -35,7 +35,3 @@ Additionally, I authored a textbook on assembly and manufacturing technology usi
 DEFORM is a software product developed by STFC that uses the finite element method to solve engineering problems. Manual can be found [here](https://martinnecpal.github.io/deform-manual/).
 
 </div>
-
-
-
-</div>

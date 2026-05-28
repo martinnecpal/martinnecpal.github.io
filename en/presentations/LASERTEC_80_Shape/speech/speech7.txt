@@ -1,0 +1,18 @@
+SLIDE 7 — Control & Software: Control Architecture
+===================================================
+
+The machine uses a split control architecture with three distinct software layers.
+
+At the machine level, axis movements are managed by the Siemens 840D CNC — either the powerline or solutionline variant. This is an industry-standard controller widely used in high-precision machining centres.
+
+The laser process itself — pulse timing, power modulation, scanning patterns — is controlled by a dedicated separate system called LaserSoft 3D. This separation between CNC motion control and laser process control allows both systems to be optimised independently.
+
+For programming, the operator uses LpsWin. This is the software where the coordinate system is defined, bitmap files or vector geometries are imported, and the machining parameters are set. LpsWin then calculates the laser beam paths layer by layer and generates the NC program.
+
+Two important technical capabilities deserve mention. First, contour-parallel laser shaping: the focus point shifts dynamically along the Z axis to follow the actual three-dimensional surface contour of the workpiece. This is what makes true five-axis laser structuring possible — the beam always strikes the surface at the correct focal distance.
+
+Second, slicing: the material is removed in very thin layers, each typically 0.002 millimetres thick. Multiple passes build up the final geometry, giving very precise depth control.
+
+The photo on the right shows the 3D measuring probe tip — this probe is used after machining to verify the actual removal depth directly on the machine, before the workpiece is unclamped.
+
+[Estimated speaking time: ~70 seconds]

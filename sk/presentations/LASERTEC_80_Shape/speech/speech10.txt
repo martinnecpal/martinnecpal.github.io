@@ -1,0 +1,20 @@
+SLIDE 10 — Applications: Fields of Application
+===============================================
+
+The LASERTEC 80 Shape covers a wide range of industrial applications. Let me go through them.
+
+The primary application is injection mold texturing — engraving fine surface structures onto mold cavities. The texture transfers to every plastic part produced with that mold, so one laser-textured mold can create millions of parts with identical surface finish. This is far more cost-effective than chemical etching.
+
+The second application is chip-breaker manufacturing on cutting inserts made from sintered carbide. In experiments at CE5AM, chip-breaker geometries were laser-machined directly into cemented carbide inserts — a material that is extremely hard and difficult to machine by conventional methods. The laser removes material without contact, making it ideal for such hard and brittle substrates.
+
+Third, functional surface texturing for tribological purposes — creating patterns of micro-dimples, grooves, or hatching on surfaces to modify friction and wear behaviour. This was extensively studied at our faculty, including experiments on pressing tool faces to improve the deep drawing process.
+
+Fourth, five-axis laser structuring of large forming tools — such as stamping dies — where the complex three-dimensional geometry requires simultaneous five-axis movement.
+
+Fifth, machining of narrow molds with exhaust channels — geometries inaccessible to conventional cutting tools.
+
+And sixth, selective coating ablation — removing PVD or CVD coatings from specific areas of a coated part with a track width down to 40 micrometres.
+
+The machine is compatible with sintered carbide, titanium alloys, tool steels, and coated surfaces.
+
+[Estimated speaking time: ~75 seconds]

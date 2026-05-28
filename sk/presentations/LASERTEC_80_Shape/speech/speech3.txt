@@ -1,0 +1,14 @@
+SLIDE 3 — Laser Source: Fiber Nd:YAG Laser Key Parameters
+==========================================================
+
+The heart of the LASERTEC 80 Shape is a fiber Nd:YAG laser — specifically an ytterbium-doped fiber laser — operating at a wavelength of 1064 nanometres. This is in the near-infrared spectrum, which is well absorbed by most metals including steel, titanium alloys, and sintered carbides.
+
+The standard machine configuration delivers a maximum average power of 100 watts, with an optional upgrade available to 200 watts for more demanding applications.
+
+A critical characteristic is that this machine operates exclusively in pulsed mode. It cannot work in continuous wave. The pulse repetition frequency is adjustable between 20 and 100 kilohertz. This pulsed regime is essential — each pulse removes a very small amount of material, and the short pulse duration limits heat transfer into the surrounding material. This means we can achieve precise ablation with minimal thermal damage to the workpiece.
+
+The focused beam diameter is approximately 1 micrometre, which enables extremely fine structuring. The minimum achievable track width — the smallest line the laser can write — is down to 40 micrometres when using the Siemens 840D powerline controller.
+
+The same fiber laser technology is used in the larger brother model, the LASERTEC 210 Shape, which is designed for automotive-scale tooling.
+
+[Estimated speaking time: ~60 seconds]

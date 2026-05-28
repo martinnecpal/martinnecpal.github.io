@@ -1,0 +1,20 @@
+SLIDE 8 — Laser Texturing Process Chain
+=========================================
+
+This slide shows the complete end-to-end workflow for laser surface texturing on the LASERTEC 80 Shape, as applied in research at CE5AM MTF STU Trnava.
+
+The process begins with texture design in CAD software. The desired surface pattern — whether dimples, grooves, or a hexagonal array — is designed with precise geometry and dimensions.
+
+From CAD, the geometry is converted into either a bitmap image or a vector file. Bitmap files are especially common for complex textures, as they define material removal pattern pixel by pixel.
+
+This file is then imported into LpsWin, where the coordinate system is positioned, the slicing thickness is set — typically 0.002 millimetres per layer — and the minimum track length and path overlap are defined. LpsWin calculates all the laser beam paths and generates the NC program.
+
+Before actual production, the machine must be warmed up and a test run performed. The test run is always carried out on the non-functional side of the workpiece at reduced power — typically around 40 percent. This verifies that the coordinate positioning, power settings, and scanning parameters are all correct.
+
+Only after a successful test run does the production run begin on the functional surface.
+
+After machining, the result is measured. In our experiments, a 3D scanner from ATOS was used to capture the surface geometry, and a roughness meter was used to measure surface parameters like Ra. The CCD camera in the machine also provided in-situ verification.
+
+The steps in green — CAD, bitmap generation, and LpsWin — can use third-party software. The red steps — the actual machining and machine-specific programming — require the native LASERTEC software.
+
+[Estimated speaking time: ~75 seconds]

@@ -1,0 +1,18 @@
+SLIDE 15 — Summary / Closing
+==============================
+
+To summarise what we have covered today.
+
+The LASERTEC 80 Shape is a five-axis, high-dynamic precision laser machining centre by DMG MORI. Its fiber Nd:YAG laser operates at 1064 nanometres with up to 100 watts of average power, exclusively in pulsed mode at frequencies between 20 and 100 kilohertz. The minimum achievable track width is 40 micrometres.
+
+The machine's linear drives deliver over 1.2 g acceleration in X and Y — making it exceptionally fast for repositioning between features. Water-cooled torque discs in the rotational axes ensure long-term positioning accuracy even during extended machining runs.
+
+The complete software chain — LpsWin for programming, LaserSoft 3D for process control, and Siemens 840D CNC for axis motion — provides a well-integrated and reliable production environment.
+
+The machine has been extensively used at CE5AM MTF STU Trnava for research on laser micro-machining of sintered carbide cutting inserts, laser surface texturing of titanium alloys, and tribological texturing of tool steel pressing faces.
+
+All data presented in this presentation was sourced from official DMG MORI technical documentation from 2013 to 2017, and from the results of student research theses produced at our faculty.
+
+Thank you for your attention. I am happy to answer any questions.
+
+[Estimated speaking time: ~60 seconds]

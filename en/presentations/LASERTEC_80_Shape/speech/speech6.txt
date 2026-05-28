@@ -1,0 +1,20 @@
+SLIDE 6 — Key Machine Components
+=================================
+
+Let me now describe the individual physical components of the machine.
+
+Number one is the machining enclosure — a fully sealed workspace with special interlocked protective doors. The laser safety class is Class 1, meaning no laser radiation escapes when the doors are closed.
+
+Number two is the scanner head, mounted above the table. It consists of a system of lenses and mirrors that deflect the laser beam dynamically within the focal plane, covering a range of plus or minus 60 mm without any axis movement.
+
+Number three is the rotary-tilt table with B and C axes, equipped with EROWA clamping. Since laser machining is a non-contact process — no cutting forces are generated — workpieces can even be fixed with simple adhesive tape, as documented in experiments at our faculty.
+
+Numbers four and five are the machine control unit and the standalone control PC. These are two separate systems: the control unit handles the CNC axis movements, while the PC handles the scanner and laser source through LaserSoft 3D software.
+
+Number six is the CCD camera with up to 50 times magnification, adjustable in X and Y. It was used in experiments to capture images of the machined surface directly in the machine.
+
+Number seven is the 3D measuring probe — visible in the photo on the right. It allows fast workpiece alignment and can measure the actual material removal depth without removing the part from the machine.
+
+Finally, numbers eight and nine are the external extraction unit, which removes ablation particles and metallic vapour, and the water cooling unit for the torque discs and laser source.
+
+[Estimated speaking time: ~75 seconds]

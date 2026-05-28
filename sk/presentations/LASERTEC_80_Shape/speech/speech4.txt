@@ -1,0 +1,14 @@
+SLIDE 4 — Axes & Working Space: 5-Axis Configuration
+=====================================================
+
+The LASERTEC 80 Shape is a true five-axis system. Let me walk through the axis layout.
+
+The three linear axes give a working volume of 800 mm in X, 500 mm in Y, and 700 mm in Z. The Z axis is also the focusing axis — moving the laser head closer or farther from the workpiece changes the focal position.
+
+Beyond the three linear axes, the machine has two rotational axes. The B axis is a swivel axis with a range from minus 110 to plus 150 degrees. The C axis provides full 360-degree rotation. Together, B and C allow the laser beam to reach virtually any surface orientation on a complex three-dimensional workpiece — this is what enables five-axis laser structuring.
+
+The machine offers two table configurations. In three-axis mode, the table measures 900 by 600 millimetres and can carry up to 200 kilograms. In five-axis mode, a rotary-tilt table is used — available in two sizes: 200 mm diameter for loads up to 14 kg, or 400 mm diameter for loads up to 40 kg.
+
+The scanner head above the table can deflect the laser beam within a range of plus or minus 60 mm without moving the machine axes. Workpieces are held using EROWA clamping systems, which you can see in the interior photo on the right.
+
+[Estimated speaking time: ~60 seconds]

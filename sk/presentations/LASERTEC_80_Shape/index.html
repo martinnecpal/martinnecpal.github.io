@@ -1,0 +1,791 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>LASERTEC 80 Shape – MTF STU</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <style>
+    :root {
+      --mtf-red:   #c8001e;
+      --mtf-red2:  #e5001e;
+      --mtf-dark:  #8b0014;
+      --text:      #1a1a1a;
+      --muted:     #5a5a5a;
+      --bg:        #ffffff;
+      --line:      #c8001e;
+    }
+
+    .reveal-viewport { background: var(--bg); }
+    .reveal {
+      color: var(--text);
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: var(--mtf-dark);
+      text-transform: none;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-weight: 700;
+    }
+    .reveal h1 {
+      font-size: 1.9em;
+      border-left: 5px solid var(--mtf-red);
+      padding-left: 0.45em;
+      text-align: left;
+      line-height: 1.25;
+    }
+    .reveal h2 {
+      font-size: 1.3em;
+      border-bottom: 2px solid var(--mtf-red);
+      padding-bottom: 0.2em;
+      text-align: left;
+    }
+
+    .reveal ul, .reveal ol {
+      text-align: left;
+      font-size: 0.82em;
+      line-height: 1.95;
+    }
+    .reveal li { margin-bottom: 0.25em; }
+    .reveal ul > li::marker { color: var(--mtf-red); }
+
+    .reveal img {
+      max-height: 45vh;
+      object-fit: contain;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+    }
+
+    .reveal .top-rule {
+      border: none;
+      border-top: 4px solid var(--mtf-red);
+      margin-bottom: 1.2em;
+    }
+    .reveal .institution {
+      font-size: 0.52em;
+      color: var(--muted);
+      font-family: 'Segoe UI', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 2em;
+    }
+    .reveal .author {
+      font-size: 0.65em;
+      color: var(--muted);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .reveal .hl { color: var(--mtf-red); font-weight: bold; }
+
+    .fig-row {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2em;
+      align-items: center;
+    }
+
+    .reveal section.divider {
+      background: var(--mtf-dark);
+      color: #fff;
+    }
+    .reveal section.divider h2 {
+      color: #fff;
+      border-bottom-color: var(--mtf-red2);
+      font-size: 1.6em;
+    }
+
+    .slide-source {
+      font-size: 0.4em;
+      color: var(--muted);
+      position: absolute;
+      bottom: 0.5em;
+      right: 1em;
+    }
+
+    .reveal table {
+      font-size: 0.72em;
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.6em;
+      text-align: left;
+    }
+    .reveal table th {
+      background: var(--mtf-dark);
+      color: #fff;
+      padding: 0.35em 0.7em;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .reveal table td {
+      padding: 0.3em 0.7em;
+      border-bottom: 1px solid #e8e8e8;
+      color: var(--text);
+    }
+    .reveal table tr:nth-child(even) td { background: #f9f2f3; }
+    .reveal table tr:hover td { background: #fde8eb; }
+
+    .cols-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8em;
+      align-items: start;
+    }
+
+    .flow-box {
+      background: #fff5f6;
+      border-left: 4px solid var(--mtf-red);
+      border-radius: 4px;
+      padding: 0.4em 0.8em;
+      font-size: 0.75em;
+      margin: 0.25em 0;
+      text-align: left;
+      color: var(--text);
+    }
+    .flow-arrow {
+      text-align: center;
+      font-size: 1em;
+      color: var(--mtf-red);
+      line-height: 1.1;
+    }
+    .flow-note {
+      font-size: 0.6em;
+      color: var(--muted);
+      margin-left: 1em;
+    }
+
+    .subtitle {
+      font-size: 0.9em;
+      color: var(--muted);
+      margin-top: 0.3em;
+      font-weight: 400;
+    }
+
+    .img-caption {
+      font-size: 0.38em;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.3em;
+    }
+
+    /* ══ BOTTOM NAV BAR ══ */
+    #navBar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 54px;
+      background: rgba(14,14,14,0.93);
+      backdrop-filter: blur(8px);
+      border-top: 2px solid var(--mtf-red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      z-index: 9998;
+      padding: 0 20px;
+    }
+
+    #slideIndicators {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.28);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      flex-shrink: 0;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .dot:hover  { background: rgba(255,255,255,0.65); }
+    .dot.active { background: var(--mtf-red); transform: scale(1.55); }
+
+    .nav-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 7px;
+      color: #fff;
+      cursor: pointer;
+      padding: 5px 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+      flex-shrink: 0;
+    }
+    .nav-btn:hover   { background: rgba(200,0,30,0.35); border-color: var(--mtf-red); }
+    .nav-btn:active  { background: rgba(200,0,30,0.55); }
+    .nav-btn svg     { width: 22px; height: 22px; fill: #fff; display: block; }
+
+    #slideCounter {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      min-width: 34px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    #autoLabel {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: rgba(255,255,255,0.55);
+      font-size: 11px;
+      font-family: 'Segoe UI', sans-serif;
+      cursor: pointer;
+      user-select: none;
+      flex-shrink: 0;
+    }
+    #autoLabel input { cursor: pointer; accent-color: var(--mtf-red); }
+
+    /* ══ MTF STU LOGO – fixed bottom-left (raised above nav bar) ══ */
+    .mtf-logo-badge {
+      position: fixed;
+      bottom: 62px;
+      left: 18px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      pointer-events: none;
+      opacity: 0.92;
+    }
+    .mtf-logo-badge svg { width: 182px; height: 62px; flex-shrink: 0; }
+    .mtf-wordmark { display: flex; flex-direction: column; line-height: 1.2; }
+    .mtf-line1 {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 28px; font-weight: 800;
+      color: var(--mtf-dark); letter-spacing: 0.05em;
+    }
+    .mtf-line2 {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 18px; font-weight: 400;
+      color: var(--muted); letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="mtf-logo-badge" aria-label="MTF STU">
+<svg width="182" height="62" viewBox="0 0 91 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M2.29999 17.7807C3.59999 17.7807 4.60001 16.7807 4.60001 15.4807C4.60001 14.1807 3.59999 13.1807 2.29999 13.1807C0.999988 13.1807 0 14.1807 0 15.4807C0 16.7807 0.999988 17.7807 2.29999 17.7807Z" fill="#E72B1E"/>
+  <path d="M2.29999 30.4807C3.59999 30.4807 4.60001 29.4807 4.60001 28.1807C4.60001 26.8807 3.59999 25.8807 2.29999 25.8807C0.999988 25.8807 0 26.8807 0 28.1807C0 29.3807 0.999988 30.4807 2.29999 30.4807Z" fill="#E72B1E"/>
+  <path d="M15 17.7807C16.3 17.7807 17.3 16.7807 17.3 15.4807C17.3 14.1807 16.3 13.1807 15 13.1807C13.7 13.1807 12.7 14.1807 12.7 15.4807C12.7 16.7807 13.7 17.7807 15 17.7807Z" fill="#E72B1E"/>
+  <path d="M15 30.4807C16.3 30.4807 17.3 29.4807 17.3 28.1807C17.3 26.8807 16.3 25.8807 15 25.8807C13.7 25.8807 12.7 26.8807 12.7 28.1807C12.7 29.3807 13.7 30.4807 15 30.4807Z" fill="#E72B1E"/>
+  <path d="M27.6 17.7807C28.9 17.7807 29.9 16.7807 29.9 15.4807C29.9 14.1807 28.9 13.1807 27.6 13.1807C26.3 13.1807 25.3 14.1807 25.3 15.4807C25.3 16.7807 26.3 17.7807 27.6 17.7807Z" fill="#E72B1E"/>
+  <path d="M2.29999 5.18069C3.59999 5.18069 4.60001 4.18071 4.60001 2.88071C4.60001 1.58071 3.59999 0.580688 2.29999 0.580688C0.999988 0.580688 0 1.58071 0 2.88071C0 4.18071 0.999988 5.18069 2.29999 5.18069Z" fill="#E72B1E"/>
+  <path d="M15 5.18069C16.3 5.18069 17.3 4.18071 17.3 2.88071C17.3 1.58071 16.3 0.580688 15 0.580688C13.7 0.580688 12.7 1.58071 12.7 2.88071C12.7 4.18071 13.7 5.18069 15 5.18069Z" fill="#E72B1E"/>
+  <path d="M27.6 5.18069C28.9 5.18069 29.9 4.18071 29.9 2.88071C29.9 1.58071 28.9 0.580688 27.6 0.580688C26.3 0.580688 25.3 1.58071 25.3 2.88071C25.3 4.18071 26.3 5.18069 27.6 5.18069Z" fill="#E72B1E"/>
+  <path d="M27.6 30.4807C28.9 30.4807 29.9 29.4807 29.9 28.1807C29.9 26.8807 28.9 25.8807 27.6 25.8807C26.3 25.8807 25.3 26.8807 25.3 28.1807C25.3 29.3807 26.3 30.4807 27.6 30.4807Z" fill="#E72B1E"/>
+  <path d="M40.2 17.7807C41.5 17.7807 42.5 16.7807 42.5 15.4807C42.5 14.1807 41.5 13.1807 40.2 13.1807C38.9 13.1807 37.9 14.1807 37.9 15.4807C37.9 16.7807 39 17.7807 40.2 17.7807Z" fill="#E72B1E"/>
+  <path d="M40.2 30.4807C41.5 30.4807 42.5 29.4807 42.5 28.1807C42.5 26.8807 41.5 25.8807 40.2 25.8807C38.9 25.8807 37.9 26.8807 37.9 28.1807C37.9 29.3807 39 30.4807 40.2 30.4807Z" fill="#E72B1E"/>
+  <path d="M40.2 5.18069C41.5 5.18069 42.5 4.18071 42.5 2.88071C42.5 1.58071 41.5 0.580688 40.2 0.580688C38.9 0.580688 37.9 1.58071 37.9 2.88071C37.9 4.18071 39 5.18069 40.2 5.18069Z" fill="#E72B1E"/>
+  <path d="M85.8 19.5807C85.8 19.4807 85.9 19.4807 85.9 19.4807H90.7C90.8 19.4807 90.9 19.3807 90.9 19.2807V18.1807C90.9 18.0807 90.8 17.9807 90.7 17.9807H84.3C84.2 17.9807 84.1 18.0807 84.1 18.1807V30.0807C84.1 30.1807 84.2 30.2807 84.3 30.2807H85.7C85.8 30.2807 85.9 30.1807 85.9 30.0807V24.7807H89.7C89.8 24.7807 89.9 24.6807 89.9 24.5807V23.4807C89.9 23.3807 89.8 23.2807 89.7 23.2807H85.9V19.5807H85.8ZM75 30.2807C75.1 30.2807 75.2 30.1807 75.2 30.0807V19.5807C75.2 19.4807 75.2 19.4807 75.3 19.4807H78.3C78.4 19.4807 78.5 19.3807 78.5 19.2807V18.1807C78.5 18.0807 78.4 17.9807 78.3 17.9807H70.4C70.3 17.9807 70.2 18.0807 70.2 18.1807V19.2807C70.2 19.3807 70.3 19.4807 70.4 19.4807H73.3C73.4 19.4807 73.4 19.5807 73.4 19.5807V30.0807C73.4 30.1807 73.5 30.2807 73.6 30.2807H75ZM60 30.2807C60.1 30.2807 60.1 30.2807 60.2 30.1807L63 20.8807V30.0807C63 30.1807 63.1 30.2807 63.2 30.2807H64.5C64.6 30.2807 64.7 30.1807 64.7 30.0807V18.1807C64.7 18.0807 64.6 17.9807 64.5 17.9807H62.8C62.7 17.9807 62.6 17.9807 62.6 18.0807L59.4 28.1807L56.2 18.0807C56.2 17.9807 56.1 17.9807 56 17.9807H54.2C54.1 17.9807 54 18.0807 54 18.1807V30.0807C54 30.1807 54.1 30.2807 54.2 30.2807H55.5C55.6 30.2807 55.7 30.1807 55.7 30.0807V20.8807L58.5 30.1807C58.5 30.2807 58.6 30.2807 58.7 30.2807H60Z" fill="black"/>
+  <path d="M90.9 0.980713C90.9 0.780713 90.8 0.780701 90.7 0.780701H88.4C88.3 0.780701 88.2 0.880713 88.2 0.980713V9.18069C88.2 10.3807 87.5 10.9807 86.2 10.9807C84.9 10.9807 84.2 10.3807 84.2 9.18069V0.980713C84.2 0.780713 84.1 0.780701 84 0.780701H81.7C81.5 0.780701 81.5 0.880713 81.5 0.980713V9.2807C81.5 11.6807 82.8 13.1807 86.2 13.1807C89.5 13.1807 90.9 11.6807 90.9 9.2807V0.980713ZM72.4 12.9807C72.6 12.9807 72.6 12.8807 72.6 12.7807V3.08069C72.6 2.98069 72.6 2.98071 72.7 2.98071H75.6C75.7 2.98071 75.8 2.8807 75.8 2.7807V1.08069C75.8 0.880688 75.7 0.880707 75.6 0.880707H66.9C66.7 0.880707 66.7 0.980688 66.7 1.08069V2.7807C66.7 2.9807 66.8 2.98071 66.9 2.98071H69.7C69.8 2.98071 69.8 3.08069 69.8 3.08069V12.7807C69.8 12.9807 69.9 12.9807 70 12.9807H72.4ZM53.6 12.3807C54.8 12.9807 55.9 13.0807 57.3 13.0807C59.9 13.0807 61.6 11.7807 61.6 9.38071C61.6 7.68071 60.8 6.58069 58.7 5.68069C56.9 4.98069 56.6 4.58071 56.6 3.98071C56.6 3.28071 57.1 2.7807 58.2 2.7807C59 2.7807 59.7 2.88069 60.3 3.18069C60.5 3.28069 60.6 3.18069 60.6 3.08069L61.4 1.48071C61.5 1.38071 61.5 1.28069 61.3 1.18069C60.1 0.680695 59.3 0.480713 57.7 0.480713C55.2 0.480713 53.7 1.98071 53.7 3.98071C53.7 5.78071 54.6 6.8807 56.7 7.7807C58.3 8.4807 58.7 8.88069 58.7 9.58069C58.7 10.2807 58.1 10.7807 57.1 10.7807C55.9 10.7807 55.3 10.5807 54.6 10.1807C54.5 10.0807 54.4 10.1807 54.3 10.2807L53.5 12.0807C53.5 12.2807 53.5 12.3807 53.6 12.3807Z" fill="black"/>
+</svg>
+  <div class="mtf-wordmark">
+    <span class="mtf-line2">Faculty of Materials Science and Technology<br>in Trnava</span>
+  </div>
+</div>
+
+<div class="reveal"><div class="slides">
+
+  <!-- ═══ SLIDE 1 — TITLE ══════════════════════════════════════════════════════ -->
+  <section style="text-align:left;">
+    <div style="display:grid; grid-template-columns:1.1fr 1fr; gap:1.5em; align-items:center;">
+      <div>
+        <hr class="top-rule">
+        <h1>LASERTEC 80 Shape</h1>
+        <p class="subtitle">5-Axis Precision Laser Machining System &nbsp;·&nbsp; DMG MORI</p>
+        <p class="institution">Centre of Excellence for 5-Axis Machining (CE5AM)<br>
+          Materiálovotechnologická fakulta &nbsp;·&nbsp; STU Bratislava</p>
+      </div>
+      <div style="text-align:center;">
+        <img src="images/lasertec/zaverecna_prace_p52_img1.jpeg"
+             alt="LASERTEC 80 Shape at CE5AM MTF STU Trnava"
+             style="max-height:52vh; width:100%; object-fit:cover; border-radius:4px; box-shadow:0 4px 16px rgba(0,0,0,0.22);">
+        <p class="img-caption">CE5AM, MTF STU Trnava</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SLIDE 2 — OVERVIEW (merged with former divider) ════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div style="background:var(--mtf-dark); color:#fff; padding:0.5em 0.7em; margin:-0.5em -0.5em 0.5em -0.5em; border-radius:2px 2px 0 0;">
+      <span style="font-size:1.7em; font-weight:700; letter-spacing:0.05em;">Overview &amp; Context</span>
+      <span style="font-size:1.4em; color:#f0b0b8; margin-left:1em;">Machine description · Location · Purpose</span>
+    </div>
+    <h2>What is the LASERTEC 80 Shape?</h2>
+    <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.4em;">
+      <ul style="font-size:0.88em; line-height:1.85; align-self:center;">
+        <li><span class="hl">5-axis precision CNC laser machining system</span> by <strong>DMG MORI</strong> (formerly SAUER)</li>
+        <li>Located at the <strong>CE5AM</strong> — MTF STU Trnava</li>
+        <li>Purpose-built for:
+          <ul>
+            <li>Laser structuring and engraving of <strong>injection molds</strong></li>
+            <li>Laser micro-machining and material ablation</li>
+            <li>Functional <strong>surface texturing</strong> (tribological, decorative)</li>
+            <li>Chip-breaker manufacturing on cutting inserts</li>
+          </ul>
+        </li>
+        <li>Two laser systems at MTF STU Trnava:<br>
+          <strong>LASERTEC 80 Shape</strong> + Laser TruDisk 4002 (TRUMPF)</li>
+      </ul>
+      <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
+        <img src="images/lasertec/zaverecna_prace-1_p48_img1.jpeg"
+             alt="LASERTEC 80 Shape SAUER — front view"
+             style="width:100%; max-height:58vh; object-fit:contain; border-radius:3px;">
+        <p class="img-caption">LASERTEC 80 Shape SAUER — Siemens 840D CNC control panel visible</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SLIDE 3 — LASER SOURCE (merged with former divider) ════════════════ -->
+  <section>
+    <div style="background:var(--mtf-dark); color:#fff; padding:0.5em 0.7em; margin:-0.5em -0.5em 0.5em -0.5em; border-radius:2px 2px 0 0;">
+      <span style="font-size:1.7em; font-weight:700; letter-spacing:0.05em;">Laser Source</span>
+      <span style="font-size:1.4em; color:#f0b0b8; margin-left:1em;">Fiber Nd:YAG · Wavelength · Power · Pulse parameters</span>
+    </div>
+    <h2>Fiber Nd:YAG Laser — Key Parameters</h2>
+    <table>
+      <tr><th>Parameter</th><th>Value</th></tr>
+      <tr><td>Laser type</td><td>Fiber (Ytterbium) Nd:YAG</td></tr>
+      <tr><td>Wavelength</td><td><strong>1064 nm</strong></td></tr>
+      <tr><td>Average laser power</td><td>100 W (max) — optional upgrade to <strong>200 W</strong></td></tr>
+      <tr><td>Operation mode</td><td><span class="hl">Pulsed only</span></td></tr>
+      <tr><td>Pulse frequency range</td><td><strong>20 – 100 kHz</strong></td></tr>
+      <tr><td>Beam diameter at focus</td><td>~1 µm</td></tr>
+      <tr><td>Minimum track width</td><td>down to <strong>40 µm</strong></td></tr>
+    </table>
+    <ul style="margin-top:0.7em;">
+      <li>Pulsed regime → precise material removal without excessive thermal load</li>
+      <li>Same fiber laser family used in the larger <strong>LASERTEC 210 Shape</strong></li>
+    </ul>
+  </section>
+
+  <!-- ═══ SLIDE 4 — AXES & WORKING SPACE (merged with former divider) ════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div style="background:var(--mtf-dark); color:#fff; padding:0.5em 0.7em; margin:-0.5em -0.5em 0.5em -0.5em; border-radius:2px 2px 0 0;">
+      <span style="font-size:1.7em; font-weight:700; letter-spacing:0.05em;">Axes &amp; Working Space</span>
+      <span style="font-size:1.4em; color:#f0b0b8; margin-left:1em;">5-axis kinematics · Travel ranges · Table configurations</span>
+    </div>
+    <h2>5-Axis Configuration &amp; Working Space</h2>
+    <div class="cols-2" style="flex:1; align-items:stretch; margin-top:0.4em;">
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <table>
+          <tr><th>Axis</th><th>Travel / Range</th></tr>
+          <tr><td>X-axis</td><td><strong>800 mm</strong></td></tr>
+          <tr><td>Y-axis</td><td><strong>500 mm</strong></td></tr>
+          <tr><td>Z-axis (focus)</td><td><strong>700 mm</strong></td></tr>
+          <tr><td>B-axis (swivel)</td><td>−110° to +150°</td></tr>
+          <tr><td>C-axis (rotation)</td><td>360°</td></tr>
+        </table>
+        <table style="margin-top:0.7em;">
+          <tr><th>Config</th><th>Table size</th><th>Max load</th></tr>
+          <tr><td>3-axis</td><td>900 × 600 mm</td><td>200 kg</td></tr>
+          <tr><td>5-axis (sm.)</td><td>Ø 200 mm</td><td>14 kg</td></tr>
+          <tr><td>5-axis (lg.)</td><td>Ø 400 mm</td><td>40 kg</td></tr>
+        </table>
+        <ul style="margin-top:0.6em; font-size:0.75em;">
+          <li>Scanner deflection: <strong>±60 mm</strong></li>
+          <li>Clamping: <strong>EROWA clamps</strong></li>
+        </ul>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
+        <img src="images/lasertec/zaverecna_prace-4_p51_img1.jpeg"
+             alt="LASERTEC 80 Shape — workspace interior with rotary table"
+             style="width:100%; max-height:58vh; object-fit:contain; border-radius:3px;">
+        <p class="img-caption">Workspace interior: scanner head (top), rotary-tilt table (B+C axes, bottom-left)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SLIDE 5 — MOTION DYNAMICS (merged with former divider) ═════════════ -->
+  <section>
+    <div style="background:var(--mtf-dark); color:#fff; padding:0.5em 0.7em; margin:-0.5em -0.5em 0.5em -0.5em; border-radius:2px 2px 0 0;">
+      <span style="font-size:1.7em; font-weight:700; letter-spacing:0.05em;">Machine Construction</span>
+      <span style="font-size:1.4em; color:#f0b0b8; margin-left:1em;">Components · Drive system · Sensors</span>
+    </div>
+    <h2>High-Dynamic Linear Drive System</h2>
+    <table>
+      <tr><th>Parameter</th><th>Value</th></tr>
+      <tr><td>Rapid traverse X / Y</td><td><strong>120 / 120 m/min</strong></td></tr>
+      <tr><td>Rapid traverse Z</td><td>30 m/min</td></tr>
+      <tr><td>Acceleration (X / Y)</td><td><span class="hl">&gt; 1.2 g</span></td></tr>
+      <tr><td>Scanning speed range</td><td>100 – 4 000 mm/s</td></tr>
+    </table>
+    <ul style="margin-top:0.7em;">
+      <li>Linear drives in X and Y axes — <strong>no mechanical backlash</strong></li>
+      <li>4th and 5th axis: <strong>water-cooled torque discs</strong></li>
+      <li>Classified as <span class="hl">highly dynamic</span> laser machining center</li>
+      <li>Enables 5-axis structuring of large forming tools and narrow molds with exhaust channels</li>
+    </ul>
+  </section>
+
+  <!-- ═══ SLIDE 10 — KEY COMPONENTS ═══════════════════════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <h2>Key Machine Components</h2>
+    <div class="fig-row" style="grid-template-columns:1.3fr 1fr; flex:1; align-items:stretch; margin-top:0.4em;">
+      <ol style="font-size:0.75em; line-height:1.8; align-self:center;">
+        <li><strong>Machining enclosure</strong> — sealed, interlocked laser-safety doors (Class 1)</li>
+        <li><strong>Scanner head</strong> — lenses + mirrors, deflects beam ±60 mm</li>
+        <li><strong>Rotary-tilt table</strong> — B + C axes, EROWA clamping</li>
+        <li><strong>Machine control unit</strong> — drives all axis movements</li>
+        <li><strong>Standalone control PC</strong> — manages scanner + laser (LaserSoft 3D)</li>
+        <li><strong>CCD camera</strong> — 50× magnification, X/Y-adjustable</li>
+        <li><strong>3D measuring probe</strong> — workpiece alignment &amp; material removal measurement</li>
+        <li><strong>Extraction unit</strong> — 1050 × 1200 × 2000 mm</li>
+        <li><strong>Cooling unit</strong> — 1110 × 800 × 1450 mm</li>
+      </ol>
+      <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
+        <img src="images/lasertec/zaverecna_prace-1_p48_img2.jpeg"
+             alt="3D measuring probe on workpiece — LASERTEC 80 Shape"
+             style="width:100%; max-height:58vh; object-fit:contain; border-radius:3px;">
+        <p class="img-caption">3D measuring probe (item 7) touching a workpiece on the rotary table</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SLIDE 7 — CONTROL & SOFTWARE (merged with former divider) ══════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div style="background:var(--mtf-dark); color:#fff; padding:0.5em 0.7em; margin:-0.5em -0.5em 0.5em -0.5em; border-radius:2px 2px 0 0;">
+      <span style="font-size:1.7em; font-weight:700; letter-spacing:0.05em;">Control &amp; Software</span>
+      <span style="font-size:1.4em; color:#f0b0b8; margin-left:1em;">Siemens 840D · LaserSoft 3D · LpsWin · Workflow</span>
+    </div>
+    <h2>Control Architecture &amp; Software</h2>
+    <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.4em;">
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <table style="margin-bottom:0.7em;">
+          <tr><th>Component</th><th>System</th></tr>
+          <tr><td>CNC control</td><td><strong>Siemens 840D</strong> powerline / solutionline</td></tr>
+          <tr><td>Laser process control</td><td><strong>LaserSoft 3D</strong> — dedicated controller</td></tr>
+          <tr><td>Programming software</td><td><strong>LpsWin</strong> — bitmap import, paths</td></tr>
+        </table>
+        <ul style="font-size:0.78em;">
+          <li>Contour-parallel shaping: <strong>focus shifts dynamically along Z</strong></li>
+          <li>Slicing: typically <strong>0.002 mm</strong> per layer</li>
+          <li>Track width: down to <strong>40 µm</strong></li>
+        </ul>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
+        <img src="images/lasertec/zaverecna_prace-3_p59_img2.jpeg"
+             alt="3D measuring probe tip close-up"
+             style="width:100%; max-height:58vh; object-fit:contain; border-radius:3px;">
+        <p class="img-caption">3D measuring probe tip — for fast workpiece setup and depth measurement</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SLIDE 13 — PROCESS CHAIN ═════════════════════════════════════════════ -->
+  <section>
+    <h2>Laser Texturing Process Chain</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5em; align-items:start;">
+      <div>
+        <div class="flow-box">1. CAD / Texture Design</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">2. Bitmap / Vector Generation</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">3. LpsWin — coordinate system, slicing, path calculation</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">4. NC Program Generation</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">5. Machine Warm-Up + Test Run <span class="flow-note">(reduced power)</span></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box" style="background:#fff0f0; font-weight:600;">6. Production Run — LASERTEC 80 Shape</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">7. 3D Scan / Measurement <span class="flow-note">(ATOS, CCD, roughness meter)</span></div>
+      </div>
+      <div>
+        <ul style="font-size:0.72em; line-height:1.9;">
+          <li>Steps 1–3: replaceable by third-party CAM/CAD software</li>
+          <li>Steps 5–6: require native <strong>LaserSoft 3D / LpsWin</strong></li>
+          <li>Test run on non-functional surface before production</li>
+          <li>Layer-by-layer ablation — each pass ~<strong>1 µm</strong></li>
+          <li>Final depth: 10–40 µm depending on texture type</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SLIDE 9 — TECHNICAL SPECIFICATIONS (merged with former divider) ════ -->
+  <section>
+    <div style="background:var(--mtf-dark); color:#fff; padding:0.5em 0.7em; margin:-0.5em -0.5em 0.5em -0.5em; border-radius:2px 2px 0 0;">
+      <span style="font-size:1.7em; font-weight:700; letter-spacing:0.05em;">Technical Specifications</span>
+      <span style="font-size:1.4em; color:#f0b0b8; margin-left:1em;">Full datasheet — DMG MORI</span>
+    </div>
+    <h2>Technical Specifications Summary</h2>
+    <div class="cols-2">
+      <table>
+        <tr><th colspan="2">Laser</th></tr>
+        <tr><td>Source type</td><td>Fiber Nd:YAG (Ytterbium)</td></tr>
+        <tr><td>Power</td><td>100 W / 200 W</td></tr>
+        <tr><td>Focal length</td><td>100 / 160 / 255 mm</td></tr>
+        <tr><td>Pulse frequency</td><td>20 – 100 kHz</td></tr>
+        <tr><td>Scanning speed</td><td>100 – 4 000 mm/s</td></tr>
+        <tr><td>Beam diameter</td><td>~1 µm</td></tr>
+        <tr><td>Track width</td><td>down to 40 µm</td></tr>
+      </table>
+      <table>
+        <tr><th colspan="2">Machine &amp; Installation</th></tr>
+        <tr><td>Input power</td><td>max. 72 kVA</td></tr>
+        <tr><td>Operating voltage</td><td>400 V / 50 Hz</td></tr>
+        <tr><td>Machine dimensions</td><td>3335 × 2058 × 2290 mm</td></tr>
+        <tr><td>Footprint (all units)</td><td>4500 × 6000 × 2300 mm</td></tr>
+        <tr><td>Total weight</td><td><strong>7 000 kg</strong></td></tr>
+        <tr><td>Control system</td><td>Siemens 840D</td></tr>
+      </table>
+    </div>
+    <p class="slide-source">Source: DMG MORI LASERTEC 80 Shape datasheet (2013–2017)</p>
+  </section>
+
+  <!-- ═══ SLIDE 10 — APPLICATIONS (merged with former divider) ═══════════════ -->
+  <section>
+    <div style="background:var(--mtf-dark); color:#fff; padding:0.5em 0.7em; margin:-0.5em -0.5em 0.5em -0.5em; border-radius:2px 2px 0 0;">
+      <span style="font-size:1.7em; font-weight:700; letter-spacing:0.05em;">Applications</span>
+      <span style="font-size:1.4em; color:#f0b0b8; margin-left:1em;">Fields of use · Texture types · Material compatibility</span>
+    </div>
+    <h2>Fields of Application</h2>
+    <table>
+      <tr><th>Application</th><th>Description</th></tr>
+      <tr><td>Injection mold texturing</td><td>Engraving fine surface structures on mold cavities</td></tr>
+      <tr><td>Chip-breaker manufacturing</td><td>Micro-machining of cutting inserts (sintered carbide)</td></tr>
+      <tr><td>Surface texturing</td><td>Functional tribological textures — dimples, grooves, hatching</td></tr>
+      <tr><td>Forming tool structuring</td><td>5-axis laser structuring of large pressing tools</td></tr>
+      <tr><td>Narrow mold machining</td><td>5-axis engraving of molds with exhaust channels</td></tr>
+      <tr><td>Coating ablation</td><td>Selective removal of PVD/CVD coatings (track width ≥ 40 µm)</td></tr>
+    </table>
+    <ul style="margin-top:0.5em; font-size:0.75em;">
+      <li><strong>Materials:</strong> sintered carbide (WC-Co), titanium alloys, tool steels, coated surfaces</li>
+    </ul>
+  </section>
+
+  <!-- ═══ SLIDE 18 — TEXTURE EXAMPLES ══════════════════════════════════════════ -->
+  <section>
+    <h2>Surface Texture Examples — CE5AM MTF STU Trnava</h2>
+    <div class="cols-2" style="align-items:center;">
+      <div style="text-align:center;">
+        <img src="images/lasertec/zaverecna_prace-6_p66_img1.png"
+             alt="Hexagonal surface texture pattern design"
+             style="max-height:38vh; object-fit:contain;">
+        <p class="img-caption">Hexagonal dimple array — pattern geometry with pitch 0.4 mm, Ø 0.1 mm dimples</p>
+      </div>
+      <div style="text-align:center;">
+        <img src="images/lasertec/zaverecna_prace-6_p66_img2.png"
+             alt="Dimple cross-section profiles — 10µm and 40µm depth"
+             style="max-height:38vh; object-fit:contain;">
+        <p class="img-caption">Dimple cross-sections: a) shallow 10 µm depth, b) deep 40 µm depth — both Ø 100 µm</p>
+      </div>
+    </div>
+    <ul style="margin-top:0.5em; font-size:0.72em;">
+      <li>Texture area coverage: ~6% of total surface — optimised for tribological effect</li>
+      <li>Strategies: <strong>hatching</strong> (parallel scan lines) vs. <strong>contouring</strong> (outline-following)</li>
+    </ul>
+  </section>
+
+  <!-- ═══ SLIDE 12 — COMPARISON (merged with former divider) ═════════════════ -->
+  <section>
+    <div style="background:var(--mtf-dark); color:#fff; padding:0.5em 0.7em; margin:-0.5em -0.5em 0.5em -0.5em; border-radius:2px 2px 0 0;">
+      <span style="font-size:1.7em; font-weight:700; letter-spacing:0.05em;">LASERTEC 80 vs. 210 Shape</span>
+      <span style="font-size:1.4em; color:#f0b0b8; margin-left:1em;">Size comparison — when to use which</span>
+    </div>
+    <h2>LASERTEC 80 Shape vs. LASERTEC 210 Shape</h2>
+    <table>
+      <tr><th>Parameter</th><th>LASERTEC 80 Shape</th><th>LASERTEC 210 Shape</th></tr>
+      <tr><td>X-axis [mm]</td><td>800</td><td>1 800</td></tr>
+      <tr><td>Y-axis [mm]</td><td>500</td><td>2 100</td></tr>
+      <tr><td>Z-axis [mm]</td><td>700</td><td>1 250</td></tr>
+      <tr><td>Table 5-axis [mm]</td><td>Ø 200 / 400</td><td>Ø 1 850</td></tr>
+      <tr><td>Max load 5-axis [kg]</td><td>14 / 40</td><td>8 000 / 10 000</td></tr>
+      <tr><td>Rapid traverse X/Y [m/min]</td><td><span class="hl">120 / 120</span></td><td>60 / 40</td></tr>
+      <tr><td>Total weight [kg]</td><td>7 000</td><td>42 000</td></tr>
+      <tr><td>Input power [kVA]</td><td>max. 72</td><td>max. 103</td></tr>
+    </table>
+    <ul style="margin-top:0.5em; font-size:0.72em;">
+      <li><span class="hl">LASERTEC 80</span>: compact, high-speed — precision parts, molds up to medium size</li>
+      <li><strong>LASERTEC 210</strong>: large-format — automotive-scale tools and dies</li>
+    </ul>
+    <p class="slide-source">Source: DMG MORI (2013)</p>
+  </section>
+
+  <!-- ═══ SLIDE 13 — EXPERIMENTAL PARAMETERS (merged with former divider) ════ -->
+  <section>
+    <div style="background:var(--mtf-dark); color:#fff; padding:0.5em 0.7em; margin:-0.5em -0.5em 0.5em -0.5em; border-radius:2px 2px 0 0;">
+      <span style="font-size:1.7em; font-weight:700; letter-spacing:0.05em;">Experimental Parameters</span>
+      <span style="font-size:1.4em; color:#f0b0b8; margin-left:1em;">Typical ranges used at CE5AM MTF STU Trnava</span>
+    </div>
+    <h2>Typical Process Parameters — MTF STU Trnava</h2>
+    <table>
+      <tr><th>Parameter</th><th>Range used</th></tr>
+      <tr><td>Laser power</td><td>10 – 100 W &nbsp;(10 – 100 % of max)</td></tr>
+      <tr><td>Pulse frequency</td><td>20 – 100 kHz</td></tr>
+      <tr><td>Scanning speed</td><td>200 – 4 000 mm/s</td></tr>
+      <tr><td>Focal distance</td><td>100 mm (typical for micro-machining)</td></tr>
+      <tr><td>Laser spot diameter</td><td>0.025 – 0.1 mm</td></tr>
+      <tr><td>Layer removal depth</td><td>~1 µm per pass</td></tr>
+      <tr><td>Max texture depth</td><td>up to 40 µm per feature</td></tr>
+      <tr><td>Pulse duration</td><td>10 ms – 120 ns (mode dependent)</td></tr>
+    </table>
+    <p class="slide-source">Source: experimental studies on sintered carbide, Ti alloys, tool steel — CE5AM MTF STU Trnava</p>
+  </section>
+
+  <!-- ═══ SLIDE 23 — SAFETY & INSTALLATION ════════════════════════════════════ -->
+  <section>
+    <h2>Safety &amp; Installation Requirements</h2>
+    <ul>
+      <li>Laser safety class — requires <span class="hl">sealed enclosure</span> with interlocked protective doors</li>
+      <li>Mandatory <strong>fume extraction unit</strong>: 1050 × 1200 × 2000 mm
+        <br><small style="color:var(--muted);">(removes ablation particles, toxic gases, and metallic vapour)</small></li>
+      <li>Dedicated <strong>water cooling circuit</strong> for torque disc motors and laser source</li>
+      <li>Electrical supply: <strong>400 V / 50 Hz</strong>, max <strong>72 kVA</strong></li>
+      <li>Total footprint (machine + all units): <strong>4 500 × 6 000 × 2 300 mm</strong></li>
+      <li>Total machine weight: <span class="hl">7 000 kg</span> — requires reinforced floor</li>
+    </ul>
+  </section>
+
+  <!-- ═══ SLIDE 24 — CLOSING ════════════════════════════════════════════════════ -->
+  <section style="text-align:left;">
+    <hr class="top-rule">
+    <h2>Summary</h2>
+    <ul>
+      <li>LASERTEC 80 Shape is a <strong>5-axis, high-dynamic</strong> precision laser machining centre</li>
+      <li>Fiber Nd:YAG laser (1064 nm, 100 W), pulsed mode 20–100 kHz, track width ≥ 40 µm</li>
+      <li>Linear drives &gt;1.2 g acceleration — exceptionally fast repositioning</li>
+      <li>Full software chain: <strong>LpsWin → LaserSoft 3D → Siemens 840D CNC</strong></li>
+      <li>Proven at CE5AM MTF STU Trnava on sintered carbide, titanium alloys, and tool steels</li>
+    </ul>
+    <p class="institution" style="margin-top:1.5em;">Data source: DMG MORI LASERTEC 80 Shape technical documentation (2013–2017)<br>
+    Experimental results: student theses, MTF STU Trnava</p>
+  </section>
+
+</div></div>
+
+<audio id="narration"></audio>
+
+<div id="navBar">
+  <!-- Previous -->
+  <button class="nav-btn" id="prevBtn" title="Previous slide (←)">
+    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+  </button>
+
+  <!-- Dot indicators -->
+  <div id="slideIndicators"></div>
+
+  <!-- Slide counter -->
+  <span id="slideCounter">1 / 15</span>
+
+  <!-- Play / Pause audio -->
+  <button class="nav-btn" id="playBtn" title="Play narration (Space)">
+    <!-- play icon by default; swapped to pause via JS -->
+    <svg id="playIcon" viewBox="0 0 24 24"><path id="playIconPath" d="M8 5v14l11-7z"/></svg>
+  </button>
+
+  <!-- Next -->
+  <button class="nav-btn" id="nextBtn" title="Next slide (→)">
+    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+  </button>
+
+  <!-- Auto-advance toggle -->
+  <label id="autoLabel" title="Auto-advance to next slide when narration ends">
+    <input type="checkbox" id="autoPlay" checked>
+    Auto
+  </label>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script>
+  /* ── Audio ── */
+  const narration   = document.getElementById('narration');
+  const playIconPath = document.getElementById('playIconPath');
+  const PLAY_D  = 'M8 5v14l11-7z';
+  const PAUSE_D = 'M6 19h4V5H6v14zm8-14v14h4V5h-4z';
+
+  function setPlayIcon(playing) {
+    playIconPath.setAttribute('d', playing ? PAUSE_D : PLAY_D);
+  }
+
+  function loadAudio(slideIndex) {
+    narration.src = `speech/speech${slideIndex + 1}.wav`;
+  }
+
+  function playAudio() {
+    narration.play().catch(() => {});
+  }
+
+  function toggleAudio() {
+    if (narration.paused) { narration.play().catch(() => {}); }
+    else                  { narration.pause(); }
+  }
+
+  narration.addEventListener('play',  () => setPlayIcon(true));
+  narration.addEventListener('pause', () => setPlayIcon(false));
+  narration.addEventListener('ended', () => {
+    setPlayIcon(false);
+    if (document.getElementById('autoPlay').checked) {
+      setTimeout(() => Reveal.next(), 800);
+    }
+  });
+
+  /* ── Dot indicators ── */
+  function buildIndicators(total) {
+    const bar = document.getElementById('slideIndicators');
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 'dot';
+      d.setAttribute('aria-label', `Slide ${i + 1}`);
+      d.addEventListener('click', () => Reveal.slide(i));
+      bar.appendChild(d);
+    }
+  }
+
+  function updateNav(indexh, total) {
+    document.querySelectorAll('.dot').forEach((d, i) =>
+      d.classList.toggle('active', i === indexh));
+    document.getElementById('slideCounter').textContent =
+      `${indexh + 1} / ${total}`;
+    document.getElementById('prevBtn').style.opacity = indexh === 0        ? '0.3' : '1';
+    document.getElementById('nextBtn').style.opacity = indexh === total - 1 ? '0.3' : '1';
+  }
+
+  /* ── Custom nav-button handlers ── */
+  document.getElementById('prevBtn').addEventListener('click', () => Reveal.prev());
+  document.getElementById('nextBtn').addEventListener('click', () => Reveal.next());
+  document.getElementById('playBtn').addEventListener('click', () => toggleAudio());
+
+  /* ── Reveal ── */
+  Reveal.initialize({
+    hash: true,
+    slideNumber: false,
+    transition: 'slide',
+    backgroundTransition: 'none',
+    controls: false,
+    progress: false,
+    keyboard: {
+      32: () => toggleAudio(),   // Space → play/pause (override Reveal default)
+      37: () => Reveal.prev(),   // ←
+      39: () => Reveal.next(),   // →
+    },
+  });
+
+  Reveal.on('ready', event => {
+    const total = Reveal.getTotalSlides();
+    buildIndicators(total);
+    updateNav(0, total);
+    loadAudio(0);
+    // Don't autoplay on ready — browser blocks it without user interaction
+  });
+
+  Reveal.on('slidechanged', event => {
+    const total = Reveal.getTotalSlides();
+    const idx   = event.indexh;
+    updateNav(idx, total);
+    loadAudio(idx);
+    playAudio();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+SLIDE 14 — Safety & Installation Requirements
+==============================================
+
+Before concluding, a few words about installation and safety requirements — relevant for anyone planning to deploy this machine.
+
+The LASERTEC 80 Shape operates with Class 1 laser safety when the enclosure is closed. The enclosure has interlocked protective doors — the laser cannot fire when the doors are open. This is essential because the 1064 nanometre near-infrared beam is invisible to the human eye and would cause immediate retinal damage.
+
+A mandatory fume extraction unit must be connected at all times. During laser ablation, the material is vaporised and fine metallic particles are released into the enclosure atmosphere. These particles are toxic — especially when machining sintered carbide, which contains cobalt binder — and must be continuously extracted and filtered.
+
+A dedicated water cooling circuit is required for two reasons: cooling the ytterbium fiber laser source to maintain stable output power, and cooling the torque disc motors in the B and C axes to prevent thermal expansion affecting positioning accuracy.
+
+For electrical installation: the machine needs a three-phase 400-volt 50-hertz supply with a peak demand of up to 72 kilovolt-amperes.
+
+For civil works: the full installation footprint including all ancillary units is 4.5 by 6 metres. The machine alone weighs 7 tonnes and requires a reinforced concrete floor capable of bearing concentrated loads. Vibration isolation pads are also recommended.
+
+These requirements were all met in the CE5AM laboratory at MTF STU Trnava, where the machine has been in operation for research purposes.
+
+[Estimated speaking time: ~70 seconds]

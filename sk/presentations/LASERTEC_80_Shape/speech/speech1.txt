@@ -1,0 +1,12 @@
+SLIDE 1 — Title: LASERTEC 80 Shape
+====================================
+
+Good morning / Good afternoon, everyone.
+
+Today I would like to present the LASERTEC 80 Shape — a five-axis precision laser machining system manufactured by DMG MORI, formerly known under the SAUER brand.
+
+The machine you can see on the right is the actual unit installed here at our faculty — in the Centre of Excellence for 5-Axis Machining, CE5AM, at the Faculty of Materials Science and Technology of Slovak University of Technology in Trnava.
+
+In this presentation we will cover the machine's laser source, its kinematics and working space, construction, control system, typical applications, and the experimental parameters used in research conducted at this very workplace.
+
+[Estimated speaking time: ~30 seconds]

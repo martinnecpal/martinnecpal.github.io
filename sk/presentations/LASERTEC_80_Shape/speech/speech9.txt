@@ -1,0 +1,14 @@
+SLIDE 9 — Technical Specifications Summary
+==========================================
+
+This slide provides the complete technical datasheet for the LASERTEC 80 Shape as published by DMG MORI.
+
+On the laser side: the fiber Nd:YAG source delivers 100 or 200 watts. Three focal length options are available — 100, 160, and 255 millimetres — allowing different spot sizes and working distances to be selected depending on the application. Pulse frequency ranges from 20 to 100 kilohertz, scanning speed from 100 to 4000 mm per second, beam diameter approximately 1 micrometre, and minimum track width down to 40 micrometres.
+
+On the installation side: the machine requires a three-phase 400 volt, 50 hertz supply with a maximum demand of 72 kilovolt-amperes. The machine body itself measures 3335 by 2058 by 2290 millimetres. However, the full installation footprint — including the extraction unit and the cooling unit — is 4500 by 6000 millimetres. The total machine weight is 7 tonnes, which requires a reinforced concrete floor.
+
+The CNC controller is the Siemens 840D powerline or solutionline, as already mentioned.
+
+These specifications are from the official DMG MORI documentation and are consistent across multiple student thesis reports from CE5AM MTF STU Trnava from 2013 to 2017.
+
+[Estimated speaking time: ~55 seconds]

@@ -1,0 +1,12 @@
+SLIDE 2 — Overview & Context: What is the LASERTEC 80 Shape?
+==============================================================
+
+The LASERTEC 80 Shape is a five-axis precision CNC laser machining system produced by DMG MORI. It is installed in our Centre of Excellence for 5-Axis Machining — CE5AM — at MTF STU Trnava.
+
+The machine was purpose-built for four main tasks. First, laser structuring and engraving of injection molds — creating fine surface patterns directly on mold cavities. Second, laser micro-machining and material ablation — removing very thin layers of material with high precision. Third, functional surface texturing for tribological or decorative purposes — for example, to improve friction behaviour between sliding components. And fourth, manufacturing chip-breakers on cutting inserts made from sintered carbide.
+
+It is worth noting that our faculty operates two laser systems. Besides the LASERTEC 80 Shape, we also have a TruDisk 4002 from TRUMPF, which uses a different laser principle. The LASERTEC 80 Shape is the five-axis machine suited for complex three-dimensional surfaces.
+
+On the photo you can see the machine with its characteristic blue enclosure, the Siemens 840D CNC control panel mounted in front, and the standalone laser control PC to the right.
+
+[Estimated speaking time: ~50 seconds]

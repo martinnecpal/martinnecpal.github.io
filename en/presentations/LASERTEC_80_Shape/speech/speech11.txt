@@ -1,0 +1,14 @@
+SLIDE 11 — Surface Texture Examples: CE5AM MTF STU Trnava
+==========================================================
+
+These two diagrams are taken directly from student research conducted on the LASERTEC 80 Shape at CE5AM.
+
+On the left is the design of a hexagonal dimple array. The dimples are arranged in a regular hexagonal pattern with a centre-to-centre pitch of 0.4 millimetres. Each individual dimple has a diameter of 0.1 millimetres. This geometry was chosen to maximise tribological benefit while keeping the total textured area to approximately 6 percent of the total surface. Research has shown that coverage in the range of 5 to 10 percent is optimal for reducing friction without disrupting the load-bearing capacity of the surface.
+
+On the right are the cross-sectional profiles of two texture variants. Variant A — the shallow texture — has a depth of 10 micrometres and a diameter of 100 micrometres. Variant B — the deep texture — has a depth of 40 micrometres with the same 100 micrometre diameter. Both were machined using the LASERTEC 80 Shape.
+
+These textures were produced using two strategies: hatching — parallel scan lines filling the dimple area — and contouring — following the outline of the dimple. Comparative experiments showed differences in the resulting surface roughness and dimensional accuracy depending on which strategy was used.
+
+The layer removal depth was approximately 1 micrometre per pass, meaning the shallow 10 micrometre texture required about 10 passes, and the deep 40 micrometre texture required approximately 40 passes.
+
+[Estimated speaking time: ~70 seconds]
