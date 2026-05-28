@@ -26,6 +26,16 @@ To support my students and a broader audience, I have created tutorial videos th
 
 Additionally, I authored a textbook on assembly and manufacturing technology using simulation tools, which is accessible on [GitBook](http://stuba.gitbook.io/montaz). This resource serves as a comprehensive guide, covering theoretical concepts and practical applications.
 
-Feel free to explore these resources to learn more about the tools and methods I use in my teaching and research.
+</div>
+
+<div class="card" markdown="1">
+
+## DEFORM Software
+
+DEFORM is a software product developed by STFC that uses the finite element method to solve engineering problems. Manual can be found [here](https://martinnecpal.github.io/deform-manual/).
+
+</div>
+
+
 
 </div>

@@ -27,3 +27,11 @@ Pre podporu študentov vo výučbe boli vypracované výučbové videá, ktoré 
 Taktiež boli vypracované učebné texty zahŕňajúce montážne a výrobné technológie s využitím simulácie. Tento výučbový text je dostupný na [GitBook](http://stuba.gitbook.io/montaz).
 
 </div>
+
+<div class="card" markdown="1">
+
+## DEFORM softvér
+
+DEFORM softvér je od spoločnosti STFC využívajúci metódu konečných prvkov na riešenie technologických problémov. Manuál je možné vidieť [tu](https://martinnecpal.github.io/deform-manual/sk/).
+
+</div>
