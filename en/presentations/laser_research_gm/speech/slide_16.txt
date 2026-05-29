@@ -1,0 +1,50 @@
+SLIDE 16 — C1: CHIP BREAKER — 3D SCAN VERIFICATION RESULTS
+================================================================================
+
+The colour deviation map shown in this slide is the central result of the chip breaker study, and it tells us a great deal about both the capabilities and the current limitations of laser micromachining for cutting tool production.
+
+READING THE DEVIATION MAP
+
+The ATOS GOM optical scanner captured the geometry of the machined chip breaker and compared it point by point to the original CAD design. The colour scale indicates how far each point on the machined surface deviates from the intended design:
+
+Red areas indicate positive deviation — the machined surface is above the design intent. In a chip breaker groove, this would mean the groove is not as deep as designed: material was not fully removed.
+
+Blue areas indicate negative deviation — the machined surface is below the design intent. This means the groove is deeper than designed in those regions.
+
+Green and yellow areas indicate good conformity — the machined surface closely matches the design.
+
+THE QUANTITATIVE RESULT
+
+The maximum deviation measured across the entire chip breaker surface was 0.09 millimetres — 90 micrometres. This occurred in the red areas of the map, where material was not fully removed from the designed groove depth.
+
+To put this in context: the chip breaker groove itself has a designed depth of approximately 0.2 to 0.5 millimetres in a typical turning insert. A deviation of 0.09 mm represents 18 to 45 percent of the groove depth — which is significant. For a commercial cutting insert intended for production use, this level of deviation would be unacceptable: the chip breaking behaviour is sensitive to the precise geometry, and a 90-micrometre error could shift the effective operating range of the chip breaker significantly.
+
+THE SHAPE WAS ACHIEVED — AND THIS IS IMPORTANT
+
+However, looking at the overall deviation map, there is an important positive finding: the shape was reproduced correctly. The cross-section through the machined surface, shown in the accompanying cross-section view, confirms that the groove profile follows the designed contour — the profile shape is correct, even if the absolute depth is not perfectly achieved at every point.
+
+This distinction is important. There are two ways a manufacturing process can fail to produce the intended shape: it can fail to reproduce the shape correctly (wrong profile), or it can reproduce the correct shape but not to the right dimensional scale. Laser micromachining, in this case, achieved the former — the shape is right — but not fully the latter — the absolute dimensions are not perfect.
+
+WHY THE DEVIATION EXISTS
+
+The 0.09 mm maximum deviation is primarily due to difficulties in controlling the laser process at the transitions between flat and curved surfaces. In the Hatch regions (flat faces) the material removal is quite consistent because the laser beam strikes the surface perpendicularly. In the Caving regions (curved groove walls) the effective material removal rate changes with the angle of incidence — even small changes in surface orientation affect how much energy is deposited per unit area, and therefore how much material is removed per layer.
+
+Additionally, the 1-micrometre-per-layer removal assumption used in the CAM programming is an average over many pulses. In reality, the ablation depth per layer varies across the surface depending on local geometry, and these accumulated variations over many layers lead to the observed deviation at the final depth.
+
+Further work on adapting the layer depth and local scanning strategy to the surface orientation — essentially developing a more sophisticated CAM strategy for laser ablation of complex shapes — would likely reduce this deviation significantly.
+
+THE MACHINING TIME: THE PRACTICAL CONSTRAINT
+
+The machining time of 25 to 30 minutes per insert side is the most significant practical limitation identified in this study. Let us think about what this means economically.
+
+A conventional sintered carbide insert is produced by powder metallurgy: the WC-Co powder is pressed into the insert shape and sintered in a furnace. The chip breaker geometry is formed during the pressing step by the die design — so the chip breaker is essentially produced at zero marginal cost once the die exists. For production quantities of thousands or millions of inserts, the pressing-and-sintering route is overwhelmingly more efficient.
+
+However, for prototype development — where a designer wants to test five or ten different chip breaker geometries — the tooling cost for pressing dies is prohibitive. Each new die design requires weeks of machining and thousands of euros. Laser micromachining sidesteps this entirely: a new design can be machined into an existing insert in 30 minutes with no additional tooling.
+
+Moreover, the thesis noted that the automotive cutting tool industry already uses laser micromachining in precisely this way: when developing new chip breaker geometries for sintered carbide and cubic boron nitride inserts, the development tools are produced by laser, tested, refined, and only when the design is finalised are the pressing dies made for mass production. This thesis confirms that the LASERTEC 80 Shape at MTF STU Trnava can support this type of prototyping workflow.
+
+FUTURE WORK
+
+The thesis concluded with two recommendations. First, the produced chip breaker should be tested in actual turning operations to verify its chip breaking performance — the geometric deviations noted mean that the actual chip breaking range may differ from the design prediction. Second, the possibility of applying coating to the laser-machined insert surface — using PVD or CVD coating methods as used on commercial inserts — should be investigated, since coating thickness and uniformity on laser-ablated surfaces may differ from conventionally ground surfaces.
+
+Both of these represent natural follow-on research projects that would complete the picture of laser-machined chip breakers as a prototyping technology.

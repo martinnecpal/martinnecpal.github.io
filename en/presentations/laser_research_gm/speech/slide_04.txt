@@ -1,0 +1,46 @@
+SLIDE 4 — A1: TAGUCHI L9 — FACTORS AND SCANNING STRATEGIES
+================================================================================
+
+Now let us look at the specific values chosen for the experiment and understand what each factor actually represents physically.
+
+PULSE FREQUENCY — 40, 60, AND 80 KHz
+
+The pulse frequency determines how many times per second the laser fires its beam onto the surface. At 40 kilohertz, the laser fires 40,000 pulses every second. At 80 kilohertz, it fires 80,000.
+
+Why does this matter? Each pulse delivers a specific amount of energy to a very small spot on the surface. If the frequency is too low and the scan speed is too high, the pulses are spaced far apart and you get a dotted rather than continuous ablation path. If the frequency is too high, adjacent pulses overlap heavily and heat builds up in the material — this can cause re-melting and re-solidification that degrades surface quality and creates what are called heat-affected zones around the machined area.
+
+The frequency range of 40 to 80 kilohertz represents the practical operating range for this machine and this material where useful ablation occurs without excessive thermal damage.
+
+LASER POWER — 50, 75, AND 100 PERCENT
+
+Power is expressed as a percentage of the machine's maximum output of 100 watts. The actual output at a given percentage depends also on the frequency setting — the graph of power versus frequency is not linear on this machine. At 80 kilohertz and 75 percent setting, the actual output is approximately 63 watts. At 40 kilohertz and 50 percent, it is approximately 21 watts.
+
+Power determines the energy density delivered to the surface. Higher power removes more material per pulse but also generates more heat and more molten material that can re-solidify as surface debris. Finding the right balance between sufficient material removal and acceptable surface quality is one of the key objectives of this experiment.
+
+SCAN SPEED — 1000, 1600, AND 2200 mm/s
+
+Scan speed is the velocity at which the laser beam moves across the surface. This is set by the galvanometric mirror system that steers the beam. At 1000 millimetres per second the beam moves relatively slowly, delivering more pulses per unit length of path. At 2200 millimetres per second it moves much faster, delivering fewer pulses per unit length.
+
+Scan speed interacts strongly with both frequency and track spacing to determine how much overlap exists between adjacent scan lines and between successive pulses within a line. Too little overlap leads to ridges between incompletely ablated strips. Too much overlap wastes energy and generates excess heat.
+
+TRACK SPACING — 5, 10, AND 15 µm
+
+Track spacing is the distance between the centres of adjacent scan lines. This is perhaps the most geometrically intuitive parameter: if the laser beam has a focus diameter of approximately 25 micrometres, then a track spacing of 5 micrometres means that 80 percent of each line overlaps with the previous one. At 15 micrometres spacing, the overlap is approximately 40 percent.
+
+Smaller track spacing means more passes over each surface area, more total energy delivered, and a smoother but slower process. Larger spacing means faster machining but potentially visible ridges between scan lines if the overlap is insufficient.
+
+THE TAGUCHI L9 MATRIX IN PRACTICE
+
+The nine experiments were arranged according to the Taguchi orthogonal array, which ensures that each level of each factor appears the same number of times across the experiment. This balancing property means that the influence of each factor can be separated from the others statistically — even though only 9 of the possible 81 combinations are actually tested.
+
+Each experiment produced a machined area of 5 by 5 millimetres on the titanium sample. After machining, the area was cleaned with a special alkaline cleaning agent to remove debris that would otherwise affect the roughness measurement. Ra was then measured with the Mitutoyo SJ-210 over a reference length of 2.5 millimetres — chosen to match the size of the machined area.
+
+THE TWO SCANNING STRATEGIES
+
+The diagram on the right illustrates the physical difference between hatching and cross-hatching. In hatching, you can see parallel lines — the laser traces back and forth in a single direction. The resulting surface has a strong directional character: the grooves left by each scan line create a surface that is smooth along the line direction but has periodic peaks and valleys across the line direction.
+
+Cross-hatching adds a second set of lines perpendicular to the first. This second pass breaks up the ridges left by the first pass, creating a more uniform surface in both directions. The trade-off is that cross-hatching takes twice as long to machine the same area, and the double pass delivers more total energy to the surface — which can increase re-melting effects.
+
+Both strategies were tested on the same titanium samples so that the comparison is fair — the same material, same machine condition, same measurement equipment.
+
+This is a well-designed experiment that balances thoroughness with practicality, and the results we will see in the next slide bear this out clearly.

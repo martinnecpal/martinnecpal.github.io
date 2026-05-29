@@ -1,0 +1,46 @@
+SLIDE 14 — B3: FRICTION COEFFICIENT — TEXTURE × LUBRICANT MATRIX RESULTS
+================================================================================
+
+The results table on this slide is the centrepiece of the third tribological study. It presents the measured friction coefficients for every combination of texture and lubrication condition, and it reveals a nuanced picture that has clear practical implications.
+
+THE REFERENCE VALUES: WHAT LUBRICATION DOES ON ITS OWN
+
+Before examining the effect of texture, look at the reference row — the smooth untextured surface.
+
+In dry contact, the reference gives f = 0.275. Adding Variocut C462 actually increased friction slightly to f = 0.295. Adding Iloform FST4 reduced friction to f = 0.164 — a very significant reduction of 40 percent compared to dry contact.
+
+Two things are immediately notable here. First, the low-viscosity Variocut C462 did not reduce friction on a smooth surface — it increased it slightly. This is not unusual: when a fluid is trapped between smooth surfaces at high contact pressure, it can increase the effective contact area and thus friction, rather than forming a separating film. The lubricating film formation requires either sufficient fluid viscosity or a textured surface that retains fluid and generates hydrodynamic lift.
+
+Second, the high-viscosity Iloform FST4 was very effective at reducing friction even on a smooth surface — f = 0.164 compared to f = 0.275 dry. This tells us that with this lubricant, the lubrication mechanism is viscous film formation — the lubricant is thick enough to maintain a load-bearing film even between smooth surfaces under these contact conditions. This is the hydrodynamic lubrication regime.
+
+DRY CONTACT: TEXTURE I STANDS OUT
+
+In dry conditions, only Texture I significantly reduced friction — from f = 0.275 to f = 0.183, a reduction of 33 percent. This is a meaningful result. Textures II, III, and IV showed friction values of 0.256, 0.260, and 0.250 respectively — all close to the reference, with no statistically meaningful reduction.
+
+Why did only Texture I reduce dry friction while the others did not? The likely explanation involves the specific dimple geometry of Texture I. With deeper and more isolated dimples, the real contact area between the flat lands of Texture I and the ring surface was significantly smaller than for the other textures. In dry conditions, friction is strongly dependent on the real contact area — the fewer real contact points, the lower the friction. Textures II, III, and IV had higher dimple density but shallower features, meaning more of the nominal surface area was in actual contact, and the real contact area was not sufficiently reduced.
+
+WITH VARIOCUT C462: TEXTURE IV DOMINATES
+
+In the presence of Variocut C462, the picture changes dramatically. Texture IV achieved f = 0.158 — a reduction of 46 percent compared to the smooth reference with the same lubricant. This is by far the best result in the entire study.
+
+The explanation connects the dimple geometry of Texture IV to the behaviour of a low-viscosity fluid. The higher density of shallower dimples in Texture IV creates a large number of small pockets that can be filled with the low-viscosity Variocut C462. As the workpiece deforms and slides over the tool surface, fluid from these pockets is mobilised and drawn into the contact interface, creating and replenishing the lubricant film. This is the micro-hydrodynamic or micro-hydrostatic lubrication mechanism: the dimples act as micro-reservoirs that continuously supply lubricant to the contact zone, preventing dry-out even under high contact pressure.
+
+Textures I, II, and III also showed friction reduction with Variocut C462 — values of 0.184, 0.220, and 0.233 respectively — but none as dramatic as Texture IV. This supports the interpretation that dimple geometry is optimised for this lubricant type specifically at the Texture IV dimensions.
+
+WITH ILOFORM FST4: TEXTURES HAVE NO BENEFIT
+
+In the presence of the high-viscosity Iloform FST4, the results are strikingly different. The reference smooth surface already achieves f = 0.164. The textured surfaces give values of 0.208, 0.220, 0.176, and 0.153 — only Texture IV is slightly below the reference, and the differences are within measurement uncertainty for most textures.
+
+The interpretation is clear: when the lubricant is already operating in the hydrodynamic regime on a smooth surface — as Iloform FST4 evidently is at these conditions — adding surface texture provides no further benefit. The thick viscous film carries the contact load regardless of surface topography. The texture geometry becomes irrelevant because the fluid mechanics, not the surface geometry, dominates the lubrication.
+
+This is a fundamental and important result for practical engineering. It tells the engineer that laser surface texturing is beneficial only in specific lubrication regimes. If the existing lubricant is already highly viscous and forms an effective hydrodynamic film, investing in surface texturing will not improve performance. Surface texturing is most valuable when working with low-viscosity lubricants or in near-dry conditions where lubricant retention is the limiting factor.
+
+THE MANUFACTURING LIMITATION
+
+There is an important footnote about manufacturing quality. Textures I and II, with their intended 10-micrometre depth, could not be produced to specification on the LASERTEC 80 Shape. The actual depths achieved were deeper than intended because the machine could not operate reliably below a certain depth threshold. This means that the measured tribological performance of Textures I and II may not represent the intended design — it represents what was actually machined, which was somewhat different from the design intent.
+
+For future work, the researcher recommended using a picosecond or femtosecond laser for producing shallow fine-geometry textures, and confirmed that the optimal dimple depth-to-diameter ratio for friction reduction lies in the range of 0.1 to 0.2, with surface texture density of at least 30 to 40 percent.
+
+THE SUMMARY STATEMENT
+
+The key takeaway from Study B3 is: laser surface texturing can reduce friction by up to 46 percent in the right conditions, but the correct conditions must be identified by matching the texture geometry to the lubricant viscosity. The best result here — Texture IV plus Variocut C462 — illustrates that this matching is non-trivial and requires systematic experimental investigation of the kind carried out in this thesis.

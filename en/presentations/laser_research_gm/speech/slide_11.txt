@@ -1,0 +1,38 @@
+SLIDE 11 — B2: LASER MICRO-STRUCTURING — TOOL STEEL 1.2311
+================================================================================
+
+The second tribological study is particularly interesting because it tackles the question at a different scale and with a more challenging design intent. The goal was to create a microstructure consisting of triangular elements — smaller than the grooves in Study B1 — and verify whether such fine structures could meaningfully reduce friction on a forming tool surface.
+
+THE MATERIAL: TOOL STEEL 1.2311
+
+Tool steel 1.2311 — known by the DIN designation 40CrMnMoS8-6, or by the trade names P20 and P20+S — is a pre-hardened mould steel widely used for injection moulding tools, die-casting dies, and forming tools. It has a hardness of approximately 290 to 330 Brinell in the pre-hardened condition, which represents a good compromise between machinability and wear resistance. The sulphur content in the S-variant (the +S designation) improves machinability by forming manganese sulphide inclusions that act as chip breakers.
+
+The choice of 1.2311 is practical: this is exactly the type of steel that forming tool manufacturers would use in a real application, so results obtained on this material have direct industrial relevance.
+
+THE MACHINE: LASERTEC 80 POWERDRILL
+
+This study used a different machine from the LASERTEC 80 Shape used in the other studies. The LASERTEC 80 PowerDrill is an older machine in the same product family, also made by DMG. It uses a pulsed nanosecond laser — the pulse duration is in the range of hundreds of nanoseconds, compared to the picosecond-to-nanosecond pulses of the fibre laser in the LASERTEC 80 Shape. The average output power used was 58 watts, with a laser spot diameter of 25 micrometres, a frequency of 80 kilohertz, a scan speed of 1600 millimetres per second, and a track spacing of 10 micrometres.
+
+THE INTENDED MICROSTRUCTURE DESIGN
+
+The original design concept was ambitious: triangular microstructures where each triangle arm was only 50 micrometres long and the depth of each dimple was approximately 41 micrometres. At this scale, the microstructure would present a very large number of tiny cavities per unit area, which should theoretically create excellent lubricant retention and friction reduction.
+
+However, when the researcher attempted to machine this original design, the LASERTEC 80 PowerDrill could not produce individual elements of this size with acceptable quality and precision. The machine's spot size and minimum addressable geometry were not fine enough for 50-micrometre features. Individual elements were poorly defined, edges were blurred, and the resulting surface structure did not match the design intent.
+
+THE SCALE-UP COMPROMISE
+
+To produce measurable and well-defined structures, the triangle arm length was increased tenfold — to 500 micrometres — and the cavity depth correspondingly increased to approximately 410 micrometres. This ten-fold scale-up made the structure much larger but still within the range of what the machine could produce with good quality.
+
+The photograph on the right shows the microstructured tool surface as seen under an optical microscope. The triangular grid is clearly visible, and the surface quality is described in the thesis as sufficient for the intended ring test experiment. The elements are well-defined, the boundaries are clear, and the depth appears consistent. From a manufacturing standpoint, the structuring was successful at this scale.
+
+The machining time, however, was substantial: approximately 9 hours per experimental sample. This reflects the large number of scan passes required to machine the 500-micrometre-deep triangular cavities, given that each pass removes only a micrometre or so of material. Nine hours of continuous machine time per sample is a significant constraint on the practicality of this approach.
+
+TWO SAMPLES PREPARED
+
+Two experimental samples were machined — one for testing against a smooth reference surface, and one for testing against the microstructured surface. Both samples were ground on the non-structured faces to ensure consistent and repeatable contact on that side of the compression. Before ring testing, both samples and the test rings were cleaned with technical benzene.
+
+THE HYPOTHESIS
+
+The working hypothesis was straightforward: the triangular cavity array would create effective lubricant reservoirs at the tool-workpiece interface, reducing the real contact area and supporting a hydrodynamic or at least boundary lubrication regime. Even in the dry contact conditions of this test, the cavities might trap residual lubricant from manufacturing or cleaning, providing some lubrication effect.
+
+The expectation was a clear reduction in friction coefficient compared to the smooth reference surface. As we will see in the next slide, this expectation was not met — and the reason why is scientifically informative.

@@ -1,0 +1,34 @@
+SLIDE 3 — A1: TITANIUM ALLOY GRADE 2 — EXPERIMENT DESIGN
+================================================================================
+
+The first parameter optimisation study focused on titanium alloy GRADE 2. Let me explain why this material is interesting and why laser machining it is non-trivial.
+
+WHY TITANIUM?
+
+Titanium and its alloys are used extensively in aerospace, medical implants, and chemical processing equipment. Their appeal is a combination of high strength-to-weight ratio, excellent corrosion resistance, and biocompatibility. However, titanium is notoriously difficult to machine by conventional methods. It has low thermal conductivity, which means heat generated during cutting stays concentrated at the cutting edge rather than being carried away with the chip. It also has a tendency to work-harden and to react chemically with cutting tool materials at elevated temperatures. These properties shorten tool life dramatically and make conventional machining expensive.
+
+Laser micromachining sidesteps these problems entirely. Because there is no mechanical contact, there is no tool wear, no cutting force, and no work hardening. The laser removes material by a combination of melting, vaporisation, and ablation — essentially turning the surface material into plasma and gas that is then evacuated. For titanium, this is a particularly attractive approach.
+
+GRADE 2 specifically is the most widely used grade of commercially pure titanium. It contains a small amount of oxygen and iron impurities, which give it slightly higher strength than GRADE 1 while maintaining excellent ductility and weldability. It is used in hydraulic tubing for aircraft, chemical reactors, heat exchangers, and medical devices.
+
+THE EXPERIMENTAL GOAL
+
+The goal of this study was not to machine a specific part. The goal was to find out: for this material, on this machine, what combination of laser parameters gives the best surface quality? Surface quality is measured by the average surface roughness parameter Ra — the arithmetic mean of the absolute deviations of the surface profile from its mean line, measured in micrometres. A lower Ra means a smoother surface.
+
+THE MACHINE
+
+The machining was carried out on the DMG MORI LASERTEC 80 Shape, which you can see in the photograph on the right. This is a sophisticated five-axis machine. The axes X and Y are driven by linear motors, which allow high acceleration — greater than 1.2 g — and therefore high scanning speed with good positional accuracy. The laser source is integrated into the machine as a pulsed ytterbium fibre laser. Crucially, the machine provides a CCD camera with 50× magnification for in-process monitoring and a 3D measuring probe for referencing and measuring material removal during machining.
+
+THE EXPERIMENTAL DESIGN
+
+Rather than testing all possible combinations of parameters — which would require a prohibitively large number of experiments — the researcher used the Taguchi method. This is a well-established statistical approach for designing efficient experiments. The Taguchi L9 orthogonal matrix is the simplest version: it tests four factors at three levels each, but instead of the 81 experiments that a full factorial design would require, it achieves this in just 9 strategically chosen combinations. The loss in precision is acceptable because the primary goal is to identify which factors matter most and what their optimal levels are — not to build a complete predictive model.
+
+The four factors chosen were: pulse frequency, laser power, scan speed, and track spacing. These are the four main parameters that the operator can freely set on the LASERTEC 80 Shape. Other parameters — focal distance, laser wavelength, pulse duration — are fixed by the machine design.
+
+TWO SCANNING STRATEGIES
+
+An additional variable in the experiment was the scanning strategy. Two approaches were compared. In the hatching strategy, the laser beam moves in parallel lines across the surface, always in the same direction. In the cross-hatching strategy, the beam makes two passes: first in one direction, then in the perpendicular direction. This difference has a significant effect on the resulting surface — as we will see in the results slide.
+
+Surface roughness was measured using a Mitutoyo SJ-210 contact profilometer in two perpendicular directions: along the direction of the laser scan lines, and across them. This two-direction measurement was important because hatching surfaces tend to be highly anisotropic — much smoother in one direction than the other — and knowing both values is necessary to understand the full surface character.
+
+Statistical analysis was performed using the Desirability Function Analysis method and ANOVA — Analysis of Variance — to determine which factors had a statistically significant influence on Ra.

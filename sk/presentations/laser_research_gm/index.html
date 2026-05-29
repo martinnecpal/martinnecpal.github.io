@@ -1,0 +1,1008 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Laser Micromachining Research – MTF STU Trnava</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <style>
+    :root {
+      --g1:      #667eea;
+      --g2:      #764ba2;
+      --indigo:  #3730a3;
+      --amber:   #f59e0b;
+      --text:    #1e293b;
+      --light:   #f8fafc;
+      --muted:   #94a3b8;
+      --card-bg: #ffffff;
+      --bg:      #f1f5f9;
+      --accent:  #667eea;
+      --accent-rgb: 102,126,234;
+    }
+    .reveal-viewport { background: var(--bg); }
+    .reveal {
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    /* Default headings */
+    .reveal h1, .reveal h2, .reveal h3 {
+      text-transform: none;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      font-weight: 700;
+    }
+    .reveal h2 { font-size: 1.35em; color: var(--indigo); }
+
+    /* Lists */
+    .reveal ul, .reveal ol {
+      text-align: left;
+      font-size: 0.83em;
+      line-height: 1.85;
+    }
+    .reveal li { margin-bottom: 0.35em; }
+    .reveal li::marker { color: var(--g1); }
+
+    /* Images */
+    .reveal img {
+      max-height: 42vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    /* ── Title slide ──────────────────────────────────────────────────────── */
+    .reveal section.title-slide {
+      background: linear-gradient(135deg, var(--g1), var(--g2));
+      color: var(--light);
+    }
+    .reveal section.title-slide h1 {
+      color: var(--light);
+      font-size: 2em;
+      line-height: 1.2;
+    }
+    .reveal section.title-slide .subtitle {
+      color: rgba(255,255,255,0.82);
+      font-size: 0.75em;
+      margin-top: 0.8em;
+    }
+    .reveal section.title-slide .author {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.58em;
+      margin-top: 1.6em;
+    }
+
+    /* ── Section divider (reuses gradient) ───────────────────────────────── */
+    .reveal section.section-divider {
+      background: linear-gradient(135deg, var(--g1), var(--g2));
+    }
+    .reveal section.section-divider h2 {
+      color: var(--light);
+      font-size: 1.8em;
+    }
+
+    /* ── Card — white panel with shadow ─────────────────────────────────── */
+    .card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 1em 1.5em;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+      text-align: left;
+    }
+    .card-label {
+      color: var(--indigo);
+      font-weight: bold;
+      font-size: 0.8em;
+      margin-bottom: 0.4em;
+    }
+
+    /* ── Two-card grid ───────────────────────────────────────────────────── */
+    .cols-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5em;
+    }
+
+    /* ── Amber badge ─────────────────────────────────────────────────────── */
+    .badge {
+      display: inline-block;
+      background: var(--amber);
+      color: #1e293b;
+      font-weight: bold;
+      border-radius: 4px;
+      padding: 0.1em 0.55em;
+      font-size: 0.65em;
+      margin-right: 0.45em;
+      vertical-align: middle;
+    }
+
+    /* Slide footer */
+    .slide-source {
+      font-size: 0.8em;
+      color: var(--muted);
+      position: absolute;
+      bottom: 0.5em;
+      right: 1em;
+    }
+
+    /* ── Category label bar (gradient strip) ─────────────────────────────── */
+    .cat-bar {
+      background: linear-gradient(90deg, var(--g1), var(--g2));
+      color: #fff;
+      padding: 0.28em 0.8em;
+      margin: -0.5em -0.5em 0.6em -0.5em;
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      align-items: baseline;
+      gap: 1em;
+    }
+    .cat-bar .cat-label {
+      font-size: 0.85em;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .cat-bar .cat-sub {
+      font-size: 0.68em;
+      color: rgba(255,255,255,0.75);
+    }
+
+    /* ── Tables ──────────────────────────────────────────────────────────── */
+    .reveal table {
+      font-size: 0.7em;
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.4em 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    }
+    .reveal table th {
+      background: linear-gradient(90deg, var(--g1), var(--g2));
+      color: #fff;
+      padding: 0.45em 0.8em;
+      text-align: left;
+      font-weight: 600;
+    }
+    .reveal table td {
+      padding: 0.32em 0.8em;
+      border-bottom: 1px solid #e8edf3;
+      background: var(--card-bg);
+    }
+    .reveal table tr:last-child td { border-bottom: none; }
+    .reveal table .best { color: var(--indigo); font-weight: 700; }
+    .reveal table .ref  { color: var(--muted); font-style: italic; }
+
+    /* ── Image caption ───────────────────────────────────────────────────── */
+    .img-caption {
+      font-size: 0.92em;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.35em;
+    }
+
+    /* ── Fig row (text + image) ──────────────────────────────────────────── */
+    .fig-row {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 1.5em;
+      align-items: center;
+    }
+
+    /* ── Category overview cards (3-col) ─────────────────────────────────── */
+    .cat-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.1em;
+      margin-top: 0.7em;
+    }
+    .cat-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 0.8em 1em;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+      border-top: 3px solid var(--g1);
+    }
+    .cat-card h3 {
+      font-size: 0.75em;
+      color: var(--indigo);
+      margin: 0 0 0.35em 0;
+      font-weight: 700;
+    }
+    .cat-card ul {
+      font-size: 0.63em;
+      line-height: 1.65;
+      margin: 0;
+      padding-left: 1.1em;
+    }
+
+    /* ══ BOTTOM NAV BAR ══ */
+    #navBar {
+      position: fixed; bottom: 0; left: 0; right: 0; height: 54px;
+      background: rgba(30,41,59,0.95); backdrop-filter: blur(8px);
+      border-top: 2px solid var(--accent, #667eea);
+      display: flex; align-items: center; justify-content: center;
+      gap: 14px; z-index: 9998; padding: 0 20px;
+    }
+    #slideIndicators { display: flex; gap: 5px; align-items: center; }
+    .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.28); border: none;
+      cursor: pointer; padding: 0; flex-shrink: 0;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .dot:hover  { background: rgba(255,255,255,0.65); }
+    .dot.active { background: var(--accent, #667eea); transform: scale(1.55); }
+    .nav-btn {
+      background: none; border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 7px; color: #fff; cursor: pointer;
+      padding: 5px 9px; display: flex; align-items: center;
+      justify-content: center; transition: background 0.2s, border-color 0.2s; flex-shrink: 0;
+    }
+    .nav-btn:hover  { background: rgba(102,126,234,0.35); border-color: var(--accent,#667eea); }
+    .nav-btn:active { background: rgba(102,126,234,0.55); }
+    .nav-btn svg    { width: 22px; height: 22px; fill: #fff; display: block; }
+    #slideCounter {
+      font-family: 'Segoe UI', sans-serif; font-size: 11px;
+      color: rgba(255,255,255,0.5); min-width: 34px; text-align: center; flex-shrink: 0;
+    }
+    #autoLabel {
+      display: flex; align-items: center; gap: 5px;
+      color: rgba(255,255,255,0.55); font-size: 11px;
+      font-family: 'Segoe UI', sans-serif; cursor: pointer; user-select: none; flex-shrink: 0;
+    }
+    #autoLabel input { cursor: pointer; accent-color: var(--accent, #667eea); }
+  </style>
+</head>
+<body>
+
+<audio id="narration"></audio>
+
+<div class="reveal"><div class="slides">
+
+  <!-- ══ SLIDE 1 — TITLE ══════════════════════════════════════════════════════ -->
+  <section class="title-slide">
+    <h1>Laser Micromachining Research<br>at MTF STU Trnava</h1>
+    <p class="subtitle">Overview of 7 Diploma Theses · Institute of Production Technologies</p>
+    <p class="author">Faculty of Materials Science and Technology &nbsp;·&nbsp; Slovak University of Technology in Bratislava</p>
+  </section>
+
+  <!-- ══ SLIDE 2 — OVERVIEW ═══════════════════════════════════════════════════ -->
+  <section>
+    <h2>Research Overview — Three Categories</h2>
+    <div class="cat-cards">
+      <div class="cat-card">
+        <h3>A · Parameter Optimisation</h3>
+        <ul>
+          <li>Titanium alloy GRADE 2</li>
+          <li>Sintered carbide WC-Co</li>
+        </ul>
+        <p style="font-size:0.6em; color:var(--muted); margin:0.5em 0 0;">Find optimal laser settings for surface quality and material removal.</p>
+      </div>
+      <div class="cat-card">
+        <h3>B · Surface Tribology</h3>
+        <ul>
+          <li>Steel 11373 — grooves &amp; dimples</li>
+          <li>Tool steel 1.2311 — large structures</li>
+          <li>Tool steel 90MnCrV8 + lubricants</li>
+        </ul>
+        <p style="font-size:0.6em; color:var(--muted); margin:0.5em 0 0;">Create microstructures by laser; measure friction via Ring test.</p>
+      </div>
+      <div class="cat-card">
+        <h3>C · Applied Manufacturing</h3>
+        <ul>
+          <li>Chip breaker on cutting insert</li>
+          <li>Injection mold texturing</li>
+        </ul>
+        <p style="font-size:0.6em; color:var(--muted); margin:0.5em 0 0;">Produce functional parts; evaluate dimensional quality.</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:0.9em; padding:0.5em 1em;">
+      <p style="font-size:0.6em; color:var(--muted); margin:0;">
+        <span class="badge">Platform</span>
+        <strong>DMG MORI LASERTEC 80 Shape</strong> — 5-axis CNC, pulsed ytterbium fibre laser, 1068 nm, max 100 W
+        &nbsp;·&nbsp; CE5AM Centre of Excellence, MTF STU Trnava
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       CATEGORY A — LASER PARAMETER OPTIMISATION
+       ══════════════════════════════════════════════════════════════════════════ -->
+
+  <!-- ══ SLIDE 3 — A1: Titanium — Experiment Design ══════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div class="cat-bar">
+      <span class="cat-label">A · Parameter Optimisation</span>
+      <span class="cat-sub">Study 1 of 2 &nbsp;·&nbsp; Titanium Alloy GRADE 2</span>
+    </div>
+    <h2>Experiment Design — Titanium Alloy GRADE 2</h2>
+    <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
+      <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
+        <ul>
+          <li>Material: commercially pure titanium GRADE 2 (flat bar samples)</li>
+          <li>Machine: LASERTEC 80 Shape (100 W ytterbium fibre laser)</li>
+          <li>Design: <span class="badge">Taguchi L9</span> orthogonal matrix — 9 experiments</li>
+          <li>Two scanning strategies: <strong>hatching</strong> vs. <strong>cross-hatching</strong></li>
+          <li>Ra measured in two perpendicular directions per sample</li>
+          <li>Statistical analysis: DFA + ANOVA (Minitab)</li>
+        </ul>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
+        <img src="images/t2/zaverecna_prace-1_p48_img1.jpeg" style="width:100%; max-height:48vh; object-fit:contain;" alt="LASERTEC 80 Shape">
+        <p class="img-caption">DMG MORI LASERTEC 80 Shape — CE5AM Centre, MTF STU Trnava</p>
+      </div>
+    </div>
+    <p class="slide-source">DP thesis, MTF STU Trnava, 2014</p>
+  </section>
+
+  <!-- ══ SLIDE 4 — A1: Factor Table + Strategies ══════════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div class="cat-bar">
+      <span class="cat-label">A · Parameter Optimisation</span>
+      <span class="cat-sub">Titanium GRADE 2 — Factor Levels</span>
+    </div>
+    <h2>Taguchi L9 — Factors &amp; Scanning Strategies</h2>
+    <div class="fig-row" style="flex:1; align-items:start; margin-top:0.4em;">
+      <div>
+        <table>
+          <thead><tr><th>Factor</th><th>Level 1</th><th>Level 2</th><th>Level 3</th></tr></thead>
+          <tbody>
+            <tr><td>Pulse frequency (kHz)</td><td>40</td><td>60</td><td>80</td></tr>
+            <tr><td>Laser power (%)</td><td>50</td><td>75</td><td>100</td></tr>
+            <tr><td>Scan speed (mm/s)</td><td>1 000</td><td>1 600</td><td>2 200</td></tr>
+            <tr><td>Track spacing (µm)</td><td>5</td><td>10</td><td>15</td></tr>
+          </tbody>
+        </table>
+        <div class="card" style="margin-top:0.8em; padding:0.6em 1em;">
+          <p style="font-size:0.65em; margin:0; color:var(--text);">
+            9 experiments × 2 strategies × 2 measurement directions = <strong>36 Ra values</strong>.<br>
+            Both strategies tested on the same titanium sample surface.
+          </p>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
+        <img src="images/t2/zaverecna_prace-1_p47_img1.png" style="width:100%; max-height:40vh; object-fit:contain;" alt="Scanning strategies">
+        <p class="img-caption">Hatching (parallel passes) vs. cross-hatching (perpendicular passes)</p>
+      </div>
+    </div>
+    <p class="slide-source">DP thesis, MTF STU Trnava, 2014</p>
+  </section>
+
+  <!-- ══ SLIDE 5 — A1: Results ════════════════════════════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div class="cat-bar">
+      <span class="cat-label">A · Parameter Optimisation</span>
+      <span class="cat-sub">Titanium GRADE 2 — Results</span>
+    </div>
+    <h2>Results — Surface Roughness Ra</h2>
+    <div class="fig-row" style="flex:1; align-items:start; margin-top:0.4em;">
+      <div>
+        <table>
+          <thead><tr><th>Strategy</th><th>Best Ra (µm)</th><th>Optimal parameters</th></tr></thead>
+          <tbody>
+            <tr><td>Hatching — direction 1</td><td class="best">1.17</td><td>80 kHz · 75% · 1 000 mm/s · h=15 µm</td></tr>
+            <tr><td>Hatching — direction 2</td><td>2.26</td><td>(same sample, perpendicular)</td></tr>
+            <tr><td>Cross-hatching — dir. 1</td><td class="best">1.55</td><td>60 kHz · 50% · 1 600 mm/s · h=15 µm</td></tr>
+            <tr><td>Cross-hatching — dir. 2</td><td class="best">1.57</td><td>(same sample, perpendicular)</td></tr>
+          </tbody>
+        </table>
+        <div class="card" style="margin-top:0.7em; padding:0.7em 1em;">
+          <ul style="font-size:0.68em; margin:0;">
+            <li><span class="badge">KEY</span> Track spacing most influential factor — up to <strong>51%</strong></li>
+            <li>Scan speed: least influential — below <strong>14%</strong> in all cases</li>
+            <li>Cross-hatching preferred — <strong>isotropic</strong> surface (similar Ra both directions)</li>
+          </ul>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
+        <img src="images/t2/zaverecna_prace-1_p55_img1.jpeg" style="width:100%; max-height:42vh; object-fit:contain;" alt="Roughness measurement">
+        <p class="img-caption">Mitutoyo SJ-210 — measuring Ra on titanium samples</p>
+      </div>
+    </div>
+    <p class="slide-source">DP thesis, MTF STU Trnava, 2014</p>
+  </section>
+
+  <!-- ══ SLIDE 6 — A2: Sintered Carbide — Design ══════════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div class="cat-bar">
+      <span class="cat-label">A · Parameter Optimisation</span>
+      <span class="cat-sub">Study 2 of 2 &nbsp;·&nbsp; Sintered Carbide WC-Co</span>
+    </div>
+    <h2>Experiment Design — Sintered Carbide WC-Co</h2>
+    <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
+      <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
+        <ul>
+          <li>Material: uncoated carbide inserts — PRAMET CNHA 120408 <br>(10% Co · remainder WC)</li>
+          <li>Machine: LASERTEC 80 Shape (same as Study A1)</li>
+          <li>Design: <span class="badge">Half-factorial</span> 3³ — <strong>27 experiments</strong></li>
+          <li>Strategy: cross-hatching only (superior from A1)</li>
+          <li>Two outputs: surface roughness Ra + <strong>ablation rate</strong></li>
+          <li>Analysis: Minitab — ANOVA, Pareto significance</li>
+        </ul>
+        <table style="margin-top:0.7em;">
+          <thead><tr><th>Factor</th><th>L1</th><th>L2</th><th>L3</th></tr></thead>
+          <tbody>
+            <tr><td>Frequency (kHz)</td><td>40</td><td>60</td><td>80</td></tr>
+            <tr><td>Power (W)</td><td>50</td><td>75</td><td>100</td></tr>
+            <tr><td>Scan speed (mm/s)</td><td>1 000</td><td>1 600</td><td>2 200</td></tr>
+            <tr><td>Track spacing (µm)</td><td>5</td><td>10</td><td>15</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
+        <img src="images/t4/zaverecna_prace-3_p59_img1.jpeg" style="width:100%; max-height:48vh; object-fit:contain;" alt="Working area with carbide insert">
+        <p class="img-caption">LASERTEC 80 Shape — working area with mounted sintered carbide insert</p>
+      </div>
+    </div>
+    <p class="slide-source">DP thesis, MTF STU Trnava, 2018</p>
+  </section>
+
+  <!-- ══ SLIDE 7 — A2: Surface Photos ════════════════════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div class="cat-bar">
+      <span class="cat-label">A · Parameter Optimisation</span>
+      <span class="cat-sub">Sintered Carbide — Machined Surface Comparison</span>
+    </div>
+    <h2>WC-Co Surfaces after Laser Micromachining</h2>
+    <div class="cols-2" style="flex:1; margin-top:0.5em;">
+      <div style="text-align:center;">
+        <img src="images/t4/zaverecna_prace-3_p83_img1.png" style="width:100%; max-height:50vh; object-fit:contain;" alt="WC-Co surfaces 1-2">
+        <p class="img-caption">Surfaces #1 &amp; #2 — fp=40 kHz, P=50/75 W, varying speed &amp; spacing</p>
+      </div>
+      <div style="text-align:center;">
+        <img src="images/t4/zaverecna_prace-3_p83_img2.png" style="width:100%; max-height:50vh; object-fit:contain;" alt="WC-Co surfaces 3-4">
+        <p class="img-caption">Surfaces #3 &amp; #4 — fp=40 kHz, P=100 W / 50 W, different track spacing</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:0.4em; padding:0.5em 1em;">
+      <p style="font-size:0.62em; margin:0;">
+        <span class="badge">KEY</span> Track spacing + power most influential for Ra and ablation rate on WC-Co.
+        Results provide a machine-specific calibration baseline for sintered carbide.
+      </p>
+    </div>
+    <p class="slide-source">DP thesis, MTF STU Trnava, 2018</p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       CATEGORY B — LASER SURFACE TEXTURING FOR TRIBOLOGICAL MODIFICATION
+       ══════════════════════════════════════════════════════════════════════════ -->
+
+  <!-- ══ SLIDE 8 — Ring Test Method ══════════════════════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div class="cat-bar">
+      <span class="cat-label">B · Surface Tribology</span>
+      <span class="cat-sub">Shared methodology — Ring Compression Test</span>
+    </div>
+    <h2>Ring Test — Measuring Friction Coefficient</h2>
+    <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
+      <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
+        <ul>
+          <li>Metal ring compressed between two tool surfaces (4 steps)</li>
+          <li>Inner diameter change is friction-sensitive:
+            <ul>
+              <li>Low friction → inner diameter <em>increases</em></li>
+              <li>High friction → inner diameter <em>decreases</em></li>
+            </ul>
+          </li>
+          <li>Friction coefficient f read from calibration curve</li>
+          <li>Textured vs. smooth (reference) tools compared</li>
+          <li>Used across all 3 tribological studies — B1, B2, B3</li>
+        </ul>
+        <p style="font-size:0.6em; margin-top:0.6em; color:var(--muted);">
+          Machine: EU 40 hydraulic press (0–200 kN) · MTF STU Trnava forming laboratory
+        </p>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
+        <img src="images/t5/zaverecna_prace-4_p60_img1.jpeg" style="width:100%; max-height:48vh; object-fit:contain;" alt="EU 40 ring test setup">
+        <p class="img-caption">EU 40 hydraulic press with ring compression fixture</p>
+      </div>
+    </div>
+    <p class="slide-source">Common method — all Category B theses, MTF STU Trnava</p>
+  </section>
+
+  <!-- ══ SLIDE 9 — B1: Steel 11373 — Structures ══════════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div class="cat-bar">
+      <span class="cat-label">B · Surface Tribology</span>
+      <span class="cat-sub">Study 1 of 3 &nbsp;·&nbsp; Steel 11373 — Three Structure Types</span>
+    </div>
+    <h2>Laser Structured Surfaces — Steel 11373</h2>
+    <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
+      <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
+        <ul>
+          <li>Material: steel 11 373 (STN 411373) ring samples</li>
+          <li>Two laser systems compared:
+            <ul>
+              <li>DM01 marking laser — external (Nové Mesto n. Váhom)</li>
+              <li>LASERTEC 80 Shape — CE5AM, MTF</li>
+            </ul>
+          </li>
+          <li>Three structure types:
+            <ul>
+              <li><strong>Type A</strong> — narrow parallel grooves (0.5 mm spacing)</li>
+              <li><strong>Type B</strong> — wide deep grooves (0.3 mm wide)</li>
+              <li><strong>Type C</strong> — hemispherical dimples (∅ 0.15 mm)</li>
+            </ul>
+          </li>
+          <li>Reference: smooth unstructured surface</li>
+        </ul>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; gap:0.5em;">
+        <div style="text-align:center;">
+          <img src="images/t5/zaverecna_prace-4_p55_img1.jpeg" style="width:100%; max-height:25vh; object-fit:contain;" alt="Groove structure A">
+          <p class="img-caption">Type A — narrow groove (55.7× magnification)</p>
+        </div>
+        <div style="text-align:center;">
+          <img src="images/t5/zaverecna_prace-4_p57_img1.jpeg" style="width:100%; max-height:25vh; object-fit:contain;" alt="Groove structure B">
+          <p class="img-caption">Type B — wide groove (LASERTEC 80 Shape)</p>
+        </div>
+      </div>
+    </div>
+    <p class="slide-source">DP thesis, MTF STU Trnava, 2013</p>
+  </section>
+
+  <!-- ══ SLIDE 10 — B1: Results ═══════════════════════════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div class="cat-bar">
+      <span class="cat-label">B · Surface Tribology</span>
+      <span class="cat-sub">Steel 11373 — Ring Test Results</span>
+    </div>
+    <h2>Friction Coefficient Results — Steel 11373</h2>
+    <div class="fig-row" style="flex:1; align-items:start; margin-top:0.4em;">
+      <div>
+        <table>
+          <thead><tr><th>Sample</th><th>Structure</th><th>Laser</th><th>f (–)</th></tr></thead>
+          <tbody>
+            <tr class="ref"><td>Z1_01</td><td>Reference (no structure)</td><td>—</td><td>0.189</td></tr>
+            <tr><td>A1_01</td><td>Narrow grooves</td><td>DM01</td><td>0.225</td></tr>
+            <tr><td>A1_06</td><td>Narrow grooves</td><td>DM01</td><td>0.220</td></tr>
+            <tr><td>A1_08</td><td>Narrow grooves (best quality)</td><td>DM01</td><td>0.260</td></tr>
+            <tr><td class="best">B1_01</td><td class="best">Wide deep grooves</td><td class="best">LASERTEC 80</td><td class="best">0.128 ↓ −32%</td></tr>
+            <tr><td>C1_01</td><td>Hemispheres (3° pitch)</td><td>LASERTEC 80</td><td>0.213</td></tr>
+            <tr><td>C1_02</td><td>Hemispheres (6° pitch)</td><td>LASERTEC 80</td><td>0.188</td></tr>
+          </tbody>
+        </table>
+        <div class="card" style="margin-top:0.6em; padding:0.6em 1em;">
+          <p style="font-size:0.65em; margin:0;">
+            Wide grooves (B1) achieved lowest friction — large groove geometry creates minimal real contact area, acting as lubricant reservoir.
+            Narrow groove ridges raised roughness → friction increased vs. reference.
+          </p>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
+        <img src="images/t5/zaverecna_prace-4_p57_img2.jpeg" style="width:100%; max-height:44vh; object-fit:contain;" alt="Hemisphere structure C">
+        <p class="img-caption">Type C — hemispherical dimples (∅ ≈ 0.15 mm)</p>
+      </div>
+    </div>
+    <p class="slide-source">DP thesis, MTF STU Trnava, 2013</p>
+  </section>
+
+  <!-- ══ SLIDE 11 — B2: Setup ═════════════════════════════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div class="cat-bar">
+      <span class="cat-label">B · Surface Tribology</span>
+      <span class="cat-sub">Study 2 of 3 &nbsp;·&nbsp; Tool Steel 1.2311 — Large Triangular Microstructures</span>
+    </div>
+    <h2>Laser Micro-Structuring — Tool Steel 1.2311</h2>
+    <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
+      <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
+        <ul>
+          <li>Material: mold tool steel 1.2311 (40CrMnMoS8-6)</li>
+          <li>Machine: LASERTEC 80 PowerDrill (58 W · 80 kHz · 1600 mm/s)</li>
+          <li>Structure: triangular grid microstructure
+            <ul>
+              <li>Element arm length: <strong>500 µm</strong></li>
+              <li>Cavity depth: <strong>~410 µm</strong></li>
+              <li>Track spacing: 10 µm</li>
+            </ul>
+          </li>
+          <li>Machining time: <span class="badge">~9 hours</span> per sample</li>
+          <li>Quality verified by optical microscopy before ring test</li>
+        </ul>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
+        <img src="images/t6/zaverecna_prace-5_p51_img1.jpeg" style="width:100%; max-height:49vh; object-fit:contain;" alt="Microstructured surface">
+        <p class="img-caption">Triangular microstructures on tool steel surface (optical microscope, 500 µm scale)</p>
+      </div>
+    </div>
+    <p class="slide-source">DP thesis, MTF STU Trnava, 2014</p>
+  </section>
+
+  <!-- ══ SLIDE 12 — B2: Unexpected Result ════════════════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div class="cat-bar">
+      <span class="cat-label">B · Surface Tribology</span>
+      <span class="cat-sub">Tool Steel 1.2311 — Unexpected Friction Increase</span>
+    </div>
+    <h2>Ring Test — Friction Increased (Contrary to Expectation)</h2>
+    <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.4em;">
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <div class="cols-2" style="gap:1em; margin-bottom:0.7em;">
+          <div class="card" style="text-align:center; padding:0.8em;">
+            <p style="font-size:0.65em; color:var(--muted); margin:0 0 0.2em;">Unstructured (reference)</p>
+            <p style="font-size:1.6em; font-weight:700; color:var(--indigo); margin:0;">f = 0.258</p>
+          </div>
+          <div class="card" style="text-align:center; padding:0.8em; border-top:3px solid var(--amber);">
+            <p style="font-size:0.65em; color:var(--muted); margin:0 0 0.2em;">Microstructured</p>
+            <p style="font-size:1.6em; font-weight:700; color:var(--amber); margin:0;">f = 0.315 ↑</p>
+          </div>
+        </div>
+        <div class="card" style="padding:0.7em 1em;">
+          <ul style="font-size:0.68em; margin:0;">
+            <li><strong>Root cause:</strong> structures too large (500 µm · 410 µm deep) — metal flowed into cavities during compression, creating extra resistance</li>
+            <li><strong>Reframed application:</strong> these structures <em>increase</em> friction — suitable for grippers, anti-slip surfaces, clamping faces</li>
+            <li><strong>Fix:</strong> return to 50 µm design — requires femtosecond laser</li>
+          </ul>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
+        <img src="images/t6/zaverecna_prace-5_p56_img2.jpeg" style="width:100%; max-height:49vh; object-fit:contain;" alt="Compressed ring sample">
+        <p class="img-caption">Compressed ring after test on microstructured tool — visible material deformation into cavities</p>
+      </div>
+    </div>
+    <p class="slide-source">DP thesis, MTF STU Trnava, 2014</p>
+  </section>
+
+  <!-- ══ SLIDE 13 — B3: 4 Textures + Lubricants ══════════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div class="cat-bar">
+      <span class="cat-label">B · Surface Tribology</span>
+      <span class="cat-sub">Study 3 of 3 &nbsp;·&nbsp; Tool Steel 90MnCrV8 — 4 Textures + 3 Lubricants</span>
+    </div>
+    <h2>Laser Surface Texturing — Systematic Lubricant Study</h2>
+    <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
+      <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
+        <ul>
+          <li>Material: tool steel 90MnCrV8 compression tool punches</li>
+          <li>Machine: LASERTEC 80 Shape</li>
+          <li>4 paraboloid dimple texture designs (depth 10–15 µm)</li>
+          <li>3 lubrication conditions tested in Ring test:
+            <ul>
+              <li>Dry — no lubricant</li>
+              <li>Variocut C462 — low viscosity cutting fluid</li>
+              <li>Iloform FST4 — high viscosity forming oil</li>
+            </ul>
+          </li>
+          <li>15 Ring test configurations total</li>
+        </ul>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; gap:0.5em;">
+        <div style="text-align:center;">
+          <img src="images/t7/zaverecna_prace-6_p68_img1.png" style="width:100%; max-height:25vh; object-fit:contain;" alt="Confocal texture image">
+          <p class="img-caption">Confocal microscopy — dimple texture on compression tool face</p>
+        </div>
+        <div style="text-align:center;">
+          <img src="images/t7/zaverecna_prace-6_p69_img1.jpeg" style="width:100%; max-height:25vh; object-fit:contain;" alt="Texture detail">
+          <p class="img-caption">Paraboloid dimple profile — tool steel surface</p>
+        </div>
+      </div>
+    </div>
+    <p class="slide-source">DP thesis, MTF STU Trnava, 2015</p>
+  </section>
+
+  <!-- ══ SLIDE 14 — B3: Results Table ════════════════════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div class="cat-bar">
+      <span class="cat-label">B · Surface Tribology</span>
+      <span class="cat-sub">Tool Steel 90MnCrV8 — Results by Texture and Lubricant</span>
+    </div>
+    <h2>Friction Coefficient — Texture × Lubricant Matrix</h2>
+    <div style="flex:1; margin-top:0.4em;">
+      <table>
+        <thead>
+          <tr><th>Surface</th><th>Dry</th><th>Variocut C462</th><th>Iloform FST4</th></tr>
+        </thead>
+        <tbody>
+          <tr class="ref"><td>Reference (smooth)</td><td>0.275</td><td>0.295</td><td>0.164</td></tr>
+          <tr><td>Texture I</td><td class="best">0.183 (−33%)</td><td>0.184</td><td>0.208 ↑</td></tr>
+          <tr><td>Texture II</td><td>0.256</td><td>0.220</td><td>0.220 ↑</td></tr>
+          <tr><td>Texture III</td><td>0.260</td><td>0.233</td><td>0.176 ↑</td></tr>
+          <tr><td>Texture IV</td><td>0.250</td><td class="best">0.158 (−46%)</td><td class="best">0.153</td></tr>
+        </tbody>
+      </table>
+      <div class="cols-2" style="gap:1em; margin-top:0.7em;">
+        <div class="card" style="padding:0.6em 0.9em;">
+          <p class="card-label">Best result</p>
+          <p style="font-size:0.65em; margin:0;">Texture IV + Variocut C462 → <strong>f = 0.158</strong> (−46% vs. reference)</p>
+        </div>
+        <div class="card" style="padding:0.6em 0.9em;">
+          <p class="card-label">Key limitation</p>
+          <p style="font-size:0.65em; margin:0;">High-viscosity lubricant (Iloform) dominates — textures add no benefit. 10 µm depth too shallow for LASERTEC 80 Shape.</p>
+        </div>
+      </div>
+      <p style="font-size:0.6em; color:var(--muted); margin-top:0.5em;">
+        Recommendation: pico/femtosecond laser for fine dimples · low-viscosity lubricant (10–20 mm²/s) · dimple depth/diameter ratio 0.1–0.2 · texture density ≥ 30%
+      </p>
+    </div>
+    <p class="slide-source">DP thesis, MTF STU Trnava, 2015</p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       CATEGORY C — APPLIED LASER MACHINING
+       ══════════════════════════════════════════════════════════════════════════ -->
+
+  <!-- ══ SLIDE 15 — C1: Chip Breaker — Workflow ══════════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div class="cat-bar">
+      <span class="cat-label">C · Applied Manufacturing</span>
+      <span class="cat-sub">Study 1 of 2 &nbsp;·&nbsp; Chip Breaker on Sintered Carbide Insert</span>
+    </div>
+    <h2>Chip Breaker Production — CAD → CAM → Laser → Scan</h2>
+    <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
+      <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
+        <ul>
+          <li><strong>Goal:</strong> produce chip breaker geometry on carbide turning insert by laser (alternative to conventional grinding)</li>
+          <li><strong>Workflow:</strong>
+            <ol style="font-size:0.9em;">
+              <li>CAD: Autodesk Inventor</li>
+              <li>CAM: LpsWin (STL → laser paths)</li>
+              <li>Machining: LASERTEC 80 Shape (SAUER)</li>
+              <li>Verification: ATOS GOM optical 3D scanner</li>
+            </ol>
+          </li>
+          <li>6 parameter tests → optimal: <span class="badge">60 kHz · 2000 mm/s · 29 W</span></li>
+          <li>Track spacing 10 µm · material removal 1 µm/layer</li>
+        </ul>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
+        <img src="images/t1/zaverecna_prace_p60_img1.jpeg" style="width:100%; max-height:48vh; object-fit:contain;" alt="CAM laser paths on insert">
+        <p class="img-caption">LpsWin CAM — generated laser beam paths on cutting insert surface</p>
+      </div>
+    </div>
+    <p class="slide-source">DP thesis, MTF STU Trnava, 2014</p>
+  </section>
+
+  <!-- ══ SLIDE 16 — C1: 3D Scan Results ══════════════════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div class="cat-bar">
+      <span class="cat-label">C · Applied Manufacturing</span>
+      <span class="cat-sub">Chip Breaker — 3D Scan Verification</span>
+    </div>
+    <h2>Result — CAD vs. Machined Shape (ATOS GOM Scan)</h2>
+    <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <div class="cols-2" style="gap:1em; margin-bottom:0.7em;">
+          <div class="card" style="text-align:center; padding:0.8em;">
+            <p style="font-size:0.6em; color:var(--muted); margin:0 0 0.2em;">Max. deviation</p>
+            <p style="font-size:1.5em; font-weight:700; color:var(--indigo); margin:0;">0.09 mm</p>
+          </div>
+          <div class="card" style="text-align:center; padding:0.8em;">
+            <p style="font-size:0.6em; color:var(--muted); margin:0 0 0.2em;">Machining time / side</p>
+            <p style="font-size:1.5em; font-weight:700; color:var(--indigo); margin:0;">~25–30 min</p>
+          </div>
+        </div>
+        <div class="card" style="padding:0.7em 1em;">
+          <ul style="font-size:0.68em; margin:0;">
+            <li>Chip breaker shape correctly reproduced — geometry confirmed</li>
+            <li>Deviation too large for serial production → <strong>prototype / R&amp;D only</strong></li>
+            <li>Laser micromachining suitable for new geometry exploration in R&amp;D of carbide and CBN inserts</li>
+          </ul>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
+        <img src="images/t1/zaverecna_prace_p67_img1.jpeg" style="width:100%; max-height:49vh; object-fit:contain;" alt="3D scan colour deviation map">
+        <p class="img-caption">ATOS GOM 3D scan — colour deviation map: machined chip breaker vs. CAD model</p>
+      </div>
+    </div>
+    <p class="slide-source">DP thesis, MTF STU Trnava, 2014</p>
+  </section>
+
+  <!-- ══ SLIDE 17 — C2: Mold Texturing — Workflow ════════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div class="cat-bar">
+      <span class="cat-label">C · Applied Manufacturing</span>
+      <span class="cat-sub">Study 2 of 2 &nbsp;·&nbsp; Laser Texturing of Injection Mold Cavities</span>
+    </div>
+    <h2>Injection Mold Texturing — Flat &amp; 5-Axis Cavities</h2>
+    <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
+      <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
+        <ul>
+          <li><strong>Goal:</strong> apply decorative/functional textures to mold cavities; transfer to HDPE plastic parts</li>
+          <li><strong>Workflow:</strong>
+            <ol style="font-size:0.87em;">
+              <li>CAD design (4 textures) — Autodesk PowerSHAPE</li>
+              <li>STL → bitmap (GenBmp) → texture placement (GIMP)</li>
+              <li>LpsWin: define machining parameters + paths</li>
+              <li>LASERTEC 80 Shape (flat + 5-axis cavity)</li>
+              <li>Injection moulding: Babyplast micro-machine (HDPE)</li>
+            </ol>
+          </li>
+          <li>Settings: 20 µm track spacing · 0.002 mm/layer · 80 kHz · 1600 mm/s</li>
+        </ul>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; gap:0.5em;">
+        <div style="text-align:center;">
+          <img src="images/t3/zaverecna_prace-2_p43_img1.jpeg" style="width:100%; max-height:26vh; object-fit:contain;" alt="LpsWin software texture paths">
+          <p class="img-caption">LpsWin — laser paths for texture bitmap on mold surface</p>
+        </div>
+        <div style="text-align:center;">
+          <img src="images/t3/zaverecna_prace-2_p47_img1.jpeg" style="width:100%; max-height:26vh; object-fit:contain;" alt="Coordinate system defined on mold">
+          <p class="img-caption">LpsWin — machining region defined on mold cavity</p>
+        </div>
+      </div>
+    </div>
+    <p class="slide-source">Master thesis (English), MTF STU Trnava, 2017</p>
+  </section>
+
+  <!-- ══ SLIDE 18 — C2: Results ═══════════════════════════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <div class="cat-bar">
+      <span class="cat-label">C · Applied Manufacturing</span>
+      <span class="cat-sub">Injection Mold Texturing — Results</span>
+    </div>
+    <h2>Texturing Results — Three Production Rounds</h2>
+    <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
+      <div style="display:flex; flex-direction:column; justify-content:center; gap:0.55em;">
+        <div class="card" style="padding:0.6em 1em;">
+          <p class="card-label">Round 1 — Flat cavity (0.4–0.84 mm textures)</p>
+          <p style="font-size:0.65em; margin:0;">Textures invisible after moulding — too small. Mold re-milled, all textures redesigned to 4 mm.</p>
+        </div>
+        <div class="card" style="padding:0.6em 1em;">
+          <p class="card-label">Round 2 — Flat cavity (redesigned 4 mm)</p>
+          <p style="font-size:0.65em; margin:0;">2 of 4 textures met requirements. Oval mold artifact and jetting effect (poor gate) persisted.</p>
+        </div>
+        <div class="card" style="padding:0.6em 1em; border-top:3px solid var(--g1);">
+          <p class="card-label">Round 3 — 5-axis complex cavity</p>
+          <p style="font-size:0.65em; margin:0;">All textures visible on mold. Quality degraded in cavity centre — possible fixture movement or programming error. <span class="badge">Hexagonal</span> texture best (deepest geometry, best HDPE transfer).</p>
+        </div>
+        <p style="font-size:0.62em; color:var(--muted); margin:0;">
+          Key finding: texture depth <strong>&gt; 1 mm</strong> critical for reliable plastic transfer. 5-axis texturing of complex surfaces is feasible.
+        </p>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
+        <img src="images/t3/zaverecna_prace-2_p49_img1.jpeg" style="width:100%; max-height:49vh; object-fit:contain;" alt="Redesigned textures on mold">
+        <p class="img-caption">Redesigned textures on mold cavity (4 mm scale) — distinct patterns visible before injection moulding</p>
+      </div>
+    </div>
+    <p class="slide-source">Master thesis (English), MTF STU Trnava, 2017</p>
+  </section>
+
+  <!-- ══ SLIDE 19 — SUMMARY TABLE ═════════════════════════════════════════════ -->
+  <section style="display:flex; flex-direction:column; height:100%;">
+    <h2>Summary — 7 Research Theses on Laser Micromachining</h2>
+    <div style="overflow-x:auto; flex:1; margin-top:0.4em;">
+      <table style="font-size:0.61em;">
+        <thead>
+          <tr><th>Cat.</th><th>Material / Application</th><th>Method</th><th>Key Result</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge">A</span></td>
+            <td>Titanium GRADE 2</td>
+            <td>Taguchi L9, hatching &amp; cross-hatching</td>
+            <td>Ra = 1.17 µm / 1.55 µm isotropic; track spacing dominates (&gt;51%)</td>
+          </tr>
+          <tr>
+            <td><span class="badge">A</span></td>
+            <td>Sintered carbide WC-Co</td>
+            <td>Half-factorial 27 exp., cross-hatching</td>
+            <td>Optimal params for Ra &amp; ablation rate; power + spacing most influential</td>
+          </tr>
+          <tr>
+            <td><span class="badge">B</span></td>
+            <td>Steel 11373 — grooves &amp; dimples</td>
+            <td>Ring test, 2 laser systems</td>
+            <td>Wide grooves: f = 0.128 (−32%); narrow grooves raised friction</td>
+          </tr>
+          <tr>
+            <td><span class="badge">B</span></td>
+            <td>Tool steel 1.2311 — large structures</td>
+            <td>Ring test, LASERTEC 80 PowerDrill</td>
+            <td>Friction increased (f = 0.315) — suited for grip applications, not lubrication</td>
+          </tr>
+          <tr>
+            <td><span class="badge">B</span></td>
+            <td>Tool steel 90MnCrV8 — dimple textures</td>
+            <td>Ring test, 4 textures × 3 lubricants</td>
+            <td>Best: Texture IV + Variocut C462 → f = 0.158 (−46%)</td>
+          </tr>
+          <tr>
+            <td><span class="badge">C</span></td>
+            <td>Chip breaker on carbide insert</td>
+            <td>CAD → CAM → LASERTEC → ATOS scan</td>
+            <td>Prototype shape achieved; deviation 0.09 mm; 25–30 min/side → R&amp;D only</td>
+          </tr>
+          <tr>
+            <td><span class="badge">C</span></td>
+            <td>Injection mold texturing</td>
+            <td>Bitmap + 5-axis LASERTEC → Babyplast</td>
+            <td>5-axis texturing feasible; depth &gt;1 mm critical; hexagonal texture best transfer</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.53em; color:var(--muted); margin-top:0.5em;">
+      All studies: DMG MORI LASERTEC 80 Shape · CE5AM Centre of Excellence · MTF STU Trnava · 2013–2018
+    </p>
+  </section>
+
+</div></div>
+
+<div id="navBar">
+  <button class="nav-btn" id="prevBtn" title="Previous slide (←)">
+    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+  </button>
+  <div id="slideIndicators"></div>
+  <span id="slideCounter">1 / ?</span>
+  <button class="nav-btn" id="playBtn" title="Play narration (Space)">
+    <svg viewBox="0 0 24 24"><path id="playIconPath" d="M8 5v14l11-7z"/></svg>
+  </button>
+  <button class="nav-btn" id="nextBtn" title="Next slide (→)">
+    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+  </button>
+  <label id="autoLabel" title="Auto-advance when narration ends">
+    <input type="checkbox" id="autoPlay" checked> Auto
+  </label>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script>
+  const narration    = document.getElementById('narration');
+  const playIconPath = document.getElementById('playIconPath');
+  const PLAY_D  = 'M8 5v14l11-7z';
+  const PAUSE_D = 'M6 19h4V5H6v14zm8-14v14h4V5h-4z';
+
+  function setPlayIcon(playing) { playIconPath.setAttribute('d', playing ? PAUSE_D : PLAY_D); }
+  function loadAudio(idx, andPlay) {
+    const num = String(idx + 1).padStart(2, '0');
+    narration.src = `speech/slide_${num}.wav`;
+    if (andPlay) {
+      const onCanPlay = () => {
+        narration.removeEventListener('canplay', onCanPlay);
+        narration.play().catch(() => {});
+      };
+      narration.addEventListener('canplay', onCanPlay);
+    }
+  }
+  function playAudio()     { narration.play().catch(() => {}); }
+  function toggleAudio()   { narration.paused ? narration.play().catch(()=>{}) : narration.pause(); }
+
+  narration.addEventListener('play',  () => setPlayIcon(true));
+  narration.addEventListener('pause', () => setPlayIcon(false));
+  narration.addEventListener('ended', () => {
+    setPlayIcon(false);
+    if (document.getElementById('autoPlay').checked) setTimeout(() => Reveal.next(), 800);
+  });
+
+  function buildIndicators(total) {
+    const bar = document.getElementById('slideIndicators');
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 'dot';
+      d.setAttribute('aria-label', `Slide ${i + 1}`);
+      d.addEventListener('click', () => Reveal.slide(i));
+      bar.appendChild(d);
+    }
+  }
+
+  function updateNav(idx, total) {
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+    document.getElementById('slideCounter').textContent = `${idx + 1} / ${total}`;
+    document.getElementById('prevBtn').style.opacity = idx === 0         ? '0.3' : '1';
+    document.getElementById('nextBtn').style.opacity = idx === total - 1 ? '0.3' : '1';
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', () => Reveal.prev());
+  document.getElementById('nextBtn').addEventListener('click', () => Reveal.next());
+  document.getElementById('playBtn').addEventListener('click', () => toggleAudio());
+
+  Reveal.initialize({
+    hash: true, slideNumber: false, transition: 'convex',
+    backgroundTransition: 'fade', controls: false, progress: false,
+    keyboard: { 32: () => toggleAudio(), 37: () => Reveal.prev(), 39: () => Reveal.next() },
+  });
+
+  Reveal.on('ready', event => {
+    const total = Reveal.getTotalSlides();
+    buildIndicators(total);
+    updateNav(0, total);
+    loadAudio(0, false);
+  });
+
+  Reveal.on('slidechanged', event => {
+    const total = Reveal.getTotalSlides();
+    updateNav(event.indexh, total);
+    loadAudio(event.indexh, true);
+  });
+</script>
+</body>
+</html>

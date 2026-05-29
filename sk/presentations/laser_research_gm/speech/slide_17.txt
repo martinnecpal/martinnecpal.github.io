@@ -1,0 +1,54 @@
+SLIDE 17 — C2: INJECTION MOLD TEXTURING — WORKFLOW
+================================================================================
+
+The final study in our overview is perhaps the most visually striking, because it connects precision laser machining to the consumer product you can touch and look at: a plastic part with a textured surface produced by injection moulding.
+
+THE APPLICATION: MOLD SURFACE TEXTURING
+
+Injection moulding is one of the most widely used manufacturing processes in the world. Thermoplastic materials are melted, injected under high pressure into a closed mould, cooled, and ejected as finished parts. The surface of the plastic part is a direct reproduction of the mould cavity surface — whatever texture exists on the mould wall will be transferred to the plastic.
+
+This surface transfer property of injection moulding is commercially exploited in multiple ways. Decorative textures — wood grain, leather grain, geometric patterns — give plastic parts an aesthetic quality that plain smooth plastic cannot achieve. Functional textures can modify the surface friction, light reflectance, or tactile feel of the plastic part. In high-value consumer products like automotive interior trim, electronic device housings, and medical devices, textured surfaces are a critical design element.
+
+Traditionally, mould textures are applied either by chemical etching (using acid to attack the steel through a photoresist mask) or by sandblasting. These processes are difficult to control precisely, environmentally problematic, and cannot easily produce complex or geometrically precise patterns. Laser texturing of mould surfaces is an emerging alternative that offers much better control, repeatability, and design freedom.
+
+This thesis explored whether the LASERTEC 80 Shape could be used to produce mould textures that would successfully transfer to injection-moulded HDPE plastic parts.
+
+THE MOULD
+
+A custom injection mould was designed and manufactured specifically for this project, sized for use with the Babyplast micro-injection moulding machine. The Babyplast is a compact hydraulic machine designed for small plastic parts, with several features that make it ideal for laboratory use: it has three separate heating zones (H1, H2, H3) for precise temperature control, a water cooling system, and a small platen that allows direct use of the cavity plate as the mould component without additional bolstering. The machine is capable of producing very small plastic parts with high precision.
+
+The mould had two functional sides. The first side had four flat cavities — suitable for testing planar (2.5D) texturing. The second side had two complex three-dimensional cavities — suitable for testing five-axis volumetric texturing on curved surfaces.
+
+THE TEXTURE DESIGN WORKFLOW
+
+The four textures were designed in Autodesk PowerSHAPE 2017, a CAD system with strong surface modelling capabilities. The textures were created as three-dimensional surface models — not flat 2D drawings — because they needed to conform to the mould cavity geometry. The four designs varied in their geometric character:
+- A circular dimple pattern
+- A hexagonal cell pattern
+- A triangular relief pattern
+- A star-shaped pattern
+
+Each texture model was exported in STL format and converted to a bitmap image using the GenBmp software that comes with the LASERTEC 80 Shape. In this bitmap, the greyscale value of each pixel corresponds to a depth level of material to be removed — lighter pixels correspond to regions that are machined deeper, creating raised features on the mould surface that will appear as indentations on the plastic part, and vice versa.
+
+The bitmap was then imported into GIMP — a free, open-source graphic editor — where it was positioned within the mould cavity outline and adjusted to fit the cavity dimensions precisely. The resulting composite bitmap shows exactly which part of the mould surface will receive which depth of texture.
+
+THE CAM PROGRAMMING IN LPSWIN
+
+From GIMP, the composite texture bitmap was imported into LpsWin, the machine's CAM software. In LpsWin, the machining parameters were defined: track spacing of 20 micrometres, material removal of 0.002 millimetres per layer, and the origin of the coordinate system set at the centre of the bitmap.
+
+From these settings, LpsWin computed the laser scan paths — one set of parallel paths per layer — for the entire cavity. The resulting toolpath file was transferred to the LASERTEC 80 Shape controller.
+
+Before full machining, a test run was always performed on a non-functional area of the mould (the side face) to verify that the machine settings — particularly the effective laser power — produced the correct depth of material removal. During this test run, the power was calibrated to 71 percent, frequency to 80 kilohertz, and speed to 1600 millimetres per second.
+
+THE FIVE-AXIS TEXTURING WORKFLOW
+
+The second, complex side of the mould required five-axis laser texturing — the texture had to be applied to a curved three-dimensional surface rather than a flat one. This requires a more sophisticated software workflow.
+
+The 3D mould model was imported into Autodesk MAYA — a professional animation and 3D modelling software — where UV mapping was performed. UV mapping is a technique borrowed from computer graphics: it creates a two-dimensional map of the three-dimensional surface, so that a flat texture image can be applied consistently across the entire curved surface without distortion. The resulting UV-mapped model was exported in OBJ format.
+
+From the OBJ file, a specially supplied program called ObjSnapshot generated the depth bitmap for the curved surface. This bitmap was then textured in GIMP and programmed in Lastex — the five-axis variant of the laser texturing CAM software. Lastex imported the 3D mould model and the OBJ file together, analysed the surface normals (to verify that the laser beam could reach all areas without collision), generated the scan paths layer by layer, and produced the machining job file.
+
+INJECTION MOULDING
+
+After texturing, HDPE — high-density polyethylene — was injection-moulded into the mould using the Babyplast machine. The material and process parameters were adjusted iteratively across the three rounds of texturing to optimise the pressure, temperature, and injection timing for the specific cavity dimensions.
+
+This complete workflow — from CAD texture design through five-axis laser machining to injection-moulded plastic part — is a fully integrated digital manufacturing chain. It demonstrates that laser texturing of injection moulds is not just theoretically possible but practically achievable with the equipment available at MTF STU Trnava.

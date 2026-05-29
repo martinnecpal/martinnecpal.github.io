@@ -1,0 +1,36 @@
+SLIDE 7 — A2: SINTERED CARBIDE — MACHINED SURFACE COMPARISON
+================================================================================
+
+The photographs on this slide show the sintered carbide insert surfaces after laser micromachining under different parameter combinations from the 27-experiment matrix. These are actual microscope photographs — not diagrams — and they give us a direct visual impression of how the surface quality varies with process parameters.
+
+INTERPRETING THE SURFACE PHOTOGRAPHS
+
+Look at the images on the left and right. Each image shows two adjacent machined patches from the experiment, numbered according to their position in the design matrix. The cross-hatching strategy produces a characteristic criss-cross texture on all surfaces, but the quality and regularity of that texture varies considerably.
+
+In the better surfaces, you can see a uniform, fine-grained texture with relatively consistent surface height. The ablated area has clean boundaries and the material removal appears even across the patch.
+
+In the worse surfaces, you can see more irregular patterns — in some cases visible ridges between adjacent scan lines, in others evidence of re-melted material that has flowed and re-solidified as irregular bumps or thin films. These re-solidification features are particularly characteristic of sintered carbide laser machining: the cobalt binder melts at a lower temperature than the WC grains and tends to flow to the edges of the laser-affected zone before freezing.
+
+The appendix of the original thesis contains photographs of all 27 machined surfaces, labelled with their specific parameter combinations. Comparing these systematically is one of the most valuable outputs of the experimental work, because it gives the engineer a visual library of what the surface looks like at different parameter combinations — information that numerical Ra values alone cannot fully convey.
+
+WHAT THE STATISTICS REVEALED
+
+The ANOVA analysis of the 27 experiments confirmed that, as in the titanium study, track spacing and laser power were the most influential parameters for both Ra and ablation rate in sintered carbide.
+
+For surface roughness Ra: higher power tends to increase roughness because it generates more melt and re-solidification. Smaller track spacing improves Ra because it creates more uniform overlap and breaks up ridges. The interaction between power and track spacing is significant — very high power combined with very small track spacing creates extreme re-melting that actually worsens surface quality despite the tight spacing.
+
+For ablation rate: higher power obviously increases material removal. Frequency has a more complex effect — at higher frequencies the energy per pulse decreases even as total average power increases, and the material response per pulse changes. The optimal combination for maximum ablation rate is not the same as the optimal combination for minimum Ra, which is an important finding for process planning.
+
+THE PRACTICAL VALUE OF THESE RESULTS
+
+The 27 experiments represent a significant investment of machine time — each experiment required setting up the machine, machining the patches, cleaning the surface, and measuring roughness. But the return on that investment is a comprehensive parameter map for laser micromachining of WC-Co on the LASERTEC 80 Shape.
+
+This is immediately useful for anyone at the MTF laboratory who wants to machine sintered carbide — whether for research or for making custom cutting tools. Instead of running their own preliminary tests from scratch, they can consult the results of this thesis and start from a known-good parameter combination.
+
+It also demonstrates an important principle: every new material-machine combination requires its own parameter study. The optimal settings for titanium are quite different from those for sintered carbide. The differences are not just in magnitude but in the relative importance of the factors. You cannot transfer parameter knowledge from one material to another without experimental validation.
+
+A BROADER SIGNIFICANCE
+
+Both the titanium and sintered carbide studies contribute to a growing body of knowledge about laser micromachining of difficult-to-machine materials. Titanium alloys and sintered carbides are two of the most important materials in modern precision engineering. The fact that laser micromachining has now been systematically characterised for both of these materials at the MTF laboratory means that the Centre of Excellence is genuinely equipped to support laser-based manufacturing research and development in these material families.
+
+The next section of our presentation moves from parameter optimisation to a completely different application: using laser structuring to modify the tribological properties of surfaces.

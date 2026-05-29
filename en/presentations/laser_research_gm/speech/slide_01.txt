@@ -1,0 +1,17 @@
+SLIDE 1 — TITLE
+Laser Micromachining Research at MTF STU Trnava — Overview of 7 Diploma Theses
+================================================================================
+
+Good morning, or good afternoon, everyone.
+
+Today I would like to present an overview of seven diploma theses that were completed at the Institute of Production Technologies at the Faculty of Materials Science and Technology of the Slovak University of Technology in Trnava — known as MTF STU Trnava — over the period from 2013 to 2018.
+
+All seven works share a common research theme: laser micromachining. This is a technology that uses a focused laser beam to remove material — layer by layer, micrometre by micrometre — from the surface of a workpiece. It belongs to the family of non-conventional machining methods, alongside electrochemical machining, wire EDM, and abrasive water jet cutting. What makes laser micromachining particularly interesting is that it is a non-contact process: there is no mechanical force applied to the workpiece, no tool wear in the traditional sense, and it can be applied to virtually any material — metals, ceramics, composites.
+
+The research presented in these seven theses is not theoretical. Every one of them is an experimental study — designs were made, samples were machined, measurements were taken, and conclusions were drawn from real data. This makes the findings directly applicable to manufacturing practice.
+
+The seven works cover three distinct areas of application, which I will introduce in the next slide. But before we get into the specifics, I want to note one thing that unifies all of these studies: they all used the same experimental machine — the DMG MORI LASERTEC 80 Shape, a five-axis CNC laser machining centre located at the Centre of Excellence for Five-Axis Machining at MTF STU Trnava. This is an important detail, because laser machining results are always machine-specific. The parameters that work well on one machine may need to be completely recalibrated on a different machine, even if the laser type is similar. The fact that all seven theses used the same platform means their results are directly comparable and build upon each other.
+
+I will take you through the studies in a structured way: first we look at parameter optimisation — how to find the best laser settings for a given material. Then we examine surface texturing for tribological modification — using the laser to create microstructures that change the friction behaviour of surfaces. And finally we look at two applied manufacturing cases — where the laser was used to actually produce functional parts.
+
+Let us begin.

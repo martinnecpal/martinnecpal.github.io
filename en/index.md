@@ -47,9 +47,10 @@ and their practical applications.
 
 ## Research
 
-At the 5-axis machining centre of the Institute of Manufacturing Technologies, I work with the LASERTEC 80 Shape laser machine. This machine is used in teaching progressive machining methods, supports the preparation and development of final theses, and is also employed in research and project activities. A 
-<a href="javascript:void(0);" onclick="window.open('{{ site.baseurl }}/en/presentations/LASERTEC_80_Shape/index.html', '_blank', 'width=1280,height=800,resizable=yes,scrollbars=yes')">presentation</a>
- is available for a basic overview of the machine.
+ At the 5-axis machining centre of the Institute of Manufacturing Technologies, I work with the LASERTEC 80 Shape laser machine. I use it for teaching progressive machining methods, supervising student theses, and carrying out various research and project activities. A basic overview of the machine and its capabilities can be found in the machine 
+ <a href="javascript:void(0);" onclick="window.open('{{ site.baseurl }}/en/presentations/LASERTEC_80_Shape/index.html', '_blank', 'width=1280,height=800,resizable=yes,scrollbars=yes')">presentation</a>.
+A summary of the student theses completed on this machine is available in the thesis overview 
+<a href="javascript:void(0);" onclick="window.open('{{ site.baseurl }}/en/presentations/laser_research_gm/index.html', '_blank', 'width=1280,height=800,resizable=yes,scrollbars=yes')">presentation</a>.
 
 <!-- Zobraznie stroja LASERTEC 80 Shape -->
 <div style="text-align:center;"><img src="{{ site.baseurl }}/assets/images/LASERTEC.jpeg" alt="LASERTEC 80 Shape" style="width:70%;"></div>

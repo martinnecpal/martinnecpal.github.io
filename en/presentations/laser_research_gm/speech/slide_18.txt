@@ -1,0 +1,56 @@
+SLIDE 18 — C2: INJECTION MOLD TEXTURING — RESULTS
+================================================================================
+
+The mould texturing study required three successive rounds of work before reaching its final conclusions. This iterative character is typical of applied research that pushes into genuinely new territory, and the lessons learned in each round shaped what was done in the next.
+
+ROUND ONE — FLAT CAVITIES, ORIGINAL DESIGN
+
+The first attempt to machine and test the textures was made with the textures as originally designed. The four texture patterns had individual feature sizes in the range of 0.4 to 0.84 millimetres in width and length, with depths of 0.04 to 0.20 millimetres.
+
+After laser texturing, the mould was inspected under a digital microscope — a Dino-Lite digital microscope capable of magnifications up to several hundred times. The textures were visible on the mould surface, which was encouraging.
+
+However, when HDPE was injection-moulded into the textured mould and the plastic parts were inspected, the textures were not visible on the plastic surface — even under the digital microscope. The features were too small in the plane dimensions to survive the injection moulding process, where surface tension effects and the flow dynamics of the molten polymer tended to smooth over fine details.
+
+This is a known phenomenon in injection moulding: the ability to transfer a mould surface feature to the plastic part depends on several factors — the feature size, the polymer melt viscosity, the injection pressure, and especially the mould temperature. Features below a certain threshold scale simply do not transfer reliably because the polymer melt cannot fill them completely before freezing.
+
+At this point, the researcher had two choices: invest in improving the injection moulding process (higher mould temperature, higher pressure) to improve feature replication, or redesign the textures to be larger and therefore more reliably transferable. The decision was made to redesign the textures.
+
+ROUND TWO — FLAT CAVITIES, REDESIGNED TEXTURES
+
+The mould cavity surface was milled smooth — removing all traces of the first texturing — and the four textures were redesigned. The individual feature dimensions were increased to approximately 4 millimetres, with depths of 0.2 to 0.4 millimetres. This is a tenfold increase in planar dimensions compared to Round 1.
+
+The laser texturing was repeated with these enlarged designs. This time, upon inspection, the textures on the mould surface were clearly visible and distinct — the four patterns could be readily distinguished from each other.
+
+Injection moulding was then performed. The resulting plastic parts showed the texture patterns on their surface, confirming that the features now transferred successfully to the HDPE. However, two defects appeared consistently across all parts:
+
+The first was an oval shape distortion. The plastic parts had a slightly oval outline rather than the perfect rectangle defined by the cavity. This was traced to the machining of the mould cavity itself — a feature of the cavity manufacturing process rather than the laser texturing. Since all four texture areas were affected equally, it was accepted as a systematic limitation of this specific mould.
+
+The second defect was jetting — a flow defect in injection moulding where the polymer melt enters the cavity in a thin jet that does not fill the cross-section uniformly. This causes flow lines, poor surface quality at the junction between the jet and the mould walls, and inconsistent texture transfer in the affected zone. The cause of jetting in this case was traced to the gate design — the entry point for the polymer was too small and poorly positioned for the cavity geometry. Correcting this would require redesigning the gate, which was beyond the scope of this study.
+
+Despite these defects, two of the four textures were judged to meet the minimum requirements for further testing: they showed clear, distinguishable patterns on the plastic surface with acceptable uniformity. These two textures — one of which was the hexagonal design — were selected for the third round.
+
+ROUND THREE — FIVE-AXIS TEXTURING OF COMPLEX CAVITY
+
+The third round moved to the second side of the mould — the complex, three-dimensional cavities requiring five-axis laser texturing. The two selected textures from Round 2 were applied to these 3D surfaces using the UV mapping workflow described in the previous slide.
+
+The five-axis machining proceeded without mechanical problems. After texturing, the mould was cleaned and inspected. The texture patterns were visible across the entire curved cavity surface, confirming that the five-axis software workflow and the machine's five-axis motion control had correctly applied the texture to the 3D geometry.
+
+However, upon closer inspection with the digital microscope, a problem was identified in the centre of each cavity: the texture quality in the central region was noticeably lower than in the peripheral areas. The dimples or cells in the centre were shallower, less defined, or showed evidence of overlapping or misalignment.
+
+The most likely cause — as the researcher correctly diagnosed — is either a programming error in the UV mapping or five-axis toolpath generation, or a mechanical effect during machining: as the mould rotates to present different areas of the curved surface to the laser beam, the fixturing can flex slightly, causing the actual position of the surface to deviate from the programmed position. At the 20-micrometre track spacing used, even a few micrometres of positioning error affects the quality.
+
+Injection moulding with the five-axis textured mould confirmed that the textures transferred to the plastic parts, but with the same central quality degradation observed on the mould. The hexagonal texture performed best overall — its greatest depth, approximately 0.4 millimetres, was sufficient to produce a clearly visible and tactilely perceptible pattern on the HDPE surface even where transfer was imperfect.
+
+THE KEY ENGINEERING FINDING
+
+Across all three rounds, the most important finding is quantitative and directly actionable: texture depth greater than 1 millimetre — or at minimum greater than 0.3 to 0.4 millimetres — is required for reliable transfer of a texture from the mould surface to an injection-moulded HDPE part under the conditions tested. Features shallower than this do not survive the injection moulding process.
+
+This finding provides a design rule for anyone working on laser-textured injection moulds for HDPE or similar polymers: design with texture depth in mind first, and then optimise the planar geometry. Shallow textures, regardless of how precisely they are made, will not transfer.
+
+The five-axis texturing capability was successfully demonstrated as a concept, but further work is needed to improve the toolpath accuracy for the centre of complex cavities. This is primarily a software and fixturing challenge rather than a fundamental limitation of the laser technology.
+
+THE BROADER SIGNIFICANCE
+
+This study is among the first systematic investigations of laser surface texturing of injection moulds performed at MTF STU Trnava. It established the basic workflow, identified the critical design parameters, and demonstrated both the capability and the current limitations of the available equipment. It provides a solid foundation for future work that could include more complex 3D geometries, different polymer materials, improved gate designs, and optimised UV mapping strategies.
+
+Commercial applications of this technology are already well established in the automotive and consumer electronics industries, where laser-textured moulds are used to produce parts with consistent, reproducible surface patterns that chemical etching cannot match in precision or repeatability. The research conducted in this thesis positions MTF STU Trnava to contribute to and benefit from this growing field.

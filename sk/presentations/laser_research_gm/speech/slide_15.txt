@@ -1,0 +1,46 @@
+SLIDE 15 — C1: CHIP BREAKER ON SINTERED CARBIDE INSERT — WORKFLOW
+================================================================================
+
+We now move into the third research category — applied laser manufacturing — where the goal is not parameter optimisation or tribological characterisation, but the production of an actual functional component. The first of these two applied studies focused on manufacturing a chip breaker geometry directly onto a sintered carbide turning insert using laser micromachining.
+
+WHY CHIP BREAKERS MATTER
+
+A chip breaker is a geometric feature machined onto the rake face of a cutting insert — the face over which the chip slides as it is cut from the workpiece. Its purpose is exactly what the name suggests: to control the shape and size of the chip produced during machining.
+
+If you machine ductile materials like steel or aluminium without chip control, the resulting chip is a long, continuous ribbon. These long chips are dangerous — they can wrap around the rotating workpiece or the spindle, cause burns, jam the machine, and injure the operator. They also make chip evacuation difficult and create problems in automated machining where chip removal must happen without human intervention.
+
+A well-designed chip breaker causes the chip to curl and break into short segments — typically C-shapes, 6-shapes, or small chips that fall away from the cutting zone cleanly. The geometry of the chip breaker — specifically the width and depth of the groove cut into the insert face — determines for which combination of feed rate and cutting depth the chip breaking works effectively. Every cutting tool manufacturer has extensive libraries of chip breaker geometries for different materials and operations.
+
+The problem is that chip breakers must be tailored to specific applications, and designing a new geometry — particularly for difficult-to-machine materials like titanium or nickel superalloys — requires prototyping and testing. Conventional chip breaker manufacturing requires pressing and sintering to net shape, or diamond grinding of the sintered carbide. Both are expensive and time-consuming for prototype quantities.
+
+Laser micromachining offers an alternative: a chip breaker geometry can be designed in CAD, programmed in CAM, and machined into an existing insert within hours. This is exactly what this thesis explored.
+
+THE WORKFLOW IN DETAIL
+
+The workflow had four sequential steps, and it is worth describing each one because together they demonstrate a complete, self-consistent manufacturing chain.
+
+STEP 1 — CAD DESIGN
+
+The chip breaker geometry was designed in Autodesk Inventor, a professional 3D CAD system. The design was based on the theoretical principles of chip breaking — the specific geometry included appropriate angles, groove width, depth, and the width of the cutting edge land. The output of this step was a 3D solid model of the target chip breaker shape on the insert face.
+
+STEP 2 — CAM PROGRAMMING
+
+The CAD model was exported in STL format — the universal triangulated surface format — and imported into LpsWin, the CAM software supplied with the LASERTEC 80 Shape machine. This software has a specific function for laser machining: it does not generate conventional NC code for tool movements, but rather computes the laser scan paths for each layer of material to be removed.
+
+The programming process involved several sub-steps in LpsWin. First, a test for mesh triangulation quality was run to ensure the STL import was clean. Then the insert was centred in the coordinate system of the software. The coordinate system was oriented so that the Z axis was perpendicular to the insert face. A fence boundary was defined around the insert to prevent the laser from machining outside the intended area, and the central hole of the insert was filled with a virtual cylinder to prevent unnecessary laser path generation in that region.
+
+Two types of scan strategies were assigned to different parts of the chip breaker geometry: Hatch (parallel scanning) for the flat horizontal surfaces, and Caving (contouring along isolines) for the curved and sloped surfaces of the groove. Track spacing was set to 10 micrometres and the material removal per layer was set to 1 micrometre. The output was a file in L4D format, which is the proprietary format of the LASERTEC 80 Shape controller.
+
+STEP 3 — LASER MACHINING
+
+The machining was performed on the LASERTEC 80 Shape. Before starting, six parameter tests were run to find the optimal process settings. These tests systematically varied frequency and scan speed and evaluated the resulting surface quality visually. The optimal settings found were: frequency 60 kilohertz, scan speed 2000 millimetres per second, and power at 42.8 percent of maximum — corresponding to approximately 29 watts of average output power.
+
+The insert was clamped on the machine table and its reference point — the centre of the insert hole — was located using the built-in camera system. The Z reference was set using the 3D measuring probe. Then the L4D machining file was loaded and the process started.
+
+Machining one side of the insert took approximately 25 minutes. The total time to machine the chip breaker geometry was therefore around 50 minutes for both sides — though typically only one side is active at a time in a turning operation.
+
+STEP 4 — 3D SCANNING VERIFICATION
+
+After machining, the produced shape was measured using an ATOS optical 3D scanner from the company GOM — a leader in industrial optical metrology. The ATOS scanner uses structured light projection and photogrammetry to capture a dense point cloud of the surface geometry, which is then converted into a surface mesh and compared digitally to the original CAD model. The output is a colour deviation map — a visual representation of where the produced surface lies above or below the design intent.
+
+This four-step workflow — CAD, CAM, laser machining, optical verification — is essentially the same workflow used in modern additive manufacturing and precision machining, adapted to laser ablation. It demonstrates that laser micromachining can be integrated into a standard digital manufacturing chain without requiring specialist knowledge beyond what CAD/CAM engineers already possess.

@@ -1,0 +1,42 @@
+SLIDE 12 — B2: RING TEST — FRICTION INCREASED (CONTRARY TO EXPECTATION)
+================================================================================
+
+This slide presents one of the most instructive results in the entire collection of seven theses — not because the experiment succeeded in the expected way, but precisely because it did not.
+
+THE RESULT: FRICTION WENT UP, NOT DOWN
+
+The smooth unstructured reference surface gave a friction coefficient of f = 0.258. The microstructured surface — with its 500-micrometre triangular cavities — gave f = 0.315. Friction increased by approximately 22 percent compared to the smooth surface.
+
+This is the opposite of what was expected. The research hypothesis predicted a reduction in friction due to lubricant retention in the cavities. The experiment produced an increase. This kind of result is sometimes dismissed as a failure, but that would be the wrong interpretation. A result that contradicts the hypothesis is scientifically valuable precisely because it forces us to examine our assumptions more carefully and arrive at a deeper understanding of the physical phenomenon.
+
+WHY DID FRICTION INCREASE?
+
+The root cause lies in the geometry of the structure — specifically its dimensions relative to the compressive forces applied during the ring test.
+
+Recall that the triangular cavities had arm lengths of 500 micrometres and depths of approximately 410 micrometres. These are large structures. The flat lands between the triangular elements — the areas that actually contact the ring surface — had dimensions comparable to the cavities themselves.
+
+During ring compression, the contact pressure at the interface reaches several hundred megapascals. Under this pressure, the relatively soft steel ring material did not simply slide over the tool surface — it began to flow plastically into the triangular cavities. Metal was pressed into the 410-micrometre-deep recesses, creating a mechanical interlocking between the workpiece material and the tool surface topography.
+
+This interlocking is quite different from simple surface roughness asperity contact. It is essentially a form of mechanical keying: the workpiece metal conforms to the shape of the tool surface at a macroscopic scale. To slide the ring over the tool surface, you do not just have to overcome the surface adhesion and asperity shear — you also have to deform the metal that has flowed into the cavities. This requires substantial additional force, which appears as an increased friction coefficient in the ring test results.
+
+Looking at the photograph on the right — the compressed ring sample after the test — you can see evidence of this deformation. The ring surface shows marks from the triangular elements, and there is visible material flow that correlates with the cavity geometry.
+
+THE CALIBRATION CURVE LIMITATION
+
+There is also a measurement consideration worth mentioning. The Ring test calibration curve is derived for a smooth ring surface compressing against a smooth flat platen. When the platen is not smooth but has deep three-dimensional cavities, the material flow field changes in ways that the standard calibration may not fully account for. Some of the measured friction increase may therefore reflect a genuine tribological effect, while some may be an artefact of the non-standard contact geometry. The researcher acknowledged this limitation.
+
+REFRAMING THE RESULT: NOT A FAILURE BUT A DIFFERENT APPLICATION
+
+The important scientific insight here is this: the result was not a failure of the experiment — it was a finding that redefines the application domain of this type of microstructure.
+
+If large-scale triangular cavities increase friction rather than reducing it, then these structures are not useful for reducing friction in forming operations. But they are potentially very useful in applications where you want to increase friction: robot grippers that need to hold workpieces securely without applying excessive clamping force, anti-slip pads, clamping fixtures for precision machining, joint interfaces in structural connections.
+
+In all these applications, the ability to significantly increase the friction coefficient at a surface by laser-machining specific structures into it is highly valuable. The finding that f = 0.315 can be achieved with this type of structure, compared to f = 0.258 for a smooth surface — an increase of 22 percent — is quantitatively useful information for designing such applications.
+
+THE RECOMMENDATION FOR FUTURE WORK
+
+The researcher correctly identified the fundamental issue: the structures were too large. To achieve friction reduction through the lubricant reservoir mechanism, the structures need to be much smaller — on the order of 50 micrometres as originally designed — so that under forming conditions they act as surface features rather than macroscopic geometric elements that interact with material flow at the bulk scale.
+
+The recommended solution is to use a laser with significantly shorter pulse duration — in the picosecond or femtosecond range. Such lasers produce what is called cold ablation: the material is removed by direct sublimation rather than melting and evaporation, resulting in much finer feature resolution and sharper edges. Femtosecond laser systems at research institutes like the Fraunhofer ILT in Aachen routinely produce well-defined microstructures at the 50-micrometre scale and below. Access to such a system would allow the original design to be realised as intended.
+
+This thesis is a good example of research that is complete and honest in documenting its own limitations — and provides a clear roadmap for what should be done next.

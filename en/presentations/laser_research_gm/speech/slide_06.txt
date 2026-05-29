@@ -1,0 +1,40 @@
+SLIDE 6 — A2: SINTERED CARBIDE WC-Co — EXPERIMENT DESIGN
+================================================================================
+
+The second parameter optimisation study moved to a completely different and significantly harder material: sintered carbide, also known as cemented carbide or hard metal.
+
+WHY SINTERED CARBIDE?
+
+Sintered carbide — technically tungsten carbide cobalt, abbreviated WC-Co — is the dominant material for cutting tool inserts. It is used in turning, milling, drilling, and all forms of chip-forming machining of metals. Its extraordinary hardness, typically between 1400 and 1800 Vickers, and its resistance to abrasive and adhesive wear make it the material of choice when cutting speed, precision, and tool life are priorities.
+
+The material tested in this study is a standard composition: 10 percent cobalt by weight, with the remainder being tungsten carbide. The cobalt acts as a metallic binder that holds the tungsten carbide grains together and gives the material its toughness — without the cobalt, WC would be too brittle for practical use. The grain size of the WC is typically in the range of 1 to 5 micrometres.
+
+Machining sintered carbide by conventional methods is extremely difficult and expensive. The material is harder than most cutting tool materials, so it can only be shaped by grinding with diamond wheels, by electrical discharge machining (EDM), or by laser. Each of these methods has trade-offs in cost, speed, and achievable accuracy. Laser micromachining is particularly attractive because it is fast, flexible, and does not require the complex fixturing that grinding demands.
+
+However, the interaction between a pulsed laser and a heterogeneous material like WC-Co is complex. The tungsten carbide grains and the cobalt binder absorb laser energy differently. The cobalt melts at around 1495 degrees Celsius, while tungsten carbide decomposes and sublimates at much higher temperatures — above 2000 degrees Celsius. This means that under laser irradiation, the cobalt tends to melt and flow before the WC grains are fully ablated, which can lead to re-solidified cobalt films on the machined surface and potentially to changes in the local microstructure.
+
+Understanding and controlling these effects requires careful parameter selection — which is exactly what this experiment was designed to do.
+
+THE SAMPLES
+
+The samples used were uncoated sintered carbide turning inserts from the company Pramet, type CNHA 120408. These are standard commercial inserts, chosen because they represent a real-world application rather than a specially prepared sample. Their rhombic C shape (80-degree corner angle) and 12 millimetre inscribed circle give them a practical working surface for the experiment.
+
+THE EXPERIMENTAL DESIGN
+
+Based on the lessons learned from the titanium study, the researcher made two key design choices. First, only cross-hatching was used — the titanium study had already established that cross-hatching produces superior isotropic surfaces, and it was reasonable to apply this knowledge directly rather than repeating the strategy comparison for sintered carbide.
+
+Second, a larger experiment was designed. Instead of the Taguchi L9 matrix with 9 experiments, a half-factorial design with 27 experiments was used. This is sometimes written as 3^(4-1) — four factors at three levels, with a half-fractional reduction. The advantage over L9 is that it captures more of the interactions between factors, giving a more reliable picture of the process behaviour across the full parameter space.
+
+THE SAME FOUR FACTORS
+
+The same four factors were studied: pulse frequency at 40, 60, and 80 kilohertz; laser power at 50, 75, and 100 watts expressed as percentages; scan speed at 1000, 1600, and 2200 millimetres per second; and track spacing at 5, 10, and 15 micrometres.
+
+Note that power here is expressed in watts rather than percentage, which gives a clearer physical picture. At 40 kilohertz and 50 percent setting, the actual output is approximately 21 watts. At 80 kilohertz and 100 percent, it reaches up to 85 watts. The machine's power curve is nonlinear with frequency — a characteristic of this type of pulsed ytterbium fibre laser.
+
+TWO OUTPUT METRICS
+
+Unlike the titanium study, which focused only on surface roughness Ra, this study measured two output variables: Ra as before, and also the ablation rate — the volume of material removed per unit time. This second metric is critical for practical manufacturing because it determines how long a machining operation takes. A surface finish that takes 30 minutes to achieve may be acceptable for a prototype but impractical for production. Understanding the trade-off between Ra and ablation rate is essential for designing a viable process.
+
+The surfaces were created as 4 square millimetre patches on each insert face — eight patches per insert side, spread systematically. Roughness measurements were made with a contact profilometer, and ablation rates were calculated from the depth of the machined area measured with the 3D probe built into the machine.
+
+All machining and measurement was performed at the Centre of Excellence for Five-Axis Machining at MTF STU Trnava, using the same LASERTEC 80 Shape as the titanium study.

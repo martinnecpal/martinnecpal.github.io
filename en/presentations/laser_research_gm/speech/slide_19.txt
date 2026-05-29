@@ -1,0 +1,40 @@
+SLIDE 19 — SUMMARY: 7 RESEARCH THESES ON LASER MICROMACHINING
+================================================================================
+
+We have now gone through all seven theses, and I would like to use this final slide not just to summarise the individual results, but to draw out the broader themes and insights that emerge when you look at the work as a whole.
+
+THE SUMMARY TABLE
+
+The table on this slide lists all seven theses with their category, material or application, method, and key result. Let me briefly restate the highlights:
+
+In Category A — Parameter Optimisation — the titanium study confirmed that track spacing is the dominant factor controlling surface roughness in laser micromachining, accounting for more than half the total variance in Ra across all experimental conditions. Cross-hatching produces isotropic surfaces with Ra around 1.55 micrometres, making it the preferred strategy for practical applications. The sintered carbide study confirmed similar factor importance rankings for WC-Co, while additionally characterising the ablation rate — giving engineers a complete picture of the trade-off between surface quality and process speed.
+
+In Category B — Surface Tribology — the three ring test studies reveal a spectrum of outcomes that is both informative and sometimes surprising. Wide deep grooves can reduce friction by 32 percent in dry conditions. Carefully designed paraboloid dimples combined with a low-viscosity lubricant can reduce friction by 46 percent. But narrow grooves with melt ridges increase friction, and oversized deep structures also increase friction because material flows into them during forming. The lesson is that surface texturing for friction modification is not automatically beneficial — the structure geometry must be carefully designed for the specific contact conditions and lubricant regime in which it will be used.
+
+In Category C — Applied Manufacturing — laser micromachining was shown to be a viable prototyping technology for chip breaker geometries in sintered carbide inserts, producing the correct shape with a dimensional accuracy of approximately 0.09 millimetres and a machining time of 25 to 30 minutes per side. Laser texturing of injection mould surfaces was successfully demonstrated both for flat surfaces and, with some quality limitations, for complex five-axis geometries. The critical design rule identified is that texture depth must exceed approximately 0.3 millimetres for reliable transfer to HDPE.
+
+CROSS-CUTTING THEMES
+
+Looking across all seven studies, several important cross-cutting themes emerge.
+
+Theme 1: Track spacing is consistently the most important parameter. Across both parameter optimisation studies — titanium and sintered carbide — track spacing dominated the influence on surface roughness. This is not a coincidence. It reflects the fundamental geometry of laser scanning: track spacing directly determines the overlap between adjacent passes, and overlap determines how uniformly material is removed and how much re-melt accumulates. Any future laser micromachining study on the LASERTEC 80 Shape should prioritise track spacing as the first parameter to optimise.
+
+Theme 2: Results are always machine-specific. The parameter values that work for titanium on the LASERTEC 80 Shape at MTF cannot be directly transferred to a different machine — not even another LASERTEC 80 Shape, because individual machines differ in their laser characteristics, alignment, and condition. Every new machine-material combination requires its own experimental validation. This is a fundamental principle of laser micromachining research that all seven theses implicitly demonstrate.
+
+Theme 3: Structure scale matters more than structure geometry. In the tribological studies, the scale of the surface features relative to the deformation conditions was more important than the specific geometric shape of the features. Wide grooves at the correct depth-to-width ratio reduced friction, while narrow grooves did not — despite both being "grooves." Triangular structures at 500-micrometre scale increased friction, while the same design at 50-micrometre scale was predicted to reduce it. This scale sensitivity is a key design variable that is often underappreciated.
+
+Theme 4: Laser micromachining occupies a specific niche. These studies collectively define where laser micromachining is genuinely useful: prototype production of complex surface geometries in hard materials; surface texturing of tools and moulds where conventional methods cannot achieve the required precision or freedom; parameter optimisation for production planning. It is not suitable for serial production of chip breakers (too slow) and not effective for all tribological problems (geometry must match the application). Understanding the niche is as valuable as knowing the capabilities.
+
+THE LASERTEC 80 SHAPE AS A RESEARCH PLATFORM
+
+All seven studies benefited from access to the LASERTEC 80 Shape at the CE5AM Centre. This machine, over the five years covered by these theses, was used to machine titanium, sintered carbide, tool steels of multiple grades, and injection mould steel — demonstrating remarkable versatility. The combination of five-axis motion, fibre laser flexibility, integrated measurement, and CAD/CAM integration made it possible to address a wide range of research questions with a single platform.
+
+The investment in this infrastructure at MTF STU Trnava has paid dividends in the quality and diversity of research that it enabled. The seven theses reviewed today are a testament to that.
+
+LOOKING FORWARD
+
+The most natural directions for future research emerging from these seven works are: using femtosecond or picosecond lasers to achieve finer structure resolutions for tribological applications; extending the mould texturing work to more polymers, more complex geometries, and improved gate designs; testing laser-machined chip breakers in actual cutting operations; and exploring whether the parameter maps developed for titanium and sintered carbide can be extended to other important materials — nickel superalloys, hardened steels, ceramics.
+
+Each of these directions is a well-motivated research question grounded in the findings of the theses presented today. The foundation has been built. The work continues.
+
+Thank you for your attention.

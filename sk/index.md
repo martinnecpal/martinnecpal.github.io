@@ -47,7 +47,11 @@ a jej praktické využitie.
 
 ## Výskum
 
-V centre 5-osového obrábania Ústavu výrobných technológií pracujem na laserovom stroji LASERTEC 80 Shape. Tento stroj sa využíva v rámci výučby progresívnych metód obrábania, slúži na prípravu a tvorbu záverečných prác, ale tiež sa používa v rámci výskumných a projektových aktivít. V rámci základného opisu stroja je možné prezrieť <a href="javascript:void(0);" onclick="window.open('{{ site.baseurl }}/sk/presentations/LASERTEC_80_Shape/index.html', '_blank', 'width=1280,height=800,resizable=yes,scrollbars=yes')">prezentáciu</a>.
+V centre 5-osového obrábania Ústavu výrobných technológií pracujem na laserovom stroji LASERTEC 80 Shape. Stroj je využívaný pri výučbe progresívnych metód obrábania, pri vedení záverečných prác študentov a v rámci rôznych výskumných a projektových aktivít. Základný opis stroja a jeho možností je možné nájsť v 
+<a href="javascript:void(0);" onclick="window.open('{{ site.baseurl }}/sk/presentations/LASERTEC_80_Shape/index.html', '_blank', 'width=1280,height=800,resizable=yes,scrollbars=yes')">prezentácii</a>
+stroja. Prehľad záverečných prác, ktoré na tomto stroji vznikli, je zhrnutý v 
+<a href="javascript:void(0);" onclick="window.open('{{ site.baseurl }}/sk/presentations/laser_research_gm/index.html', '_blank', 'width=1280,height=800,resizable=yes,scrollbars=yes')">prezentácii</a>
+záverečných prác.
 
 <!-- Zobraznie stroja LASERTEC 80 Shape -->
 <div style="text-align:center;"><img src="{{ site.baseurl }}/assets/images/LASERTEC.jpeg" alt="LASERTEC 80 Shape" style="width:70%;"></div>

@@ -1,0 +1,46 @@
+SLIDE 10 — B1: FRICTION COEFFICIENT RESULTS — STEEL 11373
+================================================================================
+
+The results of the ring test on the structured steel surfaces reveal a complex picture that is both interesting scientifically and important for engineering practice.
+
+THE REFERENCE VALUE
+
+The smooth reference sample Z1_01 gave a friction coefficient of f = 0.189. This is the baseline against which all other samples are judged. A friction coefficient of around 0.19 is typical for dry contact between steel surfaces at the contact pressures and deformation rates involved in this ring test.
+
+TYPE A — NARROW GROOVES: FRICTION INCREASED
+
+This is the first surprise. Samples A1_01, A1_06, and A1_08 all showed friction coefficients above the reference: 0.225, 0.220, and 0.260 respectively. Instead of reducing friction, the narrow groove structures made it worse.
+
+Why did this happen? The answer lies in those melt ridges visible in the microscope photograph. When a laser ablates a groove into a surface, the molten material does not simply disappear — some of it is expelled from the groove and deposits along the groove edges as raised ridges. These ridges have irregular, sharp topography at the micron scale, and when the tool surface with these ridges contacts the ring surface under compressive load, the ridges act like micro-asperities that increase the real contact area and create additional interlocking between the surfaces.
+
+Furthermore, the narrow groove spacing meant that the ridges were densely packed — every 0.5 millimetres — creating a rough surface rather than a smooth one with isolated pockets. The net effect was that the laser treatment increased roughness rather than creating beneficial lubricant retention.
+
+Note also that sample A1_08 had the highest friction — 0.260 — despite having the best groove quality among the A series. This seems counterintuitive, but the explanation is that A1_08's groove walls were more sharply defined, which actually increased the mechanical interlocking between tool and workpiece compared to the more blurred groove edges of A1_01 and A1_06. Better groove quality here meant worse tribological performance.
+
+TYPE B — WIDE DEEP GROOVES: SIGNIFICANT REDUCTION
+
+Sample B1_01, machined with the LASERTEC 80 Shape, achieved a friction coefficient of f = 0.128. This represents a reduction of 32 percent compared to the smooth reference — a very significant result.
+
+The explanation for this success is the geometric character of the structure. The wide groove in B1_01 had large lateral dimensions and significant depth relative to its width. This combination created an extremely small real contact area: the ring surface only contacted the narrow land between the grooves, while a large fraction of the tool face was occupied by the groove cavities. The reduction in contact area translated directly into a reduction in friction.
+
+An additional contributing factor was that B1_01's grooves, despite some melt ridges on their edges, had a groove width-to-depth ratio that was much more favourable than Type A for lubricant retention. Even in this dry-contact test, the groove geometry may have trapped some residual contamination that acted as an effective lubricant at the microscale.
+
+However, a word of caution is warranted. The large groove depth also created prominent surface protrusions between the grooves, and there is a possibility that some of these protrusions were deformed during the ring test, which would affect the calibration and therefore the measured friction coefficient. The researcher noted this potential confound in the thesis.
+
+TYPE C — HEMISPHERICAL DIMPLES: CLOSE TO REFERENCE
+
+Samples C1_01 and C1_02 gave friction coefficients of 0.213 and 0.188 respectively. C1_02 is essentially the same as the reference within measurement uncertainty, while C1_01 is slightly higher.
+
+The likely explanation is that the dimple dimensions — 0.15 millimetres diameter, relatively shallow — were too small to create a significant reduction in real contact area. The dimples occupied a modest fraction of the surface, and the flat land area between dimples was large enough that it dominated the contact behaviour. In other words, the dimples were present but their tribological effect was negligible at this scale in dry conditions.
+
+This finding connects to a well-known observation in tribological research: there is an optimal range of surface texture density. Too little texture has no effect; too much texture creates ridges that increase friction; somewhere in between there is an optimum. The dimple density in this study was apparently too low to reach that optimum.
+
+KEY LESSONS
+
+Three important lessons emerge from this study.
+
+First: not all laser surface structures reduce friction. Narrow grooves with prominent melt ridges can actually increase friction. The geometrical character of the structure — its aspect ratio, edge quality, and coverage density — determines whether it helps or hurts.
+
+Second: the laser system used for structuring matters significantly. The LASERTEC 80 Shape produced structurally different surfaces from the DM01 marking laser, with different tribological outcomes. A precision laser machining centre gives you more control over the structure geometry and therefore more predictable tribological results.
+
+Third: these experiments were conducted without lubricant. The researcher correctly noted that adding lubricant would likely change all the results substantially. The grooves and dimples are expected to function most effectively as lubricant reservoirs — their benefit in dry contact may underrepresent their full potential in lubricated conditions. Follow-up studies with lubricated contacts were recommended.

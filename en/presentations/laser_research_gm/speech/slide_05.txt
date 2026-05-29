@@ -1,0 +1,38 @@
+SLIDE 5 — A1: RESULTS — SURFACE ROUGHNESS Ra
+================================================================================
+
+Now we come to the results, and they tell a very clear and practically useful story.
+
+HATCHING RESULTS
+
+With the hatching strategy, the best Ra value achieved was 1.17 micrometres — measured in the direction of laser beam travel, which is direction 1. The optimal parameters for this result were: frequency 80 kilohertz, power at 75 percent, scan speed 1000 millimetres per second, and track spacing 15 micrometres.
+
+But here is the critical point: when the same surface was measured in the perpendicular direction — direction 2, which is across the laser scan lines — the Ra value was 2.26 micrometres. That is nearly twice as high.
+
+This large difference between directions is called anisotropy, and it has serious practical implications. If you machine a surface with hatching and then use it in an application where relative motion occurs in a direction perpendicular to the scan lines — for example in a sliding contact — the friction and wear behaviour will be very different from what you might expect based on the Ra value measured along the scan lines. The surface is not the same in all directions, and any performance claim that ignores direction is incomplete.
+
+CROSS-HATCHING RESULTS
+
+With cross-hatching, the picture changes dramatically. The best Ra in direction 1 was 1.551 micrometres, and in direction 2 it was 1.566 micrometres. These two values are almost identical — a difference of only about one percent.
+
+This is the key advantage of cross-hatching: it produces an isotropic surface. The friction and wear behaviour will be essentially the same regardless of which direction the surface is loaded. For most practical applications — tribological contacts, sealing surfaces, bearing surfaces — this uniformity is highly desirable.
+
+The optimal parameters for cross-hatching were: frequency 60 kilohertz, power at 50 percent, scan speed 1600 millimetres per second, and track spacing again 15 micrometres.
+
+Notice that these optimal parameters are different from the hatching optimum. This makes sense: the two additional passes in cross-hatching deliver extra energy to the surface, so the power and frequency need to be reduced to avoid over-heating. The fact that optimal parameters differ between strategies is an important practical lesson — you cannot simply take the parameters from a hatching experiment and apply them to cross-hatching.
+
+WHICH FACTOR MATTERS MOST?
+
+The ANOVA analysis revealed a clear ranking of parameter influence. Track spacing was by far the most influential factor — in the hatching strategy, direction 1, it accounted for over 51 percent of the total variation in Ra. In cross-hatching, its influence ranged from 40 to 49 percent across the two measurement directions. This result is physically intuitive: track spacing directly determines the overlap between adjacent lines and therefore the regularity of the surface texture. Too little spacing and you get an over-machined, re-melted surface. Too much and you get visible ridges.
+
+Scan speed was consistently the least influential parameter across all strategies and directions — never exceeding 14 percent, and in some cases as low as 0.8 percent. This suggests that within the range tested, the operator has significant freedom to adjust scan speed — for example, to control machining time — without greatly affecting surface quality.
+
+Pulse frequency and laser power had intermediate influence, with their relative ranking depending on the strategy and direction.
+
+PRACTICAL RECOMMENDATION
+
+Based on these results, cross-hatching at 60 kilohertz, 50 percent power, 1600 millimetres per second scan speed, and 15 micrometre track spacing is the recommended approach for laser micromachining of titanium GRADE 2 on the LASERTEC 80 Shape. It produces a surface with Ra approximately 1.55 micrometres that is consistent in all directions.
+
+This Ra level is quite good for a laser-machined surface. For comparison, a conventionally ground surface typically achieves Ra between 0.2 and 1.6 micrometres, depending on the abrasive and process conditions. So laser micromachining of titanium can achieve surface quality comparable to rough-to-medium grinding — which is acceptable for many structural and functional applications.
+
+The finding about track spacing being the dominant factor is also directly actionable: if you want to improve surface quality, reducing track spacing is the most effective single change you can make to the process. This provides a clear design rule for engineers who will apply this process in future work.

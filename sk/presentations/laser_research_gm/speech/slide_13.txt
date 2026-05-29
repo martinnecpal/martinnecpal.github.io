@@ -1,0 +1,47 @@
+SLIDE 13 — B3: LASER SURFACE TEXTURING — SYSTEMATIC LUBRICANT STUDY (TOOL STEEL 90MnCrV8)
+================================================================================
+
+The third tribological study is the most systematic and methodologically sophisticated of the three. It addresses not just the effect of surface texture but also the interaction between texture and lubricant — a critically important combination that the previous two studies did not investigate.
+
+THE MATERIAL: TOOL STEEL 90MnCrV8
+
+The material used for the compression tools was 90MnCrV8 — a cold-work tool steel that in the European standard EN 10027-1 corresponds to designation 1.2842. This is a medium-alloyed tool steel with a carbon content of 0.9 percent, 2 percent manganese, 0.35 percent chromium, and 0.2 percent vanadium. After hardening, it reaches a hardness of approximately 62 to 64 HRC.
+
+This is a more demanding choice of tool material than the structural steel 11373 used in the first tribological study. 90MnCrV8 is representative of real forming tools — the kind used in stamping dies, embossing dies, and precision forming operations. Using a realistic tool material makes the findings more directly applicable to industrial practice.
+
+The ring specimens — the workpieces being compressed — were made from structural steel S235JRG1 (steel 11373), the same material used as the workpiece in all ring test studies. This kept the workpiece material consistent across all three tribological studies, making direct comparison of results possible.
+
+THE FOUR TEXTURE DESIGNS
+
+Four distinct texture designs were developed — designated Texture I through Texture IV — each consisting of paraboloid dimple patterns on the flat contact face of the compression tools. The dimples had a depth of approximately 10 to 15 micrometres and varying diameter and spacing.
+
+The differences between the four textures relate to:
+- The density of dimples per unit area — what tribologists call the surface texture density or areal dimple fraction
+- The diameter-to-depth ratio of each dimple
+- The arrangement pattern (regular grid vs. offset grid)
+
+Textures I and II were designed to have deeper, more isolated dimples with lower surface density. Textures III and IV had shallower but more densely packed dimples with higher coverage fraction. Texture IV in particular had a dimple density that approached the theoretical optimum suggested by tribological literature — around 20 to 30 percent of the surface area.
+
+The confocal microscopy images on the right side of the slide show the actual texture profiles on the tool surface. You can see the individual dimples as dark spots (depressions) against the lighter flat land. The regularity and precision of the dimple pattern is evident — this is the quality level achievable with the LASERTEC 80 Shape.
+
+However, there is an important caveat that emerged during the quality inspection: the shallowest textures — particularly Textures I and II with target depths of 10 micrometres — could not be produced to the required dimensional accuracy on the LASERTEC 80 Shape. The minimum achievable depth for this machine at acceptable quality was closer to 15 micrometres. This is a fundamental machine-specific limitation: the minimum feature depth is constrained by the interaction between laser spot size, pulse energy, and the ablation threshold of the tool steel. This limitation will be revisited in the results slide, where it has important consequences for the tribological outcomes.
+
+THE THREE LUBRICATION CONDITIONS
+
+Three different lubrication conditions were tested in the Ring test:
+
+Condition 1: Dry contact — no lubricant whatsoever. The surfaces were cleaned before testing and the compression was performed without any lubricant addition. This isolates the pure geometric effect of the texture on friction, unconfounded by lubricant behaviour.
+
+Condition 2: Variocut C462 — a water-miscible cutting fluid used in the machining of metals. Its key characteristic for this study is its relatively low viscosity. Low-viscosity fluids flow easily into small surface features, can be transported across the contact zone as the workpiece deforms, and can form a thin lubricating film in the contact. This type of lubricant is representative of what might be used in a production environment.
+
+Condition 3: Iloform FST4 — a dedicated forming lubricant with significantly higher viscosity than Variocut C462. High-viscosity forming lubricants are used in heavy forming operations where high pressures and large deformations would squeeze a thin fluid film completely out of the contact zone. A high-viscosity fluid resists squeeze-out better, maintaining a thicker film between tool and workpiece. This is a different lubrication regime from Condition 2.
+
+Testing under all three conditions — dry, low viscosity, high viscosity — allowed the researcher to separate the geometric effect of the texture from the fluid-mechanical effect of the lubricant, and to identify which combinations are most effective in practice.
+
+THE RING TEST CONFIGURATION
+
+Each of the four textures was tested under each of the three lubrication conditions, plus a smooth (untextured) reference surface was tested under each lubrication condition. This gives a 5 by 3 matrix — 15 ring test configurations in total.
+
+For each configuration, at least two compression tests were performed to check reproducibility. The results from both tests were averaged to give the final reported friction coefficient.
+
+This is a well-designed experiment with good statistical structure. Let us now look at what it revealed.

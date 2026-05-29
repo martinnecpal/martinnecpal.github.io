@@ -1,0 +1,44 @@
+SLIDE 9 — B1: LASER STRUCTURED SURFACES — STEEL 11373 — THREE STRUCTURE TYPES
+================================================================================
+
+The first of the three tribological studies investigated laser surface structuring of steel rings and examined how three different types of microstructures influenced friction in the Ring test.
+
+THE MATERIAL: STEEL 11373
+
+Steel 11373 — designated S235JRG1 in the European standard EN 10027-1 — is a low-carbon structural steel, one of the most common engineering steels. It has a carbon content below 0.17 percent, yield strength around 235 megapascals, and is used in a vast range of applications: building structures, machinery frames, conveyor systems, automotive components. It is not a tool steel or a specialty material — it is the bread-and-butter workhorse of structural engineering.
+
+The choice of this material was deliberate. The researcher wanted a material that is easy to machine by laser — so that the machining parameters would not be the limiting factor — and easy to test in the Ring test. Steel 11373 satisfies both criteria. It is a good baseline material for exploring the tribological effects of surface structuring.
+
+TWO LASER SYSTEMS
+
+One of the distinctive features of this study is that two different laser systems were used, which allows a direct comparison of what each system can produce in terms of surface structure quality.
+
+The first system was a commercial laser marking machine designated DM01, operated by an external company Avantek in Nové Mesto nad Váhom. Laser marking machines are designed primarily for engraving text and patterns on surfaces — they are fast and flexible but not optimised for precise material removal in the way that the LASERTEC 80 Shape is. Three samples were machined on this system.
+
+The second system was the LASERTEC 80 Shape at the MTF Centre of Excellence — the same machine used for the parameter optimisation studies. Three samples were machined on this system.
+
+This comparison is valuable because it addresses a practical question: do you need a dedicated high-end laser micromachining centre to produce useful surface structures, or can a simpler marking laser achieve comparable results? The answer, as we will see, is nuanced.
+
+THREE STRUCTURE TYPES
+
+Three geometrically distinct structures were designed and machined onto the ring compression tools.
+
+Type A — narrow parallel grooves — was machined on the DM01 marking laser. The grooves ran parallel to each other with a spacing of 0.5 millimetres between groove centres. The groove width was approximately 0.3 millimetres, which means there was relatively little flat land between adjacent grooves. Three variants of this type were made — samples A1_01, A1_06, and A1_08 — with different combinations of laser parameters, resulting in different groove quality and sharpness.
+
+Type B — wide deep grooves — was machined on the LASERTEC 80 Shape. These grooves were significantly wider and deeper than Type A, with a width of approximately 0.3 millimetres and a larger centre-to-centre spacing. The critical difference between Type B and Type A is not just the dimensions but the quality of the groove edges: the LASERTEC 80 Shape produces cleaner, more precisely defined groove boundaries with less melt ridge along the edges.
+
+Type C — hemispherical dimples — was also machined on the LASERTEC 80 Shape. The dimples were arranged in a regular grid pattern, with each dimple having a diameter of approximately 0.15 millimetres. Two variants were made: sample C1_01 with a 3-degree angular pitch between dimple centres, and C1_02 with a 6-degree pitch — giving different surface coverage densities.
+
+The photograph on the upper right shows the Type A groove structure at 55.7× magnification. You can see the parallel grooves and, importantly, the raised ridges along the groove edges — these are regions where laser-melted material was expelled from the groove and re-solidified as a raised rim. The photograph on the lower right shows the Type B wide groove — note the different scale and the generally cleaner edge profile achieved with the precision laser system.
+
+SURFACE PREPARATION AND REFERENCE
+
+A reference sample — Z1_01 — was machined from the same steel stock but received no laser treatment. Its surface was prepared by conventional grinding to a typical smooth surface. This reference established the baseline friction value against which all structured samples were compared.
+
+All samples were cleaned with technical benzene before each test to ensure that oil and metal debris from manufacturing did not affect the ring test results.
+
+THE UNDERLYING HYPOTHESIS
+
+The hypothesis driving this research was borrowed from a well-established concept in tribology: that micro-scale surface structures can serve as reservoirs for lubricant and as traps for wear debris. If the microscopic valleys in a textured surface hold lubricant and prevent it from being squeezed out of the contact zone under high pressure, then the lubricant film can be maintained for longer, reducing direct metal-to-metal contact and therefore reducing friction. This principle is exploited commercially in laser-honed cylinder bores of internal combustion engines, where specific cross-hatch patterns are used to hold oil while still allowing the piston ring to move freely.
+
+This study explored whether similar principles could be applied to forming tool surfaces, and whether grooves and dimples of the scale achievable with the available laser systems would be effective.

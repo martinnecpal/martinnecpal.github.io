@@ -1,0 +1,40 @@
+SLIDE 8 — RING TEST — MEASURING FRICTION COEFFICIENT
+================================================================================
+
+Before we look at the individual tribological studies, I want to explain the Ring test in some depth, because all three studies use it and understanding the method is essential for interpreting the results correctly.
+
+THE CONCEPT OF FRICTION IN FORMING OPERATIONS
+
+In metal forming — processes like forging, stamping, extrusion, and ring compression — friction between the workpiece and the tool is one of the dominant process variables. It determines how forces distribute within the workpiece, what the deformation pattern looks like, whether material flows uniformly or creates defects, how quickly the tool wears, and ultimately what the surface quality and dimensional accuracy of the formed part will be.
+
+The friction coefficient at a metal-forming interface is not simply a material property. It depends on the surface topography of both the workpiece and the tool, the contact pressure, the sliding speed, the temperature, and the lubricant if one is present. This makes it difficult to measure in a universal way. You need a test that approximates the conditions of actual forming operations.
+
+THE RING TEST PRINCIPLE
+
+The Ring test — formally the Ring Compression Test — is one of the most widely used methods for determining the friction coefficient in forming conditions. The basic geometry is simple: a metal ring with precisely known inner diameter, outer diameter, and height is placed between two flat platens and compressed to a specified reduction in height.
+
+The physical insight that makes this test so powerful is the following: the inner diameter of the ring is extremely sensitive to friction at the contact interface. If friction is low, the material flows preferentially outward but also inward — the inner diameter increases as the ring is compressed. If friction is high, the material is held back at the contact interface and can only flow outward with difficulty — the inner diameter decreases as the ring is compressed.
+
+More precisely: there exists a neutral radius within the ring cross-section. Material inside the neutral radius flows inward, material outside flows outward. The position of this neutral radius shifts depending on friction. Low friction moves it outward, so most material flows inward and the hole gets bigger. High friction moves it inward, so most material flows outward and the hole gets smaller or stays the same.
+
+THE CALIBRATION CURVE
+
+The quantitative relationship between the change in inner diameter and the friction coefficient is not derived analytically — it is determined by numerical simulation (finite element analysis) and plotted as a calibration curve. This curve shows, for a given reduction in ring height, what friction coefficient corresponds to each possible change in inner diameter.
+
+The calibration curve has a characteristic shape: there is a zero line where the inner diameter does not change, corresponding to a specific intermediate friction value. Above this line (inner diameter increasing) the friction is lower than this value; below it (inner diameter decreasing) the friction is higher. The friction coefficient is read directly from the curve once you know the height reduction and the inner diameter change.
+
+THE EXPERIMENTAL PROCEDURE IN THESE STUDIES
+
+In the three tribological theses, the rings were compressed four times sequentially on an EU 40 hydraulic press — a machine capable of applying forces from zero to 200 kilonewtons. After each compression step, the ring was removed from the press and measured with a caliper: the upper diameter, lower diameter, middle diameter, and height were all recorded. From these measurements, the inner diameter change and the height reduction were calculated, and the friction coefficient was read from the calibration curve.
+
+This process was repeated for each compression step to track how friction evolved with increasing deformation. The final reported value is an average of the friction coefficients from all compression steps.
+
+WHY NOT A SIMPLER TEST?
+
+You might ask: why not just measure friction with a pin-on-disc tribometer, which is a more commonly known method? The pin-on-disc test is excellent for studying sliding wear and friction under specific contact conditions. But forming operations involve much higher contact pressures, simultaneous deformation of the workpiece, and conditions where the contact area and surface geometry change continuously. The Ring test is better suited to these conditions because the contact geometry and stress state more closely resemble what happens in actual forming.
+
+THE SPECIFIC SETUP IN THESE STUDIES
+
+In all three tribological theses, the textured surfaces being investigated were applied to the flat compression platens — the tool surfaces — not to the ring itself. The rings were machined from the relevant steel, cleaned with technical benzene to remove surface contamination, and then compressed. Different textured tools were compared against a smooth reference tool. This setup allows the contribution of the tool surface texture to be isolated from everything else.
+
+With this understanding of the Ring test, we can now look at what happens when you structure the tool surface in different ways.

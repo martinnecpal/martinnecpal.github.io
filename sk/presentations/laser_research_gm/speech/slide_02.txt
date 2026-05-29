@@ -1,0 +1,32 @@
+SLIDE 2 — RESEARCH OVERVIEW: THREE CATEGORIES
+================================================================================
+
+Before we dive into the individual studies, let me give you a map of the territory.
+
+As I mentioned, the seven theses fall into three research categories. I will explain each one briefly here and then we will go into full detail in the following slides.
+
+CATEGORY A — LASER PARAMETER OPTIMISATION
+
+The first category contains two theses. Their shared question is: given a specific material and a specific laser machine, what combination of process parameters — pulse frequency, laser power, scan speed, and track spacing — gives you the best surface quality and the best material removal rate?
+
+This is a fundamental question in laser micromachining because there is no universal answer. Every material absorbs and reflects laser energy differently. Every machine has its own power curve, its own laser beam characteristics, its own mechanical dynamics. So before you can use a laser machine productively for a given material, you need to run a systematic experiment and find out what works. That is exactly what these two theses did — one for titanium alloy, one for sintered carbide.
+
+CATEGORY B — SURFACE TRIBOLOGY
+
+The second category contains three theses, and this is where the research becomes particularly interesting. The idea here is to use the laser not just to remove material, but to create a specific microstructure on the surface — a pattern of grooves or dimples — and then study what effect that structure has on friction.
+
+Why would you want to modify friction? In forming and machining operations, friction is a major source of energy loss and tool wear. If you can reduce friction by 30 or 40 percent through a surface treatment, that has direct economic and technical consequences. Conversely, in some applications — grippers, clamping surfaces, anti-slip pads — you actually want to increase friction. These three theses explore both directions.
+
+The common measurement method in all three studies is the Ring test, which I will explain in detail when we reach those slides. The short version: a metal ring is compressed between two tool surfaces, and the way the ring deforms tells you the friction coefficient at the interface.
+
+CATEGORY C — APPLIED MANUFACTURING
+
+The third category contains two theses where the laser was used to produce an actual functional part. In one case, a chip breaker geometry was machined directly into a sintered carbide cutting insert. In the other, decorative and functional surface textures were applied to injection mould cavities, and plastic parts were then produced to verify that the textures transferred correctly to the plastic surface.
+
+These two studies answer the question: can laser micromachining be used in a real manufacturing workflow, and what are its practical limitations?
+
+THE COMMON PLATFORM
+
+All seven studies used the DMG MORI LASERTEC 80 Shape. This is a five-axis precision laser machining centre built specifically for surface structuring, engraving, and micromachining. It is equipped with a pulsed ytterbium fibre laser with a wavelength of 1068 nanometres and a maximum average power of 100 watts. The machine allows the operator to control pulse frequency — from 20 to 100 kilohertz — scan speed, laser power, and track spacing. The five-axis capability means it can texture not just flat surfaces but also complex three-dimensional shapes like mould cavities. The machine is located at the Centre of Excellence for Five-Axis Machining at MTF STU Trnava, which was established specifically to support research of this kind.
+
+With that overview in place, let us now go into the details of each category, starting with parameter optimisation.
