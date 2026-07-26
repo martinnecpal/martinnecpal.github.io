@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vektor v karteziánskom súradnicovom systéme</title>
+<style>
+  :root {
+    --bg: #f7f7f5;
+    --panel-bg: #ffffff;
+    --text: #1f2430;
+    --muted: #6b7280;
+    --border: #e2e2df;
+    --accent: #b5651d;
+    --axis-x: #d64545;
+    --axis-y: #2f9e44;
+    --axis-z: #2b6cb0;
+    --vector: #7c3aed;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .layout {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+  }
+  .viewport {
+    flex: 1 1 auto;
+    position: relative;
+    min-width: 0;
+  }
+  #scene { display: block; width: 100%; height: 100%; }
+  .panel {
+    flex: 0 0 360px;
+    max-width: 92vw;
+    overflow-y: auto;
+    background: var(--panel-bg);
+    border-left: 1px solid var(--border);
+    padding: 18px 20px 30px;
+  }
+  h1 {
+    font-size: 1.15rem;
+    margin: 0 0 6px;
+  }
+  .subtitle {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 0 0 16px;
+    line-height: 1.4;
+  }
+  .block {
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+    margin-top: 14px;
+  }
+  .block h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .row label {
+    flex: 0 0 22px;
+    font-weight: 600;
+  }
+  .row label.x { color: var(--axis-x); }
+  .row label.y { color: var(--axis-y); }
+  .row label.z { color: var(--axis-z); }
+  .row input[type=range] { flex: 1 1 auto; }
+  .row input[type=number] {
+    flex: 0 0 64px;
+    width: 64px;
+    padding: 3px 4px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.85rem;
+  }
+  .readout {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    background: #faf9f7;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+  .readout .line { display: flex; justify-content: space-between; }
+  .readout .line span:first-child { color: var(--muted); }
+  .readout .identity {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed var(--border);
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .toggles label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    cursor: pointer;
+  }
+  .presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  button {
+    font: inherit;
+    font-size: 0.78rem;
+    padding: 5px 9px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    background: #fff;
+    cursor: pointer;
+    color: var(--text);
+  }
+  button:hover { border-color: var(--accent); color: var(--accent); }
+  .formula {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text);
+  }
+  .formula sub { font-size: 0.7em; }
+  .legend {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .legend .dot {
+    display: inline-block;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+  @media (max-width: 760px) {
+    .layout { flex-direction: column; }
+    .panel { flex-basis: auto; max-width: 100%; border-left: none; border-top: 1px solid var(--border); }
+    .viewport { height: 55vh; }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161c;
+      --panel-bg: #1b1e26;
+      --text: #e7e7ea;
+      --muted: #9aa0ab;
+      --border: #2c2f3a;
+      --panel-bg2: #22252f;
+    }
+    .readout { background: #22252f; }
+    button { background: #22252f; color: var(--text); }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+  <div class="viewport"><canvas id="scene"></canvas></div>
+  <div class="panel">
+    <h1>Vektor v karteziánskom priestore</h1>
+    <p class="subtitle">
+      Interaktívny 3D model znázorňuje všeobecný vektor <strong>a</strong> v pravouhlom (karteziánskom)
+      súradnicovom systéme X, Y, Z. Vektor je jednoznačne opísaný svojimi zložkami (priemetmi)
+      do súradnicových osí a<sub>x</sub>, a<sub>y</sub>, a<sub>z</sub>, ktoré tvoria hrany
+      pravouhlého kvádra, veľkosťou |a| a smerovými (kosínusovými) uhlami k jednotlivým osiam.
+    </p>
+
+    <div class="block">
+      <h2>Zložky vektora</h2>
+      <div class="row">
+        <label class="x">a<sub>x</sub></label>
+        <input type="range" id="slider-x" min="-5" max="5" step="0.1" value="3">
+        <input type="number" id="num-x" min="-5" max="5" step="0.1" value="3">
+      </div>
+      <div class="row">
+        <label class="y">a<sub>y</sub></label>
+        <input type="range" id="slider-y" min="-5" max="5" step="0.1" value="4">
+        <input type="number" id="num-y" min="-5" max="5" step="0.1" value="4">
+      </div>
+      <div class="row">
+        <label class="z">a<sub>z</sub></label>
+        <input type="range" id="slider-z" min="-5" max="5" step="0.1" value="2">
+        <input type="number" id="num-z" min="-5" max="5" step="0.1" value="2">
+      </div>
+      <div class="presets">
+        <button data-p="3,4,2">a = (3, 4, 2)</button>
+        <button data-p="5,0,0">pozdĺž X</button>
+        <button data-p="0,5,0">pozdĺž Y</button>
+        <button data-p="0,0,5">pozdĺž Z</button>
+        <button data-p="3,3,3">rovnaké zložky</button>
+        <button data-p="4,3,0">v rovine XY</button>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Vypočítané vlastnosti</h2>
+      <div class="formula">
+        |a| = √(a<sub>x</sub>² + a<sub>y</sub>² + a<sub>z</sub>²) &nbsp;·&nbsp;
+        cos α<sub>x</sub> = a<sub>x</sub>/|a|
+      </div>
+      <div class="readout" id="readout"></div>
+      <div class="readout identity-box" style="margin-top:8px">
+        <div class="line"><span>cos²α<sub>x</sub>+cos²α<sub>y</sub>+cos²α<sub>z</sub></span><span id="identity">–</span></div>
+      </div>
+    </div>
+
+    <div class="block toggles">
+      <h2>Zobrazenie</h2>
+      <label><input type="checkbox" id="toggle-box" checked> zobraziť kváder zložiek (a<sub>x</sub>, a<sub>y</sub>, a<sub>z</sub>)</label>
+      <label><input type="checkbox" id="toggle-grid" checked> zobraziť mriežku roviny XZ</label>
+      <label><input type="checkbox" id="toggle-rotate"> automatická rotácia pohľadu</label>
+      <button id="reset-view" style="margin-top:4px">Reset pohľadu kamery</button>
+    </div>
+
+    <div class="block">
+      <h2>Legenda</h2>
+      <div class="legend">
+        <div><span class="dot" style="background:var(--axis-x)"></span>os X</div>
+        <div><span class="dot" style="background:var(--axis-y)"></span>os Y</div>
+        <div><span class="dot" style="background:var(--axis-z)"></span>os Z</div>
+        <div><span class="dot" style="background:var(--vector)"></span>vektor a (od počiatku O)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="libs/three.min.js"></script>
+<script src="libs/OrbitControls.js"></script>
+<script>
+(function () {
+  const canvas = document.getElementById('scene');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  const scene = new THREE.Scene();
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  scene.background = new THREE.Color(isDark ? 0x14161c : 0xf7f7f5);
+
+  const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+  camera.position.set(9, 7, 11);
+
+  const controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.target.set(0, 0, 0);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.08;
+
+  function resize() {
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize', resize);
+
+  const AXIS_LEN = 6;
+  const colors = { x: 0xd64545, y: 0x2f9e44, z: 0x2b6cb0, vector: 0x7c3aed, grid: isDark ? 0x333844 : 0xcfcfca };
+
+  function makeLabel(text, color, scale) {
+    const cnv = document.createElement('canvas');
+    cnv.width = 128; cnv.height = 64;
+    const ctx = cnv.getContext('2d');
+    ctx.font = 'bold 42px sans-serif';
+    ctx.fillStyle = color;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(text, 64, 32);
+    const tex = new THREE.CanvasTexture(cnv);
+    const mat = new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false });
+    const sprite = new THREE.Sprite(mat);
+    const s = scale || 1;
+    sprite.scale.set(0.9 * s, 0.45 * s, 1);
+    return sprite;
+  }
+
+  // Axes as arrows
+  function addAxis(dir, color, label) {
+    const arrow = new THREE.ArrowHelper(dir, new THREE.Vector3(0, 0, 0), AXIS_LEN, color, 0.35, 0.2);
+    scene.add(arrow);
+    const l = makeLabel(label, '#' + color.toString(16).padStart(6, '0'));
+    l.position.copy(dir.clone().multiplyScalar(AXIS_LEN + 0.5));
+    scene.add(l);
+  }
+  addAxis(new THREE.Vector3(1, 0, 0), colors.x, 'X');
+  addAxis(new THREE.Vector3(0, 1, 0), colors.y, 'Y');
+  addAxis(new THREE.Vector3(0, 0, 1), colors.z, 'Z');
+  const origin = makeLabel('O', isDark ? '#e7e7ea' : '#1f2430', 0.7);
+  origin.position.set(-0.35, -0.35, -0.35);
+  scene.add(origin);
+
+  // Grid on XZ plane
+  const grid = new THREE.GridHelper(12, 12, colors.grid, colors.grid);
+  scene.add(grid);
+
+  // Vector arrow
+  let vectorArrow = new THREE.ArrowHelper(new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 0), 1, colors.vector, 0.4, 0.25);
+  scene.add(vectorArrow);
+  const vectorLabel = makeLabel('a', '#7c3aed', 0.8);
+  scene.add(vectorLabel);
+
+  // Component box (edges) + component labels
+  const boxGeo = new THREE.EdgesGeometry(new THREE.BoxGeometry(1, 1, 1));
+  const boxMat = new THREE.LineDashedMaterial({ color: isDark ? 0x8a8f9c : 0x9aa0ab, dashSize: 0.12, gapSize: 0.1 });
+  const boxLines = new THREE.LineSegments(boxGeo, boxMat);
+  scene.add(boxLines);
+
+  const labelAx = makeLabel('ax', '#d64545', 0.65);
+  const labelAy = makeLabel('ay', '#2f9e44', 0.65);
+  const labelAz = makeLabel('az', '#2b6cb0', 0.65);
+  scene.add(labelAx, labelAy, labelAz);
+
+  const state = { x: 3, y: 4, z: 2 };
+
+  function updateVector() {
+    const v = new THREE.Vector3(state.x, state.y, state.z);
+    const len = v.length();
+
+    if (len < 1e-4) {
+      vectorArrow.visible = false;
+      vectorLabel.visible = false;
+    } else {
+      vectorArrow.visible = true;
+      vectorLabel.visible = true;
+      const dir = v.clone().normalize();
+      vectorArrow.setDirection(dir);
+      vectorArrow.setLength(len, Math.min(0.4, len * 0.2 + 0.05), Math.min(0.25, len * 0.12 + 0.03));
+      vectorArrow.setColor(new THREE.Color(colors.vector));
+      vectorLabel.position.copy(v.clone().multiplyScalar(1.08));
+    }
+
+    // Component box: corner at origin, opposite corner at (x,y,z)
+    const showBox = document.getElementById('toggle-box').checked;
+    boxLines.visible = showBox && len > 1e-4;
+    if (boxLines.visible) {
+      boxLines.scale.set(state.x || 1e-4, state.y || 1e-4, state.z || 1e-4);
+      boxLines.position.set(state.x / 2, state.y / 2, state.z / 2);
+      boxLines.geometry = new THREE.EdgesGeometry(new THREE.BoxGeometry(1, 1, 1));
+      boxLines.computeLineDistances();
+    }
+    labelAx.visible = labelAy.visible = labelAz.visible = boxLines.visible;
+    labelAx.position.set(state.x / 2, -0.3, 0);
+    labelAy.position.set(state.x + 0.3, state.y / 2, 0);
+    labelAz.position.set(state.x + 0.3, state.y, state.z / 2);
+
+    // Readout
+    const readout = document.getElementById('readout');
+    if (len < 1e-4) {
+      readout.innerHTML = '<div class="line"><span>|a|</span><span>0</span></div>';
+      document.getElementById('identity').textContent = '–';
+      return;
+    }
+    const cx = state.x / len, cy = state.y / len, cz = state.z / len;
+    const deg = r => (Math.acos(Math.min(1, Math.max(-1, r))) * 180 / Math.PI).toFixed(1);
+    readout.innerHTML = `
+      <div class="line"><span>|a|</span><span>${len.toFixed(3)}</span></div>
+      <div class="line"><span>cos α<sub>x</sub></span><span>${cx.toFixed(3)} &nbsp;(α<sub>x</sub> = ${deg(cx)}°)</span></div>
+      <div class="line"><span>cos α<sub>y</sub></span><span>${cy.toFixed(3)} &nbsp;(α<sub>y</sub> = ${deg(cy)}°)</span></div>
+      <div class="line"><span>cos α<sub>z</sub></span><span>${cz.toFixed(3)} &nbsp;(α<sub>z</sub> = ${deg(cz)}°)</span></div>
+      <div class="line"><span>jednotkový vektor</span><span>(${cx.toFixed(2)}, ${cy.toFixed(2)}, ${cz.toFixed(2)})</span></div>
+    `;
+    document.getElementById('identity').textContent = (cx * cx + cy * cy + cz * cz).toFixed(3) + '  (= 1)';
+  }
+
+  function syncInputs(axis, value) {
+    state[axis] = value;
+    document.getElementById('slider-' + axis).value = value;
+    document.getElementById('num-' + axis).value = value;
+    updateVector();
+  }
+
+  ['x', 'y', 'z'].forEach(axis => {
+    document.getElementById('slider-' + axis).addEventListener('input', e => syncInputs(axis, parseFloat(e.target.value)));
+    document.getElementById('num-' + axis).addEventListener('input', e => {
+      const v = parseFloat(e.target.value);
+      if (!isNaN(v)) syncInputs(axis, Math.min(5, Math.max(-5, v)));
+    });
+  });
+
+  document.querySelectorAll('.presets button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const [x, y, z] = btn.dataset.p.split(',').map(Number);
+      syncInputs('x', x); syncInputs('y', y); syncInputs('z', z);
+    });
+  });
+
+  document.getElementById('toggle-box').addEventListener('change', updateVector);
+  document.getElementById('toggle-grid').addEventListener('change', e => grid.visible = e.target.checked);
+  document.getElementById('reset-view').addEventListener('click', () => {
+    camera.position.set(9, 7, 11);
+    controls.target.set(0, 0, 0);
+  });
+
+  let autoRotate = false;
+  document.getElementById('toggle-rotate').addEventListener('change', e => autoRotate = e.target.checked);
+
+  updateVector();
+  resize();
+
+  function animate() {
+    requestAnimationFrame(animate);
+    if (autoRotate) {
+      const t = Date.now() * 0.0003;
+      const radius = camera.position.length();
+      camera.position.x = Math.sin(t) * radius * 0.85;
+      camera.position.z = Math.cos(t) * radius * 0.85;
+    }
+    controls.update();
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
+</script>
+</body>
+</html>
