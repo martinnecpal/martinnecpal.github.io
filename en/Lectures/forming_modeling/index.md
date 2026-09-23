@@ -22,7 +22,7 @@ lang: "en"
     <tr>
       <td>23 Sep 2026</td>
       <td><a href="23september2026.html" target="_blank" rel="noopener">Introductory lecture</a></td>
-      <td>Course information and assessment, motivation, overview of forming processes, and approaches to modelling and simulation. (Substituting for Prof. Perka)</td>
+      <td>Course information and assessment, motivation, overview of forming processes, and approaches to modelling and simulation. (Substituting for Prof. Peterka)</td>
     </tr>
   </tbody>
 </table>

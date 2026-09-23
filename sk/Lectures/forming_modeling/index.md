@@ -22,7 +22,7 @@ lang: "sk"
     <tr>
       <td>23. 9. 2026</td>
       <td><a href="23september2026.html" target="_blank" rel="noopener">Úvodná prednáška</a></td>
-      <td>Informácie o predmete a hodnotení, motivácia, prehľad procesov tvárnenia a prístupy k modelovaniu a simulácii.(Zastupovanie Prof. Perku)</td>
+      <td>Informácie o predmete a hodnotení, motivácia, prehľad procesov tvárnenia a prístupy k modelovaniu a simulácii.(Zastupovanie Prof. Peterku)</td>
     </tr>
   </tbody>
 </table>
