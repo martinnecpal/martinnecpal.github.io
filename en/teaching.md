@@ -6,14 +6,6 @@ lang: "en"
 
 <div class="card" markdown="1">
 
-## Simulation Courses
-
-As part of my role as a university lecturer, I manage classes focused on assembly and manufacturing technology using *Tecnomatix Plant Simulation* software. These classes emphasize the practical application of simulation tools to optimize manufacturing processes and assembly procedures.
-
-</div>
-
-<div class="card" markdown="1">
-
 ## Tutorial Videos
 
 To support my students and a broader audience, I have created tutorial videos that demonstrate how to use *Tecnomatix Plant Simulation*. These videos are available on my [YouTube channel](https://www.youtube.com/playlist?list=PLhlArjTkqa-8cQdzVz-SJvd4C9XmhhdGL), providing step-by-step guidance.
@@ -30,8 +22,8 @@ Additionally, I authored a textbook on assembly and manufacturing technology usi
 
 <div class="card" markdown="1">
 
-## DEFORM Software
+## Modelling and Simulation of Processes II – Forming
 
-DEFORM is a software product developed by STFC that uses the finite element method to solve engineering problems. Manual can be found [here](https://martinnecpal.github.io/deform-manual/).
+The course focuses on the fundamental principles of modelling and simulating metal forming processes, with emphasis on the finite element method (FEM) and the DEFORM software by [SFTC](https://www.deform.com/). The DEFORM manual is available [here](https://martinnecpal.github.io/deform-manual/). Recommended literature includes, for example, [NECPAL, Martin; SOBOTA, Róbert. *Modelovanie a simulácia procesov tvárnenia*. Bratislava : Spektrum STU, 2023. 142 p. ISBN 978-80-227-5309-8](/sk/Lectures/forming_modeling/Necpal_M.,_Sobota_R._-_MODELOVANIE_A_SIMULACIA_PROCESOV_TVARNENIA-1.pdf) (in Slovak). Lectures can be found [here](/en/Lectures/forming_modeling/).
 
 </div>
