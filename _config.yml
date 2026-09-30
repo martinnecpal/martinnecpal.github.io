@@ -2,7 +2,7 @@ title: "My Multilingual Jekyll Site"
 description: "My personal webpage with multilingual support using Jekyll"
 
 baseurl: ""
-url: "https://martinnecpal.github.io"
+url: "https://www.martinnecpal.aiplaces.org"
 
 # buld settingsfor GitHub Pages
 markdown: kramdown
