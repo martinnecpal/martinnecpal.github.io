@@ -1,0 +1,1518 @@
+<!doctype html>
+<!--
+  ════════════════════════════════════════════════════════════════════════════
+   MTF STU — reveal.js presentation (built on mtf-stu-template.html)
+   MSPO2_6I · Prednáška 2 · Softvér a metódy simulácie procesov tvárnenia (SK)
+   120 min, no break. Timing cues are in the speaker notes (press S).
+
+   Keys: ← → navigate · Esc overview · S speaker notes · ?print-pdf → PDF.
+   Pictures and videos are linked from the vendors' public pages (© owners)
+   and need an internet connection. If a picture cannot load, the slide
+   shows a link to it instead. Videos open on YouTube from the thumbnail;
+   "Play here" embeds them (works when the file is served over http/https).
+  ════════════════════════════════════════════════════════════════════════════
+-->
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <title>Softvér na simuláciu tvárnenia – MTF STU</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <style>
+    :root {
+      --mtf-red:   #c8001e;
+      --mtf-red2:  #e5001e;
+      --mtf-dark:  #8b0014;
+      --text:      #1a1a1a;
+      --muted:     #5a5a5a;
+      --bg:        #ffffff;
+      --line:      #c8001e;
+    }
+
+    .reveal-viewport { background: var(--bg); }
+    .reveal { color: var(--text); font-family: 'Segoe UI', Arial, sans-serif; }
+
+    /* ── Headings ── */
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: var(--mtf-dark); text-transform: none;
+      font-family: 'Segoe UI', Arial, sans-serif; font-weight: 700;
+    }
+    .reveal h1 {
+      font-size: 1.9em; border-left: 5px solid var(--mtf-red);
+      padding-left: 0.45em; text-align: left; line-height: 1.25;
+    }
+    .reveal h2 {
+      font-size: 1.3em; border-bottom: 2px solid var(--mtf-red);
+      padding-bottom: 0.2em; text-align: left;
+    }
+    .subtitle { font-size: 0.9em; color: var(--muted); margin-top: 0.3em; font-weight: 400; }
+
+    /* ── Lists ── */
+    .reveal ul, .reveal ol { text-align: left; font-size: 0.82em; line-height: 1.95; }
+    .reveal li { margin-bottom: 0.25em; }
+    .reveal ul > li::marker { color: var(--mtf-red); }
+    .reveal ul.compact, .reveal ol.compact { font-size: 0.75em; line-height: 1.8; }
+    .reveal ul.small { font-size: 0.78em; }
+
+    /* ── Images ── */
+    .reveal img {
+      max-height: 45vh; object-fit: contain;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+    }
+    .figure { display: flex; flex-direction: column; justify-content: center; text-align: center; }
+    .figure img { width: 100%; max-height: 58vh; object-fit: contain; border-radius: 3px; }
+    .figure.half img { max-height: 38vh; width: auto; }
+    .img-caption { font-size: 0.38em; color: var(--muted); text-align: center; margin-top: 0.3em; }
+
+    /* ── Title slide ── */
+    .reveal .top-rule { border: none; border-top: 4px solid var(--mtf-red); margin-bottom: 1.2em; }
+    .reveal .institution {
+      font-size: 0.52em; color: var(--muted); text-transform: uppercase;
+      letter-spacing: 0.1em; margin-top: 2em;
+    }
+    .reveal .author { font-size: 0.65em; color: var(--muted); }
+    .title-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.5em; align-items: center; }
+    .title-grid img {
+      max-height: 52vh; width: 100%; object-fit: cover;
+      border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+    }
+
+    .reveal .hl { color: var(--mtf-red); font-weight: bold; }
+
+    /* ── Section header band ── */
+    .band {
+      background: var(--mtf-dark); color: #fff; text-align: left;
+      padding: 0.5em 0.7em; margin: -0.5em -0.5em 0.5em -0.5em;
+      border-radius: 2px 2px 0 0;
+    }
+    .band-title { font-size: 1.7em; font-weight: 700; letter-spacing: 0.05em; }
+    .band-sub   { font-size: 1.4em; color: #f0b0b8; margin-left: 1em; }
+
+    /* ── Grid layouts ── */
+    .reveal section.slide-full { display: flex; flex-direction: column; height: 100%; }
+    .fig-row { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2em; align-items: center; }
+    .cols-2  { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8em; align-items: start; }
+    .slide-full .fig-row, .slide-full .cols-2 { flex: 1; align-items: stretch; margin-top: 0.4em; }
+    .v-center { display: flex; flex-direction: column; justify-content: center; align-self: center; }
+
+    /* ── Divider slide ── */
+    .reveal section.divider { background: var(--mtf-dark); color: #fff; }
+    .reveal section.divider h2 { color: #fff; border-bottom-color: var(--mtf-red2); font-size: 1.6em; }
+
+    .slide-source { font-size: 0.45em; color: var(--muted); text-align: right; margin: 0.6em 0 0; }
+
+    /* ── Tables ── */
+    .reveal table {
+      font-size: 0.72em; width: 100%; border-collapse: collapse;
+      margin-top: 0.6em; text-align: left;
+    }
+    .reveal table th {
+      background: var(--mtf-dark); color: #fff; padding: 0.35em 0.7em;
+      font-weight: 600; letter-spacing: 0.02em;
+    }
+    .reveal table td { padding: 0.3em 0.7em; border-bottom: 1px solid #e8e8e8; color: var(--text); }
+    .reveal table tr:nth-child(even) td { background: #f9f2f3; }
+    .reveal table tr:hover td { background: #fde8eb; }
+
+    /* ── Process flow ── */
+    .flow-box {
+      background: #fff5f6; border-left: 4px solid var(--mtf-red); border-radius: 4px;
+      padding: 0.4em 0.8em; font-size: 0.75em; margin: 0.25em 0;
+      text-align: left; color: var(--text);
+    }
+    .flow-box.key { background: #fff0f0; font-weight: 600; }
+    .flow-arrow { text-align: center; font-size: 1em; color: var(--mtf-red); line-height: 1.1; }
+    .flow-note { font-size: 0.7em; color: var(--muted); margin-left: 1em; }
+
+    /* ── Equations ── */
+    .equation {
+      background: #fff5f6; border-left: 4px solid var(--mtf-red); border-radius: 4px;
+      padding: 0.4em 1em; margin: 0.6em 0; font-size: 0.9em;
+    }
+
+    /* ══ ADDITIONS FOR THIS LECTURE ══ */
+    .reveal table.tight { font-size: 0.7em; }
+    .reveal table.tight th, .reveal table.tight td { padding: 0.22em 0.5em; }
+    .reveal table.mid { font-size: 0.78em; }
+    .reveal ul.xs { font-size: 0.74em; line-height: 1.7; }
+    .equation.sm { font-size: 0.8em; padding: 0.25em 0.8em; margin: 0.35em 0; }
+    .svgfig svg { width: 100%; height: auto; max-height: 50vh; }
+    .reveal pre.code {
+      width: 100%; box-shadow: none; margin: 0.4em 0; font-size: 0.52em;
+      background: #1e1e1e; border-left: 4px solid var(--mtf-red); border-radius: 4px;
+    }
+    .reveal pre.code code { text-align: left; color: #eee; padding: 0.8em 1em; max-height: none; line-height: 1.45; }
+    .reveal pre.code .c { color: #8fbf7f; }
+    .reveal pre.code .k { color: #ff9aa8; }
+    .agenda td:first-child { white-space: nowrap; color: var(--mtf-dark); font-weight: 600; }
+    .agenda tr.main td { background: #fde8eb !important; font-weight: 600; }
+    .tag {
+      display: inline-block; background: var(--mtf-red); color: #fff; border-radius: 3px;
+      padding: 0 0.4em; font-size: 0.75em; font-weight: 600; vertical-align: middle;
+    }
+    .tag.grey { background: #777; }
+    .note-box {
+      background: #f6f6f6; border-left: 4px solid #888; border-radius: 4px;
+      padding: 0.35em 0.8em; font-size: 0.62em; text-align: left; margin-top: 0.5em;
+    }
+    /* video card: thumbnail link + optional embed */
+    .video-card { position: relative; width: 100%; aspect-ratio: 16 / 9; max-height: 50vh;
+      margin: 0 auto; background: #111; border-radius: 4px; overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
+    .video-card a.thumb { display: block; width: 100%; height: 100%; }
+    .video-card a.thumb img { width: 100%; height: 100%; max-height: none; object-fit: cover;
+      box-shadow: none; opacity: 0.85; }
+    .video-card .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+      width: 84px; height: 60px; background: var(--mtf-red); border-radius: 14px; pointer-events: none; }
+    .video-card .play::after { content: ""; position: absolute; left: 34px; top: 17px;
+      border-left: 22px solid #fff; border-top: 13px solid transparent; border-bottom: 13px solid transparent; }
+    .video-card iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-card video { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; background: #000; }
+    .video-actions { font-size: 0.5em; text-align: center; margin-top: 0.35em; color: var(--muted); }
+    .video-actions button { font: inherit; background: none; border: 1px solid var(--mtf-red);
+      color: var(--mtf-red); border-radius: 4px; padding: 0.1em 0.6em; cursor: pointer; margin-left: 0.6em; }
+    .video-actions a { color: var(--mtf-dark); }
+    .popup-btn { font: inherit; font-size: 0.55em; background: var(--mtf-red); color: #fff; border: 0;
+      border-radius: 6px; padding: 0.6em 1.2em; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
+    .img-missing { border: 2px dashed #d9a0a8; border-radius: 4px; padding: 1.2em 0.8em;
+      font-size: 0.45em; color: var(--muted); background: #fff8f9; }
+    .img-missing a { color: var(--mtf-dark); word-break: break-all; }
+    .reveal .fragment.highlight-red.visible { color: var(--mtf-red); }
+    .qnum { color: var(--mtf-red); font-weight: 700; }
+
+    /* ══ BOTTOM NAV BAR ══ */
+    #navBar {
+      position: fixed; bottom: 0; left: 0; right: 0; height: 54px;
+      background: rgba(14,14,14,0.93); backdrop-filter: blur(8px);
+      border-top: 2px solid var(--mtf-red);
+      display: flex; align-items: center; justify-content: center;
+      gap: 14px; z-index: 9998; padding: 0 20px;
+    }
+    #slideIndicators { display: flex; gap: 5px; align-items: center; }
+    .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.28); border: none; cursor: pointer;
+      padding: 0; flex-shrink: 0; transition: background 0.2s, transform 0.2s;
+    }
+    .dot:hover  { background: rgba(255,255,255,0.65); }
+    .dot.active { background: var(--mtf-red); transform: scale(1.55); }
+    .nav-btn {
+      background: none; border: 1px solid rgba(255,255,255,0.12); border-radius: 7px;
+      color: #fff; cursor: pointer; padding: 5px 9px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s; flex-shrink: 0;
+    }
+    .nav-btn:hover  { background: rgba(200,0,30,0.35); border-color: var(--mtf-red); }
+    .nav-btn:active { background: rgba(200,0,30,0.55); }
+    .nav-btn svg    { width: 22px; height: 22px; fill: #fff; display: block; }
+    #slideCounter {
+      font-family: 'Segoe UI', sans-serif; font-size: 11px;
+      color: rgba(255,255,255,0.5); min-width: 34px; text-align: center; flex-shrink: 0;
+    }
+    #autoLabel {
+      display: flex; align-items: center; gap: 5px; color: rgba(255,255,255,0.55);
+      font-size: 11px; font-family: 'Segoe UI', sans-serif;
+      cursor: pointer; user-select: none; flex-shrink: 0;
+    }
+    #autoLabel input { cursor: pointer; accent-color: var(--mtf-red); }
+    .no-narration #playBtn, .no-narration #autoLabel { display: none; }
+
+    /* ══ MTF STU LOGO – fixed bottom-left (above nav bar) ══ */
+    .mtf-logo-badge {
+      position: fixed; bottom: 62px; left: 18px; z-index: 9999;
+      display: flex; align-items: center; gap: 24px;
+      pointer-events: none; opacity: 0.92;
+    }
+    .mtf-logo-badge svg { width: 182px; height: 62px; flex-shrink: 0; }
+    .mtf-wordmark { display: flex; flex-direction: column; line-height: 1.2; }
+    .mtf-line2 {
+      font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px;
+      font-weight: 400; color: var(--muted); letter-spacing: 0.02em;
+    }
+
+    /* Hide chrome in PDF export */
+    .print-pdf #navBar { display: none; }
+  </style>
+</head>
+<body>
+
+<div class="mtf-logo-badge" aria-label="MTF STU">
+<svg width="182" height="62" viewBox="0 0 91 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M2.29999 17.7807C3.59999 17.7807 4.60001 16.7807 4.60001 15.4807C4.60001 14.1807 3.59999 13.1807 2.29999 13.1807C0.999988 13.1807 0 14.1807 0 15.4807C0 16.7807 0.999988 17.7807 2.29999 17.7807Z" fill="#E72B1E"/>
+  <path d="M2.29999 30.4807C3.59999 30.4807 4.60001 29.4807 4.60001 28.1807C4.60001 26.8807 3.59999 25.8807 2.29999 25.8807C0.999988 25.8807 0 26.8807 0 28.1807C0 29.3807 0.999988 30.4807 2.29999 30.4807Z" fill="#E72B1E"/>
+  <path d="M15 17.7807C16.3 17.7807 17.3 16.7807 17.3 15.4807C17.3 14.1807 16.3 13.1807 15 13.1807C13.7 13.1807 12.7 14.1807 12.7 15.4807C12.7 16.7807 13.7 17.7807 15 17.7807Z" fill="#E72B1E"/>
+  <path d="M15 30.4807C16.3 30.4807 17.3 29.4807 17.3 28.1807C17.3 26.8807 16.3 25.8807 15 25.8807C13.7 25.8807 12.7 26.8807 12.7 28.1807C12.7 29.3807 13.7 30.4807 15 30.4807Z" fill="#E72B1E"/>
+  <path d="M27.6 17.7807C28.9 17.7807 29.9 16.7807 29.9 15.4807C29.9 14.1807 28.9 13.1807 27.6 13.1807C26.3 13.1807 25.3 14.1807 25.3 15.4807C25.3 16.7807 26.3 17.7807 27.6 17.7807Z" fill="#E72B1E"/>
+  <path d="M2.29999 5.18069C3.59999 5.18069 4.60001 4.18071 4.60001 2.88071C4.60001 1.58071 3.59999 0.580688 2.29999 0.580688C0.999988 0.580688 0 1.58071 0 2.88071C0 4.18071 0.999988 5.18069 2.29999 5.18069Z" fill="#E72B1E"/>
+  <path d="M15 5.18069C16.3 5.18069 17.3 4.18071 17.3 2.88071C17.3 1.58071 16.3 0.580688 15 0.580688C13.7 0.580688 12.7 1.58071 12.7 2.88071C12.7 4.18071 13.7 5.18069 15 5.18069Z" fill="#E72B1E"/>
+  <path d="M27.6 5.18069C28.9 5.18069 29.9 4.18071 29.9 2.88071C29.9 1.58071 28.9 0.580688 27.6 0.580688C26.3 0.580688 25.3 1.58071 25.3 2.88071C25.3 4.18071 26.3 5.18069 27.6 5.18069Z" fill="#E72B1E"/>
+  <path d="M27.6 30.4807C28.9 30.4807 29.9 29.4807 29.9 28.1807C29.9 26.8807 28.9 25.8807 27.6 25.8807C26.3 25.8807 25.3 26.8807 25.3 28.1807C25.3 29.3807 26.3 30.4807 27.6 30.4807Z" fill="#E72B1E"/>
+  <path d="M40.2 17.7807C41.5 17.7807 42.5 16.7807 42.5 15.4807C42.5 14.1807 41.5 13.1807 40.2 13.1807C38.9 13.1807 37.9 14.1807 37.9 15.4807C37.9 16.7807 39 17.7807 40.2 17.7807Z" fill="#E72B1E"/>
+  <path d="M40.2 30.4807C41.5 30.4807 42.5 29.4807 42.5 28.1807C42.5 26.8807 41.5 25.8807 40.2 25.8807C38.9 25.8807 37.9 26.8807 37.9 28.1807C37.9 29.3807 39 30.4807 40.2 30.4807Z" fill="#E72B1E"/>
+  <path d="M40.2 5.18069C41.5 5.18069 42.5 4.18071 42.5 2.88071C42.5 1.58071 41.5 0.580688 40.2 0.580688C38.9 0.580688 37.9 1.58071 37.9 2.88071C37.9 4.18071 39 5.18069 40.2 5.18069Z" fill="#E72B1E"/>
+  <path d="M85.8 19.5807C85.8 19.4807 85.9 19.4807 85.9 19.4807H90.7C90.8 19.4807 90.9 19.3807 90.9 19.2807V18.1807C90.9 18.0807 90.8 17.9807 90.7 17.9807H84.3C84.2 17.9807 84.1 18.0807 84.1 18.1807V30.0807C84.1 30.1807 84.2 30.2807 84.3 30.2807H85.7C85.8 30.2807 85.9 30.1807 85.9 30.0807V24.7807H89.7C89.8 24.7807 89.9 24.6807 89.9 24.5807V23.4807C89.9 23.3807 89.8 23.2807 89.7 23.2807H85.9V19.5807H85.8ZM75 30.2807C75.1 30.2807 75.2 30.1807 75.2 30.0807V19.5807C75.2 19.4807 75.2 19.4807 75.3 19.4807H78.3C78.4 19.4807 78.5 19.3807 78.5 19.2807V18.1807C78.5 18.0807 78.4 17.9807 78.3 17.9807H70.4C70.3 17.9807 70.2 18.0807 70.2 18.1807V19.2807C70.2 19.3807 70.3 19.4807 70.4 19.4807H73.3C73.4 19.4807 73.4 19.5807 73.4 19.5807V30.0807C73.4 30.1807 73.5 30.2807 73.6 30.2807H75ZM60 30.2807C60.1 30.2807 60.1 30.2807 60.2 30.1807L63 20.8807V30.0807C63 30.1807 63.1 30.2807 63.2 30.2807H64.5C64.6 30.2807 64.7 30.1807 64.7 30.0807V18.1807C64.7 18.0807 64.6 17.9807 64.5 17.9807H62.8C62.7 17.9807 62.6 17.9807 62.6 18.0807L59.4 28.1807L56.2 18.0807C56.2 17.9807 56.1 17.9807 56 17.9807H54.2C54.1 17.9807 54 18.0807 54 18.1807V30.0807C54 30.1807 54.1 30.2807 54.2 30.2807H55.5C55.6 30.2807 55.7 30.1807 55.7 30.0807V20.8807L58.5 30.1807C58.5 30.2807 58.6 30.2807 58.7 30.2807H60Z" fill="black"/>
+  <path d="M90.9 0.980713C90.9 0.780713 90.8 0.780701 90.7 0.780701H88.4C88.3 0.780701 88.2 0.880713 88.2 0.980713V9.18069C88.2 10.3807 87.5 10.9807 86.2 10.9807C84.9 10.9807 84.2 10.3807 84.2 9.18069V0.980713C84.2 0.780713 84.1 0.780701 84 0.780701H81.7C81.5 0.780701 81.5 0.880713 81.5 0.980713V9.2807C81.5 11.6807 82.8 13.1807 86.2 13.1807C89.5 13.1807 90.9 11.6807 90.9 9.2807V0.980713ZM72.4 12.9807C72.6 12.9807 72.6 12.8807 72.6 12.7807V3.08069C72.6 2.98069 72.6 2.98071 72.7 2.98071H75.6C75.7 2.98071 75.8 2.8807 75.8 2.7807V1.08069C75.8 0.880688 75.7 0.880707 75.6 0.880707H66.9C66.7 0.880707 66.7 0.980688 66.7 1.08069V2.7807C66.7 2.9807 66.8 2.98071 66.9 2.98071H69.7C69.8 2.98071 69.8 3.08069 69.8 3.08069V12.7807C69.8 12.9807 69.9 12.9807 70 12.9807H72.4ZM53.6 12.3807C54.8 12.9807 55.9 13.0807 57.3 13.0807C59.9 13.0807 61.6 11.7807 61.6 9.38071C61.6 7.68071 60.8 6.58069 58.7 5.68069C56.9 4.98069 56.6 4.58071 56.6 3.98071C56.6 3.28071 57.1 2.7807 58.2 2.7807C59 2.7807 59.7 2.88069 60.3 3.18069C60.5 3.28069 60.6 3.18069 60.6 3.08069L61.4 1.48071C61.5 1.38071 61.5 1.28069 61.3 1.18069C60.1 0.680695 59.3 0.480713 57.7 0.480713C55.2 0.480713 53.7 1.98071 53.7 3.98071C53.7 5.78071 54.6 6.8807 56.7 7.7807C58.3 8.4807 58.7 8.88069 58.7 9.58069C58.7 10.2807 58.1 10.7807 57.1 10.7807C55.9 10.7807 55.3 10.5807 54.6 10.1807C54.5 10.0807 54.4 10.1807 54.3 10.2807L53.5 12.0807C53.5 12.2807 53.5 12.3807 53.6 12.3807Z" fill="black"/>
+</svg>
+  <div class="mtf-wordmark">
+    <span class="mtf-line2">Materiálovotechnologická fakulta<br>so sídlom v Trnave</span>
+  </div>
+</div>
+
+<div class="reveal"><div class="slides">
+
+  <!-- ═══ 1 · TITULNÁ SNÍMKA ═══════════════════════════════════════════════ -->
+  <section style="text-align:left;">
+    <div class="title-grid">
+      <div>
+        <hr class="top-rule">
+        <h1>Softvér a metódy simulácie procesov tvárnenia</h1>
+        <p class="subtitle">Prednáška 2 &nbsp;·&nbsp; Modelovanie a simulácia procesov I – tvárnenie (<abbr title="kód predmetu Modelovanie a simulácia procesov I – tvárnenie">MSPO2_6I</abbr>)</p>
+        <p class="author">Ing. Martin Necpal, PhD.</p>
+        <p class="institution">Zimný semester 2026/2027<br>
+          Materiálovotechnologická fakulta &nbsp;·&nbsp; STU Bratislava</p>
+      </div>
+      <div class="figure">
+        <img src="https://www.deform.com/wp-content/uploads/2011/05/yoke.png" alt="Simulácia zápustkového kovania vidlice v DEFORM-3D">
+        <p class="img-caption">Zápustkové kovanie vidlice simulované v DEFORM-3D (© <abbr title="Scientific Forming Technologies Corporation (výrobca DEFORMu (Columbus, Ohio))">SFTC</abbr>)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:00–0:02] Privítanie. Minulý týždeň: čo je modelovanie a simulácia, fyzikálny a matematický model, reťazec modelovania. Dnes: nástroje – od analytických metód „ceruzkou na papieri" po komerčné MKP programy. DEFORM dostane najviac času, lebo ho používame na cvičeniach.</aside>
+  </section>
+
+  <!-- ═══ 2 · MOTIVÁCIA: POKUS–OMYL vs. VIRTUÁLNE SKÚŠANIE ═══════════════ -->
+  <section class="slide-full">
+    <div class="band">
+      <span class="band-title">Motivácia</span>
+      <span class="band-sub">Prečo simulovať tvárnenie?</span>
+    </div>
+    <h2>Od pokusov v lisovni k virtuálnemu odskúšaniu</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.15fr;">
+      <ul class="v-center compact">
+        <li>Zápustky a lisovacie nástroje stoja <span class="hl">týždne práce a desaťtisíce eur</span>; každá úprava pridáva ďalšie</li>
+        <li>Väčšina nákladov na výrobok sa <strong>určí už pri návrhu</strong>, dávno pred začiatkom výroby</li>
+        <li>Simulácia presúva iterácie <span class="hl">do počítača</span>: zmeníte predkovok, polomer zápustky alebo mazivo a spustíte výpočet znova</li>
+        <li class="fragment">Výsledok: menej úprav nástrojov, rýchlejší nábeh výroby, <strong>menej materiálu</strong> (výronok, odpad)</li>
+      </ul>
+      <div class="figure svgfig">
+        <svg viewBox="0 0 520 330" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial" font-size="13">
+          <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#c8001e"/></marker>
+                <marker id="ag" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#777"/></marker></defs>
+          <text x="10" y="18" font-weight="700" fill="#5a5a5a">Tradične</text>
+          <rect x="10" y="28" width="92" height="40" rx="5" fill="#f2f2f2" stroke="#999"/><text x="56" y="53" text-anchor="middle" font-size="11">Návrh nástroja</text>
+          <rect x="130" y="28" width="92" height="40" rx="5" fill="#f2f2f2" stroke="#999"/><text x="176" y="53" text-anchor="middle" font-size="11">Výroba nástroja</text>
+          <rect x="250" y="28" width="92" height="40" rx="5" fill="#f2f2f2" stroke="#999"/><text x="296" y="53" text-anchor="middle" font-size="11">Skúška na lise</text>
+          <rect x="370" y="28" width="92" height="40" rx="5" fill="#f2f2f2" stroke="#999"/><text x="416" y="53" text-anchor="middle">Chyba?</text>
+          <line x1="102" y1="48" x2="128" y2="48" stroke="#777" stroke-width="2" marker-end="url(#ag)"/>
+          <line x1="222" y1="48" x2="248" y2="48" stroke="#777" stroke-width="2" marker-end="url(#ag)"/>
+          <line x1="342" y1="48" x2="368" y2="48" stroke="#777" stroke-width="2" marker-end="url(#ag)"/>
+          <path d="M416,68 C416,120 176,120 176,72" fill="none" stroke="#777" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ag)"/>
+          <text x="296" y="118" text-anchor="middle" fill="#777">úprava nástroja — týždne, € za cyklus</text>
+          <text x="10" y="168" font-weight="700" fill="#8b0014">So simuláciou</text>
+          <rect x="10" y="178" width="92" height="40" rx="5" fill="#fff5f6" stroke="#c8001e"/><text x="56" y="203" text-anchor="middle" font-size="11">Návrh nástroja</text>
+          <rect x="130" y="178" width="92" height="40" rx="5" fill="#8b0014"/><text x="176" y="203" text-anchor="middle" fill="#fff" font-size="11">Výpočet <tspan style="cursor:help"><title>Finite Element Method (metóda konečných prvkov)</title>MKP</tspan></text>
+          <rect x="250" y="178" width="92" height="40" rx="5" fill="#fff5f6" stroke="#c8001e"/><text x="296" y="203" text-anchor="middle">Chyba?</text>
+          <rect x="370" y="178" width="92" height="40" rx="5" fill="#fff5f6" stroke="#c8001e"/><text x="416" y="197" text-anchor="middle" font-size="11">Výroba nástroja</text><text x="416" y="211" text-anchor="middle" font-size="11">(raz)</text>
+          <line x1="102" y1="198" x2="128" y2="198" stroke="#c8001e" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="222" y1="198" x2="248" y2="198" stroke="#c8001e" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="342" y1="198" x2="368" y2="198" stroke="#c8001e" stroke-width="2" marker-end="url(#ar)"/>
+          <path d="M296,218 C296,262 56,262 56,222" fill="none" stroke="#c8001e" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ar)"/>
+          <text x="176" y="270" text-anchor="middle" fill="#c8001e">zmena geometrie — hodiny</text>
+          <text x="10" y="310" fill="#5a5a5a" font-size="12">Overenie na lise je stále potrebné — ideálne však iba raz.</text>
+        </svg>
+        <p class="img-caption">Iteračný cyklus sa presúva z lisovne do počítača</p>
+      </div>
+    </div>
+    <aside class="notes">[0:02–0:05] Opýtajte sa študentov: koľko skúšok nástroja by ste čakali pri novom výkovku bez simulácie? Odpoveď z praxe: niekoľko, každá trvá týždne. Ukážte čiarkované slučky: červená znamená hodiny, sivá týždne.</aside>
+  </section>
+
+  <!-- ═══ 3 · MOTIVÁCIA: ČO SIMULÁCIA PREDPOVEDÁ ═════════════════════════ -->
+  <section class="slide-full">
+    <div class="band">
+      <span class="band-title">Motivácia</span>
+      <span class="band-sub">Čo nám softvér povie</span>
+    </div>
+    <h2>Otázky, na ktoré simulácia tvárnenia odpovedá</h2>
+    <div class="fig-row">
+      <ul class="v-center compact">
+        <li><strong>Zaplní sa dutina zápustky?</strong> — nezaplnenie, zákovky, preložky, lievikovitá dutina</li>
+        <li><strong>Aký lis potrebujem?</strong> — sila a energia v závislosti od zdvihu</li>
+        <li><strong>Praskne alebo sa zúži diel?</strong> — porušenie, <abbr title="Forming Limit Diagram (diagram medzných pretvorení)">FLD</abbr>, stenčenie</li>
+        <li><strong>Zachová si tvar?</strong> — odpruženie, skrivenie, deformácia</li>
+        <li><strong>Aká bude životnosť nástroja?</strong> — napätie, opotrebenie, teplota</li>
+        <li><strong>Čo je vo vnútri?</strong> — veľkosť zrna, fázy, tvrdosť</li>
+      </ul>
+      <div class="figure">
+        <img src="https://www.deform.com/wp-content/uploads/2011/05/rolling-sequence.png" alt="Viacnásobné valcovanie v DEFORM-3D">
+        <p class="img-caption">Postupnosť viacerých valcovacích úberov v DEFORM-3D (© <abbr title="Scientific Forming Technologies Corporation (výrobca DEFORMu (Columbus, Ohio))">SFTC</abbr>)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:05–0:07] Každá otázka zodpovedá typu výsledku, ktorý dnes uvidíme v každom programe. Tento zoznam si zapamätajte — kontrolné otázky na konci sa k nemu vrátia.</aside>
+  </section>
+
+  <!-- ═══ 4 · KDE SME: REŤAZEC MODELOVANIA ═══════════════════════════════ -->
+  <section>
+    <h2>Kam zapadá dnešná prednáška</h2>
+    <div class="cols-2" style="gap:1.5em;">
+      <div>
+        <div class="flow-box">1. Reálny proces tvárnenia <span class="flow-note">(kovanie, valcovanie, lisovanie …)</span></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">2. Fyzikálny model <span class="flow-note">(predpoklady, idealizácia)</span></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key">3. Matematický model <span class="flow-note">→ analytické riešenie (časť I)</span></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key">4. Numerický model a softvér <span class="flow-note">→ <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> / <abbr title="Finite Volume Method (metóda konečných objemov)">MKO</abbr> (časti II–IV)</span></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">5. Verifikácia a validácia <span class="flow-note">(experiment, prednášky 5–6)</span></div>
+      </div>
+      <div>
+        <ul class="small" style="line-height:1.9;">
+          <li><strong>Prednáška 1:</strong> modelovanie, typy modelov, reťazec modelovania</li>
+          <li><strong>Prednáška 2 (dnes):</strong> metódy a <span class="hl">softvér</span>, ktoré model riešia</li>
+          <li><strong>Prednáška 3:</strong> materiálové modely — pretvárny odpor, spevnenie</li>
+          <li><strong>Prednášky 4–6:</strong> preprocessing, príklady plošného a objemového tvárnenia</li>
+          <li class="fragment">Cvičenia: <strong><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr></strong> — dnešná časť III je teda vaša výbava na celý semester</li>
+        </ul>
+      </div>
+    </div>
+    <aside class="notes">[0:07–0:08] Krátke zopakovanie 1. prednášky. Zdôraznite, že kroky 3 a 4 sú dnešnou témou.</aside>
+  </section>
+
+  <!-- ═══ 5 · PROGRAM ════════════════════════════════════════════════════ -->
+  <section>
+    <h2>Program dnešnej prednášky <span class="subtitle" style="font-size:0.55em;">(120 min)</span></h2>
+    <table class="agenda mid">
+      <tr><th>Čas</th><th>Blok</th><th>Obsah</th></tr>
+      <tr><td>0 – 10</td><td>Úvod</td><td>Motivácia, súvislosti, program</td></tr>
+      <tr><td>10 – 25</td><td>I · Analytické metódy</td><td>Metóda rezov, horná hranica, sklzové čiary; riešenie v MATLABe / Pythone / <abbr title="General Algebraic Modeling System (systém na algebraické modelovanie optimalizačných úloh)">GAMS</abbr></td></tr>
+      <tr><td>25 – 67</td><td>II · Softvér pre tvárnenie</td><td>1 Ansys Forming · 2 Simufact Forming · 3 Abaqus · 4 Moldflow</td></tr>
+      <tr class="main"><td>67 – 97</td><td>III · <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr></td><td>Hlavná časť — softvér našich cvičení</td></tr>
+      <tr><td>97 – 112</td><td>IV · Špeciálny simulačný softvér</td><td>Prehľad · jednoduché príklady · príklady použitia</td></tr>
+      <tr><td>112 – 120</td><td>Zhrnutie a otázky</td><td>Hlavné poznatky, kontrolné otázky</td></tr>
+    </table>
+    <aside class="notes">[0:08–0:10] Ukážte program. DEFORM je zámerne posledný a najdlhší: keď študenti uvidia štyri iné programy, lepšie DEFORM zaradia do kontextu.</aside>
+  </section>
+
+  <!-- ═══ 6 · ČASŤ I ═════════════════════════════════════════════════════ -->
+  <section class="divider">
+    <h2>Časť I — Analytické metódy tvárnenia</h2>
+    <p style="color:#f0b0b8;">Uzavreté a poloanalytické modely: rýchle, prehľadné a referencia pre každý výsledok <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></p>
+    <aside class="notes">[0:10] Časť I, 15 minút.</aside>
+  </section>
+
+  <!-- ═══ 7 · PREHĽAD ANALYTICKÝCH METÓD ═════════════════════════════════ -->
+  <section>
+    <div class="band">
+      <span class="band-title">Analytické metódy</span>
+      <span class="band-sub">Prehľad</span>
+    </div>
+    <h2>Klasické analytické metódy teórie plasticity</h2>
+    <table class="tight">
+      <tr><th>Metóda</th><th>Princíp</th><th>Typický výstup</th><th>Typický proces</th></tr>
+      <tr><td><strong>Metóda rezov</strong> (elementárna teória)</td><td>Rovnováha síl na tenkom reze; homogénna deformácia</td><td>Rozloženie tlaku, sila</td><td>Pechovanie, kovanie, valcovanie, ťahanie</td></tr>
+      <tr><td><strong>Sklzové čiary</strong></td><td>Charakteristiky poľa napätí, tuho-ideálne plastický materiál, rovinná deformácia</td><td>Presné pole napätí, sila</td><td>Vtláčanie, pretláčanie, obrábanie</td></tr>
+      <tr><td><strong>Horná hranica</strong> (<abbr title="Upper Bound Method (metóda hornej hranice)">UBM</abbr>, <abbr title="Upper Bound Elemental Technique (prvková metóda hornej hranice)">UBET</abbr>)</td><td>Kinematicky prípustné pole rýchlostí; minimum výkonu</td><td>Sila ≥ skutočná, zapĺňanie dutiny</td><td>Pretláčanie, zápustkové kovanie</td></tr>
+      <tr><td><strong>Dolná hranica</strong></td><td>Staticky prípustné pole napätí</td><td>Sila ≤ skutočná</td><td>Medzná analýza</td></tr>
+      <tr><td><strong>Vizioplasticita</strong></td><td>Meraná deformácia siete → rýchlosti pretvorenia → napätia</td><td>Experimentálne pole toku</td><td>Výskum pretláčania, kovania</td></tr>
+    </table>
+    <ul class="small" style="margin-top:0.5em;">
+      <li>Spoločné predpoklady: tuho-plastický materiál, konštantný (alebo stredný) pretvárny odpor <abbr title="flow stress (pretvárny odpor, napätie tečenia)">σ<sub>f</sub></abbr>, jednoduchý zákon trenia, jednoduchá geometria</li>
+    </ul>
+    <p class="slide-source">Zdroj: Hosford &amp; Caddell, Metal Forming; Necpal &amp; Sobota, 2023</p>
+    <aside class="notes">[0:10–0:13] Rýchla mapa. Horná hranica vždy nadhodnotí silu — čo je bezpečné pri voľbe lisu. Sklzové čiary dávajú presné riešenia, ale len pre rovinnú deformáciu a ideálnu plasticitu.</aside>
+  </section>
+
+  <!-- ═══ 8 · METÓDA REZOV – PECHOVANIE ══════════════════════════════════ -->
+  <section class="slide-full">
+    <h2>Metóda rezov: pechovanie valca</h2>
+    <div class="fig-row" style="grid-template-columns:1.05fr 1fr;">
+      <div class="v-center">
+        <div class="equation sm">$$\frac{dp}{dr} = -\frac{2\mu\,p}{h} \;\;\Rightarrow\;\; p(r)=\sigma_f\, e^{\,2\mu (R-r)/h}$$</div>
+        <div class="equation sm">$$F=\int_0^R p(r)\,2\pi r\,dr, \qquad R = R_0\sqrt{h_0/h}$$</div>
+        <ul class="xs">
+          <li>\(p\) kontaktný tlak, \(\sigma_f\) pretvárny odpor, \(\mu\) Coulombovo trenie</li>
+          <li>\(h, R\) okamžitá výška a polomer (stálosť objemu)</li>
+          <li>Tlak je najväčší v strede — <span class="hl">trecí kopec</span></li>
+          <li>Väčšie \(\mu\) alebo menšie \(h\) ⇒ strmší kopec ⇒ väčšia sila</li>
+        </ul>
+      </div>
+      <div class="figure svgfig">
+        <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial" font-size="13">
+          <rect x="60" y="20" width="300" height="22" fill="#bbb"/><text x="210" y="36" text-anchor="middle" font-size="12">horný nástroj</text>
+          <rect x="90" y="42" width="240" height="60" fill="#f4c9cf" stroke="#8b0014"/>
+          <text x="210" y="77" text-anchor="middle">polotovar, výška h</text>
+          <rect x="60" y="102" width="300" height="22" fill="#bbb"/><text x="210" y="118" text-anchor="middle" font-size="12">dolný nástroj</text>
+          <line x1="210" y1="140" x2="210" y2="280" stroke="#999" stroke-dasharray="4 4"/>
+          <line x1="70" y1="270" x2="350" y2="270" stroke="#333"/>
+          <line x1="90" y1="270" x2="90" y2="150" stroke="#333"/>
+          <text x="84" y="160" text-anchor="end" font-size="12">p</text>
+          <path d="M90,238 Q150,225 210,165 Q270,225 330,238" fill="none" stroke="#c8001e" stroke-width="3"/>
+          <path d="M90,238 L150,212 L210,195 L270,212 L330,238" fill="none" stroke="#777" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <line x1="90" y1="238" x2="330" y2="238" stroke="#1a1a1a" stroke-dasharray="2 3"/>
+          <text x="338" y="242" font-size="11"><tspan style="cursor:help"><title>flow stress (pretvárny odpor, napätie tečenia)</title>σ<tspan baseline-shift="sub" font-size="9">f</tspan></tspan></text>
+          <text x="226" y="170" fill="#c8001e" font-size="12">μ = 0,3</text>
+          <text x="226" y="198" fill="#777" font-size="12">μ = 0,1</text>
+          <text x="90" y="288" text-anchor="middle" font-size="11">−R</text><text x="210" y="288" text-anchor="middle" font-size="11">0</text><text x="330" y="288" text-anchor="middle" font-size="11">R</text>
+        </svg>
+        <p class="img-caption">Trecí kopec — kontaktný tlak pozdĺž polomeru (schéma)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:13–0:17] Ak je čas, odvoďte rovnováhu na tabuli. Zdôraznite, že presne túto skúšku pechovania budete simulovať v DEFORMe na cvičení — analytická sila je prvá kontrola výsledku MKP.</aside>
+  </section>
+
+  <!-- ═══ 9 · ŤAHANIE / HORNÁ HRANICA ════════════════════════════════════ -->
+  <section>
+    <h2>Ťahanie a pretláčanie: výsledky v uzavretom tvare</h2>
+    <div class="cols-2" style="gap:1.2em;">
+      <div>
+        <p style="font-size:0.6em;text-align:left;margin:0;"><strong>Sachs (metóda rezov) — napätie pri ťahaní drôtu</strong></p>
+        <div class="equation sm">$$\sigma_d=\sigma_f\,\frac{1+B}{B}\left[1-\left(\frac{A_1}{A_0}\right)^{B}\right],\; B=\mu\cot\alpha$$</div>
+        <ul class="xs">
+          <li>\(\alpha\) polovičný uhol prievlaku, \(A_0, A_1\) prierez pred a po</li>
+          <li>Podmienka: \(\sigma_d \le \sigma_f\) ⇒ najväčší úber na jeden ťah</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:0.6em;text-align:left;margin:0;"><strong>Horná hranica — tlak pri pretláčaní</strong></p>
+        <div class="equation sm">$$\frac{p}{\sigma_f}\approx \underbrace{\ln R_{ext}}_{\text{ideálna}}+\underbrace{\mu\cot\alpha\,\ln R_{ext}}_{\text{trenie}}+\underbrace{\tfrac{2}{\sqrt3}\!\left(\tfrac{\alpha}{\sin^2\alpha}-\cot\alpha\right)}_{\text{nadbytočná (strih)}}$$</div>
+        <ul class="xs">
+          <li>\(R_{ext}=A_0/A_1\) pomer pretláčania, \(\alpha\) polovičný uhol matrice</li>
+          <li>Strihový člen s α rastie, trecí klesá ⇒ <span class="hl">optimálny uhol matrice</span> → optimalizačná úloha</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note-box">Didaktický tvar — zjednodušený (horná hranica Avitzurovho typu pre kužeľovú matricu); pred použitím čísel pozri úplné odvodenie v Hosford &amp; Caddell a Avitzur.</div>
+    <aside class="notes">[0:17–0:19] Podstatný nie je samotný vzorec, ale jeho štruktúra: jeden člen s uhlom matrice rastie, druhý klesá — existuje teda optimum. Tým sa z analytického modelu stáva optimalizačná úloha, čo nás privádza k riešičom na ďalšej snímke.</aside>
+  </section>
+
+  <!-- ═══ 10 · RIEŠENIE ANALYTICKÝCH MODELOV ═════════════════════════════ -->
+  <section>
+    <div class="band">
+      <span class="band-title">Analytické metódy</span>
+      <span class="band-sub">Softvér</span>
+    </div>
+    <h2>Riešenie analytických modelov: MATLAB · Python · <abbr title="General Algebraic Modeling System (systém na algebraické modelovanie optimalizačných úloh)">GAMS</abbr></h2>
+    <div class="cols-2" style="grid-template-columns:1.15fr 1fr;gap:1em;">
+      <table class="tight">
+        <tr><th>Typ úlohy</th><th>Príklad z tvárnenia</th><th>Nástroj</th></tr>
+        <tr><td>Uzavretý tvar</td><td>Sila ťahania, Sachsovo napätie</td><td>NumPy · MATLAB</td></tr>
+        <tr><td>Nelineárna rovnica</td><td>Neutrálny bod pri valcovaní</td><td><code>fzero</code> · <code>brentq</code></td></tr>
+        <tr><td>Diferenciálna rovnica</td><td>Kovanie metódou rezov, von Kármán</td><td><code>ode45</code> · <code>solve_ivp</code></td></tr>
+        <tr><td>Symbolický výpočet</td><td>Odvodenie rovníc metódy rezov</td><td>SymPy · Symbolic <abbr title="Toolbox (knižnica v MATLABe (Symbolic Math Toolbox))">TB</abbr></td></tr>
+        <tr><td>Optimalizácia <abbr title="NonLinear Programming (nelineárne programovanie (optimalizácia))">NLP</abbr></td><td>Horná hranica, optimálny uhol</td><td><code>fmincon</code> · <abbr title="General Algebraic Modeling System (systém na algebraické modelovanie optimalizačných úloh)">GAMS</abbr>/<abbr title="riešič v GAMS (lokálny NLP)">CONOPT</abbr></td></tr>
+        <tr><td><abbr title="Mixed-Integer NonLinear Programming (zmiešané celočíselné nelineárne programovanie)">MINLP</abbr></td><td>Plán úberov, počet ťahov</td><td><abbr title="General Algebraic Modeling System (systém na algebraické modelovanie optimalizačných úloh)">GAMS</abbr>/<abbr title="riešič v GAMS (globálny)">BARON</abbr> · Pyomo</td></tr>
+        <tr><td>Framework</td><td>Valcovanie v kalibroch</td><td>PyRolL (TU Freiberg)</td></tr>
+      </table>
+<pre class="code"><code><span class="c"># Sila pechovania – metóda rezov (Python)</span>
+<span class="k">import</span> numpy <span class="k">as</span> np
+<span class="k">from</span> scipy.integrate <span class="k">import</span> quad
+sf, mu = 250.0, 0.2          <span class="c"># MPa, -</span>
+R0, h0 = 10.0, 30.0          <span class="c"># mm</span>
+<span class="k">for</span> h <span class="k">in</span> np.linspace(30, 10, 5):
+    R = R0*np.sqrt(h0/h)     <span class="c"># stálosť objemu</span>
+    p = <span class="k">lambda</span> r: sf*np.exp(2*mu*(R-r)/h)
+    F = quad(<span class="k">lambda</span> r: p(r)*2*np.pi*r, 0, R)[0]
+    print(f"h={h:5.1f} mm  F={F/1e3:7.1f} kN")</code></pre>
+    </div>
+    <aside class="notes">[0:19–0:23] Ak je pripravený notebook, spustite skript naživo (trvá sekundu). Študenti uvidia, ako sila rastie s klesajúcou výškou — rovnaká krivka ako sila–zdvih z DEFORMu. GAMS len spomeňte ako nástroj na optimalizáciu plánu úberov.</aside>
+  </section>
+
+  <!-- ═══ 11 · ANALYTICKÉ vs NUMERICKÉ ═══════════════════════════════════ -->
+  <section>
+    <h2>Prečo analytické metódy nestačia</h2>
+    <table class="mid">
+      <tr><th>Hľadisko</th><th>Analytické metódy</th><th>Numerický softvér (<abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> / <abbr title="Finite Volume Method (metóda konečných objemov)">MKO</abbr>)</th></tr>
+      <tr><td>Geometria</td><td>Jednoduchá (valec, pás, kužeľ)</td><td><span class="hl">Ľubovoľná 3D</span> z <abbr title="Computer-Aided Design (počítačom podporované konštruovanie)">CAD</abbr></td></tr>
+      <tr><td>Materiál</td><td>Konštantný alebo stredný <abbr title="flow stress (pretvárny odpor, napätie tečenia)">σ<sub>f</sub></abbr></td><td><abbr title="flow stress (pretvárny odpor, napätie tečenia)">σ<sub>f</sub></abbr>(φ, φ̇, T), anizotropia, porušenie</td></tr>
+      <tr><td>Výstup</td><td>Sila, stredný tlak</td><td>Úplné polia: pretvorenie, T, napätie, chyby, mikroštruktúra</td></tr>
+      <tr><td>Čas na odpoveď</td><td><span class="hl">Sekundy</span></td><td>Minúty až dni</td></tr>
+      <tr><td>Prehľadnosť</td><td>Každý člen je viditeľný</td><td>„Čierna skrinka" — treba kontrolovať</td></tr>
+    </table>
+    <ul class="small" style="margin-top:0.5em;">
+      <li>Analytické výsledky použite na <strong>prvý odhad</strong> a na <strong>kontrolu</strong> výsledkov <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> — zvyšok nechajte na softvér</li>
+    </ul>
+    <aside class="notes">[0:23–0:25] Prechod do časti II. Tabuľka vysvetľuje, prečo priemysel platí za softvér, ktorý uvidíme ďalej.</aside>
+  </section>
+
+  <!-- ═══ 12 · ČASŤ II ═══════════════════════════════════════════════════ -->
+  <section class="divider">
+    <h2>Časť II — Softvér na simuláciu tvárnenia</h2>
+    <p style="color:#f0b0b8;">1 Ansys Forming &nbsp;·&nbsp; 2 Simufact Forming &nbsp;·&nbsp; 3 Abaqus &nbsp;·&nbsp; 4 Moldflow &nbsp;→&nbsp; 5 <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> (časť III)</p>
+    <aside class="notes">[0:25] Časť II, asi 42 minút, zhruba 9–10 minút na program.</aside>
+  </section>
+
+  <!-- ═══ 13 · PREHĽAD SOFTVÉRU ══════════════════════════════════════════ -->
+  <section>
+    <div class="band">
+      <span class="band-title">Softvér</span>
+      <span class="band-sub">Prehľad</span>
+    </div>
+    <h2>Dve skupiny softvéru pre tvárnenie</h2>
+    <div class="cols-2" style="gap:1.2em;">
+      <div>
+        <p style="font-size:0.62em;text-align:left;margin:0 0 0.2em;"><span class="tag">Špecializovaný</span> orientovaný na proces</p>
+        <ul class="xs">
+          <li>Šablóny: lisy, nástroje, brzdiace lišty, úbery</li>
+          <li>Pre <strong>technológa</strong>, nie pre špecialistu na <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></li>
+          <li>Plech: <strong>Ansys Forming</strong>, AutoForm, PAM-STAMP</li>
+          <li>Objemové: <strong>Simufact</strong>, <strong><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr></strong>, QForm, FORGE</li>
+          <li>Plasty: <strong>Moldflow</strong>, Moldex3D</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:0.62em;text-align:left;margin:0 0 0.2em;"><span class="tag grey">Univerzálny</span> nelineárna <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></p>
+        <ul class="xs">
+          <li>Všetko si zostaví používateľ: diely, kontakty, kroky</li>
+          <li>Maximálna flexibilita, vlastné podprogramy (<abbr title="User MATerial (používateľský podprogram materiálového modelu)">UMAT</abbr>)</li>
+          <li><strong>Abaqus</strong>, <abbr title="Livermore Software – DYNAmic (explicitný MKP riešič (Ansys Forming))">LS-DYNA</abbr>, Ansys Mechanical, <abbr title="MacNeal-Schwendler Corporation (pôvodný výrobca Marc, SuperForge, Simufact (dnes Hexagon))">MSC</abbr> Marc</li>
+          <li>Výskum, výučba, neobvyklé procesy</li>
+        </ul>
+      </div>
+    </div>
+    <table class="tight" style="margin-top:0.4em;">
+      <tr><th>Typ riešiča</th><th>Princíp</th><th>Kde</th></tr>
+      <tr><td>Implicitný (statický)</td><td>Rovnováha v každom prírastku, veľké kroky</td><td><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr>, Abaqus/Standard, odpruženie</td></tr>
+      <tr><td>Explicitný (dynamický)</td><td>Malé stabilné časové kroky, robustný kontakt</td><td><abbr title="Livermore Software – DYNAmic (explicitný MKP riešič (Ansys Forming))">LS-DYNA</abbr> (Ansys Forming), Abaqus/Explicit</td></tr>
+      <tr><td>Konečné objemy (Euler)</td><td>Pevná sieť, materiál ňou preteká</td><td>Simufact <abbr title="Finite Volume (riešič konečných objemov (v Simufact))">FV</abbr>, riešiče Moldflow</td></tr>
+    </table>
+    <aside class="notes">[0:25–0:28] Dajte študentom dve „zásuvky", do ktorých zaradia každý program. Explicitný vs. implicitný riešič je častá skúšková otázka.</aside>
+  </section>
+
+  <!-- ═══ 14 · SPOLOČNÝ POSTUP ═══════════════════════════════════════════ -->
+  <section>
+    <h2>Každý program má rovnaký postup</h2>
+    <div class="cols-2" style="gap:1.5em;">
+      <div>
+        <div class="flow-box">1. <strong>Geometria</strong> — import z <abbr title="Computer-Aided Design (počítačom podporované konštruovanie)">CAD</abbr> (<abbr title="STandard for the Exchange of Product data (neutrálny formát 3D geometrie (ISO 10303))">STEP</abbr>, <abbr title="Initial Graphics Exchange Specification (starší neutrálny formát geometrie)">IGES</abbr>, <abbr title="Stereolithography (formát trojuholníkovej siete povrchu)">STL</abbr>), symetria</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">2. <strong>Materiál</strong> — krivka spevnenia, tepelné údaje, porušenie</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">3. <strong>Sieť</strong> — typ prvku, veľkosť, remeshing</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">4. <strong>Okrajové podmienky</strong> — trenie, prestup tepla, pohyb nástroja</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key">5. <strong>Výpočet</strong> — riešič, časové kroky, podmienky ukončenia</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">6. <strong>Vyhodnotenie</strong> — polia, krivky, chyby, protokol</div>
+      </div>
+      <div class="v-center">
+        <ul class="small" style="line-height:1.9;">
+          <li>Kroky 1–4 = <span class="hl">preprocessing</span> (prednáška 4)</li>
+          <li>Krok 6 = <span class="hl">postprocessing</span> (prednášky 5–6)</li>
+          <li>Programy sa líšia najmä tým, <strong>koľko z krokov 1–4 automatizujú</strong> šablóny</li>
+          <li class="fragment">„Garbage in, garbage out": kvalitu odpovede určuje krivka spevnenia a súčiniteľ trenia</li>
+        </ul>
+      </div>
+    </div>
+    <aside class="notes">[0:28–0:30] Použite to ako optiku pre každý program: ktoré kroky za vás urobí?</aside>
+  </section>
+
+  <!-- ═══ 15 · ANSYS FORMING 1 ═══════════════════════════════════════════ -->
+  <section class="slide-full">
+    <div class="band">
+      <span class="band-title">1 · Ansys Forming</span>
+      <span class="band-sub">Lisovanie plechov</span>
+    </div>
+    <h2>Ansys Forming — lisovanie s riešičom <abbr title="Livermore Software – DYNAmic (explicitný MKP riešič (Ansys Forming))">LS-DYNA</abbr></h2>
+    <div class="fig-row">
+      <ul class="v-center compact">
+        <li>Ucelená aplikácia na <span class="hl">lisovanie plechov</span>: pre-, výpočet aj postprocessing v jednom prostredí</li>
+        <li>Riešič: <strong><abbr title="Livermore Software – DYNAmic (explicitný MKP riešič (Ansys Forming))">LS-DYNA</abbr></strong> explicitný (implicitný pre gravitáciu a odpruženie)</li>
+        <li>Dodávateľ: Ansys, od roku 2025 súčasť <strong>Synopsys</strong>; prvá verzia 2022 R1</li>
+        <li>Typy projektov: <strong>lisovanie za studena, za tepla</strong> (press hardening), lemovanie (beta), <strong><abbr title="One-step inverse method (inverzná jednokroková metóda (rozvinutie dielu do prístrihu))">One Step</abbr></strong> (inverzná metóda)</li>
+        <li>Pre technológov a nástrojárov — netreba byť expert na <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></li>
+      </ul>
+      <div class="figure">
+        <img src="https://images.ansys.com/is/image/ansys/inner-hood" alt="Ansys Forming – vnútorný diel kapoty">
+        <p class="img-caption">Vnútorný diel kapoty auta v Ansys Forming (© Ansys / Synopsys)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:30–0:33] Ansys Forming nahrádza staršie preprocesory pre LS-DYNA (eta/DYNAFORM, modul LS-PrePost). Sústava jednotiek: t, mm, s, N, MPa.</aside>
+  </section>
+
+  <!-- ═══ 16 · ANSYS FORMING 2 ═══════════════════════════════════════════ -->
+  <section>
+    <div class="band">
+      <span class="band-title">1 · Ansys Forming</span>
+      <span class="band-sub">Postup · Výsledky</span>
+    </div>
+    <h2>Postup a typické výsledky</h2>
+    <div class="cols-2" style="gap:1.2em;">
+      <div>
+        <div class="flow-box"><strong>Process</strong> — <abbr title="Computer-Aided Design (počítačom podporované konštruovanie)">CAD</abbr>, natočenie do lisu, presnosť</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box"><strong>Blank</strong> — obrys prístrihu, materiál, <abbr title="Forming Limit Diagram (diagram medzných pretvorení)">FLD</abbr>, zvárané prístrihy</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box"><strong>Operations</strong> — ťahanie, strihanie, ohýbanie lemu, brzdiace lišty</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key"><strong>Advance</strong> — kompenzácia odpruženia, línia strihu, robustnosť</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box"><strong>Analysis</strong> — výsledky, protokol <abbr title="PowerPoint Open XML (formát prezentácie PowerPoint)">PPTX</abbr></div>
+      </div>
+      <div>
+        <table class="tight">
+          <tr><th>Výsledok</th><th>Odpovedá na</th></tr>
+          <tr><td><strong><abbr title="Forming Limit Diagram (diagram medzných pretvorení)">FLD</abbr></strong>, index tvárniteľnosti</td><td>Trhlina alebo zvlnenie?</td></tr>
+          <tr><td><strong>Stenčenie</strong></td><td>Lokálny úbytok hrúbky</td></tr>
+          <tr><td><strong>Odpruženie</strong></td><td>Tvar po odľahčení</td></tr>
+          <tr><td>Stoning, zebra</td><td>Viditeľné povrchové chyby</td></tr>
+          <tr><td>Vťahovanie, stopy</td><td>Pohyb prístrihu</td></tr>
+          <tr><td>Sila lisu</td><td>Veľkosť lisu</td></tr>
+        </table>
+        <ul class="xs" style="margin-top:0.4em;">
+          <li>Pravidlo: <span class="hl">3 prvky na polomere 90°</span></li>
+          <li>Predvoľby: Fast · Accurate · Very Accurate</li>
+        </ul>
+      </div>
+    </div>
+    <p class="slide-source">Zdroj: Ansys Forming User's Guide 2026 R1</p>
+    <aside class="notes">[0:33–0:36] Kompenzácia odpruženia: softvér iteračne upravuje povrch nástroja, kým diel nie je v tolerancii — menej úprav nástroja. Časové škálovanie: rýchlosti nástrojov sa umelo zvyšujú, aby sa skrátil explicitný výpočet.</aside>
+  </section>
+
+  <!-- ═══ 17 · VIDEO ANSYS ═══════════════════════════════════════════════ -->
+  <section>
+    <h2>Video: Ansys Forming — lisovanie od začiatku do konca</h2>
+    <div class="video-card"><video src="videos/ansys_forming.mp4" controls preload="metadata"></video></div>
+    <div class="video-actions">Ansys Forming — ukážka simulácie lisovania</div>
+    <aside class="notes">[0:36–0:39] Pustite 2–3 minúty. Študenti nech sledujú: prístrih, pridržiavač s brzdiacimi lištami, farebný diagram FLD.</aside>
+  </section>
+
+  <!-- ═══ 18 · SIMUFACT 1 ════════════════════════════════════════════════ -->
+  <section>
+    <div class="band">
+      <span class="band-title">2 · Simufact Forming</span>
+      <span class="band-sub">Objemové · Plošné · Spájanie</span>
+    </div>
+    <h2>Simufact Forming — dva riešiče v jednom programe</h2>
+    <ul class="compact" style="margin-top:0;">
+      <li>Procesne orientovaný softvér pre <span class="hl">objemové a plošné tvárnenie</span>; Simufact (Hamburg) → <abbr title="MacNeal-Schwendler Corporation (pôvodný výrobca Marc, SuperForge, Simufact (dnes Hexagon))">MSC</abbr> → <strong>Hexagon</strong></li>
+      <li>Kovanie, pechovanie hláv, pretláčanie, valcovanie krúžkov, voľné kovanie, presné strihanie, <strong>samoprebíjacie nitovanie, clinching</strong>, tepelné spracovanie</li>
+    </ul>
+    <table class="mid">
+      <tr><th></th><th>Konečné prvky (<abbr title="Finite Element (riešič konečných prvkov (v Simufact))">FE</abbr>)</th><th>Konečné objemy (<abbr title="Finite Volume (riešič konečných objemov (v Simufact))">FV</abbr>)</th></tr>
+      <tr><td>Popis</td><td>Lagrangeov — sieť sa pohybuje s materiálom</td><td>Eulerov — pevná sieť, materiál tečie bunkami</td></tr>
+      <tr><td>Sieť</td><td>Šesťsteny, štvorsteny, remeshing</td><td>Remeshing netreba</td></tr>
+      <tr><td>Vhodné pre</td><td>Tvárnenie za studena, plech, napätie v nástroji, spájanie</td><td><span class="hl">3D zápustkové kovanie za tepla</span> s výronkom</td></tr>
+      <tr><td>Pôvod</td><td>Riešič <abbr title="MacNeal-Schwendler Corporation (pôvodný výrobca Marc, SuperForge, Simufact (dnes Hexagon))">MSC</abbr> Marc</td><td><abbr title="MacNeal-Schwendler Corporation (pôvodný výrobca Marc, SuperForge, Simufact (dnes Hexagon))">MSC</abbr> SuperForge</td></tr>
+    </table>
+    <ul class="small" style="margin-top:0.4em;"><li>Prepínanie <abbr title="Finite Element (riešič konečných prvkov (v Simufact))">FE</abbr> ↔ <abbr title="Finite Volume (riešič konečných objemov (v Simufact))">FV</abbr> medzi operáciami; <abbr title="Finite Volume (riešič konečných objemov (v Simufact))">FV</abbr> paralelizovaný v roku 2022 — až <strong>4× rýchlejší</strong></li></ul>
+    <aside class="notes">[0:39–0:42] Tabuľka FE/FV je kľúčová: Lagrange vs. Euler. K MKO sa vrátime v časti IV.</aside>
+  </section>
+
+  <!-- ═══ 19 · SIMUFACT 2: CHYBY ═════════════════════════════════════════ -->
+  <section>
+    <h2>Simufact Forming — predikcia chýb</h2>
+    <div class="cols-2" style="align-items:center;">
+      <div class="figure half">
+        <img src="https://d3snfrf5umcrvh.cloudfront.net/wp-content/uploads/2021/12/03_newcriteriasurfacedetection-Cover-1024x378.png" alt="Simufact – zóny chýb toku: lievikovitá dutina a preložky">
+        <p class="img-caption">a) „Flow defects zones": detekcia lievikovitej dutiny a preložiek (© Hexagon)</p>
+      </div>
+      <div class="figure half">
+        <button class="popup-btn" data-popup="https://d3snfrf5umcrvh.cloudfront.net/wp-content/uploads/2022/08/SimufactForming2022-Highlight-DamageOccProp.gif">▶ Prehrať animáciu v novom okne</button>
+        <p class="img-caption">b) Vznik a šírenie trhliny na základe porušenia (© Hexagon)</p>
+      </div>
+    </div>
+    <ul class="small" style="margin-top:0.5em;">
+      <li><strong>Lievikovitá dutina</strong> (piping) a <strong>preložky</strong>: typické pri kovaní a pretláčaní — bez simulácie ťažko predvídateľné</li>
+      <li>Oddelenie podľa porušenia: 2D rozdelenie siete, 3D mazanie prvkov — strihanie, presné strihanie, nitovanie</li>
+    </ul>
+    <aside class="notes">[0:42–0:45] Obrázok b je animácia. Vysvetlite lievikovitú dutinu: materiál odteká od čela a zanechá lievikovitú dutinu.</aside>
+  </section>
+
+  <!-- ═══ 20 · VIDEO SIMUFACT ════════════════════════════════════════════ -->
+  <section>
+    <h2>Video: vznik preložky pri kovaní vidlicovej hlavy</h2>
+    <div class="video-card"><video src="videos/kovanie.mp4" controls preload="metadata"></video></div>
+    <div class="video-actions">Simulation of folds: material flow during forging of a fork head (Simufact)</div>
+    <aside class="notes">[0:45–0:48] Pôvodný návrh procesu mal sklon k tvorbe preložky; video ukazuje preložku aj upravený návrh. Prepojenie s DEFORMom: rovnakú chybu tam nájdeme sledovaním bodov a tokovými čiarami.</aside>
+  </section>
+
+  <!-- ═══ 21 · ABAQUS 1 ══════════════════════════════════════════════════ -->
+  <section>
+    <div class="band">
+      <span class="band-title">3 · Abaqus</span>
+      <span class="band-sub">Univerzálna nelineárna <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span>
+    </div>
+    <h2>Abaqus — univerzálny nástroj</h2>
+    <ul class="compact" style="margin-top:0;">
+      <li><strong>Dassault Systèmes SIMULIA</strong>; Abaqus/<abbr title="Computer-Aided Engineering (počítačová podpora inžinierskych analýz (Abaqus/CAE = grafické prostredie))">CAE</abbr> a 3DEXPERIENCE; bezplatná <em>Learning Edition</em> (≈ 1000 uzlov)</li>
+      <li><span class="hl">Žiadne šablóny pre tvárnenie</span>: diely, kontakty a kroky zostaví používateľ — flexibilné, ideálne pre výskum (<abbr title="User MATerial (používateľský podprogram materiálového modelu)">UMAT</abbr>/<abbr title="User MATerial for Explicit (používateľský podprogram materiálového modelu (Abaqus/Explicit))">VUMAT</abbr>)</li>
+    </ul>
+    <table class="mid">
+      <tr><th></th><th>Abaqus/Explicit</th><th>Abaqus/Standard</th></tr>
+      <tr><td>Použitie</td><td>Tvárnenie s náročným kontaktom, veľké deformácie</td><td>Odpruženie, plynulé kvázistatické zaťaženie, prestup tepla</td></tr>
+      <tr><td>Silná stránka</td><td>Robustný kontakt, bez problémov s konvergenciou</td><td>Skutočná rovnováha, veľké prírastky</td></tr>
+      <tr><td>Pozor na</td><td>Malý stabilný časový krok → škálovanie hmotnosti</td><td>Konvergenciu pri kontakte</td></tr>
+    </table>
+    <div class="equation sm" style="margin-top:0.5em;">Kontrola kvázistatickosti v Explicit: &nbsp; \( \dfrac{E_{kin}}{E_{int}} = \dfrac{\text{ALLKE}}{\text{ALLIE}} \lesssim 5\text{–}10\,\% \)</div>
+    <aside class="notes">[0:48–0:51] Priemyselný štandard: tvárnenie v Explicit, import do Standard, výpočet odpruženia. Pomerom energií dokážete, že zrýchlenie procesu v Explicit nezmenilo fyziku.</aside>
+  </section>
+
+  <!-- ═══ 22 · ABAQUS 2: HLBOKÉ ŤAHANIE ══════════════════════════════════ -->
+  <section class="slide-full">
+    <h2>Príklad v Abaqus: osovo súmerné hlboké ťahanie výťažku</h2>
+    <div class="fig-row" style="grid-template-columns:1.3fr 1fr;">
+      <ol class="compact v-center" style="font-size:0.66em;">
+        <li><strong>Part</strong> — prístrih: deformovateľná osovo súmerná škrupina; ťažník, ťažnica, pridržiavač: analyticky tuhé</li>
+        <li><strong>Property</strong> — oceľ, E = 200 GPa, ν = 0,3, krivka spevnenia</li>
+        <li><strong>Step</strong> — Dynamic, Explicit, 0,007 s</li>
+        <li><strong>Interaction</strong> — penaltové trenie μ = 0,1 (ťažnica, pridržiavač)</li>
+        <li><strong>Load</strong> — ťažník 60 mm, amplitúda <span class="hl">Smooth Step</span></li>
+        <li><strong>Mesh</strong> — iba prístrih, zjemnený na polomeroch</li>
+        <li><strong>Výsledky</strong> — <abbr title="Equivalent Plastic Strain (ekvivalentné plastické pretvorenie)">PEEQ</abbr>, hrúbka <abbr title="Section THickness (hrúbka škrupiny)">STH</abbr>, sila ťažníka</li>
+      </ol>
+      <div class="figure">
+        <img src="https://caeassistant.com/wp-content/uploads/2025/09/Deep-Drawing-Results.png" alt="Výsledky hlbokého ťahania v Abaqus">
+        <p class="img-caption">Výsledky hlbokého ťahania v Abaqus/<abbr title="Computer-Aided Engineering (počítačová podpora inžinierskych analýz (Abaqus/CAE = grafické prostredie))">CAE</abbr> (© <abbr title="Computer-Aided Engineering (počítačová podpora inžinierskych analýz (Abaqus/CAE = grafické prostredie))">CAE</abbr> Assistant)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:51–0:54] Sedem krokov = sedem modulov Abaqus/CAE. Porovnajte s Ansys Forming, kde je rovnaký model šablóna na pár kliknutí.</aside>
+  </section>
+
+  <!-- ═══ 23 · ABAQUS 3 ══════════════════════════════════════════════════ -->
+  <section class="slide-full">
+    <h2>Abaqus: veľké deformácie a porušenie</h2>
+    <div class="fig-row" style="grid-template-columns:1.1fr 1fr;">
+      <div class="v-center">
+        <table class="tight">
+          <tr><th>Technika</th><th>Použitie</th></tr>
+          <tr><td><strong><abbr title="Arbitrary Lagrangian–Eulerian (ľubovoľný Lagrangeovsko-Eulerov opis: sieť sa pohybuje nezávisle od materiálu)">ALE</abbr></strong> adaptívna sieť</td><td>Kovanie, valcovanie, pretláčanie (Explicit)</td></tr>
+          <tr><td>Adaptívny remeshing</td><td>Riadený presnosťou (Standard)</td></tr>
+          <tr><td>Mapovanie sieť–sieť</td><td>Veľmi veľké deformácie, operácie kovania</td></tr>
+          <tr><td><abbr title="Coupled Eulerian–Lagrangian (prepojený Eulerovsko-Lagrangeov opis (Abaqus))">CEL</abbr> (Euler)</td><td>Extrémny tok materiálu</td></tr>
+        </table>
+        <ul class="xs" style="margin-top:0.4em;">
+          <li>Porušenie: ductile, <strong>Johnson-Cook</strong>, shear, <abbr title="Forming Limit Diagram (diagram medzných pretvorení)">FLD</abbr>, <abbr title="Forming Limit Stress Diagram (diagram medzných napätí)">FLSD</abbr>, <abbr title="Müschenborn–Sonne FLD (FLD prevedený do priestoru efektívne pretvorenie – pomer pretvorení, nezávislý od dráhy zaťaženia)">MSFLD</abbr>, <strong><abbr title="Marciniak–Kuczynski (model lokalizácie deformácie s počiatočnou drážkou)">M-K</abbr></strong></li>
+          <li>Odpruženie: ≥ 5–7 integračných bodov po hrúbke, kinematické spevnenie</li>
+        </ul>
+      </div>
+      <div class="figure">
+        <img src="https://blog.technia.com/hs-fs/hubfs/Imported_Blog_Media/2_adaptivity%20techniques_ALE%20adapative%20meshing_explicit-Apr-21-2022-04-05-06-41-PM.png" alt="ALE adaptívna sieť v Abaqus/Explicit">
+        <p class="img-caption"><abbr title="Arbitrary Lagrangian–Eulerian (ľubovoľný Lagrangeovsko-Eulerov opis: sieť sa pohybuje nezávisle od materiálu)">ALE</abbr> adaptívna sieť v Abaqus/Explicit (© TECHNIA)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:54–0:57] Remeshing je HLAVNÝ problém Lagrangeovho objemového tvárnenia. Abaqus ponúka ALE; DEFORM robí plne automatický remeshing — zapamätajte si to pre časť III.</aside>
+  </section>
+
+  <!-- ═══ 24 · MOLDFLOW 1 ════════════════════════════════════════════════ -->
+  <section>
+    <div class="band">
+      <span class="band-title">4 · Moldflow</span>
+      <span class="band-sub">Vstrekovanie plastov</span>
+    </div>
+    <h2>Autodesk Moldflow — tvárnenie polymérov</h2>
+    <div class="cols-2" style="gap:1.4em;">
+      <div>
+        <ul class="xs">
+          <li>Založený 1978 v Melbourne (Colin Austin); od 2008 <strong>Autodesk</strong>; aktuálna verzia 2027</li>
+          <li><strong>Adviser</strong> (konštruktéri) · <strong>Insight</strong> (analytici) · rozhranie Synergy · prehliadač Communicator</li>
+          <li>Fyzika: <span class="hl">tok nenewtonovskej viskóznej taveniny</span> + prestup tepla — nie plasticita tuhej látky</li>
+          <li>Viskozita: <abbr title="Cross – Williams–Landel–Ferry (model viskozity taveniny v závislosti od šmykovej rýchlosti a teploty)">Cross-WLF</abbr> · <abbr title="Pressure–Volume–Temperature (závislosť tlak–objem–teplota polyméru (Taitova rovnica))">PVT</abbr>: Taitova rovnica</li>
+          <li>≈ 13 900 termoplastov v databáze</li>
+        </ul>
+      </div>
+      <div>
+        <div class="flow-box">Uzatvorenie formy</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key">Plnenie (vstrek) <span class="flow-note">studené spoje, uzavretý vzduch, nedostrek</span></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Dotlak <span class="flow-note">zmraštenie, prepadliny</span></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key">Chladenie <span class="flow-note">najväčšia časť cyklu</span></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Vyhodenie → <strong>deformácia (warp)</strong></div>
+      </div>
+    </div>
+    <aside class="notes">[0:57–1:00] Prečo Moldflow v predmete o tvárnení kovov? Rovnaká filozofia — virtuálne odskúšanie formy namiesto zápustky — ale iná fyzika. Relevantné aj pre vstrekovanie kovových práškov (MIM).</aside>
+  </section>
+
+  <!-- ═══ 25 · MOLDFLOW 2 ════════════════════════════════════════════════ -->
+  <section>
+    <h2>Moldflow: typy sietí a chyby</h2>
+    <div class="cols-2" style="gap:1em;">
+      <table class="tight">
+        <tr><th>Sieť</th><th>Princíp</th><th>Použitie</th></tr>
+        <tr><td><strong>Midplane</strong> <abbr title="sieť typu Midplane / Dual Domain (škrupina s hrúbkou)">2.5D</abbr></td><td>Škrupiny na strednej ploche; Hele-Shaw</td><td>Tenké steny, najrýchlejšia</td></tr>
+        <tr><td><strong>Dual Domain</strong> <abbr title="sieť typu Midplane / Dual Domain (škrupina s hrúbkou)">2.5D</abbr></td><td>Zhodné siete na oboch povrchoch</td><td>Tenké jednoduché diely</td></tr>
+        <tr><td><strong>3D</strong> štvorsteny</td><td>Úplný 3D tok, bez Hele-Shaw</td><td>Hrubé, masívne diely</td></tr>
+        <tr><td>Nosník 1D</td><td>Čiarové prvky</td><td>Rozvodné a chladiace kanály</td></tr>
+      </table>
+      <table class="tight">
+        <tr><th>Chyba</th><th>Náprava navrhnutá simuláciou</th></tr>
+        <tr><td>Nedostrek</td><td>Pridať/presunúť vtok, hrubšia stena, teplejšia tavenina</td></tr>
+        <tr><td>Studené spoje</td><td>Presunúť vtok do nekritickej oblasti</td></tr>
+        <tr><td>Uzavretý vzduch</td><td>Odvzdušnenie, zmena vtoku</td></tr>
+        <tr><td>Prepadliny</td><td>Odľahčiť hrubé miesta, dlhší dotlak</td></tr>
+        <tr><td>Deformácia</td><td>Vyrovnať chladenie, rovnomerná stena</td></tr>
+      </table>
+    </div>
+    <ul class="small" style="margin-top:0.5em;">
+      <li>Postupnosť analýz: <strong>poloha vtoku → plnenie → dotlak → chladenie → deformácia</strong> (+ orientácia vlákien → pevnostná <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr>)</li>
+    </ul>
+    <aside class="notes">[1:00–1:03] Hele-Shaw: dĺžka toku je oveľa väčšia ako hrúbka — pravidlo „4 : 1". Príčiny deformácie sa delia na rozdielne chladenie, rozdielne zmraštenie a vplyv orientácie.</aside>
+  </section>
+
+  <!-- ═══ 26 · VIDEO MOLDFLOW ════════════════════════════════════════════ -->
+  <section>
+    <h2>Video: prehľad Autodesk Moldflow</h2>
+    <div class="video-card"><video src="videos/moldflow.mp4" controls preload="metadata"></video></div>
+    <div class="video-actions">Overview – Autodesk Moldflow (Autodesk)</div>
+    <aside class="notes">[1:03–1:05] Pustite ~2 minúty: sledujte čelo toku a studené spoje, ktoré vznikajú tam, kde sa čelá stretnú.</aside>
+  </section>
+
+  <!-- ═══ 27 · POROVNANIE ════════════════════════════════════════════════ -->
+  <section>
+    <h2>Porovnanie piatich programov</h2>
+    <table class="tight">
+      <tr><th>Hľadisko</th><th>Ansys Forming</th><th>Simufact</th><th>Abaqus</th><th>Moldflow</th><th><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr></th></tr>
+      <tr><td>Zameranie</td><td>Lisovanie plechov</td><td>Objemové, plech, spájanie</td><td>Univerzálna <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></td><td>Vstrekovanie plastov</td><td>Objemové, <abbr title="Heat Treatment (tepelné spracovanie)">TS</abbr>, mikroštruktúra</td></tr>
+      <tr><td>Riešič</td><td><abbr title="Livermore Software – DYNAmic (explicitný MKP riešič (Ansys Forming))">LS-DYNA</abbr> explicitný</td><td><abbr title="Finite Element (riešič konečných prvkov (v Simufact))">FE</abbr> (Marc) + <abbr title="Finite Volume (riešič konečných objemov (v Simufact))">FV</abbr></td><td>Standard + Explicit</td><td>Tok (<abbr title="sieť typu Midplane / Dual Domain (škrupina s hrúbkou)">2.5D</abbr> / 3D)</td><td>Implicitný Lagrange, <abbr title="Arbitrary Lagrangian–Eulerian (ľubovoľný Lagrangeovsko-Eulerov opis: sieť sa pohybuje nezávisle od materiálu)">ALE</abbr></td></tr>
+      <tr><td>Príprava</td><td>Šablóny</td><td>Šablóny</td><td>Ručne</td><td>Šablóny</td><td>Šablóny + otvorený</td></tr>
+      <tr><td>Silná stránka</td><td>Kompenzácia odpruženia</td><td>Rýchle <abbr title="Finite Volume (riešič konečných objemov (v Simufact))">FV</abbr> kovanie za tepla</td><td>Flexibilita, <abbr title="User MATerial (používateľský podprogram materiálového modelu)">UMAT</abbr></td><td>Plnenie, dotlak, chladenie, deformácia</td><td>Remeshing, mikroštruktúra, opotrebenie</td></tr>
+      <tr><td>Dodávateľ</td><td>Synopsys</td><td>Hexagon</td><td>Dassault Syst.</td><td>Autodesk</td><td><abbr title="Scientific Forming Technologies Corporation (výrobca DEFORMu (Columbus, Ohio))">SFTC</abbr> (USA)</td></tr>
+    </table>
+    <ul class="small" style="margin-top:0.5em;">
+      <li class="fragment">„Najlepší" softvér neexistuje — iba <span class="hl">vhodný pre daný proces</span> a otázku</li>
+    </ul>
+    <aside class="notes">[1:05–1:07] Most do časti III: DEFORM je v poslednom stĺpci.</aside>
+  </section>
+
+  <!-- ═══ 28 · ČASŤ III ══════════════════════════════════════════════════ -->
+  <section class="divider">
+    <h2>Časť III — <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr></h2>
+    <p style="color:#f0b0b8;">Design Environment for FORMing — softvér našich cvičení</p>
+    <aside class="notes">[1:07] Hlavná časť, 30 minút.</aside>
+  </section>
+
+  <!-- ═══ 29 · DEFORM PREHĽAD A HISTÓRIA ═════════════════════════════════ -->
+  <section class="slide-full">
+    <div class="band">
+      <span class="band-title">5 · <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr></span>
+      <span class="band-sub">Prehľad · História</span>
+    </div>
+    <h2><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> — od <abbr title="Analysis of Large Plastic Incremental Deformation (predchodca DEFORMu (Battelle))">ALPID</abbr> k úplnému simulátoru procesov</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1fr;">
+      <div class="v-center">
+        <ul class="xs">
+          <li>Systém <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> pre <span class="hl">tvárnenie, tepelné spracovanie, obrábanie a spájanie</span></li>
+          <li>Dodávateľ: <strong><abbr title="Scientific Forming Technologies Corporation (výrobca DEFORMu (Columbus, Ohio))">SFTC</abbr></strong>, Columbus, Ohio (≈ 30 ľudí)</li>
+          <li>Korene: <strong><abbr title="Analysis of Large Plastic Incremental Deformation (predchodca DEFORMu (Battelle))">ALPID</abbr></strong> v Battelle (U.S. Air Force) — prvý praktický nástroj <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> pre výrobné tvárnenie</li>
+          <li>Teória: Kobayashi, Oh &amp; Altan, <em>Metal Forming and the <abbr title="Finite Element Method (metóda konečných prvkov)">FEM</abbr></em> (1989)</li>
+        </ul>
+        <table class="tight">
+          <tr><th>Rok</th><th>Míľnik</th></tr>
+          <tr><td>1989</td><td>DEFORM-2D</td></tr>
+          <tr><td>1991</td><td>Založenie <abbr title="Scientific Forming Technologies Corporation (výrobca DEFORMu (Columbus, Ohio))">SFTC</abbr>, prevzatie <abbr title="Design Environment for FORMing (názov softvéru)">DEFORMu</abbr></td></tr>
+          <tr><td>1993</td><td>DEFORM-3D</td></tr>
+          <tr><td>2024 · 2025</td><td>V14.0 · V14.1</td></tr>
+          <tr><td>2026</td><td>V14.1.1; ohlásená <strong>V15.0</strong></td></tr>
+        </table>
+      </div>
+      <div class="figure">
+        <img src="https://www.deform.com/wp-content/uploads/2011/05/yoke.png" alt="DEFORM-3D výkovok vidlice">
+        <p class="img-caption">Výkovok vidlice — DEFORM-3D (© <abbr title="Scientific Forming Technologies Corporation (výrobca DEFORMu (Columbus, Ohio))">SFTC</abbr>)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:07–1:10] Odvetvia: letectvo (kotúče turbín zo superzliatin a titánu), automobilový priemysel, spojovacie súčiastky, ropný priemysel. Hojne používaný vo výskume — aj preto ho majú radi univerzity.</aside>
+  </section>
+
+  <!-- ═══ 30 · RODINA PRODUKTOV ══════════════════════════════════════════ -->
+  <section>
+    <h2>Produktová rodina <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr></h2>
+    <table class="mid">
+      <tr><th>Produkt</th><th>Čo to je</th></tr>
+      <tr><td><strong>DEFORM-2D</strong></td><td>Osovo súmerné a rovinné úlohy — <span class="hl">naše prvé cvičenia</span></td></tr>
+      <tr><td><strong>DEFORM-3D</strong></td><td>Úplná 3D deformácia, teplota a mikroštruktúra</td></tr>
+      <tr><td><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> PREMIER</td><td>Všetky systémy a moduly v jednom balíku</td></tr>
+      <tr><td>FORMING EXPRESS</td><td>Zjednodušený systém pre kovanie, pechovanie, pretláčanie, ťahanie</td></tr>
+      <tr><td><abbr title="Heat Treatment (modul tepelného spracovania)">DEFORM-HT</abbr></td><td>Tepelné spracovanie: cementovanie, kalenie, popúšťanie</td></tr>
+      <tr><td>DEFORM-3D Machining</td><td>Šablóny sústruženia, vŕtania, frézovania; opotrebenie nástroja (Usui)</td></tr>
+      <tr><td>Moduly</td><td>Mikroštruktúra, <abbr title="Design of Experiments (plánovanie (návrh) experimentov)">DOE</abbr>/optimalizácia, valcovanie krúžkov, voľné kovanie, valcovanie profilov, pretláčanie</td></tr>
+    </table>
+    <ul class="small" style="margin-top:0.5em;">
+      <li>Procesy: kovanie (za tepla/poloohrevu/studena), valcovanie, pretláčanie, ťahanie, pechovanie, dierovanie rúr, tlačenie, strihanie, nitovanie, clinching, lisovanie práškov, guľôčkovanie</li>
+    </ul>
+    <aside class="notes">[1:10–1:12] Na cvičení začíname v DEFORM-2D: osovo súmerné pechovanie a pretláčanie, potom prejdeme do 3D.</aside>
+  </section>
+
+  <!-- ═══ 31 · FORMULÁCIA RIEŠIČA ════════════════════════════════════════ -->
+  <section>
+    <h2>Riešič <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr>: tuho-viskoplastická formulácia</h2>
+    <div class="equation">
+      $$\pi=\int_V \bar{\sigma}\,\dot{\bar{\varepsilon}}\,dV+\frac{K}{2}\int_V \dot{\varepsilon}_v^{\,2}\,dV-\int_{S_F} F_i\,u_i\,dS \;\;\rightarrow\;\; \delta\pi = 0$$
+    </div>
+    <ul class="small">
+      <li>\(\bar\sigma, \dot{\bar\varepsilon}\) efektívne napätie a rýchlosť pretvorenia · \(K\) penaltová konštanta (nestlačiteľnosť) · \(F_i\) povrchové zaťaženie</li>
+      <li>Neznáme sú <strong>rýchlosti</strong> → Newton-Raphson / priama iterácia v každom kroku (implicitne, aktualizovaný Lagrange)</li>
+      <li>Elastické pretvorenia sa zanedbávajú — vhodné pre <span class="hl">veľký plastický tok</span> (kovanie); elasto-plastická možnosť pre odpruženie, zvyškové napätia, nástroje</li>
+      <li>Riešiče <abbr title="Arbitrary Lagrangian–Eulerian (ľubovoľný Lagrangeovsko-Eulerov opis: sieť sa pohybuje nezávisle od materiálu)">ALE</abbr> a ustáleného stavu pre valcovanie krúžkov, profilov, pretláčanie, dierovanie rúr</li>
+    </ul>
+    <p class="slide-source">Zdroj: Kobayashi, Oh &amp; Altan (1989); prospekt DEFORM-3D</p>
+    <aside class="notes">[1:12–1:15] Toto je formulácia toku z ALPID. Prepojenie na časť I: minimalizácia funkcionálu výkonu — rovnaká myšlienka ako metóda hornej hranice, ale s diskretizovaným poľom rýchlostí namiesto odhadnutého.</aside>
+  </section>
+
+  <!-- ═══ 32 · POSTUP V DEFORME ══════════════════════════════════════════ -->
+  <section>
+    <div class="band">
+      <span class="band-title">5 · <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr></span>
+      <span class="band-sub">Postup</span>
+    </div>
+    <h2>Práca s <abbr title="Design Environment for FORMing (názov softvéru)">DEFORMom</abbr>: Pre → Simulácia → Post</h2>
+    <div class="cols-2" style="gap:1.4em;grid-template-columns:1fr 1.1fr;">
+      <div>
+        <div class="flow-box key"><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> <strong>Pre</strong>processor</div>
+        <div class="flow-note" style="text-align:left;">objekty, geometria, sieť, materiál, pohyb, medziobjektové podmienky (trenie, <abbr title="Heat Transfer Coefficient (súčiniteľ prestupu tepla)">HTC</abbr>), ukončenie, kroky</div>
+        <div class="flow-arrow">↓ &nbsp;<span style="font-size:0.5em;color:#5a5a5a;">vygenerovať databázu (.<abbr title="Keyword file (vstupný súbor s definíciou úlohy)">KEY</abbr> → .<abbr title="DataBase (databáza výsledkov simulácie)">DB</abbr>)</span></div>
+        <div class="flow-box key"><strong>Simulačný</strong> engine (<abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> + automatický remeshing)</div>
+        <div class="flow-note" style="text-align:left;">súbory message a log — sledujte konvergenciu a remeshing</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key"><strong>Post</strong>processor</div>
+        <div class="flow-note" style="text-align:left;">stavové veličiny, sila–zdvih, sledovanie bodov, tokové čiary, porušenie</div>
+      </div>
+      <div>
+        <table class="tight">
+          <tr><th>Typ objektu</th><th>Význam</th></tr>
+          <tr><td><strong>Rigid</strong></td><td>Nedeformovateľné nástroje (voliteľne s prestupom tepla)</td></tr>
+          <tr><td><strong>Plastic</strong></td><td>Polotovar, tuho-viskoplastický</td></tr>
+          <tr><td>Elastic</td><td>Analýza napätí v nástroji</td></tr>
+          <tr><td>Elasto-plastic</td><td>Odpruženie, zvyškové napätia</td></tr>
+          <tr><td>Porous</td><td>Prášok, spekaný materiál</td></tr>
+        </table>
+        <ul class="xs" style="margin-top:0.3em;">
+          <li>Modely strojov: hydraulický, <strong>mechanický</strong>, <strong>skrutkový</strong> lis, <strong>buchar</strong> (energia)</li>
+        </ul>
+      </div>
+    </div>
+    <aside class="notes">[1:15–1:18] Prejdite tri programy presne tak, ako ich študenti uvidia na cvičení. Zdôraznite: databázový súbor je celá simulácia — zálohujte ho.</aside>
+  </section>
+
+  <!-- ═══ 33 · MATERIÁL, TRENIE, TEPLO ═══════════════════════════════════ -->
+  <section>
+    <h2>Kľúčové vstupy: pretvárny odpor, trenie, prestup tepla</h2>
+    <div class="cols-2" style="gap:1em;">
+      <div>
+        <div class="equation sm">$$\bar\sigma = f(\bar\varepsilon,\,\dot{\bar\varepsilon},\,T)$$</div>
+        <ul class="xs">
+          <li>Tabuľkové údaje z <strong>materiálovej knižnice</strong> (ocele, Al, Ti, superzliatiny, Cu …) alebo z vlastných skúšok tlakom</li>
+          <li>Predikcia pretvárneho odporu neurónovou sieťou z chemického zloženia (V13+)</li>
+        </ul>
+        <div class="equation sm">$$\tau = m\,k = m\,\frac{\bar\sigma}{\sqrt3} \quad\text{(šmykové)}\qquad \tau=\mu\,p \quad\text{(Coulomb)}$$</div>
+      </div>
+      <div>
+        <table class="tight">
+          <tr><th>Podmienky</th><th>Faktor trenia m</th></tr>
+          <tr><td>Za studena, dobré mazanie</td><td>0,08 – 0,12</td></tr>
+          <tr><td>Za poloohrevu</td><td>≈ 0,2</td></tr>
+          <tr><td>Kovanie za tepla, s mazaním</td><td>0,3</td></tr>
+          <tr><td>Kovanie za tepla, za sucha</td><td>0,7 – 1,0</td></tr>
+        </table>
+        <ul class="xs" style="margin-top:0.4em;">
+          <li>Súčiniteľ prestupu tepla nástroj–polotovar; modul <strong>Inverse <abbr title="Heat Transfer Coefficient (súčiniteľ prestupu tepla)">HTC</abbr></strong> ho určí z termočlánkov</li>
+          <li><span class="hl">Najcitlivejšie vstupy</span>: pretvárny odpor a trenie</li>
+        </ul>
+      </div>
+    </div>
+    <p class="slide-source">Hodnoty m: orientačné hodnoty typických kategórií v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORMe</abbr></p>
+    <aside class="notes">[1:18–1:21] Porovnanie: metóda rezov používala μ (Coulomb); DEFORM pri objemovom tvárnení väčšinou používa faktor trenia m. Materiálové modely podrobne — prednáška 3.</aside>
+  </section>
+
+  <!-- ═══ 34 · REMESHING A VIAC OPERÁCIÍ ═════════════════════════════════ -->
+  <section>
+    <h2>Automatický remeshing a viac operácií</h2>
+    <div class="cols-2" style="gap:1.4em;">
+      <div>
+        <ul class="xs">
+          <li>Lagrangeova sieť sa deformuje s materiálom → <span class="hl">automatický remeshing</span>, keď sa prvok zdegeneruje alebo prenikne do nástroja</li>
+          <li>Štvorsteny (3D), štvoruholníky (2D), voliteľne šesťsteny; <strong>okná siete</strong> zjemnia kritické oblasti</li>
+          <li>Každý remeshing interpoluje stavové veličiny → počet remeshingov udržujte primeraný (<em>strata objemu</em>)</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:0.58em;text-align:left;margin:0 0 0.2em;"><strong>Multiple Operations (<abbr title="Multiple Operations (viac operácií v jednom projekte (ohrev → kovanie → strihanie…))">MO</abbr>)</strong> — jeden reťazec, beží automaticky</p>
+        <div class="flow-box">Ohrev v peci</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Presun (chladnutie na vzduchu)</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key">Údery kovania 1…n</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Ostrihanie výronku</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Tepelné spracovanie → obrábanie</div>
+      </div>
+    </div>
+    <aside class="notes">[1:21–1:23] Remeshing je dôvod, prečo sa DEFORM presadil v kovaní. MO: celý technologický postup v jednom projekte, s históriou (pretvorenie, teplota) odovzdávanou z kroku na krok.</aside>
+  </section>
+
+  <!-- ═══ 35 · VÝSLEDKY A CHYBY ══════════════════════════════════════════ -->
+  <section>
+    <div class="band">
+      <span class="band-title">5 · <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr></span>
+      <span class="band-sub">Výsledky</span>
+    </div>
+    <h2>Výsledky: od zaplnenia dutiny po životnosť nástroja</h2>
+    <div class="cols-2" style="gap:1em;">
+      <ul class="xs">
+        <li>Zaplnenie dutiny, <strong>zákovky a preložky</strong>, tokové čiary (sledovanie bodov, tokové pole)</li>
+        <li>Efektívne pretvorenie, rýchlosť pretvorenia, teplota, triaxialita</li>
+        <li>Krivka <strong>sila–zdvih</strong>, energia → voľba lisu</li>
+        <li>Napätie v nástroji (elastické nástroje, predpätie) a <strong>opotrebenie nástroja</strong></li>
+        <li>≈ dve desiatky modelov <strong>tvárneho porušenia</strong>, mazanie prvkov</li>
+      </ul>
+      <div>
+        <p style="font-size:0.55em;text-align:left;margin:0;">Normalizované kritérium Cockcroft–Latham</p>
+        <div class="equation sm">$$D=\int_0^{\bar\varepsilon_f}\frac{\sigma_1}{\bar\sigma}\,d\bar\varepsilon \;\ge\; C$$</div>
+        <p style="font-size:0.55em;text-align:left;margin:0;">Opotrebenie nástroja podľa Archarda</p>
+        <div class="equation sm">$$w=\int K\,\frac{p\,v}{H^{\,a}}\,dt$$</div>
+        <p style="font-size:0.45em;text-align:left;color:#5a5a5a;margin:0;">σ₁ najväčšie hlavné napätie · p tlak · v rýchlosť kĺzania · H tvrdosť nástroja</p>
+      </div>
+    </div>
+    <aside class="notes">[1:23–1:26] Cockcroft–Latham: šípovité trhliny pri pretláčaní, povrchové trhliny pri pechovaní. Archard: opotrebenie rastie s tlakom a kĺzaním, klesá s tvrdosťou nástroja — horúce nástroje mäknú, preto záleží na teplote.</aside>
+  </section>
+
+  <!-- ═══ 36 · MIKROŠTRUKTÚRA ════════════════════════════════════════════ -->
+  <section>
+    <h2>Mikroštruktúra a tepelné spracovanie</h2>
+    <div class="cols-2" style="align-items:center;">
+      <div class="figure half">
+        <img src="https://www2.deform.com/wp-content/uploads/2024/06/Microstructure-Module.png" alt="DEFORM modul mikroštruktúry – kotúč turbíny z Waspaloy">
+        <p class="img-caption">a) Veľkosť zrna v kovanom kotúči turbíny z Waspaloy (© <abbr title="Scientific Forming Technologies Corporation (výrobca DEFORMu (Columbus, Ohio))">SFTC</abbr>)</p>
+      </div>
+      <div class="figure half">
+        <img src="https://www2.deform.com/wp-content/uploads/2024/06/gear_induction-1024x768.png" alt="DEFORM indukčne kalené čelné ozubené koleso">
+        <p class="img-caption">b) Indukčne kalené čelné ozubené koleso (© <abbr title="Scientific Forming Technologies Corporation (výrobca DEFORMu (Columbus, Ohio))">SFTC</abbr>)</p>
+      </div>
+    </div>
+    <div class="equation sm">Rekryštalizácia <abbr title="Johnson–Mehl–Avrami–Kolmogorov (model kinetiky rekryštalizácie a fázových premien)">JMAK</abbr>: &nbsp; \( X = 1-\exp\!\left[-\beta_d\left(\dfrac{\varepsilon-\varepsilon_c}{\varepsilon_{0.5}}\right)^{k_d}\right] \)</div>
+    <ul class="xs"><li>Dynamická / statická rekryštalizácia, rast zrna, podiely fáz, tvrdosť, precipitáty, textúra (kryštalová plasticita)</li></ul>
+    <aside class="notes">[1:26–1:29] Letecké kotúče: zákazník predpisuje nielen tvar, ale aj veľkosť zrna — preto existuje predikcia mikroštruktúry. DEFORM-HT: deformácia a trhliny pri kalení.</aside>
+  </section>
+
+  <!-- ═══ 37 · VIDEO DEFORM 1 ════════════════════════════════════════════ -->
+  <section>
+    <h2>Video: <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> — simulácia procesov tvárnenia kovov</h2>
+    <div class="video-card"><video src="videos/deform.mp4" controls preload="metadata"></video></div>
+    <div class="video-actions"><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> – The Premier Process Simulation Solution for Metal Forming (<abbr title="Scientific Forming Technologies Corporation (výrobca DEFORMu (Columbus, Ohio))">SFTC</abbr>)</div>
+    <aside class="notes">[1:29–1:32] Ukážte 2–3 minúty. Alternatíva: video o mikroštruktúre kotúča turbíny (ďalšia snímka).</aside>
+  </section>
+
+  <!-- ═══ 38 · VIDEO DEFORM 2 ════════════════════════════════════════════ -->
+  <section>
+    <h2>Video: kovaný kotúč turbíny — simulácia mikroštruktúry</h2>
+    <div class="video-card"><video src="videos/microstructure.mp4" controls preload="metadata"></video></div>
+    <div class="video-actions">Forged Turbine Disk Microstructure Simulation (<abbr title="Scientific Forming Technologies Corporation (výrobca DEFORMu (Columbus, Ohio))">SFTC</abbr>)</div>
+    <aside class="notes">Voliteľné pri nedostatku času — preskočte na „Čo je nové".</aside>
+  </section>
+
+  <!-- ═══ 39 · ČO JE NOVÉ ════════════════════════════════════════════════ -->
+  <section>
+    <h2><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> dnes: V14.1 → V15.0 <span class="subtitle" style="font-size:0.5em;">(User Group Meeting, máj 2026)</span></h2>
+    <table class="tight">
+      <tr><th>Oblasť</th><th>Nová funkcia</th><th>Prínos</th></tr>
+      <tr><td>Riešič</td><td>Opätovné použitie tuhosti elastických objektov (<abbr title="MUltifrontal Massively Parallel sparse direct Solver (priamy riešič riedkych sústav rovníc)">MUMPS</abbr> + <abbr title="Elastic Stiffness rEuse (opätovné použitie matice tuhosti elastických objektov (DEFORM V15))">ESE</abbr>)</td><td>1,2 – 2,9× rýchlejšie s elastickými nástrojmi</td></tr>
+      <tr><td>Riešič</td><td>Iteračný elasto-plastický riešič <abbr title="Elasto-Plastic Conjugate Gradient (iteračný elasto-plastický riešič v DEFORM V15)">EPCG</abbr>, <abbr title="Message Passing Interface (štandard paralelného výpočtu na viacerých jadrách/počítačoch)">MPI</abbr></td><td>&gt; 50 % rýchlejší ako <abbr title="Conjugate Gradient (metóda združených gradientov (iteračný riešič sústavy rovníc))">CG</abbr></td></tr>
+      <tr><td>Tlačenie</td><td><abbr title="Quick Evaluation Method (rýchla metóda odhadu (tlačenie, flow forming v DEFORMe))">QEM</abbr> + čiastočná oblasť</td><td>14 min namiesto 17 – 35 h</td></tr>
+      <tr><td><abbr title="Artificial Intelligence (umelá inteligencia)">AI</abbr></td><td><span class="hl">Náhradný model <abbr title="konvolučná neurónová sieť tvaru „U“ (náhradný model valcovania)">U-Net</abbr></span> pre viacnásobné valcovanie profilov + optimalizácia kalibrov <abbr title="Covariance Matrix Adaptation Evolution Strategy (evolučná optimalizačná metóda (návrh kalibrov v DEFORMe))">CMA-ES</abbr></td><td>Návrh za sekundy</td></tr>
+      <tr><td>Kalenie</td><td><abbr title="Computational Fluid Dynamics (numerická mechanika tekutín (napr. kalenie v DEFORMe))">CFD</abbr> model varu (parný film, bublinkový var)</td><td>Realistický <abbr title="Heat Transfer Coefficient (súčiniteľ prestupu tepla)">HTC</abbr></td></tr>
+      <tr><td>Strihanie</td><td>3D sieť v strižnej medzere a jej remeshing</td><td>Jemná sieť iba v medzere</td></tr>
+      <tr><td>Automatizácia</td><td>Python <strong>DEFORM-API</strong>, generovanie <abbr title="PowerPoint Open XML (formát prezentácie PowerPoint)">PPTX</abbr> protokolov</td><td>Skriptovanie, strojové učenie</td></tr>
+    </table>
+    <p class="slide-source">Zdroj: <abbr title="Scientific Forming Technologies Corporation (výrobca DEFORMu (Columbus, Ohio))">SFTC</abbr>, <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> <abbr title="User Group Meeting (stretnutie používateľov)">UGM</abbr> Spring 2026 (12.–13. máj 2026)</p>
+    <aside class="notes">[1:32–1:34] Hlavná myšlienka: simulácia tvárnenia smeruje k automatizácii a náhradným AI modelom trénovaným na výsledkoch MKP — prepojenie na časť IV.</aside>
+  </section>
+
+  <!-- ═══ 40 · DEFORM NA CVIČENIACH ══════════════════════════════════════ -->
+  <section>
+    <h2><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> na našich cvičeniach</h2>
+    <div class="cols-2" style="gap:1.4em;">
+      <div>
+        <div class="flow-box">1. Pechovanie valca — <strong>DEFORM-2D</strong> osovo súmerne</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">2. Porovnanie sila–zdvih s <span class="hl">metódou rezov</span> (časť I)</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">3. Dopredné pretláčanie — uhol matrice, trenie, porušenie</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">4. Zápustkové kovanie v <strong>DEFORM-3D</strong> — zaplnenie, preložky</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key">5. Zadanie na cvičenie (max. 20 bodov)</div>
+      </div>
+      <div class="v-center">
+        <ul class="small" style="line-height:1.9;">
+          <li>Prineste si: poznámky z časti I (vzorec metódy rezov)</li>
+          <li>Kontrolujte priebežne: je sila reálna? zachoval sa objem? koľko bolo remeshingov?</li>
+          <li>Hodnotenie: zadanie <strong>20 b</strong> + písomná skúška <strong>80 b</strong></li>
+        </ul>
+      </div>
+    </div>
+    <aside class="notes">[1:34–1:37] Praktické informácie. Poradie cvičení prispôsobte skutočnému rozvrhu.</aside>
+  </section>
+
+  <!-- ═══ 41 · ČASŤ IV ═══════════════════════════════════════════════════ -->
+  <section class="divider">
+    <h2>Časť IV — Špeciálny simulačný softvér</h2>
+    <p style="color:#f0b0b8;">Za hranicami Lagrangeovej <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr>: inverzné metódy, konečné objemy, častice, diskrétne prvky, viacškálové a dátové nástroje</p>
+    <aside class="notes">[1:37] Časť IV, 15 minút: prehľad, jednoduché príklady, príklady použitia.</aside>
+  </section>
+
+  <!-- ═══ 42 · PREHĽAD ═══════════════════════════════════════════════════ -->
+  <section>
+    <div class="band">
+      <span class="band-title">Špeciálny softvér</span>
+      <span class="band-sub">Prehľad</span>
+    </div>
+    <h2>Metódy a softvér, ktorý ich implementuje</h2>
+    <table class="tight">
+      <tr><th>Metóda</th><th>Princíp</th><th>Softvér (príklady)</th><th>Použitie v tvárnení</th></tr>
+      <tr><td><strong>Inverzná one-step</strong></td><td>Rozvinutie hotového dielu do roviny</td><td>AutoForm OneStep, Ansys Forming <abbr title="One-step inverse method (inverzná jednokroková metóda (rozvinutie dielu do prístrihu))">One Step</abbr>, PAM-STAMP</td><td>Tvar prístrihu, rýchla uskutočniteľnosť</td></tr>
+      <tr><td><strong>Konečné objemy</strong></td><td>Pevná Eulerova sieť</td><td>Simufact <abbr title="Finite Volume (riešič konečných objemov (v Simufact))">FV</abbr>, QForm Extrusion*</td><td>Kovanie za tepla, pretláčanie Al</td></tr>
+      <tr><td><strong><abbr title="Smoothed Particle Hydrodynamics (hydrodynamika vyhladených častíc: bezsieťová časticová metóda)">SPH</abbr></strong> (častice)</td><td>Bezsieťové Lagrangeove častice</td><td>DualSPHysics, <abbr title="Livermore Software – DYNAmic (explicitný MKP riešič (Ansys Forming))">LS-DYNA</abbr> <abbr title="Smoothed Particle Hydrodynamics (hydrodynamika vyhladených častíc: bezsieťová časticová metóda)">SPH</abbr></td><td>Extrémne deformácie, <abbr title="Metal Injection Moulding (vstrekovanie kovových práškov)">MIM</abbr>, <abbr title="Friction Stir Welding (trecie zváranie premiešaním)">FSW</abbr></td></tr>
+      <tr><td><strong><abbr title="Discrete Element Method (metóda diskrétnych prvkov (prášky, zrnité materiály))">DEM</abbr></strong></td><td>Kontakt diskrétnych zŕn</td><td>EDEM, LIGGGHTS, Yade</td><td>Plnenie dutiny práškom</td></tr>
+      <tr><td><strong>Viacškálové</strong></td><td><abbr title="Cellular Automata (celulárne automaty (modelovanie rastu zŕn))">CA</abbr>, kryštalová plasticita, fázové pole</td><td>DAMASK, <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> Microstructure</td><td>Rekryštalizácia, textúra, cípatosť</td></tr>
+      <tr><td><strong>Dátové</strong></td><td><abbr title="Artificial Neural Network (umelá neurónová sieť)">ANN</abbr> / <abbr title="Reduced-Order Model (model so zníženým rádom (rýchla náhrada MKP))">ROM</abbr> trénované na <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></td><td>Python (PyTorch), DEFORM-API</td><td>Odpruženie, návrh valcovania</td></tr>
+      <tr><td><strong>Analytické frameworky</strong></td><td>Prepojené analytické modely</td><td>PyRolL</td><td>Návrh úberov valcovania</td></tr>
+      <tr><td><strong>Fyzikálna simulácia</strong></td><td>Reprodukcia φ, φ̇, T na vzorke</td><td>Gleeble</td><td>Krivky spevnenia, validácia</td></tr>
+    </table>
+    <p class="slide-source">* QForm používa <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> s prepojenou deformáciou nástroja; uvedený ako špecializovaný nástroj pre pretláčanie</p>
+    <aside class="notes">[1:37–1:41] Spomeňte aj ďalšie veľké špecializované programy: AutoForm (plech, štandard v automobilkách), QForm a FORGE NxT (objemové). Existujú popri piatich, ktoré sme prebrali podrobne.</aside>
+  </section>
+
+  <!-- ═══ 43 · JEDNODUCHÝ PRÍKLAD: DISKRETIZÁCIE ═════════════════════════ -->
+  <section>
+    <h2>Jednoduchý príklad: jedno pretláčanie, štyri opisy</h2>
+    <div class="figure svgfig">
+      <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial" font-size="14">
+        <defs>
+          <pattern id="grid" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0 L0 0 0 14" fill="none" stroke="#8b0014" stroke-width="0.8"/></pattern>
+          <pattern id="gridg" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0 L0 0 0 14" fill="none" stroke="#bbb" stroke-width="0.8"/></pattern>
+        </defs>
+        <g transform="translate(10,20)">
+          <text x="95" y="0" text-anchor="middle" font-weight="700" fill="#8b0014">Lagrangeova <tspan style="cursor:help"><title>Finite Element Method (metóda konečných prvkov)</title>MKP</tspan></text>
+          <rect x="10" y="20" width="12" height="160" fill="#999"/>
+          <path d="M22,20 L110,20 L150,70 L190,70 L190,130 L150,130 L110,180 L22,180 Z" fill="#f4c9cf" stroke="#8b0014"/>
+          <path d="M22,20 L110,20 L150,70 L190,70 L190,130 L150,130 L110,180 L22,180 Z" fill="url(#grid)"/>
+          <path d="M110,20 L150,70 M110,180 L150,130" stroke="#333" stroke-width="3"/>
+          <text x="95" y="210" text-anchor="middle" font-size="12">sieť sa hýbe s materiálom</text>
+          <text x="95" y="228" text-anchor="middle" font-size="12" fill="#c8001e">→ potrebný remeshing</text>
+          <text x="95" y="250" text-anchor="middle" font-size="11" fill="#5a5a5a"><tspan style="cursor:help"><title>Design Environment for FORMing (názov softvéru)</title>DEFORM</tspan>, Abaqus, Simufact <tspan style="cursor:help"><title>Finite Element (riešič konečných prvkov (v Simufact))</title>FE</tspan></text>
+        </g>
+        <g transform="translate(230,20)">
+          <text x="95" y="0" text-anchor="middle" font-weight="700" fill="#8b0014">Eulerova <tspan style="cursor:help"><title>Finite Volume Method (metóda konečných objemov)</title>MKO</tspan></text>
+          <rect x="10" y="20" width="180" height="160" fill="url(#gridg)" stroke="#bbb"/>
+          <path d="M22,20 L110,20 L150,70 L190,70 L190,130 L150,130 L110,180 L22,180 Z" fill="#f4c9cf" fill-opacity="0.7" stroke="#8b0014"/>
+          <path d="M110,20 L150,70 M110,180 L150,130" stroke="#333" stroke-width="3"/>
+          <path d="M40,100 L175,100" stroke="#c8001e" stroke-width="2" marker-end="url(#ar)"/>
+          <text x="95" y="210" text-anchor="middle" font-size="12">pevná sieť, materiál preteká</text>
+          <text x="95" y="228" text-anchor="middle" font-size="12" fill="#c8001e">→ bez remeshingu</text>
+          <text x="95" y="250" text-anchor="middle" font-size="11" fill="#5a5a5a">Simufact <tspan style="cursor:help"><title>Finite Volume (riešič konečných objemov (v Simufact))</title>FV</tspan>, Abaqus <tspan style="cursor:help"><title>Coupled Eulerian–Lagrangian (prepojený Eulerovsko-Lagrangeov opis (Abaqus))</title>CEL</tspan></text>
+        </g>
+        <g transform="translate(450,20)">
+          <text x="95" y="0" text-anchor="middle" font-weight="700" fill="#8b0014">Častice <tspan style="cursor:help"><title>Smoothed Particle Hydrodynamics (hydrodynamika vyhladených častíc: bezsieťová časticová metóda)</title>SPH</tspan></text>
+          <rect x="10" y="20" width="12" height="160" fill="#999"/>
+          <path d="M110,20 L150,70 M110,180 L150,130" stroke="#333" stroke-width="3"/>
+          <g fill="#c8001e">
+            <circle cx="35" cy="40" r="5"/><circle cx="55" cy="40" r="5"/><circle cx="75" cy="40" r="5"/><circle cx="95" cy="40" r="5"/>
+            <circle cx="35" cy="70" r="5"/><circle cx="55" cy="70" r="5"/><circle cx="75" cy="70" r="5"/><circle cx="95" cy="70" r="5"/><circle cx="115" cy="75" r="5"/><circle cx="135" cy="85" r="5"/><circle cx="160" cy="85" r="5"/><circle cx="182" cy="84" r="5"/>
+            <circle cx="35" cy="100" r="5"/><circle cx="55" cy="100" r="5"/><circle cx="75" cy="100" r="5"/><circle cx="95" cy="100" r="5"/><circle cx="118" cy="100" r="5"/><circle cx="140" cy="100" r="5"/><circle cx="163" cy="100" r="5"/><circle cx="186" cy="100" r="5"/>
+            <circle cx="35" cy="130" r="5"/><circle cx="55" cy="130" r="5"/><circle cx="75" cy="130" r="5"/><circle cx="95" cy="130" r="5"/><circle cx="115" cy="125" r="5"/><circle cx="135" cy="115" r="5"/><circle cx="160" cy="115" r="5"/><circle cx="182" cy="116" r="5"/>
+            <circle cx="35" cy="160" r="5"/><circle cx="55" cy="160" r="5"/><circle cx="75" cy="160" r="5"/><circle cx="95" cy="160" r="5"/>
+          </g>
+          <text x="95" y="210" text-anchor="middle" font-size="12">bez siete, častice nesú históriu</text>
+          <text x="95" y="228" text-anchor="middle" font-size="12" fill="#c8001e">→ extrémne deformácie</text>
+          <text x="95" y="250" text-anchor="middle" font-size="11" fill="#5a5a5a">DualSPHysics, <tspan style="cursor:help"><title>Livermore Software – DYNAmic (explicitný MKP riešič (Ansys Forming))</title>LS-DYNA</tspan> <tspan style="cursor:help"><title>Smoothed Particle Hydrodynamics (hydrodynamika vyhladených častíc: bezsieťová časticová metóda)</title>SPH</tspan></text>
+        </g>
+        <g transform="translate(670,20)">
+          <text x="95" y="0" text-anchor="middle" font-weight="700" fill="#8b0014">Zrná <tspan style="cursor:help"><title>Discrete Element Method (metóda diskrétnych prvkov (prášky, zrnité materiály))</title>DEM</tspan></text>
+          <path d="M30,20 L30,180 L160,180 L160,20" fill="none" stroke="#333" stroke-width="3"/>
+          <rect x="30" y="4" width="130" height="10" fill="#999"/>
+          <g fill="#f4c9cf" stroke="#8b0014">
+            <circle cx="45" cy="168" r="11"/><circle cx="68" cy="170" r="9"/><circle cx="90" cy="167" r="12"/><circle cx="115" cy="170" r="9"/><circle cx="140" cy="167" r="12"/>
+            <circle cx="52" cy="147" r="10"/><circle cx="76" cy="150" r="10"/><circle cx="101" cy="146" r="11"/><circle cx="127" cy="148" r="10"/><circle cx="149" cy="146" r="8"/>
+            <circle cx="45" cy="126" r="9"/><circle cx="68" cy="128" r="11"/><circle cx="93" cy="125" r="9"/><circle cx="117" cy="127" r="11"/><circle cx="143" cy="126" r="10"/>
+            <circle cx="60" cy="105" r="10"/><circle cx="86" cy="104" r="9"/><circle cx="110" cy="106" r="10"/>
+          </g>
+          <text x="95" y="210" text-anchor="middle" font-size="12">jednotlivé zrná prášku</text>
+          <text x="95" y="228" text-anchor="middle" font-size="12" fill="#c8001e">→ plnenie, hustota</text>
+          <text x="95" y="250" text-anchor="middle" font-size="11" fill="#5a5a5a">EDEM, LIGGGHTS, Yade</text>
+        </g>
+      </svg>
+      <p class="img-caption">Schéma: ako rôzne metódy diskretizujú tok materiálu cez matricu</p>
+    </div>
+    <aside class="notes">[1:41–1:44] Jeden obrázok vysvetľuje, prečo existuje špeciálny softvér: každá diskretizácia odstraňuje jedno obmedzenie Lagrangeovej MKP — remeshing (MKO, SPH) alebo predpoklad kontinua (DEM).</aside>
+  </section>
+
+  <!-- ═══ 44 · JEDNODUCHÉ PRÍKLADY: ONE-STEP A NÁHRADNÝ MODEL ════════════ -->
+  <section>
+    <h2>Jednoduché príklady: inverzná metóda a náhradný <abbr title="Artificial Intelligence (umelá inteligencia)">AI</abbr> model</h2>
+    <div class="cols-2" style="gap:1.4em;">
+      <div>
+        <p style="font-size:0.58em;text-align:left;margin:0 0 0.2em;"><strong>Inverzná one-step (plech)</strong></p>
+        <div class="flow-box">Geometria hotového dielu (<abbr title="Computer-Aided Design (počítačom podporované konštruovanie)">CAD</abbr>)</div>
+        <div class="flow-arrow">↓ rozvinutie do roviny</div>
+        <div class="flow-box key">Tvar prístrihu + odhad pretvorení</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Kontrola v <abbr title="Forming Limit Diagram (diagram medzných pretvorení)">FLD</abbr>: riziko trhliny / zvlnenia</div>
+        <ul class="xs" style="margin-top:0.3em;"><li><span class="hl">Minúty namiesto hodín</span>; ignoruje históriu procesu</li></ul>
+      </div>
+      <div>
+        <p style="font-size:0.58em;text-align:left;margin:0 0 0.2em;"><strong>Náhradný model (objemové tvárnenie)</strong></p>
+        <div class="flow-box">Stovky až tisíce výpočtov <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> (<abbr title="Design of Experiments (plánovanie (návrh) experimentov)">DOE</abbr>)</div>
+        <div class="flow-arrow">↓ trénovanie</div>
+        <div class="flow-box key">Neurónová sieť (<abbr title="Artificial Neural Network (umelá neurónová sieť)">ANN</abbr>, <abbr title="konvolučná neurónová sieť tvaru „U“ (náhradný model valcovania)">U-Net</abbr>)</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Okamžitá predikcia + optimalizátor</div>
+        <ul class="xs" style="margin-top:0.3em;"><li>Platí iba <span class="hl">v rámci natrénovaného priestoru návrhu</span></li></ul>
+      </div>
+    </div>
+    <aside class="notes">[1:44–1:47] Obe skratky vymieňajú presnosť alebo všeobecnosť za rýchlosť. Model MKP zostáva v oboch prípadoch referenciou.</aside>
+  </section>
+
+  <!-- ═══ 45 · PRÍKLADY POUŽITIA ═════════════════════════════════════════ -->
+  <section>
+    <div class="band">
+      <span class="band-title">Špeciálny softvér</span>
+      <span class="band-sub">Príklady použitia</span>
+    </div>
+    <h2>Príklady použitia z výskumu a priemyslu</h2>
+    <table class="tight">
+      <tr><th>Problém</th><th>Prístup</th><th>Výsledok</th></tr>
+      <tr><td>Zápustkové kovanie dielu s rebrom a stenou</td><td><strong><abbr title="Upper Bound Elemental Technique (prvková metóda hornej hranice)">UBET</abbr></strong> + experimenty s plastelínou</td><td>Sila a tok súhlasia s fyzikálnym modelom</td></tr>
+      <tr><td>Pretláčanie Al profilov, pomer &gt; 25</td><td><strong><abbr title="Finite Volume Method (metóda konečných objemov)">MKO</abbr></strong> na Eulerovej sieti (+ <abbr title="Artificial Neural Network (umelá neurónová sieť)">ANN</abbr>/<abbr title="Genetic Algorithm (genetický algoritmus)">GA</abbr>)</td><td>Bez remeshingu; optimalizované parametre matrice</td></tr>
+      <tr><td>Vstrekovanie kovového prášku (<abbr title="Precipitation Hardening (precipitačne vytvrditeľná nehrdzavejúca oceľ (17 % Cr, 4 % Ni))">17-4 PH</abbr>)</td><td><strong><abbr title="Smoothed Particle Hydrodynamics (hydrodynamika vyhladených častíc: bezsieťová časticová metóda)">SPH</abbr></strong> v DualSPHysics</td><td>Overené reálnymi vstrekmi</td></tr>
+      <tr><td>Plnenie dutiny práškom (Distaloy AE)</td><td><strong><abbr title="Discrete Element Method (metóda diskrétnych prvkov (prášky, zrnité materiály))">DEM</abbr></strong> → hustota ako vstup do <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> lisovania</td><td>Návrh plniaceho zariadenia pred skúškami</td></tr>
+      <tr><td>Cípatosť pri hlbokom ťahaní <abbr title="Aluminum Association (označenie hliníkovej zliatiny podľa Aluminum Association)">AA 5754</abbr></td><td><strong><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> s kryštalovou plasticitou</strong></td><td>Cípy predpovedané z textúry</td></tr>
+      <tr><td>Veľkosť zrna pri kovaní za tepla</td><td><strong>Celulárne automaty</strong> prepojené s DEFORM-2D</td><td>Podiel rekryštalizácie a veľkosť zrna</td></tr>
+      <tr><td>Odpruženie pri ohýbaní</td><td><strong><abbr title="Artificial Neural Network (umelá neurónová sieť)">ANN</abbr></strong> trénovaná na <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></td><td>Rýchle odpruženie pre nové prípady</td></tr>
+    </table>
+    <p class="slide-source">Zdroje: rešerš literatúry pre tento predmet (Kazan et al. 2009; Tikhovskiy et al. 2007; Fraunhofer IWM a ďalšie)</p>
+    <aside class="notes">[1:47–1:50] Vyberte dva príklady a vysvetlite ich podrobne — návrh: pretláčanie MKO (prepojenie so Simufact FV) a CA + DEFORM (prepojenie s časťou III).</aside>
+  </section>
+
+  <!-- ═══ 46 · VIDEO QFORM ═══════════════════════════════════════════════ -->
+  <section>
+    <h2>Video: špecializovaná simulácia pretláčania (QForm)</h2>
+    <div class="video-card"><video src="videos/extrusion.mp4" controls preload="metadata"></video></div>
+    <div class="video-actions">QForm Extrusion Software (QForm group) · viac: <a href="https://www.youtube.com/c/AutoFormEngineering/videos" target="_blank">kanál AutoForm</a> · <a href="https://dual.sphysics.org/" target="_blank">DualSPHysics</a> · <a href="https://github.com/pyroll-project" target="_blank">PyRolL</a></div>
+    <aside class="notes">[1:50–1:52] Krátky klip: tok materiálu cez komorovú matricu, výstupná rýchlosť profilu. Potom zhrnutie.</aside>
+  </section>
+
+  <!-- ═══ 47 · ZHRNUTIE ══════════════════════════════════════════════════ -->
+  <section style="text-align:left;">
+    <hr class="top-rule">
+    <h2>Zhrnutie</h2>
+    <ul class="compact">
+      <li><strong>Analytické metódy</strong> (metóda rezov, horná hranica, sklzové čiary) dávajú rýchly odhad sily a sú <span class="hl">prvou kontrolou</span> každého výsledku <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></li>
+      <li><strong>Špecializovaný softvér</strong> automatizuje proces: Ansys Forming (lisovanie), Simufact (objemové + spájanie), Moldflow (polyméry)</li>
+      <li><strong>Univerzálna <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></strong> (Abaqus) je flexibilná, ale všetko si zostavuje používateľ</li>
+      <li><strong><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr></strong>: implicitná tuho-viskoplastická <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr>, automatický remeshing, porušenie, opotrebenie nástroja, mikroštruktúra — náš nástroj na cvičenia</li>
+      <li><strong>Špeciálny softvér</strong> prekonáva hranice <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr>: <abbr title="Finite Volume Method (metóda konečných objemov)">MKO</abbr>, <abbr title="Smoothed Particle Hydrodynamics (hydrodynamika vyhladených častíc: bezsieťová časticová metóda)">SPH</abbr>, <abbr title="Discrete Element Method (metóda diskrétnych prvkov (prášky, zrnité materiály))">DEM</abbr>, inverzné, viacškálové metódy, <abbr title="Artificial Intelligence (umelá inteligencia)">AI</abbr> náhradné modely</li>
+    </ul>
+    <p class="institution" style="margin-top:1.2em;">Nabudúce: materiálové modely — elasticita, plasticita, spevnenie, krivky spevnenia</p>
+    <aside class="notes">[1:52–1:54] Päť viet = päť častí prednášky.</aside>
+  </section>
+
+  <!-- ═══ 48 · KONTROLNÉ OTÁZKY ══════════════════════════════════════════ -->
+  <section>
+    <h2>Kontrolné otázky</h2>
+    <ol class="compact" style="font-size:0.68em;line-height:1.75;">
+      <li class="fragment">Prečo je kontaktný tlak pri pechovaní najväčší v strede? Čo tento vrchol zvyšuje?</li>
+      <li class="fragment">Sila podľa hornej hranice: je väčšia alebo menšia ako skutočná — a prečo je to užitočné?</li>
+      <li class="fragment">Explicitný vs. implicitný riešič: ktorý na lisovanie, ktorý na odpruženie?</li>
+      <li class="fragment">Aký je rozdiel medzi Lagrangeovým (<abbr title="Finite Element (riešič konečných prvkov (v Simufact))">FE</abbr>) a Eulerovým (<abbr title="Finite Volume (riešič konečných objemov (v Simufact))">FV</abbr>) opisom?</li>
+      <li class="fragment">Prečo je fyzika v Moldflow iná ako v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORMe</abbr>?</li>
+      <li class="fragment">Ktoré dva vstupy v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORMe</abbr> najviac ovplyvnia výsledok? Čo je faktor trenia m?</li>
+      <li class="fragment">Uveďte jeden model porušenia a jeden model opotrebenia v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORMe</abbr> a čo predpovedajú.</li>
+      <li class="fragment">Kedy by ste použili inverznú one-step metódu alebo náhradnú <abbr title="Artificial Neural Network (umelá neurónová sieť)">ANN</abbr> namiesto úplnej <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr>?</li>
+    </ol>
+    <aside class="notes">[1:54–2:00] Nechajte študentov odpovedať; každú otázku odkryte šípkou. Zvyšný čas na ich vlastné otázky.</aside>
+  </section>
+
+  <!-- ═══ 49 · ZDROJE ════════════════════════════════════════════════════ -->
+  <section style="text-align:left;">
+    <hr class="top-rule">
+    <h2>Zdroje a ďalšie čítanie</h2>
+    <ul class="xs" style="line-height:1.55;">
+      <li>Necpal, M.; Sobota, R.: <em>Modelovanie a simulácia procesov tvárnenia.</em> Spektrum STU, 2023</li>
+      <li>Kobayashi, S.; Oh, S.I.; Altan, T.: <em>Metal Forming and the Finite Element Method.</em> Oxford UP, 1989</li>
+      <li>Hosford, W.F.; Caddell, R.M.: <em>Metal Forming: Mechanics and Metallurgy.</em> Cambridge UP</li>
+      <li>Dixit, P.M.; Dixit, U.S.: <em>Modeling of Metal Forming and Machining Processes.</em> Springer, 2010</li>
+      <li>Bílik, J.; Kapustová, M.; Ridzoň, M.: <em>Teória tvárnenia.</em> AlumniPress, 2015</li>
+      <li><abbr title="Scientific Forming Technologies Corporation (výrobca DEFORMu (Columbus, Ohio))">SFTC</abbr>: prospekty <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr>, <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> News 2022–2025, <abbr title="User Group Meeting (stretnutie používateľov)">UGM</abbr> Spring 2026 — <a href="https://www.deform.com">deform.com</a></li>
+      <li>Ansys Forming User's Guide 2026 R1 — <a href="https://ansys.synopsys.com/products/structures/ansys-forming">ansys.synopsys.com</a></li>
+      <li>Hexagon: Simufact Forming 2021.1 a 2022 — <a href="https://nexus.hexagon.com/home/product/simufact-forming/">nexus.hexagon.com</a></li>
+      <li>Abaqus Analysis User's Manual; návody TECHNIA a <abbr title="Computer-Aided Engineering (počítačová podpora inžinierskych analýz (Abaqus/CAE = grafické prostredie))">CAE</abbr> Assistant</li>
+      <li>Autodesk Moldflow help, What's New 2025–2027 — <a href="https://www.autodesk.com/products/moldflow/overview">autodesk.com</a></li>
+      <li>Weiner et al.: PyRolL, <em><abbr title="Journal of Open Source Software (časopis (článok o PyRolL))">JOSS</abbr></em> 9(93), 2024</li>
+    </ul>
+    <p class="institution" style="margin-top:0.8em;">Obrázky a videá © ich vlastníci, odkazované na účely výučby</p>
+  </section>
+
+</div></div>
+
+<audio id="narration"></audio>
+
+<div id="navBar">
+  <button class="nav-btn" id="prevBtn" title="Predchádzajúca snímka (←)">
+    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+  </button>
+  <div id="slideIndicators"></div>
+  <span id="slideCounter"></span>
+  <button class="nav-btn" id="playBtn" title="Prehrať komentár (medzerník)">
+    <svg viewBox="0 0 24 24"><path id="playIconPath" d="M8 5v14l11-7z"/></svg>
+  </button>
+  <button class="nav-btn" id="nextBtn" title="Nasledujúca snímka (→)">
+    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+  </button>
+  <label id="autoLabel" title="Auto-advance to next slide when narration ends">
+    <input type="checkbox" id="autoPlay" checked> Auto
+  </label>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
+<script>
+  /* ══ CONFIG ══════════════════════════════════════════════════════════════
+     NARRATION  – true: plays voice_for_30september2026/slide_NN.mp3 for slide N (1-based)
+                  false: hides play button and Auto toggle
+  ═══════════════════════════════════════════════════════════════════════ */
+  const CONFIG = {
+    NARRATION:  true,
+    AUDIO_PATH: n => `voice_for_30september2026/slide_${String(n).padStart(2, '0')}.mp3`,
+    AUTO_DELAY: 800,
+  };
+
+  if (!CONFIG.NARRATION) document.body.classList.add('no-narration');
+
+  /* ── Missing images → link placeholder (no internet or moved file) ── */
+  document.querySelectorAll('.slides img').forEach(img => {
+    img.addEventListener('error', () => {
+      if (img.closest('.video-card')) return;
+      const box = document.createElement('div');
+      box.className = 'img-missing';
+      box.innerHTML = `Obrázok nie je dostupný offline:<br><strong>${img.alt}</strong><br>
+        <a href="${img.src}" target="_blank">${img.src}</a>`;
+      img.replaceWith(box);
+    });
+  });
+
+  /* ── YouTube cards: thumbnail opens YouTube; "Play here" embeds ── */
+  document.querySelectorAll('.video-card[data-yt]').forEach(card => {
+    const id = card.dataset.yt;
+    const url = `https://www.youtube.com/watch?v=${id}`;
+    card.innerHTML = `<a class="thumb" href="${url}" target="_blank" title="Otvoriť na YouTube">
+        <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="Náhľad videa"></a><span class="play"></span>`;
+  });
+  document.querySelectorAll('.video-actions[data-yt]').forEach(bar => {
+    const id = bar.dataset.yt;
+    const link = document.createElement('a');
+    link.href = `https://www.youtube.com/watch?v=${id}`; link.target = '_blank';
+    link.textContent = 'otvoriť na YouTube';
+    const btn = document.createElement('button');
+    btn.textContent = '▶ Prehrať tu';
+    btn.addEventListener('click', () => {
+      const card = bar.previousElementSibling;
+      card.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0"
+        allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+    });
+    bar.append(' · ', link, btn);
+  });
+  /* ── Popup buttons: open media in a separate window ── */
+  document.querySelectorAll('.popup-btn[data-popup]').forEach(btn => {
+    btn.addEventListener('click', () =>
+      window.open(btn.dataset.popup, 'media-popup', 'width=1100,height=500'));
+  });
+  /* stop embedded videos when leaving a slide */
+  function stopVideos(slide) {
+    slide?.querySelectorAll('.video-card iframe').forEach(f => {
+      const card = f.parentElement, id = card.dataset.yt;
+      card.innerHTML = `<a class="thumb" href="https://www.youtube.com/watch?v=${id}" target="_blank">
+        <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="Náhľad videa"></a><span class="play"></span>`;
+    });
+    slide?.querySelectorAll('.video-card video').forEach(v => v.pause());
+  }
+
+  /* ── Audio ── */
+  const narration    = document.getElementById('narration');
+  const playIconPath = document.getElementById('playIconPath');
+  const PLAY_D  = 'M8 5v14l11-7z';
+  const PAUSE_D = 'M6 19h4V5H6v14zm8-14v14h4V5h-4z';
+
+  const setPlayIcon = playing => playIconPath.setAttribute('d', playing ? PAUSE_D : PLAY_D);
+
+  function loadAudio(idx) {
+    if (!CONFIG.NARRATION) return;
+    const custom = Reveal.getCurrentSlide()?.dataset.audio;
+    narration.src = custom || CONFIG.AUDIO_PATH(idx + 1);
+  }
+  function playAudio()   { if (CONFIG.NARRATION) narration.play().catch(() => {}); }
+  function toggleAudio() {
+    if (!CONFIG.NARRATION) return;
+    narration.paused ? narration.play().catch(() => {}) : narration.pause();
+  }
+
+  /* a slide video and the narration should not talk over each other */
+  document.querySelectorAll('.video-card video').forEach(v =>
+    v.addEventListener('play', () => narration.pause()));
+
+  narration.addEventListener('play',  () => setPlayIcon(true));
+  narration.addEventListener('pause', () => setPlayIcon(false));
+  narration.addEventListener('ended', () => {
+    setPlayIcon(false);
+    if (document.getElementById('autoPlay').checked) {
+      setTimeout(() => Reveal.next(), CONFIG.AUTO_DELAY);
+    }
+  });
+
+  /* ── Dot indicators ── */
+  function buildIndicators(total) {
+    const bar = document.getElementById('slideIndicators');
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 'dot';
+      d.setAttribute('aria-label', `Snímka ${i + 1}`);
+      d.addEventListener('click', () => Reveal.slide(i));
+      bar.appendChild(d);
+    }
+  }
+  function updateNav(idx, total) {
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+    document.getElementById('slideCounter').textContent = `${idx + 1} / ${total}`;
+    document.getElementById('prevBtn').style.opacity = idx === 0         ? '0.3' : '1';
+    document.getElementById('nextBtn').style.opacity = idx === total - 1 ? '0.3' : '1';
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', () => Reveal.prev());
+  document.getElementById('nextBtn').addEventListener('click', () => Reveal.next());
+  document.getElementById('playBtn').addEventListener('click', () => toggleAudio());
+
+  /* ── Reveal ── */
+  Reveal.initialize({
+    hash: true,
+    slideNumber: false,
+    transition: 'slide',
+    backgroundTransition: 'none',
+    controls: false,
+    progress: false,
+    plugins: [RevealNotes, RevealMath.KaTeX],
+    keyboard: {
+      32: () => toggleAudio(),
+      37: () => Reveal.prev(),
+      39: () => Reveal.next(),
+    },
+  });
+
+  Reveal.on('ready', () => {
+    const total = Reveal.getHorizontalSlides().length;
+    buildIndicators(total);
+    updateNav(0, total);
+    loadAudio(0);
+  });
+
+  Reveal.on('slidechanged', e => {
+    const total = Reveal.getHorizontalSlides().length;
+    updateNav(e.indexh, total);
+    stopVideos(e.previousSlide);
+    loadAudio(e.indexh);
+    playAudio();
+  });
+</script>
+</body>
+</html>

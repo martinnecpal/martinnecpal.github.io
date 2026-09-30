@@ -1,0 +1,7 @@
+Abaqus: veľké deformácie a porušenie
+
+Remeshing je ústredný problém Lagrangeovho objemového tvárnenia a Abaqus ponúka niekoľko ciest, ako ho obísť.
+Adaptívna sieť ALE – Arbitrary Lagrangian-Eulerian – posúva uzly tak, aby sa znížilo skreslenie, a pritom zachováva rovnakú topológiu siete. Používa sa pri kovaní, valcovaní a pretláčaní v Explicit; vidíte ju na obrázku. Adaptívny remeshing v Standard zjemní sieť tam, kde je chyba veľká. Mapovanie sieť–sieť vytvorí úplne novú sieť a premietne na ňu riešenie – používa sa pri veľmi veľkých deformáciách a operáciách kovania. A prepojená Eulerovsko-Lagrangeova metóda, CEL, zvládne extrémny tok materiálu.
+Pre porušenie ponúka Abaqus celú rodinu kritérií: ductile, Johnson-Cook, shear a pre plechy FLD, FLSD, MSFLD a model Marciniak-Kuczynski.
+A pre presné odpruženie: aspoň päť až sedem integračných bodov po hrúbke a kinematický zákon spevnenia.
+Zapamätajte si problém remeshingu – DEFORM ho rieši plne automatickým remeshingom a to je jeden z dôvodov, prečo sa tak presadil v kovaní.

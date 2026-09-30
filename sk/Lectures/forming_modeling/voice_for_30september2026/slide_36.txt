@@ -1,0 +1,7 @@
+Mikroštruktúra a tepelné spracovanie
+
+DEFORM predpovedá aj to, čo sa deje vo vnútri materiálu.
+Obrázok a je kovaný kotúč turbíny z Waspaloy s vypočítanou veľkosťou zrna. Pri leteckých kotúčoch zákazník predpisuje nielen tvar, ale aj veľkosť zrna v jednotlivých oblastiach. Preto existuje predikcia mikroštruktúry.
+Obrázok b je indukčne kalené ozubené koleso – aplikácia tepelného spracovania. DEFORM-HT predpovedá podiely fáz, tvrdosť, deformáciu a trhliny pri kalení.
+Rovnica je model JMAK – Johnson, Mehl, Avrami, Kolmogorov – pre podiel rekryštalizovaného objemu X. Keď pretvorenie prekročí kritickú hodnotu epsilon c, rekryštalizácia sa začne a podiel sleduje túto esovitú exponenciálnu krivku. Beta d a k d sú materiálové konštanty a epsilon 0,5 je pretvorenie, pri ktorom je rekryštalizovaná polovica materiálu.
+Okrem dynamickej a statickej rekryštalizácie DEFORM modeluje rast zrna, podiely fáz, tvrdosť, precipitáty a dokonca kryštalografickú textúru pomocou kryštalovej plasticity.

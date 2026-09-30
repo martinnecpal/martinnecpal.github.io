@@ -1,0 +1,10 @@
+Otázky, na ktoré simulácia tvárnenia odpovedá
+
+Čo vlastne chce technológ zo simulácie vedieť? Zhrnul som to do šiestich otázok.
+Prvá: zaplní sa dutina zápustky? Nevznikne nezaplnenie, zákovok, preložka alebo lievikovitá dutina?
+Druhá: aký lis potrebujem? Simulácia dá silu a energiu v závislosti od zdvihu.
+Tretia: praskne alebo sa diel zúži? Pri objemovom tvárnení sledujeme porušenie, pri plechoch diagram medzných pretvorení a stenčenie.
+Štvrtá: zachová si diel tvar? Odpruženie pri plechoch, skrivenie pri plastových dieloch, deformácia po tepelnom spracovaní.
+Piata: aká bude životnosť nástroja? Napätie v nástroji, opotrebenie a teplota.
+A šiesta: čo je vo vnútri dielu? Veľkosť zrna, fázy, tvrdosť.
+Obrázok ukazuje postupnosť viacerých valcovacích úberov v DEFORMe. Zapamätajte si týchto šesť otázok. Každý program, ktorý dnes uvidíme, odpovedá na niektoré z nich, a kontrolné otázky na konci sa k tomuto zoznamu vrátia.

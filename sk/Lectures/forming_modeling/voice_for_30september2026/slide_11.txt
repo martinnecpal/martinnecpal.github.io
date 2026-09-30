@@ -1,0 +1,6 @@
+Prečo analytické metódy nestačia
+
+Prečo teda vôbec potrebujeme drahý softvér?
+Pozrite sa na tabuľku. Analytické metódy zvládnu jednoduchú geometriu – valec, pás, kužeľ. Softvér zvládne ľubovoľnú 3D geometriu z CAD. Analytické metódy používajú konštantný alebo stredný pretvárny odpor; softvér ho používa ako funkciu pretvorenia, rýchlosti pretvorenia a teploty, plus anizotropiu a porušenie. Analytické metódy dajú silu a stredný tlak; softvér dá úplné polia – pretvorenie, teplotu, napätie, chyby, dokonca mikroštruktúru.
+Na druhej strane analytická odpoveď trvá sekundy a každý člen je viditeľný. Softvér počíta minúty až dni a je to čierna skrinka, ktorú treba kontrolovať.
+Pravidlo je teda jednoduché: analytické výsledky použite na prvý odhad a na kontrolu výsledkov MKP – a zvyšok nechajte na softvér. Tým sa dostávame k časti II.

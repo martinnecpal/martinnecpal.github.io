@@ -1,0 +1,4 @@
+Video: DEFORM — simulácia procesov tvárnenia kovov
+
+Pozrime sa na DEFORM v akcii. Toto je prehľadové video samotnej firmy SFTC. Sledujte tri veci, ktoré už poznáte: remeshing počas kovania, krivku sila–zdvih a postupnosť viacerých operácií.
+Všetko, čo ste videli, si na cvičeniach urobíte sami – začneme však oveľa jednoduchším dielom.

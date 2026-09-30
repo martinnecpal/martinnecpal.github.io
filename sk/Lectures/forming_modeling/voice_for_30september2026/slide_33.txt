@@ -1,0 +1,8 @@
+Kľúčové vstupy: pretvárny odpor, trenie, prestup tepla
+
+O väčšine odpovede rozhodujú tri vstupy.
+Prvý je pretvárny odpor ako funkcia efektívneho pretvorenia, rýchlosti pretvorenia a teploty. Vezmete ho z materiálovej knižnice – ocele, hliník, titán, superzliatiny, meď – alebo z vlastných skúšok tlakom. Novšie verzie vedia pretvárny odpor ocelí dokonca predpovedať z chemického zloženia pomocou neurónovej siete. Materiálovým modelom sa podrobne venujeme budúci týždeň.
+Druhý je trenie. V metóde rezov sme používali Coulombovo trenie – šmykové napätie sa rovná mí krát tlak. Pri objemovom tvárnení DEFORM väčšinou používa šmykový model: trecie napätie je m krát k, kde k je medza klzu v šmyku, teda pretvárny odpor lomeno odmocnina z troch. Faktor trenia m ide od nuly – bez trenia – po jednotku – úplné prilepenie.
+Tabuľka dáva orientačné hodnoty: asi 0,08 až 0,12 pre tvárnenie za studena s dobrým mazaním, asi 0,2 pre tvárnenie za poloohrevu, 0,3 pre kovanie za tepla s mazaním a 0,7 až 1,0 pre kovanie za tepla za sucha.
+Tretí je prestup tepla medzi nástrojom a polotovarom. Súčiniteľ prestupu tepla sa dá určiť z meraní termočlánkami pomocou modulu Inverse HTC.
+A najdôležitejší bod: pretvárny odpor a trenie sú najcitlivejšie vstupy. Ak vám výsledok vyzerá čudne, skontrolujte najprv tieto dva.

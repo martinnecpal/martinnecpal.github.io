@@ -1,0 +1,3 @@
+Časť I — Analytické metódy tvárnenia
+
+Časť prvá: analytické metódy tvárnenia. Sú to modely v uzavretom alebo poloanalytickom tvare. Sú rýchle a prehľadné a – to je dôležité – sú referenciou, s ktorou by ste mali porovnať každý výsledok MKP, ktorý kedy vytvoríte.

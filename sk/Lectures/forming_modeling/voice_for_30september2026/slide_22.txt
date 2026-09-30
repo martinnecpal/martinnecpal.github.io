@@ -1,0 +1,5 @@
+Príklad v Abaqus: osovo súmerné hlboké ťahanie
+
+Aby ste videli, čo znamená „zostaviť si všetko sám", tu je model hlbokého ťahania v Abaqus/CAE – sedem krokov, jeden pre každý modul.
+Part: prístrih je deformovateľná osovo súmerná škrupina; ťažník, ťažnica a pridržiavač sú analyticky tuhé čiary. Property: oceľ, modul pružnosti 200 gigapascalov, Poissonovo číslo 0,3 a krivka spevnenia. Step: dynamický explicitný krok trvajúci sedem milisekúnd. Interaction: penaltové trenie s mí 0,1 medzi prístrihom a ťažnicou a prístrihom a pridržiavačom. Load: ťažník sa posunie o 60 milimetrov s amplitúdou smooth step – ten plynulý rozbeh a dobeh udrží výpočet kvázistatický. Mesh: sieťuje sa iba prístrih, zjemnený na polomeroch. Výsledky: ekvivalentné plastické pretvorenie PEEQ, hrúbka STH a sila ťažníka.
+Porovnajte to s Ansys Forming, kde je ten istý model šablóna vyplnená niekoľkými kliknutiami. To je cena aj hodnota flexibility.

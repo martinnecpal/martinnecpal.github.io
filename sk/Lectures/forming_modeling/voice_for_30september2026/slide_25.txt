@@ -1,0 +1,6 @@
+Moldflow: typy sietí a chyby
+
+Dve tabuľky. Vľavo typy sietí – kľúčový pojem v Moldflow.
+Midplane je škrupinová sieť na strednej ploche steny. Využíva Hele-Shawovu aproximáciu, ktorá predpokladá, že dĺžka toku je oveľa väčšia ako hrúbka steny – pravidlo „štyri ku jednej". Je najrýchlejšia. Dual Domain používa zhodné povrchové siete na oboch stranách dielu, vytvorené priamo z CAD – vhodné pre tenké jednoduché diely. 3D používa štvorsteny a rieši úplný trojrozmerný tok bez Hele-Shawovho predpokladu – pre hrubé masívne diely, za cenu oveľa dlhšieho výpočtu. A nosníkové prvky sa používajú pre rozvodné a chladiace kanály.
+Vpravo sú typické chyby a čo navrhuje simulácia. Nedostrek: pridať alebo presunúť vtok, zhrubnúť stenu, zvýšiť teplotu taveniny. Studené spoje: presunúť vtok tak, aby spoje padli do nekritickej oblasti. Uzavretý vzduch: odvzdušnenie. Prepadliny: odľahčiť hrubé miesta, predĺžiť dotlak. Skrivenie: vyrovnať chladenie, dodržať rovnomernú hrúbku steny.
+Postupnosť analýz je dole: poloha vtoku, plnenie, dotlak, chladenie, deformácia. A pri materiáloch vystužených vláknami sa orientácia vlákien odovzdá do pevnostného výpočtu MKP.

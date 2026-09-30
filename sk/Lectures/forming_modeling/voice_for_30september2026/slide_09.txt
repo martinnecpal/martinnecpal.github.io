@@ -1,0 +1,6 @@
+Ťahanie a pretláčanie: výsledky v uzavretom tvare
+
+Dva ďalšie klasické výsledky, tentoraz pre ťahanie a pretláčanie.
+Vľavo je Sachsov vzorec pre napätie pri ťahaní drôtu, odvodený metódou rezov. B je mí krát kotangens uhla prievlaku a zátvorka obsahuje pomer prierezov. Existuje prirodzená hranica: napätie pri ťahaní nemôže prekročiť pretvárny odpor ťahaného drôtu, inak sa drôt pretrhne namiesto toho, aby sa ťahal. Z tejto podmienky dostanete najväčší úber na jeden ťah.
+Vpravo je zjednodušený výsledok metódy hornej hranice pre pretláčanie cez kužeľovú matricu. Tlak pri pretláčaní lomeno pretvárny odpor má tri členy. Prvý je ideálna práca – prirodzený logaritmus pomeru pretláčania. Druhý je trenie a s rastúcim uhlom matrice klesá, pretože sa skracuje dĺžka kontaktu. Tretí je nadbytočná, čiže strihová práca, a s uhlom matrice rastie, pretože materiál musí prudšie meniť smer.
+Vzorec sa nemusíte učiť naspamäť – pozrite si poznámku dole, je to didaktický tvar. Podstatná je štruktúra: jeden člen s uhlom matrice rastie, druhý klesá. Musí teda existovať optimálny uhol matrice. A len čo hľadáme optimum, analytický model sa stáva optimalizačnou úlohou. To nás privádza k ďalšej snímke.

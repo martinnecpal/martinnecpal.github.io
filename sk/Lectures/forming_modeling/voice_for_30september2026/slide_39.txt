@@ -1,0 +1,7 @@
+DEFORM dnes: V14.1 → V15.0
+
+Kam DEFORM smeruje? Táto tabuľka je zo stretnutia používateľov SFTC v máji 2026.
+Riešič je rýchlejší: elastické nástroje môžu opätovne použiť svoju maticu tuhosti, čo dáva až takmer trojnásobne rýchlejší výpočet – najmä pri valcovaní – a nový iteračný elasto-plastický riešič je o viac ako päťdesiat percent rýchlejší ako predchádzajúci. Pri tlačení skráti metóda rýchleho odhadu výpočet z desiatok hodín na asi štrnásť minút.
+Najzaujímavejší riadok je AI: neurónová sieť typu U-Net, natrénovaná na tisícoch výpočtov v DEFORMe, predpovedá viacnásobné valcovanie profilov takmer okamžite a optimalizátor ju využíva na návrh kalibrov valcov.
+Ďalej: model varu pri kalení, špeciálna sieť v strižnej medzere pri strihaní a rozhranie v Pythone – DEFORM-API – na skriptovanie a automatické protokoly.
+Hlavná myšlienka: simulácia tvárnenia smeruje k automatizácii a náhradným AI modelom trénovaným na výsledkoch MKP. Vrátime sa k tomu v časti IV.

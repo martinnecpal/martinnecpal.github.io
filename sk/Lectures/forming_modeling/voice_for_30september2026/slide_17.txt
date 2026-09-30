@@ -1,0 +1,4 @@
+Video: Ansys Forming
+
+Pozrime sa na to v pohybe. Toto je predstavovacie video firmy Ansys. Pri pozeraní sledujte tri veci: prístrih, pridržiavač s brzdiacimi lištami a na konci farebné zobrazenie diagramu medzných pretvorení.
+Videli ste farby na dieli? Zelená je bezpečná, žltá hraničná, červená znamená trhlinu. To je diagram medzných pretvorení premietnutý na geometriu – najčastejší výsledok simulácie lisovania plechov.

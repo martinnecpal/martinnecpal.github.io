@@ -1,0 +1,4 @@
+Príklady použitia z výskumu a priemyslu
+
+Nakoniec príklady použitia z výskumu a priemyslu.
+Zápustkové kovanie dielu s rebrom a stenou sa analyzovalo metódou UBET a overilo na modeloch z plastelíny – sily aj tok materiálu súhlasili. Pretláčanie hliníkových profilov s pomerom pretláčania nad dvadsaťpäť sa simulovalo metódou konečných objemov, takže remeshing nebol potrebný, a spojilo sa s neurónovými sieťami a genetickými algoritmami na optimalizáciu matrice. Vstrekovanie kovového prášku zo zmesi 17-4 PH sa simulovalo metódou SPH v DualSPHysics a overilo reálnymi vstrekmi. Plnenie dutiny práškom sa simulovalo metódou DEM a hustota sa odovzdala ako vstup do MKP modelu lisovania. Cípatosť pri hlbokom ťahaní hliníkového plechu sa predpovedala kryštalovou plasticitou z textúry. Veľkosť zrna pri kovaní za tepla sa predpovedala celulárnymi automatmi prepojenými s DEFORM-2D. A odpruženie pri ohýbaní predpovedala neurónová sieť natrénovaná na výsledkoch MKP.

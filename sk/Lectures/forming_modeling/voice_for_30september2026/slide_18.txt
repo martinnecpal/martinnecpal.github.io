@@ -1,0 +1,8 @@
+Simufact Forming — dva riešiče v jednom programe
+
+Program číslo dva: Simufact Forming.
+Je to procesne orientovaný softvér pre objemové a plošné tvárnenie. Pochádza z firmy Simufact v Hamburgu, kúpil ho MSC Software a dnes je súčasťou skupiny Hexagon. Rozsah procesov je široký: kovanie, pechovanie hláv, pretláčanie, valcovanie krúžkov, voľné kovanie, presné strihanie a aj mechanické spájanie – samoprebíjacie nitovanie a clinching, ktoré sú dôležité pri montáži karosérie – plus tepelné spracovanie.
+Zvláštnosťou je, že Simufact má dva riešiče, a táto tabuľka je kľúčová.
+Riešič konečných prvkov je Lagrangeov: sieť sa pohybuje spolu s materiálom. Používa šesťsteny alebo štvorsteny a pri zdeformovaní prvkov potrebuje remeshing. Je to voľba pre tvárnenie za studena, plechy, napätie v nástroji a spájanie. Vychádza z riešiča MSC Marc.
+Riešič konečných objemov je Eulerov: sieť je v priestore pevná a materiál preteká bunkami. Preto nepotrebuje remeshing. Je ideálny pre trojrozmerné zápustkové kovanie za tepla, kde materiál tečie do výronku. Pochádza z programu MSC SuperForge.
+Medzi FE a FV sa dá prepínať z jednej operácie na druhú. A od roku 2022 beží FV riešič paralelne – až štyrikrát rýchlejšie. Zapamätajte si slová Lagrangeov a Eulerov; vrátime sa k nim v časti IV.

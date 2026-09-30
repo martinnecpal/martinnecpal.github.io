@@ -1,0 +1,4 @@
+Video: špecializovaná simulácia pretláčania (QForm)
+
+Posledné krátke video: pretláčanie hliníkového profilu v QForme. Sledujte, ako materiál tečie cez komorovú matricu a ako rôzne časti profilu vychádzajú z matrice rôznou rýchlosťou – práve tento rozdiel spôsobuje ohnutý alebo skrútený profil.
+Pod videom nájdete odkazy na kanál AutoForm, DualSPHysics a PyRolL, ak sa chcete doma pozrieť ďalej.

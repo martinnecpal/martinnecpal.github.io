@@ -1,0 +1,5 @@
+Produktová rodina DEFORM
+
+DEFORM nie je jeden program, ale celá rodina.
+DEFORM-2D rieši osovo súmerné a rovinné úlohy – tam začínajú naše prvé cvičenia. DEFORM-3D rieši úplné trojrozmerné deformačné, tepelné a mikroštruktúrne úlohy. PREMIER je úplný balík so všetkým. FORMING EXPRESS je zjednodušený systém pre bežné procesy. DEFORM-HT je určený na tepelné spracovanie – cementovanie, kalenie, popúšťanie. DEFORM-3D Machining má šablóny pre sústruženie, vŕtanie a frézovanie. A potom sú tu moduly: mikroštruktúra, návrh experimentov a optimalizácia, valcovanie krúžkov, voľné kovanie, valcovanie profilov a pretláčanie.
+Zoznam procesov dole je dlhý: kovanie za tepla, poloohrevu aj za studena, valcovanie, pretláčanie, ťahanie, pechovanie, dierovanie rúr, tlačenie, strihanie, nitovanie, clinching, lisovanie práškov a dokonca guľôčkovanie.

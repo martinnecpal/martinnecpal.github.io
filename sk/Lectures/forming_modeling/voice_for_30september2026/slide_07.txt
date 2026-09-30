@@ -1,0 +1,9 @@
+Klasické analytické metódy teórie plasticity
+
+Táto tabuľka je mapa klasických metód.
+Metóda rezov, nazývaná aj elementárna teória plasticity, vezme tenký rez materiálu a napíše preň rovnováhu síl za predpokladu homogénnej deformácie. Dostaneme rozloženie tlaku a celkovú silu. Používa sa pri pechovaní, kovaní, valcovaní a ťahaní.
+Metóda sklzových čiar využíva charakteristiky poľa napätí. Dáva presné riešenia, ale len pre rovinnú deformáciu a tuho-ideálne plastický materiál – typickými príkladmi sú vtláčanie, pretláčanie a obrábanie.
+Metóda hornej hranice predpokladá kinematicky prípustné pole rýchlostí a minimalizuje výkon. Jej dôležitá vlastnosť je, že vypočítaná sila je vždy väčšia alebo rovná skutočnej. To je bezpečné pri voľbe lisu. Jej prvková verzia, UBET, sa používa pri zápustkovom kovaní a zapĺňaní dutiny.
+Metóda dolnej hranice je opak: staticky prípustné pole napätí a sila menšia alebo rovná skutočnej.
+A vizioplasticita je hybrid – meriate, ako sa deformuje sieť na vzorke, a z toho vypočítate rýchlosti pretvorenia a napätia.
+Spoločné majú to, čo je napísané dole: tuho-plastický materiál, konštantný alebo stredný pretvárny odpor, jednoduchý zákon trenia a jednoduchú geometriu. Zapamätajte si tieto predpoklady – presne tie softvér odstraňuje.

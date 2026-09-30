@@ -1,0 +1,7 @@
+Riešič DEFORM: tuho-viskoplastická formulácia
+
+Teraz sa pozrime pod kapotu. Táto rovnica je srdcom klasického riešiča DEFORM – tuho-viskoplastická, čiže tokovú formulácia.
+Zapíšeme funkcionál pí. Prvý člen je výkon plastickej deformácie: efektívne napätie krát efektívna rýchlosť pretvorenia, integrované cez objem. Druhý člen je penaltový: K je veľká konštanta a násobí druhú mocninu objemovej rýchlosti pretvorenia. Vynucuje nestlačiteľnosť – plastická deformácia nemení objem. Tretí člen je práca povrchového zaťaženia. Skutočné pole rýchlostí je to, pri ktorom sa variácia pí rovná nule.
+Neznáme sú rýchlosti, nie posunutia. V každom kroku sa sústava rieši Newtonovou-Raphsonovou metódou alebo priamou iteráciou – implicitne, s aktualizovanou Lagrangeovou sieťou.
+Elastické pretvorenia sa zanedbávajú. Pri veľkom plastickom toku, ako je kovanie, je to úplne prijateľné. Keď na elasticite záleží – odpruženie, zvyškové napätia, napätia v nástroji – DEFORM ponúka elasto-plastické a elastické objekty. A pre ustálené alebo rotačné procesy, ako valcovanie krúžkov alebo pretláčanie, sú k dispozícii riešiče ALE a ustáleného stavu.
+Všimnite si prepojenie s časťou I. Minimalizácia funkcionálu výkonu – to je presne myšlienka metódy hornej hranice. Rozdiel je v tom, že tu pole rýchlostí nie je odhadnuté ručne, ale je diskretizované konečnými prvkami a nájde ho počítač.

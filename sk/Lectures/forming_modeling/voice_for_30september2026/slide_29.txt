@@ -1,0 +1,6 @@
+DEFORM — od ALPID k úplnému simulátoru procesov
+
+DEFORM je systém metódy konečných prvkov pre tvárnenie, tepelné spracovanie, obrábanie a spájanie. Dodáva ho SFTC – Scientific Forming Technologies Corporation – z Columbusu v Ohiu, pomerne malá firma s asi tridsiatimi ľuďmi.
+Jeho korene siahajú k programu ALPID, ktorý vznikol v inštitúte Battelle v Columbuse s financovaním amerického letectva. ALPID bol prvý praktický nástroj metódy konečných prvkov pre výrobné tvárnenie kovov. Teória je v knihe Kobayashiho, Oha a Altana „Metal Forming and the Finite Element Method" z roku 1989 – stále klasika.
+Časová os: DEFORM-2D v roku 1989, v roku 1991 bývalí pracovníci Battelle založili SFTC a v tom istom roku DEFORM prevzali. DEFORM-3D nasledoval v roku 1993. Dnes máme verziu 14.1, servisnú verziu 14.1.1 z roku 2026 a ohlásená je verzia 15.
+Používa sa v letectve – na kotúče turbín zo superzliatin a titánu – v automobilovom priemysle, pri výrobe spojovacích súčiastok, v ropnom priemysle a v mnohých výskumných ústavoch. Jeho otvorenosť pre výskum je jedným z dôvodov, prečo ho majú radi univerzity.

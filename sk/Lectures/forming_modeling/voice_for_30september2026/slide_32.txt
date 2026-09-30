@@ -1,0 +1,8 @@
+Práca s DEFORMom: Pre → Simulácia → Post
+
+Takto budete s DEFORMom pracovať na cvičení – tri programy.
+Preprocesor, v ktorom definujete objekty, ich geometriu a sieť, materiál, pohyb nástrojov, medziobjektové podmienky – trenie a prestup tepla – podmienky ukončenia a počet krokov. Z toho vygenerujete databázu: zo súboru KEY vznikne súbor DB. Databáza je celá simulácia – zálohujte ju.
+Potom simulačný engine vykoná výpočet MKP s automatickým remeshingom. Zapisuje súbory message a log; naučte sa ich čítať, lebo práve tam uvidíte problémy s konvergenciou a remeshing.
+A postprocesor, v ktorom sa pozriete na stavové veličiny, krivku sila–zdvih, sledovanie bodov, tokové čiary a porušenie.
+Vpravo sú typy objektov. Rigid – nástroje, ktoré sa nedeformujú, voliteľne s prestupom tepla. Plastic – polotovar, tuho-viskoplastický. Elastic – na analýzu napätí v nástroji. Elasto-plastic – na odpruženie a zvyškové napätia. Porous – pre prášky a spekané materiály.
+A DEFORM pozná skutočné typy strojov: hydraulické, mechanické a skrutkové lisy a buchary, pri ktorých je pohyb nástroja riadený energiou, nie predpísanou rýchlosťou.

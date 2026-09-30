@@ -1,0 +1,3 @@
+Časť IV — Špeciálny simulačný softvér
+
+Časť štvrtá. Doteraz bolo všetko postavené na Lagrangeovej metóde konečných prvkov, s niekoľkými Eulerovými výnimkami. Teraz sa pozrieme ďalej: inverzné metódy, konečné objemy, častice, diskrétne prvky, viacškálové a dátové nástroje. Najprv prehľad, potom jednoduché príklady a potom príklady použitia.

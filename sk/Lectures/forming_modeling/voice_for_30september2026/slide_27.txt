@@ -1,0 +1,8 @@
+Porovnanie piatich programov
+
+Postavme päť programov vedľa seba, vrátane DEFORMu, ktorý nasleduje.
+Zameranie: Ansys Forming – lisovanie plechov; Simufact – objemové tvárnenie, plechy a spájanie; Abaqus – univerzálna MKP; Moldflow – vstrekovanie plastov; DEFORM – objemové tvárnenie, tepelné spracovanie a mikroštruktúra.
+Riešič: LS-DYNA explicitný; FE plus FV; Standard plus Explicit; riešič toku v 2.5D alebo 3D; a pri DEFORMe implicitný Lagrangeov riešič s možnosťou ALE.
+Príprava: všade šablóny okrem Abaqusu. DEFORM má šablóny, ale je aj otvorený – môžete doň pridať vlastné podprogramy.
+Silné stránky: kompenzácia odpruženia; rýchle FV kovanie za tepla; flexibilita; reťazec plnenie, dotlak, chladenie, deformácia; a pri DEFORMe remeshing, mikroštruktúra a opotrebenie nástroja.
+A záver: „najlepší" softvér neexistuje. Existuje iba vhodný softvér pre daný proces a pre otázku, ktorú kladiete.

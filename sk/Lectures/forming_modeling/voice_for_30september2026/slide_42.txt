@@ -1,0 +1,12 @@
+Metódy a softvér, ktorý ich implementuje
+
+Táto tabuľka je prehľad.
+Inverzné metódy one-step vychádzajú z hotového dielu a rozvinú ho do rovného prístrihu. Sú v AutoForme, v Ansys Forming One Step a v PAM-STAMP a používajú sa na určenie tvaru prístrihu a rýchle posúdenie uskutočniteľnosti.
+Metóda konečných objemov používa pevnú Eulerovu sieť – Simufact FV pre kovanie za tepla; QForm Extrusion je špecializovaný nástroj na pretláčanie hliníka.
+SPH – hydrodynamika vyhladených častíc – je bezsieťová metóda s Lagrangeovými časticami. Ponúka ju DualSPHysics a LS-DYNA, pre extrémne deformácie, vstrekovanie kovových práškov alebo trecie zváranie premiešaním.
+DEM – metóda diskrétnych prvkov – modeluje jednotlivé zrná v kontakte. EDEM, LIGGGHTS alebo Yade sa používajú na plnenie dutiny nástroja práškom.
+Viacškálové metódy – celulárne automaty, kryštalová plasticita, fázové pole – v DAMASK alebo v module mikroštruktúry DEFORMu, na rekryštalizáciu, textúru a cípatosť.
+Dátové metódy – neurónové siete a modely so zníženým rádom trénované na MKP – v Pythone s PyTorch alebo cez DEFORM-API.
+Analytické frameworky ako PyRolL spájajú analytické modely do úplného návrhu valcovacích úberov.
+A fyzikálna simulácia na zariadení Gleeble reprodukuje priebeh pretvorenia, rýchlosti pretvorenia a teploty na vzorke – na meranie kriviek spevnenia a validáciu modelov.
+Spomeniem aj ďalšie veľké špecializované programy: AutoForm, ktorý je štandardom pre plechy v automobilkách, a QForm a FORGE pre objemové tvárnenie. Existujú popri piatich, ktoré sme prebrali podrobne.

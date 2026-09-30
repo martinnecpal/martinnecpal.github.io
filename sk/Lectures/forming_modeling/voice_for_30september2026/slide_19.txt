@@ -1,0 +1,5 @@
+Simufact Forming — predikcia chýb
+
+Čo nám Simufact povie o chybách?
+Obrázok a ukazuje výsledok nazvaný „zóny chýb toku". Deteguje lievikovitú dutinu a preložky. Lievikovitá dutina, po anglicky piping, je typická pre kovanie a pretláčanie: materiál odteká od čela a zanechá lievikovitú dutinu, čo vedie k nezaplneným zápustkám a dutinám. Bez simulácie sa predpovedá veľmi ťažko. Preložka vzniká tam, kde sa povrch materiálu preloží sám cez seba a neskôr sa prejaví ako chyba podobná trhline.
+Obrázok b je animácia vzniku a šírenia trhliny na základe porušenia. Trhlina rastie v smere gradientu vypočítaného porušenia. V 2D sa sieť rozdelí, v 3D sa porušené prvky vymažú. Používa sa to pri strihaní, presnom strihaní a samoprebíjacom nitovaní.

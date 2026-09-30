@@ -1,0 +1,4 @@
+Video: prehľad Autodesk Moldflow
+
+Krátky pohľad na Moldflow. Sledujte, ako postupuje čelo toku dutinou, a sledujte miesta, kde sa stretnú dve čelá – to sú studené spoje.
+Tam, kde sa čelá toku stretnú, je v hotovom dieli slabé miesto, preto sa ho konštruktéri snažia presunúť mimo zaťažených oblastí.

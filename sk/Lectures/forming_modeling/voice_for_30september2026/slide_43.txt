@@ -1,0 +1,8 @@
+Jednoduchý príklad: jedno pretláčanie, štyri opisy
+
+Tento obrázok vysvetľuje, prečo existuje špeciálny softvér. Ten istý materiál tečúci cez matricu, opísaný štyrmi spôsobmi.
+Lagrangeova MKP vľavo: sieť sa pohybuje spolu s materiálom. Je presná a prirodzene sleduje históriu, ale deformuje sa, preto potrebuje remeshing. To je DEFORM, Abaqus, Simufact FE.
+Eulerova MKO: sieť je pevná a materiál ňou preteká. Bez remeshingu, ale sledovanie voľného povrchu a histórie je ťažšie. Simufact FV a Abaqus CEL.
+SPH: vôbec žiadna sieť. Materiál je súbor častíc a každá častica nesie vlastnú históriu – pretvorenie, teplotu. Zvládne extrémne deformácie. DualSPHysics, LS-DYNA SPH.
+A DEM vpravo: tu materiál vôbec nie je kontinuum. Každé zrno prášku je samostatná častica, ktorá sa dotýka susedov. Takto sa simuluje plnenie dutiny práškom a získa sa rozloženie hustoty.
+Každá metóda teda odstraňuje jedno obmedzenie Lagrangeovej MKP: remeshing v prípade MKO a SPH, predpoklad kontinua v prípade DEM.

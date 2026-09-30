@@ -1,0 +1,4 @@
+Video: vznik preložky pri kovaní vidlicovej hlavy
+
+Tu je krátke video zo Simufactu práve k tomuto problému: kovanie vidlicovej hlavy. Pôvodný návrh procesu mal jasný sklon k tvorbe preložky v prechodovej oblasti. Sledujte, kde materiál tečie späť sám na seba.
+Simulácia preložku ukázala a predkovok sa zmenil skôr, ako sa vyrobil akýkoľvek nástroj. Zapamätajte si to – v DEFORMe nájdete rovnaký typ chyby pomocou sledovania bodov a tokových čiar.

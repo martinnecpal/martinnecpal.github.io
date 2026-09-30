@@ -1,0 +1,5 @@
+Program dnešnej prednášky
+
+Toto je plán na najbližšie dve hodiny. Ideme bez prestávky, takže budem držať stabilné tempo.
+Asi pätnásť minút analytické metódy. Potom zhruba štyridsať minút štyri programy: Ansys Forming, Simufact Forming, Abaqus a Moldflow. Potom hlavná časť – tridsať minút DEFORM. Ďalej pätnásť minút špeciálny simulačný softvér a posledných osem minút zhrnutie a kontrolné otázky.
+DEFORM je zámerne na konci. Keď uvidíte štyri iné programy, oveľa lepšie pochopíte, čo je pre DEFORM typické a prečo sme ho vybrali na cvičenia.

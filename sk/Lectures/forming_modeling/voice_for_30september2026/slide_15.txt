@@ -1,0 +1,7 @@
+Ansys Forming — lisovanie s riešičom LS-DYNA
+
+Program číslo jeden: Ansys Forming.
+Je to ucelená aplikácia na lisovanie plechov. Preprocessing, výpočet aj postprocessing sú v jednom grafickom prostredí. Pod ním pracuje riešič LS-DYNA – explicitný pre samotné tvárnenie, implicitný pre gravitáciu a odpruženie.
+Dodávateľom je Ansys, ktorý je od roku 2025 súčasťou firmy Synopsys. Samotný produkt je pomerne mladý – prvá verzia vyšla ako 2022 R1. Predtým používatelia LS-DYNA pracovali so staršími preprocesormi ako eta/DYNAFORM alebo modul LS-PrePost pre tvárnenie kovov.
+Môžete vytvoriť štyri typy projektov: lisovanie za studena, lisovanie za tepla – to je kalenie v nástroji z bórových ocelí, typické pre B-stĺpiky – lemovanie, zatiaľ v beta verzii, a One Step, rýchlu inverznú metódu, s ktorou sa ešte stretneme v časti IV.
+A cieľový používateľ je v poslednom bode: technológovia a nástrojári. Nemusíte byť expert na MKP. Obrázok ukazuje vnútorný diel kapoty auta.

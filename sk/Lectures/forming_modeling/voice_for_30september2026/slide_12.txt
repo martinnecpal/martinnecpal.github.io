@@ -1,0 +1,3 @@
+Časť II — Softvér na simuláciu tvárnenia
+
+Časť druhá: softvér na simuláciu tvárnenia. Prejdeme štyri programy – Ansys Forming, Simufact Forming, Abaqus a Moldflow – a potom v časti III piaty, DEFORM.

@@ -1,0 +1,7 @@
+Každý program má rovnaký postup
+
+Nech použijete akýkoľvek program, postup má vždy rovnakých šesť krokov.
+Geometria – zvyčajne import z CAD vo formáte STEP, IGES alebo STL a rozhodnutie o symetrii. Materiál – krivka spevnenia, tepelné údaje, parametre porušenia. Sieť – typ prvku, veľkosť a remeshing. Okrajové podmienky – trenie, prestup tepla, pohyb nástroja. Potom samotný výpočet – riešič, časové kroky, podmienky ukončenia. A nakoniec vyhodnotenie – polia, krivky, chyby a protokol.
+Kroky jeden až štyri sú preprocessing; venujeme mu štvrtú prednášku. Krok šesť je postprocessing, prednášky päť a šesť.
+Programy sa líšia hlavne tým, koľko z krokov jeden až štyri za vás automatizujú šablóny. Používajte to dnes ako optiku pri každom programe: ktoré kroky urobí za vás?
+A jedno varovanie: garbage in, garbage out – čo do programu vložíte, to z neho dostanete. Kvalitu odpovede oveľa viac ako farba grafu určuje krivka spevnenia a súčiniteľ trenia.

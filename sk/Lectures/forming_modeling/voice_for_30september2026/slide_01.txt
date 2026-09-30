@@ -1,0 +1,6 @@
+Titulná snímka
+
+Dobrý deň, vitajte na druhej prednáške z predmetu Modelovanie a simulácia procesov – tvárnenie.
+Minulý týždeň sme si povedali, čo vlastne je modelovanie a simulácia. Rozlíšili sme fyzikálny a matematický model a prešli sme si reťazec, ktorý vedie od reálneho procesu tvárnenia k modelu, ktorý vieme vypočítať.
+Dnes sa pozrieme na nástroje. Začneme tými najstaršími – analytickými metódami, ktoré vyriešite ceruzkou na papieri alebo krátkym skriptom. Potom prejdeme päť simulačných programov, ktoré sa používajú v priemysle aj vo výskume. Najviac času venujeme poslednému z nich, DEFORMu, pretože s ním budete pracovať na cvičeniach celý semester. Na záver sa pozrieme na špeciálny simulačný softvér, ktorý ide za hranice klasickej metódy konečných prvkov.
+Obrázok vpravo je zápustkovo kovaná vidlica simulovaná v DEFORM-3D. Na konci dnešnej prednášky by ste mali vedieť, ako takýto obrázok vzniká a čo z neho technológ vyčíta.

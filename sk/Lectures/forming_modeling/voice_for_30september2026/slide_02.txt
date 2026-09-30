@@ -1,0 +1,7 @@
+Motivácia: od pokusov v lisovni k virtuálnemu odskúšaniu
+
+Začnem otázkou. Predstavte si, že máte zaviesť do výroby nový výkovok. Koľko skúšok nástroja by ste čakali, kým z lisu vyjde prvý dobrý kus?
+Bez simulácie je poctivá odpoveď z praxe „niekoľko". A pozrite sa na hornú slučku v diagrame: navrhnete nástroj, vyrobíte ho, vyskúšate na lise, nájdete chybu – preložku, nezaplnenie, trhlinu – a vraciate sa upravovať nástroj. Každá takáto slučka stojí týždne a veľa peňazí. Zápustky a lisovacie nástroje ľahko stoja desaťtisíce eur.
+Je tu aj druhý argument. Väčšina nákladov na výrobok sa určí už vo fáze návrhu, dávno pred začiatkom výroby. Rozhodnutia urobené na začiatku sa na papieri menia lacno, v oceli veľmi draho.
+Simulácia presúva túto slučku do počítača – to je červená slučka dole. Zmeníte predkovok, polomer zápustky alebo mazivo a spustíte výpočet znova. To trvá hodiny, nie týždne.
+Výsledkom je menej úprav nástrojov, rýchlejší nábeh výroby a menej materiálu stráveného vo výronku a odpade. Všimnite si však vetu dole: overenie na lise je stále potrebné. Simulácia skúšku na lise nenahrádza – ideálne ju zredukuje na jednu.

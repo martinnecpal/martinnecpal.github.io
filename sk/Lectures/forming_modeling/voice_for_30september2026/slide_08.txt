@@ -1,0 +1,8 @@
+Metóda rezov: pechovanie valca
+
+Pozrime sa na jeden príklad podrobne: pechovanie valca medzi dvoma rovnými nástrojmi s Coulombovým trením.
+Ak napíšeme rovnováhu tenkého prstenca materiálu, dostaneme prvú rovnicu: zmena kontaktného tlaku pozdĺž polomeru, dp podľa dr, sa rovná mínus dva mí p lomeno h. Trenie na plochách nástroja brzdí tok materiálu smerom von, a tlak musí smerom k stredu narastať, aby ho prekonal.
+Integráciou dostaneme rozloženie tlaku: p od r sa rovná pretvárnemu odporu krát exponenciála dva mí krát R mínus r, lomeno h. Na okraji, kde r sa rovná R, je tlak rovný pretvárnemu odporu. Smerom k stredu exponenciálne rastie.
+Celková sila je integrál tohto tlaku po kontaktnej ploche. A keďže sa objem zachováva, polomer s klesajúcou výškou rastie: R sa rovná R nula krát odmocnina z h nula lomeno h.
+Pozrite sa na diagram. Tlak má vrchol v strede – to je známy trecí kopec. Červená krivka je pre mí rovné 0,3, sivá čiarkovaná pre 0,1. Väčšie trenie alebo plochejší polotovar – menšie h – robí kopec strmším a silu väčšou.
+Prečo ukazujem práve tento príklad? Pretože pechovanie je prvá úloha, ktorú budete simulovať v DEFORMe. Analytická sila z tohto vzorca je vaša prvá kontrola, či je výsledok z DEFORMu vôbec reálny.

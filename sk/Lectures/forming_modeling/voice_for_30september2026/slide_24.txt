@@ -1,0 +1,6 @@
+Autodesk Moldflow — tvárnenie polymérov
+
+Program číslo štyri: Moldflow. Možno sa pýtate, prečo je program na plasty v predmete o tvárnení kovov.
+Odpoveď: filozofia je rovnaká – virtuálne odskúšanie formy namiesto zápustky – ale fyzika je iná. Moldflow nepočíta plasticitu tuhej látky. Počíta tok nenewtonovskej viskóznej taveniny polyméru s prestupom tepla. Viskozita sa riadi modelom Cross-WLF, správanie tlak–objem–teplota Taitovou rovnicou. Pre nás je relevantný aj cez vstrekovanie kovových práškov.
+Moldflow bol založený v roku 1978 v Melbourne a od roku 2008 patrí firme Autodesk. Je tu Adviser pre konštruktérov a Insight pre analytikov, s rozhraním Synergy a bezplatným prehliadačom Communicator. Databáza obsahuje takmer štrnásťtisíc termoplastov.
+Vpravo je cyklus vstrekovania: uzatvorenie formy, plnenie – kde vznikajú studené spoje, uzavretý vzduch a nedostreky – dotlak, kde sa rozhoduje o zmraštení a prepadlinách, chladenie, ktoré je zvyčajne najdlhšou časťou cyklu, a vyhodenie, po ktorom sa diel skriví.

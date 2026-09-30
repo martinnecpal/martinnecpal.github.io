@@ -1,0 +1,6 @@
+Dve skupiny softvéru pre tvárnenie
+
+Skôr než sa pozrieme na jednotlivé programy, dám vám dve zásuvky, do ktorých ich budeme triediť.
+Prvá zásuvka je špecializovaný softvér orientovaný na proces. Má šablóny pre lisy, nástroje, brzdiace lišty, valcovacie úbery. Je určený pre technológa, nie pre špecialistu na MKP. Pre plechy je to Ansys Forming, AutoForm alebo PAM-STAMP; pre objemové tvárnenie Simufact, DEFORM, QForm alebo FORGE; pre plasty Moldflow alebo Moldex3D.
+Druhá zásuvka je univerzálna nelineárna MKP. Tam si používateľ všetko zostaví sám – diely, kontakty, kroky výpočtu. Získa maximálnu flexibilitu a možnosť napísať vlastné materiálové podprogramy. Typickými príkladmi sú Abaqus, LS-DYNA, Ansys Mechanical a MSC Marc. Používajú sa vo výskume, vo výučbe a pri neobvyklých procesoch.
+Tabuľka dole ich triedi podľa typu riešiča – a to je typická skúšková otázka. Implicitný riešič hľadá rovnováhu v každom prírastku a môže robiť veľké kroky; takto pracuje DEFORM aj Abaqus Standard a je to správna voľba pre odpruženie. Explicitný riešič robí veľmi malé stabilné časové kroky a kontakt zvláda veľmi robustne; príkladmi sú LS-DYNA a Abaqus Explicit a typickou oblasťou je lisovanie plechov. A riešič konečných objemov používa pevnú Eulerovu sieť, cez ktorú materiál preteká – FV riešič v Simufacte a riešiče toku v Moldflow.

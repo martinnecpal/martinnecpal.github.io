@@ -1,0 +1,6 @@
+Ansys Forming — postup a typické výsledky
+
+Rozhranie sleduje záložky, ktoré vidíte vľavo.
+Process: import CAD, natočenie dielu – teda otočenie z polohy vo vozidle do polohy v lise – a voľba presnosti. Blank: obrys prístrihu, materiál, krivka medzných pretvorení, prípadne zvárané prístrihy. Operations: ťahanie, strihanie, ohýbanie lemu, brzdiace lišty. Potom záložka Advance, ktorá je najzaujímavejšia: kompenzácia odpruženia, vývoj línie strihu a analýza robustnosti. Kompenzácia odpruženia znamená, že softvér iteračne upravuje povrch nástroja, kým diel nie je v tolerancii. To priamo šetrí úpravy nástroja. A nakoniec Analysis s automatickým protokolom v PowerPointe.
+Vpravo sú typické výsledky. Diagram medzných pretvorení a index tvárniteľnosti povedia, či diel praskne alebo sa zvlní. Stenčenie ukazuje lokálny úbytok hrúbky. Odpruženie ukazuje tvar po odľahčení. Stoning a zebra čiary odhalia viditeľné povrchové chyby – veľmi dôležité pri vonkajších dieloch karosérie. Vťahovanie a stopy opisujú pohyb prístrihu. A sila lisu určí veľkosť lisu.
+Dve praktické pravidlá: na polomere 90 stupňov majte aspoň tri prvky a zvoľte jednu z troch predvolieb – Fast na kontrolu nastavenia, Accurate ako štandard, Very Accurate pre kompenzáciu odpruženia. Všimnite si aj, že pri explicitnom výpočte sa rýchlosti nástrojov umelo zvyšujú, aby sa skrátil čas výpočtu.

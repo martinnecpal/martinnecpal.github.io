@@ -1,0 +1,7 @@
+Výsledky: od zaplnenia dutiny po životnosť nástroja
+
+Aké výsledky z DEFORMu dostaneme?
+Vľavo: zaplnenie dutiny, zákovky a preložky a tokové čiary pomocou sledovania bodov a tokového poľa. Polia efektívneho pretvorenia, rýchlosti pretvorenia, teploty a triaxiality napätia. Krivka sila–zdvih a energia na voľbu lisu. Napätie v nástroji – aj v predpätých nástrojoch – a opotrebenie nástroja. A asi dve desiatky modelov tvárneho porušenia s možnosťou mazania prvkov, ak chcete modelovať samotnú trhlinu.
+Vpravo sú dva najpoužívanejšie modely.
+Normalizované kritérium Cockcroft–Latham integruje pomer najväčšieho hlavného napätia k efektívnemu napätiu po efektívnom pretvorení. Keď integrál dosiahne kritickú hodnotu C, očakávame trhlinu. Prispieva iba ťahové napätie – čo je intuitívne. Používa sa na šípovité trhliny pri pretláčaní a povrchové trhliny pri pechovaní.
+Archardov model opotrebenia: hĺbka opotrebenia rastie s kontaktným tlakom a rýchlosťou kĺzania a klesá s tvrdosťou nástroja. A keďže horúce nástroje mäknú, teplota nástroja má na opotrebenie veľký vplyv. Preto je tepelná simulácia nástroja dôležitá.

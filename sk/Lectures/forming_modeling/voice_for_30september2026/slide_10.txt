@@ -1,0 +1,6 @@
+Riešenie analytických modelov: MATLAB · Python · GAMS
+
+Analytický neznamená „bez softvéru". Väčšina analytických modelov sa dnes rieši skriptom.
+Tabuľka ukazuje, ako sa úlohy z tvárnenia priraďujú k typom riešičov. Vzorec v uzavretom tvare, napríklad sila ťahania, sa jednoducho vyčísli – NumPy alebo MATLAB. Neutrálny bod pri valcovaní je nelineárna rovnica – fzero v MATLABe, brentq v Pythone. Kovanie metódou rezov alebo von Kármánova rovnica valcovania je obyčajná diferenciálna rovnica – ode45 alebo solve_ivp. Odvodenia sa dajú robiť symbolicky v SymPy. Horná hranica s optimálnym uhlom matrice je úloha nelineárnej optimalizácie – fmincon alebo GAMS s riešičom CONOPT. A ak plánujete úbery, kde počet ťahov musí byť celé číslo, máte zmiešanú celočíselnú úlohu – tam sú silné GAMS s BARONom alebo Pyomo. Existujú aj ucelené otvorené frameworky, napríklad PyRolL z TU Freiberg pre valcovanie v kalibroch.
+Vpravo je náš príklad pechovania v Pythone – asi desať riadkov. Výšku postupne znižujeme, polomer aktualizujeme zo stálosti objemu, integrujeme tlak a vypíšeme silu.
+Vidíte, ako sila s klesajúcou výškou rastie. To je krivka sila–zdvih – presne tá krivka, ktorú vám na cvičení dá DEFORM.

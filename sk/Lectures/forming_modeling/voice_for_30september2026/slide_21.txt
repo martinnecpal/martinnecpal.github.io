@@ -1,0 +1,7 @@
+Abaqus — univerzálny nástroj
+
+Program číslo tri: Abaqus od Dassault Systèmes SIMULIA. Existuje bezplatná Learning Edition obmedzená na asi tisíc uzlov – to stačí na 2D a osovo súmerné úlohy tvárnenia, ak si to chcete vyskúšať doma.
+Hlavný rozdiel: Abaqus nemá šablóny pre tvárnenie. Nie je tam tlačidlo „zápustka", „pridržiavač" ani „brzdiaca lišta". Diely, kontakty a kroky si zostavíte sami. Je to pomalšie, ale mimoriadne flexibilné – vlastný materiálový zákon môžete napísať v podprograme UMAT alebo VUMAT. Preto je taký obľúbený vo výskume.
+Abaqus má dva riešiče. Explicit sa používa na tvárnenie s náročným kontaktom a veľkými deformáciami; nemá problémy s konvergenciou, ale stabilný časový krok je veľmi malý, preto často používame škálovanie hmotnosti. Standard je implicitný: skutočná rovnováha, veľké prírastky, ale ťažkosti s konvergenciou pri kontakte. Používa sa na odpruženie, plynulé kvázistatické zaťaženie a prestup tepla.
+Priemyselný štandard je: tvárniť v Explicit, importovať do Standard a vypočítať odpruženie.
+A jednu kontrolu v Explicit by ste mali robiť vždy – je v červenom rámčeku: pomer kinetickej energie k vnútornej energii, v Abaqus ALLKE lomeno ALLIE, by mal zostať pod asi päť až desať percent. Tým dokážete, že zrýchlením procesu ste z kvázistatického tvárnenia neurobili dynamický ráz.

@@ -1,0 +1,9 @@
+Zhrnutie
+
+Zhrniem dnešok do piatich viet – jedna za každú časť.
+Analytické metódy – metóda rezov, horná hranica a sklzové čiary – dávajú rýchly odhad sily a sú prvou kontrolou každého výsledku MKP.
+Špecializovaný softvér automatizuje proces: Ansys Forming pre lisovanie plechov, Simufact pre objemové tvárnenie a spájanie, Moldflow pre polyméry.
+Univerzálna MKP ako Abaqus je flexibilná, ale všetko si zostavujete sami.
+DEFORM je implicitný tuho-viskoplastický program MKP s automatickým remeshingom, porušením, opotrebením nástroja a mikroštruktúrou – a je to náš nástroj na cvičenia.
+A špeciálny softvér prekonáva hranice klasickej MKP: konečné objemy, častice, diskrétne prvky, inverzné metódy, viacškálové modely a náhradné AI modely.
+Budúci týždeň pôjdeme hlbšie do najcitlivejšieho vstupu zo všetkých: materiálových modelov – elasticity, plasticity, spevnenia a kriviek spevnenia.

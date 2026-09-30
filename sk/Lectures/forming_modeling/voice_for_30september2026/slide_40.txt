@@ -1,0 +1,6 @@
+DEFORM na našich cvičeniach
+
+Niekoľko praktických slov o cvičeniach.
+Začneme pechovaním valca v DEFORM-2D, osovo súmerne. Potom krivku sila–zdvih porovnáte s metódou rezov z časti I – áno, so vzorcom zo snímky 8. Potom dopredné pretláčanie, pri ktorom sa pozrieme na uhol matrice, trenie a porušenie. Potom zápustkové kovanie v DEFORM-3D so zaplnením dutiny a preložkami. A nakoniec vaše zadanie.
+Na prvé cvičenie si prosím prineste poznámky z časti I. A zvyknite si kontrolovať výsledky priebežne: je sila reálna v porovnaní s analytickým odhadom? Zachoval sa objem? Koľkokrát prebehol remeshing?
+Hodnotenie: zadanie na cvičenie dáva najviac 20 bodov, písomná skúška najviac 80.

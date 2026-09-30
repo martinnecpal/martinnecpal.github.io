@@ -1,0 +1,6 @@
+Kam zapadá dnešná prednáška
+
+Rýchle zopakovanie reťazca modelovania z minulého týždňa. Začíname reálnym procesom, idealizujeme ho do fyzikálneho modelu, opíšeme ho rovnicami – to je matematický model – a potom ho riešime, buď analyticky, alebo numericky pomocou softvéru. Na konci je verifikácia a validácia experimentom.
+Dnes sa venujeme krokom tri a štyri – zvýrazneným rámčekom. Časť I prednášky je analytické riešenie matematického modelu. Časti II až IV sú numerické modely a softvér.
+Vpravo vidíte, ako to nadväzuje na zvyšok predmetu: budúci týždeň materiálové modely, potom preprocessing a príklady plošného a objemového tvárnenia.
+A na cvičeniach: DEFORM. Dnešná časť III je teda vaša výbava na celý semester.

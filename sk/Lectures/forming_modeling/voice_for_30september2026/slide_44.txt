@@ -1,0 +1,6 @@
+Jednoduché príklady: inverzná metóda a náhradný AI model
+
+Ďalšie dva jednoduché príklady, oba sú skratky.
+Vľavo je inverzná metóda one-step pre plechy. Vezmete geometriu hotového dielu z CAD, jedným krokom ju rozviniete do roviny a dostanete tvar rovného prístrihu a odhad pretvorení. Potom pretvorenia skontrolujete v diagrame medzných pretvorení, či nehrozí trhlina alebo zvlnenie. Trvá to minúty namiesto hodín. Cena: ignoruje históriu procesu – pridržiavač, brzdiace lišty, postupnosť kontaktu.
+Vpravo je náhradný model pre objemové tvárnenie. V rámci návrhu experimentov spustíte stovky alebo tisíce výpočtov MKP. Na nich natrénujete neurónovú sieť. Potom sieť dá predikciu okamžite a optimalizátor môže prehľadávať priestor návrhu – presne to, čo sme videli pri valcovaní profilov v DEFORMe. Cena: platí iba v rámci priestoru návrhu, na ktorom bola natrénovaná. Mimo neho sa môže veľmi mýliť.
+V oboch prípadoch zostáva úplný model MKP referenciou.

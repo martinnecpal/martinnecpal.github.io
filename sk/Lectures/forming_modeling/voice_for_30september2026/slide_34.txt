@@ -1,0 +1,5 @@
+Automatický remeshing a viac operácií
+
+Dve vlastnosti, vďaka ktorým sa DEFORM presadil v kovaní.
+Prvá je automatický remeshing. Lagrangeova sieť sa deformuje spolu s materiálom. Keď sa prvok zdegeneruje alebo prenikne do nástroja, DEFORM automaticky vytvorí novú sieť a pokračuje. V 3D používa štvorsteny, v 2D štvoruholníky, voliteľne šesťsteny, a okná siete umožňujú zjemniť kritické oblasti, napríklad roh zápustky. Každý remeshing však interpoluje stavové veličiny zo starej siete na novú a zakaždým sa trochu objemu stratí. Preto udržujte počet remeshingov primeraný a na konci vždy skontrolujte objem.
+Druhá je Multiple Operations, teda viac operácií. Vpravo je typický technologický postup: ohrev v peci, presun k lisu s chladnutím na vzduchu, jeden alebo viac úderov kovania, ostrihanie výronku, tepelné spracovanie a obrábanie. V DEFORMe je celý tento reťazec jeden projekt, ktorý beží automaticky, a história – pretvorenie, teplota, mikroštruktúra – sa odovzdáva z každého kroku do nasledujúceho.
