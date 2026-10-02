@@ -3,6 +3,7 @@ description: "My personal webpage with multilingual support using Jekyll"
 
 baseurl: ""
 url: "https://www.martinnecpal.aiplaces.org"
+google_analytics: "G-679KH02QYR"  # GA4 Measurement ID; remove to disable
 
 # buld settingsfor GitHub Pages
 markdown: kramdown
