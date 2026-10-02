@@ -173,6 +173,9 @@
     .video-actions a { color: var(--mtf-dark); }
     .popup-btn { font: inherit; font-size: 0.55em; background: var(--mtf-red); color: #fff; border: 0;
       border-radius: 6px; padding: 0.6em 1.2em; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
+    .answer-btn { font: inherit; font-size: 0.75em; background: none; border: 1px solid var(--mtf-red);
+      color: var(--mtf-red); border-radius: 4px; padding: 0 0.5em; cursor: pointer; margin-left: 0.4em; }
+    .answer-btn.playing { background: var(--mtf-red); color: #fff; }
     .img-missing { border: 2px dashed #d9a0a8; border-radius: 4px; padding: 1.2em 0.8em;
       font-size: 0.45em; color: var(--muted); background: #fff8f9; }
     .img-missing a { color: var(--mtf-dark); word-break: break-all; }
@@ -1311,16 +1314,16 @@ R0, h0 = 10.0, 30.0          <span class="c"># mm</span>
   <section>
     <h2>Kontrolné otázky</h2>
     <ol class="compact" style="font-size:0.68em;line-height:1.75;">
-      <li class="fragment">Prečo je kontaktný tlak pri pechovaní najväčší v strede? Čo tento vrchol zvyšuje?</li>
-      <li class="fragment">Sila podľa hornej hranice: je väčšia alebo menšia ako skutočná — a prečo je to užitočné?</li>
-      <li class="fragment">Explicitný vs. implicitný riešič: ktorý na lisovanie, ktorý na odpruženie?</li>
-      <li class="fragment">Aký je rozdiel medzi Lagrangeovým (<abbr title="Finite Element (riešič konečných prvkov (v Simufact))">FE</abbr>) a Eulerovým (<abbr title="Finite Volume (riešič konečných objemov (v Simufact))">FV</abbr>) opisom?</li>
-      <li class="fragment">Prečo je fyzika v Moldflow iná ako v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORMe</abbr>?</li>
-      <li class="fragment">Ktoré dva vstupy v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORMe</abbr> najviac ovplyvnia výsledok? Čo je faktor trenia m?</li>
-      <li class="fragment">Uveďte jeden model porušenia a jeden model opotrebenia v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORMe</abbr> a čo predpovedajú.</li>
-      <li class="fragment">Kedy by ste použili inverznú one-step metódu alebo náhradnú <abbr title="Artificial Neural Network (umelá neurónová sieť)">ANN</abbr> namiesto úplnej <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr>?</li>
+      <li>Prečo je kontaktný tlak pri pechovaní najväčší v strede? Čo tento vrchol zvyšuje? <button class="answer-btn" data-answer="1">odpoveď</button></li>
+      <li>Sila podľa hornej hranice: je väčšia alebo menšia ako skutočná — a prečo je to užitočné? <button class="answer-btn" data-answer="2">odpoveď</button></li>
+      <li>Explicitný vs. implicitný riešič: ktorý na lisovanie, ktorý na odpruženie? <button class="answer-btn" data-answer="3">odpoveď</button></li>
+      <li>Aký je rozdiel medzi Lagrangeovým (<abbr title="Finite Element (riešič konečných prvkov (v Simufact))">FE</abbr>) a Eulerovým (<abbr title="Finite Volume (riešič konečných objemov (v Simufact))">FV</abbr>) opisom? <button class="answer-btn" data-answer="4">odpoveď</button></li>
+      <li>Prečo je fyzika v Moldflow iná ako v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORMe</abbr>? <button class="answer-btn" data-answer="5">odpoveď</button></li>
+      <li>Ktoré dva vstupy v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORMe</abbr> najviac ovplyvnia výsledok? Čo je faktor trenia m? <button class="answer-btn" data-answer="6">odpoveď</button></li>
+      <li>Uveďte jeden model porušenia a jeden model opotrebenia v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORMe</abbr> a čo predpovedajú. <button class="answer-btn" data-answer="7">odpoveď</button></li>
+      <li>Kedy by ste použili inverznú one-step metódu alebo náhradnú <abbr title="Artificial Neural Network (umelá neurónová sieť)">ANN</abbr> namiesto úplnej <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr>? <button class="answer-btn" data-answer="8">odpoveď</button></li>
     </ol>
-    <aside class="notes">[1:54–2:00] Nechajte študentov odpovedať; každú otázku odkryte šípkou. Zvyšný čas na ich vlastné otázky.</aside>
+    <aside class="notes">[1:54–2:00] Nechajte študentov odpovedať, všetky otázky sú zobrazené naraz. Zvyšný čas na ich vlastné otázky.</aside>
   </section>
 
   <!-- ═══ 49 · ZDROJE ════════════════════════════════════════════════════ -->
@@ -1452,6 +1455,28 @@ R0, h0 = 10.0, 30.0          <span class="c"># mm</span>
   document.querySelectorAll('.video-card video').forEach(v =>
     v.addEventListener('play', () => narration.pause()));
 
+  /* ── Answer buttons (Kontrolné otázky): play voice_for_30september2026/odpovedN.mp3 ── */
+  const answerAudio = new Audio();
+  let answerBtn = null;
+  function stopAnswer() {
+    answerAudio.pause();
+    answerBtn?.classList.remove('playing');
+    answerBtn = null;
+  }
+  answerAudio.addEventListener('ended', stopAnswer);
+  document.querySelectorAll('.answer-btn[data-answer]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (answerBtn === btn) { stopAnswer(); return; }
+      stopAnswer();
+      narration.pause();
+      answerAudio.src = `voice_for_30september2026/odpoved${btn.dataset.answer}.mp3`;
+      answerAudio.play().catch(() => {});
+      btn.classList.add('playing');
+      answerBtn = btn;
+    });
+  });
+  narration.addEventListener('play', stopAnswer);
+
   narration.addEventListener('play',  () => setPlayIcon(true));
   narration.addEventListener('pause', () => setPlayIcon(false));
   narration.addEventListener('ended', () => {
@@ -1510,6 +1535,7 @@ R0, h0 = 10.0, 30.0          <span class="c"># mm</span>
     const total = Reveal.getHorizontalSlides().length;
     updateNav(e.indexh, total);
     stopVideos(e.previousSlide);
+    stopAnswer();
     loadAudio(e.indexh);
     playAudio();
   });

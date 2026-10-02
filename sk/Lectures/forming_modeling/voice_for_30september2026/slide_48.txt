@@ -1,6 +1,5 @@
-Kontrolné otázky
+Kontrolné otázky na overrenie vedomostí z prednášky 
 
-Overme si, čo vám zostalo v hlave. Otázky budem ukazovať jednu po druhej – skúste odpovedať skôr, než pokračujem.
 Otázka jedna: Prečo je kontaktný tlak pri pechovaní najväčší v strede a čo tento vrchol zvyšuje?
 Otázka dva: Je sila podľa hornej hranice väčšia alebo menšia ako skutočná – a prečo je to užitočné?
 Otázka tri: Explicitný alebo implicitný – ktorý riešič na lisovanie, ktorý na odpruženie?
@@ -9,4 +8,3 @@ Otázka päť: Prečo je fyzika v Moldflow iná ako v DEFORMe?
 Otázka šesť: Ktoré dva vstupy v DEFORMe najviac ovplyvnia výsledok a čo je faktor trenia m?
 Otázka sedem: Uveďte jeden model porušenia a jeden model opotrebenia v DEFORMe a čo predpovedajú.
 Otázka osem: Kedy by ste použili inverznú metódu one-step alebo náhradnú neurónovú sieť namiesto úplnej MKP?
-Ďakujem. Zostáva nám niekoľko minút – máte nejaké vlastné otázky?
