@@ -24,6 +24,11 @@ lang: "sk"
       <td><a href="23september2026.html" target="_blank" rel="noopener">Úvodná prednáška</a></td>
       <td>Informácie o predmete a hodnotení, motivácia, prehľad procesov tvárnenia a prístupy k modelovaniu a simulácii.(Zastupovanie Prof. Peterku)</td>
     </tr>
+    <tr>
+      <td>30. 9. 2026</td>
+      <td><a href="30september2026.html" target="_blank" rel="noopener">Softvér a metódy simulácie procesov tvárnenia</a></td>
+      <td>Analytické metódy teórie plasticity, prehľad softvéru (Ansys Forming, Simufact Forming, Abaqus, Moldflow), DEFORM ako softvér cvičení a špeciálny simulačný softvér.</td>
+    </tr>
   </tbody>
 </table>
 
