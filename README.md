@@ -63,6 +63,9 @@ The two laser presentations are opened from the About page (`index.md`) in a pop
 ### Lectures (`*/Lectures/forming_modeling/`)
 - `index.md` lists the lectures in a table. Add a new row for each lecture.
 - Each lecture is a standalone Reveal.js HTML file (for example `30september2026.html`), with abbreviation tooltips, videos in `videos/` and voice narration in `voice_for_<date>/`.
+- The title slide has a short help box (keys, play button, Auto checkbox, zoom) and a **Stiahnuť PDF** button that downloads `<date>.pdf` from the same folder. Narration of slide 1 starts on open, or on the first click if the browser blocks autoplay.
+- Alt+click (Ctrl+click on Linux) zooms into part of a slide (Reveal.js Zoom plugin).
+- The PDF is generated with Puppeteer from Reveal's `?print-pdf` mode. Regenerate it whenever the slides change.
 
 Standalone HTML files (presentations, lectures) don't use the Jekyll layout. That means they don't include the analytics script unless it is added to them directly.
 

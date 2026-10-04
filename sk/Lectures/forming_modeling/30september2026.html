@@ -75,6 +75,25 @@
       max-height: 52vh; width: 100%; object-fit: cover;
       border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.22);
     }
+    .reveal a.pdf-download {
+      display: inline-block; margin-top: 0.5em; padding: 0.35em 1em; font-size: 0.8em; font-weight: 600;
+      color: #fff; background: var(--mtf-red); border-radius: 6px; text-decoration: none;
+    }
+    .reveal a.pdf-download:hover { background: var(--mtf-dark); }
+    .pdf-download-row { text-align: right; }
+    .print-pdf a.pdf-download { display: none; }
+    .nav-help {
+      margin-top: 0.6em; padding: 0.4em 0.8em; font-size: 0.6em; line-height: 1.45;
+      color: var(--muted); background: #fff8f9;
+      border-left: 4px solid var(--mtf-red); border-radius: 3px;
+    }
+    .nav-help strong { color: var(--mtf-dark); }
+    .reveal .nav-help ul { margin: 0.2em 0 0; padding-left: 1.2em; columns: 2; column-gap: 2em; font-size: 1em; line-height: 1.5; }
+    .reveal .nav-help li { margin-bottom: 0; }
+    .nav-help kbd {
+      font-family: inherit; font-size: 0.9em; padding: 0 0.35em;
+      border: 1px solid #bbb; border-bottom-width: 2px; border-radius: 3px; background: #fff;
+    }
 
     .reveal .hl { color: var(--mtf-red); font-weight: bold; }
 
@@ -278,6 +297,19 @@
         <p class="img-caption">Zápustkové kovanie vidlice simulované v DEFORM-3D (© <abbr title="Scientific Forming Technologies Corporation (výrobca DEFORMu (Columbus, Ohio))">SFTC</abbr>)</p>
       </div>
     </div>
+    <div class="nav-help">
+      <strong>Ako ovládať prezentáciu</strong> (lišta dole)
+      <ul>
+        <li><kbd>←</kbd> <kbd>→</kbd> alebo tlačidlá ‹ › – predchádzajúca / nasledujúca snímka</li>
+        <li>Bodky – skok priamo na vybranú snímku</li>
+        <li>▶ alebo <kbd>medzerník</kbd> – prehrať / pozastaviť hovorený komentár</li>
+        <li><strong>Auto</strong> zapnuté – po skončení komentára sa prejde na ďalšiu snímku; vypnuté – snímka ostane</li>
+        <li><kbd>F</kbd> celá obrazovka · <kbd>Esc</kbd> prehľad snímok</li>
+        <li><kbd>Alt</kbd> + klik (Linux: <kbd>Ctrl</kbd> + klik) – priblížiť miesto na snímke; ďalší klik oddiali</li>
+        <li>Podčiarknuté skratky – podržte myš nad nimi pre vysvetlenie</li>
+      </ul>
+    </div>
+    <div class="pdf-download-row"><a class="pdf-download" href="30september2026.pdf" download>⬇ Stiahnuť PDF</a></div>
     <aside class="notes">[0:00–0:02] Privítanie. Minulý týždeň: čo je modelovanie a simulácia, fyzikálny a matematický model, reťazec modelovania. Dnes: nástroje – od analytických metód „ceruzkou na papieri" po komerčné MKP programy. DEFORM dostane najviac času, lebo ho používame na cvičeniach.</aside>
   </section>
 
@@ -1370,6 +1402,7 @@ R0, h0 = 10.0, 30.0          <span class="c"># mm</span>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/zoom/zoom.js"></script>
 <script>
   /* ══ CONFIG ══════════════════════════════════════════════════════════════
      NARRATION  – true: plays voice_for_30september2026/slide_NN.mp3 for slide N (1-based)
@@ -1446,6 +1479,20 @@ R0, h0 = 10.0, 30.0          <span class="c"># mm</span>
     narration.src = custom || CONFIG.AUDIO_PATH(idx + 1);
   }
   function playAudio()   { if (CONFIG.NARRATION) narration.play().catch(() => {}); }
+  /* start narration on open; if the browser blocks autoplay, start on first click/key */
+  function autoStart() {
+    if (!CONFIG.NARRATION || /print-pdf/.test(location.search)) return;
+    narration.play().catch(() => {
+      const events = ['pointerdown', 'keydown'];
+      const start = e => {
+        events.forEach(t => document.removeEventListener(t, start, true));
+        /* bottom bar and space start audio themselves; playing here would toggle it off */
+        if (e.target.closest?.('#navBar') || e.key === ' ') return;
+        if (narration.paused) playAudio();
+      };
+      events.forEach(t => document.addEventListener(t, start, true));
+    });
+  }
   function toggleAudio() {
     if (!CONFIG.NARRATION) return;
     narration.paused ? narration.play().catch(() => {}) : narration.pause();
@@ -1516,7 +1563,7 @@ R0, h0 = 10.0, 30.0          <span class="c"># mm</span>
     backgroundTransition: 'none',
     controls: false,
     progress: false,
-    plugins: [RevealNotes, RevealMath.KaTeX],
+    plugins: [RevealNotes, RevealMath.KaTeX, RevealZoom],
     keyboard: {
       32: () => toggleAudio(),
       37: () => Reveal.prev(),
@@ -1529,6 +1576,7 @@ R0, h0 = 10.0, 30.0          <span class="c"># mm</span>
     buildIndicators(total);
     updateNav(0, total);
     loadAudio(0);
+    autoStart();
   });
 
   Reveal.on('slidechanged', e => {
