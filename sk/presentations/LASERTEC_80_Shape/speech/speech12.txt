@@ -1,16 +1,16 @@
-SLIDE 12 — LASERTEC 80 vs. 210 Shape: Size Comparison
-======================================================
+SNÍMKA 12 — LASERTEC 80 vs. 210 Shape: porovnanie veľkosti
+==========================================================
 
-The LASERTEC 80 Shape belongs to a product family. Its larger counterpart is the LASERTEC 210 Shape. This table shows the key differences.
+LASERTEC 80 Shape patrí do produktovej rady. Jeho väčším náprotivkom je LASERTEC 210 Shape. Táto tabuľka ukazuje hlavné rozdiely.
 
-In terms of working volume, the 210 Shape is dramatically larger: 1800 mm in X versus 800 mm, 2100 mm in Y versus 500 mm. The five-axis table diameter grows from 200 or 400 mm on the 80 Shape to 1850 mm on the 210 Shape. Maximum table load increases from 40 kg to 10 tonnes.
+Pokiaľ ide o pracovný priestor, model 210 Shape je výrazne väčší: 1800 milimetrov v osi X oproti 800 milimetrom a 2100 milimetrov v osi Y oproti 500 milimetrom. Priemer päťosového stola sa zväčšuje z 200 alebo 400 milimetrov pri modeli 80 Shape na 1850 milimetrov pri modeli 210 Shape. Maximálne zaťaženie stola stúpa zo 40 kilogramov na 10 ton.
 
-However, the LASERTEC 80 Shape has a clear advantage in dynamics. Its rapid traverse in X and Y is 120 metres per minute, compared to only 60 and 40 metres per minute for the 210 Shape. The 80 Shape achieves over 1.2 g acceleration, which is not specified for the larger machine. In other words, the 80 Shape is significantly faster and more agile for small to medium workpieces.
+LASERTEC 80 Shape má však jasnú výhodu v dynamike. Jeho rýchloposuv v osiach X a Y je 120 metrov za minútu v porovnaní s iba 60 a 40 metrami za minútu pri modeli 210 Shape. Model 80 Shape dosahuje zrýchlenie viac ako 1,2 g, ktoré pri väčšom stroji uvedené nie je. Inými slovami, model 80 Shape je pri malých a stredne veľkých obrobkoch výrazne rýchlejší a obratnejší.
 
-Both machines use the same fiber laser technology with the same power options — 100 or 200 watts.
+Oba stroje využívajú rovnakú technológiu vláknového lasera s rovnakými možnosťami výkonu, 100 alebo 200 wattov.
 
-The weight difference is enormous: 7 tonnes for the 80 Shape versus 42 tonnes for the 210 Shape. The installation footprint grows from 4.5 by 6 metres to 10 by 12 metres.
+Rozdiel v hmotnosti je obrovský: 7 ton pri modeli 80 Shape oproti 42 tonám pri modeli 210 Shape. Zastavaná plocha sa zväčšuje zo 4,5 krát 6 metrov na 10 krát 12 metrov.
 
-In summary: the LASERTEC 80 Shape is the right choice for precision parts, cutting inserts, and injection molds of medium size — which is exactly the application domain at CE5AM MTF STU Trnava. The 210 Shape is designed for large automotive stamping dies and body panels.
+Zhrnutie: LASERTEC 80 Shape je správnou voľbou pre presné súčiastky, rezné doštičky a vstrekovacie formy strednej veľkosti, čo presne zodpovedá oblasti použitia v CE5AM na MTF STU v Trnave. Model 210 Shape je určený pre veľké lisovacie nástroje a karosárske diely v automobilovom priemysle.
 
-[Estimated speaking time: ~70 seconds]
+[Odhadovaný čas prednesu: ~70 sekúnd]

@@ -1,14 +1,14 @@
-SLIDE 3 — Laser Source: Fiber Nd:YAG Laser Key Parameters
-==========================================================
+SNÍMKA 3 — Laserový zdroj: hlavné parametre vláknového lasera Nd:YAG
+=====================================================================
 
-The heart of the LASERTEC 80 Shape is a fiber Nd:YAG laser — specifically an ytterbium-doped fiber laser — operating at a wavelength of 1064 nanometres. This is in the near-infrared spectrum, which is well absorbed by most metals including steel, titanium alloys, and sintered carbides.
+Srdcom stroja LASERTEC 80 Shape je vláknový laser Nd:YAG, konkrétne vláknový laser dopovaný yterbiom, ktorý pracuje s vlnovou dĺžkou 1064 nanometrov. Táto vlnová dĺžka patrí do blízkej infračervenej oblasti, ktorú dobre absorbuje väčšina kovov vrátane ocele, titánových zliatin a spekaných karbidov.
 
-The standard machine configuration delivers a maximum average power of 100 watts, with an optional upgrade available to 200 watts for more demanding applications.
+Štandardná konfigurácia stroja poskytuje maximálny stredný výkon 100 wattov, pričom pre náročnejšie aplikácie je k dispozícii voliteľné rozšírenie na 200 wattov.
 
-A critical characteristic is that this machine operates exclusively in pulsed mode. It cannot work in continuous wave. The pulse repetition frequency is adjustable between 20 and 100 kilohertz. This pulsed regime is essential — each pulse removes a very small amount of material, and the short pulse duration limits heat transfer into the surrounding material. This means we can achieve precise ablation with minimal thermal damage to the workpiece.
+Dôležitou vlastnosťou je, že stroj pracuje výhradne v pulznom režime. V kontinuálnom režime pracovať nemôže. Opakovaciu frekvenciu pulzov možno nastaviť v rozsahu od 20 do 100 kilohertzov. Pulzný režim je kľúčový, pretože každý pulz odoberie len veľmi malé množstvo materiálu a krátka doba trvania pulzu obmedzuje prestup tepla do okolitého materiálu. Vďaka tomu dosahujeme presnú abláciu s minimálnym tepelným poškodením obrobku.
 
-The focused beam diameter is approximately 1 micrometre, which enables extremely fine structuring. The minimum achievable track width — the smallest line the laser can write — is down to 40 micrometres when using the Siemens 840D powerline controller.
+Priemer fokusovaného lúča je približne 1 mikrometer, čo umožňuje veľmi jemné štruktúrovanie. Najmenšia dosiahnuteľná šírka stopy, teda najtenšia čiara, ktorú laser dokáže vytvoriť, je 40 mikrometrov pri použití riadiaceho systému Siemens 840D powerline.
 
-The same fiber laser technology is used in the larger brother model, the LASERTEC 210 Shape, which is designed for automotive-scale tooling.
+Rovnakú technológiu vláknového lasera využíva aj väčší súrodenec, model LASERTEC 210 Shape, ktorý je určený na nástroje veľkých rozmerov pre automobilový priemysel.
 
-[Estimated speaking time: ~60 seconds]
+[Odhadovaný čas prednesu: ~60 sekúnd]

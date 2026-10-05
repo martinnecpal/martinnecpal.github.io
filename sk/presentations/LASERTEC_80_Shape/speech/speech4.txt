@@ -1,14 +1,14 @@
-SLIDE 4 — Axes & Working Space: 5-Axis Configuration
-=====================================================
+SNÍMKA 4 — Osi a pracovný priestor: päťosová konfigurácia
+=========================================================
 
-The LASERTEC 80 Shape is a true five-axis system. Let me walk through the axis layout.
+LASERTEC 80 Shape je plnohodnotný päťosový systém. Prejdime si usporiadanie jeho osí.
 
-The three linear axes give a working volume of 800 mm in X, 500 mm in Y, and 700 mm in Z. The Z axis is also the focusing axis — moving the laser head closer or farther from the workpiece changes the focal position.
+Tri lineárne osi vytvárajú pracovný priestor s rozsahom 800 milimetrov v osi X, 500 milimetrov v osi Y a 700 milimetrov v osi Z. Os Z je zároveň fokusovacou osou, pretože približovaním alebo odďaľovaním laserovej hlavy od obrobku sa mení poloha ohniska.
 
-Beyond the three linear axes, the machine has two rotational axes. The B axis is a swivel axis with a range from minus 110 to plus 150 degrees. The C axis provides full 360-degree rotation. Together, B and C allow the laser beam to reach virtually any surface orientation on a complex three-dimensional workpiece — this is what enables five-axis laser structuring.
+Okrem troch lineárnych osí má stroj dve rotačné osi. Os B je výkyvná s rozsahom od mínus 110 do plus 150 stupňov. Os C umožňuje plnú rotáciu o 360 stupňov. Osi B a C spolu umožňujú laserovému lúču dosiahnuť prakticky akúkoľvek orientáciu povrchu na zložitom trojrozmernom obrobku, a práve to umožňuje päťosové laserové štruktúrovanie.
 
-The machine offers two table configurations. In three-axis mode, the table measures 900 by 600 millimetres and can carry up to 200 kilograms. In five-axis mode, a rotary-tilt table is used — available in two sizes: 200 mm diameter for loads up to 14 kg, or 400 mm diameter for loads up to 40 kg.
+Stroj ponúka dve konfigurácie stola. V trojosovom režime má stôl rozmery 900 krát 600 milimetrov a unesie až 200 kilogramov. V päťosovom režime sa používa otočno-sklopný stôl, ktorý je dostupný v dvoch veľkostiach: s priemerom 200 milimetrov pre zaťaženie do 14 kilogramov alebo s priemerom 400 milimetrov pre zaťaženie do 40 kilogramov.
 
-The scanner head above the table can deflect the laser beam within a range of plus or minus 60 mm without moving the machine axes. Workpieces are held using EROWA clamping systems, which you can see in the interior photo on the right.
+Skenovacia hlava nad stolom dokáže vychýliť laserový lúč v rozsahu plus-mínus 60 milimetrov bez pohybu osí stroja. Obrobky sa upínajú pomocou upínacích systémov EROWA, ktoré vidíte na fotografii pracovného priestoru vpravo.
 
-[Estimated speaking time: ~60 seconds]
+[Odhadovaný čas prednesu: ~60 sekúnd]

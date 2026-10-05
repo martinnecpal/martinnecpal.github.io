@@ -1,18 +1,18 @@
-SLIDE 14 — Safety & Installation Requirements
-==============================================
+SNÍMKA 14 — Bezpečnostné a inštalačné požiadavky
+================================================
 
-Before concluding, a few words about installation and safety requirements — relevant for anyone planning to deploy this machine.
+Pred záverom niekoľko slov o inštalačných a bezpečnostných požiadavkách, ktoré sú dôležité pre každého, kto plánuje tento stroj prevádzkovať.
 
-The LASERTEC 80 Shape operates with Class 1 laser safety when the enclosure is closed. The enclosure has interlocked protective doors — the laser cannot fire when the doors are open. This is essential because the 1064 nanometre near-infrared beam is invisible to the human eye and would cause immediate retinal damage.
+LASERTEC 80 Shape pracuje pri zatvorenom kryte v triede laserovej bezpečnosti 1. Kryt má blokované ochranné dvere, takže pri otvorených dverách laser nemôže vyžarovať. Je to nevyhnutné, pretože blízky infračervený lúč s vlnovou dĺžkou 1064 nanometrov je pre ľudské oko neviditeľný a spôsobil by okamžité poškodenie sietnice.
 
-A mandatory fume extraction unit must be connected at all times. During laser ablation, the material is vaporised and fine metallic particles are released into the enclosure atmosphere. These particles are toxic — especially when machining sintered carbide, which contains cobalt binder — and must be continuously extracted and filtered.
+Povinné odsávacie zariadenie musí byť pripojené neustále. Počas laserovej ablácie sa materiál odparuje a do atmosféry v kryte sa uvoľňujú jemné kovové častice. Tieto častice sú toxické, najmä pri obrábaní spekaného karbidu, ktorý obsahuje kobaltové spojivo, a preto sa musia nepretržite odsávať a filtrovať.
 
-A dedicated water cooling circuit is required for two reasons: cooling the ytterbium fiber laser source to maintain stable output power, and cooling the torque disc motors in the B and C axes to prevent thermal expansion affecting positioning accuracy.
+Samostatný vodný chladiaci okruh je potrebný z dvoch dôvodov: na chladenie yterbiového vláknového lasera, aby sa udržal stabilný výstupný výkon, a na chladenie momentových motorov v osiach B a C, aby tepelná rozťažnosť neovplyvňovala presnosť polohovania.
 
-For electrical installation: the machine needs a three-phase 400-volt 50-hertz supply with a peak demand of up to 72 kilovolt-amperes.
+Elektrická inštalácia: stroj potrebuje trojfázové napájanie 400 voltov a 50 hertzov so špičkovým príkonom až 72 kilovoltampérov.
 
-For civil works: the full installation footprint including all ancillary units is 4.5 by 6 metres. The machine alone weighs 7 tonnes and requires a reinforced concrete floor capable of bearing concentrated loads. Vibration isolation pads are also recommended.
+Stavebná pripravenosť: celková zastavaná plocha vrátane všetkých pomocných zariadení je 4,5 krát 6 metrov. Samotný stroj váži 7 ton a vyžaduje vystuženú betónovú podlahu schopnú preniesť sústredené zaťaženie. Odporúčajú sa aj antivibračné podložky.
 
-These requirements were all met in the CE5AM laboratory at MTF STU Trnava, where the machine has been in operation for research purposes.
+Všetky tieto požiadavky boli splnené v laboratóriu CE5AM na MTF STU v Trnave, kde je stroj v prevádzke na výskumné účely.
 
-[Estimated speaking time: ~70 seconds]
+[Odhadovaný čas prednesu: ~70 sekúnd]

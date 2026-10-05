@@ -1,18 +1,18 @@
-SLIDE 7 — Control & Software: Control Architecture
-===================================================
+SNÍMKA 7 — Riadenie a softvér: architektúra riadenia
+====================================================
 
-The machine uses a split control architecture with three distinct software layers.
+Stroj využíva rozdelenú architektúru riadenia s tromi samostatnými softvérovými vrstvami.
 
-At the machine level, axis movements are managed by the Siemens 840D CNC — either the powerline or solutionline variant. This is an industry-standard controller widely used in high-precision machining centres.
+Na úrovni stroja riadi pohyby osí CNC systém Siemens 840D vo variante powerline alebo solutionline. Ide o priemyselne štandardný riadiaci systém, ktorý sa bežne používa vo vysoko presných obrábacích centrách.
 
-The laser process itself — pulse timing, power modulation, scanning patterns — is controlled by a dedicated separate system called LaserSoft 3D. This separation between CNC motion control and laser process control allows both systems to be optimised independently.
+Samotný laserový proces, teda časovanie pulzov, moduláciu výkonu a skenovacie vzory, riadi samostatný systém s názvom LaserSoft 3D. Oddelenie riadenia pohybu CNC od riadenia laserového procesu umožňuje optimalizovať oba systémy nezávisle od seba.
 
-For programming, the operator uses LpsWin. This is the software where the coordinate system is defined, bitmap files or vector geometries are imported, and the machining parameters are set. LpsWin then calculates the laser beam paths layer by layer and generates the NC program.
+Na programovanie používa operátor softvér LpsWin. V ňom sa definuje súradnicový systém, importujú sa bitmapové súbory alebo vektorové geometrie a nastavujú sa parametre obrábania. LpsWin následne vypočíta dráhy laserového lúča vrstvu po vrstve a vygeneruje NC program.
 
-Two important technical capabilities deserve mention. First, contour-parallel laser shaping: the focus point shifts dynamically along the Z axis to follow the actual three-dimensional surface contour of the workpiece. This is what makes true five-axis laser structuring possible — the beam always strikes the surface at the correct focal distance.
+Za zmienku stoja dve dôležité technické schopnosti. Prvou je laserové tvarovanie paralelné s kontúrou: ohnisko sa dynamicky posúva pozdĺž osi Z tak, aby sledovalo skutočnú trojrozmernú kontúru povrchu obrobku. Práve to umožňuje plnohodnotné päťosové laserové štruktúrovanie, pretože lúč vždy dopadá na povrch v správnej ohniskovej vzdialenosti.
 
-Second, slicing: the material is removed in very thin layers, each typically 0.002 millimetres thick. Multiple passes build up the final geometry, giving very precise depth control.
+Druhou je rozdelenie na vrstvy: materiál sa odoberá vo veľmi tenkých vrstvách, typicky s hrúbkou 0,002 milimetra. Viacnásobné prechody postupne vytvoria výslednú geometriu, čo zaručuje veľmi presnú kontrolu hĺbky.
 
-The photo on the right shows the 3D measuring probe tip — this probe is used after machining to verify the actual removal depth directly on the machine, before the workpiece is unclamped.
+Fotografia vpravo zobrazuje hrot 3D meracej sondy. Táto sonda sa po obrábaní používa na overenie skutočnej hĺbky úberu priamo v stroji ešte pred odopnutím obrobku.
 
-[Estimated speaking time: ~70 seconds]
+[Odhadovaný čas prednesu: ~70 sekúnd]

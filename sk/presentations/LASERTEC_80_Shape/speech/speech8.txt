@@ -1,20 +1,20 @@
-SLIDE 8 — Laser Texturing Process Chain
-=========================================
+SNÍMKA 8 — Procesný reťazec laserového textúrovania
+===================================================
 
-This slide shows the complete end-to-end workflow for laser surface texturing on the LASERTEC 80 Shape, as applied in research at CE5AM MTF STU Trnava.
+Táto snímka zobrazuje celý pracovný postup laserového textúrovania povrchu na stroji LASERTEC 80 Shape od začiatku do konca tak, ako sa uplatňuje vo výskume v CE5AM na MTF STU v Trnave.
 
-The process begins with texture design in CAD software. The desired surface pattern — whether dimples, grooves, or a hexagonal array — is designed with precise geometry and dimensions.
+Proces sa začína návrhom textúry v CAD softvéri. Požadovaný povrchový vzor, či už ide o jamky, drážky alebo hexagonálne pole, sa navrhne s presnou geometriou a rozmermi.
 
-From CAD, the geometry is converted into either a bitmap image or a vector file. Bitmap files are especially common for complex textures, as they define material removal pattern pixel by pixel.
+Z CAD modelu sa geometria prevedie na bitmapový obrázok alebo vektorový súbor. Bitmapové súbory sa používajú najmä pri zložitých textúrach, pretože definujú vzor úberu materiálu pixel po pixeli.
 
-This file is then imported into LpsWin, where the coordinate system is positioned, the slicing thickness is set — typically 0.002 millimetres per layer — and the minimum track length and path overlap are defined. LpsWin calculates all the laser beam paths and generates the NC program.
+Tento súbor sa potom importuje do softvéru LpsWin, kde sa umiestni súradnicový systém, nastaví sa hrúbka vrstvy, typicky 0,002 milimetra, a definuje sa minimálna dĺžka dráhy a prekrytie dráh. LpsWin vypočíta všetky dráhy laserového lúča a vygeneruje NC program.
 
-Before actual production, the machine must be warmed up and a test run performed. The test run is always carried out on the non-functional side of the workpiece at reduced power — typically around 40 percent. This verifies that the coordinate positioning, power settings, and scanning parameters are all correct.
+Pred samotnou výrobou treba stroj zahriať a vykonať skúšobný beh. Skúšobný beh sa vždy vykonáva na nefunkčnej strane obrobku so zníženým výkonom, typicky približne 40 percent. Overí sa ním, či sú polohovanie súradníc, nastavenie výkonu aj parametre skenovania správne.
 
-Only after a successful test run does the production run begin on the functional surface.
+Až po úspešnom skúšobnom behu sa začína výrobný beh na funkčnom povrchu.
 
-After machining, the result is measured. In our experiments, a 3D scanner from ATOS was used to capture the surface geometry, and a roughness meter was used to measure surface parameters like Ra. The CCD camera in the machine also provided in-situ verification.
+Po obrábaní sa výsledok zmeria. V našich experimentoch sa na snímanie geometrie povrchu používal 3D skener ATOS a na meranie parametrov povrchu, ako je Ra, sa používal drsnomer. Overenie priamo v stroji zabezpečovala aj CCD kamera.
 
-The steps in green — CAD, bitmap generation, and LpsWin — can use third-party software. The red steps — the actual machining and machine-specific programming — require the native LASERTEC software.
+Kroky zobrazené zelenou farbou, teda CAD, generovanie bitmapy a LpsWin, možno nahradiť softvérom tretích strán. Kroky zobrazené červenou farbou, teda samotné obrábanie a programovanie špecifické pre stroj, vyžadujú natívny softvér stroja LASERTEC.
 
-[Estimated speaking time: ~75 seconds]
+[Odhadovaný čas prednesu: ~75 sekúnd]

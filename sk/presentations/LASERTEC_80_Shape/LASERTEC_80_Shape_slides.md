@@ -1,251 +1,251 @@
-# LASERTEC 80 Shape — Slide Descriptions
-*Extracted from thesis collection — MTF STU Trnava*
+# LASERTEC 80 Shape — opis snímok
+*Spracované zo súboru záverečných prác — MTF STU Trnava*
 
 ---
 
-## Slide 1 — Title Slide
+## Snímka 1 — Titulná snímka
 
 **LASERTEC 80 Shape**
-5-Axis Precision Laser Machining System
+Päťosový presný laserový obrábací systém
 DMG MORI
 
-*Centre of Excellence for 5-Axis Machining (CE5AM)*
-*Faculty of Materials Science and Technology, STU Trnava*
+*Centrum excelentnosti päťosového obrábania (CE5AM)*
+*Materiálovotechnologická fakulta STU so sídlom v Trnave*
 
 ---
 
-## Slide 2 — Overview
+## Snímka 2 — Prehľad
 
-**What is the LASERTEC 80 Shape?**
+**Čo je LASERTEC 80 Shape?**
 
-- 5-axis precision CNC laser machining system by **DMG MORI** (formerly SAUER)
-- Available at the **Centre of Excellence for 5-Axis Machining (CE5AM)** at MTF STU Trnava
-- Purpose-built for:
-  - Laser structuring and engraving of injection molds
-  - Laser micro-machining and ablation
-  - Surface texturing (tribological, functional)
-  - Chip-breaker manufacturing on cutting inserts
-- Two laser machines at MTF STU Trnava: **LASERTEC 80 Shape** + Laser TruDisk 4002 (TRUMPF)
-
----
-
-## Slide 3 — Laser Source
-
-**Fiber Nd:YAG Laser**
-
-| Parameter | Value |
-|-----------|-------|
-| Laser type | Fiber (Ytterbium) Nd:YAG |
-| Wavelength | 1064 nm |
-| Average laser power | 50 W (nominal) / 100 W (max) |
-| Optional upgrade | up to 200 W |
-| Operation mode | **Pulsed only** |
-| Pulse frequency range | 20 – 100 kHz |
-| Beam diameter at focus | ~1 µm |
-| Minimum track width | down to 40 µm |
-
-- The same fiber laser type is used in the LASERTEC 210 Shape (larger format)
-- Pulsed regime enables precise material removal without excessive thermal load
+- Päťosový presný CNC laserový obrábací systém od spoločnosti **DMG MORI** (predtým SAUER)
+- K dispozícii v **Centre excelentnosti päťosového obrábania (CE5AM)** na MTF STU v Trnave
+- Určený na:
+  - laserové štruktúrovanie a gravírovanie vstrekovacích foriem,
+  - laserové mikroobrábanie a abláciu,
+  - textúrovanie povrchu (tribologické, funkčné),
+  - výrobu lámačov triesok na rezných doštičkách.
+- Dva laserové stroje na MTF STU v Trnave: **LASERTEC 80 Shape** + laser TruDisk 4002 (TRUMPF)
 
 ---
 
-## Slide 4 — Axes & Working Space
+## Snímka 3 — Laserový zdroj
 
-**5-Axis Configuration**
+**Vláknový laser Nd:YAG**
 
-| Axis | Travel / Range |
-|------|---------------|
-| X-axis | 800 mm |
-| Y-axis | 500 mm |
-| Z-axis (focus) | 700 mm |
-| B-axis (swivel) | −110° to +150° |
-| C-axis (rotation) | 360° |
+| Parameter | Hodnota |
+|-----------|---------|
+| Typ lasera | vláknový (yterbiový) Nd:YAG |
+| Vlnová dĺžka | 1064 nm |
+| Stredný výkon lasera | 50 W (menovitý) / 100 W (max.) |
+| Voliteľné rozšírenie | až 200 W |
+| Prevádzkový režim | **iba pulzný** |
+| Rozsah frekvencie pulzov | 20 – 100 kHz |
+| Priemer lúča v ohnisku | ~1 µm |
+| Minimálna šírka stopy | od 40 µm |
 
-**Table dimensions:**
-
-| Configuration | Table size | Max load |
-|---------------|-----------|----------|
-| 3-axis | 900 × 600 mm | 200 kg |
-| 5-axis | Ø 200 / 400 mm | 14 / 40 kg |
-
-- Scanner beam deflection range: ±60 mm (system of lenses and mirrors)
-- Workpiece clamping via **EROWA clamps** on the rotary/tilting table
+- Rovnaký typ vláknového lasera využíva aj LASERTEC 210 Shape (väčší formát)
+- Pulzný režim umožňuje presný úber materiálu bez nadmerného tepelného zaťaženia
 
 ---
 
-## Slide 5 — Motion Dynamics
+## Snímka 4 — Osi a pracovný priestor
 
-**High-Dynamic Linear Drive System**
+**Päťosová konfigurácia**
 
-| Parameter | Value |
-|-----------|-------|
-| Rapid traverse X / Y | 120 / 120 m/min |
-| Rapid traverse Z | 30 m/min |
-| Acceleration (X / Y) | **> 1.2 g** |
-| Scanning speed range | 100 – 4 000 mm/s |
+| Os | Dráha / rozsah |
+|----|----------------|
+| Os X | 800 mm |
+| Os Y | 500 mm |
+| Os Z (fokusácia) | 700 mm |
+| Os B (výkyvná) | −110° až +150° |
+| Os C (rotačná) | 360° |
 
-- Linear drives in X and Y axes — no mechanical backlash
-- 4th and 5th axis: **water-cooled torque discs**
-- Qualifies as a **highly dynamic** laser machining center
-- Enables 5-axis laser structuring of large forming tools and narrow molds with exhaust channels
+**Rozmery stola:**
 
----
+| Konfigurácia | Veľkosť stola | Max. zaťaženie |
+|--------------|---------------|----------------|
+| Trojosová | 900 × 600 mm | 200 kg |
+| Päťosová | Ø 200 / 400 mm | 14 / 40 kg |
 
-## Slide 6 — Construction & Key Components
-
-**Machine Construction**
-
-1. **Machining enclosure** — sealed workspace with special protective doors (laser safety Class 1)
-2. **Scanner head** — system of lenses and mirrors, deflects laser beam dynamically in the focal plane
-3. **Rotary-tilt table** — EROWA clamping, B + C axes
-4. **Machine control unit** — drives all axis movements
-5. **Standalone control PC** — manages scanner and laser source
-6. **CCD camera** — 50× magnification, adjustable in X/Y for workpiece observation
-7. **3D measuring probe** — for fast workpiece alignment and material removal measurement
-8. **Extraction unit** — 1050 × 1200 × 2000 mm
-9. **Cooling unit** — water cooling for torque discs and laser; 1110 × 800 × 1450 mm
+- Rozsah vychýlenia lúča skenerom: ±60 mm (sústava šošoviek a zrkadiel)
+- Upínanie obrobku **upínačmi EROWA** na otočno-sklopnom stole
 
 ---
 
-## Slide 7 — Control & Software
+## Snímka 5 — Dynamika pohybu
 
-**Control Architecture**
+**Vysokodynamický systém lineárnych pohonov**
 
-| Component | System |
+| Parameter | Hodnota |
+|-----------|---------|
+| Rýchloposuv X / Y | 120 / 120 m/min |
+| Rýchloposuv Z | 30 m/min |
+| Zrýchlenie (X / Y) | **> 1,2 g** |
+| Rozsah rýchlosti skenovania | 100 – 4 000 mm/s |
+
+- Lineárne pohony v osiach X a Y — bez mechanickej vôle
+- 4. a 5. os: **vodou chladené momentové motory (torque)**
+- Zaraďuje sa medzi **vysokodynamické** laserové obrábacie centrá
+- Umožňuje päťosové laserové štruktúrovanie veľkých tvárniacich nástrojov a úzkych foriem s odvzdušňovacími kanálmi
+
+---
+
+## Snímka 6 — Konštrukcia a hlavné komponenty
+
+**Konštrukcia stroja**
+
+1. **Pracovný kryt** — uzavretý pracovný priestor so špeciálnymi ochrannými dverami (trieda laserovej bezpečnosti 1)
+2. **Skenovacia hlava** — sústava šošoviek a zrkadiel, dynamicky vychyľuje laserový lúč v ohniskovej rovine
+3. **Otočno-sklopný stôl** — upínanie EROWA, osi B + C
+4. **Riadiaca jednotka stroja** — riadi všetky pohyby osí
+5. **Samostatný riadiaci počítač** — riadi skener a laserový zdroj
+6. **CCD kamera** — 50× zväčšenie, nastaviteľná v X/Y na pozorovanie obrobku
+7. **3D meracia sonda** — na rýchle vyrovnanie obrobku a meranie úberu materiálu
+8. **Odsávacie zariadenie** — 1050 × 1200 × 2000 mm
+9. **Chladiace zariadenie** — vodné chladenie momentových motorov a lasera; 1110 × 800 × 1450 mm
+
+---
+
+## Snímka 7 — Riadenie a softvér
+
+**Architektúra riadenia**
+
+| Komponent | Systém |
 |-----------|--------|
-| CNC control | **Siemens 840D** powerline / solutionline |
-| Laser process control | **LaserSoft 3D** (separate dedicated controller) |
-| Programming software | **LpsWin** (coordinate definition, bitmap import) |
+| Riadenie CNC | **Siemens 840D** powerline / solutionline |
+| Riadenie laserového procesu | **LaserSoft 3D** (samostatný riadiaci systém) |
+| Programovací softvér | **LpsWin** (definícia súradníc, import bitmáp) |
 
-**Software workflow:**
-1. Design texture / geometry in CAD
-2. Generate bitmap or toolpath
-3. Import into **LpsWin** → define coordinate system and machining parameters
-4. Software calculates laser beam paths layer by layer
-5. NC program exported → loaded into **LASERTEC 80 Shape**
-6. Test run (warm-up + dry run) → production run
+**Softvérový postup:**
+1. Návrh textúry / geometrie v CAD
+2. Vygenerovanie bitmapy alebo dráhy nástroja
+3. Import do **LpsWin** → definícia súradnicového systému a parametrov obrábania
+4. Softvér vypočíta dráhy laserového lúča vrstvu po vrstve
+5. Export NC programu → načítanie do stroja **LASERTEC 80 Shape**
+6. Skúšobný beh (zahriatie + beh naprázdno) → výrobný beh
 
-- Contour-parallel laser shaping: focus shifts dynamically along Z according to 3D surface geometry
-- Slicing thickness: typically 0.002 mm per layer
-
----
-
-## Slide 8 — Technical Specifications Summary
-
-**Full Technical Data (DMG MORI)**
-
-| Parameter | Value |
-|-----------|-------|
-| Laser source type | Fiber (Nd:YAG/Ytterbium) |
-| Laser power | 100 / 200 W |
-| Focal length options | 100 / 160 / 255 mm |
-| Pulse frequency | 20 – 100 kHz |
-| Scanning speed | 100 – 4 000 mm/s |
-| Beam diameter | ~1 µm |
-| Track width | down to 40 µm |
-| Input power | max. 72 kVA |
-| Operating voltage | 400 V / 50 Hz |
-| Machine dimensions | 3335 × 2058 × 2290 mm |
-| Machine footprint (incl. units) | 4500 × 6000 × 2300 mm |
-| Total weight | **7 000 kg** |
-| Control system | Siemens 840D powerline/solutionline |
+- Laserové tvarovanie paralelné s kontúrou: ohnisko sa dynamicky posúva v osi Z podľa 3D geometrie povrchu
+- Hrúbka vrstvy: typicky 0,002 mm na vrstvu
 
 ---
 
-## Slide 9 — Applications
+## Snímka 8 — Súhrn technických parametrov
 
-**Fields of Use**
+**Kompletné technické údaje (DMG MORI)**
 
-| Application | Description |
-|-------------|-------------|
-| Injection mold texturing | Engraving fine surface structures on mold cavities |
-| Chip-breaker manufacturing | Laser micro-machining of cutting inserts (sintered carbide) |
-| Surface texturing | Functional tribological textures (dimples, grooves, hatching) |
-| Forming tool structuring | 5-axis laser structuring of large pressing tools |
-| Narrow mold machining | 5-axis engraving of narrow molds with exhaust channels |
-| Coating ablation | Selective removal of PVD/CVD coatings (track width ≥ 40 µm) |
-
-**Material compatibility:** sintered carbide (WC-Co), titanium alloys, tool steels, coated surfaces
+| Parameter | Hodnota |
+|-----------|---------|
+| Typ laserového zdroja | vláknový (Nd:YAG/yterbiový) |
+| Výkon lasera | 100 / 200 W |
+| Ohniskové vzdialenosti | 100 / 160 / 255 mm |
+| Frekvencia pulzov | 20 – 100 kHz |
+| Rýchlosť skenovania | 100 – 4 000 mm/s |
+| Priemer lúča | ~1 µm |
+| Šírka stopy | od 40 µm |
+| Príkon | max. 72 kVA |
+| Prevádzkové napätie | 400 V / 50 Hz |
+| Rozmery stroja | 3335 × 2058 × 2290 mm |
+| Zastavaná plocha (vrátane zariadení) | 4500 × 6000 × 2300 mm |
+| Celková hmotnosť | **7 000 kg** |
+| Riadiaci systém | Siemens 840D powerline/solutionline |
 
 ---
 
-## Slide 10 — Comparison: LASERTEC 80 vs. 210 Shape
+## Snímka 9 — Aplikácie
+
+**Oblasti použitia**
+
+| Aplikácia | Opis |
+|-----------|------|
+| Textúrovanie vstrekovacích foriem | gravírovanie jemných povrchových štruktúr do tvarových dutín foriem |
+| Výroba lámačov triesok | laserové mikroobrábanie rezných doštičiek (spekaný karbid) |
+| Textúrovanie povrchu | funkčné tribologické textúry (jamky, drážky, šrafovanie) |
+| Štruktúrovanie tvárniacich nástrojov | päťosové laserové štruktúrovanie veľkých lisovacích nástrojov |
+| Obrábanie úzkych foriem | päťosové gravírovanie úzkych foriem s odvzdušňovacími kanálmi |
+| Ablácia povlakov | selektívne odstraňovanie povlakov PVD/CVD (šírka stopy ≥ 40 µm) |
+
+**Vhodné materiály:** spekaný karbid (WC-Co), titánové zliatiny, nástrojové ocele, povlakované povrchy
+
+---
+
+## Snímka 10 — Porovnanie: LASERTEC 80 vs. 210 Shape
 
 | Parameter | LASERTEC 80 Shape | LASERTEC 210 Shape |
-|-----------|------------------|--------------------|
-| X-axis [mm] | 800 | 1800 |
-| Y-axis [mm] | 500 | 2100 |
-| Z-axis [mm] | 700 | 1250 |
-| Table (5-axis) [mm] | Ø 200 / 400 | Ø 1850 |
-| Max load (5-axis) [kg] | 14 / 40 | 8 000 / 10 000 |
-| Rapid traverse X/Y [m/min] | 120 / 120 | 60 / 40 |
-| Laser power [W] | 100 / 200 | 100 / 200 |
-| Total weight [kg] | 7 000 | 42 000 |
-| Machine dimensions [mm] | 3335 × 2058 × 2290 | 6145 × 7308 × 5343 |
-| Input power [kVA] | max. 72 | max. 103 |
+|-----------|-------------------|--------------------|
+| Os X [mm] | 800 | 1800 |
+| Os Y [mm] | 500 | 2100 |
+| Os Z [mm] | 700 | 1250 |
+| Stôl (päťosový) [mm] | Ø 200 / 400 | Ø 1850 |
+| Max. zaťaženie (päťosový) [kg] | 14 / 40 | 8 000 / 10 000 |
+| Rýchloposuv X/Y [m/min] | 120 / 120 | 60 / 40 |
+| Výkon lasera [W] | 100 / 200 | 100 / 200 |
+| Celková hmotnosť [kg] | 7 000 | 42 000 |
+| Rozmery stroja [mm] | 3335 × 2058 × 2290 | 6145 × 7308 × 5343 |
+| Príkon [kVA] | max. 72 | max. 103 |
 
-→ LASERTEC 80: **compact, high-speed** — for precision parts and molds up to medium size  
-→ LASERTEC 210: **large-format** — for automotive-scale tools and dies
+→ LASERTEC 80: **kompaktný a rýchly** — pre presné súčiastky a formy do strednej veľkosti  
+→ LASERTEC 210: **veľkoformátový** — pre nástroje a zápustky v automobilovom meradle
 
 ---
 
-## Slide 11 — Process Chain for Laser Texturing
+## Snímka 11 — Procesný reťazec laserového textúrovania
 
-**End-to-End Workflow on LASERTEC 80 Shape**
+**Celý pracovný postup na stroji LASERTEC 80 Shape**
 
 ```
-[CAD / Texture Design]
+[Návrh v CAD / návrh textúry]
         ↓
-[Bitmap / Vector Generation]
+[Generovanie bitmapy / vektora]
         ↓
-[LpsWin — coordinate system, slicing, path calculation]
+[LpsWin — súradnicový systém, rozdelenie na vrstvy, výpočet dráh]
         ↓
-[NC Program Generation]
+[Generovanie NC programu]
         ↓
-[Machine Warm-Up + Test Run]       ← non-functional surface, reduced power
+[Zahriatie stroja + skúšobný beh]  ← nefunkčný povrch, znížený výkon
         ↓
-[Production Run — LASERTEC 80 Shape]
+[Výrobný beh — LASERTEC 80 Shape]
         ↓
-[3D Scan / Surface Measurement]    ← ATOS scanner, CCD camera, roughness meter
+[3D skenovanie / meranie povrchu]  ← skener ATOS, CCD kamera, drsnomer
 ```
 
-- Green steps: replaceable by third-party software
-- Red steps: require native machine software (LaserSoft 3D / LpsWin)
+- Zelené kroky: možno nahradiť softvérom tretích strán
+- Červené kroky: vyžadujú natívny softvér stroja (LaserSoft 3D / LpsWin)
 
 ---
 
-## Slide 12 — Typical Process Parameters (from experiments)
+## Snímka 12 — Typické procesné parametre (z experimentov)
 
-**Representative Parameter Ranges Used at MTF STU Trnava**
+**Reprezentatívne rozsahy parametrov používané na MTF STU v Trnave**
 
-| Parameter | Range used |
-|-----------|-----------|
-| Laser power | 10 – 100 W (10–100 % of max) |
-| Pulse frequency | 20 – 100 kHz |
-| Scanning speed | 200 – 4 000 mm/s |
-| Focal distance | 100 mm (typical for micro-machining) |
-| Marking field size | 13 × 13 mm (micro) |
-| Laser spot diameter | 0.025 – 0.1 mm |
-| Layer removal depth | ~1 µm per pass |
-| Material removal depth | up to 40 µm per texture feature |
-| Pulse duration | 10 ms – 120 ns (depending on mode) |
+| Parameter | Použitý rozsah |
+|-----------|----------------|
+| Výkon lasera | 10 – 100 W (10 – 100 % max.) |
+| Frekvencia pulzov | 20 – 100 kHz |
+| Rýchlosť skenovania | 200 – 4 000 mm/s |
+| Ohnisková vzdialenosť | 100 mm (typická pri mikroobrábaní) |
+| Veľkosť značkovacieho poľa | 13 × 13 mm (mikro) |
+| Priemer laserovej stopy | 0,025 – 0,1 mm |
+| Hĺbka úberu vrstvy | ~1 µm na prechod |
+| Hĺbka úberu materiálu | až 40 µm na prvok textúry |
+| Doba trvania pulzu | 10 ms – 120 ns (podľa režimu) |
 
-*Sources: experimental studies on sintered carbide, titanium alloys, and tool steel at CE5AM MTF STU Trnava*
-
----
-
-## Slide 13 — Safety & Installation Requirements
-
-**Installation Environment**
-
-- Laser safety class requiring **sealed enclosure** with interlocked protective doors
-- Fume extraction unit: 1050 × 1200 × 2000 mm (mandatory — removes ablation particles and gases)
-- Water cooling circuit: required for torque disc motors and laser source
-- Electrical supply: **400 V / 50 Hz**, max 72 kVA
-- Floor footprint (all units): 4500 × 6000 × 2300 mm
-- Total machine weight: 7 000 kg — requires reinforced floor
+*Zdroje: experimentálne štúdie spekaného karbidu, titánových zliatin a nástrojovej ocele v CE5AM na MTF STU v Trnave*
 
 ---
 
-*All data extracted from student theses referencing DMG MORI documentation (2013–2017).*
-*Primary source: DMG MORI LASERTEC 80 Shape technical datasheet.*
+## Snímka 13 — Bezpečnostné a inštalačné požiadavky
+
+**Prostredie inštalácie**
+
+- Trieda laserovej bezpečnosti vyžadujúca **uzavretý kryt** s blokovanými ochrannými dverami
+- Odsávacie zariadenie: 1050 × 1200 × 2000 mm (povinné — odstraňuje častice z ablácie a plyny)
+- Vodný chladiaci okruh: potrebný pre momentové motory a laserový zdroj
+- Elektrické napájanie: **400 V / 50 Hz**, max. 72 kVA
+- Zastavaná plocha (všetky zariadenia): 4500 × 6000 × 2300 mm
+- Celková hmotnosť stroja: 7 000 kg — vyžaduje vystuženú podlahu
+
+---
+
+*Všetky údaje sú prevzaté zo študentských záverečných prác odkazujúcich na dokumentáciu DMG MORI (2013 – 2017).*
+*Primárny zdroj: technický list DMG MORI LASERTEC 80 Shape.*

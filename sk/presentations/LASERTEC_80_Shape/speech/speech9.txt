@@ -1,14 +1,14 @@
-SLIDE 9 — Technical Specifications Summary
-==========================================
+SNÍMKA 9 — Súhrn technických parametrov
+=======================================
 
-This slide provides the complete technical datasheet for the LASERTEC 80 Shape as published by DMG MORI.
+Táto snímka uvádza úplný technický list stroja LASERTEC 80 Shape podľa údajov spoločnosti DMG MORI.
 
-On the laser side: the fiber Nd:YAG source delivers 100 or 200 watts. Three focal length options are available — 100, 160, and 255 millimetres — allowing different spot sizes and working distances to be selected depending on the application. Pulse frequency ranges from 20 to 100 kilohertz, scanning speed from 100 to 4000 mm per second, beam diameter approximately 1 micrometre, and minimum track width down to 40 micrometres.
+Z hľadiska lasera: vláknový zdroj Nd:YAG poskytuje výkon 100 alebo 200 wattov. K dispozícii sú tri ohniskové vzdialenosti, 100, 160 a 255 milimetrov, ktoré umožňujú zvoliť rôzne veľkosti stopy a pracovné vzdialenosti podľa aplikácie. Frekvencia pulzov je od 20 do 100 kilohertzov, rýchlosť skenovania od 100 do 4000 milimetrov za sekundu, priemer lúča približne 1 mikrometer a minimálna šírka stopy 40 mikrometrov.
 
-On the installation side: the machine requires a three-phase 400 volt, 50 hertz supply with a maximum demand of 72 kilovolt-amperes. The machine body itself measures 3335 by 2058 by 2290 millimetres. However, the full installation footprint — including the extraction unit and the cooling unit — is 4500 by 6000 millimetres. The total machine weight is 7 tonnes, which requires a reinforced concrete floor.
+Z hľadiska inštalácie: stroj vyžaduje trojfázové napájanie 400 voltov a 50 hertzov s maximálnym príkonom 72 kilovoltampérov. Samotné teleso stroja má rozmery 3335 krát 2058 krát 2290 milimetrov. Celková zastavaná plocha vrátane odsávacieho a chladiaceho zariadenia je však 4500 krát 6000 milimetrov. Celková hmotnosť stroja je 7 ton, preto vyžaduje vystuženú betónovú podlahu.
 
-The CNC controller is the Siemens 840D powerline or solutionline, as already mentioned.
+Riadiacim systémom CNC je, ako už bolo spomenuté, Siemens 840D powerline alebo solutionline.
 
-These specifications are from the official DMG MORI documentation and are consistent across multiple student thesis reports from CE5AM MTF STU Trnava from 2013 to 2017.
+Tieto parametre pochádzajú z oficiálnej dokumentácie spoločnosti DMG MORI a zhodujú sa vo viacerých študentských záverečných prácach z CE5AM na MTF STU v Trnave z rokov 2013 až 2017.
 
-[Estimated speaking time: ~55 seconds]
+[Odhadovaný čas prednesu: ~55 sekúnd]

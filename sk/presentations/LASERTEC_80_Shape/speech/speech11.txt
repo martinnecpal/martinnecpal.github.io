@@ -1,14 +1,14 @@
-SLIDE 11 — Surface Texture Examples: CE5AM MTF STU Trnava
-==========================================================
+SNÍMKA 11 — Príklady povrchových textúr: CE5AM MTF STU Trnava
+=============================================================
 
-These two diagrams are taken directly from student research conducted on the LASERTEC 80 Shape at CE5AM.
+Tieto dva diagramy pochádzajú priamo zo študentského výskumu realizovaného na stroji LASERTEC 80 Shape v CE5AM.
 
-On the left is the design of a hexagonal dimple array. The dimples are arranged in a regular hexagonal pattern with a centre-to-centre pitch of 0.4 millimetres. Each individual dimple has a diameter of 0.1 millimetres. This geometry was chosen to maximise tribological benefit while keeping the total textured area to approximately 6 percent of the total surface. Research has shown that coverage in the range of 5 to 10 percent is optimal for reducing friction without disrupting the load-bearing capacity of the surface.
+Vľavo je návrh hexagonálneho poľa jamiek. Jamky sú usporiadané v pravidelnom hexagonálnom vzore s roztečou stredov 0,4 milimetra. Každá jamka má priemer 0,1 milimetra. Táto geometria bola zvolená tak, aby sa maximalizoval tribologický prínos a zároveň aby textúrovaná plocha tvorila približne 6 percent celkového povrchu. Výskum ukázal, že pokrytie v rozsahu 5 až 10 percent je optimálne na zníženie trenia bez narušenia nosnosti povrchu.
 
-On the right are the cross-sectional profiles of two texture variants. Variant A — the shallow texture — has a depth of 10 micrometres and a diameter of 100 micrometres. Variant B — the deep texture — has a depth of 40 micrometres with the same 100 micrometre diameter. Both were machined using the LASERTEC 80 Shape.
+Vpravo sú profily prierezov dvoch variantov textúry. Variant A, plytká textúra, má hĺbku 10 mikrometrov a priemer 100 mikrometrov. Variant B, hlboká textúra, má hĺbku 40 mikrometrov pri rovnakom priemere 100 mikrometrov. Oba varianty boli obrobené na stroji LASERTEC 80 Shape.
 
-These textures were produced using two strategies: hatching — parallel scan lines filling the dimple area — and contouring — following the outline of the dimple. Comparative experiments showed differences in the resulting surface roughness and dimensional accuracy depending on which strategy was used.
+Textúry boli vytvorené dvoma stratégiami: šrafovaním, teda paralelnými skenovacími čiarami, ktoré vypĺňajú plochu jamky, a konturovaním, teda sledovaním obrysu jamky. Porovnávacie experimenty ukázali rozdiely vo výslednej drsnosti povrchu a rozmerovej presnosti v závislosti od použitej stratégie.
 
-The layer removal depth was approximately 1 micrometre per pass, meaning the shallow 10 micrometre texture required about 10 passes, and the deep 40 micrometre texture required approximately 40 passes.
+Hĺbka úberu jednej vrstvy bola približne 1 mikrometer na prechod, čo znamená, že plytká textúra s hĺbkou 10 mikrometrov si vyžiadala asi 10 prechodov a hlboká textúra s hĺbkou 40 mikrometrov približne 40 prechodov.
 
-[Estimated speaking time: ~70 seconds]
+[Odhadovaný čas prednesu: ~70 sekúnd]
