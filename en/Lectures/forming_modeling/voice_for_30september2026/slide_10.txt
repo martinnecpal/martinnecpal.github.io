@@ -1,0 +1,6 @@
+Solving analytical models: MATLAB · Python · GAMS
+
+Analytical does not mean "without software". Most analytical models today are solved with a script.
+The table shows how forming problems map onto types of solvers. A closed-form formula, such as the drawing force, is simply evaluated – NumPy or MATLAB. The neutral point in rolling is a nonlinear equation – fzero in MATLAB, brentq in Python. Forging by the slab method or von Kármán's rolling equation is an ordinary differential equation – ode45 or solve_ivp. Derivations can be done symbolically in SymPy. The upper bound with an optimum die angle is a nonlinear optimisation problem – fmincon or GAMS with the CONOPT solver. And if you plan pass schedules where the number of passes must be an integer, you have a mixed-integer problem – that is where GAMS with BARON or Pyomo are strong. There are also complete open frameworks, for example PyRolL from TU Freiberg for groove rolling.
+On the right is our upsetting example in Python – about ten lines. We reduce the height step by step, update the radius from volume constancy, integrate the pressure and print the force.
+You can see how the force grows as the height decreases. That is the force–stroke curve – exactly the curve DEFORM will give you in the lab.

@@ -1,0 +1,4 @@
+Video: dedicated extrusion simulation (QForm)
+
+A last short video: extrusion of an aluminium profile in QForm. Watch how the material flows through a porthole die and how different parts of the profile leave the die at different speeds – exactly this difference causes a bent or twisted profile.
+Below the video you will find links to the AutoForm channel, DualSPHysics and PyRolL if you want to explore further at home.

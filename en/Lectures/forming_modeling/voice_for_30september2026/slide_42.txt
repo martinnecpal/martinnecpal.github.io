@@ -1,0 +1,12 @@
+Methods and the software that implements them
+
+This table is an overview.
+Inverse one-step methods start from the finished part and unfold it into a flat blank. They are in AutoForm, in Ansys Forming One Step and in PAM-STAMP, and they are used to determine the blank shape and for quick feasibility assessment.
+The finite volume method uses a fixed Eulerian mesh – Simufact FV for hot forging; QForm Extrusion is a dedicated tool for aluminium extrusion.
+SPH – smoothed particle hydrodynamics – is a meshless method with Lagrangian particles. It is offered by DualSPHysics and LS-DYNA, for extreme deformations, metal injection moulding or friction stir welding.
+DEM – the discrete element method – models individual grains in contact. EDEM, LIGGGHTS or Yade are used for powder die filling.
+Multiscale methods – cellular automata, crystal plasticity, phase field – in DAMASK or in the DEFORM microstructure module, for recrystallisation, texture and earing.
+Data-driven methods – neural networks and reduced-order models trained on FEM – in Python with PyTorch or via the DEFORM-API.
+Analytical frameworks such as PyRolL combine analytical models into a complete rolling pass design.
+And physical simulation on a Gleeble machine reproduces the strain, strain-rate and temperature history on a specimen – to measure flow curves and validate models.
+I will also mention other major dedicated programs: AutoForm, which is the standard for sheet metal in car plants, and QForm and FORGE for bulk forming. They exist alongside the five we covered in detail.

@@ -1,0 +1,7 @@
+Ansys Forming — stamping with the LS-DYNA solver
+
+Program number one: Ansys Forming.
+It is a complete application for sheet metal stamping. Preprocessing, calculation and postprocessing are in one graphical environment. Underneath runs the LS-DYNA solver – explicit for the forming itself, implicit for gravity and springback.
+The vendor is Ansys, which has been part of Synopsys since 2025. The product itself is fairly young – the first version was released as 2022 R1. Before that, LS-DYNA users worked with older preprocessors such as eta/DYNAFORM or the metal forming module of LS-PrePost.
+You can create four types of projects: cold stamping, hot stamping – that is press hardening of boron steels, typical for B-pillars – hemming, still in beta, and One Step, a fast inverse method that we will meet again in Part IV.
+And the target user is in the last bullet: process engineers and tool makers. You do not need to be an FEM expert. The picture shows a car hood inner panel.

@@ -1,0 +1,5 @@
+Today's agenda
+
+This is the plan for the next two hours. We go without a break, so I will keep a steady pace.
+About fifteen minutes of analytical methods. Then roughly forty minutes on four programs: Ansys Forming, Simufact Forming, Abaqus and Moldflow. Then the main part – thirty minutes of DEFORM. Next, fifteen minutes of special simulation software, and the last eight minutes for the summary and review questions.
+DEFORM is at the end on purpose. Once you have seen four other programs, you will understand much better what is typical of DEFORM and why we chose it for the lab sessions.

@@ -1,0 +1,4 @@
+Use cases from research and industry
+
+Finally, use cases from research and industry.
+Closed-die forging of a rib-web part was analysed by UBET and verified on plasticine models – both the forces and the material flow agreed. Extrusion of aluminium profiles with an extrusion ratio above twenty-five was simulated by the finite volume method, so no remeshing was needed, and combined with neural networks and genetic algorithms to optimise the die. Metal injection moulding of a 17-4 PH feedstock was simulated by SPH in DualSPHysics and verified by real injections. Powder die filling was simulated by DEM and the density was passed as input to an FEM compaction model. Earing in deep drawing of aluminium sheet was predicted by crystal plasticity from the texture. Grain size in hot forging was predicted by cellular automata coupled with DEFORM-2D. And springback in bending was predicted by a neural network trained on FEM results.

@@ -1,0 +1,4 @@
+Video: Autodesk Moldflow overview
+
+A short look at Moldflow. Watch how the flow front advances through the cavity, and watch the places where two fronts meet – those are weld lines.
+Where the flow fronts meet, the finished part has a weak spot, so designers try to move it away from loaded areas.

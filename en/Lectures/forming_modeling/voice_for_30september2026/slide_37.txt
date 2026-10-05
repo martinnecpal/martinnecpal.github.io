@@ -1,0 +1,4 @@
+Video: DEFORM — simulation of metal forming processes
+
+Let us see DEFORM in action. This is an overview video from SFTC itself. Watch for three things you already know: remeshing during forging, the force–stroke curve and the sequence of multiple operations.
+Everything you have seen, you will do yourselves in the lab – but we will start with a much simpler part.

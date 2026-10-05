@@ -1,0 +1,4 @@
+Video: Ansys Forming
+
+Let us see it in motion. This is an introductory video from Ansys. While watching, follow three things: the blank, the blank holder with draw beads and, at the end, the colour display of the forming limit diagram.
+Did you see the colours on the part? Green is safe, yellow is marginal, red means a crack. That is the forming limit diagram projected onto the geometry – the most common result of a sheet metal stamping simulation.

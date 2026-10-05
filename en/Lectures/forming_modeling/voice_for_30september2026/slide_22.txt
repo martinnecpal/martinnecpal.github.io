@@ -1,0 +1,5 @@
+Abaqus example: axisymmetric deep drawing
+
+To show you what "build everything yourself" means, here is a deep drawing model in Abaqus/CAE – seven steps, one for each module.
+Part: the blank is a deformable axisymmetric shell; the punch, die and blank holder are analytical rigid lines. Property: steel, Young's modulus 200 gigapascals, Poisson's ratio 0.3 and a flow curve. Step: a dynamic explicit step lasting seven milliseconds. Interaction: penalty friction with mu 0.1 between the blank and the die and between the blank and the blank holder. Load: the punch moves 60 millimetres with a smooth step amplitude – that smooth start and stop keeps the calculation quasi-static. Mesh: only the blank is meshed, refined at the radii. Results: equivalent plastic strain PEEQ, thickness STH and punch force.
+Compare this with Ansys Forming, where the same model is a template filled in with a few clicks. That is both the price and the value of flexibility.

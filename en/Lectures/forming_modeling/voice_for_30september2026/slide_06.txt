@@ -1,0 +1,3 @@
+Part I — Analytical methods of forming
+
+Part one: analytical methods of forming. These are closed-form or semi-analytical models. They are fast and transparent and – this is important – they are the reference against which you should check every FEM result you ever produce.

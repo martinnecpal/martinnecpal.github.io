@@ -1,0 +1,1 @@
+Flow stress and friction. Tau equals m times k, where m goes from 0 to 1.

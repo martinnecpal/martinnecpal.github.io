@@ -1,0 +1,7 @@
+Motivation: from press-shop trials to virtual try-out
+
+Let me start with a question. Imagine you have to bring a new forging into production. How many tool trials would you expect before the first good part comes out of the press?
+Without simulation, the honest answer from practice is "several". Look at the upper loop in the diagram: you design the tool, manufacture it, try it on the press, find a defect – a fold, an underfill, a crack – and go back to modify the tool. Each such loop costs weeks and a lot of money. Forging dies and stamping tools easily cost tens of thousands of euros.
+There is a second argument too. Most of the cost of a product is determined already at the design stage, long before production starts. Decisions made early are cheap to change on paper and very expensive to change in steel.
+Simulation moves this loop into the computer – that is the red loop at the bottom. You change the preform, the die radius or the lubricant and run the calculation again. That takes hours, not weeks.
+The result is fewer tool modifications, faster production ramp-up and less material lost in flash and scrap. But note the sentence at the bottom: validation on the press is still necessary. Simulation does not replace the press trial – ideally it reduces it to one.

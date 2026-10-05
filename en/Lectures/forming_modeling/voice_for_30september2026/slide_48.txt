@@ -1,0 +1,10 @@
+Review questions to check your knowledge from the lecture
+
+Question one: Why is the contact pressure in upsetting highest in the centre, and what increases this peak?
+Question two: Is the upper bound force greater or smaller than the real one – and why is that useful?
+Question three: Explicit or implicit – which solver for stamping, which for springback?
+Question four: What is the difference between the Lagrangian and the Eulerian description?
+Question five: Why is the physics in Moldflow different from that in DEFORM?
+Question six: Which two inputs in DEFORM affect the result the most, and what is the friction factor m?
+Question seven: Name one damage model and one wear model in DEFORM and what they predict.
+Question eight: When would you use the inverse one-step method or a neural network surrogate instead of full FEM?

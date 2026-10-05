@@ -1,0 +1,10 @@
+Questions that forming simulation answers
+
+What does a process engineer actually want to know from a simulation? I have summarised it in six questions.
+First: will the die cavity fill? Will there be no underfill, lap, fold or piping?
+Second: what press do I need? The simulation gives force and energy as a function of stroke.
+Third: will the part crack or neck? In bulk forming we look at damage, in sheet metal at the forming limit diagram and thinning.
+Fourth: will the part keep its shape? Springback in sheet metal, warpage in plastic parts, distortion after heat treatment.
+Fifth: what will the tool life be? Tool stress, wear and temperature.
+And sixth: what is inside the part? Grain size, phases, hardness.
+The picture shows a sequence of several rolling passes in DEFORM. Remember these six questions. Every program we see today answers some of them, and the review questions at the end will come back to this list.

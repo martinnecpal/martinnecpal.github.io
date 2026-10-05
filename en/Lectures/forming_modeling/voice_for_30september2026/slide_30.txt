@@ -1,0 +1,5 @@
+The DEFORM product family
+
+DEFORM is not one program but a whole family.
+DEFORM-2D solves axisymmetric and plane problems – that is where our first lab sessions start. DEFORM-3D solves full three-dimensional deformation, thermal and microstructure problems. PREMIER is the complete package with everything. FORMING EXPRESS is a simplified system for common processes. DEFORM-HT is for heat treatment – carburising, quenching, tempering. DEFORM-3D Machining has templates for turning, drilling and milling. And then there are modules: microstructure, design of experiments and optimisation, ring rolling, open-die forging, shape rolling and extrusion.
+The list of processes at the bottom is long: hot, warm and cold forging, rolling, extrusion, drawing, heading, tube piercing, spinning, blanking, riveting, clinching, powder compaction and even shot peening.

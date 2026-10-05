@@ -1,0 +1,8 @@
+Simufact Forming — two solvers in one program
+
+Program number two: Simufact Forming.
+It is process-oriented software for bulk and sheet metal forming. It comes from the company Simufact in Hamburg, was acquired by MSC Software and is today part of the Hexagon group. The range of processes is wide: forging, cold heading, extrusion, ring rolling, open-die forging, fine blanking and also mechanical joining – self-pierce riveting and clinching, which are important in car body assembly – plus heat treatment.
+What is special is that Simufact has two solvers, and this table is the key.
+The finite element solver is Lagrangian: the mesh moves together with the material. It uses hexahedra or tetrahedra and needs remeshing when the elements become distorted. It is the choice for cold forming, sheet metal, tool stress and joining. It is based on the MSC Marc solver.
+The finite volume solver is Eulerian: the mesh is fixed in space and the material flows through the cells. That is why it needs no remeshing. It is ideal for three-dimensional hot closed-die forging, where the material flows into the flash. It comes from the MSC SuperForge program.
+You can switch between FE and FV from one operation to the next. And since 2022 the FV solver runs in parallel – up to four times faster. Remember the words Lagrangian and Eulerian; we will come back to them in Part IV.

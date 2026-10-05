@@ -1,0 +1,6 @@
+Drawing and extrusion: closed-form results
+
+Two more classical results, this time for drawing and extrusion.
+On the left is Sachs's formula for the wire drawing stress, derived by the slab method. B is mu times the cotangent of the die angle, and the bracket contains the area ratio. There is a natural limit: the drawing stress cannot exceed the flow stress of the drawn wire, otherwise the wire breaks instead of being drawn. From this condition you get the maximum reduction per pass.
+On the right is a simplified upper bound result for extrusion through a conical die. The extrusion pressure divided by the flow stress has three terms. The first is the ideal work – the natural logarithm of the extrusion ratio. The second is friction, and it decreases as the die angle grows, because the contact length gets shorter. The third is the redundant, or shear, work, and it grows with the die angle, because the material has to change direction more sharply.
+You do not need to memorise the formula – see the note at the bottom, it is a didactic form. What matters is the structure: one term grows with the die angle, the other decreases. So there must be an optimum die angle. And as soon as we look for an optimum, the analytical model becomes an optimisation problem. That brings us to the next slide.

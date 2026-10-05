@@ -1,0 +1,6 @@
+DEFORM in our lab sessions
+
+A few practical words about the lab sessions.
+We start with upsetting a cylinder in DEFORM-2D, axisymmetric. Then you compare the force–stroke curve with the slab method from Part I – yes, with the formula from slide 8. Then forward extrusion, where we look at the die angle, friction and damage. Then closed-die forging in DEFORM-3D with die filling and folds. And finally your assignment.
+Please bring your notes from Part I to the first lab session. And get used to checking results as you go: is the force realistic compared with the analytical estimate? Has the volume been preserved? How many times did remeshing occur?
+Assessment: the lab assignment gives at most 20 points, the written exam at most 80.

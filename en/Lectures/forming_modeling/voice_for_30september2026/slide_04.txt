@@ -1,0 +1,6 @@
+Where today's lecture fits
+
+A quick recap of last week's modelling chain. We start with a real process, idealise it into a physical model, describe it with equations – that is the mathematical model – and then solve it, either analytically or numerically with software. At the end comes verification and validation by experiment.
+Today we deal with steps three and four – the highlighted boxes. Part I of the lecture is the analytical solution of the mathematical model. Parts II to IV are numerical models and software.
+On the right you can see how this connects to the rest of the course: next week material models, then preprocessing and examples of sheet and bulk forming.
+And in the lab sessions: DEFORM. So today's Part III is your toolkit for the whole semester.

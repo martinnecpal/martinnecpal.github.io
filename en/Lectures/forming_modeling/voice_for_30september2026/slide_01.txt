@@ -1,0 +1,6 @@
+Title slide
+
+Good morning, and welcome to the second lecture of the course Modelling and Simulation of Processes – Forming.
+Last week we discussed what modelling and simulation actually are. We distinguished between a physical and a mathematical model, and we went through the chain that leads from a real forming process to a model we can compute.
+Today we look at the tools. We start with the oldest ones – analytical methods that you can solve with pencil and paper or with a short script. Then we go through five simulation programs used in industry and in research. We spend the most time on the last of them, DEFORM, because you will work with it in the lab sessions all semester. Finally, we look at special simulation software that goes beyond the classical finite element method.
+The picture on the right is a closed-die forged yoke simulated in DEFORM-3D. By the end of today's lecture you should know how a picture like this is created and what a process engineer reads from it.

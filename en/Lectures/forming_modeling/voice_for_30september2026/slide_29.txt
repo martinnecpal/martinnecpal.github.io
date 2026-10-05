@@ -1,0 +1,6 @@
+DEFORM — from ALPID to a complete process simulator
+
+DEFORM is a finite element system for forming, heat treatment, machining and joining. It is supplied by SFTC – Scientific Forming Technologies Corporation – from Columbus, Ohio, a fairly small company of about thirty people.
+Its roots go back to the ALPID program, developed at the Battelle institute in Columbus with funding from the U.S. Air Force. ALPID was the first practical finite element tool for production metal forming. The theory is in the book by Kobayashi, Oh and Altan, "Metal Forming and the Finite Element Method", from 1989 – still a classic.
+Timeline: DEFORM-2D in 1989; in 1991 former Battelle employees founded SFTC and took over DEFORM in the same year. DEFORM-3D followed in 1993. Today we have version 14.1, the service release 14.1.1 from 2026, and version 15 has been announced.
+It is used in aerospace – for superalloy and titanium turbine discs – in the automotive industry, in fastener production, in the oil industry and in many research institutes. Its openness for research is one of the reasons why universities like it.

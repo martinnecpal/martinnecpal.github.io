@@ -1,0 +1,3 @@
+Part II — Forming simulation software
+
+Part two: forming simulation software. We will go through four programs – Ansys Forming, Simufact Forming, Abaqus and Moldflow – and then, in Part III, the fifth one, DEFORM.

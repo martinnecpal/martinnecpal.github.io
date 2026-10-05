@@ -1,0 +1,9 @@
+Summary
+
+Let me sum up today in five sentences – one for each part.
+Analytical methods – the slab method, upper bound and slip lines – give a quick force estimate and are the first check of every FEM result.
+Dedicated software automates the process: Ansys Forming for sheet metal stamping, Simufact for bulk forming and joining, Moldflow for polymers.
+General-purpose FEM such as Abaqus is flexible, but you build everything yourself.
+DEFORM is an implicit rigid-viscoplastic FEM program with automatic remeshing, damage, tool wear and microstructure – and it is our tool for the lab sessions.
+And special software goes beyond the limits of classical FEM: finite volumes, particles, discrete elements, inverse methods, multiscale models and AI surrogate models.
+Next week we will go deeper into the most sensitive input of all: material models – elasticity, plasticity, hardening and flow curves.

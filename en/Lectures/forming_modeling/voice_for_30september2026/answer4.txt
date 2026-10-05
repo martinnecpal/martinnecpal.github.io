@@ -1,0 +1,1 @@
+A mesh that moves with the material versus a fixed mesh through which the material flows.

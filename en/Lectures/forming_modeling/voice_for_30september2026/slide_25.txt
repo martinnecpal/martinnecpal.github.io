@@ -1,0 +1,6 @@
+Moldflow: mesh types and defects
+
+Two tables. On the left, mesh types – a key concept in Moldflow.
+Midplane is a shell mesh on the mid-surface of the wall. It uses the Hele-Shaw approximation, which assumes that the flow length is much greater than the wall thickness – the "four to one" rule. It is the fastest. Dual Domain uses matched surface meshes on both sides of the part, created directly from CAD – suitable for thin simple parts. 3D uses tetrahedra and solves the full three-dimensional flow without the Hele-Shaw assumption – for thick, massive parts, at the cost of a much longer calculation. And beam elements are used for runners and cooling channels.
+On the right are typical defects and what the simulation suggests. Short shot: add or move a gate, thicken the wall, raise the melt temperature. Weld lines: move the gate so that the weld lines fall into a non-critical area. Air traps: venting. Sink marks: core out thick sections, extend packing. Warpage: balance the cooling, keep a uniform wall thickness.
+The analysis sequence is at the bottom: gate location, fill, pack, cool, warp. And for fibre-reinforced materials, the fibre orientation is passed on to a structural FEM analysis.

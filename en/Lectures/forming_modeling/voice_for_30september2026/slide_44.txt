@@ -1,0 +1,6 @@
+Simple examples: inverse method and AI surrogate model
+
+Two more simple examples, both are shortcuts.
+On the left is the inverse one-step method for sheet metal. You take the finished part geometry from CAD, unfold it into a plane in one step and get the shape of the flat blank and an estimate of the strains. Then you check the strains in the forming limit diagram for risk of cracking or wrinkling. It takes minutes instead of hours. The price: it ignores the process history – blank holder, draw beads, contact sequence.
+On the right is a surrogate model for bulk forming. As a design of experiments you run hundreds or thousands of FEM calculations. On them you train a neural network. The network then gives a prediction instantly and an optimiser can search the design space – exactly what we saw for shape rolling in DEFORM. The price: it is valid only within the design space it was trained on. Outside it, it can be badly wrong.
+In both cases the full FEM model remains the reference.

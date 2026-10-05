@@ -1,0 +1,8 @@
+A simple example: one extrusion, four descriptions
+
+This picture explains why special software exists. The same material flowing through a die, described in four ways.
+Lagrangian FEM on the left: the mesh moves together with the material. It is accurate and naturally tracks history, but it distorts, so it needs remeshing. That is DEFORM, Abaqus, Simufact FE.
+Eulerian FVM: the mesh is fixed and the material flows through it. No remeshing, but tracking the free surface and history is harder. Simufact FV and Abaqus CEL.
+SPH: no mesh at all. The material is a set of particles and each particle carries its own history – strain, temperature. It handles extreme deformations. DualSPHysics, LS-DYNA SPH.
+And DEM on the right: here the material is not a continuum at all. Each powder grain is a separate particle touching its neighbours. This is how powder die filling is simulated and the density distribution obtained.
+So each method removes one limitation of Lagrangian FEM: remeshing in the case of FVM and SPH, the continuum assumption in the case of DEM.

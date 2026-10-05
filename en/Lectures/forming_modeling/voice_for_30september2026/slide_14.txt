@@ -1,0 +1,7 @@
+Every program follows the same workflow
+
+Whatever program you use, the workflow always has the same six steps.
+Geometry – usually imported from CAD as STEP, IGES or STL, plus a decision about symmetry. Material – flow curve, thermal data, damage parameters. Mesh – element type, size and remeshing. Boundary conditions – friction, heat transfer, tool motion. Then the calculation itself – solver, time steps, stopping criteria. And finally evaluation – fields, curves, defects and a report.
+Steps one to four are preprocessing; we devote lecture four to it. Step six is postprocessing, lectures five and six.
+Programs differ mainly in how many of steps one to four their templates automate for you. Use this today as a lens for every program: which steps does it do for you?
+And one warning: garbage in, garbage out – what you put into the program is what you get out. The quality of the answer is determined by the flow curve and the friction coefficient far more than by the colours of the plot.

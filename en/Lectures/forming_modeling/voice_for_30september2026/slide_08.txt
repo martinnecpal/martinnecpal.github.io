@@ -1,0 +1,8 @@
+Slab method: upsetting of a cylinder
+
+Let us look at one example in detail: upsetting a cylinder between two flat dies with Coulomb friction.
+If we write the equilibrium of a thin ring of material, we get the first equation: the change of contact pressure along the radius, dp over dr, equals minus two mu p over h. Friction on the die surfaces resists the outward flow of material, and the pressure must rise towards the centre to overcome it.
+By integration we get the pressure distribution: p of r equals the flow stress times the exponential of two mu times R minus r, over h. At the edge, where r equals R, the pressure equals the flow stress. Towards the centre it grows exponentially.
+The total force is the integral of this pressure over the contact area. And because volume is conserved, the radius grows as the height decreases: R equals R nought times the square root of h nought over h.
+Look at the diagram. The pressure peaks in the centre – this is the well-known friction hill. The red curve is for mu equal to 0.3, the grey dashed one for 0.1. Higher friction or a flatter workpiece – smaller h – makes the hill steeper and the force larger.
+Why do I show this example in particular? Because upsetting is the first task you will simulate in DEFORM. The analytical force from this formula is your first check of whether the DEFORM result is realistic at all.

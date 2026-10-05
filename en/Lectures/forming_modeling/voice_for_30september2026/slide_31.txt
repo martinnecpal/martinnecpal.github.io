@@ -1,0 +1,7 @@
+The DEFORM solver: rigid-viscoplastic formulation
+
+Now let us look under the bonnet. This equation is the heart of the classical DEFORM solver – the rigid-viscoplastic, or flow, formulation.
+We write the functional pi. The first term is the plastic deformation power: effective stress times effective strain rate, integrated over the volume. The second term is a penalty term: K is a large constant and multiplies the square of the volumetric strain rate. It enforces incompressibility – plastic deformation does not change volume. The third term is the work of surface tractions. The actual velocity field is the one for which the variation of pi equals zero.
+The unknowns are velocities, not displacements. In each step the system is solved by the Newton-Raphson method or by direct iteration – implicitly, with an updated Lagrangian mesh.
+Elastic strains are neglected. For large plastic flow, such as forging, this is perfectly acceptable. When elasticity matters – springback, residual stresses, tool stresses – DEFORM offers elasto-plastic and elastic objects. And for steady-state or rotary processes, such as ring rolling or extrusion, ALE and steady-state solvers are available.
+Note the link to Part I. Minimising a power functional – that is exactly the idea of the upper bound method. The difference is that here the velocity field is not guessed by hand but discretised by finite elements and found by the computer.

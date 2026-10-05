@@ -1,0 +1,9 @@
+Classical analytical methods of plasticity theory
+
+This table is a map of the classical methods.
+The slab method, also called the elementary theory of plasticity, takes a thin slab of material and writes the force equilibrium for it, assuming homogeneous deformation. We get the pressure distribution and the total force. It is used for upsetting, forging, rolling and drawing.
+The slip-line method uses the characteristics of the stress field. It gives exact solutions, but only for plane strain and a rigid-perfectly plastic material – typical examples are indentation, extrusion and machining.
+The upper bound method assumes a kinematically admissible velocity field and minimises the power. Its important property is that the calculated force is always greater than or equal to the real one. That is safe when choosing a press. Its elemental version, UBET, is used for closed-die forging and die filling.
+The lower bound method is the opposite: a statically admissible stress field and a force less than or equal to the real one.
+And visioplasticity is a hybrid – you measure how a grid on the specimen deforms and from that you calculate strain rates and stresses.
+What they have in common is written at the bottom: rigid-plastic material, constant or mean flow stress, a simple friction law and simple geometry. Remember these assumptions – these are exactly what the software removes.

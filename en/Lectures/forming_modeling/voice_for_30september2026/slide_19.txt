@@ -1,0 +1,5 @@
+Simufact Forming — defect prediction
+
+What does Simufact tell us about defects?
+Picture a shows a result called "flow defect zones". It detects piping and folds. Piping is typical of forging and extrusion: material flows away from the end face and leaves a funnel-shaped cavity, which leads to underfilled dies and voids. Without simulation it is very hard to predict. A fold forms where the material surface folds over itself and later shows up as a crack-like defect.
+Picture b is an animation of crack initiation and propagation based on damage. The crack grows in the direction of the gradient of the calculated damage. In 2D the mesh is split, in 3D the damaged elements are deleted. This is used for blanking, fine blanking and self-pierce riveting.

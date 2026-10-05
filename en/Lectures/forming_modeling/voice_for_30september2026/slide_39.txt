@@ -1,0 +1,7 @@
+DEFORM today: V14.1 → V15.0
+
+Where is DEFORM heading? This table is from the SFTC user group meeting in May 2026.
+The solver is faster: elastic tools can reuse their stiffness matrix, which gives up to almost three times faster calculation – especially in rolling – and the new iterative elasto-plastic solver is more than fifty percent faster than the previous one. In spinning, a quick evaluation method cuts the calculation from tens of hours to about fourteen minutes.
+The most interesting row is AI: a U-Net neural network, trained on thousands of DEFORM runs, predicts multi-pass shape rolling almost instantly, and an optimiser uses it to design roll grooves.
+Further: a boiling model for quenching, a special mesh in the clearance zone for blanking, and a Python interface – DEFORM-API – for scripting and automatic reports.
+The main idea: forming simulation is moving towards automation and AI surrogate models trained on FEM results. We will come back to this in Part IV.

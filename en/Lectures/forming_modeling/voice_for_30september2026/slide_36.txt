@@ -1,0 +1,7 @@
+Microstructure and heat treatment
+
+DEFORM also predicts what happens inside the material.
+Picture a is a forged Waspaloy turbine disc with the calculated grain size. For aerospace discs, the customer specifies not only the shape but also the grain size in each region. That is why microstructure prediction exists.
+Picture b is an induction-hardened gear – a heat treatment application. DEFORM-HT predicts phase fractions, hardness, distortion and quench cracking.
+The equation is the JMAK model – Johnson, Mehl, Avrami, Kolmogorov – for the recrystallised volume fraction X. When the strain exceeds the critical value epsilon c, recrystallisation starts and the fraction follows this S-shaped exponential curve. Beta d and k d are material constants, and epsilon 0.5 is the strain at which half of the material is recrystallised.
+Besides dynamic and static recrystallisation, DEFORM models grain growth, phase fractions, hardness, precipitates and even crystallographic texture using crystal plasticity.

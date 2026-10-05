@@ -1,0 +1,7 @@
+Abaqus: large deformations and damage
+
+Remeshing is the central problem of Lagrangian bulk forming, and Abaqus offers several ways around it.
+ALE adaptive meshing – Arbitrary Lagrangian-Eulerian – moves the nodes to reduce distortion while keeping the same mesh topology. It is used for forging, rolling and extrusion in Explicit; you can see it in the picture. Adaptive remeshing in Standard refines the mesh where the error is large. Mesh-to-mesh mapping creates a completely new mesh and maps the solution onto it – used for very large deformations and forging operations. And the coupled Eulerian-Lagrangian method, CEL, handles extreme material flow.
+For damage, Abaqus offers a whole family of criteria: ductile, Johnson-Cook, shear and, for sheet metal, FLD, FLSD, MSFLD and the Marciniak-Kuczynski model.
+And for accurate springback: at least five to seven integration points through the thickness and a kinematic hardening law.
+Remember the remeshing problem – DEFORM solves it with fully automatic remeshing, and that is one of the reasons why it became so established in forging.

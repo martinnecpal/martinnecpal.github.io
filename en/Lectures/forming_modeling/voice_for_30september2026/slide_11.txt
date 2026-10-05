@@ -1,0 +1,6 @@
+Why analytical methods are not enough
+
+So why do we need expensive software at all?
+Look at the table. Analytical methods handle simple geometry – a cylinder, a strip, a cone. Software handles arbitrary 3D geometry from CAD. Analytical methods use a constant or mean flow stress; software uses it as a function of strain, strain rate and temperature, plus anisotropy and damage. Analytical methods give force and mean pressure; software gives full fields – strain, temperature, stress, defects, even microstructure.
+On the other hand, an analytical answer takes seconds and every term is visible. Software computes for minutes to days and is a black box that has to be checked.
+So the rule is simple: use analytical results for the first estimate and to check FEM results – and leave the rest to the software. That brings us to Part II.

@@ -24,6 +24,11 @@ lang: "en"
       <td><a href="23september2026.html" target="_blank" rel="noopener">Introductory lecture</a></td>
       <td>Course information and assessment, motivation, overview of forming processes, and approaches to modelling and simulation. (Substituting for Prof. Peterka)</td>
     </tr>
+    <tr>
+      <td>30 Sep 2026</td>
+      <td><a href="30september2026.html" target="_blank" rel="noopener">Software and methods for forming process simulation</a></td>
+      <td>Analytical methods of plasticity theory, software overview (Ansys Forming, Simufact Forming, Abaqus, Moldflow), DEFORM as the lab software, and special simulation software.</td>
+    </tr>
   </tbody>
 </table>
 

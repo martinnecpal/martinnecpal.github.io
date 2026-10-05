@@ -1,0 +1,4 @@
+References and further reading
+
+If you want to read further, the most important source for this course is our textbook by Necpal and Sobota. For the theory of the finite element method in forming, the classic is the book by Kobayashi, Oh and Altan. For analytical methods, Hosford and Caddell, and in Slovak, Teória tvárnenia by Bílik, Kapustová and Ridzoň. The vendors' documentation for all five programs is also listed. All pictures and videos belong to their owners and were used for teaching purposes only.
+See you in the lab – and do not forget your notes on the slab method.

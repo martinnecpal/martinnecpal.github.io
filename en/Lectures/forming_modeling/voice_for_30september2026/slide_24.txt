@@ -1,0 +1,6 @@
+Autodesk Moldflow — forming of polymers
+
+Program number four: Moldflow. You may be asking why a plastics program is in a course on metal forming.
+The answer: the philosophy is the same – virtual try-out of the mould instead of the die – but the physics is different. Moldflow does not compute solid plasticity. It computes the flow of a non-Newtonian viscous polymer melt with heat transfer. Viscosity follows the Cross-WLF model, the pressure–volume–temperature behaviour follows the Tait equation. It is also relevant for us through metal injection moulding.
+Moldflow was founded in 1978 in Melbourne and has belonged to Autodesk since 2008. There is Adviser for designers and Insight for analysts, with the Synergy interface and the free Communicator viewer. The database contains almost fourteen thousand thermoplastics.
+On the right is the injection moulding cycle: mould closing, filling – where weld lines, air traps and short shots form – packing, which decides shrinkage and sink marks, cooling, which is usually the longest part of the cycle, and ejection, after which the part warps.

@@ -1,0 +1,4 @@
+Video: fold formation in forging a fork head
+
+Here is a short Simufact video on exactly this problem: forging a fork head. The original process design clearly tended to form a fold in the transition region. Watch where the material flows back onto itself.
+The simulation revealed the fold, and the preform was changed before any tool was manufactured. Remember this – in DEFORM you will find the same type of defect using point tracking and flow lines.

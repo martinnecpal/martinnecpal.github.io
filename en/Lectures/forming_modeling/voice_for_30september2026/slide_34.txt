@@ -1,0 +1,5 @@
+Automatic remeshing and multiple operations
+
+Two features that made DEFORM established in forging.
+The first is automatic remeshing. The Lagrangian mesh deforms together with the material. When an element becomes degenerate or penetrates the tool, DEFORM automatically creates a new mesh and continues. In 3D it uses tetrahedra, in 2D quadrilaterals, optionally hexahedra, and mesh windows allow you to refine critical regions, such as a die corner. But each remeshing interpolates state variables from the old mesh to the new one, and a little volume is lost each time. So keep the number of remeshings reasonable and always check the volume at the end.
+The second is Multiple Operations. On the right is a typical process route: furnace heating, transfer to the press with air cooling, one or more forging blows, flash trimming, heat treatment and machining. In DEFORM this whole chain is one project that runs automatically, and the history – strain, temperature, microstructure – is passed from each step to the next.

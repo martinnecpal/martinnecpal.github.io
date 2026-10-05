@@ -1,0 +1,7 @@
+Abaqus — the general-purpose tool
+
+Program number three: Abaqus from Dassault Systèmes SIMULIA. There is a free Learning Edition limited to about a thousand nodes – enough for 2D and axisymmetric forming problems if you want to try it at home.
+The main difference: Abaqus has no forming templates. There is no "die", "blank holder" or "draw bead" button. You build parts, contacts and steps yourself. It is slower, but extremely flexible – you can write your own material law in a UMAT or VUMAT subroutine. That is why it is so popular in research.
+Abaqus has two solvers. Explicit is used for forming with complex contact and large deformations; it has no convergence problems, but the stable time step is very small, so we often use mass scaling. Standard is implicit: true equilibrium, large increments, but convergence difficulties with contact. It is used for springback, smooth quasi-static loading and heat transfer.
+The industry standard is: form in Explicit, import into Standard and calculate springback.
+And there is one check you should always do in Explicit – it is in the red box: the ratio of kinetic energy to internal energy, in Abaqus ALLKE over ALLIE, should stay below about five to ten percent. This proves that by speeding up the process you have not turned quasi-static forming into a dynamic impact.

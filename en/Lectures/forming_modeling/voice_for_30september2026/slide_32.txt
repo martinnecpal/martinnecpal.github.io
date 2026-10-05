@@ -1,0 +1,8 @@
+Working with DEFORM: Pre → Simulation → Post
+
+This is how you will work with DEFORM in the lab – three programs.
+The preprocessor, where you define the objects, their geometry and mesh, the material, tool motion, inter-object conditions – friction and heat transfer – stopping criteria and the number of steps. From this you generate the database: the KEY file becomes the DB file. The database is the entire simulation – back it up.
+Then the simulation engine performs the FEM calculation with automatic remeshing. It writes message and log files; learn to read them, because that is where you will see convergence problems and remeshing.
+And the postprocessor, where you look at state variables, the force–stroke curve, point tracking, flow lines and damage.
+On the right are the object types. Rigid – tools that do not deform, optionally with heat transfer. Plastic – the workpiece, rigid-viscoplastic. Elastic – for tool stress analysis. Elasto-plastic – for springback and residual stresses. Porous – for powders and sintered materials.
+And DEFORM knows real machine types: hydraulic, mechanical and screw presses and hammers, where the tool motion is governed by energy rather than by a prescribed speed.

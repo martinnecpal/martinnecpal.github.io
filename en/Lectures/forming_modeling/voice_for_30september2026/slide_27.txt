@@ -1,0 +1,8 @@
+Comparison of the five programs
+
+Let us put the five programs side by side, including DEFORM, which comes next.
+Focus: Ansys Forming – sheet metal stamping; Simufact – bulk forming, sheet metal and joining; Abaqus – general-purpose FEM; Moldflow – plastic injection moulding; DEFORM – bulk forming, heat treatment and microstructure.
+Solver: LS-DYNA explicit; FE plus FV; Standard plus Explicit; a flow solver in 2.5D or 3D; and for DEFORM an implicit Lagrangian solver with an ALE option.
+Setup: templates everywhere except Abaqus. DEFORM has templates, but it is also open – you can add your own subroutines.
+Strengths: springback compensation; fast FV hot forging; flexibility; the fill, pack, cool, warp chain; and for DEFORM, remeshing, microstructure and tool wear.
+And the conclusion: there is no "best" software. There is only software suited to a given process and to the question you are asking.

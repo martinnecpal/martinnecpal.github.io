@@ -1,0 +1,8 @@
+Key inputs: flow stress, friction, heat transfer
+
+Three inputs decide most of the answer.
+The first is the flow stress as a function of effective strain, strain rate and temperature. You take it from the material library – steels, aluminium, titanium, superalloys, copper – or from your own compression tests. Newer versions can even predict the flow stress of steels from their chemical composition using a neural network. We cover material models in detail next week.
+The second is friction. In the slab method we used Coulomb friction – shear stress equals mu times pressure. In bulk forming DEFORM mostly uses the shear model: the friction stress is m times k, where k is the shear yield stress, that is, the flow stress over the square root of three. The friction factor m goes from zero – no friction – to one – full sticking.
+The table gives guide values: about 0.08 to 0.12 for cold forming with good lubrication, about 0.2 for warm forming, 0.3 for lubricated hot forging and 0.7 to 1.0 for dry hot forging.
+The third is heat transfer between the die and the workpiece. The heat transfer coefficient can be determined from thermocouple measurements using the Inverse HTC module.
+And the most important point: flow stress and friction are the most sensitive inputs. If your result looks strange, check these two first.

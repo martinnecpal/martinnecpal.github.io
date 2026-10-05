@@ -1,0 +1,7 @@
+Results: from die filling to tool life
+
+What results do we get from DEFORM?
+On the left: die filling, laps and folds, and flow lines using point tracking and the flow net. Fields of effective strain, strain rate, temperature and stress triaxiality. The force–stroke curve and energy for press selection. Tool stress – also in prestressed dies – and tool wear. And about two dozen ductile damage models with an element deletion option if you want to model the crack itself.
+On the right are the two most widely used models.
+The normalised Cockcroft–Latham criterion integrates the ratio of the maximum principal stress to the effective stress over the effective strain. When the integral reaches the critical value C, we expect a crack. Only tensile stress contributes – which is intuitive. It is used for chevron cracks in extrusion and surface cracks in upsetting.
+The Archard wear model: wear depth grows with contact pressure and sliding velocity and decreases with tool hardness. And because hot tools soften, tool temperature has a large effect on wear. That is why thermal simulation of the tool matters.
