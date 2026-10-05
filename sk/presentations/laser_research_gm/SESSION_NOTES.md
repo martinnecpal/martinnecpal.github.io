@@ -1,120 +1,121 @@
-# Session Notes — Laser Micromachining Presentation
-**Date:** 2026-05-28  
-**Session:** Reading 7 diploma theses → categorisation → full presentation build
+# Poznámky k relácii — prezentácia o laserovom mikroobrábaní
+**Dátum:** 2026-05-28  
+**Relácia:** čítanie 7 diplomových prác → kategorizácia → zostavenie celej prezentácie
 
 ---
 
-## What was done in this session
+## Čo sa v tejto relácii urobilo
 
-1. Scanned all 7 PDF theses in `thesis/` directory
-2. Extracted text from practical/results sections of each thesis
-3. Categorised the 7 works into 3 research groups
-4. Created a 19-slide Reveal.js presentation (gradient-modern template)
-5. Extracted images from all 7 PDFs into `images/t1–t7/`
-6. Wrote detailed presenter speech scripts for all 19 slides (in `speech/`)
-7. Wrote narration.json with TTS-ready text
-8. Cleaned up: removed MTF template version, made this directory self-contained
+1. Prehľadalo sa všetkých 7 diplomových prác vo formáte PDF v adresári `thesis/`
+2. Z praktických častí a výsledkov každej práce sa extrahoval text
+3. Sedem prác sa rozdelilo do 3 výskumných skupín
+4. Vytvorila sa prezentácia Reveal.js s 19 snímkami (šablóna gradient-modern)
+5. Zo všetkých 7 PDF sa extrahovali obrázky do `images/t1–t7/`
+6. Pre všetkých 19 snímok sa napísali podrobné texty prednesu (v `speech/`)
+7. Napísal sa súbor narration.json s textom pripraveným na TTS
+8. Upratovanie: odstránila sa verzia so šablónou MTF, adresár je samostatný
 
 ---
 
-## The 7 Theses — Quick Reference
+## 7 prác — rýchly prehľad
 
-| File | Year | Topic | Category |
+| Súbor | Rok | Téma | Kategória |
 |---|---|---|---|
-| `zaverecna_prace.pdf` | 2014 | Chip breaker on carbide insert — laser | C |
-| `zaverecna_prace-1.pdf` | 2014 | Laser micromachining of titanium GRADE 2 | A |
-| `zaverecna_prace-2.pdf` | 2017 | Laser texturing of injection molds (English) | C |
-| `zaverecna_prace-3.pdf` | 2018 | Laser micromachining of sintered carbide WC-Co | A |
-| `zaverecna_prace-4.pdf` | 2013 | Laser structured surfaces — tribology (steel 11373) | B |
-| `zaverecna_prace-5.pdf` | 2014 | Laser structured surfaces — tribology (tool steel 1.2311) | B |
-| `zaverecna_prace-6.pdf` | 2015 | Laser surface texturing — tribology + lubricants (90MnCrV8) | B |
+| `zaverecna_prace.pdf` | 2014 | Lámač triesok na karbidovej doštičke — laser | C |
+| `zaverecna_prace-1.pdf` | 2014 | Laserové mikroobrábanie titánu GRADE 2 | A |
+| `zaverecna_prace-2.pdf` | 2017 | Laserové textúrovanie vstrekovacích foriem (v angličtine) | C |
+| `zaverecna_prace-3.pdf` | 2018 | Laserové mikroobrábanie spekaného karbidu WC-Co | A |
+| `zaverecna_prace-4.pdf` | 2013 | Laserom štruktúrované povrchy — tribológia (oceľ 11373) | B |
+| `zaverecna_prace-5.pdf` | 2014 | Laserom štruktúrované povrchy — tribológia (nástrojová oceľ 1.2311) | B |
+| `zaverecna_prace-6.pdf` | 2015 | Laserové textúrovanie povrchu — tribológia + mazivá (90MnCrV8) | B |
 
-All theses: Institute of Production Technologies, MTF STU Trnava  
-Common machine: **DMG MORI LASERTEC 80 Shape** — CE5AM Centre, MTF STU Trnava
-
----
-
-## Three Research Categories
-
-### A — Laser Parameter Optimisation
-Find the best combination of: pulse frequency · power · scan speed · track spacing  
-Output metric: surface roughness Ra (+ ablation rate for sintered carbide)  
-Method: Taguchi L9 (titanium) and half-factorial 3³/27 experiments (sintered carbide)
-
-**Key findings:**
-- Track spacing is consistently the most influential factor (>40–51% of Ra variance)
-- Scan speed is the least influential (<14%)
-- Cross-hatching produces isotropic surfaces — preferred over hatching
-- Best Ra titanium: 1.17 µm (hatching) / 1.55 µm isotropic (cross-hatching)
-- Results are always machine-specific — cannot transfer between machines
-
-### B — Surface Tribology (Ring Test)
-Create microstructures by laser → measure friction coefficient change with Ring test  
-EU 40 hydraulic press (0–200 kN) · MTF STU Trnava forming laboratory
-
-**Key findings — by study:**
-- Steel 11373 (2013): Wide grooves → f=0.128 (−32%); narrow groove ridges → friction ↑; hemispheres ≈ reference
-- Tool steel 1.2311 (2014): Large structures (500 µm) → f=0.315 (+22%) — material flowed into cavities; suited for grip applications, not lubrication
-- Tool steel 90MnCrV8 (2015): Texture IV + Variocut C462 → f=0.158 (−46%); high-viscosity lubricant negates texture effect
-
-**Universal lesson:** Structure scale and lubricant viscosity must be matched. Too large = mechanical interlocking ↑ friction. Too shallow = no effect. Optimal: depth/diameter ratio 0.1–0.2, texture density 30–40%, low-viscosity lubricant.
-
-### C — Applied Manufacturing
-Use laser to produce a functional part; evaluate dimensional quality and process limitations.
-
-**Chip breaker (2014):**
-- Workflow: Inventor CAD → LpsWin CAM → LASERTEC 80 Shape → ATOS GOM 3D scan
-- Optimal: 60 kHz · 2000 mm/s · ~29 W · 10 µm spacing · 1 µm/layer
-- Max deviation: 0.09 mm · Machining time: 25–30 min/side
-- Verdict: suitable for R&D prototyping; too slow for serial production
-
-**Injection mold texturing (2017):**
-- Workflow: PowerSHAPE CAD → GenBmp → GIMP → LpsWin → LASERTEC 80 Shape → Babyplast injection moulding (HDPE)
-- 3 rounds: textures redesigned from 0.4 mm to 4 mm after first failure
-- 5-axis texturing of complex cavity: feasible but quality degraded at cavity centre
-- Critical finding: texture depth > 1 mm needed for reliable HDPE transfer
-- Best texture: hexagonal (deepest, clearest transfer)
+Všetky práce: Ústav výrobných technológií, MTF STU Trnava  
+Spoločný stroj: **DMG MORI LASERTEC 80 Shape** — centrum CE5AM, MTF STU Trnava
 
 ---
 
-## Presentation Structure
+## Tri výskumné kategórie
 
-19 slides — gradient-modern template (purple/indigo gradient)
+### A — Optimalizácia parametrov lasera
+Nájsť najlepšiu kombináciu: frekvencia pulzov · výkon · rýchlosť skenovania · rozostup dráh  
+Výstupná veličina: drsnosť povrchu Ra (+ rýchlosť ablácie pri spekanom karbide)  
+Metóda: Taguchi L9 (titán) a polovičný faktorový plán 3³/27 experimentov (spekaný karbid)
 
-| Slides | Content |
+**Hlavné zistenia:**
+- Rozostup dráh je konzistentne najvplyvnejším faktorom (> 40 – 51 % variability Ra)
+- Rýchlosť skenovania má najmenší vplyv (< 14 %)
+- Krížové šrafovanie vytvára izotropné povrchy — má prednosť pred šrafovaním
+- Najlepšia Ra pri titáne: 1,17 µm (šrafovanie) / 1,55 µm izotropne (krížové šrafovanie)
+- Výsledky sú vždy špecifické pre stroj — nemožno ich prenášať medzi strojmi
+
+### B — Tribológia povrchu (Ring test)
+Vytvoriť laserom mikroštruktúry → zmerať zmenu koeficientu trenia Ring testom  
+Hydraulický lis EU 40 (0 – 200 kN) · laboratórium tvárnenia MTF STU Trnava
+
+**Hlavné zistenia podľa štúdie:**
+- Oceľ 11373 (2013): široké drážky → f = 0,128 (−32 %); hrebene úzkych drážok → trenie ↑; pologule ≈ referencia
+- Nástrojová oceľ 1.2311 (2014): veľké štruktúry (500 µm) → f = 0,315 (+22 %) — materiál natiekol do dutín; vhodné na uchopenie, nie na mazanie
+- Nástrojová oceľ 90MnCrV8 (2015): Textúra IV + Variocut C462 → f = 0,158 (−46 %); vysokoviskózne mazivo účinok textúry potláča
+
+**Všeobecné ponaučenie:** mierka štruktúry a viskozita maziva sa musia zosúladiť. Príliš veľké = mechanické zachytenie, trenie ↑. Príliš plytké = žiadny účinok. Optimum: pomer hĺbky a priemeru 0,1 – 0,2, hustota textúry 30 – 40 %, mazivo s nízkou viskozitou.
+
+### C — Aplikovaná výroba
+Laserom vyrobiť funkčný diel; vyhodnotiť rozmerovú kvalitu a obmedzenia procesu.
+
+**Lámač triesok (2014):**
+- Postup: Inventor CAD → LpsWin CAM → LASERTEC 80 Shape → 3D sken ATOS GOM
+- Optimum: 60 kHz · 2000 mm/s · ~29 W · rozostup 10 µm · 1 µm/vrstva
+- Max. odchýlka: 0,09 mm · čas obrábania: 25 – 30 min/strana
+- Záver: vhodné na prototypy vo výskume a vývoji; na sériovú výrobu príliš pomalé
+
+**Textúrovanie vstrekovacích foriem (2017):**
+- Postup: PowerSHAPE CAD → GenBmp → GIMP → LpsWin → LASERTEC 80 Shape → vstrekovanie Babyplast (HDPE)
+- 3 kolá: po prvom neúspechu boli textúry prepracované z 0,4 mm na 4 mm
+- Päťosové textúrovanie zložitej dutiny: realizovateľné, ale kvalita v strede dutiny zhoršená
+- Kritické zistenie: na spoľahlivý prenos na HDPE je potrebná hĺbka textúry > 1 mm
+- Najlepšia textúra: šesťuholníková (najhlbšia, najzreteľnejší prenos)
+
+---
+
+## Štruktúra prezentácie
+
+19 snímok — šablóna gradient-modern (fialovo-indigový prechod)
+
+| Snímky | Obsah |
 |---|---|
-| 1–2 | Title + three-category overview |
-| 3–7 | Category A: titanium (design, factors, results) + sintered carbide (design, surface photos) |
-| 8–14 | Category B: Ring test method + 3 tribological studies (setup + results each) |
-| 15–18 | Category C: chip breaker (workflow + scan results) + mold texturing (workflow + 3 rounds) |
-| 19 | Summary table of all 7 theses + cross-cutting themes |
+| 1 – 2 | Titulná snímka + prehľad troch kategórií |
+| 3 – 7 | Kategória A: titán (návrh, faktory, výsledky) + spekaný karbid (návrh, fotografie povrchov) |
+| 8 – 14 | Kategória B: metóda Ring testu + 3 tribologické štúdie (usporiadanie + výsledky každej) |
+| 15 – 18 | Kategória C: lámač triesok (postup + výsledky skenu) + textúrovanie foriem (postup + 3 kolá) |
+| 19 | Súhrnná tabuľka všetkých 7 prác + prierezové témy |
 
 ---
 
-## Files in This Directory
+## Súbory v tomto adresári
 
 ```
 laser_research_gm/
-  index.html          — 19-slide Reveal.js presentation (gradient-modern)
-  narration.json      — TTS-ready narration text for all 19 slides
-  SESSION_NOTES.md    — this file
+  index.html          — prezentácia Reveal.js s 19 snímkami (gradient-modern)
+  narration.json      — text komentára pre TTS pre všetkých 19 snímok
+  SESSION_NOTES.md    — tento súbor
   images/
-    t1/  — chip breaker thesis (zaverecna_prace.pdf)
-    t2/  — titanium thesis (zaverecna_prace-1.pdf)
-    t3/  — mold texturing thesis (zaverecna_prace-2.pdf)
-    t4/  — sintered carbide thesis (zaverecna_prace-3.pdf)
-    t5/  — steel 11373 tribology (zaverecna_prace-4.pdf)
-    t6/  — tool steel 1.2311 tribology (zaverecna_prace-5.pdf)
-    t7/  — tool steel 90MnCrV8 tribology (zaverecna_prace-6.pdf)
+    t1/  — práca o lámači triesok (zaverecna_prace.pdf)
+    t2/  — práca o titáne (zaverecna_prace-1.pdf)
+    t3/  — práca o textúrovaní foriem (zaverecna_prace-2.pdf)
+    t4/  — práca o spekanom karbide (zaverecna_prace-3.pdf)
+    t5/  — tribológia, oceľ 11373 (zaverecna_prace-4.pdf)
+    t6/  — tribológia, nástrojová oceľ 1.2311 (zaverecna_prace-5.pdf)
+    t7/  — tribológia, nástrojová oceľ 90MnCrV8 (zaverecna_prace-6.pdf)
   speech/
-    slide_01.txt … slide_19.txt — detailed presenter speech scripts
+    slide_01.txt … slide_19.txt — podrobné texty prednesu
+    slide_01.mp3 … slide_19.mp3 — slovenský hlasový komentár (generovaný z .txt)
 ```
 
 ---
 
-## CSS Customisations Applied (beyond template defaults)
+## Úpravy CSS (nad rámec predvolených hodnôt šablóny)
 
-- `.img-caption { font-size: 0.92em }` — doubled from 0.46em
-- `.slide-source { font-size: 0.8em }` — doubled from 0.4em
-- Added: `.cat-bar`, `.cat-cards`, `.cat-card`, `.fig-row`, `.img-caption`, table styles
-- Nav bar: dark slate background matching gradient-modern palette
+- `.img-caption { font-size: 0.92em }` — zdvojnásobené z 0.46em
+- `.slide-source { font-size: 0.8em }` — zdvojnásobené z 0.4em
+- Pridané: `.cat-bar`, `.cat-cards`, `.cat-card`, `.fig-row`, `.img-caption`, štýly tabuliek
+- Navigačná lišta: tmavé bridlicové pozadie zladené s paletou gradient-modern

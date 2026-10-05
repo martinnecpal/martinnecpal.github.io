@@ -1,40 +1,40 @@
-SLIDE 6 — A2: SINTERED CARBIDE WC-Co — EXPERIMENT DESIGN
+SNÍMKA 6 — A2: SPEKANÝ KARBID WC-CO — NÁVRH EXPERIMENTU
 ================================================================================
 
-The second parameter optimisation study moved to a completely different and significantly harder material: sintered carbide, also known as cemented carbide or hard metal.
+Druhá štúdia optimalizácie parametrov sa presunula k úplne inému a podstatne tvrdšiemu materiálu: k spekanému karbidu, známemu aj ako tvrdokov.
 
-WHY SINTERED CARBIDE?
+PREČO SPEKANÝ KARBID?
 
-Sintered carbide — technically tungsten carbide cobalt, abbreviated WC-Co — is the dominant material for cutting tool inserts. It is used in turning, milling, drilling, and all forms of chip-forming machining of metals. Its extraordinary hardness, typically between 1400 and 1800 Vickers, and its resistance to abrasive and adhesive wear make it the material of choice when cutting speed, precision, and tool life are priorities.
+Spekaný karbid, technicky karbid volfrámu s kobaltom, skrátene WC-Co, je dominantným materiálom rezných doštičiek. Používa sa pri sústružení, frézovaní, vŕtaní a všetkých formách trieskového obrábania kovov. Jeho mimoriadna tvrdosť, typicky od 1400 do 1800 podľa Vickersa, a odolnosť voči abrazívnemu a adhéznemu opotrebeniu z neho robia materiál prvej voľby, keď sú prioritou rezná rýchlosť, presnosť a životnosť nástroja.
 
-The material tested in this study is a standard composition: 10 percent cobalt by weight, with the remainder being tungsten carbide. The cobalt acts as a metallic binder that holds the tungsten carbide grains together and gives the material its toughness — without the cobalt, WC would be too brittle for practical use. The grain size of the WC is typically in the range of 1 to 5 micrometres.
+Materiál testovaný v tejto štúdii má štandardné zloženie: 10 hmotnostných percent kobaltu a zvyšok tvorí karbid volfrámu. Kobalt pôsobí ako kovové spojivo, ktoré drží zrná karbidu volfrámu pohromade a dodáva materiálu húževnatosť. Bez kobaltu by bol karbid volfrámu na praktické použitie príliš krehký. Veľkosť zŕn karbidu volfrámu je typicky v rozsahu od 1 do 5 mikrometrov.
 
-Machining sintered carbide by conventional methods is extremely difficult and expensive. The material is harder than most cutting tool materials, so it can only be shaped by grinding with diamond wheels, by electrical discharge machining (EDM), or by laser. Each of these methods has trade-offs in cost, speed, and achievable accuracy. Laser micromachining is particularly attractive because it is fast, flexible, and does not require the complex fixturing that grinding demands.
+Obrábanie spekaného karbidu konvenčnými metódami je mimoriadne náročné a drahé. Materiál je tvrdší než väčšina materiálov rezných nástrojov, preto ho možno tvarovať len brúsením diamantovými kotúčmi, elektroerozívnym obrábaním alebo laserom. Každá z týchto metód má svoje výhody a nevýhody z hľadiska nákladov, rýchlosti a dosiahnuteľnej presnosti. Laserové mikroobrábanie je mimoriadne atraktívne, pretože je rýchle, flexibilné a nevyžaduje zložité upínanie, aké si vyžaduje brúsenie.
 
-However, the interaction between a pulsed laser and a heterogeneous material like WC-Co is complex. The tungsten carbide grains and the cobalt binder absorb laser energy differently. The cobalt melts at around 1495 degrees Celsius, while tungsten carbide decomposes and sublimates at much higher temperatures — above 2000 degrees Celsius. This means that under laser irradiation, the cobalt tends to melt and flow before the WC grains are fully ablated, which can lead to re-solidified cobalt films on the machined surface and potentially to changes in the local microstructure.
+Interakcia pulzného lasera s heterogénnym materiálom, akým je WC-Co, je však zložitá. Zrná karbidu volfrámu a kobaltové spojivo absorbujú laserovú energiu odlišne. Kobalt sa taví pri približne 1495 stupňoch Celzia, zatiaľ čo karbid volfrámu sa rozkladá a sublimuje pri oveľa vyšších teplotách, nad 2000 stupňov Celzia. To znamená, že pri laserovom ožiarení sa kobalt má tendenciu roztaviť a tiecť skôr, než sa zrná karbidu úplne odstránia, čo môže viesť k vrstvičkám opätovne stuhnutého kobaltu na obrobenom povrchu a potenciálne k zmenám lokálnej mikroštruktúry.
 
-Understanding and controlling these effects requires careful parameter selection — which is exactly what this experiment was designed to do.
+Pochopenie a zvládnutie týchto javov si vyžaduje starostlivý výber parametrov, a práve na to bol tento experiment navrhnutý.
 
-THE SAMPLES
+VZORKY
 
-The samples used were uncoated sintered carbide turning inserts from the company Pramet, type CNHA 120408. These are standard commercial inserts, chosen because they represent a real-world application rather than a specially prepared sample. Their rhombic C shape (80-degree corner angle) and 12 millimetre inscribed circle give them a practical working surface for the experiment.
+Ako vzorky sa použili nepovlakované sústružnícke doštičky zo spekaného karbidu od spoločnosti Pramet, typ CNHA 120408. Ide o štandardné komerčné doštičky, zvolené preto, lebo predstavujú skutočnú aplikáciu, a nie špeciálne pripravenú vzorku. Ich kosoštvorcový tvar C s uhlom špičky 80 stupňov a vpísanou kružnicou s priemerom 12 milimetrov poskytujú praktickú pracovnú plochu pre experiment.
 
-THE EXPERIMENTAL DESIGN
+NÁVRH EXPERIMENTU
 
-Based on the lessons learned from the titanium study, the researcher made two key design choices. First, only cross-hatching was used — the titanium study had already established that cross-hatching produces superior isotropic surfaces, and it was reasonable to apply this knowledge directly rather than repeating the strategy comparison for sintered carbide.
+Na základe poznatkov zo štúdie titánu urobil autor dve kľúčové rozhodnutia. Po prvé, použilo sa len krížové šrafovanie. Štúdia titánu už preukázala, že krížové šrafovanie vytvára lepšie izotropné povrchy, a bolo rozumné tento poznatok priamo využiť namiesto opakovania porovnania stratégií pre spekaný karbid.
 
-Second, a larger experiment was designed. Instead of the Taguchi L9 matrix with 9 experiments, a half-factorial design with 27 experiments was used. This is sometimes written as 3^(4-1) — four factors at three levels, with a half-fractional reduction. The advantage over L9 is that it captures more of the interactions between factors, giving a more reliable picture of the process behaviour across the full parameter space.
+Po druhé, navrhol sa rozsiahlejší experiment. Namiesto matice Taguchi L9 s 9 experimentmi sa použil polovičný faktorový plán s 27 experimentmi. Niekedy sa zapisuje ako 3 na (4 mínus 1), teda štyri faktory na troch úrovniach s polovičnou redukciou. Výhodou oproti L9 je, že zachytí viac interakcií medzi faktormi, a tak poskytuje spoľahlivejší obraz o správaní procesu v celom priestore parametrov.
 
-THE SAME FOUR FACTORS
+ROVNAKÉ ŠTYRI FAKTORY
 
-The same four factors were studied: pulse frequency at 40, 60, and 80 kilohertz; laser power at 50, 75, and 100 watts expressed as percentages; scan speed at 1000, 1600, and 2200 millimetres per second; and track spacing at 5, 10, and 15 micrometres.
+Skúmali sa rovnaké štyri faktory: frekvencia pulzov 40, 60 a 80 kilohertzov, výkon lasera 50, 75 a 100 wattov vyjadrený v percentách, rýchlosť skenovania 1000, 1600 a 2200 milimetrov za sekundu a rozostup dráh 5, 10 a 15 mikrometrov.
 
-Note that power here is expressed in watts rather than percentage, which gives a clearer physical picture. At 40 kilohertz and 50 percent setting, the actual output is approximately 21 watts. At 80 kilohertz and 100 percent, it reaches up to 85 watts. The machine's power curve is nonlinear with frequency — a characteristic of this type of pulsed ytterbium fibre laser.
+Všimnite si, že výkon je tu uvedený vo wattoch, a nie v percentách, čo poskytuje jasnejší fyzikálny obraz. Pri 40 kilohertzoch a nastavení 50 percent je skutočný výkon približne 21 wattov. Pri 80 kilohertzoch a 100 percentách dosahuje až 85 wattov. Výkonová charakteristika stroja je vo vzťahu k frekvencii nelineárna, čo je typické pre tento druh pulzného yterbiového vláknového lasera.
 
-TWO OUTPUT METRICS
+DVE VÝSTUPNÉ VELIČINY
 
-Unlike the titanium study, which focused only on surface roughness Ra, this study measured two output variables: Ra as before, and also the ablation rate — the volume of material removed per unit time. This second metric is critical for practical manufacturing because it determines how long a machining operation takes. A surface finish that takes 30 minutes to achieve may be acceptable for a prototype but impractical for production. Understanding the trade-off between Ra and ablation rate is essential for designing a viable process.
+Na rozdiel od štúdie titánu, ktorá sa zamerala len na drsnosť povrchu Ra, táto štúdia merala dve výstupné veličiny: Ra ako predtým a navyše rýchlosť ablácie, teda objem materiálu odobratého za jednotku času. Táto druhá veličina je pre praktickú výrobu kľúčová, pretože určuje, ako dlho trvá operácia obrábania. Povrchová úprava, ktorej dosiahnutie trvá 30 minút, môže byť prijateľná pre prototyp, ale vo výrobe je nepraktická. Pochopenie kompromisu medzi Ra a rýchlosťou ablácie je nevyhnutné na návrh životaschopného procesu.
 
-The surfaces were created as 4 square millimetre patches on each insert face — eight patches per insert side, spread systematically. Roughness measurements were made with a contact profilometer, and ablation rates were calculated from the depth of the machined area measured with the 3D probe built into the machine.
+Povrchy sa vytvárali ako plôšky s plochou 4 štvorcové milimetre na každej strane doštičky, osem plôšok na stranu, rozmiestnených systematicky. Drsnosť sa merala kontaktným profilometrom a rýchlosť ablácie sa vypočítala z hĺbky obrobenej plochy nameranej 3D sondou zabudovanou v stroji.
 
-All machining and measurement was performed at the Centre of Excellence for Five-Axis Machining at MTF STU Trnava, using the same LASERTEC 80 Shape as the titanium study.
+Všetko obrábanie a meranie sa uskutočnilo v Centre excelentnosti päťosového obrábania na MTF STU v Trnave na rovnakom stroji LASERTEC 80 Shape ako v štúdii titánu.

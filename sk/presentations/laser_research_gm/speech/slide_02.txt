@@ -1,32 +1,32 @@
-SLIDE 2 — RESEARCH OVERVIEW: THREE CATEGORIES
+SNÍMKA 2 — PREHĽAD VÝSKUMU: TRI KATEGÓRIE
 ================================================================================
 
-Before we dive into the individual studies, let me give you a map of the territory.
+Skôr než sa pustíme do jednotlivých štúdií, dovoľte mi ukázať vám mapu celého územia.
 
-As I mentioned, the seven theses fall into three research categories. I will explain each one briefly here and then we will go into full detail in the following slides.
+Ako som už spomenul, sedem prác sa delí do troch výskumných kategórií. Každú z nich tu stručne vysvetlím a podrobne sa im budeme venovať na nasledujúcich snímkach.
 
-CATEGORY A — LASER PARAMETER OPTIMISATION
+KATEGÓRIA A — OPTIMALIZÁCIA PARAMETROV LASERA
 
-The first category contains two theses. Their shared question is: given a specific material and a specific laser machine, what combination of process parameters — pulse frequency, laser power, scan speed, and track spacing — gives you the best surface quality and the best material removal rate?
+Prvá kategória obsahuje dve práce. Ich spoločnou otázkou je: pre konkrétny materiál a konkrétny laserový stroj, aká kombinácia procesných parametrov, teda frekvencie pulzov, výkonu lasera, rýchlosti skenovania a rozostupu dráh, poskytuje najlepšiu kvalitu povrchu a najvyšší úber materiálu?
 
-This is a fundamental question in laser micromachining because there is no universal answer. Every material absorbs and reflects laser energy differently. Every machine has its own power curve, its own laser beam characteristics, its own mechanical dynamics. So before you can use a laser machine productively for a given material, you need to run a systematic experiment and find out what works. That is exactly what these two theses did — one for titanium alloy, one for sintered carbide.
+Je to základná otázka laserového mikroobrábania, pretože univerzálna odpoveď neexistuje. Každý materiál absorbuje a odráža laserovú energiu inak. Každý stroj má vlastnú výkonovú charakteristiku, vlastné vlastnosti laserového lúča a vlastnú mechanickú dynamiku. Skôr než možno laserový stroj produktívne použiť na daný materiál, treba vykonať systematický experiment a zistiť, čo funguje. Presne to urobili tieto dve práce, jedna pre titánovú zliatinu a druhá pre spekaný karbid.
 
-CATEGORY B — SURFACE TRIBOLOGY
+KATEGÓRIA B — TRIBOLÓGIA POVRCHU
 
-The second category contains three theses, and this is where the research becomes particularly interesting. The idea here is to use the laser not just to remove material, but to create a specific microstructure on the surface — a pattern of grooves or dimples — and then study what effect that structure has on friction.
+Druhá kategória obsahuje tri práce a práve tu sa výskum stáva mimoriadne zaujímavým. Myšlienkou je použiť laser nielen na odoberanie materiálu, ale aj na vytvorenie špecifickej mikroštruktúry na povrchu, teda vzoru drážok alebo jamiek, a potom skúmať, aký vplyv má táto štruktúra na trenie.
 
-Why would you want to modify friction? In forming and machining operations, friction is a major source of energy loss and tool wear. If you can reduce friction by 30 or 40 percent through a surface treatment, that has direct economic and technical consequences. Conversely, in some applications — grippers, clamping surfaces, anti-slip pads — you actually want to increase friction. These three theses explore both directions.
+Prečo by sme chceli trenie meniť? Pri tvárnení a obrábaní je trenie hlavným zdrojom strát energie a opotrebenia nástrojov. Ak dokážeme povrchovou úpravou znížiť trenie o 30 alebo 40 percent, má to priame ekonomické aj technické dôsledky. Naopak, v niektorých aplikáciách, ako sú chápadlá, upínacie plochy či protišmykové podložky, chceme trenie zvýšiť. Tieto tri práce skúmajú oba smery.
 
-The common measurement method in all three studies is the Ring test, which I will explain in detail when we reach those slides. The short version: a metal ring is compressed between two tool surfaces, and the way the ring deforms tells you the friction coefficient at the interface.
+Spoločnou meracou metódou vo všetkých troch štúdiách je Ring test, teda skúška pechovaním krúžku, ktorú podrobne vysvetlím, keď sa dostaneme k príslušným snímkam. Stručne: kovový krúžok sa stláča medzi dvoma plochami nástroja a spôsob, akým sa krúžok deformuje, prezrádza koeficient trenia na rozhraní.
 
-CATEGORY C — APPLIED MANUFACTURING
+KATEGÓRIA C — APLIKOVANÁ VÝROBA
 
-The third category contains two theses where the laser was used to produce an actual functional part. In one case, a chip breaker geometry was machined directly into a sintered carbide cutting insert. In the other, decorative and functional surface textures were applied to injection mould cavities, and plastic parts were then produced to verify that the textures transferred correctly to the plastic surface.
+Tretia kategória obsahuje dve práce, v ktorých sa laser použil na výrobu skutočnej funkčnej súčiastky. V jednom prípade sa geometria lámača triesok obrobila priamo do reznej doštičky zo spekaného karbidu. V druhom sa na tvarové dutiny vstrekovacej formy naniesli dekoratívne a funkčné povrchové textúry a následne sa vyrobili plastové diely, aby sa overilo, či sa textúry správne preniesli na povrch plastu.
 
-These two studies answer the question: can laser micromachining be used in a real manufacturing workflow, and what are its practical limitations?
+Tieto dve štúdie odpovedajú na otázku: dá sa laserové mikroobrábanie použiť v skutočnom výrobnom procese a aké sú jeho praktické obmedzenia?
 
-THE COMMON PLATFORM
+SPOLOČNÁ PLATFORMA
 
-All seven studies used the DMG MORI LASERTEC 80 Shape. This is a five-axis precision laser machining centre built specifically for surface structuring, engraving, and micromachining. It is equipped with a pulsed ytterbium fibre laser with a wavelength of 1068 nanometres and a maximum average power of 100 watts. The machine allows the operator to control pulse frequency — from 20 to 100 kilohertz — scan speed, laser power, and track spacing. The five-axis capability means it can texture not just flat surfaces but also complex three-dimensional shapes like mould cavities. The machine is located at the Centre of Excellence for Five-Axis Machining at MTF STU Trnava, which was established specifically to support research of this kind.
+Všetkých sedem štúdií využívalo stroj DMG MORI LASERTEC 80 Shape. Ide o päťosové presné laserové obrábacie centrum určené špeciálne na štruktúrovanie povrchu, gravírovanie a mikroobrábanie. Je vybavené pulzným yterbiovým vláknovým laserom s vlnovou dĺžkou 1068 nanometrov a maximálnym stredným výkonom 100 wattov. Stroj umožňuje operátorovi nastavovať frekvenciu pulzov od 20 do 100 kilohertzov, rýchlosť skenovania, výkon lasera a rozostup dráh. Vďaka päťosovému pohybu dokáže textúrovať nielen rovinné plochy, ale aj zložité trojrozmerné tvary, ako sú dutiny foriem. Stroj sa nachádza v Centre excelentnosti päťosového obrábania na MTF STU v Trnave, ktoré vzniklo práve na podporu výskumu tohto druhu.
 
-With that overview in place, let us now go into the details of each category, starting with parameter optimisation.
+S týmto prehľadom sa teraz pozrime na podrobnosti jednotlivých kategórií, počnúc optimalizáciou parametrov.

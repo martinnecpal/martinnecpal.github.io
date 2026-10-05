@@ -1,36 +1,36 @@
-SLIDE 7 — A2: SINTERED CARBIDE — MACHINED SURFACE COMPARISON
+SNÍMKA 7 — A2: SPEKANÝ KARBID — POROVNANIE OBROBENÝCH POVRCHOV
 ================================================================================
 
-The photographs on this slide show the sintered carbide insert surfaces after laser micromachining under different parameter combinations from the 27-experiment matrix. These are actual microscope photographs — not diagrams — and they give us a direct visual impression of how the surface quality varies with process parameters.
+Fotografie na tejto snímke zobrazujú povrchy doštičiek zo spekaného karbidu po laserovom mikroobrábaní pri rôznych kombináciách parametrov z matice 27 experimentov. Ide o skutočné mikroskopické snímky, nie diagramy, a dávajú nám priamu vizuálnu predstavu o tom, ako sa kvalita povrchu mení s procesnými parametrami.
 
-INTERPRETING THE SURFACE PHOTOGRAPHS
+INTERPRETÁCIA FOTOGRAFIÍ POVRCHU
 
-Look at the images on the left and right. Each image shows two adjacent machined patches from the experiment, numbered according to their position in the design matrix. The cross-hatching strategy produces a characteristic criss-cross texture on all surfaces, but the quality and regularity of that texture varies considerably.
+Pozrite sa na obrázky vľavo a vpravo. Každý obrázok zobrazuje dve susedné obrobené plôšky z experimentu, očíslované podľa ich pozície v matici plánu. Krížové šrafovanie vytvára na všetkých povrchoch charakteristickú mriežkovú textúru, ale jej kvalita a pravidelnosť sa výrazne líšia.
 
-In the better surfaces, you can see a uniform, fine-grained texture with relatively consistent surface height. The ablated area has clean boundaries and the material removal appears even across the patch.
+Na lepších povrchoch vidíte rovnomernú, jemnozrnnú textúru s pomerne konzistentnou výškou povrchu. Oblasť ablácie má čisté hranice a úber materiálu je na celej plôške rovnomerný.
 
-In the worse surfaces, you can see more irregular patterns — in some cases visible ridges between adjacent scan lines, in others evidence of re-melted material that has flowed and re-solidified as irregular bumps or thin films. These re-solidification features are particularly characteristic of sintered carbide laser machining: the cobalt binder melts at a lower temperature than the WC grains and tends to flow to the edges of the laser-affected zone before freezing.
+Na horších povrchoch vidíte nepravidelnejšie vzory: v niektorých prípadoch viditeľné hrebene medzi susednými skenovacími čiarami, inde stopy pretaveného materiálu, ktorý stiekol a opäť stuhol v podobe nepravidelných hrčiek alebo tenkých vrstiev. Tieto útvary z opätovne stuhnutého materiálu sú pre laserové obrábanie spekaného karbidu obzvlášť typické: kobaltové spojivo sa taví pri nižšej teplote než zrná karbidu volfrámu a pred stuhnutím má tendenciu stekať k okrajom oblasti ovplyvnenej laserom.
 
-The appendix of the original thesis contains photographs of all 27 machined surfaces, labelled with their specific parameter combinations. Comparing these systematically is one of the most valuable outputs of the experimental work, because it gives the engineer a visual library of what the surface looks like at different parameter combinations — information that numerical Ra values alone cannot fully convey.
+Príloha pôvodnej práce obsahuje fotografie všetkých 27 obrobených povrchov, označené konkrétnymi kombináciami parametrov. Ich systematické porovnanie je jedným z najcennejších výstupov experimentálnej práce, pretože inžinierovi poskytuje vizuálnu knižnicu toho, ako povrch vyzerá pri rôznych kombináciách parametrov. Takúto informáciu samotné číselné hodnoty Ra nedokážu plne sprostredkovať.
 
-WHAT THE STATISTICS REVEALED
+ČO ODHALILA ŠTATISTIKA
 
-The ANOVA analysis of the 27 experiments confirmed that, as in the titanium study, track spacing and laser power were the most influential parameters for both Ra and ablation rate in sintered carbide.
+Analýza ANOVA 27 experimentov potvrdila, že podobne ako v štúdii titánu boli pri spekanom karbide rozostup dráh a výkon lasera najvplyvnejšími parametrami pre Ra aj pre rýchlosť ablácie.
 
-For surface roughness Ra: higher power tends to increase roughness because it generates more melt and re-solidification. Smaller track spacing improves Ra because it creates more uniform overlap and breaks up ridges. The interaction between power and track spacing is significant — very high power combined with very small track spacing creates extreme re-melting that actually worsens surface quality despite the tight spacing.
+Pre drsnosť povrchu Ra platí: vyšší výkon má tendenciu zvyšovať drsnosť, pretože vytvára viac taveniny a opätovného tuhnutia. Menší rozostup dráh zlepšuje Ra, pretože vytvára rovnomernejšie prekrytie a rozbíja hrebene. Interakcia výkonu a rozostupu dráh je významná: veľmi vysoký výkon v kombinácii s veľmi malým rozostupom dráh spôsobuje extrémne pretavovanie, ktoré napriek hustému rozostupu kvalitu povrchu v skutočnosti zhoršuje.
 
-For ablation rate: higher power obviously increases material removal. Frequency has a more complex effect — at higher frequencies the energy per pulse decreases even as total average power increases, and the material response per pulse changes. The optimal combination for maximum ablation rate is not the same as the optimal combination for minimum Ra, which is an important finding for process planning.
+Pre rýchlosť ablácie platí: vyšší výkon prirodzene zvyšuje úber materiálu. Frekvencia má zložitejší vplyv: pri vyšších frekvenciách klesá energia jedného pulzu, aj keď celkový stredný výkon rastie, a mení sa aj odozva materiálu na jeden pulz. Optimálna kombinácia pre maximálnu rýchlosť ablácie nie je rovnaká ako optimálna kombinácia pre minimálnu Ra, čo je pre plánovanie procesu dôležité zistenie.
 
-THE PRACTICAL VALUE OF THESE RESULTS
+PRAKTICKÁ HODNOTA TÝCHTO VÝSLEDKOV
 
-The 27 experiments represent a significant investment of machine time — each experiment required setting up the machine, machining the patches, cleaning the surface, and measuring roughness. But the return on that investment is a comprehensive parameter map for laser micromachining of WC-Co on the LASERTEC 80 Shape.
+Dvadsaťsedem experimentov predstavuje značnú investíciu strojového času: každý experiment si vyžadoval nastavenie stroja, obrobenie plôšok, vyčistenie povrchu a meranie drsnosti. Návratnosťou tejto investície je však ucelená mapa parametrov pre laserové mikroobrábanie WC-Co na stroji LASERTEC 80 Shape.
 
-This is immediately useful for anyone at the MTF laboratory who wants to machine sintered carbide — whether for research or for making custom cutting tools. Instead of running their own preliminary tests from scratch, they can consult the results of this thesis and start from a known-good parameter combination.
+Je okamžite užitočná pre každého v laboratóriu MTF, kto chce obrábať spekaný karbid, či už na výskumné účely, alebo na výrobu rezných nástrojov na mieru. Namiesto vlastných predbežných testov od nuly môže nahliadnuť do výsledkov tejto práce a začať od overenej kombinácie parametrov.
 
-It also demonstrates an important principle: every new material-machine combination requires its own parameter study. The optimal settings for titanium are quite different from those for sintered carbide. The differences are not just in magnitude but in the relative importance of the factors. You cannot transfer parameter knowledge from one material to another without experimental validation.
+Zároveň to ukazuje dôležitý princíp: každá nová kombinácia materiálu a stroja si vyžaduje vlastnú štúdiu parametrov. Optimálne nastavenia pre titán sa výrazne líšia od nastavení pre spekaný karbid. Rozdiely nie sú len vo veľkosti hodnôt, ale aj v relatívnej dôležitosti jednotlivých faktorov. Poznatky o parametroch nemožno preniesť z jedného materiálu na druhý bez experimentálneho overenia.
 
-A BROADER SIGNIFICANCE
+ŠIRŠÍ VÝZNAM
 
-Both the titanium and sintered carbide studies contribute to a growing body of knowledge about laser micromachining of difficult-to-machine materials. Titanium alloys and sintered carbides are two of the most important materials in modern precision engineering. The fact that laser micromachining has now been systematically characterised for both of these materials at the MTF laboratory means that the Centre of Excellence is genuinely equipped to support laser-based manufacturing research and development in these material families.
+Štúdie titánu aj spekaného karbidu prispievajú k rastúcemu súboru poznatkov o laserovom mikroobrábaní ťažkoobrobiteľných materiálov. Titánové zliatiny a spekané karbidy patria medzi najdôležitejšie materiály modernej presnej strojárskej výroby. Skutočnosť, že laserové mikroobrábanie bolo v laboratóriu MTF systematicky charakterizované pre oba tieto materiály, znamená, že Centrum excelentnosti je skutočne pripravené podporovať výskum a vývoj laserovej výroby v týchto skupinách materiálov.
 
-The next section of our presentation moves from parameter optimisation to a completely different application: using laser structuring to modify the tribological properties of surfaces.
+Ďalšia časť prezentácie prechádza od optimalizácie parametrov k úplne inej aplikácii: k využitiu laserového štruktúrovania na úpravu tribologických vlastností povrchov.

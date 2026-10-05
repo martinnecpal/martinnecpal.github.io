@@ -1,38 +1,38 @@
-SLIDE 5 — A1: RESULTS — SURFACE ROUGHNESS Ra
+SNÍMKA 5 — A1: VÝSLEDKY — DRSNOSŤ POVRCHU RA
 ================================================================================
 
-Now we come to the results, and they tell a very clear and practically useful story.
+Teraz sa dostávame k výsledkom a tie rozprávajú veľmi jasný a prakticky užitočný príbeh.
 
-HATCHING RESULTS
+VÝSLEDKY ŠRAFOVANIA
 
-With the hatching strategy, the best Ra value achieved was 1.17 micrometres — measured in the direction of laser beam travel, which is direction 1. The optimal parameters for this result were: frequency 80 kilohertz, power at 75 percent, scan speed 1000 millimetres per second, and track spacing 15 micrometres.
+Pri stratégii šrafovania bola najlepšia dosiahnutá hodnota Ra 1,17 mikrometra, nameraná v smere pohybu laserového lúča, teda v smere 1. Optimálne parametre pre tento výsledok boli: frekvencia 80 kilohertzov, výkon 75 percent, rýchlosť skenovania 1000 milimetrov za sekundu a rozostup dráh 15 mikrometrov.
 
-But here is the critical point: when the same surface was measured in the perpendicular direction — direction 2, which is across the laser scan lines — the Ra value was 2.26 micrometres. That is nearly twice as high.
+Tu je však kľúčový bod: keď sa ten istý povrch zmeral v kolmom smere, teda v smere 2 naprieč skenovacími čiarami, hodnota Ra bola 2,26 mikrometra. To je takmer dvojnásobok.
 
-This large difference between directions is called anisotropy, and it has serious practical implications. If you machine a surface with hatching and then use it in an application where relative motion occurs in a direction perpendicular to the scan lines — for example in a sliding contact — the friction and wear behaviour will be very different from what you might expect based on the Ra value measured along the scan lines. The surface is not the same in all directions, and any performance claim that ignores direction is incomplete.
+Tento veľký rozdiel medzi smermi sa nazýva anizotropia a má vážne praktické dôsledky. Ak obrobíte povrch šrafovaním a potom ho použijete v aplikácii, kde dochádza k relatívnemu pohybu kolmo na skenovacie čiary, napríklad v klznom kontakte, trenie a opotrebenie budú výrazne iné, než by ste očakávali podľa hodnoty Ra nameranej pozdĺž čiar. Povrch nie je vo všetkých smeroch rovnaký a každé tvrdenie o jeho vlastnostiach, ktoré ignoruje smer, je neúplné.
 
-CROSS-HATCHING RESULTS
+VÝSLEDKY KRÍŽOVÉHO ŠRAFOVANIA
 
-With cross-hatching, the picture changes dramatically. The best Ra in direction 1 was 1.551 micrometres, and in direction 2 it was 1.566 micrometres. These two values are almost identical — a difference of only about one percent.
+Pri krížovom šrafovaní sa obraz dramaticky mení. Najlepšia hodnota Ra v smere 1 bola 1,551 mikrometra a v smere 2 to bolo 1,566 mikrometra. Tieto dve hodnoty sú takmer totožné, rozdiel je len približne jedno percento.
 
-This is the key advantage of cross-hatching: it produces an isotropic surface. The friction and wear behaviour will be essentially the same regardless of which direction the surface is loaded. For most practical applications — tribological contacts, sealing surfaces, bearing surfaces — this uniformity is highly desirable.
+To je hlavná výhoda krížového šrafovania: vytvára izotropný povrch. Trenie a opotrebenie budú v podstate rovnaké bez ohľadu na to, v akom smere je povrch zaťažený. Pre väčšinu praktických aplikácií, ako sú tribologické kontakty, tesniace plochy či ložiskové plochy, je táto rovnomernosť veľmi žiaduca.
 
-The optimal parameters for cross-hatching were: frequency 60 kilohertz, power at 50 percent, scan speed 1600 millimetres per second, and track spacing again 15 micrometres.
+Optimálne parametre pre krížové šrafovanie boli: frekvencia 60 kilohertzov, výkon 50 percent, rýchlosť skenovania 1600 milimetrov za sekundu a rozostup dráh opäť 15 mikrometrov.
 
-Notice that these optimal parameters are different from the hatching optimum. This makes sense: the two additional passes in cross-hatching deliver extra energy to the surface, so the power and frequency need to be reduced to avoid over-heating. The fact that optimal parameters differ between strategies is an important practical lesson — you cannot simply take the parameters from a hatching experiment and apply them to cross-hatching.
+Všimnite si, že tieto optimálne parametre sa líšia od optima pri šrafovaní. Dáva to zmysel: ďalšie prechody pri krížovom šrafovaní dodávajú na povrch viac energie, preto treba znížiť výkon a frekvenciu, aby sa povrch neprehrial. Skutočnosť, že sa optimálne parametre pre jednotlivé stratégie líšia, je dôležitým praktickým poznatkom: parametre z experimentu so šrafovaním nemožno jednoducho prevziať a použiť pri krížovom šrafovaní.
 
-WHICH FACTOR MATTERS MOST?
+KTORÝ FAKTOR JE NAJDÔLEŽITEJŠÍ?
 
-The ANOVA analysis revealed a clear ranking of parameter influence. Track spacing was by far the most influential factor — in the hatching strategy, direction 1, it accounted for over 51 percent of the total variation in Ra. In cross-hatching, its influence ranged from 40 to 49 percent across the two measurement directions. This result is physically intuitive: track spacing directly determines the overlap between adjacent lines and therefore the regularity of the surface texture. Too little spacing and you get an over-machined, re-melted surface. Too much and you get visible ridges.
+Analýza ANOVA odhalila jasné poradie vplyvu parametrov. Rozostup dráh bol zďaleka najvplyvnejším faktorom: pri šrafovaní v smere 1 zodpovedal za viac ako 51 percent celkovej variability Ra. Pri krížovom šrafovaní sa jeho vplyv v oboch smeroch merania pohyboval od 40 do 49 percent. Tento výsledok je fyzikálne pochopiteľný: rozostup dráh priamo určuje prekrytie susedných čiar, a tým aj pravidelnosť povrchovej textúry. Pri príliš malom rozostupe vznikne preobrobený, pretavený povrch. Pri príliš veľkom vzniknú viditeľné hrebene.
 
-Scan speed was consistently the least influential parameter across all strategies and directions — never exceeding 14 percent, and in some cases as low as 0.8 percent. This suggests that within the range tested, the operator has significant freedom to adjust scan speed — for example, to control machining time — without greatly affecting surface quality.
+Rýchlosť skenovania bola vo všetkých stratégiách a smeroch konzistentne najmenej vplyvným parametrom: nikdy neprekročila 14 percent a v niektorých prípadoch klesla až na 0,8 percenta. To naznačuje, že v testovanom rozsahu má operátor značnú voľnosť pri nastavovaní rýchlosti skenovania, napríklad na riadenie času obrábania, bez výrazného vplyvu na kvalitu povrchu.
 
-Pulse frequency and laser power had intermediate influence, with their relative ranking depending on the strategy and direction.
+Frekvencia pulzov a výkon lasera mali stredný vplyv, pričom ich vzájomné poradie záviselo od stratégie a smeru.
 
-PRACTICAL RECOMMENDATION
+PRAKTICKÉ ODPORÚČANIE
 
-Based on these results, cross-hatching at 60 kilohertz, 50 percent power, 1600 millimetres per second scan speed, and 15 micrometre track spacing is the recommended approach for laser micromachining of titanium GRADE 2 on the LASERTEC 80 Shape. It produces a surface with Ra approximately 1.55 micrometres that is consistent in all directions.
+Na základe týchto výsledkov sa pre laserové mikroobrábanie titánu GRADE 2 na stroji LASERTEC 80 Shape odporúča krížové šrafovanie pri 60 kilohertzoch, výkone 50 percent, rýchlosti skenovania 1600 milimetrov za sekundu a rozostupe dráh 15 mikrometrov. Vznikne tak povrch s Ra približne 1,55 mikrometra, ktorý je rovnaký vo všetkých smeroch.
 
-This Ra level is quite good for a laser-machined surface. For comparison, a conventionally ground surface typically achieves Ra between 0.2 and 1.6 micrometres, depending on the abrasive and process conditions. So laser micromachining of titanium can achieve surface quality comparable to rough-to-medium grinding — which is acceptable for many structural and functional applications.
+Táto úroveň Ra je na laserom obrobený povrch celkom dobrá. Pre porovnanie, konvenčne brúsený povrch dosahuje Ra typicky od 0,2 do 1,6 mikrometra v závislosti od brusiva a podmienok procesu. Laserovým mikroobrábaním titánu teda možno dosiahnuť kvalitu povrchu porovnateľnú s hrubovacím až stredným brúsením, čo je prijateľné pre mnohé konštrukčné a funkčné aplikácie.
 
-The finding about track spacing being the dominant factor is also directly actionable: if you want to improve surface quality, reducing track spacing is the most effective single change you can make to the process. This provides a clear design rule for engineers who will apply this process in future work.
+Zistenie, že rozostup dráh je dominantným faktorom, je tiež priamo využiteľné: ak chcete zlepšiť kvalitu povrchu, zmenšenie rozostupu dráh je najúčinnejšou jednotlivou zmenou procesu. Inžinierom, ktorí budú tento proces v budúcnosti používať, to dáva jasné konštrukčné pravidlo.

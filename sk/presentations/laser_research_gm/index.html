@@ -1,8 +1,8 @@
 <!doctype html>
-<html>
+<html lang="sk">
 <head>
   <meta charset="utf-8">
-  <title>Laser Micromachining Research – MTF STU Trnava</title>
+  <title>Výskum laserového mikroobrábania – MTF STU Trnava</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
   <style>
     :root {
@@ -260,46 +260,46 @@
 
   <!-- ══ SLIDE 1 — TITLE ══════════════════════════════════════════════════════ -->
   <section class="title-slide">
-    <h1>Laser Micromachining Research<br>at MTF STU Trnava</h1>
-    <p class="subtitle">Overview of 7 Diploma Theses · Institute of Production Technologies</p>
-    <p class="author">Faculty of Materials Science and Technology &nbsp;·&nbsp; Slovak University of Technology in Bratislava</p>
+    <h1>Výskum laserového mikroobrábania<br>na MTF STU v Trnave</h1>
+    <p class="subtitle">Prehľad 7 diplomových prác · Ústav výrobných technológií</p>
+    <p class="author">Materiálovotechnologická fakulta so sídlom v Trnave &nbsp;·&nbsp; Slovenská technická univerzita v Bratislave</p>
   </section>
 
   <!-- ══ SLIDE 2 — OVERVIEW ═══════════════════════════════════════════════════ -->
   <section>
-    <h2>Research Overview — Three Categories</h2>
+    <h2>Prehľad výskumu — tri kategórie</h2>
     <div class="cat-cards">
       <div class="cat-card">
-        <h3>A · Parameter Optimisation</h3>
+        <h3>A · Optimalizácia parametrov</h3>
         <ul>
-          <li>Titanium alloy GRADE 2</li>
-          <li>Sintered carbide WC-Co</li>
+          <li>Titán GRADE 2</li>
+          <li>Spekaný karbid WC-Co</li>
         </ul>
-        <p style="font-size:0.6em; color:var(--muted); margin:0.5em 0 0;">Find optimal laser settings for surface quality and material removal.</p>
+        <p style="font-size:0.6em; color:var(--muted); margin:0.5em 0 0;">Nájsť optimálne nastavenie lasera pre kvalitu povrchu a úber materiálu.</p>
       </div>
       <div class="cat-card">
-        <h3>B · Surface Tribology</h3>
+        <h3>B · Tribológia povrchu</h3>
         <ul>
-          <li>Steel 11373 — grooves &amp; dimples</li>
-          <li>Tool steel 1.2311 — large structures</li>
-          <li>Tool steel 90MnCrV8 + lubricants</li>
+          <li>Oceľ 11373 — drážky a jamky</li>
+          <li>Nástrojová oceľ 1.2311 — veľké štruktúry</li>
+          <li>Nástrojová oceľ 90MnCrV8 + mazivá</li>
         </ul>
-        <p style="font-size:0.6em; color:var(--muted); margin:0.5em 0 0;">Create microstructures by laser; measure friction via Ring test.</p>
+        <p style="font-size:0.6em; color:var(--muted); margin:0.5em 0 0;">Vytvoriť mikroštruktúry laserom; merať trenie Ring testom.</p>
       </div>
       <div class="cat-card">
-        <h3>C · Applied Manufacturing</h3>
+        <h3>C · Aplikovaná výroba</h3>
         <ul>
-          <li>Chip breaker on cutting insert</li>
-          <li>Injection mold texturing</li>
+          <li>Lámač triesok na reznej doštičke</li>
+          <li>Textúrovanie vstrekovacích foriem</li>
         </ul>
-        <p style="font-size:0.6em; color:var(--muted); margin:0.5em 0 0;">Produce functional parts; evaluate dimensional quality.</p>
+        <p style="font-size:0.6em; color:var(--muted); margin:0.5em 0 0;">Vyrobiť funkčné diely; vyhodnotiť rozmerovú kvalitu.</p>
       </div>
     </div>
     <div class="card" style="margin-top:0.9em; padding:0.5em 1em;">
       <p style="font-size:0.6em; color:var(--muted); margin:0;">
-        <span class="badge">Platform</span>
-        <strong>DMG MORI LASERTEC 80 Shape</strong> — 5-axis CNC, pulsed ytterbium fibre laser, 1068 nm, max 100 W
-        &nbsp;·&nbsp; CE5AM Centre of Excellence, MTF STU Trnava
+        <span class="badge">Platforma</span>
+        <strong>DMG MORI LASERTEC 80 Shape</strong> — päťosové CNC, pulzný yterbiový vláknový laser, 1068 nm, max. 100 W
+        &nbsp;·&nbsp; Centrum excelentnosti CE5AM, MTF STU Trnava
       </p>
     </div>
   </section>
@@ -311,155 +311,155 @@
   <!-- ══ SLIDE 3 — A1: Titanium — Experiment Design ══════════════════════════ -->
   <section style="display:flex; flex-direction:column; height:100%;">
     <div class="cat-bar">
-      <span class="cat-label">A · Parameter Optimisation</span>
-      <span class="cat-sub">Study 1 of 2 &nbsp;·&nbsp; Titanium Alloy GRADE 2</span>
+      <span class="cat-label">A · Optimalizácia parametrov</span>
+      <span class="cat-sub">Štúdia 1 z 2 &nbsp;·&nbsp; Titán GRADE 2</span>
     </div>
-    <h2>Experiment Design — Titanium Alloy GRADE 2</h2>
+    <h2>Návrh experimentu — titán GRADE 2</h2>
     <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
       <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
         <ul>
-          <li>Material: commercially pure titanium GRADE 2 (flat bar samples)</li>
-          <li>Machine: LASERTEC 80 Shape (100 W ytterbium fibre laser)</li>
-          <li>Design: <span class="badge">Taguchi L9</span> orthogonal matrix — 9 experiments</li>
-          <li>Two scanning strategies: <strong>hatching</strong> vs. <strong>cross-hatching</strong></li>
-          <li>Ra measured in two perpendicular directions per sample</li>
-          <li>Statistical analysis: DFA + ANOVA (Minitab)</li>
+          <li>Materiál: technicky čistý titán GRADE 2 (vzorky z plochej tyče)</li>
+          <li>Stroj: LASERTEC 80 Shape (yterbiový vláknový laser 100 W)</li>
+          <li>Plán: ortogonálna matica <span class="badge">Taguchi L9</span> — 9 experimentov</li>
+          <li>Dve stratégie skenovania: <strong>šrafovanie</strong> vs. <strong>krížové šrafovanie</strong></li>
+          <li>Ra merané na každej vzorke v dvoch na seba kolmých smeroch</li>
+          <li>Štatistická analýza: DFA + ANOVA (Minitab)</li>
         </ul>
       </div>
       <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
         <img src="images/t2/zaverecna_prace-1_p48_img1.jpeg" style="width:100%; max-height:48vh; object-fit:contain;" alt="LASERTEC 80 Shape">
-        <p class="img-caption">DMG MORI LASERTEC 80 Shape — CE5AM Centre, MTF STU Trnava</p>
+        <p class="img-caption">DMG MORI LASERTEC 80 Shape — centrum CE5AM, MTF STU Trnava</p>
       </div>
     </div>
-    <p class="slide-source">DP thesis, MTF STU Trnava, 2014</p>
+    <p class="slide-source">Diplomová práca, MTF STU Trnava, 2014</p>
   </section>
 
   <!-- ══ SLIDE 4 — A1: Factor Table + Strategies ══════════════════════════════ -->
   <section style="display:flex; flex-direction:column; height:100%;">
     <div class="cat-bar">
-      <span class="cat-label">A · Parameter Optimisation</span>
-      <span class="cat-sub">Titanium GRADE 2 — Factor Levels</span>
+      <span class="cat-label">A · Optimalizácia parametrov</span>
+      <span class="cat-sub">Titán GRADE 2 — úrovne faktorov</span>
     </div>
-    <h2>Taguchi L9 — Factors &amp; Scanning Strategies</h2>
+    <h2>Taguchi L9 — faktory a stratégie skenovania</h2>
     <div class="fig-row" style="flex:1; align-items:start; margin-top:0.4em;">
       <div>
         <table>
-          <thead><tr><th>Factor</th><th>Level 1</th><th>Level 2</th><th>Level 3</th></tr></thead>
+          <thead><tr><th>Faktor</th><th>Úroveň 1</th><th>Úroveň 2</th><th>Úroveň 3</th></tr></thead>
           <tbody>
-            <tr><td>Pulse frequency (kHz)</td><td>40</td><td>60</td><td>80</td></tr>
-            <tr><td>Laser power (%)</td><td>50</td><td>75</td><td>100</td></tr>
-            <tr><td>Scan speed (mm/s)</td><td>1 000</td><td>1 600</td><td>2 200</td></tr>
-            <tr><td>Track spacing (µm)</td><td>5</td><td>10</td><td>15</td></tr>
+            <tr><td>Frekvencia pulzov (kHz)</td><td>40</td><td>60</td><td>80</td></tr>
+            <tr><td>Výkon lasera (%)</td><td>50</td><td>75</td><td>100</td></tr>
+            <tr><td>Rýchlosť skenovania (mm/s)</td><td>1 000</td><td>1 600</td><td>2 200</td></tr>
+            <tr><td>Rozostup dráh (µm)</td><td>5</td><td>10</td><td>15</td></tr>
           </tbody>
         </table>
         <div class="card" style="margin-top:0.8em; padding:0.6em 1em;">
           <p style="font-size:0.65em; margin:0; color:var(--text);">
-            9 experiments × 2 strategies × 2 measurement directions = <strong>36 Ra values</strong>.<br>
-            Both strategies tested on the same titanium sample surface.
+            9 experimentov × 2 stratégie × 2 smery merania = <strong>36 hodnôt Ra</strong>.<br>
+            Obe stratégie skúšané na rovnakom povrchu titánovej vzorky.
           </p>
         </div>
       </div>
       <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
-        <img src="images/t2/zaverecna_prace-1_p47_img1.png" style="width:100%; max-height:40vh; object-fit:contain;" alt="Scanning strategies">
-        <p class="img-caption">Hatching (parallel passes) vs. cross-hatching (perpendicular passes)</p>
+        <img src="images/t2/zaverecna_prace-1_p47_img1.png" style="width:100%; max-height:40vh; object-fit:contain;" alt="Stratégie skenovania">
+        <p class="img-caption">Šrafovanie (rovnobežné prechody) vs. krížové šrafovanie (kolmé prechody)</p>
       </div>
     </div>
-    <p class="slide-source">DP thesis, MTF STU Trnava, 2014</p>
+    <p class="slide-source">Diplomová práca, MTF STU Trnava, 2014</p>
   </section>
 
   <!-- ══ SLIDE 5 — A1: Results ════════════════════════════════════════════════ -->
   <section style="display:flex; flex-direction:column; height:100%;">
     <div class="cat-bar">
-      <span class="cat-label">A · Parameter Optimisation</span>
-      <span class="cat-sub">Titanium GRADE 2 — Results</span>
+      <span class="cat-label">A · Optimalizácia parametrov</span>
+      <span class="cat-sub">Titán GRADE 2 — výsledky</span>
     </div>
-    <h2>Results — Surface Roughness Ra</h2>
+    <h2>Výsledky — drsnosť povrchu Ra</h2>
     <div class="fig-row" style="flex:1; align-items:start; margin-top:0.4em;">
       <div>
         <table>
-          <thead><tr><th>Strategy</th><th>Best Ra (µm)</th><th>Optimal parameters</th></tr></thead>
+          <thead><tr><th>Stratégia</th><th>Najlepšia Ra (µm)</th><th>Optimálne parametre</th></tr></thead>
           <tbody>
-            <tr><td>Hatching — direction 1</td><td class="best">1.17</td><td>80 kHz · 75% · 1 000 mm/s · h=15 µm</td></tr>
-            <tr><td>Hatching — direction 2</td><td>2.26</td><td>(same sample, perpendicular)</td></tr>
-            <tr><td>Cross-hatching — dir. 1</td><td class="best">1.55</td><td>60 kHz · 50% · 1 600 mm/s · h=15 µm</td></tr>
-            <tr><td>Cross-hatching — dir. 2</td><td class="best">1.57</td><td>(same sample, perpendicular)</td></tr>
+            <tr><td>Šrafovanie — smer 1</td><td class="best">1,17</td><td>80 kHz · 75 % · 1 000 mm/s · h = 15 µm</td></tr>
+            <tr><td>Šrafovanie — smer 2</td><td>2,26</td><td>(tá istá vzorka, kolmo)</td></tr>
+            <tr><td>Krížové šrafovanie — smer 1</td><td class="best">1,55</td><td>60 kHz · 50 % · 1 600 mm/s · h = 15 µm</td></tr>
+            <tr><td>Krížové šrafovanie — smer 2</td><td class="best">1,57</td><td>(tá istá vzorka, kolmo)</td></tr>
           </tbody>
         </table>
         <div class="card" style="margin-top:0.7em; padding:0.7em 1em;">
           <ul style="font-size:0.68em; margin:0;">
-            <li><span class="badge">KEY</span> Track spacing most influential factor — up to <strong>51%</strong></li>
-            <li>Scan speed: least influential — below <strong>14%</strong> in all cases</li>
-            <li>Cross-hatching preferred — <strong>isotropic</strong> surface (similar Ra both directions)</li>
+            <li><span class="badge">KĽÚČOVÉ</span> Najvplyvnejší faktor je rozostup dráh — až <strong>51 %</strong></li>
+            <li>Rýchlosť skenovania: najmenší vplyv — vo všetkých prípadoch pod <strong>14 %</strong></li>
+            <li>Uprednostniť krížové šrafovanie — <strong>izotropný</strong> povrch (podobná Ra v oboch smeroch)</li>
           </ul>
         </div>
       </div>
       <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
-        <img src="images/t2/zaverecna_prace-1_p55_img1.jpeg" style="width:100%; max-height:42vh; object-fit:contain;" alt="Roughness measurement">
-        <p class="img-caption">Mitutoyo SJ-210 — measuring Ra on titanium samples</p>
+        <img src="images/t2/zaverecna_prace-1_p55_img1.jpeg" style="width:100%; max-height:42vh; object-fit:contain;" alt="Meranie drsnosti">
+        <p class="img-caption">Mitutoyo SJ-210 — meranie Ra na titánových vzorkách</p>
       </div>
     </div>
-    <p class="slide-source">DP thesis, MTF STU Trnava, 2014</p>
+    <p class="slide-source">Diplomová práca, MTF STU Trnava, 2014</p>
   </section>
 
   <!-- ══ SLIDE 6 — A2: Sintered Carbide — Design ══════════════════════════════ -->
   <section style="display:flex; flex-direction:column; height:100%;">
     <div class="cat-bar">
-      <span class="cat-label">A · Parameter Optimisation</span>
-      <span class="cat-sub">Study 2 of 2 &nbsp;·&nbsp; Sintered Carbide WC-Co</span>
+      <span class="cat-label">A · Optimalizácia parametrov</span>
+      <span class="cat-sub">Štúdia 2 z 2 &nbsp;·&nbsp; Spekaný karbid WC-Co</span>
     </div>
-    <h2>Experiment Design — Sintered Carbide WC-Co</h2>
+    <h2>Návrh experimentu — spekaný karbid WC-Co</h2>
     <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
       <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
         <ul>
-          <li>Material: uncoated carbide inserts — PRAMET CNHA 120408 <br>(10% Co · remainder WC)</li>
-          <li>Machine: LASERTEC 80 Shape (same as Study A1)</li>
-          <li>Design: <span class="badge">Half-factorial</span> 3³ — <strong>27 experiments</strong></li>
-          <li>Strategy: cross-hatching only (superior from A1)</li>
-          <li>Two outputs: surface roughness Ra + <strong>ablation rate</strong></li>
-          <li>Analysis: Minitab — ANOVA, Pareto significance</li>
+          <li>Materiál: nepovlakované karbidové doštičky — PRAMET CNHA 120408 <br>(10 % Co · zvyšok WC)</li>
+          <li>Stroj: LASERTEC 80 Shape (rovnaký ako v štúdii A1)</li>
+          <li>Plán: <span class="badge">polovičný faktorový</span> 3³ — <strong>27 experimentov</strong></li>
+          <li>Stratégia: len krížové šrafovanie (lepšie podľa A1)</li>
+          <li>Dva výstupy: drsnosť povrchu Ra + <strong>rýchlosť ablácie</strong></li>
+          <li>Analýza: Minitab — ANOVA, Paretova významnosť</li>
         </ul>
         <table style="margin-top:0.7em;">
-          <thead><tr><th>Factor</th><th>L1</th><th>L2</th><th>L3</th></tr></thead>
+          <thead><tr><th>Faktor</th><th>Ú1</th><th>Ú2</th><th>Ú3</th></tr></thead>
           <tbody>
-            <tr><td>Frequency (kHz)</td><td>40</td><td>60</td><td>80</td></tr>
-            <tr><td>Power (W)</td><td>50</td><td>75</td><td>100</td></tr>
-            <tr><td>Scan speed (mm/s)</td><td>1 000</td><td>1 600</td><td>2 200</td></tr>
-            <tr><td>Track spacing (µm)</td><td>5</td><td>10</td><td>15</td></tr>
+            <tr><td>Frekvencia (kHz)</td><td>40</td><td>60</td><td>80</td></tr>
+            <tr><td>Výkon (W)</td><td>50</td><td>75</td><td>100</td></tr>
+            <tr><td>Rýchlosť skenovania (mm/s)</td><td>1 000</td><td>1 600</td><td>2 200</td></tr>
+            <tr><td>Rozostup dráh (µm)</td><td>5</td><td>10</td><td>15</td></tr>
           </tbody>
         </table>
       </div>
       <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
-        <img src="images/t4/zaverecna_prace-3_p59_img1.jpeg" style="width:100%; max-height:48vh; object-fit:contain;" alt="Working area with carbide insert">
-        <p class="img-caption">LASERTEC 80 Shape — working area with mounted sintered carbide insert</p>
+        <img src="images/t4/zaverecna_prace-3_p59_img1.jpeg" style="width:100%; max-height:48vh; object-fit:contain;" alt="Pracovný priestor s karbidovou doštičkou">
+        <p class="img-caption">LASERTEC 80 Shape — pracovný priestor s upnutou doštičkou zo spekaného karbidu</p>
       </div>
     </div>
-    <p class="slide-source">DP thesis, MTF STU Trnava, 2018</p>
+    <p class="slide-source">Diplomová práca, MTF STU Trnava, 2018</p>
   </section>
 
   <!-- ══ SLIDE 7 — A2: Surface Photos ════════════════════════════════════════ -->
   <section style="display:flex; flex-direction:column; height:100%;">
     <div class="cat-bar">
-      <span class="cat-label">A · Parameter Optimisation</span>
-      <span class="cat-sub">Sintered Carbide — Machined Surface Comparison</span>
+      <span class="cat-label">A · Optimalizácia parametrov</span>
+      <span class="cat-sub">Spekaný karbid — porovnanie obrobených povrchov</span>
     </div>
-    <h2>WC-Co Surfaces after Laser Micromachining</h2>
+    <h2>Povrchy WC-Co po laserovom mikroobrábaní</h2>
     <div class="cols-2" style="flex:1; margin-top:0.5em;">
       <div style="text-align:center;">
-        <img src="images/t4/zaverecna_prace-3_p83_img1.png" style="width:100%; max-height:50vh; object-fit:contain;" alt="WC-Co surfaces 1-2">
-        <p class="img-caption">Surfaces #1 &amp; #2 — fp=40 kHz, P=50/75 W, varying speed &amp; spacing</p>
+        <img src="images/t4/zaverecna_prace-3_p83_img1.png" style="width:100%; max-height:50vh; object-fit:contain;" alt="Povrchy WC-Co 1 – 2">
+        <p class="img-caption">Povrchy č. 1 a 2 — fp = 40 kHz, P = 50/75 W, rôzna rýchlosť a rozostup</p>
       </div>
       <div style="text-align:center;">
-        <img src="images/t4/zaverecna_prace-3_p83_img2.png" style="width:100%; max-height:50vh; object-fit:contain;" alt="WC-Co surfaces 3-4">
-        <p class="img-caption">Surfaces #3 &amp; #4 — fp=40 kHz, P=100 W / 50 W, different track spacing</p>
+        <img src="images/t4/zaverecna_prace-3_p83_img2.png" style="width:100%; max-height:50vh; object-fit:contain;" alt="Povrchy WC-Co 3 – 4">
+        <p class="img-caption">Povrchy č. 3 a 4 — fp = 40 kHz, P = 100 W / 50 W, rôzny rozostup dráh</p>
       </div>
     </div>
     <div class="card" style="margin-top:0.4em; padding:0.5em 1em;">
       <p style="font-size:0.62em; margin:0;">
-        <span class="badge">KEY</span> Track spacing + power most influential for Ra and ablation rate on WC-Co.
-        Results provide a machine-specific calibration baseline for sintered carbide.
+        <span class="badge">KĽÚČOVÉ</span> Rozostup dráh a výkon majú na WC-Co najväčší vplyv na Ra aj rýchlosť ablácie.
+        Výsledky poskytujú kalibračný základ pre spekaný karbid, špecifický pre tento stroj.
       </p>
     </div>
-    <p class="slide-source">DP thesis, MTF STU Trnava, 2018</p>
+    <p class="slide-source">Diplomová práca, MTF STU Trnava, 2018</p>
   </section>
 
   <!-- ══════════════════════════════════════════════════════════════════════════
@@ -469,251 +469,251 @@
   <!-- ══ SLIDE 8 — Ring Test Method ══════════════════════════════════════════ -->
   <section style="display:flex; flex-direction:column; height:100%;">
     <div class="cat-bar">
-      <span class="cat-label">B · Surface Tribology</span>
-      <span class="cat-sub">Shared methodology — Ring Compression Test</span>
+      <span class="cat-label">B · Tribológia povrchu</span>
+      <span class="cat-sub">Spoločná metodika — skúška pechovaním krúžku</span>
     </div>
-    <h2>Ring Test — Measuring Friction Coefficient</h2>
+    <h2>Ring test — meranie koeficientu trenia</h2>
     <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
       <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
         <ul>
-          <li>Metal ring compressed between two tool surfaces (4 steps)</li>
-          <li>Inner diameter change is friction-sensitive:
+          <li>Kovový krúžok stláčaný medzi dvoma plochami nástroja (4 kroky)</li>
+          <li>Zmena vnútorného priemeru je citlivá na trenie:
             <ul>
-              <li>Low friction → inner diameter <em>increases</em></li>
-              <li>High friction → inner diameter <em>decreases</em></li>
+              <li>Nízke trenie → vnútorný priemer sa <em>zväčšuje</em></li>
+              <li>Vysoké trenie → vnútorný priemer sa <em>zmenšuje</em></li>
             </ul>
           </li>
-          <li>Friction coefficient f read from calibration curve</li>
-          <li>Textured vs. smooth (reference) tools compared</li>
-          <li>Used across all 3 tribological studies — B1, B2, B3</li>
+          <li>Koeficient trenia f sa odčíta z kalibračnej krivky</li>
+          <li>Porovnanie textúrovaných a hladkých (referenčných) nástrojov</li>
+          <li>Použité vo všetkých 3 tribologických štúdiách — B1, B2, B3</li>
         </ul>
         <p style="font-size:0.6em; margin-top:0.6em; color:var(--muted);">
-          Machine: EU 40 hydraulic press (0–200 kN) · MTF STU Trnava forming laboratory
+          Stroj: hydraulický lis EU 40 (0 – 200 kN) · laboratórium tvárnenia MTF STU Trnava
         </p>
       </div>
       <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
-        <img src="images/t5/zaverecna_prace-4_p60_img1.jpeg" style="width:100%; max-height:48vh; object-fit:contain;" alt="EU 40 ring test setup">
-        <p class="img-caption">EU 40 hydraulic press with ring compression fixture</p>
+        <img src="images/t5/zaverecna_prace-4_p60_img1.jpeg" style="width:100%; max-height:48vh; object-fit:contain;" alt="Zostava Ring testu na lise EU 40">
+        <p class="img-caption">Hydraulický lis EU 40 s prípravkom na pechovanie krúžkov</p>
       </div>
     </div>
-    <p class="slide-source">Common method — all Category B theses, MTF STU Trnava</p>
+    <p class="slide-source">Spoločná metóda — všetky práce kategórie B, MTF STU Trnava</p>
   </section>
 
   <!-- ══ SLIDE 9 — B1: Steel 11373 — Structures ══════════════════════════════ -->
   <section style="display:flex; flex-direction:column; height:100%;">
     <div class="cat-bar">
-      <span class="cat-label">B · Surface Tribology</span>
-      <span class="cat-sub">Study 1 of 3 &nbsp;·&nbsp; Steel 11373 — Three Structure Types</span>
+      <span class="cat-label">B · Tribológia povrchu</span>
+      <span class="cat-sub">Štúdia 1 z 3 &nbsp;·&nbsp; Oceľ 11373 — tri typy štruktúr</span>
     </div>
-    <h2>Laser Structured Surfaces — Steel 11373</h2>
+    <h2>Laserom štruktúrované povrchy — oceľ 11373</h2>
     <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
       <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
         <ul>
-          <li>Material: steel 11 373 (STN 411373) ring samples</li>
-          <li>Two laser systems compared:
+          <li>Materiál: krúžkové vzorky z ocele 11 373 (STN 411373)</li>
+          <li>Porovnanie dvoch laserových systémov:
             <ul>
-              <li>DM01 marking laser — external (Nové Mesto n. Váhom)</li>
+              <li>popisovací laser DM01 — externe (Nové Mesto n. Váhom)</li>
               <li>LASERTEC 80 Shape — CE5AM, MTF</li>
             </ul>
           </li>
-          <li>Three structure types:
+          <li>Tri typy štruktúr:
             <ul>
-              <li><strong>Type A</strong> — narrow parallel grooves (0.5 mm spacing)</li>
-              <li><strong>Type B</strong> — wide deep grooves (0.3 mm wide)</li>
-              <li><strong>Type C</strong> — hemispherical dimples (∅ 0.15 mm)</li>
+              <li><strong>Typ A</strong> — úzke rovnobežné drážky (rozostup 0,5 mm)</li>
+              <li><strong>Typ B</strong> — široké hlboké drážky (šírka 0,3 mm)</li>
+              <li><strong>Typ C</strong> — pologuľové jamky (∅ 0,15 mm)</li>
             </ul>
           </li>
-          <li>Reference: smooth unstructured surface</li>
+          <li>Referencia: hladký neštruktúrovaný povrch</li>
         </ul>
       </div>
       <div style="display:flex; flex-direction:column; justify-content:center; gap:0.5em;">
         <div style="text-align:center;">
-          <img src="images/t5/zaverecna_prace-4_p55_img1.jpeg" style="width:100%; max-height:25vh; object-fit:contain;" alt="Groove structure A">
-          <p class="img-caption">Type A — narrow groove (55.7× magnification)</p>
+          <img src="images/t5/zaverecna_prace-4_p55_img1.jpeg" style="width:100%; max-height:25vh; object-fit:contain;" alt="Štruktúra drážok A">
+          <p class="img-caption">Typ A — úzka drážka (zväčšenie 55,7×)</p>
         </div>
         <div style="text-align:center;">
-          <img src="images/t5/zaverecna_prace-4_p57_img1.jpeg" style="width:100%; max-height:25vh; object-fit:contain;" alt="Groove structure B">
-          <p class="img-caption">Type B — wide groove (LASERTEC 80 Shape)</p>
+          <img src="images/t5/zaverecna_prace-4_p57_img1.jpeg" style="width:100%; max-height:25vh; object-fit:contain;" alt="Štruktúra drážok B">
+          <p class="img-caption">Typ B — široká drážka (LASERTEC 80 Shape)</p>
         </div>
       </div>
     </div>
-    <p class="slide-source">DP thesis, MTF STU Trnava, 2013</p>
+    <p class="slide-source">Diplomová práca, MTF STU Trnava, 2013</p>
   </section>
 
   <!-- ══ SLIDE 10 — B1: Results ═══════════════════════════════════════════════ -->
   <section style="display:flex; flex-direction:column; height:100%;">
     <div class="cat-bar">
-      <span class="cat-label">B · Surface Tribology</span>
-      <span class="cat-sub">Steel 11373 — Ring Test Results</span>
+      <span class="cat-label">B · Tribológia povrchu</span>
+      <span class="cat-sub">Oceľ 11373 — výsledky Ring testu</span>
     </div>
-    <h2>Friction Coefficient Results — Steel 11373</h2>
+    <h2>Výsledky koeficientu trenia — oceľ 11373</h2>
     <div class="fig-row" style="flex:1; align-items:start; margin-top:0.4em;">
       <div>
         <table>
-          <thead><tr><th>Sample</th><th>Structure</th><th>Laser</th><th>f (–)</th></tr></thead>
+          <thead><tr><th>Vzorka</th><th>Štruktúra</th><th>Laser</th><th>f (–)</th></tr></thead>
           <tbody>
-            <tr class="ref"><td>Z1_01</td><td>Reference (no structure)</td><td>—</td><td>0.189</td></tr>
-            <tr><td>A1_01</td><td>Narrow grooves</td><td>DM01</td><td>0.225</td></tr>
-            <tr><td>A1_06</td><td>Narrow grooves</td><td>DM01</td><td>0.220</td></tr>
-            <tr><td>A1_08</td><td>Narrow grooves (best quality)</td><td>DM01</td><td>0.260</td></tr>
-            <tr><td class="best">B1_01</td><td class="best">Wide deep grooves</td><td class="best">LASERTEC 80</td><td class="best">0.128 ↓ −32%</td></tr>
-            <tr><td>C1_01</td><td>Hemispheres (3° pitch)</td><td>LASERTEC 80</td><td>0.213</td></tr>
-            <tr><td>C1_02</td><td>Hemispheres (6° pitch)</td><td>LASERTEC 80</td><td>0.188</td></tr>
+            <tr class="ref"><td>Z1_01</td><td>Referencia (bez štruktúry)</td><td>—</td><td>0,189</td></tr>
+            <tr><td>A1_01</td><td>Úzke drážky</td><td>DM01</td><td>0,225</td></tr>
+            <tr><td>A1_06</td><td>Úzke drážky</td><td>DM01</td><td>0,220</td></tr>
+            <tr><td>A1_08</td><td>Úzke drážky (najlepšia kvalita)</td><td>DM01</td><td>0,260</td></tr>
+            <tr><td class="best">B1_01</td><td class="best">Široké hlboké drážky</td><td class="best">LASERTEC 80</td><td class="best">0,128 ↓ −32 %</td></tr>
+            <tr><td>C1_01</td><td>Pologule (rozteč 3°)</td><td>LASERTEC 80</td><td>0,213</td></tr>
+            <tr><td>C1_02</td><td>Pologule (rozteč 6°)</td><td>LASERTEC 80</td><td>0,188</td></tr>
           </tbody>
         </table>
         <div class="card" style="margin-top:0.6em; padding:0.6em 1em;">
           <p style="font-size:0.65em; margin:0;">
-            Wide grooves (B1) achieved lowest friction — large groove geometry creates minimal real contact area, acting as lubricant reservoir.
-            Narrow groove ridges raised roughness → friction increased vs. reference.
+            Široké drážky (B1) dosiahli najnižšie trenie — veľká geometria drážok vytvára minimálnu skutočnú kontaktnú plochu a pôsobí ako zásobník maziva.
+            Hrebene pri úzkych drážkach zvýšili drsnosť → trenie vyššie ako pri referencii.
           </p>
         </div>
       </div>
       <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
-        <img src="images/t5/zaverecna_prace-4_p57_img2.jpeg" style="width:100%; max-height:44vh; object-fit:contain;" alt="Hemisphere structure C">
-        <p class="img-caption">Type C — hemispherical dimples (∅ ≈ 0.15 mm)</p>
+        <img src="images/t5/zaverecna_prace-4_p57_img2.jpeg" style="width:100%; max-height:44vh; object-fit:contain;" alt="Pologuľová štruktúra C">
+        <p class="img-caption">Typ C — pologuľové jamky (∅ ≈ 0,15 mm)</p>
       </div>
     </div>
-    <p class="slide-source">DP thesis, MTF STU Trnava, 2013</p>
+    <p class="slide-source">Diplomová práca, MTF STU Trnava, 2013</p>
   </section>
 
   <!-- ══ SLIDE 11 — B2: Setup ═════════════════════════════════════════════════ -->
   <section style="display:flex; flex-direction:column; height:100%;">
     <div class="cat-bar">
-      <span class="cat-label">B · Surface Tribology</span>
-      <span class="cat-sub">Study 2 of 3 &nbsp;·&nbsp; Tool Steel 1.2311 — Large Triangular Microstructures</span>
+      <span class="cat-label">B · Tribológia povrchu</span>
+      <span class="cat-sub">Štúdia 2 z 3 &nbsp;·&nbsp; Nástrojová oceľ 1.2311 — veľké trojuholníkové mikroštruktúry</span>
     </div>
-    <h2>Laser Micro-Structuring — Tool Steel 1.2311</h2>
+    <h2>Laserové mikroštruktúrovanie — nástrojová oceľ 1.2311</h2>
     <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
       <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
         <ul>
-          <li>Material: mold tool steel 1.2311 (40CrMnMoS8-6)</li>
-          <li>Machine: LASERTEC 80 PowerDrill (58 W · 80 kHz · 1600 mm/s)</li>
-          <li>Structure: triangular grid microstructure
+          <li>Materiál: nástrojová oceľ na formy 1.2311 (40CrMnMoS8-6)</li>
+          <li>Stroj: LASERTEC 80 PowerDrill (58 W · 80 kHz · 1600 mm/s)</li>
+          <li>Štruktúra: trojuholníková mriežková mikroštruktúra
             <ul>
-              <li>Element arm length: <strong>500 µm</strong></li>
-              <li>Cavity depth: <strong>~410 µm</strong></li>
-              <li>Track spacing: 10 µm</li>
+              <li>Dĺžka ramena prvku: <strong>500 µm</strong></li>
+              <li>Hĺbka dutiny: <strong>~410 µm</strong></li>
+              <li>Rozostup dráh: 10 µm</li>
             </ul>
           </li>
-          <li>Machining time: <span class="badge">~9 hours</span> per sample</li>
-          <li>Quality verified by optical microscopy before ring test</li>
+          <li>Čas obrábania: <span class="badge">~9 hodín</span> na vzorku</li>
+          <li>Kvalita overená optickou mikroskopiou pred Ring testom</li>
         </ul>
       </div>
       <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
-        <img src="images/t6/zaverecna_prace-5_p51_img1.jpeg" style="width:100%; max-height:49vh; object-fit:contain;" alt="Microstructured surface">
-        <p class="img-caption">Triangular microstructures on tool steel surface (optical microscope, 500 µm scale)</p>
+        <img src="images/t6/zaverecna_prace-5_p51_img1.jpeg" style="width:100%; max-height:49vh; object-fit:contain;" alt="Mikroštruktúrovaný povrch">
+        <p class="img-caption">Trojuholníkové mikroštruktúry na povrchu nástrojovej ocele (optický mikroskop, mierka 500 µm)</p>
       </div>
     </div>
-    <p class="slide-source">DP thesis, MTF STU Trnava, 2014</p>
+    <p class="slide-source">Diplomová práca, MTF STU Trnava, 2014</p>
   </section>
 
   <!-- ══ SLIDE 12 — B2: Unexpected Result ════════════════════════════════════ -->
   <section style="display:flex; flex-direction:column; height:100%;">
     <div class="cat-bar">
-      <span class="cat-label">B · Surface Tribology</span>
-      <span class="cat-sub">Tool Steel 1.2311 — Unexpected Friction Increase</span>
+      <span class="cat-label">B · Tribológia povrchu</span>
+      <span class="cat-sub">Nástrojová oceľ 1.2311 — neočakávané zvýšenie trenia</span>
     </div>
-    <h2>Ring Test — Friction Increased (Contrary to Expectation)</h2>
+    <h2>Ring test — trenie sa zvýšilo (napriek očakávaniu)</h2>
     <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.4em;">
       <div style="display:flex; flex-direction:column; justify-content:center;">
         <div class="cols-2" style="gap:1em; margin-bottom:0.7em;">
           <div class="card" style="text-align:center; padding:0.8em;">
-            <p style="font-size:0.65em; color:var(--muted); margin:0 0 0.2em;">Unstructured (reference)</p>
-            <p style="font-size:1.6em; font-weight:700; color:var(--indigo); margin:0;">f = 0.258</p>
+            <p style="font-size:0.65em; color:var(--muted); margin:0 0 0.2em;">Bez štruktúry (referencia)</p>
+            <p style="font-size:1.6em; font-weight:700; color:var(--indigo); margin:0;">f = 0,258</p>
           </div>
           <div class="card" style="text-align:center; padding:0.8em; border-top:3px solid var(--amber);">
-            <p style="font-size:0.65em; color:var(--muted); margin:0 0 0.2em;">Microstructured</p>
-            <p style="font-size:1.6em; font-weight:700; color:var(--amber); margin:0;">f = 0.315 ↑</p>
+            <p style="font-size:0.65em; color:var(--muted); margin:0 0 0.2em;">Mikroštruktúrovaný</p>
+            <p style="font-size:1.6em; font-weight:700; color:var(--amber); margin:0;">f = 0,315 ↑</p>
           </div>
         </div>
         <div class="card" style="padding:0.7em 1em;">
           <ul style="font-size:0.68em; margin:0;">
-            <li><strong>Root cause:</strong> structures too large (500 µm · 410 µm deep) — metal flowed into cavities during compression, creating extra resistance</li>
-            <li><strong>Reframed application:</strong> these structures <em>increase</em> friction — suitable for grippers, anti-slip surfaces, clamping faces</li>
-            <li><strong>Fix:</strong> return to 50 µm design — requires femtosecond laser</li>
+            <li><strong>Príčina:</strong> príliš veľké štruktúry (500 µm · hĺbka 410 µm) — kov pri stláčaní natiekol do dutín a vytvoril dodatočný odpor</li>
+            <li><strong>Nové uplatnenie:</strong> tieto štruktúry trenie <em>zvyšujú</em> — vhodné pre chápadlá, protišmykové povrchy, upínacie plochy</li>
+            <li><strong>Riešenie:</strong> návrat k návrhu 50 µm — vyžaduje femtosekundový laser</li>
           </ul>
         </div>
       </div>
       <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
-        <img src="images/t6/zaverecna_prace-5_p56_img2.jpeg" style="width:100%; max-height:49vh; object-fit:contain;" alt="Compressed ring sample">
-        <p class="img-caption">Compressed ring after test on microstructured tool — visible material deformation into cavities</p>
+        <img src="images/t6/zaverecna_prace-5_p56_img2.jpeg" style="width:100%; max-height:49vh; object-fit:contain;" alt="Stlačená krúžková vzorka">
+        <p class="img-caption">Stlačený krúžok po skúške s mikroštruktúrovaným nástrojom — viditeľné vtlačenie materiálu do dutín</p>
       </div>
     </div>
-    <p class="slide-source">DP thesis, MTF STU Trnava, 2014</p>
+    <p class="slide-source">Diplomová práca, MTF STU Trnava, 2014</p>
   </section>
 
   <!-- ══ SLIDE 13 — B3: 4 Textures + Lubricants ══════════════════════════════ -->
   <section style="display:flex; flex-direction:column; height:100%;">
     <div class="cat-bar">
-      <span class="cat-label">B · Surface Tribology</span>
-      <span class="cat-sub">Study 3 of 3 &nbsp;·&nbsp; Tool Steel 90MnCrV8 — 4 Textures + 3 Lubricants</span>
+      <span class="cat-label">B · Tribológia povrchu</span>
+      <span class="cat-sub">Štúdia 3 z 3 &nbsp;·&nbsp; Nástrojová oceľ 90MnCrV8 — 4 textúry + 3 mazivá</span>
     </div>
-    <h2>Laser Surface Texturing — Systematic Lubricant Study</h2>
+    <h2>Laserové textúrovanie povrchu — systematická štúdia mazív</h2>
     <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
       <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
         <ul>
-          <li>Material: tool steel 90MnCrV8 compression tool punches</li>
-          <li>Machine: LASERTEC 80 Shape</li>
-          <li>4 paraboloid dimple texture designs (depth 10–15 µm)</li>
-          <li>3 lubrication conditions tested in Ring test:
+          <li>Materiál: tlačné nástroje z nástrojovej ocele 90MnCrV8</li>
+          <li>Stroj: LASERTEC 80 Shape</li>
+          <li>4 návrhy textúr s paraboloidnými jamkami (hĺbka 10 – 15 µm)</li>
+          <li>3 podmienky mazania skúšané Ring testom:
             <ul>
-              <li>Dry — no lubricant</li>
-              <li>Variocut C462 — low viscosity cutting fluid</li>
-              <li>Iloform FST4 — high viscosity forming oil</li>
+              <li>Za sucha — bez maziva</li>
+              <li>Variocut C462 — rezná kvapalina s nízkou viskozitou</li>
+              <li>Iloform FST4 — tvárniaci olej s vysokou viskozitou</li>
             </ul>
           </li>
-          <li>15 Ring test configurations total</li>
+          <li>Spolu 15 konfigurácií Ring testu</li>
         </ul>
       </div>
       <div style="display:flex; flex-direction:column; justify-content:center; gap:0.5em;">
         <div style="text-align:center;">
-          <img src="images/t7/zaverecna_prace-6_p68_img1.png" style="width:100%; max-height:25vh; object-fit:contain;" alt="Confocal texture image">
-          <p class="img-caption">Confocal microscopy — dimple texture on compression tool face</p>
+          <img src="images/t7/zaverecna_prace-6_p68_img1.png" style="width:100%; max-height:25vh; object-fit:contain;" alt="Konfokálny obraz textúry">
+          <p class="img-caption">Konfokálna mikroskopia — textúra jamiek na ploche tlačného nástroja</p>
         </div>
         <div style="text-align:center;">
-          <img src="images/t7/zaverecna_prace-6_p69_img1.jpeg" style="width:100%; max-height:25vh; object-fit:contain;" alt="Texture detail">
-          <p class="img-caption">Paraboloid dimple profile — tool steel surface</p>
+          <img src="images/t7/zaverecna_prace-6_p69_img1.jpeg" style="width:100%; max-height:25vh; object-fit:contain;" alt="Detail textúry">
+          <p class="img-caption">Profil paraboloidnej jamky — povrch nástrojovej ocele</p>
         </div>
       </div>
     </div>
-    <p class="slide-source">DP thesis, MTF STU Trnava, 2015</p>
+    <p class="slide-source">Diplomová práca, MTF STU Trnava, 2015</p>
   </section>
 
   <!-- ══ SLIDE 14 — B3: Results Table ════════════════════════════════════════ -->
   <section style="display:flex; flex-direction:column; height:100%;">
     <div class="cat-bar">
-      <span class="cat-label">B · Surface Tribology</span>
-      <span class="cat-sub">Tool Steel 90MnCrV8 — Results by Texture and Lubricant</span>
+      <span class="cat-label">B · Tribológia povrchu</span>
+      <span class="cat-sub">Nástrojová oceľ 90MnCrV8 — výsledky podľa textúry a maziva</span>
     </div>
-    <h2>Friction Coefficient — Texture × Lubricant Matrix</h2>
+    <h2>Koeficient trenia — matica textúra × mazivo</h2>
     <div style="flex:1; margin-top:0.4em;">
       <table>
         <thead>
-          <tr><th>Surface</th><th>Dry</th><th>Variocut C462</th><th>Iloform FST4</th></tr>
+          <tr><th>Povrch</th><th>Za sucha</th><th>Variocut C462</th><th>Iloform FST4</th></tr>
         </thead>
         <tbody>
-          <tr class="ref"><td>Reference (smooth)</td><td>0.275</td><td>0.295</td><td>0.164</td></tr>
-          <tr><td>Texture I</td><td class="best">0.183 (−33%)</td><td>0.184</td><td>0.208 ↑</td></tr>
-          <tr><td>Texture II</td><td>0.256</td><td>0.220</td><td>0.220 ↑</td></tr>
-          <tr><td>Texture III</td><td>0.260</td><td>0.233</td><td>0.176 ↑</td></tr>
-          <tr><td>Texture IV</td><td>0.250</td><td class="best">0.158 (−46%)</td><td class="best">0.153</td></tr>
+          <tr class="ref"><td>Referencia (hladký)</td><td>0,275</td><td>0,295</td><td>0,164</td></tr>
+          <tr><td>Textúra I</td><td class="best">0,183 (−33 %)</td><td>0,184</td><td>0,208 ↑</td></tr>
+          <tr><td>Textúra II</td><td>0,256</td><td>0,220</td><td>0,220 ↑</td></tr>
+          <tr><td>Textúra III</td><td>0,260</td><td>0,233</td><td>0,176 ↑</td></tr>
+          <tr><td>Textúra IV</td><td>0,250</td><td class="best">0,158 (−46 %)</td><td class="best">0,153</td></tr>
         </tbody>
       </table>
       <div class="cols-2" style="gap:1em; margin-top:0.7em;">
         <div class="card" style="padding:0.6em 0.9em;">
-          <p class="card-label">Best result</p>
-          <p style="font-size:0.65em; margin:0;">Texture IV + Variocut C462 → <strong>f = 0.158</strong> (−46% vs. reference)</p>
+          <p class="card-label">Najlepší výsledok</p>
+          <p style="font-size:0.65em; margin:0;">Textúra IV + Variocut C462 → <strong>f = 0,158</strong> (−46 % oproti referencii)</p>
         </div>
         <div class="card" style="padding:0.6em 0.9em;">
-          <p class="card-label">Key limitation</p>
-          <p style="font-size:0.65em; margin:0;">High-viscosity lubricant (Iloform) dominates — textures add no benefit. 10 µm depth too shallow for LASERTEC 80 Shape.</p>
+          <p class="card-label">Hlavné obmedzenie</p>
+          <p style="font-size:0.65em; margin:0;">Vysokoviskózne mazivo (Iloform) prevláda — textúry neprinášajú žiadny prínos. Hĺbka 10 µm je pre LASERTEC 80 Shape príliš malá.</p>
         </div>
       </div>
       <p style="font-size:0.6em; color:var(--muted); margin-top:0.5em;">
-        Recommendation: pico/femtosecond laser for fine dimples · low-viscosity lubricant (10–20 mm²/s) · dimple depth/diameter ratio 0.1–0.2 · texture density ≥ 30%
+        Odporúčanie: piko/femtosekundový laser pre jemné jamky · mazivo s nízkou viskozitou (10 – 20 mm²/s) · pomer hĺbky a priemeru jamky 0,1 – 0,2 · hustota textúry ≥ 30 %
       </p>
     </div>
-    <p class="slide-source">DP thesis, MTF STU Trnava, 2015</p>
+    <p class="slide-source">Diplomová práca, MTF STU Trnava, 2015</p>
   </section>
 
   <!-- ══════════════════════════════════════════════════════════════════════════
@@ -723,213 +723,213 @@
   <!-- ══ SLIDE 15 — C1: Chip Breaker — Workflow ══════════════════════════════ -->
   <section style="display:flex; flex-direction:column; height:100%;">
     <div class="cat-bar">
-      <span class="cat-label">C · Applied Manufacturing</span>
-      <span class="cat-sub">Study 1 of 2 &nbsp;·&nbsp; Chip Breaker on Sintered Carbide Insert</span>
+      <span class="cat-label">C · Aplikovaná výroba</span>
+      <span class="cat-sub">Štúdia 1 z 2 &nbsp;·&nbsp; Lámač triesok na doštičke zo spekaného karbidu</span>
     </div>
-    <h2>Chip Breaker Production — CAD → CAM → Laser → Scan</h2>
+    <h2>Výroba lámača triesok — CAD → CAM → laser → sken</h2>
     <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
       <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
         <ul>
-          <li><strong>Goal:</strong> produce chip breaker geometry on carbide turning insert by laser (alternative to conventional grinding)</li>
-          <li><strong>Workflow:</strong>
+          <li><strong>Cieľ:</strong> vyrobiť laserom geometriu lámača triesok na karbidovej sústružníckej doštičke (alternatíva ku konvenčnému brúseniu)</li>
+          <li><strong>Postup:</strong>
             <ol style="font-size:0.9em;">
               <li>CAD: Autodesk Inventor</li>
-              <li>CAM: LpsWin (STL → laser paths)</li>
-              <li>Machining: LASERTEC 80 Shape (SAUER)</li>
-              <li>Verification: ATOS GOM optical 3D scanner</li>
+              <li>CAM: LpsWin (STL → laserové dráhy)</li>
+              <li>Obrábanie: LASERTEC 80 Shape (SAUER)</li>
+              <li>Overenie: optický 3D skener ATOS GOM</li>
             </ol>
           </li>
-          <li>6 parameter tests → optimal: <span class="badge">60 kHz · 2000 mm/s · 29 W</span></li>
-          <li>Track spacing 10 µm · material removal 1 µm/layer</li>
+          <li>6 testov parametrov → optimum: <span class="badge">60 kHz · 2000 mm/s · 29 W</span></li>
+          <li>Rozostup dráh 10 µm · úber materiálu 1 µm/vrstva</li>
         </ul>
       </div>
       <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
-        <img src="images/t1/zaverecna_prace_p60_img1.jpeg" style="width:100%; max-height:48vh; object-fit:contain;" alt="CAM laser paths on insert">
-        <p class="img-caption">LpsWin CAM — generated laser beam paths on cutting insert surface</p>
+        <img src="images/t1/zaverecna_prace_p60_img1.jpeg" style="width:100%; max-height:48vh; object-fit:contain;" alt="CAM laserové dráhy na doštičke">
+        <p class="img-caption">LpsWin CAM — vygenerované dráhy laserového lúča na povrchu reznej doštičky</p>
       </div>
     </div>
-    <p class="slide-source">DP thesis, MTF STU Trnava, 2014</p>
+    <p class="slide-source">Diplomová práca, MTF STU Trnava, 2014</p>
   </section>
 
   <!-- ══ SLIDE 16 — C1: 3D Scan Results ══════════════════════════════════════ -->
   <section style="display:flex; flex-direction:column; height:100%;">
     <div class="cat-bar">
-      <span class="cat-label">C · Applied Manufacturing</span>
-      <span class="cat-sub">Chip Breaker — 3D Scan Verification</span>
+      <span class="cat-label">C · Aplikovaná výroba</span>
+      <span class="cat-sub">Lámač triesok — overenie 3D skenovaním</span>
     </div>
-    <h2>Result — CAD vs. Machined Shape (ATOS GOM Scan)</h2>
+    <h2>Výsledok — CAD vs. obrobený tvar (sken ATOS GOM)</h2>
     <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
       <div style="display:flex; flex-direction:column; justify-content:center;">
         <div class="cols-2" style="gap:1em; margin-bottom:0.7em;">
           <div class="card" style="text-align:center; padding:0.8em;">
-            <p style="font-size:0.6em; color:var(--muted); margin:0 0 0.2em;">Max. deviation</p>
-            <p style="font-size:1.5em; font-weight:700; color:var(--indigo); margin:0;">0.09 mm</p>
+            <p style="font-size:0.6em; color:var(--muted); margin:0 0 0.2em;">Max. odchýlka</p>
+            <p style="font-size:1.5em; font-weight:700; color:var(--indigo); margin:0;">0,09 mm</p>
           </div>
           <div class="card" style="text-align:center; padding:0.8em;">
-            <p style="font-size:0.6em; color:var(--muted); margin:0 0 0.2em;">Machining time / side</p>
-            <p style="font-size:1.5em; font-weight:700; color:var(--indigo); margin:0;">~25–30 min</p>
+            <p style="font-size:0.6em; color:var(--muted); margin:0 0 0.2em;">Čas obrábania / strana</p>
+            <p style="font-size:1.5em; font-weight:700; color:var(--indigo); margin:0;">~25 – 30 min</p>
           </div>
         </div>
         <div class="card" style="padding:0.7em 1em;">
           <ul style="font-size:0.68em; margin:0;">
-            <li>Chip breaker shape correctly reproduced — geometry confirmed</li>
-            <li>Deviation too large for serial production → <strong>prototype / R&amp;D only</strong></li>
-            <li>Laser micromachining suitable for new geometry exploration in R&amp;D of carbide and CBN inserts</li>
+            <li>Tvar lámača triesok správne reprodukovaný — geometria potvrdená</li>
+            <li>Odchýlka príliš veľká pre sériovú výrobu → <strong>len prototypy / výskum a vývoj</strong></li>
+            <li>Laserové mikroobrábanie je vhodné na overovanie nových geometrií pri vývoji karbidových a CBN doštičiek</li>
           </ul>
         </div>
       </div>
       <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
-        <img src="images/t1/zaverecna_prace_p67_img1.jpeg" style="width:100%; max-height:49vh; object-fit:contain;" alt="3D scan colour deviation map">
-        <p class="img-caption">ATOS GOM 3D scan — colour deviation map: machined chip breaker vs. CAD model</p>
+        <img src="images/t1/zaverecna_prace_p67_img1.jpeg" style="width:100%; max-height:49vh; object-fit:contain;" alt="Farebná mapa odchýlok 3D skenu">
+        <p class="img-caption">3D sken ATOS GOM — farebná mapa odchýlok: obrobený lámač triesok vs. model CAD</p>
       </div>
     </div>
-    <p class="slide-source">DP thesis, MTF STU Trnava, 2014</p>
+    <p class="slide-source">Diplomová práca, MTF STU Trnava, 2014</p>
   </section>
 
   <!-- ══ SLIDE 17 — C2: Mold Texturing — Workflow ════════════════════════════ -->
   <section style="display:flex; flex-direction:column; height:100%;">
     <div class="cat-bar">
-      <span class="cat-label">C · Applied Manufacturing</span>
-      <span class="cat-sub">Study 2 of 2 &nbsp;·&nbsp; Laser Texturing of Injection Mold Cavities</span>
+      <span class="cat-label">C · Aplikovaná výroba</span>
+      <span class="cat-sub">Štúdia 2 z 2 &nbsp;·&nbsp; Laserové textúrovanie dutín vstrekovacích foriem</span>
     </div>
-    <h2>Injection Mold Texturing — Flat &amp; 5-Axis Cavities</h2>
+    <h2>Textúrovanie vstrekovacích foriem — rovné a päťosové dutiny</h2>
     <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
       <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
         <ul>
-          <li><strong>Goal:</strong> apply decorative/functional textures to mold cavities; transfer to HDPE plastic parts</li>
-          <li><strong>Workflow:</strong>
+          <li><strong>Cieľ:</strong> naniesť dekoratívne/funkčné textúry na dutiny formy; preniesť ich na plastové diely z HDPE</li>
+          <li><strong>Postup:</strong>
             <ol style="font-size:0.87em;">
-              <li>CAD design (4 textures) — Autodesk PowerSHAPE</li>
-              <li>STL → bitmap (GenBmp) → texture placement (GIMP)</li>
-              <li>LpsWin: define machining parameters + paths</li>
-              <li>LASERTEC 80 Shape (flat + 5-axis cavity)</li>
-              <li>Injection moulding: Babyplast micro-machine (HDPE)</li>
+              <li>Návrh v CAD (4 textúry) — Autodesk PowerSHAPE</li>
+              <li>STL → bitmapa (GenBmp) → umiestnenie textúry (GIMP)</li>
+              <li>LpsWin: definícia parametrov obrábania + dráh</li>
+              <li>LASERTEC 80 Shape (rovná + päťosová dutina)</li>
+              <li>Vstrekovanie: mikrostroj Babyplast (HDPE)</li>
             </ol>
           </li>
-          <li>Settings: 20 µm track spacing · 0.002 mm/layer · 80 kHz · 1600 mm/s</li>
+          <li>Nastavenie: rozostup dráh 20 µm · 0,002 mm/vrstva · 80 kHz · 1600 mm/s</li>
         </ul>
       </div>
       <div style="display:flex; flex-direction:column; justify-content:center; gap:0.5em;">
         <div style="text-align:center;">
-          <img src="images/t3/zaverecna_prace-2_p43_img1.jpeg" style="width:100%; max-height:26vh; object-fit:contain;" alt="LpsWin software texture paths">
-          <p class="img-caption">LpsWin — laser paths for texture bitmap on mold surface</p>
+          <img src="images/t3/zaverecna_prace-2_p43_img1.jpeg" style="width:100%; max-height:26vh; object-fit:contain;" alt="Dráhy textúry v softvéri LpsWin">
+          <p class="img-caption">LpsWin — laserové dráhy bitmapy textúry na povrchu formy</p>
         </div>
         <div style="text-align:center;">
-          <img src="images/t3/zaverecna_prace-2_p47_img1.jpeg" style="width:100%; max-height:26vh; object-fit:contain;" alt="Coordinate system defined on mold">
-          <p class="img-caption">LpsWin — machining region defined on mold cavity</p>
+          <img src="images/t3/zaverecna_prace-2_p47_img1.jpeg" style="width:100%; max-height:26vh; object-fit:contain;" alt="Súradnicový systém definovaný na forme">
+          <p class="img-caption">LpsWin — oblasť obrábania definovaná na dutine formy</p>
         </div>
       </div>
     </div>
-    <p class="slide-source">Master thesis (English), MTF STU Trnava, 2017</p>
+    <p class="slide-source">Diplomová práca (v angličtine), MTF STU Trnava, 2017</p>
   </section>
 
   <!-- ══ SLIDE 18 — C2: Results ═══════════════════════════════════════════════ -->
   <section style="display:flex; flex-direction:column; height:100%;">
     <div class="cat-bar">
-      <span class="cat-label">C · Applied Manufacturing</span>
-      <span class="cat-sub">Injection Mold Texturing — Results</span>
+      <span class="cat-label">C · Aplikovaná výroba</span>
+      <span class="cat-sub">Textúrovanie vstrekovacích foriem — výsledky</span>
     </div>
-    <h2>Texturing Results — Three Production Rounds</h2>
+    <h2>Výsledky textúrovania — tri výrobné kolá</h2>
     <div class="fig-row" style="flex:1; align-items:stretch; margin-top:0.3em;">
       <div style="display:flex; flex-direction:column; justify-content:center; gap:0.55em;">
         <div class="card" style="padding:0.6em 1em;">
-          <p class="card-label">Round 1 — Flat cavity (0.4–0.84 mm textures)</p>
-          <p style="font-size:0.65em; margin:0;">Textures invisible after moulding — too small. Mold re-milled, all textures redesigned to 4 mm.</p>
+          <p class="card-label">1. kolo — rovná dutina (textúry 0,4 – 0,84 mm)</p>
+          <p style="font-size:0.65em; margin:0;">Textúry po vstrekovaní neviditeľné — príliš malé. Forma prefrézovaná, všetky textúry prepracované na 4 mm.</p>
         </div>
         <div class="card" style="padding:0.6em 1em;">
-          <p class="card-label">Round 2 — Flat cavity (redesigned 4 mm)</p>
-          <p style="font-size:0.65em; margin:0;">2 of 4 textures met requirements. Oval mold artifact and jetting effect (poor gate) persisted.</p>
+          <p class="card-label">2. kolo — rovná dutina (prepracované, 4 mm)</p>
+          <p style="font-size:0.65em; margin:0;">2 zo 4 textúr splnili požiadavky. Oválny artefakt formy a jetting (nevhodný vtok) pretrvávali.</p>
         </div>
         <div class="card" style="padding:0.6em 1em; border-top:3px solid var(--g1);">
-          <p class="card-label">Round 3 — 5-axis complex cavity</p>
-          <p style="font-size:0.65em; margin:0;">All textures visible on mold. Quality degraded in cavity centre — possible fixture movement or programming error. <span class="badge">Hexagonal</span> texture best (deepest geometry, best HDPE transfer).</p>
+          <p class="card-label">3. kolo — päťosová zložitá dutina</p>
+          <p style="font-size:0.65em; margin:0;">Všetky textúry na forme viditeľné. Kvalita v strede dutiny zhoršená — možný pohyb prípravku alebo chyba programovania. Najlepšia <span class="badge">šesťuholníková</span> textúra (najhlbšia geometria, najlepší prenos na HDPE).</p>
         </div>
         <p style="font-size:0.62em; color:var(--muted); margin:0;">
-          Key finding: texture depth <strong>&gt; 1 mm</strong> critical for reliable plastic transfer. 5-axis texturing of complex surfaces is feasible.
+          Hlavné zistenie: hĺbka textúry <strong>&gt; 1 mm</strong> je rozhodujúca pre spoľahlivý prenos na plast. Päťosové textúrovanie zložitých plôch je realizovateľné.
         </p>
       </div>
       <div style="display:flex; flex-direction:column; justify-content:center; text-align:center;">
-        <img src="images/t3/zaverecna_prace-2_p49_img1.jpeg" style="width:100%; max-height:49vh; object-fit:contain;" alt="Redesigned textures on mold">
-        <p class="img-caption">Redesigned textures on mold cavity (4 mm scale) — distinct patterns visible before injection moulding</p>
+        <img src="images/t3/zaverecna_prace-2_p49_img1.jpeg" style="width:100%; max-height:49vh; object-fit:contain;" alt="Prepracované textúry na forme">
+        <p class="img-caption">Prepracované textúry na dutine formy (mierka 4 mm) — zreteľné vzory pred vstrekovaním</p>
       </div>
     </div>
-    <p class="slide-source">Master thesis (English), MTF STU Trnava, 2017</p>
+    <p class="slide-source">Diplomová práca (v angličtine), MTF STU Trnava, 2017</p>
   </section>
 
   <!-- ══ SLIDE 19 — SUMMARY TABLE ═════════════════════════════════════════════ -->
   <section style="display:flex; flex-direction:column; height:100%;">
-    <h2>Summary — 7 Research Theses on Laser Micromachining</h2>
+    <h2>Zhrnutie — 7 výskumných prác o laserovom mikroobrábaní</h2>
     <div style="overflow-x:auto; flex:1; margin-top:0.4em;">
       <table style="font-size:0.61em;">
         <thead>
-          <tr><th>Cat.</th><th>Material / Application</th><th>Method</th><th>Key Result</th></tr>
+          <tr><th>Kat.</th><th>Materiál / aplikácia</th><th>Metóda</th><th>Hlavný výsledok</th></tr>
         </thead>
         <tbody>
           <tr>
             <td><span class="badge">A</span></td>
-            <td>Titanium GRADE 2</td>
-            <td>Taguchi L9, hatching &amp; cross-hatching</td>
-            <td>Ra = 1.17 µm / 1.55 µm isotropic; track spacing dominates (&gt;51%)</td>
+            <td>Titán GRADE 2</td>
+            <td>Taguchi L9, šrafovanie a krížové šrafovanie</td>
+            <td>Ra = 1,17 µm / 1,55 µm izotropne; dominuje rozostup dráh (&gt; 51 %)</td>
           </tr>
           <tr>
             <td><span class="badge">A</span></td>
-            <td>Sintered carbide WC-Co</td>
-            <td>Half-factorial 27 exp., cross-hatching</td>
-            <td>Optimal params for Ra &amp; ablation rate; power + spacing most influential</td>
+            <td>Spekaný karbid WC-Co</td>
+            <td>Polovičný faktorový plán, 27 exp., krížové šrafovanie</td>
+            <td>Optimálne parametre pre Ra a rýchlosť ablácie; najväčší vplyv má výkon + rozostup</td>
           </tr>
           <tr>
             <td><span class="badge">B</span></td>
-            <td>Steel 11373 — grooves &amp; dimples</td>
-            <td>Ring test, 2 laser systems</td>
-            <td>Wide grooves: f = 0.128 (−32%); narrow grooves raised friction</td>
+            <td>Oceľ 11373 — drážky a jamky</td>
+            <td>Ring test, 2 laserové systémy</td>
+            <td>Široké drážky: f = 0,128 (−32 %); úzke drážky trenie zvýšili</td>
           </tr>
           <tr>
             <td><span class="badge">B</span></td>
-            <td>Tool steel 1.2311 — large structures</td>
+            <td>Nástrojová oceľ 1.2311 — veľké štruktúry</td>
             <td>Ring test, LASERTEC 80 PowerDrill</td>
-            <td>Friction increased (f = 0.315) — suited for grip applications, not lubrication</td>
+            <td>Trenie sa zvýšilo (f = 0,315) — vhodné na uchopenie, nie na mazanie</td>
           </tr>
           <tr>
             <td><span class="badge">B</span></td>
-            <td>Tool steel 90MnCrV8 — dimple textures</td>
-            <td>Ring test, 4 textures × 3 lubricants</td>
-            <td>Best: Texture IV + Variocut C462 → f = 0.158 (−46%)</td>
+            <td>Nástrojová oceľ 90MnCrV8 — textúry jamiek</td>
+            <td>Ring test, 4 textúry × 3 mazivá</td>
+            <td>Najlepšie: Textúra IV + Variocut C462 → f = 0,158 (−46 %)</td>
           </tr>
           <tr>
             <td><span class="badge">C</span></td>
-            <td>Chip breaker on carbide insert</td>
-            <td>CAD → CAM → LASERTEC → ATOS scan</td>
-            <td>Prototype shape achieved; deviation 0.09 mm; 25–30 min/side → R&amp;D only</td>
+            <td>Lámač triesok na karbidovej doštičke</td>
+            <td>CAD → CAM → LASERTEC → sken ATOS</td>
+            <td>Tvar prototypu dosiahnutý; odchýlka 0,09 mm; 25 – 30 min/strana → len výskum a vývoj</td>
           </tr>
           <tr>
             <td><span class="badge">C</span></td>
-            <td>Injection mold texturing</td>
-            <td>Bitmap + 5-axis LASERTEC → Babyplast</td>
-            <td>5-axis texturing feasible; depth &gt;1 mm critical; hexagonal texture best transfer</td>
+            <td>Textúrovanie vstrekovacích foriem</td>
+            <td>Bitmapa + päťosový LASERTEC → Babyplast</td>
+            <td>Päťosové textúrovanie realizovateľné; rozhodujúca hĺbka &gt; 1 mm; najlepší prenos pri šesťuholníkovej textúre</td>
           </tr>
         </tbody>
       </table>
     </div>
     <p style="font-size:0.53em; color:var(--muted); margin-top:0.5em;">
-      All studies: DMG MORI LASERTEC 80 Shape · CE5AM Centre of Excellence · MTF STU Trnava · 2013–2018
+      Všetky štúdie: DMG MORI LASERTEC 80 Shape · Centrum excelentnosti CE5AM · MTF STU Trnava · 2013 – 2018
     </p>
   </section>
 
 </div></div>
 
 <div id="navBar">
-  <button class="nav-btn" id="prevBtn" title="Previous slide (←)">
+  <button class="nav-btn" id="prevBtn" title="Predchádzajúca snímka (←)">
     <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
   </button>
   <div id="slideIndicators"></div>
   <span id="slideCounter">1 / ?</span>
-  <button class="nav-btn" id="playBtn" title="Play narration (Space)">
+  <button class="nav-btn" id="playBtn" title="Prehrať komentár (medzerník)">
     <svg viewBox="0 0 24 24"><path id="playIconPath" d="M8 5v14l11-7z"/></svg>
   </button>
-  <button class="nav-btn" id="nextBtn" title="Next slide (→)">
+  <button class="nav-btn" id="nextBtn" title="Nasledujúca snímka (→)">
     <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
   </button>
-  <label id="autoLabel" title="Auto-advance when narration ends">
+  <label id="autoLabel" title="Po skončení komentára automaticky prejsť na ďalšiu snímku">
     <input type="checkbox" id="autoPlay" checked> Auto
   </label>
 </div>
@@ -944,7 +944,7 @@
   function setPlayIcon(playing) { playIconPath.setAttribute('d', playing ? PAUSE_D : PLAY_D); }
   function loadAudio(idx, andPlay) {
     const num = String(idx + 1).padStart(2, '0');
-    narration.src = `speech/slide_${num}.wav`;
+    narration.src = `speech/slide_${num}.mp3`;
     if (andPlay) {
       const onCanPlay = () => {
         narration.removeEventListener('canplay', onCanPlay);
@@ -968,7 +968,7 @@
     for (let i = 0; i < total; i++) {
       const d = document.createElement('button');
       d.className = 'dot';
-      d.setAttribute('aria-label', `Slide ${i + 1}`);
+      d.setAttribute('aria-label', `Snímka ${i + 1}`);
       d.addEventListener('click', () => Reveal.slide(i));
       bar.appendChild(d);
     }

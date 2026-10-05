@@ -1,56 +1,56 @@
-SLIDE 18 — C2: INJECTION MOLD TEXTURING — RESULTS
+SNÍMKA 18 — C2: TEXTÚROVANIE VSTREKOVACÍCH FORIEM — VÝSLEDKY
 ================================================================================
 
-The mould texturing study required three successive rounds of work before reaching its final conclusions. This iterative character is typical of applied research that pushes into genuinely new territory, and the lessons learned in each round shaped what was done in the next.
+Štúdia textúrovania foriem si pred dosiahnutím konečných záverov vyžiadala tri po sebe nasledujúce kolá práce. Tento iteratívny charakter je typický pre aplikovaný výskum, ktorý vstupuje na skutočne nové územie, a poznatky z každého kola formovali to, čo sa urobilo v nasledujúcom.
 
-ROUND ONE — FLAT CAVITIES, ORIGINAL DESIGN
+PRVÉ KOLO — ROVNÉ DUTINY, PÔVODNÝ NÁVRH
 
-The first attempt to machine and test the textures was made with the textures as originally designed. The four texture patterns had individual feature sizes in the range of 0.4 to 0.84 millimetres in width and length, with depths of 0.04 to 0.20 millimetres.
+Prvý pokus o obrobenie a odskúšanie textúr sa uskutočnil s textúrami v pôvodnom návrhu. Štyri vzory textúr mali jednotlivé prvky so šírkou a dĺžkou v rozsahu od 0,4 do 0,84 milimetra a s hĺbkou od 0,04 do 0,20 milimetra.
 
-After laser texturing, the mould was inspected under a digital microscope — a Dino-Lite digital microscope capable of magnifications up to several hundred times. The textures were visible on the mould surface, which was encouraging.
+Po laserovom textúrovaní sa forma prezrela digitálnym mikroskopom Dino-Lite so zväčšením až niekoľko stokrát. Textúry boli na povrchu formy viditeľné, čo bolo povzbudivé.
 
-However, when HDPE was injection-moulded into the textured mould and the plastic parts were inspected, the textures were not visible on the plastic surface — even under the digital microscope. The features were too small in the plane dimensions to survive the injection moulding process, where surface tension effects and the flow dynamics of the molten polymer tended to smooth over fine details.
+Keď sa však do textúrovanej formy vstrekol HDPE a plastové diely sa prezreli, textúry na povrchu plastu viditeľné neboli, a to ani pod digitálnym mikroskopom. Prvky boli v rovinných rozmeroch príliš malé na to, aby prežili proces vstrekovania, pri ktorom povrchové napätie a dynamika toku roztaveného polyméru jemné detaily vyhladili.
 
-This is a known phenomenon in injection moulding: the ability to transfer a mould surface feature to the plastic part depends on several factors — the feature size, the polymer melt viscosity, the injection pressure, and especially the mould temperature. Features below a certain threshold scale simply do not transfer reliably because the polymer melt cannot fill them completely before freezing.
+Ide o známy jav pri vstrekovaní: schopnosť preniesť prvok povrchu formy na plastový diel závisí od viacerých faktorov, od veľkosti prvku, viskozity taveniny polyméru, vstrekovacieho tlaku a najmä od teploty formy. Prvky pod určitou prahovou veľkosťou sa jednoducho spoľahlivo neprenesú, pretože tavenina polyméru ich nedokáže úplne vyplniť skôr, než stuhne.
 
-At this point, the researcher had two choices: invest in improving the injection moulding process (higher mould temperature, higher pressure) to improve feature replication, or redesign the textures to be larger and therefore more reliably transferable. The decision was made to redesign the textures.
+V tomto bode mal autor dve možnosti: investovať do zlepšenia procesu vstrekovania, teda vyššej teploty formy a vyššieho tlaku, aby sa zlepšila reprodukcia prvkov, alebo prepracovať textúry tak, aby boli väčšie, a tým spoľahlivejšie prenosné. Rozhodol sa textúry prepracovať.
 
-ROUND TWO — FLAT CAVITIES, REDESIGNED TEXTURES
+DRUHÉ KOLO — ROVNÉ DUTINY, PREPRACOVANÉ TEXTÚRY
 
-The mould cavity surface was milled smooth — removing all traces of the first texturing — and the four textures were redesigned. The individual feature dimensions were increased to approximately 4 millimetres, with depths of 0.2 to 0.4 millimetres. This is a tenfold increase in planar dimensions compared to Round 1.
+Povrch dutiny formy sa vyfrézoval nahladko, čím sa odstránili všetky stopy prvého textúrovania, a štyri textúry sa prepracovali. Rozmery jednotlivých prvkov sa zväčšili na približne 4 milimetre s hĺbkou od 0,2 do 0,4 milimetra. To je oproti prvému kolu desaťnásobné zväčšenie rovinných rozmerov.
 
-The laser texturing was repeated with these enlarged designs. This time, upon inspection, the textures on the mould surface were clearly visible and distinct — the four patterns could be readily distinguished from each other.
+Laserové textúrovanie sa s týmito zväčšenými návrhmi zopakovalo. Tentoraz boli textúry na povrchu formy pri kontrole jasne viditeľné a zreteľné, štyri vzory sa dali ľahko od seba rozlíšiť.
 
-Injection moulding was then performed. The resulting plastic parts showed the texture patterns on their surface, confirming that the features now transferred successfully to the HDPE. However, two defects appeared consistently across all parts:
+Potom sa uskutočnilo vstrekovanie. Výsledné plastové diely mali na povrchu vzory textúr, čo potvrdilo, že prvky sa teraz úspešne preniesli na HDPE. Na všetkých dieloch sa však opakovane objavili dve chyby:
 
-The first was an oval shape distortion. The plastic parts had a slightly oval outline rather than the perfect rectangle defined by the cavity. This was traced to the machining of the mould cavity itself — a feature of the cavity manufacturing process rather than the laser texturing. Since all four texture areas were affected equally, it was accepted as a systematic limitation of this specific mould.
+Prvou bolo oválne skreslenie tvaru. Plastové diely mali mierne oválny obrys namiesto dokonalého obdĺžnika daného dutinou. Príčinou bolo obrábanie samotnej dutiny formy, teda vlastnosť výroby dutiny, a nie laserového textúrovania. Keďže boli rovnako ovplyvnené všetky štyri oblasti textúr, prijalo sa to ako systematické obmedzenie tejto konkrétnej formy.
 
-The second defect was jetting — a flow defect in injection moulding where the polymer melt enters the cavity in a thin jet that does not fill the cross-section uniformly. This causes flow lines, poor surface quality at the junction between the jet and the mould walls, and inconsistent texture transfer in the affected zone. The cause of jetting in this case was traced to the gate design — the entry point for the polymer was too small and poorly positioned for the cavity geometry. Correcting this would require redesigning the gate, which was beyond the scope of this study.
+Druhou chybou bol jetting, teda chyba toku pri vstrekovaní, keď tavenina polyméru vstupuje do dutiny tenkým prúdom, ktorý nevyplní prierez rovnomerne. To spôsobuje stopy toku, zlú kvalitu povrchu na styku prúdu so stenami formy a nerovnomerný prenos textúry v postihnutej oblasti. Príčinou jettingu bol v tomto prípade návrh vtoku: miesto vstupu polyméru bolo pre geometriu dutiny príliš malé a nevhodne umiestnené. Odstránenie tejto chyby by si vyžadovalo prepracovanie vtoku, čo presahovalo rozsah tejto štúdie.
 
-Despite these defects, two of the four textures were judged to meet the minimum requirements for further testing: they showed clear, distinguishable patterns on the plastic surface with acceptable uniformity. These two textures — one of which was the hexagonal design — were selected for the third round.
+Napriek týmto chybám sa dve zo štyroch textúr posúdili ako vyhovujúce minimálnym požiadavkám na ďalšie skúšanie: vykazovali jasné, rozlíšiteľné vzory na povrchu plastu s prijateľnou rovnomernosťou. Tieto dve textúry, z ktorých jedna bola šesťuholníková, sa vybrali do tretieho kola.
 
-ROUND THREE — FIVE-AXIS TEXTURING OF COMPLEX CAVITY
+TRETIE KOLO — PÄŤOSOVÉ TEXTÚROVANIE ZLOŽITEJ DUTINY
 
-The third round moved to the second side of the mould — the complex, three-dimensional cavities requiring five-axis laser texturing. The two selected textures from Round 2 were applied to these 3D surfaces using the UV mapping workflow described in the previous slide.
+Tretie kolo sa presunulo na druhú stranu formy, k zložitým trojrozmerným dutinám, ktoré si vyžadujú päťosové laserové textúrovanie. Dve vybrané textúry z druhého kola sa naniesli na tieto 3D plochy pomocou postupu UV mapovania opísaného na predchádzajúcej snímke.
 
-The five-axis machining proceeded without mechanical problems. After texturing, the mould was cleaned and inspected. The texture patterns were visible across the entire curved cavity surface, confirming that the five-axis software workflow and the machine's five-axis motion control had correctly applied the texture to the 3D geometry.
+Päťosové obrábanie prebehlo bez mechanických problémov. Po textúrovaní sa forma vyčistila a prezrela. Vzory textúr boli viditeľné na celej zakrivenej ploche dutiny, čo potvrdilo, že päťosový softvérový postup aj päťosové riadenie pohybu stroja naniesli textúru na 3D geometriu správne.
 
-However, upon closer inspection with the digital microscope, a problem was identified in the centre of each cavity: the texture quality in the central region was noticeably lower than in the peripheral areas. The dimples or cells in the centre were shallower, less defined, or showed evidence of overlapping or misalignment.
+Pri podrobnejšej kontrole digitálnym mikroskopom sa však v strede každej dutiny zistil problém: kvalita textúry v strednej oblasti bola citeľne nižšia ako v okrajových oblastiach. Jamky alebo bunky v strede boli plytšie, menej zreteľné alebo vykazovali stopy prekrývania či nesprávneho zarovnania.
 
-The most likely cause — as the researcher correctly diagnosed — is either a programming error in the UV mapping or five-axis toolpath generation, or a mechanical effect during machining: as the mould rotates to present different areas of the curved surface to the laser beam, the fixturing can flex slightly, causing the actual position of the surface to deviate from the programmed position. At the 20-micrometre track spacing used, even a few micrometres of positioning error affects the quality.
+Najpravdepodobnejšou príčinou, ako autor správne diagnostikoval, je buď chyba programovania pri UV mapovaní alebo generovaní päťosových dráh, alebo mechanický jav počas obrábania: keď sa forma otáča, aby laserovému lúču nastavila rôzne oblasti zakrivenej plochy, upínací prípravok sa môže mierne prehnúť, takže skutočná poloha povrchu sa odchýli od naprogramovanej. Pri použitom rozostupe dráh 20 mikrometrov ovplyvní kvalitu aj chyba polohovania niekoľkých mikrometrov.
 
-Injection moulding with the five-axis textured mould confirmed that the textures transferred to the plastic parts, but with the same central quality degradation observed on the mould. The hexagonal texture performed best overall — its greatest depth, approximately 0.4 millimetres, was sufficient to produce a clearly visible and tactilely perceptible pattern on the HDPE surface even where transfer was imperfect.
+Vstrekovanie do formy textúrovanej päťosovo potvrdilo, že textúry sa na plastové diely preniesli, ale s rovnakým zhoršením kvality v strede, aké sa pozorovalo na forme. Najlepšie celkovo dopadla šesťuholníková textúra: jej najväčšia hĺbka, približne 0,4 milimetra, stačila na vytvorenie jasne viditeľného a hmatom citeľného vzoru na povrchu HDPE aj tam, kde prenos nebol dokonalý.
 
-THE KEY ENGINEERING FINDING
+HLAVNÉ INŽINIERSKE ZISTENIE
 
-Across all three rounds, the most important finding is quantitative and directly actionable: texture depth greater than 1 millimetre — or at minimum greater than 0.3 to 0.4 millimetres — is required for reliable transfer of a texture from the mould surface to an injection-moulded HDPE part under the conditions tested. Features shallower than this do not survive the injection moulding process.
+Najdôležitejšie zistenie zo všetkých troch kôl je kvantitatívne a priamo využiteľné: na spoľahlivý prenos textúry z povrchu formy na vstrekovaný diel z HDPE je za skúšaných podmienok potrebná hĺbka textúry väčšia ako 1 milimeter, alebo prinajmenšom väčšia ako 0,3 až 0,4 milimetra. Plytšie prvky proces vstrekovania neprežijú.
 
-This finding provides a design rule for anyone working on laser-textured injection moulds for HDPE or similar polymers: design with texture depth in mind first, and then optimise the planar geometry. Shallow textures, regardless of how precisely they are made, will not transfer.
+Toto zistenie poskytuje konštrukčné pravidlo pre každého, kto pracuje na laserom textúrovaných vstrekovacích formách pre HDPE alebo podobné polyméry: najprv navrhujte s ohľadom na hĺbku textúry a až potom optimalizujte rovinnú geometriu. Plytké textúry sa neprenesú, bez ohľadu na to, ako presne sú vyrobené.
 
-The five-axis texturing capability was successfully demonstrated as a concept, but further work is needed to improve the toolpath accuracy for the centre of complex cavities. This is primarily a software and fixturing challenge rather than a fundamental limitation of the laser technology.
+Schopnosť päťosového textúrovania sa ako koncept úspešne preukázala, ale na zlepšenie presnosti dráh v strede zložitých dutín je potrebná ďalšia práca. Ide predovšetkým o problém softvéru a upínania, a nie o principiálne obmedzenie laserovej technológie.
 
-THE BROADER SIGNIFICANCE
+ŠIRŠÍ VÝZNAM
 
-This study is among the first systematic investigations of laser surface texturing of injection moulds performed at MTF STU Trnava. It established the basic workflow, identified the critical design parameters, and demonstrated both the capability and the current limitations of the available equipment. It provides a solid foundation for future work that could include more complex 3D geometries, different polymer materials, improved gate designs, and optimised UV mapping strategies.
+Táto štúdia patrí medzi prvé systematické výskumy laserového textúrovania vstrekovacích foriem na MTF STU v Trnave. Stanovila základný postup, identifikovala kritické konštrukčné parametre a ukázala možnosti aj súčasné obmedzenia dostupného vybavenia. Poskytuje pevný základ pre ďalšiu prácu, ktorá by mohla zahŕňať zložitejšie 3D geometrie, iné polymérne materiály, lepšie návrhy vtokov a optimalizované stratégie UV mapovania.
 
-Commercial applications of this technology are already well established in the automotive and consumer electronics industries, where laser-textured moulds are used to produce parts with consistent, reproducible surface patterns that chemical etching cannot match in precision or repeatability. The research conducted in this thesis positions MTF STU Trnava to contribute to and benefit from this growing field.
+Komerčné aplikácie tejto technológie sú už dobre zavedené v automobilovom priemysle a spotrebnej elektronike, kde sa laserom textúrované formy používajú na výrobu dielov s konzistentnými, reprodukovateľnými povrchovými vzormi, s ktorými sa chemické leptanie v presnosti ani opakovateľnosti nemôže merať. Výskum uskutočnený v tejto práci umožňuje MTF STU v Trnave prispievať do tejto rastúcej oblasti a profitovať z nej.

@@ -1,121 +1,121 @@
 {
-  "title": "Laser Micromachining Research at MTF STU Trnava — Overview of 7 Diploma Theses",
+  "title": "Výskum laserového mikroobrábania na MTF STU v Trnave — prehľad 7 diplomových prác",
   "generated": "2026-05-28",
-  "tts_audio_pattern": "speech/slide_{n}.mp3",
+  "tts_audio_pattern": "speech/slide_{nn}.mp3",
   "slides": [
     {
       "index": 1,
-      "title": "Title — Laser Micromachining Research at MTF STU Trnava",
-      "audio": "speech/slide_1.mp3",
-      "narration": "This presentation provides an overview of seven diploma theses on laser micromachining conducted at the Institute of Production Technologies, Faculty of Materials Science and Technology, Slovak University of Technology in Trnava. The research spans the years 2013 to 2018 and covers three distinct application areas of laser technology."
+      "title": "Titulná snímka — Výskum laserového mikroobrábania na MTF STU v Trnave",
+      "audio": "speech/slide_01.mp3",
+      "narration": "Táto prezentácia prináša prehľad siedmich diplomových prác o laserovom mikroobrábaní, ktoré vznikli na Ústave výrobných technológií Materiálovotechnologickej fakulty Slovenskej technickej univerzity so sídlom v Trnave. Výskum pokrýva roky 2013 až 2018 a tri samostatné oblasti použitia laserovej technológie."
     },
     {
       "index": 2,
-      "title": "Research Overview — Three Categories",
-      "audio": "speech/slide_2.mp3",
-      "narration": "The seven theses are grouped into three categories. Category A focuses on laser parameter optimisation — finding the best settings for machining specific materials. Category B examines laser surface texturing to modify tribological properties, measured through Ring test experiments. Category C covers applied manufacturing — using the laser to produce actual functional parts. The common experimental platform across all studies is the DMG MORI LASERTEC 80 Shape, a five-axis CNC laser machining centre located at the Centre of Excellence for Five-Axis Machining at MTF STU Trnava."
+      "title": "Prehľad výskumu — tri kategórie",
+      "audio": "speech/slide_02.mp3",
+      "narration": "Sedem prác je rozdelených do troch kategórií. Kategória A sa zameriava na optimalizáciu parametrov lasera, teda na hľadanie najlepšieho nastavenia pre obrábanie konkrétnych materiálov. Kategória B skúma laserové textúrovanie povrchu na úpravu tribologických vlastností, merané pomocou Ring testu. Kategória C sa venuje aplikovanej výrobe, teda využitiu lasera na výrobu skutočných funkčných dielov. Spoločnou experimentálnou platformou všetkých štúdií je DMG MORI LASERTEC 80 Shape, päťosové CNC laserové obrábacie centrum v Centre excelentnosti päťosového obrábania na MTF STU v Trnave."
     },
     {
       "index": 3,
-      "title": "A1: Titanium Alloy GRADE 2 — Experiment Design",
-      "audio": "speech/slide_3.mp3",
-      "narration": "The first parameter optimisation study investigated laser micromachining of commercially pure titanium alloy GRADE 2. The experiment used a Taguchi L9 orthogonal matrix with four factors — pulse frequency, power, scan speed, and track spacing — each tested at three levels, resulting in nine machining runs. Two scanning strategies were compared: hatching, where the laser moves in one direction, and cross-hatching, where it moves in two perpendicular directions. Surface roughness Ra was measured in two perpendicular directions to assess isotropy."
+      "title": "A1: Titán GRADE 2 — návrh experimentu",
+      "audio": "speech/slide_03.mp3",
+      "narration": "Prvá štúdia optimalizácie parametrov skúmala laserové mikroobrábanie technicky čistého titánu GRADE 2. Experiment využil ortogonálnu maticu Taguchi L9 so štyrmi faktormi, frekvenciou pulzov, výkonom, rýchlosťou skenovania a rozostupom dráh, každým na troch úrovniach, čo dalo deväť obrábacích behov. Porovnávali sa dve stratégie skenovania: šrafovanie, pri ktorom sa laser pohybuje v jednom smere, a krížové šrafovanie, pri ktorom sa pohybuje v dvoch na seba kolmých smeroch. Drsnosť povrchu Ra sa merala v dvoch kolmých smeroch na posúdenie izotropie."
     },
     {
       "index": 4,
-      "title": "A1: Taguchi L9 — Factors and Scanning Strategies",
-      "audio": "speech/slide_4.mp3",
-      "narration": "The four process parameters were varied across three levels each. Pulse frequency ranged from 40 to 80 kilohertz, laser power from 50 to 100 percent, scan speed from 1000 to 2200 millimetres per second, and track spacing from 5 to 15 micrometres. The hatching strategy produces parallel scan lines in a single direction, while cross-hatching overlays two perpendicular sets of lines. This difference in strategy significantly affects both surface quality and its directional uniformity."
+      "title": "A1: Taguchi L9 — faktory a stratégie skenovania",
+      "audio": "speech/slide_04.mp3",
+      "narration": "Štyri procesné parametre sa menili na troch úrovniach. Frekvencia pulzov bola od 40 do 80 kilohertzov, výkon lasera od 50 do 100 percent, rýchlosť skenovania od 1000 do 2200 milimetrov za sekundu a rozostup dráh od 5 do 15 mikrometrov. Šrafovanie vytvára rovnobežné skenovacie čiary v jednom smere, zatiaľ čo krížové šrafovanie prekrýva dve navzájom kolmé sady čiar. Tento rozdiel v stratégii výrazne ovplyvňuje kvalitu povrchu aj jeho rovnomernosť v rôznych smeroch."
     },
     {
       "index": 5,
-      "title": "A1: Results — Surface Roughness Ra",
-      "audio": "speech/slide_5.mp3",
-      "narration": "The best surface roughness achieved with hatching was 1.17 micrometres Ra, obtained at 80 kilohertz, 75 percent power, 1000 millimetres per second, and 15 micrometre track spacing. However, the same surface measured perpendicularly showed Ra of 2.26 micrometres — highly anisotropic. Cross-hatching yielded 1.55 and 1.57 micrometres in both directions at 60 kilohertz, 50 percent power, 1600 millimetres per second, and 15 micrometre spacing. This isotropy makes cross-hatching preferable for practical applications. In all experiments, track spacing had the greatest influence on Ra, exceeding 50 percent, while scan speed had the least effect."
+      "title": "A1: Výsledky — drsnosť povrchu Ra",
+      "audio": "speech/slide_05.mp3",
+      "narration": "Najlepšia drsnosť povrchu pri šrafovaní bola 1,17 mikrometra Ra, dosiahnutá pri 80 kilohertzoch, výkone 75 percent, rýchlosti 1000 milimetrov za sekundu a rozostupe dráh 15 mikrometrov. Ten istý povrch však pri meraní v kolmom smere vykazoval Ra 2,26 mikrometra, bol teda výrazne anizotropný. Krížové šrafovanie poskytlo v oboch smeroch 1,55 a 1,57 mikrometra pri 60 kilohertzoch, výkone 50 percent, rýchlosti 1600 milimetrov za sekundu a rozostupe 15 mikrometrov. Vďaka tejto izotropii je krížové šrafovanie pre praktické aplikácie vhodnejšie. Vo všetkých experimentoch mal na Ra najväčší vplyv rozostup dráh, viac ako 50 percent, zatiaľ čo rýchlosť skenovania mala vplyv najmenší."
     },
     {
       "index": 6,
-      "title": "A2: Sintered Carbide WC-Co — Experiment Design",
-      "audio": "speech/slide_6.mp3",
-      "narration": "The second parameter optimisation study focused on sintered carbide — one of the hardest cutting tool materials. The samples were uncoated turning inserts from Pramet, containing 10 percent cobalt and the remainder tungsten carbide. A half-factorial design with 27 experiments was used, testing the same four factors at three levels. Based on findings from the titanium study, only cross-hatching was used here. Two output metrics were measured: surface roughness Ra and ablation rate — the volume of material removed per unit time."
+      "title": "A2: Spekaný karbid WC-Co — návrh experimentu",
+      "audio": "speech/slide_06.mp3",
+      "narration": "Druhá štúdia optimalizácie parametrov sa zamerala na spekaný karbid, jeden z najtvrdších materiálov rezných nástrojov. Vzorkami boli nepovlakované sústružnícke doštičky od spoločnosti Pramet s obsahom 10 percent kobaltu, zvyšok tvoril karbid volfrámu. Použil sa polovičný faktorový plán s 27 experimentmi, ktorý skúmal rovnaké štyri faktory na troch úrovniach. Na základe zistení zo štúdie titánu sa použilo len krížové šrafovanie. Merali sa dve výstupné veličiny: drsnosť povrchu Ra a rýchlosť ablácie, teda objem materiálu odobratého za jednotku času."
     },
     {
       "index": 7,
-      "title": "A2: Sintered Carbide — Machined Surface Comparison",
-      "audio": "speech/slide_7.mp3",
-      "narration": "These microscope images show the sintered carbide surfaces after laser machining under different parameter combinations. Visible differences in surface texture, groove regularity, and re-solidified material can be observed across experiments. The study confirmed that track spacing and laser power are the most influential parameters for both surface quality and material removal rate on sintered carbide with this machine. The results provide a practical calibration baseline for laser machining of this specific material on the LASERTEC 80 Shape."
+      "title": "A2: Spekaný karbid — porovnanie obrobených povrchov",
+      "audio": "speech/slide_07.mp3",
+      "narration": "Tieto mikroskopické snímky zobrazujú povrchy spekaného karbidu po laserovom obrábaní pri rôznych kombináciách parametrov. Medzi experimentmi sú viditeľné rozdiely v textúre povrchu, pravidelnosti drážok a v opätovne stuhnutom materiáli. Štúdia potvrdila, že rozostup dráh a výkon lasera sú na tomto stroji najvplyvnejšími parametrami pre kvalitu povrchu aj rýchlosť úberu materiálu spekaného karbidu. Výsledky poskytujú praktický kalibračný základ pre laserové obrábanie tohto materiálu na stroji LASERTEC 80 Shape."
     },
     {
       "index": 8,
-      "title": "Ring Test Method — Shared Methodology for Category B",
-      "audio": "speech/slide_8.mp3",
-      "narration": "All three Category B studies use the Ring test to measure friction. In this test, a metal ring is compressed between two tool surfaces. Because the inner diameter is sensitive to friction at the contact interface, changes in inner diameter after each compression step are used to determine the friction coefficient from a calibration curve. A lower friction surface causes the inner diameter to increase, while higher friction causes it to decrease. The test was conducted on a hydraulic EU 40 press in the forming technology laboratory at MTF STU Trnava."
+      "title": "Metóda Ring testu — spoločná metodika kategórie B",
+      "audio": "speech/slide_08.mp3",
+      "narration": "Všetky tri štúdie kategórie B merajú trenie pomocou Ring testu. Pri tejto skúške sa kovový krúžok stláča medzi dvoma plochami nástroja. Keďže vnútorný priemer je citlivý na trenie na kontaktnom rozhraní, zmeny vnútorného priemeru po každom kroku stlačenia sa využívajú na určenie koeficientu trenia z kalibračnej krivky. Pri povrchu s nižším trením sa vnútorný priemer zväčšuje, pri vyššom trení sa zmenšuje. Skúška sa vykonala na hydraulickom lise EU 40 v laboratóriu technológie tvárnenia na MTF STU v Trnave."
     },
     {
       "index": 9,
-      "title": "B1: Steel 11373 — Three Structure Types",
-      "audio": "speech/slide_9.mp3",
-      "narration": "The first tribological study created three types of microstructures on steel ring samples. Type A consisted of narrow parallel grooves machined by a commercial marking laser. Type B was wide, deep grooves produced on the LASERTEC 80 Shape. Type C was hemispherical dimples, also made on the LASERTEC 80 Shape, with diameter approximately 0.15 millimetres and two different pitch angles. A reference sample with no surface structuring served as the friction baseline."
+      "title": "B1: Oceľ 11373 — tri typy štruktúr",
+      "audio": "speech/slide_09.mp3",
+      "narration": "Prvá tribologická štúdia vytvorila na oceľových krúžkových vzorkách tri typy mikroštruktúr. Typ A tvorili úzke rovnobežné drážky obrobené komerčným popisovacím laserom. Typ B tvorili široké hlboké drážky vyrobené na stroji LASERTEC 80 Shape. Typ C tvorili pologuľové jamky, tiež vyrobené na stroji LASERTEC 80 Shape, s priemerom približne 0,15 milimetra a s dvoma rôznymi uhlovými roztečami. Ako základ pre trenie slúžila referenčná vzorka bez štruktúrovania povrchu."
     },
     {
       "index": 10,
-      "title": "B1: Steel 11373 — Ring Test Results",
+      "title": "B1: Oceľ 11373 — výsledky Ring testu",
       "audio": "speech/slide_10.mp3",
-      "narration": "The reference smooth surface gave a friction coefficient of 0.189. Narrow groove samples showed increased friction, between 0.22 and 0.26, because melt ridges along the groove edges raised effective surface roughness. The wide groove sample B1 achieved the lowest friction of 0.128 — a 32 percent reduction — because the large groove geometry created minimal real contact area. Hemisphere-textured samples had friction close to the reference. The study recommends that future work include lubrication testing, as structured surfaces acting as lubricant reservoirs may show even greater friction reduction."
+      "narration": "Hladký referenčný povrch mal koeficient trenia 0,189. Vzorky s úzkymi drážkami vykazovali zvýšené trenie, od 0,22 do 0,26, pretože valy taveniny pozdĺž okrajov drážok zvýšili efektívnu drsnosť povrchu. Vzorka so širokými drážkami B1 dosiahla najnižšie trenie 0,128, teda zníženie o 32 percent, pretože veľká geometria drážok vytvorila minimálnu skutočnú kontaktnú plochu. Vzorky s pologuľovými jamkami mali trenie blízke referencii. Štúdia odporúča, aby ďalšia práca zahŕňala skúšky s mazaním, pretože štruktúrované povrchy pôsobiace ako zásobníky maziva môžu trenie znížiť ešte viac."
     },
     {
       "index": 11,
-      "title": "B2: Tool Steel 1.2311 — Large Triangular Microstructures",
+      "title": "B2: Nástrojová oceľ 1.2311 — veľké trojuholníkové mikroštruktúry",
       "audio": "speech/slide_11.mp3",
-      "narration": "The second tribological study machined a triangular grid microstructure onto the face of tool steel compression rings using the LASERTEC 80 PowerDrill. Each triangular element had arm lengths of 500 micrometres and cavity depth of approximately 410 micrometres. Due to manufacturing limitations, the design had been scaled up ten times from the original 50-micrometre concept. Machining one experimental sample took approximately nine hours. Surface quality was verified by microscopy before ring test."
+      "narration": "Druhá tribologická štúdia obrobila na plochu tlačných nástrojov z nástrojovej ocele trojuholníkovú mriežkovú mikroštruktúru pomocou stroja LASERTEC 80 PowerDrill. Každý trojuholníkový prvok mal ramená dlhé 500 mikrometrov a hĺbku dutiny približne 410 mikrometrov. Pre výrobné obmedzenia sa návrh oproti pôvodnému konceptu s rozmerom 50 mikrometrov desaťnásobne zväčšil. Obrobenie jednej experimentálnej vzorky trvalo približne deväť hodín. Kvalita povrchu sa pred Ring testom overila mikroskopiou."
     },
     {
       "index": 12,
-      "title": "B2: Tool Steel 1.2311 — Unexpected Friction Increase",
+      "title": "B2: Nástrojová oceľ 1.2311 — neočakávané zvýšenie trenia",
       "audio": "speech/slide_12.mp3",
-      "narration": "Contrary to expectations, the microstructured surface increased friction from 0.258 to 0.315 — a 22 percent rise. The root cause was the excessive structure size: during ring compression, metal material flowed into the deep triangular cavities, creating additional resistance. This finding reframes the application: these large structures are not suitable for friction reduction but are appropriate for surfaces where increased grip is desirable, such as robot clamping jaws or anti-slip contact faces. The recommendation is to return to the original 50-micrometre design using a femtosecond laser for adequate precision."
+      "narration": "Napriek očakávaniam mikroštruktúrovaný povrch zvýšil trenie z 0,258 na 0,315, teda o 22 percent. Príčinou bola nadmerná veľkosť štruktúry: pri pechovaní krúžku kov natiekol do hlbokých trojuholníkových dutín a vytvoril dodatočný odpor. Toto zistenie mení pohľad na aplikáciu: tieto veľké štruktúry nie sú vhodné na znižovanie trenia, ale hodia sa pre povrchy, kde je žiaduce lepšie uchopenie, napríklad pre upínacie čeľuste robotov alebo protišmykové kontaktné plochy. Odporúča sa vrátiť k pôvodnému návrhu s rozmerom 50 mikrometrov a na dosiahnutie potrebnej presnosti použiť femtosekundový laser."
     },
     {
       "index": 13,
-      "title": "B3: Tool Steel 90MnCrV8 — 4 Textures and 3 Lubricants",
+      "title": "B3: Nástrojová oceľ 90MnCrV8 — 4 textúry a 3 mazivá",
       "audio": "speech/slide_13.mp3",
-      "narration": "The third tribological study applied four different paraboloid dimple texture designs to the face of compression tool punches made from tool steel 90MnCrV8. The LASERTEC 80 Shape was used for texturing. Three lubrication conditions were tested in the Ring test: dry contact, low-viscosity cutting fluid Variocut C462, and high-viscosity forming oil Iloform FST4. This systematic approach allowed separating the effects of texture geometry from lubricant properties."
+      "narration": "Tretia tribologická štúdia naniesla štyri rôzne návrhy textúr s paraboloidnými jamkami na plochu tlačných nástrojov z nástrojovej ocele 90MnCrV8. Na textúrovanie sa použil LASERTEC 80 Shape. V Ring teste sa skúšali tri podmienky mazania: suchý kontakt, nízkoviskózna rezná kvapalina Variocut C462 a vysokoviskózny tvárniaci olej Iloform FST4. Tento systematický prístup umožnil oddeliť vplyv geometrie textúry od vlastností maziva."
     },
     {
       "index": 14,
-      "title": "B3: Tool Steel 90MnCrV8 — Results Table",
+      "title": "B3: Nástrojová oceľ 90MnCrV8 — tabuľka výsledkov",
       "audio": "speech/slide_14.mp3",
-      "narration": "The results show that the most effective combination was Texture IV with Variocut C462, achieving a friction coefficient of 0.158 — a 46 percent reduction compared to the smooth reference. In dry conditions, only Texture I showed significant reduction to 0.183. With the high-viscosity Iloform FST4, lubrication effects dominated and the textures provided no measurable benefit. An important manufacturing limitation was discovered: the 10-micrometre deep textures could not be produced to the required quality on the LASERTEC 80 Shape, which suggests that pico- or femtosecond lasers would be better suited for such fine dimple geometries."
+      "narration": "Výsledky ukazujú, že najúčinnejšou kombináciou bola Textúra IV s mazivom Variocut C462, ktorá dosiahla koeficient trenia 0,158, teda zníženie o 46 percent oproti hladkej referencii. Za sucha výrazne znížila trenie, na 0,183, len Textúra I. S vysokoviskóznym mazivom Iloform FST4 dominovali účinky maziva a textúry nepriniesli žiadny merateľný prínos. Zistilo sa dôležité výrobné obmedzenie: textúry s hĺbkou 10 mikrometrov nebolo možné na stroji LASERTEC 80 Shape vyrobiť v požadovanej kvalite, čo naznačuje, že na takéto jemné geometrie jamiek by boli vhodnejšie pikosekundové alebo femtosekundové lasery."
     },
     {
       "index": 15,
-      "title": "C1: Chip Breaker on Cutting Insert — Workflow",
+      "title": "C1: Lámač triesok na reznej doštičke — postup",
       "audio": "speech/slide_15.mp3",
-      "narration": "The first applied manufacturing study aimed to design and produce a chip breaker geometry on a sintered carbide turning insert using laser — as an alternative to conventional grinding. The workflow began with CAD design in Autodesk Inventor, followed by CAM programming in LpsWin software to generate the laser paths from an STL file. Machining was performed on the LASERTEC 80 Shape with a track spacing of 10 micrometres and 1-micrometre material removal per layer. Six parameter tests identified the optimal settings as 60 kilohertz, 2000 millimetres per second, and approximately 29 watts."
+      "narration": "Prvá štúdia aplikovanej výroby mala za cieľ navrhnúť a laserom vyrobiť geometriu lámača triesok na sústružníckej doštičke zo spekaného karbidu ako alternatívu ku konvenčnému brúseniu. Postup začal návrhom v CAD v programe Autodesk Inventor, nasledovalo programovanie CAM v softvéri LpsWin, ktorý zo súboru STL vygeneroval laserové dráhy. Obrábanie prebehlo na stroji LASERTEC 80 Shape s rozostupom dráh 10 mikrometrov a úberom materiálu 1 mikrometer na vrstvu. Šesť testov parametrov určilo optimálne nastavenie: 60 kilohertzov, 2000 milimetrov za sekundu a približne 29 wattov."
     },
     {
       "index": 16,
-      "title": "C1: Chip Breaker — 3D Scan Verification Results",
+      "title": "C1: Lámač triesok — výsledky overenia 3D skenovaním",
       "audio": "speech/slide_16.mp3",
-      "narration": "The produced chip breaker was verified by 3D optical scanning using an ATOS GOM scanner. The colour deviation map shows the geometric difference between the machined surface and the original CAD model — red areas are above the design, blue areas below. The maximum deviation measured was 0.09 millimetres. While the chip breaker shape was correctly reproduced, this deviation is too large for serial production standards. Machining one side of an insert took 25 to 30 minutes, confirming that this approach is most valuable for prototype development and geometry exploration during the R&D phase of new cutting tool designs."
+      "narration": "Vyrobený lámač triesok sa overil optickým 3D skenovaním skenerom ATOS GOM. Farebná mapa odchýlok ukazuje geometrický rozdiel medzi obrobeným povrchom a pôvodným modelom CAD: červené oblasti ležia nad návrhom, modré pod ním. Nameraná maximálna odchýlka bola 0,09 milimetra. Hoci sa tvar lámača triesok reprodukoval správne, táto odchýlka je pre sériovú výrobu príliš veľká. Obrobenie jednej strany doštičky trvalo 25 až 30 minút, čo potvrdzuje, že tento prístup je najcennejší pri vývoji prototypov a hľadaní geometrií vo fáze výskumu a vývoja nových rezných nástrojov."
     },
     {
       "index": 17,
-      "title": "C2: Injection Mold Texturing — Workflow",
+      "title": "C2: Textúrovanie vstrekovacích foriem — postup",
       "audio": "speech/slide_17.mp3",
-      "narration": "The second applied manufacturing study transferred decorative and functional laser textures to plastic injection-moulded parts. The workflow involved designing four texture geometries in Autodesk PowerSHAPE, converting them to bitmap images, and applying them to the mold cavity surface using GIMP graphic software. The LpsWin software generated laser paths for the LASERTEC 80 Shape at a track spacing of 20 micrometres and 2-micrometre material removal per layer. Plastic parts were then produced by injection moulding using HDPE material on a Babyplast micro-injection machine."
+      "narration": "Druhá štúdia aplikovanej výroby prenášala dekoratívne a funkčné laserové textúry na vstrekované plastové diely. Postup zahŕňal návrh štyroch geometrií textúr v programe Autodesk PowerSHAPE, ich prevod na bitmapové obrázky a ich umiestnenie na povrch dutiny formy v grafickom programe GIMP. Softvér LpsWin vygeneroval laserové dráhy pre stroj LASERTEC 80 Shape s rozostupom dráh 20 mikrometrov a úberom materiálu 2 mikrometre na vrstvu. Plastové diely sa potom vyrobili vstrekovaním materiálu HDPE na mikrovstrekovacom stroji Babyplast."
     },
     {
       "index": 18,
-      "title": "C2: Injection Mold Texturing — Results",
+      "title": "C2: Textúrovanie vstrekovacích foriem — výsledky",
       "audio": "speech/slide_18.mp3",
-      "narration": "The first round of texturing failed because the 0.4 to 0.84 millimetre textures were too small to transfer visibly to plastic parts. After redesigning to 4 millimetre dimensions, two of four textures met requirements, though a jetting effect from poor gate design and an oval mold artifact persisted. Five-axis texturing of a complex 3D cavity surface was successfully performed, though texture quality degraded near the cavity centre — possibly due to programming error or fixture movement during machining. The hexagonal texture performed best due to its greater depth. The key engineering conclusion is that texture depth exceeding 1 millimetre is critical for reliable visual transfer to the plastic part."
+      "narration": "Prvé kolo textúrovania zlyhalo, pretože textúry s rozmermi od 0,4 do 0,84 milimetra boli príliš malé na to, aby sa viditeľne preniesli na plastové diely. Po prepracovaní na rozmery 4 milimetre splnili požiadavky dve zo štyroch textúr, hoci pretrvával jetting spôsobený nevhodným vtokom a oválny artefakt formy. Päťosové textúrovanie zložitej 3D plochy dutiny sa úspešne uskutočnilo, hoci kvalita textúry sa v strede dutiny zhoršila, pravdepodobne pre chybu programovania alebo pohyb upínacieho prípravku počas obrábania. Najlepšie dopadla šesťuholníková textúra vďaka svojej väčšej hĺbke. Hlavným inžinierskym záverom je, že na spoľahlivý viditeľný prenos na plastový diel je rozhodujúca hĺbka textúry nad 1 milimeter."
     },
     {
       "index": 19,
-      "title": "Summary — 7 Research Theses",
+      "title": "Zhrnutie — 7 výskumných prác",
       "audio": "speech/slide_19.mp3",
-      "narration": "This table summarises the seven theses across the three research categories. Category A established optimal laser parameters for titanium and sintered carbide, identifying track spacing as the most influential factor. Category B showed that laser surface texturing can reduce friction by up to 46 percent when the texture geometry and lubricant viscosity are properly matched, and revealed that oversized structures unexpectedly increase friction — a valuable finding for grip applications. Category C demonstrated that laser micromachining is a viable tool for prototype chip breaker production and for creating functional mold surface textures transferable to plastic parts. All seven studies utilised the LASERTEC 80 Shape at the Centre of Excellence for Five-Axis Machining at MTF STU Trnava."
+      "narration": "Táto tabuľka sumarizuje sedem prác v troch výskumných kategóriách. Kategória A stanovila optimálne parametre lasera pre titán a spekaný karbid a ako najvplyvnejší faktor identifikovala rozostup dráh. Kategória B ukázala, že laserové textúrovanie povrchu môže znížiť trenie až o 46 percent, ak je geometria textúry správne zosúladená s viskozitou maziva, a odhalila, že príliš veľké štruktúry trenie neočakávane zvyšujú, čo je cenné zistenie pre aplikácie vyžadujúce lepšie uchopenie. Kategória C preukázala, že laserové mikroobrábanie je životaschopným nástrojom na výrobu prototypov lámačov triesok a na vytváranie funkčných textúr povrchu foriem prenosných na plastové diely. Všetkých sedem štúdií využívalo LASERTEC 80 Shape v Centre excelentnosti päťosového obrábania na MTF STU v Trnave."
     }
   ]
 }

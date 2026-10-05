@@ -1,17 +1,17 @@
-SLIDE 1 — TITLE
-Laser Micromachining Research at MTF STU Trnava — Overview of 7 Diploma Theses
+SNÍMKA 1 — TITULNÁ SNÍMKA
+Výskum laserového mikroobrábania na MTF STU v Trnave — prehľad 7 diplomových prác
 ================================================================================
 
-Good morning, or good afternoon, everyone.
+Dobré ráno, dobrý deň všetkým.
 
-Today I would like to present an overview of seven diploma theses that were completed at the Institute of Production Technologies at the Faculty of Materials Science and Technology of the Slovak University of Technology in Trnava — known as MTF STU Trnava — over the period from 2013 to 2018.
+Dnes by som vám rád predstavil prehľad siedmich diplomových prác, ktoré vznikli na Ústave výrobných technológií Materiálovotechnologickej fakulty Slovenskej technickej univerzity so sídlom v Trnave, skrátene MTF STU v Trnave, v rokoch 2013 až 2018.
 
-All seven works share a common research theme: laser micromachining. This is a technology that uses a focused laser beam to remove material — layer by layer, micrometre by micrometre — from the surface of a workpiece. It belongs to the family of non-conventional machining methods, alongside electrochemical machining, wire EDM, and abrasive water jet cutting. What makes laser micromachining particularly interesting is that it is a non-contact process: there is no mechanical force applied to the workpiece, no tool wear in the traditional sense, and it can be applied to virtually any material — metals, ceramics, composites.
+Všetkých sedem prác spája spoločná výskumná téma: laserové mikroobrábanie. Ide o technológiu, ktorá pomocou fokusovaného laserového lúča odoberá materiál z povrchu obrobku vrstvu po vrstve, mikrometer po mikrometri. Patrí do skupiny nekonvenčných metód obrábania, spolu s elektrochemickým obrábaním, elektroerozívnym rezaním drôtom a rezaním abrazívnym vodným lúčom. Laserové mikroobrábanie je zaujímavé najmä tým, že ide o bezkontaktný proces: na obrobok nepôsobí žiadna mechanická sila, nedochádza k opotrebeniu nástroja v tradičnom zmysle a možno ho použiť prakticky na akýkoľvek materiál, na kovy, keramiku aj kompozity.
 
-The research presented in these seven theses is not theoretical. Every one of them is an experimental study — designs were made, samples were machined, measurements were taken, and conclusions were drawn from real data. This makes the findings directly applicable to manufacturing practice.
+Výskum prezentovaný v týchto siedmich prácach nie je teoretický. Každá z nich je experimentálnou štúdiou: navrhli sa vzorky, obrobili sa, vykonali sa merania a zo skutočných údajov sa vyvodili závery. Vďaka tomu sú výsledky priamo použiteľné vo výrobnej praxi.
 
-The seven works cover three distinct areas of application, which I will introduce in the next slide. But before we get into the specifics, I want to note one thing that unifies all of these studies: they all used the same experimental machine — the DMG MORI LASERTEC 80 Shape, a five-axis CNC laser machining centre located at the Centre of Excellence for Five-Axis Machining at MTF STU Trnava. This is an important detail, because laser machining results are always machine-specific. The parameters that work well on one machine may need to be completely recalibrated on a different machine, even if the laser type is similar. The fact that all seven theses used the same platform means their results are directly comparable and build upon each other.
+Sedem prác pokrýva tri samostatné oblasti použitia, ktoré predstavím na ďalšej snímke. Skôr než prejdeme k podrobnostiam, chcem zdôrazniť jednu vec, ktorá všetky tieto štúdie spája: všetky využívali rovnaký experimentálny stroj, DMG MORI LASERTEC 80 Shape, päťosové CNC laserové obrábacie centrum v Centre excelentnosti päťosového obrábania na MTF STU v Trnave. Je to dôležitý detail, pretože výsledky laserového obrábania sú vždy špecifické pre konkrétny stroj. Parametre, ktoré dobre fungujú na jednom stroji, môže byť potrebné na inom stroji úplne nanovo nastaviť, aj keď je typ lasera podobný. Keďže všetkých sedem prác využívalo rovnakú platformu, ich výsledky sú priamo porovnateľné a navzájom na seba nadväzujú.
 
-I will take you through the studies in a structured way: first we look at parameter optimisation — how to find the best laser settings for a given material. Then we examine surface texturing for tribological modification — using the laser to create microstructures that change the friction behaviour of surfaces. And finally we look at two applied manufacturing cases — where the laser was used to actually produce functional parts.
+Štúdiami vás prevediem v logickom poradí: najprv sa pozrieme na optimalizáciu parametrov, teda na to, ako nájsť najlepšie nastavenie lasera pre daný materiál. Potom sa budeme venovať textúrovaniu povrchu na úpravu tribologických vlastností, teda využitiu lasera na vytvorenie mikroštruktúr, ktoré menia trecie správanie povrchov. A napokon sa pozrieme na dva prípady aplikovanej výroby, keď sa laser použil na výrobu skutočných funkčných súčiastok.
 
-Let us begin.
+Začnime.

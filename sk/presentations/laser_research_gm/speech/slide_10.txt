@@ -1,46 +1,46 @@
-SLIDE 10 — B1: FRICTION COEFFICIENT RESULTS — STEEL 11373
+SNÍMKA 10 — B1: VÝSLEDKY KOEFICIENTU TRENIA — OCEĽ 11373
 ================================================================================
 
-The results of the ring test on the structured steel surfaces reveal a complex picture that is both interesting scientifically and important for engineering practice.
+Výsledky Ring testu na štruktúrovaných oceľových povrchoch odhaľujú zložitý obraz, ktorý je vedecky zaujímavý a zároveň dôležitý pre inžiniersku prax.
 
-THE REFERENCE VALUE
+REFERENČNÁ HODNOTA
 
-The smooth reference sample Z1_01 gave a friction coefficient of f = 0.189. This is the baseline against which all other samples are judged. A friction coefficient of around 0.19 is typical for dry contact between steel surfaces at the contact pressures and deformation rates involved in this ring test.
+Hladká referenčná vzorka Z1_01 mala koeficient trenia f rovné 0,189. To je základ, s ktorým sa porovnávajú všetky ostatné vzorky. Koeficient trenia okolo 0,19 je typický pre suchý kontakt oceľových povrchov pri kontaktných tlakoch a rýchlostiach deformácie, aké sú v tomto Ring teste.
 
-TYPE A — NARROW GROOVES: FRICTION INCREASED
+TYP A — ÚZKE DRÁŽKY: TRENIE SA ZVÝŠILO
 
-This is the first surprise. Samples A1_01, A1_06, and A1_08 all showed friction coefficients above the reference: 0.225, 0.220, and 0.260 respectively. Instead of reducing friction, the narrow groove structures made it worse.
+Toto je prvé prekvapenie. Vzorky A1_01, A1_06 a A1_08 mali všetky koeficient trenia vyšší ako referencia: postupne 0,225, 0,220 a 0,260. Namiesto zníženia trenia ho štruktúry úzkych drážok zhoršili.
 
-Why did this happen? The answer lies in those melt ridges visible in the microscope photograph. When a laser ablates a groove into a surface, the molten material does not simply disappear — some of it is expelled from the groove and deposits along the groove edges as raised ridges. These ridges have irregular, sharp topography at the micron scale, and when the tool surface with these ridges contacts the ring surface under compressive load, the ridges act like micro-asperities that increase the real contact area and create additional interlocking between the surfaces.
+Prečo sa to stalo? Odpoveď spočíva vo valoch taveniny, ktoré vidno na mikroskopickej fotografii. Keď laser vytvára abláciou drážku v povrchu, roztavený materiál jednoducho nezmizne. Časť sa vytlačí z drážky a usadí sa pozdĺž jej okrajov ako vyvýšené hrebene. Tieto hrebene majú v mikrometrovej mierke nepravidelnú, ostrú topografiu a keď sa povrch nástroja s takýmito hrebeňmi pod tlakovým zaťažením dotýka povrchu krúžku, pôsobia ako mikronerovnosti, ktoré zväčšujú skutočnú kontaktnú plochu a vytvárajú ďalšie vzájomné zachytávanie povrchov.
 
-Furthermore, the narrow groove spacing meant that the ridges were densely packed — every 0.5 millimetres — creating a rough surface rather than a smooth one with isolated pockets. The net effect was that the laser treatment increased roughness rather than creating beneficial lubricant retention.
+Navyše malý rozostup drážok znamenal, že hrebene boli husto pri sebe, každých 0,5 milimetra, a vytvárali drsný povrch namiesto hladkého povrchu s izolovanými priehlbinami. Výsledkom bolo, že laserová úprava zvýšila drsnosť namiesto toho, aby priaznivo zadržiavala mazivo.
 
-Note also that sample A1_08 had the highest friction — 0.260 — despite having the best groove quality among the A series. This seems counterintuitive, but the explanation is that A1_08's groove walls were more sharply defined, which actually increased the mechanical interlocking between tool and workpiece compared to the more blurred groove edges of A1_01 and A1_06. Better groove quality here meant worse tribological performance.
+Všimnite si tiež, že vzorka A1_08 mala najvyššie trenie, 0,260, hoci mala zo série A najlepšiu kvalitu drážok. Zdá sa to neintuitívne, ale vysvetlenie je, že steny drážok vzorky A1_08 boli ostrejšie ohraničené, čo v porovnaní s rozmazanejšími okrajmi drážok vzoriek A1_01 a A1_06 v skutočnosti zvýšilo mechanické zachytávanie medzi nástrojom a obrobkom. Lepšia kvalita drážok tu znamenala horšie tribologické vlastnosti.
 
-TYPE B — WIDE DEEP GROOVES: SIGNIFICANT REDUCTION
+TYP B — ŠIROKÉ HLBOKÉ DRÁŽKY: VÝRAZNÉ ZNÍŽENIE
 
-Sample B1_01, machined with the LASERTEC 80 Shape, achieved a friction coefficient of f = 0.128. This represents a reduction of 32 percent compared to the smooth reference — a very significant result.
+Vzorka B1_01, obrobená na stroji LASERTEC 80 Shape, dosiahla koeficient trenia f rovné 0,128. To predstavuje zníženie o 32 percent oproti hladkej referencii, čo je veľmi významný výsledok.
 
-The explanation for this success is the geometric character of the structure. The wide groove in B1_01 had large lateral dimensions and significant depth relative to its width. This combination created an extremely small real contact area: the ring surface only contacted the narrow land between the grooves, while a large fraction of the tool face was occupied by the groove cavities. The reduction in contact area translated directly into a reduction in friction.
+Vysvetlenie tohto úspechu spočíva v geometrickom charaktere štruktúry. Široká drážka vzorky B1_01 mala veľké priečne rozmery a značnú hĺbku vzhľadom na svoju šírku. Táto kombinácia vytvorila mimoriadne malú skutočnú kontaktnú plochu: povrch krúžku sa dotýkal len úzkych plôšok medzi drážkami, zatiaľ čo veľkú časť plochy nástroja zaberali dutiny drážok. Zmenšenie kontaktnej plochy sa priamo prejavilo znížením trenia.
 
-An additional contributing factor was that B1_01's grooves, despite some melt ridges on their edges, had a groove width-to-depth ratio that was much more favourable than Type A for lubricant retention. Even in this dry-contact test, the groove geometry may have trapped some residual contamination that acted as an effective lubricant at the microscale.
+Ďalším prispievajúcim faktorom bolo, že drážky vzorky B1_01 mali napriek určitým valom taveniny na okrajoch oveľa priaznivejší pomer šírky a hĺbky drážky na zadržiavanie maziva ako typ A. Aj v tejto skúške za sucha mohla geometria drážok zachytiť zvyškové nečistoty, ktoré v mikromierke pôsobili ako účinné mazivo.
 
-However, a word of caution is warranted. The large groove depth also created prominent surface protrusions between the grooves, and there is a possibility that some of these protrusions were deformed during the ring test, which would affect the calibration and therefore the measured friction coefficient. The researcher noted this potential confound in the thesis.
+Je však na mieste upozornenie. Veľká hĺbka drážok vytvorila medzi drážkami aj výrazné povrchové výstupky a je možné, že niektoré z nich sa počas Ring testu zdeformovali, čo by ovplyvnilo kalibráciu, a tým aj nameraný koeficient trenia. Autor na tento možný rušivý vplyv v práci upozornil.
 
-TYPE C — HEMISPHERICAL DIMPLES: CLOSE TO REFERENCE
+TYP C — POLOGUĽOVÉ JAMKY: BLÍZKO REFERENCIE
 
-Samples C1_01 and C1_02 gave friction coefficients of 0.213 and 0.188 respectively. C1_02 is essentially the same as the reference within measurement uncertainty, while C1_01 is slightly higher.
+Vzorky C1_01 a C1_02 mali koeficienty trenia postupne 0,213 a 0,188. Vzorka C1_02 je v rámci neistoty merania v podstate rovnaká ako referencia, vzorka C1_01 je o niečo vyššia.
 
-The likely explanation is that the dimple dimensions — 0.15 millimetres diameter, relatively shallow — were too small to create a significant reduction in real contact area. The dimples occupied a modest fraction of the surface, and the flat land area between dimples was large enough that it dominated the contact behaviour. In other words, the dimples were present but their tribological effect was negligible at this scale in dry conditions.
+Pravdepodobným vysvetlením je, že rozmery jamiek, priemer 0,15 milimetra a pomerne malá hĺbka, boli príliš malé na to, aby výrazne zmenšili skutočnú kontaktnú plochu. Jamky zaberali len skromnú časť povrchu a rovná plocha medzi nimi bola dosť veľká na to, aby určovala kontaktné správanie. Inými slovami, jamky boli prítomné, ale ich tribologický účinok bol v tejto mierke a za sucha zanedbateľný.
 
-This finding connects to a well-known observation in tribological research: there is an optimal range of surface texture density. Too little texture has no effect; too much texture creates ridges that increase friction; somewhere in between there is an optimum. The dimple density in this study was apparently too low to reach that optimum.
+Toto zistenie súvisí so známym poznatkom tribologického výskumu: existuje optimálny rozsah hustoty povrchovej textúry. Príliš málo textúry nemá žiadny účinok, príliš veľa textúry vytvára hrebene, ktoré zvyšujú trenie, a niekde medzi tým leží optimum. Hustota jamiek v tejto štúdii bola zrejme príliš nízka na dosiahnutie tohto optima.
 
-KEY LESSONS
+HLAVNÉ PONAUČENIA
 
-Three important lessons emerge from this study.
+Z tejto štúdie vyplývajú tri dôležité ponaučenia.
 
-First: not all laser surface structures reduce friction. Narrow grooves with prominent melt ridges can actually increase friction. The geometrical character of the structure — its aspect ratio, edge quality, and coverage density — determines whether it helps or hurts.
+Po prvé: nie všetky laserové povrchové štruktúry znižujú trenie. Úzke drážky s výraznými valmi taveniny môžu trenie dokonca zvýšiť. O tom, či štruktúra pomáha, alebo škodí, rozhoduje jej geometrický charakter, teda pomer strán, kvalita okrajov a hustota pokrytia.
 
-Second: the laser system used for structuring matters significantly. The LASERTEC 80 Shape produced structurally different surfaces from the DM01 marking laser, with different tribological outcomes. A precision laser machining centre gives you more control over the structure geometry and therefore more predictable tribological results.
+Po druhé: laserový systém použitý na štruktúrovanie má veľký význam. LASERTEC 80 Shape vytvoril štruktúrne odlišné povrchy ako popisovací laser DM01, s odlišnými tribologickými výsledkami. Presné laserové obrábacie centrum poskytuje lepšiu kontrolu nad geometriou štruktúry, a tým aj predvídateľnejšie tribologické výsledky.
 
-Third: these experiments were conducted without lubricant. The researcher correctly noted that adding lubricant would likely change all the results substantially. The grooves and dimples are expected to function most effectively as lubricant reservoirs — their benefit in dry contact may underrepresent their full potential in lubricated conditions. Follow-up studies with lubricated contacts were recommended.
+Po tretie: tieto experimenty sa vykonali bez maziva. Autor správne poznamenal, že pridanie maziva by pravdepodobne všetky výsledky podstatne zmenilo. Od drážok a jamiek sa očakáva, že budú najúčinnejšie fungovať ako zásobníky maziva, a ich prínos pri suchom kontakte nemusí vystihovať ich plný potenciál v mazaných podmienkach. Odporučili sa nadväzujúce štúdie s mazaným kontaktom.

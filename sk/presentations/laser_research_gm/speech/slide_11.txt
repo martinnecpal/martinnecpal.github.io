@@ -1,38 +1,38 @@
-SLIDE 11 — B2: LASER MICRO-STRUCTURING — TOOL STEEL 1.2311
+SNÍMKA 11 — B2: LASEROVÉ MIKROŠTRUKTÚROVANIE — NÁSTROJOVÁ OCEĽ 1.2311
 ================================================================================
 
-The second tribological study is particularly interesting because it tackles the question at a different scale and with a more challenging design intent. The goal was to create a microstructure consisting of triangular elements — smaller than the grooves in Study B1 — and verify whether such fine structures could meaningfully reduce friction on a forming tool surface.
+Druhá tribologická štúdia je mimoriadne zaujímavá, pretože k otázke pristupuje v inej mierke a s náročnejším konštrukčným zámerom. Cieľom bolo vytvoriť mikroštruktúru z trojuholníkových prvkov, menších ako drážky v štúdii B1, a overiť, či takéto jemné štruktúry dokážu na ploche tvárniaceho nástroja citeľne znížiť trenie.
 
-THE MATERIAL: TOOL STEEL 1.2311
+MATERIÁL: NÁSTROJOVÁ OCEĽ 1.2311
 
-Tool steel 1.2311 — known by the DIN designation 40CrMnMoS8-6, or by the trade names P20 and P20+S — is a pre-hardened mould steel widely used for injection moulding tools, die-casting dies, and forming tools. It has a hardness of approximately 290 to 330 Brinell in the pre-hardened condition, which represents a good compromise between machinability and wear resistance. The sulphur content in the S-variant (the +S designation) improves machinability by forming manganese sulphide inclusions that act as chip breakers.
+Nástrojová oceľ 1.2311, známa pod označením DIN 40CrMnMoS8-6 alebo pod obchodnými názvami P20 a P20+S, je predkalená oceľ na formy, ktorá sa bežne používa na vstrekovacie formy, tlakové liacie formy a tvárniace nástroje. V predkalenom stave má tvrdosť približne 290 až 330 podľa Brinella, čo predstavuje dobrý kompromis medzi obrobiteľnosťou a odolnosťou voči opotrebeniu. Obsah síry vo variante S, teda s označením +S, zlepšuje obrobiteľnosť, pretože vytvára inklúzie sulfidu mangánu, ktoré pôsobia ako lámače triesok.
 
-The choice of 1.2311 is practical: this is exactly the type of steel that forming tool manufacturers would use in a real application, so results obtained on this material have direct industrial relevance.
+Voľba ocele 1.2311 je praktická: práve tento typ ocele by výrobcovia tvárniacich nástrojov použili v skutočnej aplikácii, takže výsledky získané na tomto materiáli majú priamy priemyselný význam.
 
-THE MACHINE: LASERTEC 80 POWERDRILL
+STROJ: LASERTEC 80 POWERDRILL
 
-This study used a different machine from the LASERTEC 80 Shape used in the other studies. The LASERTEC 80 PowerDrill is an older machine in the same product family, also made by DMG. It uses a pulsed nanosecond laser — the pulse duration is in the range of hundreds of nanoseconds, compared to the picosecond-to-nanosecond pulses of the fibre laser in the LASERTEC 80 Shape. The average output power used was 58 watts, with a laser spot diameter of 25 micrometres, a frequency of 80 kilohertz, a scan speed of 1600 millimetres per second, and a track spacing of 10 micrometres.
+Táto štúdia použila iný stroj ako LASERTEC 80 Shape v ostatných štúdiách. LASERTEC 80 PowerDrill je starší stroj z rovnakej produktovej rady, tiež od spoločnosti DMG. Využíva pulzný nanosekundový laser s dobou trvania pulzu v rozsahu stoviek nanosekúnd, v porovnaní s pikosekundovými až nanosekundovými pulzmi vláknového lasera v stroji LASERTEC 80 Shape. Použitý stredný výkon bol 58 wattov, priemer laserovej stopy 25 mikrometrov, frekvencia 80 kilohertzov, rýchlosť skenovania 1600 milimetrov za sekundu a rozostup dráh 10 mikrometrov.
 
-THE INTENDED MICROSTRUCTURE DESIGN
+PÔVODNÝ NÁVRH MIKROŠTRUKTÚRY
 
-The original design concept was ambitious: triangular microstructures where each triangle arm was only 50 micrometres long and the depth of each dimple was approximately 41 micrometres. At this scale, the microstructure would present a very large number of tiny cavities per unit area, which should theoretically create excellent lubricant retention and friction reduction.
+Pôvodný koncept návrhu bol ambiciózny: trojuholníkové mikroštruktúry, v ktorých malo každé rameno trojuholníka dĺžku len 50 mikrometrov a hĺbka každej jamky bola približne 41 mikrometrov. V takejto mierke by mikroštruktúra mala na jednotku plochy veľmi veľký počet drobných dutín, čo by teoreticky malo zabezpečiť výborné zadržiavanie maziva a zníženie trenia.
 
-However, when the researcher attempted to machine this original design, the LASERTEC 80 PowerDrill could not produce individual elements of this size with acceptable quality and precision. The machine's spot size and minimum addressable geometry were not fine enough for 50-micrometre features. Individual elements were poorly defined, edges were blurred, and the resulting surface structure did not match the design intent.
+Keď sa však autor pokúsil tento pôvodný návrh obrobiť, LASERTEC 80 PowerDrill nedokázal vytvoriť jednotlivé prvky takejto veľkosti v prijateľnej kvalite a presnosti. Veľkosť stopy a najmenšia dosiahnuteľná geometria stroja neboli na prvky s rozmerom 50 mikrometrov dostatočne jemné. Jednotlivé prvky boli zle ohraničené, okraje boli rozmazané a výsledná povrchová štruktúra nezodpovedala konštrukčnému zámeru.
 
-THE SCALE-UP COMPROMISE
+KOMPROMIS V PODOBE ZVÄČŠENIA
 
-To produce measurable and well-defined structures, the triangle arm length was increased tenfold — to 500 micrometres — and the cavity depth correspondingly increased to approximately 410 micrometres. This ten-fold scale-up made the structure much larger but still within the range of what the machine could produce with good quality.
+Aby sa vytvorili merateľné a dobre ohraničené štruktúry, dĺžka ramena trojuholníka sa zväčšila desaťnásobne, na 500 mikrometrov, a hĺbka dutiny sa zodpovedajúco zväčšila na približne 410 mikrometrov. Toto desaťnásobné zväčšenie urobilo štruktúru oveľa väčšou, ale stále v rozsahu, ktorý stroj dokázal vytvoriť v dobrej kvalite.
 
-The photograph on the right shows the microstructured tool surface as seen under an optical microscope. The triangular grid is clearly visible, and the surface quality is described in the thesis as sufficient for the intended ring test experiment. The elements are well-defined, the boundaries are clear, and the depth appears consistent. From a manufacturing standpoint, the structuring was successful at this scale.
+Fotografia vpravo zobrazuje mikroštruktúrovaný povrch nástroja pod optickým mikroskopom. Trojuholníková mriežka je jasne viditeľná a kvalita povrchu je v práci opísaná ako dostatočná pre plánovaný Ring test. Prvky sú dobre ohraničené, hranice sú zreteľné a hĺbka sa javí ako konzistentná. Z výrobného hľadiska bolo štruktúrovanie v tejto mierke úspešné.
 
-The machining time, however, was substantial: approximately 9 hours per experimental sample. This reflects the large number of scan passes required to machine the 500-micrometre-deep triangular cavities, given that each pass removes only a micrometre or so of material. Nine hours of continuous machine time per sample is a significant constraint on the practicality of this approach.
+Čas obrábania bol však značný: približne 9 hodín na jednu experimentálnu vzorku. Odráža to veľký počet skenovacích prechodov potrebných na obrobenie trojuholníkových dutín hlbokých stovky mikrometrov, keďže každý prechod odoberie len približne mikrometer materiálu. Deväť hodín nepretržitého strojového času na vzorku je významným obmedzením praktickej použiteľnosti tohto prístupu.
 
-TWO SAMPLES PREPARED
+DVE PRIPRAVENÉ VZORKY
 
-Two experimental samples were machined — one for testing against a smooth reference surface, and one for testing against the microstructured surface. Both samples were ground on the non-structured faces to ensure consistent and repeatable contact on that side of the compression. Before ring testing, both samples and the test rings were cleaned with technical benzene.
+Obrobili sa dve experimentálne vzorky, jedna na skúšku s hladkým referenčným povrchom a druhá na skúšku s mikroštruktúrovaným povrchom. Obe vzorky sa na neštruktúrovaných plochách brúsili, aby sa na tejto strane stláčania zabezpečil konzistentný a opakovateľný kontakt. Pred Ring testom sa obe vzorky aj skúšobné krúžky vyčistili technickým benzínom.
 
-THE HYPOTHESIS
+HYPOTÉZA
 
-The working hypothesis was straightforward: the triangular cavity array would create effective lubricant reservoirs at the tool-workpiece interface, reducing the real contact area and supporting a hydrodynamic or at least boundary lubrication regime. Even in the dry contact conditions of this test, the cavities might trap residual lubricant from manufacturing or cleaning, providing some lubrication effect.
+Pracovná hypotéza bola jednoduchá: pole trojuholníkových dutín vytvorí na rozhraní nástroja a obrobku účinné zásobníky maziva, zmenší skutočnú kontaktnú plochu a podporí hydrodynamický alebo aspoň medzný režim mazania. Aj v podmienkach suchého kontaktu v tejto skúške mohli dutiny zachytiť zvyšky maziva z výroby alebo čistenia a poskytnúť určitý mazací účinok.
 
-The expectation was a clear reduction in friction coefficient compared to the smooth reference surface. As we will see in the next slide, this expectation was not met — and the reason why is scientifically informative.
+Očakávalo sa jasné zníženie koeficientu trenia v porovnaní s hladkým referenčným povrchom. Ako uvidíme na ďalšej snímke, toto očakávanie sa nenaplnilo, a dôvod je vedecky poučný.

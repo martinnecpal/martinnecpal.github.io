@@ -1,42 +1,42 @@
-SLIDE 12 — B2: RING TEST — FRICTION INCREASED (CONTRARY TO EXPECTATION)
+SNÍMKA 12 — B2: RING TEST — TRENIE SA ZVÝŠILO (NAPRIEK OČAKÁVANIU)
 ================================================================================
 
-This slide presents one of the most instructive results in the entire collection of seven theses — not because the experiment succeeded in the expected way, but precisely because it did not.
+Táto snímka prináša jeden z najpoučnejších výsledkov celého súboru siedmich prác, nie preto, že by experiment uspel očakávaným spôsobom, ale práve preto, že neuspel.
 
-THE RESULT: FRICTION WENT UP, NOT DOWN
+VÝSLEDOK: TRENIE STÚPLO, NIE KLESLO
 
-The smooth unstructured reference surface gave a friction coefficient of f = 0.258. The microstructured surface — with its 500-micrometre triangular cavities — gave f = 0.315. Friction increased by approximately 22 percent compared to the smooth surface.
+Hladký neštruktúrovaný referenčný povrch mal koeficient trenia f rovné 0,258. Mikroštruktúrovaný povrch s trojuholníkovými dutinami s rozmerom 500 mikrometrov mal f rovné 0,315. Trenie sa v porovnaní s hladkým povrchom zvýšilo približne o 22 percent.
 
-This is the opposite of what was expected. The research hypothesis predicted a reduction in friction due to lubricant retention in the cavities. The experiment produced an increase. This kind of result is sometimes dismissed as a failure, but that would be the wrong interpretation. A result that contradicts the hypothesis is scientifically valuable precisely because it forces us to examine our assumptions more carefully and arrive at a deeper understanding of the physical phenomenon.
+Je to opak toho, čo sa očakávalo. Výskumná hypotéza predpovedala zníženie trenia vďaka zadržiavaniu maziva v dutinách. Experiment priniesol zvýšenie. Takýto výsledok sa niekedy považuje za neúspech, ale to by bola nesprávna interpretácia. Výsledok, ktorý odporuje hypotéze, je vedecky cenný práve preto, že nás núti dôkladnejšie preskúmať naše predpoklady a dospieť k hlbšiemu pochopeniu fyzikálneho javu.
 
-WHY DID FRICTION INCREASE?
+PREČO SA TRENIE ZVÝŠILO?
 
-The root cause lies in the geometry of the structure — specifically its dimensions relative to the compressive forces applied during the ring test.
+Príčina spočíva v geometrii štruktúry, konkrétne v jej rozmeroch vo vzťahu k tlakovým silám pôsobiacim počas Ring testu.
 
-Recall that the triangular cavities had arm lengths of 500 micrometres and depths of approximately 410 micrometres. These are large structures. The flat lands between the triangular elements — the areas that actually contact the ring surface — had dimensions comparable to the cavities themselves.
+Pripomeňme si, že trojuholníkové dutiny mali ramená dlhé 500 mikrometrov a hĺbku približne 410 mikrometrov. To sú veľké štruktúry. Rovné plôšky medzi trojuholníkovými prvkami, teda plochy, ktoré sa skutočne dotýkajú povrchu krúžku, mali rozmery porovnateľné so samotnými dutinami.
 
-During ring compression, the contact pressure at the interface reaches several hundred megapascals. Under this pressure, the relatively soft steel ring material did not simply slide over the tool surface — it began to flow plastically into the triangular cavities. Metal was pressed into the 410-micrometre-deep recesses, creating a mechanical interlocking between the workpiece material and the tool surface topography.
+Pri pechovaní krúžku dosahuje kontaktný tlak na rozhraní niekoľko stoviek megapascalov. Pri takomto tlaku pomerne mäkký materiál oceľového krúžku po povrchu nástroja jednoducho nekĺzal, ale začal plasticky tiecť do trojuholníkových dutín. Kov sa vtlačil do 410 mikrometrov hlbokých priehlbín a vytvoril mechanické zachytenie medzi materiálom obrobku a topografiou povrchu nástroja.
 
-This interlocking is quite different from simple surface roughness asperity contact. It is essentially a form of mechanical keying: the workpiece metal conforms to the shape of the tool surface at a macroscopic scale. To slide the ring over the tool surface, you do not just have to overcome the surface adhesion and asperity shear — you also have to deform the metal that has flowed into the cavities. This requires substantial additional force, which appears as an increased friction coefficient in the ring test results.
+Toto zachytenie je úplne iné ako jednoduchý kontakt nerovností drsného povrchu. V podstate ide o formu mechanického zaklinenia: kov obrobku sa v makroskopickej mierke prispôsobí tvaru povrchu nástroja. Aby sa krúžok posunul po povrchu nástroja, treba prekonať nielen povrchovú adhéziu a strih nerovností, ale aj zdeformovať kov, ktorý natiekol do dutín. To si vyžaduje značnú dodatočnú silu, ktorá sa vo výsledkoch Ring testu prejaví ako zvýšený koeficient trenia.
 
-Looking at the photograph on the right — the compressed ring sample after the test — you can see evidence of this deformation. The ring surface shows marks from the triangular elements, and there is visible material flow that correlates with the cavity geometry.
+Na fotografii vpravo, ktorá zobrazuje stlačenú vzorku krúžku po skúške, vidíte stopy tejto deformácie. Povrch krúžku nesie odtlačky trojuholníkových prvkov a je na ňom viditeľný tok materiálu, ktorý zodpovedá geometrii dutín.
 
-THE CALIBRATION CURVE LIMITATION
+OBMEDZENIE KALIBRAČNEJ KRIVKY
 
-There is also a measurement consideration worth mentioning. The Ring test calibration curve is derived for a smooth ring surface compressing against a smooth flat platen. When the platen is not smooth but has deep three-dimensional cavities, the material flow field changes in ways that the standard calibration may not fully account for. Some of the measured friction increase may therefore reflect a genuine tribological effect, while some may be an artefact of the non-standard contact geometry. The researcher acknowledged this limitation.
+Treba spomenúť aj jednu otázku merania. Kalibračná krivka Ring testu je odvodená pre hladký povrch krúžku stláčaný hladkou rovnou doskou. Keď doska nie je hladká, ale má hlboké trojrozmerné dutiny, pole toku materiálu sa mení spôsobom, ktorý štandardná kalibrácia nemusí úplne zohľadniť. Časť nameraného zvýšenia trenia preto môže predstavovať skutočný tribologický jav, zatiaľ čo časť môže byť artefaktom neštandardnej kontaktnej geometrie. Autor toto obmedzenie uznal.
 
-REFRAMING THE RESULT: NOT A FAILURE BUT A DIFFERENT APPLICATION
+NOVÝ POHĽAD NA VÝSLEDOK: NIE NEÚSPECH, ALE INÁ APLIKÁCIA
 
-The important scientific insight here is this: the result was not a failure of the experiment — it was a finding that redefines the application domain of this type of microstructure.
+Dôležitý vedecký poznatok je tento: výsledok nebol neúspechom experimentu, ale zistením, ktoré nanovo vymedzuje oblasť použitia tohto typu mikroštruktúry.
 
-If large-scale triangular cavities increase friction rather than reducing it, then these structures are not useful for reducing friction in forming operations. But they are potentially very useful in applications where you want to increase friction: robot grippers that need to hold workpieces securely without applying excessive clamping force, anti-slip pads, clamping fixtures for precision machining, joint interfaces in structural connections.
+Ak veľké trojuholníkové dutiny trenie zvyšujú namiesto toho, aby ho znižovali, potom tieto štruktúry nie sú užitočné na znižovanie trenia pri tvárnení. Môžu však byť veľmi užitočné v aplikáciách, kde chceme trenie zvýšiť: v chápadlách robotov, ktoré musia bezpečne držať obrobky bez nadmernej upínacej sily, v protišmykových podložkách, upínacích prípravkoch na presné obrábanie či v styčných plochách konštrukčných spojov.
 
-In all these applications, the ability to significantly increase the friction coefficient at a surface by laser-machining specific structures into it is highly valuable. The finding that f = 0.315 can be achieved with this type of structure, compared to f = 0.258 for a smooth surface — an increase of 22 percent — is quantitatively useful information for designing such applications.
+Vo všetkých týchto aplikáciách je veľmi cenná schopnosť výrazne zvýšiť koeficient trenia povrchu laserovým obrobením špecifických štruktúr. Zistenie, že s týmto typom štruktúry možno dosiahnuť f rovné 0,315 v porovnaní s f rovné 0,258 pre hladký povrch, teda zvýšenie o 22 percent, je kvantitatívne užitočnou informáciou pre návrh takýchto aplikácií.
 
-THE RECOMMENDATION FOR FUTURE WORK
+ODPORÚČANIE PRE ĎALŠIU PRÁCU
 
-The researcher correctly identified the fundamental issue: the structures were too large. To achieve friction reduction through the lubricant reservoir mechanism, the structures need to be much smaller — on the order of 50 micrometres as originally designed — so that under forming conditions they act as surface features rather than macroscopic geometric elements that interact with material flow at the bulk scale.
+Autor správne identifikoval podstatu problému: štruktúry boli príliš veľké. Na dosiahnutie zníženia trenia mechanizmom zásobníkov maziva musia byť štruktúry oveľa menšie, rádovo 50 mikrometrov, ako boli pôvodne navrhnuté, aby sa v podmienkach tvárnenia správali ako povrchové útvary, a nie ako makroskopické geometrické prvky ovplyvňujúce tok materiálu v objemovej mierke.
 
-The recommended solution is to use a laser with significantly shorter pulse duration — in the picosecond or femtosecond range. Such lasers produce what is called cold ablation: the material is removed by direct sublimation rather than melting and evaporation, resulting in much finer feature resolution and sharper edges. Femtosecond laser systems at research institutes like the Fraunhofer ILT in Aachen routinely produce well-defined microstructures at the 50-micrometre scale and below. Access to such a system would allow the original design to be realised as intended.
+Odporúčaným riešením je použiť laser s výrazne kratšou dobou trvania pulzu, v pikosekundovom alebo femtosekundovom rozsahu. Takéto lasery umožňujú takzvanú studenú abláciu: materiál sa odstraňuje priamou sublimáciou namiesto tavenia a odparovania, čo vedie k oveľa jemnejšiemu rozlíšeniu prvkov a ostrejším okrajom. Femtosekundové laserové systémy vo výskumných ústavoch, ako je Fraunhofer ILT v Aachene, bežne vytvárajú dobre ohraničené mikroštruktúry v mierke 50 mikrometrov a menšej. Prístup k takémuto systému by umožnil zrealizovať pôvodný návrh podľa zámeru.
 
-This thesis is a good example of research that is complete and honest in documenting its own limitations — and provides a clear roadmap for what should be done next.
+Táto práca je dobrým príkladom výskumu, ktorý je úplný a poctivý pri dokumentovaní vlastných obmedzení a poskytuje jasný plán toho, čo by sa malo urobiť ďalej.

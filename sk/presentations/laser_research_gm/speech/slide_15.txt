@@ -1,46 +1,46 @@
-SLIDE 15 — C1: CHIP BREAKER ON SINTERED CARBIDE INSERT — WORKFLOW
+SNÍMKA 15 — C1: LÁMAČ TRIESOK NA DOŠTIČKE ZO SPEKANÉHO KARBIDU — POSTUP
 ================================================================================
 
-We now move into the third research category — applied laser manufacturing — where the goal is not parameter optimisation or tribological characterisation, but the production of an actual functional component. The first of these two applied studies focused on manufacturing a chip breaker geometry directly onto a sintered carbide turning insert using laser micromachining.
+Teraz prechádzame k tretej výskumnej kategórii, k aplikovanej laserovej výrobe, kde cieľom nie je optimalizácia parametrov ani tribologická charakterizácia, ale výroba skutočného funkčného dielu. Prvá z týchto dvoch aplikovaných štúdií sa zamerala na výrobu geometrie lámača triesok priamo na sústružníckej doštičke zo spekaného karbidu pomocou laserového mikroobrábania.
 
-WHY CHIP BREAKERS MATTER
+PREČO SÚ LÁMAČE TRIESOK DÔLEŽITÉ
 
-A chip breaker is a geometric feature machined onto the rake face of a cutting insert — the face over which the chip slides as it is cut from the workpiece. Its purpose is exactly what the name suggests: to control the shape and size of the chip produced during machining.
+Lámač triesok je geometrický prvok obrobený na čele reznej doštičky, teda na ploche, po ktorej trieska kĺže, keď sa odrezáva z obrobku. Jeho účel presne zodpovedá názvu: riadiť tvar a veľkosť triesky vznikajúcej pri obrábaní.
 
-If you machine ductile materials like steel or aluminium without chip control, the resulting chip is a long, continuous ribbon. These long chips are dangerous — they can wrap around the rotating workpiece or the spindle, cause burns, jam the machine, and injure the operator. They also make chip evacuation difficult and create problems in automated machining where chip removal must happen without human intervention.
+Ak obrábate húževnaté materiály, ako je oceľ alebo hliník, bez riadenia triesky, vzniká dlhá súvislá stuha. Takéto dlhé triesky sú nebezpečné: môžu sa navinúť na rotujúci obrobok alebo vreteno, spôsobiť popáleniny, zablokovať stroj a zraniť obsluhu. Sťažujú aj odvod triesok a spôsobujú problémy pri automatizovanom obrábaní, kde sa triesky musia odstraňovať bez zásahu človeka.
 
-A well-designed chip breaker causes the chip to curl and break into short segments — typically C-shapes, 6-shapes, or small chips that fall away from the cutting zone cleanly. The geometry of the chip breaker — specifically the width and depth of the groove cut into the insert face — determines for which combination of feed rate and cutting depth the chip breaking works effectively. Every cutting tool manufacturer has extensive libraries of chip breaker geometries for different materials and operations.
+Dobre navrhnutý lámač triesok spôsobí, že sa trieska zvinie a zlomí na krátke úseky, typicky v tvare písmena C, číslice 6 alebo na malé triesky, ktoré čisto odpadávajú z reznej zóny. Geometria lámača triesok, konkrétne šírka a hĺbka drážky vytvorenej v čele doštičky, určuje, pri akej kombinácii posuvu a hĺbky rezu lámanie triesky účinne funguje. Každý výrobca rezných nástrojov má rozsiahle knižnice geometrií lámačov triesok pre rôzne materiály a operácie.
 
-The problem is that chip breakers must be tailored to specific applications, and designing a new geometry — particularly for difficult-to-machine materials like titanium or nickel superalloys — requires prototyping and testing. Conventional chip breaker manufacturing requires pressing and sintering to net shape, or diamond grinding of the sintered carbide. Both are expensive and time-consuming for prototype quantities.
+Problém je v tom, že lámače triesok musia byť prispôsobené konkrétnym aplikáciám a návrh novej geometrie, najmä pre ťažkoobrobiteľné materiály, ako je titán alebo niklové superzliatiny, si vyžaduje výrobu prototypov a testovanie. Konvenčná výroba lámačov triesok si vyžaduje lisovanie a spekanie na konečný tvar alebo diamantové brúsenie spekaného karbidu. Oba postupy sú pri prototypových množstvách drahé a časovo náročné.
 
-Laser micromachining offers an alternative: a chip breaker geometry can be designed in CAD, programmed in CAM, and machined into an existing insert within hours. This is exactly what this thesis explored.
+Laserové mikroobrábanie ponúka alternatívu: geometriu lámača triesok možno navrhnúť v CAD, naprogramovať v CAM a obrobiť do existujúcej doštičky v priebehu niekoľkých hodín. Presne to skúmala táto práca.
 
-THE WORKFLOW IN DETAIL
+PODROBNÝ POSTUP
 
-The workflow had four sequential steps, and it is worth describing each one because together they demonstrate a complete, self-consistent manufacturing chain.
+Postup mal štyri po sebe nasledujúce kroky a oplatí sa opísať každý z nich, pretože spolu ukazujú úplný a ucelený výrobný reťazec.
 
-STEP 1 — CAD DESIGN
+KROK 1 — NÁVRH V CAD
 
-The chip breaker geometry was designed in Autodesk Inventor, a professional 3D CAD system. The design was based on the theoretical principles of chip breaking — the specific geometry included appropriate angles, groove width, depth, and the width of the cutting edge land. The output of this step was a 3D solid model of the target chip breaker shape on the insert face.
+Geometria lámača triesok sa navrhla v programe Autodesk Inventor, profesionálnom 3D CAD systéme. Návrh vychádzal z teoretických princípov lámania triesky: konkrétna geometria zahŕňala vhodné uhly, šírku a hĺbku drážky a šírku fazetky reznej hrany. Výstupom tohto kroku bol 3D objemový model cieľového tvaru lámača triesok na čele doštičky.
 
-STEP 2 — CAM PROGRAMMING
+KROK 2 — PROGRAMOVANIE V CAM
 
-The CAD model was exported in STL format — the universal triangulated surface format — and imported into LpsWin, the CAM software supplied with the LASERTEC 80 Shape machine. This software has a specific function for laser machining: it does not generate conventional NC code for tool movements, but rather computes the laser scan paths for each layer of material to be removed.
+Model CAD sa exportoval vo formáte STL, teda v univerzálnom formáte triangulovaného povrchu, a importoval sa do programu LpsWin, softvéru CAM dodávaného so strojom LASERTEC 80 Shape. Tento softvér má pre laserové obrábanie špecifickú funkciu: negeneruje bežný NC kód pre pohyby nástroja, ale vypočítava skenovacie dráhy lasera pre každú vrstvu odoberaného materiálu.
 
-The programming process involved several sub-steps in LpsWin. First, a test for mesh triangulation quality was run to ensure the STL import was clean. Then the insert was centred in the coordinate system of the software. The coordinate system was oriented so that the Z axis was perpendicular to the insert face. A fence boundary was defined around the insert to prevent the laser from machining outside the intended area, and the central hole of the insert was filled with a virtual cylinder to prevent unnecessary laser path generation in that region.
+Programovanie v LpsWin zahŕňalo niekoľko čiastkových krokov. Najprv sa spustila kontrola kvality triangulácie siete, aby sa overilo, že import STL je bezchybný. Potom sa doštička vycentrovala v súradnicovom systéme softvéru. Súradnicový systém sa orientoval tak, aby os Z bola kolmá na čelo doštičky. Okolo doštičky sa definovala ohraničujúca hranica, aby laser neobrábal mimo určenej oblasti, a stredový otvor doštičky sa vyplnil virtuálnym valcom, aby sa v tejto oblasti zbytočne negenerovali laserové dráhy.
 
-Two types of scan strategies were assigned to different parts of the chip breaker geometry: Hatch (parallel scanning) for the flat horizontal surfaces, and Caving (contouring along isolines) for the curved and sloped surfaces of the groove. Track spacing was set to 10 micrometres and the material removal per layer was set to 1 micrometre. The output was a file in L4D format, which is the proprietary format of the LASERTEC 80 Shape controller.
+Rôznym častiam geometrie lámača triesok sa priradili dva typy stratégií skenovania: Hatch, teda rovnobežné skenovanie, pre rovné vodorovné plochy, a Caving, teda konturovanie pozdĺž izočiar, pre zakrivené a šikmé plochy drážky. Rozostup dráh sa nastavil na 10 mikrometrov a úber materiálu na jednu vrstvu na 1 mikrometer. Výstupom bol súbor vo formáte L4D, čo je proprietárny formát riadiaceho systému stroja LASERTEC 80 Shape.
 
-STEP 3 — LASER MACHINING
+KROK 3 — LASEROVÉ OBRÁBANIE
 
-The machining was performed on the LASERTEC 80 Shape. Before starting, six parameter tests were run to find the optimal process settings. These tests systematically varied frequency and scan speed and evaluated the resulting surface quality visually. The optimal settings found were: frequency 60 kilohertz, scan speed 2000 millimetres per second, and power at 42.8 percent of maximum — corresponding to approximately 29 watts of average output power.
+Obrábanie sa uskutočnilo na stroji LASERTEC 80 Shape. Pred začiatkom sa vykonalo šesť testov parametrov s cieľom nájsť optimálne nastavenie procesu. Tieto testy systematicky menili frekvenciu a rýchlosť skenovania a výslednú kvalitu povrchu hodnotili vizuálne. Zistené optimálne nastavenie bolo: frekvencia 60 kilohertzov, rýchlosť skenovania 2000 milimetrov za sekundu a výkon 42,8 percenta maxima, čo zodpovedá strednému výkonu približne 29 wattov.
 
-The insert was clamped on the machine table and its reference point — the centre of the insert hole — was located using the built-in camera system. The Z reference was set using the 3D measuring probe. Then the L4D machining file was loaded and the process started.
+Doštička sa upla na stôl stroja a jej referenčný bod, stred otvoru doštičky, sa určil pomocou zabudovaného kamerového systému. Referencia v osi Z sa nastavila 3D meracou sondou. Potom sa načítal súbor L4D a spustil sa proces.
 
-Machining one side of the insert took approximately 25 minutes. The total time to machine the chip breaker geometry was therefore around 50 minutes for both sides — though typically only one side is active at a time in a turning operation.
+Obrobenie jednej strany doštičky trvalo približne 25 minút. Celkový čas obrobenia geometrie lámača triesok bol teda pre obe strany približne 50 minút, hoci pri sústružení je zvyčajne aktívna vždy len jedna strana.
 
-STEP 4 — 3D SCANNING VERIFICATION
+KROK 4 — OVERENIE 3D SKENOVANÍM
 
-After machining, the produced shape was measured using an ATOS optical 3D scanner from the company GOM — a leader in industrial optical metrology. The ATOS scanner uses structured light projection and photogrammetry to capture a dense point cloud of the surface geometry, which is then converted into a surface mesh and compared digitally to the original CAD model. The output is a colour deviation map — a visual representation of where the produced surface lies above or below the design intent.
+Po obrobení sa vytvorený tvar zmeral optickým 3D skenerom ATOS od spoločnosti GOM, lídra v priemyselnej optickej metrológii. Skener ATOS využíva projekciu štruktúrovaného svetla a fotogrametriu na zachytenie hustého mračna bodov geometrie povrchu, ktoré sa potom prevedie na povrchovú sieť a digitálne porovná s pôvodným modelom CAD. Výstupom je farebná mapa odchýlok, teda vizuálne znázornenie toho, kde vyrobený povrch leží nad alebo pod konštrukčným zámerom.
 
-This four-step workflow — CAD, CAM, laser machining, optical verification — is essentially the same workflow used in modern additive manufacturing and precision machining, adapted to laser ablation. It demonstrates that laser micromachining can be integrated into a standard digital manufacturing chain without requiring specialist knowledge beyond what CAD/CAM engineers already possess.
+Tento štvorkrokový postup, CAD, CAM, laserové obrábanie a optické overenie, je v podstate rovnaký ako postup používaný v modernej aditívnej výrobe a presnom obrábaní, prispôsobený laserovej ablácii. Ukazuje, že laserové mikroobrábanie možno začleniť do štandardného digitálneho výrobného reťazca bez potreby špeciálnych znalostí nad rámec toho, čo inžinieri CAD a CAM už ovládajú.

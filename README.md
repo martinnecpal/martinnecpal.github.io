@@ -56,7 +56,7 @@ Notes:
 | `mtm-2025-borovets/` | Slide images + canvas pointer animations synchronised with audio (`config.js`, `presentation.js`, `pointer.js`) |
 | `MTEM2025Presentation/` | Modular HTML slides in `slides/`, merged by `node build.js` into `index-combined.html` (the version that is deployed) |
 | `LASERTEC_80_Shape/` | Single-file Reveal.js 5 deck with per-slide narration in `speech/speechN.wav` (EN) / `.mp3` (SK) |
-| `laser_research_gm/` | Single-file Reveal.js 5 deck with per-slide narration in `speech/slide_NN.wav`; notes in `SESSION_NOTES.md` |
+| `laser_research_gm/` | Single-file Reveal.js 5 deck with per-slide narration in `speech/slide_NN.wav` (EN) / `.mp3` (SK); notes in `SESSION_NOTES.md` |
 
 The two laser presentations are opened from the About page (`index.md`) in a pop-up window.
 
