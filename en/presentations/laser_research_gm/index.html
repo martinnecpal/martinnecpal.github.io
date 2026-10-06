@@ -944,7 +944,7 @@
   function setPlayIcon(playing) { playIconPath.setAttribute('d', playing ? PAUSE_D : PLAY_D); }
   function loadAudio(idx, andPlay) {
     const num = String(idx + 1).padStart(2, '0');
-    narration.src = `speech/slide_${num}.wav`;
+    narration.src = `speech/slide_${num}.mp3`;
     if (andPlay) {
       const onCanPlay = () => {
         narration.removeEventListener('canplay', onCanPlay);
