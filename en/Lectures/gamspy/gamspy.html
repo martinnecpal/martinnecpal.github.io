@@ -1,0 +1,2132 @@
+<!doctype html>
+<!--
+  ════════════════════════════════════════════════════════════════════════════
+   MTF STU — reveal.js lecture (template: .claude/skills/mtf-lecture)
+   Guest lecture · From GAMS to GAMSPy (EN)
+   Source material: gams_gamspy_lecture.zip (slides/*.md, assets/, code/)
+   120 min. Timing cues are in the speaker notes (press S).
+   Spoken text per slide: voice_for_gamspy/all_slides_notes.md
+
+   Keys: ← → navigate · Esc overview · S speaker notes · ?print-pdf → PDF.
+   Pictures and videos are linked from the vendors' public pages (© owners)
+   and need an internet connection. If a picture cannot load, the slide
+   shows a link to it instead. Videos open on YouTube from the thumbnail;
+   "Play here" embeds them (works when the file is served over http/https).
+  ════════════════════════════════════════════════════════════════════════════
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>From GAMS to GAMSPy – MTF STU</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <style>
+    :root {
+      --mtf-red:   #c8001e;
+      --mtf-red2:  #e5001e;
+      --mtf-dark:  #8b0014;
+      --text:      #1a1a1a;
+      --muted:     #5a5a5a;
+      --bg:        #ffffff;
+      --line:      #c8001e;
+    }
+
+    .reveal-viewport { background: var(--bg); }
+    .reveal { color: var(--text); font-family: 'Segoe UI', Arial, sans-serif; }
+
+    /* ── Headings ── */
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: var(--mtf-dark); text-transform: none;
+      font-family: 'Segoe UI', Arial, sans-serif; font-weight: 700;
+    }
+    .reveal h1 {
+      font-size: 1.9em; border-left: 5px solid var(--mtf-red);
+      padding-left: 0.45em; text-align: left; line-height: 1.25;
+    }
+    .reveal h2 {
+      font-size: 1.3em; border-bottom: 2px solid var(--mtf-red);
+      padding-bottom: 0.2em; text-align: left;
+    }
+    .subtitle { font-size: 0.9em; color: var(--muted); margin-top: 0.3em; font-weight: 400; }
+
+    /* ── Lists ── */
+    .reveal ul, .reveal ol { text-align: left; font-size: 0.82em; line-height: 1.95; }
+    .reveal li { margin-bottom: 0.25em; }
+    .reveal ul > li::marker { color: var(--mtf-red); }
+    .reveal ul.compact, .reveal ol.compact { font-size: 0.75em; line-height: 1.8; }
+    .reveal ul.small { font-size: 0.78em; }
+
+    /* ── Images ── */
+    .reveal img {
+      max-height: 45vh; object-fit: contain;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+    }
+    .figure { display: flex; flex-direction: column; justify-content: center; text-align: center; }
+    .figure img { width: 100%; max-height: 58vh; object-fit: contain; border-radius: 3px; }
+    .figure.half img { max-height: 38vh; width: auto; }
+    .img-caption { font-size: 0.38em; color: var(--muted); text-align: center; margin-top: 0.3em; }
+
+    /* ── Title slide ── */
+    .reveal .top-rule { border: none; border-top: 4px solid var(--mtf-red); margin-bottom: 1.2em; }
+    .reveal .institution {
+      font-size: 0.52em; color: var(--muted); text-transform: uppercase;
+      letter-spacing: 0.1em; margin-top: 2em;
+    }
+    .reveal .author { font-size: 0.65em; color: var(--muted); }
+    .title-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.5em; align-items: center; }
+    .title-grid img {
+      max-height: 52vh; width: 100%; object-fit: cover;
+      border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+    }
+    .reveal a.pdf-download {
+      display: inline-block; margin-top: 0.5em; padding: 0.35em 1em; font-size: 0.8em; font-weight: 600;
+      color: #fff; background: var(--mtf-red); border-radius: 6px; text-decoration: none;
+    }
+    .reveal a.pdf-download:hover { background: var(--mtf-dark); }
+    .pdf-download-row { text-align: right; }
+    .print-pdf a.pdf-download { display: none; }
+    .nav-help {
+      margin-top: 0.6em; padding: 0.4em 0.8em; font-size: 0.6em; line-height: 1.45;
+      color: var(--muted); background: #fff8f9;
+      border-left: 4px solid var(--mtf-red); border-radius: 3px;
+    }
+    .nav-help strong { color: var(--mtf-dark); }
+    .reveal .nav-help ul { margin: 0.2em 0 0; padding-left: 1.2em; columns: 2; column-gap: 2em; font-size: 1em; line-height: 1.5; }
+    .reveal .nav-help li { margin-bottom: 0; }
+    .nav-help kbd {
+      font-family: inherit; font-size: 0.9em; padding: 0 0.35em;
+      border: 1px solid #bbb; border-bottom-width: 2px; border-radius: 3px; background: #fff;
+    }
+
+    .reveal .hl { color: var(--mtf-red); font-weight: bold; }
+
+    /* ── Section header band ── */
+    .band {
+      background: var(--mtf-dark); color: #fff; text-align: left;
+      padding: 0.5em 0.7em; margin: -0.5em -0.5em 0.5em -0.5em;
+      border-radius: 2px 2px 0 0;
+    }
+    .band-title { font-size: 1.7em; font-weight: 700; letter-spacing: 0.05em; }
+    .band-sub   { font-size: 1.4em; color: #f0b0b8; margin-left: 1em; }
+
+    /* ── Grid layouts ── */
+    .reveal section.slide-full { display: flex; flex-direction: column; height: 100%; }
+    .fig-row { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2em; align-items: center; }
+    .cols-2  { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8em; align-items: start; }
+    .slide-full .fig-row, .slide-full .cols-2 { flex: 1; align-items: stretch; margin-top: 0.4em; }
+    .v-center { display: flex; flex-direction: column; justify-content: center; align-self: center; }
+
+    /* ── Divider slide ── */
+    .reveal section.divider { background: var(--mtf-dark); color: #fff; }
+    .reveal section.divider h2 { color: #fff; border-bottom-color: var(--mtf-red2); font-size: 1.6em; }
+
+    .slide-source { font-size: 0.45em; color: var(--muted); text-align: right; margin: 0.6em 0 0; }
+
+    /* ── Tables ── */
+    .reveal table {
+      font-size: 0.72em; width: 100%; border-collapse: collapse;
+      margin-top: 0.6em; text-align: left;
+    }
+    .reveal table th {
+      background: var(--mtf-dark); color: #fff; padding: 0.35em 0.7em;
+      font-weight: 600; letter-spacing: 0.02em;
+    }
+    .reveal table td { padding: 0.3em 0.7em; border-bottom: 1px solid #e8e8e8; color: var(--text); }
+    .reveal table tr:nth-child(even) td { background: #f9f2f3; }
+    .reveal table tr:hover td { background: #fde8eb; }
+
+    /* ── Process flow ── */
+    .flow-box {
+      background: #fff5f6; border-left: 4px solid var(--mtf-red); border-radius: 4px;
+      padding: 0.4em 0.8em; font-size: 0.75em; margin: 0.25em 0;
+      text-align: left; color: var(--text);
+    }
+    .flow-box.key { background: #fff0f0; font-weight: 600; }
+    .flow-arrow { text-align: center; font-size: 1em; color: var(--mtf-red); line-height: 1.1; }
+    .flow-note { font-size: 0.7em; color: var(--muted); margin-left: 1em; }
+
+    /* ── Equations ── */
+    .equation {
+      background: #fff5f6; border-left: 4px solid var(--mtf-red); border-radius: 4px;
+      padding: 0.4em 1em; margin: 0.6em 0; font-size: 0.9em;
+    }
+
+    /* ══ COMPONENTS ══ */
+    .reveal pre.code { text-align: left; white-space: pre;
+      font-family: Consolas, 'DejaVu Sans Mono', 'Courier New', monospace; }
+    .reveal pre.code code { display: block; font-family: inherit; white-space: pre; overflow-x: auto; }
+    .reveal pre.code.sm { font-size: 0.5em; }
+    .reveal pre.code.xs { font-size: 0.45em; }
+    .reveal pre.code .s { color: #e6c07b; }
+    .reveal :not(pre) > code { font-family: Consolas, 'Courier New', monospace; background: #f3f3f3;
+      padding: 0 0.25em; border-radius: 3px; font-size: 0.92em; }
+    .small-p { font-size: 0.6em; text-align: left; margin: 0.35em 0; }
+    .result { font-size: 0.62em; font-weight: 700; color: #1b7a3a; text-align: left; margin: 0.4em 0; }
+    .key-idea { background: #fff5f6; border-left: 4px solid var(--mtf-red); border-radius: 4px;
+      padding: 0.5em 0.9em; font-size: 0.68em; text-align: left; margin-top: 0.6em; }
+    .warn-box { background: #fff6e5; border-left: 4px solid #e0a000; border-radius: 4px;
+      padding: 0.3em 0.8em; font-size: 0.58em; text-align: left; margin-top: 0.5em; }
+    .test-box { background: #effaf2; border-left: 4px solid #2e9d4f; border-radius: 4px;
+      padding: 0.3em 0.8em; font-size: 0.58em; text-align: left; margin-top: 0.45em; }
+    .test-box strong:first-child { color: #1b7a3a; }
+    .reveal .test-box pre.code { font-size: 0.72em; margin: 0.3em 0 0.1em; }
+    .next-line { font-size: 0.62em; color: var(--mtf-dark); text-align: left; margin-top: 0.6em; }
+    .flow-line { font-size: 0.6em; text-align: center; background: #fff5f6; border-radius: 4px;
+      padding: 0.4em; margin-top: 0.4em; color: var(--mtf-dark); font-weight: 600; }
+    .timeline { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.5em; margin-top: 1.2em; }
+    .tl-item { font-size: 0.52em; text-align: left; border-top: 5px solid var(--mtf-red);
+      padding: 0.5em 0.4em; line-height: 1.35; }
+    .tl-item.key { background: #fff5f6; }
+    .tl-year { display: block; font-size: 1.6em; font-weight: 700; color: var(--mtf-dark); margin-bottom: 0.2em; }
+    .cards-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; margin-top: 0.8em; }
+    .card { position: relative; background: #fafafa; border: 1px solid #e3e3e3; border-left: 5px solid #999;
+      border-radius: 6px; padding: 0.7em 0.9em; text-align: left; font-size: 0.62em; color: var(--muted); }
+    .card strong { display: block; font-size: 1.3em; color: var(--mtf-dark); margin-bottom: 0.2em; }
+    .card.key { border-left-color: var(--mtf-red); background: #fff5f6; }
+    .card em { position: absolute; top: 0.6em; right: 0.8em; font-style: normal; background: var(--mtf-red);
+      color: #fff; padding: 0 0.45em; border-radius: 3px; font-size: 0.8em; }
+    .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; margin-top: 0.6em; }
+    .tile { background: #fff5f6; border-radius: 6px; padding: 0.6em 0.7em; font-size: 0.55em;
+      text-align: left; color: var(--muted); line-height: 1.35; }
+    .tile strong { display: block; color: var(--mtf-dark); font-size: 1.15em; margin-bottom: 0.15em; }
+    .tile .ico { display: block; font-size: 1.7em; margin-bottom: 0.1em; }
+    .lib-head { font-size: 0.6em; font-weight: 700; color: var(--mtf-dark); text-align: left; margin: 0 0 0.2em; }
+    .reveal table.small-t { font-size: 0.58em; }
+    .reveal table.dict { font-size: 0.5em; }
+    .reveal table.dict td, .reveal table.small-t td { padding: 0.18em 0.5em; }
+    .about-head { font-size: 0.66em; text-align: left; line-height: 1.4; }
+    .contact { font-size: 0.5em; color: var(--muted); text-align: left; }
+    .reveal section.divider .divider-credit { font-size: 0.5em; color: #f0b0b8; margin-top: 2em; }
+    .reveal ol.steps li::marker { color: var(--mtf-red); font-weight: 700; }
+    .reveal ul.links a, .reveal .small-p a, .reveal ul.compact a { color: var(--mtf-dark); }
+    .tag { margin-left: 0.4em; }
+    .reveal table.tight { font-size: 0.7em; }
+    .reveal table.tight th, .reveal table.tight td { padding: 0.22em 0.5em; }
+    .reveal table.mid { font-size: 0.78em; }
+    .reveal ul.xs { font-size: 0.74em; line-height: 1.7; }
+    .equation.sm { font-size: 0.8em; padding: 0.25em 0.8em; margin: 0.35em 0; }
+    .svgfig svg { width: 100%; height: auto; max-height: 50vh; }
+    .reveal pre.code {
+      width: 100%; box-shadow: none; margin: 0.4em 0; font-size: 0.52em;
+      background: #1e1e1e; border-left: 4px solid var(--mtf-red); border-radius: 4px;
+    }
+    .reveal pre.code code { text-align: left; color: #eee; padding: 0.8em 1em; max-height: none; line-height: 1.45; }
+    .reveal pre.code .c { color: #8fbf7f; }
+    .reveal pre.code .k { color: #ff9aa8; }
+    .agenda td:first-child { white-space: nowrap; color: var(--mtf-dark); font-weight: 600; }
+    .agenda tr.main td { background: #fde8eb !important; font-weight: 600; }
+    .tag {
+      display: inline-block; background: var(--mtf-red); color: #fff; border-radius: 3px;
+      padding: 0 0.4em; font-size: 0.75em; font-weight: 600; vertical-align: middle;
+    }
+    .tag.grey { background: #777; }
+    .note-box {
+      background: #f6f6f6; border-left: 4px solid #888; border-radius: 4px;
+      padding: 0.35em 0.8em; font-size: 0.62em; text-align: left; margin-top: 0.5em;
+    }
+    /* video card: thumbnail link + optional embed */
+    .video-card { position: relative; width: 100%; aspect-ratio: 16 / 9; max-height: 50vh;
+      margin: 0 auto; background: #111; border-radius: 4px; overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
+    .video-card a.thumb { display: block; width: 100%; height: 100%; }
+    .video-card a.thumb img { width: 100%; height: 100%; max-height: none; object-fit: cover;
+      box-shadow: none; opacity: 0.85; }
+    .video-card .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+      width: 84px; height: 60px; background: var(--mtf-red); border-radius: 14px; pointer-events: none; }
+    .video-card .play::after { content: ""; position: absolute; left: 34px; top: 17px;
+      border-left: 22px solid #fff; border-top: 13px solid transparent; border-bottom: 13px solid transparent; }
+    .video-card iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-card video { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; background: #000; }
+    .video-actions { font-size: 0.5em; text-align: center; margin-top: 0.35em; color: var(--muted); }
+    .video-actions button { font: inherit; background: none; border: 1px solid var(--mtf-red);
+      color: var(--mtf-red); border-radius: 4px; padding: 0.1em 0.6em; cursor: pointer; margin-left: 0.6em; }
+    .video-actions a { color: var(--mtf-dark); }
+    .popup-btn { font: inherit; font-size: 0.55em; background: var(--mtf-red); color: #fff; border: 0;
+      border-radius: 6px; padding: 0.6em 1.2em; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
+    .answer-btn { font: inherit; font-size: 0.75em; background: none; border: 1px solid var(--mtf-red);
+      color: var(--mtf-red); border-radius: 4px; padding: 0 0.5em; cursor: pointer; margin-left: 0.4em; }
+    .answer-btn.playing { background: var(--mtf-red); color: #fff; }
+    .img-missing { border: 2px dashed #d9a0a8; border-radius: 4px; padding: 1.2em 0.8em;
+      font-size: 0.45em; color: var(--muted); background: #fff8f9; }
+    .img-missing a { color: var(--mtf-dark); word-break: break-all; }
+    .reveal .fragment.highlight-red.visible { color: var(--mtf-red); }
+    .qnum { color: var(--mtf-red); font-weight: 700; }
+
+    /* ══ BOTTOM NAV BAR ══ */
+    #navBar {
+      position: fixed; bottom: 0; left: 0; right: 0; height: 54px;
+      background: rgba(14,14,14,0.93); backdrop-filter: blur(8px);
+      border-top: 2px solid var(--mtf-red);
+      display: flex; align-items: center; justify-content: center;
+      gap: 14px; z-index: 9998; padding: 0 20px;
+    }
+    #slideIndicators { display: flex; gap: 5px; align-items: center; }
+    .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.28); border: none; cursor: pointer;
+      padding: 0; flex-shrink: 0; transition: background 0.2s, transform 0.2s;
+    }
+    .dot:hover  { background: rgba(255,255,255,0.65); }
+    .dot.active { background: var(--mtf-red); transform: scale(1.55); }
+    .nav-btn {
+      background: none; border: 1px solid rgba(255,255,255,0.12); border-radius: 7px;
+      color: #fff; cursor: pointer; padding: 5px 9px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s; flex-shrink: 0;
+    }
+    .nav-btn:hover  { background: rgba(200,0,30,0.35); border-color: var(--mtf-red); }
+    .nav-btn:active { background: rgba(200,0,30,0.55); }
+    .nav-btn svg    { width: 22px; height: 22px; fill: #fff; display: block; }
+    #slideCounter {
+      font-family: 'Segoe UI', sans-serif; font-size: 11px;
+      color: rgba(255,255,255,0.5); min-width: 34px; text-align: center; flex-shrink: 0;
+    }
+    #autoLabel {
+      display: flex; align-items: center; gap: 5px; color: rgba(255,255,255,0.55);
+      font-size: 11px; font-family: 'Segoe UI', sans-serif;
+      cursor: pointer; user-select: none; flex-shrink: 0;
+    }
+    #autoLabel input { cursor: pointer; accent-color: var(--mtf-red); }
+    .no-narration #playBtn, .no-narration #autoLabel,
+    .no-narration .narration-help, .no-narration .answer-btn { display: none; }
+
+    /* ══ MTF STU LOGO – fixed bottom-left (above nav bar) ══ */
+    .mtf-logo-badge {
+      position: fixed; bottom: 62px; left: 18px; z-index: 9999;
+      display: flex; align-items: center; gap: 24px;
+      pointer-events: none; opacity: 0.92;
+    }
+    .mtf-logo-badge svg { width: 182px; height: 62px; flex-shrink: 0; }
+    .mtf-wordmark { display: flex; flex-direction: column; line-height: 1.2; }
+    .mtf-line2 {
+      font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px;
+      font-weight: 400; color: var(--muted); letter-spacing: 0.02em;
+    }
+
+    /* Hide chrome in PDF export */
+    .print-pdf #navBar { display: none; }
+  </style>
+</head>
+<body>
+
+<div class="mtf-logo-badge" aria-label="MTF STU">
+<svg width="182" height="62" viewBox="0 0 91 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M2.29999 17.7807C3.59999 17.7807 4.60001 16.7807 4.60001 15.4807C4.60001 14.1807 3.59999 13.1807 2.29999 13.1807C0.999988 13.1807 0 14.1807 0 15.4807C0 16.7807 0.999988 17.7807 2.29999 17.7807Z" fill="#E72B1E"/>
+  <path d="M2.29999 30.4807C3.59999 30.4807 4.60001 29.4807 4.60001 28.1807C4.60001 26.8807 3.59999 25.8807 2.29999 25.8807C0.999988 25.8807 0 26.8807 0 28.1807C0 29.3807 0.999988 30.4807 2.29999 30.4807Z" fill="#E72B1E"/>
+  <path d="M15 17.7807C16.3 17.7807 17.3 16.7807 17.3 15.4807C17.3 14.1807 16.3 13.1807 15 13.1807C13.7 13.1807 12.7 14.1807 12.7 15.4807C12.7 16.7807 13.7 17.7807 15 17.7807Z" fill="#E72B1E"/>
+  <path d="M15 30.4807C16.3 30.4807 17.3 29.4807 17.3 28.1807C17.3 26.8807 16.3 25.8807 15 25.8807C13.7 25.8807 12.7 26.8807 12.7 28.1807C12.7 29.3807 13.7 30.4807 15 30.4807Z" fill="#E72B1E"/>
+  <path d="M27.6 17.7807C28.9 17.7807 29.9 16.7807 29.9 15.4807C29.9 14.1807 28.9 13.1807 27.6 13.1807C26.3 13.1807 25.3 14.1807 25.3 15.4807C25.3 16.7807 26.3 17.7807 27.6 17.7807Z" fill="#E72B1E"/>
+  <path d="M2.29999 5.18069C3.59999 5.18069 4.60001 4.18071 4.60001 2.88071C4.60001 1.58071 3.59999 0.580688 2.29999 0.580688C0.999988 0.580688 0 1.58071 0 2.88071C0 4.18071 0.999988 5.18069 2.29999 5.18069Z" fill="#E72B1E"/>
+  <path d="M15 5.18069C16.3 5.18069 17.3 4.18071 17.3 2.88071C17.3 1.58071 16.3 0.580688 15 0.580688C13.7 0.580688 12.7 1.58071 12.7 2.88071C12.7 4.18071 13.7 5.18069 15 5.18069Z" fill="#E72B1E"/>
+  <path d="M27.6 5.18069C28.9 5.18069 29.9 4.18071 29.9 2.88071C29.9 1.58071 28.9 0.580688 27.6 0.580688C26.3 0.580688 25.3 1.58071 25.3 2.88071C25.3 4.18071 26.3 5.18069 27.6 5.18069Z" fill="#E72B1E"/>
+  <path d="M27.6 30.4807C28.9 30.4807 29.9 29.4807 29.9 28.1807C29.9 26.8807 28.9 25.8807 27.6 25.8807C26.3 25.8807 25.3 26.8807 25.3 28.1807C25.3 29.3807 26.3 30.4807 27.6 30.4807Z" fill="#E72B1E"/>
+  <path d="M40.2 17.7807C41.5 17.7807 42.5 16.7807 42.5 15.4807C42.5 14.1807 41.5 13.1807 40.2 13.1807C38.9 13.1807 37.9 14.1807 37.9 15.4807C37.9 16.7807 39 17.7807 40.2 17.7807Z" fill="#E72B1E"/>
+  <path d="M40.2 30.4807C41.5 30.4807 42.5 29.4807 42.5 28.1807C42.5 26.8807 41.5 25.8807 40.2 25.8807C38.9 25.8807 37.9 26.8807 37.9 28.1807C37.9 29.3807 39 30.4807 40.2 30.4807Z" fill="#E72B1E"/>
+  <path d="M40.2 5.18069C41.5 5.18069 42.5 4.18071 42.5 2.88071C42.5 1.58071 41.5 0.580688 40.2 0.580688C38.9 0.580688 37.9 1.58071 37.9 2.88071C37.9 4.18071 39 5.18069 40.2 5.18069Z" fill="#E72B1E"/>
+  <path d="M85.8 19.5807C85.8 19.4807 85.9 19.4807 85.9 19.4807H90.7C90.8 19.4807 90.9 19.3807 90.9 19.2807V18.1807C90.9 18.0807 90.8 17.9807 90.7 17.9807H84.3C84.2 17.9807 84.1 18.0807 84.1 18.1807V30.0807C84.1 30.1807 84.2 30.2807 84.3 30.2807H85.7C85.8 30.2807 85.9 30.1807 85.9 30.0807V24.7807H89.7C89.8 24.7807 89.9 24.6807 89.9 24.5807V23.4807C89.9 23.3807 89.8 23.2807 89.7 23.2807H85.9V19.5807H85.8ZM75 30.2807C75.1 30.2807 75.2 30.1807 75.2 30.0807V19.5807C75.2 19.4807 75.2 19.4807 75.3 19.4807H78.3C78.4 19.4807 78.5 19.3807 78.5 19.2807V18.1807C78.5 18.0807 78.4 17.9807 78.3 17.9807H70.4C70.3 17.9807 70.2 18.0807 70.2 18.1807V19.2807C70.2 19.3807 70.3 19.4807 70.4 19.4807H73.3C73.4 19.4807 73.4 19.5807 73.4 19.5807V30.0807C73.4 30.1807 73.5 30.2807 73.6 30.2807H75ZM60 30.2807C60.1 30.2807 60.1 30.2807 60.2 30.1807L63 20.8807V30.0807C63 30.1807 63.1 30.2807 63.2 30.2807H64.5C64.6 30.2807 64.7 30.1807 64.7 30.0807V18.1807C64.7 18.0807 64.6 17.9807 64.5 17.9807H62.8C62.7 17.9807 62.6 17.9807 62.6 18.0807L59.4 28.1807L56.2 18.0807C56.2 17.9807 56.1 17.9807 56 17.9807H54.2C54.1 17.9807 54 18.0807 54 18.1807V30.0807C54 30.1807 54.1 30.2807 54.2 30.2807H55.5C55.6 30.2807 55.7 30.1807 55.7 30.0807V20.8807L58.5 30.1807C58.5 30.2807 58.6 30.2807 58.7 30.2807H60Z" fill="black"/>
+  <path d="M90.9 0.980713C90.9 0.780713 90.8 0.780701 90.7 0.780701H88.4C88.3 0.780701 88.2 0.880713 88.2 0.980713V9.18069C88.2 10.3807 87.5 10.9807 86.2 10.9807C84.9 10.9807 84.2 10.3807 84.2 9.18069V0.980713C84.2 0.780713 84.1 0.780701 84 0.780701H81.7C81.5 0.780701 81.5 0.880713 81.5 0.980713V9.2807C81.5 11.6807 82.8 13.1807 86.2 13.1807C89.5 13.1807 90.9 11.6807 90.9 9.2807V0.980713ZM72.4 12.9807C72.6 12.9807 72.6 12.8807 72.6 12.7807V3.08069C72.6 2.98069 72.6 2.98071 72.7 2.98071H75.6C75.7 2.98071 75.8 2.8807 75.8 2.7807V1.08069C75.8 0.880688 75.7 0.880707 75.6 0.880707H66.9C66.7 0.880707 66.7 0.980688 66.7 1.08069V2.7807C66.7 2.9807 66.8 2.98071 66.9 2.98071H69.7C69.8 2.98071 69.8 3.08069 69.8 3.08069V12.7807C69.8 12.9807 69.9 12.9807 70 12.9807H72.4ZM53.6 12.3807C54.8 12.9807 55.9 13.0807 57.3 13.0807C59.9 13.0807 61.6 11.7807 61.6 9.38071C61.6 7.68071 60.8 6.58069 58.7 5.68069C56.9 4.98069 56.6 4.58071 56.6 3.98071C56.6 3.28071 57.1 2.7807 58.2 2.7807C59 2.7807 59.7 2.88069 60.3 3.18069C60.5 3.28069 60.6 3.18069 60.6 3.08069L61.4 1.48071C61.5 1.38071 61.5 1.28069 61.3 1.18069C60.1 0.680695 59.3 0.480713 57.7 0.480713C55.2 0.480713 53.7 1.98071 53.7 3.98071C53.7 5.78071 54.6 6.8807 56.7 7.7807C58.3 8.4807 58.7 8.88069 58.7 9.58069C58.7 10.2807 58.1 10.7807 57.1 10.7807C55.9 10.7807 55.3 10.5807 54.6 10.1807C54.5 10.0807 54.4 10.1807 54.3 10.2807L53.5 12.0807C53.5 12.2807 53.5 12.3807 53.6 12.3807Z" fill="black"/>
+</svg>
+  <div class="mtf-wordmark">
+    <span class="mtf-line2">Faculty of Materials Science<br>and Technology in Trnava</span>
+  </div>
+</div>
+
+
+<div class="reveal"><div class="slides">
+
+  <!-- ═══ 1 · TITLE ═══════════════════════════════════════════════════════ -->
+  <section style="text-align:left;">
+    <div class="title-grid">
+      <div>
+        <hr class="top-rule">
+        <h1>From <abbr title="General Algebraic Modeling System">GAMS</abbr> to GAMSPy</h1>
+        <p class="subtitle">Optimization modelling in Python – from model to interactive web page</p>
+        <p class="author">Ing. Martin Necpal, <abbr title="Doctor of Philosophy">PhD</abbr>.</p>
+        <p class="institution">Guest lecture<br>
+          Faculty of Materials Science and Technology in Trnava &nbsp;·&nbsp; <abbr title="Slovak University of Technology in Bratislava">STU</abbr> Bratislava</p>
+      </div>
+      <div class="figure">
+        <img src="images/webapp_screenshot.png" alt="Interactive mixing optimizer built with GAMSPy, Matplotlib and Flask">
+        <p class="img-caption">Where we end today: an optimization model as a web page (own work)</p>
+      </div>
+    </div>
+    <div class="nav-help">
+      <strong>How to control the presentation</strong> (bar at the bottom)
+      <ul>
+        <li><kbd>←</kbd> <kbd>→</kbd> or the ‹ › buttons – previous / next slide</li>
+        <li>Dots – jump directly to a chosen slide</li>
+        <li class="narration-help">▶ or <kbd>space</kbd> – play / pause the spoken commentary</li>
+        <li class="narration-help"><strong>Auto</strong> on – moves to the next slide when the commentary ends; off – the slide stays</li>
+        <li><kbd>F</kbd> full screen · <kbd>Esc</kbd> slide overview</li>
+        <li><kbd>Alt</kbd> + click (Linux: <kbd>Ctrl</kbd> + click) – zoom into a spot on the slide; click again to zoom out</li>
+        <li>Underlined abbreviations – hover the mouse over them for an explanation</li>
+      </ul>
+    </div>
+    <div class="pdf-download-row"><a class="pdf-download" href="gamspy.pdf" download>⬇ Download <abbr title="Portable Document Format">PDF</abbr></a></div>
+    <aside class="notes">[0:00–0:02] Thank the hosts. Take-home: one model in GAMS, the same model in Python with GAMSPy, and the model turned into a web page.</aside>
+  </section>
+
+  <!-- ═══ 2 · ABOUT ME ════════════════════════════════════════════════════ -->
+  <section class="slide-full">
+    <h2>About me</h2>
+    <div class="fig-row" style="grid-template-columns:0.55fr 1.45fr;">
+      <div class="figure">
+        <img src="../../../assets/images/profile.png" alt="Martin Necpal – portrait" style="border-radius:50%;aspect-ratio:1;object-fit:cover;max-height:30vh;">
+      </div>
+      <div class="v-center">
+        <p class="about-head"><strong>Martin Necpal</strong> – university lecturer, Institute of Production Technology<br>
+          Faculty of Materials Science and Technology in Trnava, <abbr title="Slovak University of Technology in Bratislava">STU</abbr> Bratislava</p>
+        <ul class="xs">
+          <li><strong><abbr title="Doctor of Philosophy">PhD</abbr> (2010):</strong> automated process planning and integration into CAx systems</li>
+          <li><strong><abbr title="Computer-Aided Design">CAD</abbr> / <abbr title="Computer-Aided Manufacturing">CAM</abbr></strong> applications and <abbr title="Numerical Control">NC</abbr> programming</li>
+          <li><strong>Laser machining</strong> on the 5-axis LASERTEC 80 Shape – teaching, theses, research</li>
+          <li><strong>Python, <abbr title="MATrix LABoratory">MATLAB</abbr>, data science, <abbr title="Artificial Intelligence">AI</abbr> / machine learning</strong> in practice</li>
+        </ul>
+        <p class="contact">✉ martin.necpal@stuba.sk · 🌐 martinnecpal.aiplaces.org · <abbr title="Open Researcher and Contributor ID">ORCID</abbr> 0000-0003-2142-9204 · GitHub: martinnecpal</p>
+      </div>
+    </div>
+    <aside class="notes">[0:02–0:03] Keep to one minute. Bridge: process planning and manufacturing are full of optimization problems → GAMS and GAMSPy.</aside>
+  </section>
+
+  <!-- ═══ 3 · AGENDA ══════════════════════════════════════════════════════ -->
+  <section>
+    <h2>Agenda <span class="subtitle" style="font-size:0.55em;">(120 min)</span></h2>
+    <table class="agenda mid">
+      <tr><th>Time</th><th>Block</th><th>Content</th></tr>
+      <tr><td>0 – 5</td><td>Opening</td><td>About me, agenda</td></tr>
+      <tr><td>5 – 25</td><td>1 · Introduction to <abbr title="General Algebraic Modeling System">GAMS</abbr></td><td>What it is, where it is used, installation, <abbr title="General Algebraic Modeling System">GAMS</abbr> Studio</td></tr>
+      <tr><td>25 – 40</td><td>2 · Example 1 in <abbr title="General Algebraic Modeling System">GAMS</abbr></td><td>A simple <abbr title="Linear Programming">LP</abbr> – graphical vs. <abbr title="General Algebraic Modeling System">GAMS</abbr> solution</td></tr>
+      <tr><td>40 – 55</td><td>3 · Getting ready for GAMSPy</td><td>Python, GAMSPy, Visual Studio Code</td></tr>
+      <tr><td>55 – 65</td><td>4 · Example 1 in GAMSPy</td><td>Translating <abbr title="General Algebraic Modeling System">GAMS</abbr> to Python</td></tr>
+      <tr class="main"><td>65 – 80</td><td>5 · Example 3 in GAMSPy</td><td>Mixing of streams – sets, parameters, data, what-if</td></tr>
+      <tr class="main"><td>80 – 100</td><td>6 · From model to web page</td><td>Matplotlib and Flask, step by step</td></tr>
+      <tr><td>100 – 120</td><td>7 · Summary &amp; Q&amp;A</td><td>What we learned, review questions</td></tr>
+    </table>
+    <aside class="notes">[0:03–0:05] Sections 5 and 6 are the core. Installation parts can be shortened if students installed beforehand.</aside>
+  </section>
+
+  <!-- ═══ 4 · PART 1 ══════════════════════════════════════════════════════ -->
+  <section class="divider">
+    <h2>1 · Introduction to <abbr title="General Algebraic Modeling System">GAMS</abbr></h2>
+    <p style="color:#f0b0b8;">General Algebraic Modeling System – what it is, where it is used, how to install and run it</p>
+    <aside class="notes">[0:05] Part 1, 20 minutes.</aside>
+  </section>
+
+  <!-- ═══ 5 · WHAT IS GAMS ════════════════════════════════════════════════ -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr></span><span class="band-sub">What is it?</span></div>
+    <h2>What is <abbr title="General Algebraic Modeling System">GAMS</abbr>?</h2>
+    <div class="fig-row" style="grid-template-columns:1.25fr 1fr;">
+      <ul class="v-center compact">
+        <li>A <strong>high-level algebraic modelling language</strong> for optimization</li>
+        <li>You write the model <strong>as mathematics</strong>: sets, parameters, variables, equations</li>
+        <li><abbr title="General Algebraic Modeling System">GAMS</abbr> <strong>compiles</strong> the model and passes it to a <strong>solver</strong></li>
+        <li>Same model → <strong>different solvers</strong> without rewriting</li>
+        <li>Linear, nonlinear, discrete, stochastic, equilibrium – at large scale</li>
+      </ul>
+      <div class="v-center">
+        <div class="key-idea"><strong>Key idea</strong><br>separate <span class="hl">what</span> the problem is (the model)<br>from <span class="hl">how</span> it is solved (the solver)</div>
+      </div>
+    </div>
+    <aside class="notes">[0:05–0:07] Emphasize model vs. solver separation: engineers describe physics/economics, the solver handles the algorithm.</aside>
+  </section>
+
+  <!-- ═══ 6 · HISTORY ═════════════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr></span><span class="band-sub">History</span></div>
+    <h2>A short history</h2>
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-year">1976</span>Research project at the <strong>World Bank</strong> (Alexander Meeraus)</div>
+      <div class="tl-item"><span class="tl-year">1987</span><abbr title="General Algebraic Modeling System">GAMS</abbr> becomes a commercial product</div>
+      <div class="tl-item"><span class="tl-year">2001</span><abbr title="GAMS Data Exchange">GDX</abbr> data exchange format</div>
+      <div class="tl-item"><span class="tl-year">2012</span><abbr title="Institute for Operations Research and the Management Sciences">INFORMS</abbr> Impact Prize for algebraic modelling languages</div>
+      <div class="tl-item"><span class="tl-year">2018</span><strong><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio</strong> – the current <abbr title="Integrated Development Environment">IDE</abbr></div>
+      <div class="tl-item key"><span class="tl-year">2023</span><strong>GAMSPy</strong> – algebraic modelling in Python</div>
+    </div>
+    <p class="note-box">Today (October 2026): <abbr title="General Algebraic Modeling System">GAMS</abbr> 54.x · GAMSPy 1.29</p>
+    <aside class="notes">[0:07–0:08] Born from World Bank economists writing large models by hand as matrix generators.</aside>
+  </section>
+
+  <!-- ═══ 7 · ECOSYSTEM ═══════════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr></span><span class="band-sub">Ecosystem</span></div>
+    <h2>The <abbr title="General Algebraic Modeling System">GAMS</abbr> ecosystem</h2>
+    <div class="cards-4">
+      <div class="card key"><strong><abbr title="General Algebraic Modeling System">GAMS</abbr> Language</strong><span>Algebraic modelling language + <abbr title="General Algebraic Modeling System">GAMS</abbr> Studio <abbr title="Integrated Development Environment">IDE</abbr></span><em>today</em></div>
+      <div class="card key"><strong>GAMSPy</strong><span>Python-native interface – the same modelling power inside Python</span><em>today</em></div>
+      <div class="card"><strong><abbr title="General Algebraic Modeling System">GAMS</abbr> <abbr title="Model Interface with Rapid Orchestration">MIRO</abbr></strong><span>Turns a model into an interactive web application for non-experts</span></div>
+      <div class="card"><strong><abbr title="General Algebraic Modeling System">GAMS</abbr> Engine</strong><span>Runs optimization jobs at scale – parallel, cloud, large memory</span></div>
+    </div>
+    <aside class="notes">[0:08–0:09] Today: the first two in depth; the idea of MIRO when we build our own web page in Python.</aside>
+  </section>
+
+  <!-- ═══ 8 · HOW GAMS WORKS ══════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr></span><span class="band-sub">Workflow</span></div>
+    <h2>How <abbr title="General Algebraic Modeling System">GAMS</abbr> works</h2>
+    <div class="figure svgfig">
+      <svg viewBox="0 0 880 200" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial" font-size="15">
+        <defs><marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c8001e"/></marker></defs>
+        <g text-anchor="middle">
+          <rect x="10" y="20" width="180" height="70" rx="6" fill="#fff5f6" stroke="#c8001e" stroke-width="2"/>
+          <text x="100" y="50" font-weight="700" fill="#8b0014">Model file (.gms)</text>
+          <text x="100" y="72" fill="#555">you write it</text>
+          <rect x="235" y="20" width="180" height="70" rx="6" fill="#fff5f6" stroke="#c8001e" stroke-width="2"/>
+          <text x="325" y="50" font-weight="700" fill="#8b0014">GAMS compiler</text>
+          <text x="325" y="72" fill="#555">checks + generates</text>
+          <rect x="460" y="20" width="180" height="70" rx="6" fill="#8b0014" stroke="#8b0014" stroke-width="2"/>
+          <text x="550" y="50" font-weight="700" fill="#fff">Solver</text>
+          <text x="550" y="72" fill="#f0b0b8">CPLEX, CONOPT, BARON …</text>
+          <rect x="685" y="20" width="180" height="70" rx="6" fill="#fff5f6" stroke="#c8001e" stroke-width="2"/>
+          <text x="775" y="50" font-weight="700" fill="#8b0014">Listing file (.lst)</text>
+          <text x="775" y="72" fill="#555">you read it</text>
+          <text x="100" y="118" fill="#777" font-size="13">sets, data, variables,</text>
+          <text x="100" y="136" fill="#777" font-size="13">equations</text>
+          <text x="325" y="118" fill="#777" font-size="13">syntax check,</text>
+          <text x="325" y="136" fill="#777" font-size="13">model instance</text>
+          <text x="550" y="118" fill="#777" font-size="13">numerical</text>
+          <text x="550" y="136" fill="#777" font-size="13">algorithm</text>
+          <text x="775" y="118" fill="#777" font-size="13">solver / model status,</text>
+          <text x="775" y="136" fill="#777" font-size="13">variable values</text>
+        </g>
+        <g stroke="#c8001e" stroke-width="2.5" marker-end="url(#ar1)">
+          <line x1="192" y1="55" x2="232" y2="55"/><line x1="417" y1="55" x2="457" y2="55"/><line x1="642" y1="55" x2="682" y2="55"/>
+        </g>
+      </svg>
+    </div>
+    <div class="flow-line">Sets → Data (Parameters, Tables, Scalars) → Variables → Equations → Model → Solve → Display</div>
+    <aside class="notes">[0:09–0:11] Four boxes, left to right. Then the fixed order of a GAMS model at the bottom.</aside>
+  </section>
+
+  <!-- ═══ 9 · PROBLEM TYPES ═══════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr></span><span class="band-sub">Model types</span></div>
+    <h2>Problem types and solvers</h2>
+    <table class="tight">
+      <tr><th>Model type</th><th>Meaning</th><th>Typical solvers</th></tr>
+      <tr><td><strong><abbr title="Linear Programming">LP</abbr></strong></td><td>Linear programming</td><td>CPLEX, HiGHS, Gurobi, XPRESS</td></tr>
+      <tr><td><strong><abbr title="Mixed-Integer Programming">MIP</abbr></strong></td><td>Mixed-integer linear</td><td>CPLEX, HiGHS, Gurobi, <abbr title="Solving Constraint Integer Programs">SCIP</abbr></td></tr>
+      <tr><td><strong><abbr title="Nonlinear Programming">NLP</abbr></strong></td><td>Nonlinear programming</td><td>CONOPT, <abbr title="Interior Point OPTimizer">IPOPT</abbr>, <abbr title="Sparse Nonlinear OPTimizer">SNOPT</abbr>, KNITRO</td></tr>
+      <tr><td><strong><abbr title="Mixed-Integer Nonlinear Programming">MINLP</abbr></strong></td><td>Mixed-integer nonlinear</td><td><abbr title="DIscrete and Continuous OPTimizer">DICOPT</abbr>, <abbr title="Simple Branch-and-Bound">SBB</abbr>, <abbr title="Supporting Hyperplane Optimization Toolkit">SHOT</abbr>, <abbr title="Branch-And-Reduce Optimization Navigator">BARON</abbr></td></tr>
+      <tr><td><strong><abbr title="Quadratically Constrained Program">QCP</abbr> / <abbr title="Mixed-Integer Quadratically Constrained Program">MIQCP</abbr></strong></td><td>Quadratic constraints</td><td>CPLEX, Gurobi, MOSEK</td></tr>
+      <tr><td><strong><abbr title="Mixed Complementarity Problem">MCP</abbr> / <abbr title="Mathematical Program with Equilibrium Constraints">MPEC</abbr></strong></td><td>Equilibrium / complementarity</td><td>PATH, NLPEC</td></tr>
+      <tr><td><strong>Global</strong></td><td>Proven global optimum</td><td><abbr title="Branch-And-Reduce Optimization Navigator">BARON</abbr>, <abbr title="Solving Constraint Integer Programs">SCIP</abbr></td></tr>
+    </table>
+    <p class="note-box">Switching the solver = one line: <code>option NLP = BARON;</code></p>
+    <aside class="notes">[0:11–0:13] Local vs. global NLP: CONOPT/IPOPT find a local optimum, BARON proves the global one.</aside>
+  </section>
+
+  <!-- ═══ 10 · WHERE USED ═════════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr></span><span class="band-sub">Applications</span></div>
+    <h2>Where is <abbr title="General Algebraic Modeling System">GAMS</abbr> used?</h2>
+    <div class="tiles">
+      <div class="tile"><span class="ico">⚡</span><strong>Energy systems</strong>power planning, unit commitment, <abbr title="Carbon Capture and Storage">CCS</abbr></div>
+      <div class="tile"><span class="ico">🏛️</span><strong>Economics &amp; policy</strong><abbr title="Computable General Equilibrium">CGE</abbr> models, trade (<abbr title="Organisation for Economic Co-operation and Development">OECD</abbr> METRO)</div>
+      <div class="tile"><span class="ico">🌾</span><strong>Agriculture, water, forestry</strong>resource allocation, water networks</div>
+      <div class="tile"><span class="ico">📈</span><strong>Finance</strong>portfolio and risk optimization</div>
+      <div class="tile"><span class="ico">🚚</span><strong>Logistics &amp; operations</strong>transport, scheduling, routing</div>
+      <div class="tile"><span class="ico">⚙️</span><strong>Engineering</strong>chemical processes, design, manufacturing</div>
+    </div>
+    <p class="slide-source">Case studies on gams.com: <abbr title="Organisation for Economic Co-operation and Development">OECD</abbr>, TotalEnergies (<abbr title="Carbon Capture and Storage">CCS</abbr>), Alpro, Rhodium Group</p>
+    <aside class="notes">[0:13–0:14] Quick tour of the six fields; the next two slides go into the engineering ones.</aside>
+  </section>
+
+  <!-- ═══ 11 · CHEMICAL ENGINEERING ═══════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr></span><span class="band-sub">Applications</span></div>
+    <h2><abbr title="General Algebraic Modeling System">GAMS</abbr> in chemical engineering</h2>
+    <div class="cols-2" style="grid-template-columns:1fr 1.1fr;">
+      <ul class="compact">
+        <li><strong>Process synthesis</strong> – flowsheet structure (<abbr title="Mixed-Integer Nonlinear Programming">MINLP</abbr>)</li>
+        <li><strong>Heat exchanger networks</strong> – heat integration</li>
+        <li><strong>Distillation</strong> – sequencing, feed tray</li>
+        <li><strong>Reactor networks &amp; kinetics</strong></li>
+        <li><strong>Pooling and blending</strong> – refineries</li>
+        <li><strong>Batch plants</strong> – design, scheduling</li>
+      </ul>
+      <div>
+        <p class="lib-head">Examples in the <abbr title="General Algebraic Modeling System">GAMS</abbr> Model Library</p>
+        <table class="tight">
+          <tr><td><code>process</code></td><td>alkylation</td></tr>
+          <tr><td><code>procsel</code></td><td>flowsheet selection</td></tr>
+          <tr><td><code>synheat</code></td><td><abbr title="Heat Exchanger Network">HEN</abbr> synthesis</td></tr>
+          <tr><td><code>feedtray</code></td><td>feed plate location</td></tr>
+          <tr><td><code>hda</code></td><td>toluene hydrodealkylation</td></tr>
+          <tr><td><code>batchdes</code></td><td>batch plant design</td></tr>
+          <tr><td><code>haverly</code>, <code>pool</code></td><td>pooling</td></tr>
+          <tr><td><code>methanol</code>, <code>gasoil</code></td><td>kinetics</td></tr>
+        </table>
+      </div>
+    </div>
+    <p class="slide-source">Classic field of application (Grossmann, <abbr title="Carnegie Mellon University">CMU</abbr>, and many others)</p>
+    <aside class="notes">[0:14–0:15] All library models open in GAMS Studio via GAMS → Model Library Explorer. Stream mixing (Example 3) is the simplest blending case.</aside>
+  </section>
+
+  <!-- ═══ 12 · MECHANICAL ENGINEERING ═════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr></span><span class="band-sub">Applications</span></div>
+    <h2><abbr title="General Algebraic Modeling System">GAMS</abbr> in mechanical &amp; manufacturing engineering</h2>
+    <div class="cols-2" style="grid-template-columns:1fr 1.1fr;">
+      <ul class="compact">
+        <li><strong>Machine elements</strong> – gears, springs, bearings</li>
+        <li><strong>Structural optimization</strong> – trusses, shapes</li>
+        <li><strong>Optimal control</strong> – robot arm, trajectories</li>
+        <li><strong>Manufacturing</strong> – cutting stock, production planning, flow shop</li>
+        <li><strong>Energy in production</strong> – machine scheduling</li>
+      </ul>
+      <div>
+        <p class="lib-head">Examples in the <abbr title="General Algebraic Modeling System">GAMS</abbr> Model Library</p>
+        <table class="tight">
+          <tr><td><code>gear</code></td><td>gear train design</td></tr>
+          <tr><td><code>spring</code></td><td>coil compression spring</td></tr>
+          <tr><td><code>bearing</code>, <code>jbearing</code></td><td>thrust / journal bearing</td></tr>
+          <tr><td><code>trussm</code></td><td>truss topology</td></tr>
+          <tr><td><code>camshape</code></td><td>cam shape</td></tr>
+          <tr><td><code>robot</code></td><td>robot arm</td></tr>
+          <tr><td><code>trimloss</code>, <code>cutstock</code></td><td>cutting</td></tr>
+          <tr><td><code>flowshop</code>, <code>prodplan</code>, <code>rcpsp</code></td><td>scheduling</td></tr>
+        </table>
+      </div>
+    </div>
+    <aside class="notes">[0:15–0:16] Own field: cutting parameters (NLP), operation sequencing (MIP), nesting / cutting stock (MIP).</aside>
+  </section>
+
+  <!-- ═══ 13 · WHY ENGINEERS ══════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr></span><span class="band-sub">Why?</span></div>
+    <h2>Why should engineers use <abbr title="General Algebraic Modeling System">GAMS</abbr>?</h2>
+    <ul class="compact">
+      <li>The model reads like the <strong>mathematical formulation</strong> on paper</li>
+      <li><strong>Same model, many solvers</strong> – compare local vs. global results</li>
+      <li>Scales from <strong>classroom examples to industrial models</strong></li>
+      <li><strong>450+ ready models</strong> in the <abbr title="General Algebraic Modeling System">GAMS</abbr> Model Library</li>
+      <li>Free <strong>demo license</strong> with every download; academic licenses available</li>
+      <li>With <strong>GAMSPy</strong> the model lives inside Python – data, plots, web apps</li>
+    </ul>
+    <p class="next-line">➡ Next: one example, first in <strong><abbr title="General Algebraic Modeling System">GAMS</abbr></strong>, then in <strong>GAMSPy</strong></p>
+    <aside class="notes">[0:16–0:17] Six arguments; the last one is the bridge to the second half of the lecture.</aside>
+  </section>
+
+  <!-- ═══ 14 · RESOURCES ══════════════════════════════════════════════════ -->
+  <section style="text-align:left;">
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr></span><span class="band-sub">Resources</span></div>
+    <h2>Resources</h2>
+    <ul class="xs links">
+      <li><abbr title="General Algebraic Modeling System">GAMS</abbr> homepage – <a href="https://www.gams.com" target="_blank">www.gams.com</a></li>
+      <li><abbr title="General Algebraic Modeling System">GAMS</abbr> documentation – <a href="https://www.gams.com/latest/docs/" target="_blank">gams.com/latest/docs</a></li>
+      <li><abbr title="General Algebraic Modeling System">GAMS</abbr> Model Library – <a href="https://www.gams.com/latest/gamslib_ml/libhtml/" target="_blank">gams.com/latest/gamslib_ml/libhtml</a></li>
+      <li>GAMSPy documentation – <a href="https://gamspy.readthedocs.io" target="_blank">gamspy.readthedocs.io</a></li>
+      <li>GAMSPy examples – <a href="https://github.com/GAMS-dev/gamspy-examples" target="_blank">github.com/GAMS-dev/gamspy-examples</a></li>
+      <li>Brooke, Kendrick, Meeraus, Raman: <em><abbr title="General Algebraic Modeling System">GAMS</abbr> – A User's Guide</em></li>
+    </ul>
+    <aside class="notes">[0:17–0:18] Links only – students will find them in the PDF.</aside>
+  </section>
+
+  <!-- ═══ 15 · INSTALLING GAMS ════════════════════════════════════════════ -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio</span><span class="band-sub">Installation</span></div>
+    <h2>Installing <abbr title="General Algebraic Modeling System">GAMS</abbr></h2>
+    <div class="fig-row" style="grid-template-columns:1.1fr 1fr;">
+      <ul class="v-center xs">
+        <li><strong>1. Download</strong> – <a href="https://www.gams.com/download/" target="_blank">gams.com/download</a> · Windows, Linux, macOS</li>
+        <li><strong>2. Install</strong> – <strong><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio is installed automatically</strong>; SmartScreen → <em>More info → Run anyway</em></li>
+        <li><strong>3. License</strong> – free <strong>demo license</strong> (size-limited) included; free / academic licenses at <a href="https://www.gams.com/free-licenses/" target="_blank">gams.com/free-licenses</a></li>
+        <li>In Studio: <em>Help → <abbr title="General Algebraic Modeling System">GAMS</abbr> Licensing</em> to paste or check the license</li>
+      </ul>
+      <div class="figure">
+        <img src="https://www.gams.com/latest/docs/studio_download.png" alt="GAMS download page">
+        <p class="img-caption"><abbr title="General Algebraic Modeling System">GAMS</abbr> download page (© <abbr title="General Algebraic Modeling System">GAMS</abbr> Development Corp.)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:18–0:19] Show live or as a short recording; students should install before the hands-on part.</aside>
+  </section>
+
+  <!-- ═══ 16 · STUDIO AT A GLANCE ═════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio</span><span class="band-sub">The <abbr title="Integrated Development Environment">IDE</abbr></span></div>
+    <h2><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio at a glance</h2>
+    <div class="cols-2" style="grid-template-columns:1.2fr 1fr;align-items:center;">
+      <div class="figure">
+        <img src="https://www.gams.com/latest/docs/studio_run3.png" alt="GAMS Studio main window">
+        <p class="img-caption"><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio main window (© <abbr title="General Algebraic Modeling System">GAMS</abbr> Development Corp.)</p>
+      </div>
+      <table class="tight">
+        <tr><th>Area</th><th>Purpose</th></tr>
+        <tr><td><strong>Project Explorer</strong></td><td>Project files; main file marked with green ▶</td></tr>
+        <tr><td><strong>Code Editor</strong></td><td><code>.gms</code> with highlighting and completion</td></tr>
+        <tr><td><strong>Listing file</strong></td><td><code>.lst</code> – solve summary, equations, variables</td></tr>
+        <tr><td><strong>Process Log</strong></td><td>Run messages, errors, clickable links</td></tr>
+        <tr><td><strong>Toolbar</strong></td><td>New · Open · Model Library · <strong>Run (F9)</strong></td></tr>
+      </table>
+    </div>
+    <aside class="notes">[0:19–0:20] Point at the four areas in the screenshot.</aside>
+  </section>
+
+  <!-- ═══ 17 · FIRST RUN ══════════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio</span><span class="band-sub">First run</span></div>
+    <h2>Your first run in 5 steps</h2>
+    <div class="cols-2" style="grid-template-columns:1.1fr 1fr;align-items:center;">
+      <ol class="xs steps">
+        <li><strong>Create a project</strong> – <em>File → New Project…</em></li>
+        <li><strong>Open a model</strong> – <em><abbr title="General Algebraic Modeling System">GAMS</abbr> → Model Library Explorer</em> (<strong>F6</strong>) → <code>trnsport</code>, or <em>File → New…</em></li>
+        <li><strong>Check the main file</strong> – green ▶ in the Project Explorer (<em>right-click → Set as Main File</em>)</li>
+        <li><strong>Run</strong> – green ▶ button or <strong>F9</strong></li>
+        <li><strong>Read the results</strong> – Process Log + <code>.lst</code> opens automatically</li>
+      </ol>
+      <div class="figure">
+        <img src="https://www.gams.com/latest/docs/studio_open4.png" alt="GAMS Studio Model Library Explorer">
+        <p class="img-caption">Model Library Explorer (© <abbr title="General Algebraic Modeling System">GAMS</abbr> Development Corp.)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:20–0:21] Studio runs the MAIN file of the project, not necessarily the file open in the editor.</aside>
+  </section>
+
+  <!-- ═══ 18 · READING OUTPUT ═════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio</span><span class="band-sub">Output</span></div>
+    <h2>Reading the output</h2>
+    <div class="cols-2" style="grid-template-columns:1fr 1.1fr;align-items:center;">
+      <div class="figure">
+        <img src="https://www.gams.com/latest/docs/studio_run4.png" alt="GAMS Studio process log and listing file">
+        <p class="img-caption">Process Log and listing file (© <abbr title="General Algebraic Modeling System">GAMS</abbr> Development Corp.)</p>
+      </div>
+      <div>
+        <table class="tight">
+          <tr><th>Log line</th><th>Double-click opens</th></tr>
+          <tr><td>🔵 Blue</td><td>the <code>.lst</code> file at that place</td></tr>
+          <tr><td>🔴 Red</td><td><strong>error</strong> – the line in the source</td></tr>
+          <tr><td>🟢 Green</td><td>created files (<abbr title="GAMS Data Exchange">GDX</abbr>, REF, PUT)</td></tr>
+        </table>
+        <p class="small-p">Listing tree: Compilation · Equation listing · Model statistics · <strong>Solution report</strong> · Display</p>
+        <p class="small-p">Look first at <code>SOLVER STATUS 1</code> · <code>MODEL STATUS 1 Optimal</code> · <code>OBJECTIVE VALUE</code></p>
+      </div>
+    </div>
+    <aside class="notes">[0:21–0:22] Three colours in the log; three lines to check first in the listing.</aside>
+  </section>
+
+  <!-- ═══ 19 · FIXING ERRORS ══════════════════════════════════════════════ -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio</span><span class="band-sub">Errors</span></div>
+    <h2>Finding and fixing errors</h2>
+    <div class="fig-row" style="grid-template-columns:1.1fr 1fr;">
+      <ul class="v-center xs">
+        <li>Errors appear as <strong>red lines</strong> in the Process Log</li>
+        <li><strong>Always start with the first error</strong> – later ones are often consequences</li>
+        <li>Click the red line → cursor jumps to the error in the <code>.gms</code></li>
+        <li>In the <code>.lst</code> the position is marked with <strong><code>$</code></strong> + error number</li>
+        <li>Typical: missing <code>;</code>, undeclared symbol, misspelled element, <code>=</code> instead of <code>=e=</code></li>
+      </ul>
+      <div class="figure">
+        <img src="https://www.gams.com/latest/docs/studio_fixerror_2.png" alt="GAMS Studio compilation error">
+        <p class="img-caption">Compilation error in Studio (© <abbr title="General Algebraic Modeling System">GAMS</abbr> Development Corp.)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:22–0:23] First error first.</aside>
+  </section>
+
+  <!-- ═══ 20 · MORE TOOLS ═════════════════════════════════════════════════ -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio</span><span class="band-sub">Tools</span></div>
+    <h2>More useful Studio tools</h2>
+    <div class="fig-row" style="grid-template-columns:1.1fr 1fr;">
+      <ul class="v-center xs">
+        <li><strong><abbr title="GAMS Data Exchange">GDX</abbr> Viewer</strong> – sets, parameters, solutions as tables; export to Excel</li>
+        <li><strong>Model Library Explorer</strong> (F6) – 400+ ready-to-run models</li>
+        <li><strong>Solver option editor</strong> – <code>conopt.opt</code>, <code>cplex.opt</code> with a form</li>
+        <li><strong>Integrated help</strong> (F1) – docs for the keyword under the cursor</li>
+        <li><strong>Debugger</strong> – breakpoints, inspect data</li>
+        <li><strong><abbr title="Network-Enabled Optimization System">NEOS</abbr> / <abbr title="General Algebraic Modeling System">GAMS</abbr> Engine</strong> – solve remotely</li>
+      </ul>
+      <div class="figure">
+        <img src="https://www.gams.com/latest/docs/studio_gdx_2.png" alt="GAMS Studio GDX Viewer">
+        <p class="img-caption"><abbr title="GAMS Data Exchange">GDX</abbr> Viewer (© <abbr title="General Algebraic Modeling System">GAMS</abbr> Development Corp.)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:23–0:24] GDX Viewer is the one students will use most.</aside>
+  </section>
+
+  <!-- ═══ 21 · SHORTCUTS ══════════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio</span><span class="band-sub">Shortcuts</span></div>
+    <h2>Handy shortcuts</h2>
+    <table class="tight">
+      <tr><th>Action</th><th>Windows / Linux</th><th>macOS</th></tr>
+      <tr><td>Run model</td><td><strong>F9</strong></td><td><strong>F9</strong></td></tr>
+      <tr><td>Compile only</td><td>Shift + F9</td><td>Shift + F9</td></tr>
+      <tr><td>Model Library</td><td>F6</td><td>F6</td></tr>
+      <tr><td>Help on keyword</td><td>F1</td><td>F1</td></tr>
+      <tr><td>Code completion</td><td>Ctrl + Space</td><td>Ctrl + Space</td></tr>
+      <tr><td>Comment / uncomment</td><td>Ctrl + *</td><td>Cmd + *</td></tr>
+      <tr><td>Matching bracket</td><td>Ctrl + B</td><td>Cmd + B</td></tr>
+      <tr><td>Navigator (file / line)</td><td>Ctrl + K</td><td>Ctrl + K</td></tr>
+    </table>
+    <p class="next-line">➡ Next: our first example written in <abbr title="General Algebraic Modeling System">GAMS</abbr></p>
+    <aside class="notes">[0:24–0:25] F9 is the one to remember.</aside>
+  </section>
+
+  <!-- ═══ 22 · LINKS ══════════════════════════════════════════════════════ -->
+  <section style="text-align:left;">
+    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio</span><span class="band-sub">Links</span></div>
+    <h2>Links</h2>
+    <ul class="xs links">
+      <li>Download – <a href="https://www.gams.com/download/" target="_blank">gams.com/download</a></li>
+      <li>Installation &amp; licensing – <a href="https://www.gams.com/latest/docs/UG_MAIN.html#UG_INSTALL" target="_blank">gams.com/latest/docs/UG_MAIN.html#UG_INSTALL</a></li>
+      <li>Free licenses – <a href="https://www.gams.com/free-licenses/" target="_blank">gams.com/free-licenses</a></li>
+      <li><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio manual – <a href="https://www.gams.com/latest/docs/T_STUDIO.html" target="_blank">gams.com/latest/docs/T_STUDIO.html</a></li>
+      <li><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio tutorial (B. McCarl) – <a href="https://www.gams.com/latest/docs/UG_studio_tutorial.html" target="_blank">gams.com/latest/docs/UG_studio_tutorial.html</a></li>
+    </ul>
+    <aside class="notes">[0:25] Links only, move on.</aside>
+  </section>
+
+  <!-- ═══ 23 · PART 2 ═════════════════════════════════════════════════════ -->
+  <section class="divider">
+    <h2>2 · Example 1 in <abbr title="General Algebraic Modeling System">GAMS</abbr></h2>
+    <p style="color:#f0b0b8;">A simple linear program – graphical solution vs. <abbr title="General Algebraic Modeling System">GAMS</abbr> solution</p>
+    <p class="divider-credit">Example adapted from Prof. Elvis Ahmetović, University of Tuzla</p>
+    <aside class="notes">[0:25] Part 2, 15 minutes.</aside>
+  </section>
+
+  <!-- ═══ 24 · THE PROBLEM ════════════════════════════════════════════════ -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Example 1</span><span class="band-sub">Problem</span></div>
+    <h2>The problem</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.15fr;">
+      <div class="v-center">
+        <div class="equation sm">$$\begin{aligned} \max\; & Z = 3x_1 + 2x_2 \\ \text{s.t.}\; & x_1 + 3x_2 \le 4 \\ & x_1 + x_2 \le 2 \\ & x_1,\, x_2 \ge 0 \end{aligned}$$</div>
+        <p class="small-p">Two variables → solve it <strong>graphically</strong>, then check the result <strong>in <abbr title="General Algebraic Modeling System">GAMS</abbr></strong>.</p>
+      </div>
+      <div class="figure">
+        <img src="images/example1_feasible_region.png" alt="Example 1 feasible region with corner points A, B, C, D">
+        <p class="img-caption">Feasible region of Example 1 (own work)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:25–0:27] Read the problem; the picture is explained on the next slide.</aside>
+  </section>
+
+  <!-- ═══ 25 · GRAPHICAL SOLUTION ═════════════════════════════════════════ -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Example 1</span><span class="band-sub">Graphical solution</span></div>
+    <h2>Graphical solution</h2>
+    <div class="fig-row" style="grid-template-columns:1.1fr 1fr;">
+      <div class="figure">
+        <img src="images/example1_feasible_region.png" alt="Example 1 feasible region, optimum at B">
+      </div>
+      <div class="v-center">
+        <p class="small-p">Feasible region = polygon <strong>A B C D</strong>; the optimum of an <abbr title="Linear Programming">LP</abbr> lies in a <strong>corner point</strong>.</p>
+        <table class="tight">
+          <tr><th>Corner</th><th>(x₁, x₂)</th><th>Z = 3x₁ + 2x₂</th></tr>
+          <tr><td>A</td><td>(0, 0)</td><td>0</td></tr>
+          <tr><td><strong>B</strong></td><td><strong>(2, 0)</strong></td><td><strong>6</strong> ✅</td></tr>
+          <tr><td>C</td><td>(1, 1)</td><td>5</td></tr>
+          <tr><td>D</td><td>(0, 4/3)</td><td>8/3</td></tr>
+        </table>
+        <p class="small-p">C: x₁ + 3x₂ = 4 and x₁ + x₂ = 2 → x₂ = 1, x₁ = 1</p>
+        <p class="result">Optimum: x₁ = 2, x₂ = 0, Z = 6</p>
+      </div>
+    </div>
+    <aside class="notes">[0:27–0:30] Corner by corner; dashed line Z = 6 touches the region only at B.</aside>
+  </section>
+
+  <!-- ═══ 26 · SAME MODEL IN GAMS ═════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Example 1</span><span class="band-sub"><abbr title="General Algebraic Modeling System">GAMS</abbr> code</span></div>
+    <h2>The same model in <abbr title="General Algebraic Modeling System">GAMS</abbr></h2>
+    <div class="cols-2" style="grid-template-columns:1.25fr 1fr;align-items:center;">
+<pre class="code"><code>$Title Simple LP optimisation problem
+
+<span class="k">Positive</span> <span class="k">Variables</span> x1, x2;
+<span class="k">Free</span> <span class="k">Variable</span>      Z;
+
+<span class="k">Equations</span> obj, eq1, eq2;
+
+obj..  Z <span class="k">=e=</span> 3*x1 + 2*x2;
+eq1..  x1 + 3*x2 <span class="k">=l=</span> 4;
+eq2..  x1 +   x2 <span class="k">=l=</span> 2;
+
+<span class="k">Model</span> Example01 /all/;
+<span class="k">Solve</span> Example01 <span class="k">maximizing</span> Z <span class="k">using</span> LP;
+
+<span class="k">Display</span> x1.l, x2.l, Z.l;</code></pre>
+      <ul class="xs">
+        <li><strong>Variables</strong> – x₁, x₂ ≥ 0, objective Z free</li>
+        <li><strong>Equations</strong> – declared, then defined with <code>..</code></li>
+        <li><strong>Model</strong> – all equations</li>
+        <li><strong>Solve</strong> – direction, objective, model type</li>
+        <li><strong>Display</strong> – print the results</li>
+      </ul>
+    </div>
+    <aside class="notes">[0:30–0:32] The code mirrors the maths line by line.</aside>
+  </section>
+
+  <!-- ═══ 27 · LINE BY LINE ═══════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Example 1</span><span class="band-sub"><abbr title="General Algebraic Modeling System">GAMS</abbr> code</span></div>
+    <h2>Reading the code line by line</h2>
+    <table class="tight small-t">
+      <tr><th>Statement</th><th>Meaning</th></tr>
+      <tr><td><code>Positive Variables x1, x2;</code></td><td>Decision variables with bound x ≥ 0</td></tr>
+      <tr><td><code>Free Variable Z;</code></td><td>Objective variable – must be <strong>free</strong></td></tr>
+      <tr><td><code>Equations obj, eq1, eq2;</code></td><td><strong>Declare</strong> the equation names</td></tr>
+      <tr><td><code>obj.. Z =e= …;</code></td><td><strong>Define</strong> the equation; <code>..</code> separates name and body</td></tr>
+      <tr><td><code>=e=</code> <code>=l=</code> <code>=g=</code></td><td>equal · less or equal (≤) · greater or equal (≥)</td></tr>
+      <tr><td><code>Model Example01 /all/;</code></td><td>Model = all declared equations</td></tr>
+      <tr><td><code>Solve … maximizing Z using LP;</code></td><td>Direction, objective variable, model type</td></tr>
+      <tr><td><code>Display x1.l, …;</code></td><td>Print the <strong>level</strong> (<code>.l</code>) = optimal value</td></tr>
+    </table>
+    <p class="note-box">Every statement ends with <strong><code>;</code></strong> – the most common beginner error!</p>
+    <aside class="notes">[0:32–0:34] Mention .lo / .up (bounds) and .m (marginals, shadow prices).</aside>
+  </section>
+
+  <!-- ═══ 28 · RUNNING IN STUDIO (LIVE) ═══════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Example 1</span><span class="band-sub">Live in <abbr title="General Algebraic Modeling System">GAMS</abbr> Studio</span></div>
+    <h2>Running it in <abbr title="General Algebraic Modeling System">GAMS</abbr> Studio <span class="tag">LIVE</span></h2>
+    <ol class="compact steps">
+      <li><em>File → New Project…</em> → folder e.g. <code>GAMS_lecture</code></li>
+      <li><em>File → New…</em> → <code>Example01.gms</code>, type or paste the code</li>
+      <li>Save (<strong>Ctrl + S</strong>) – check the green ▶ main-file marker</li>
+      <li>Press <strong>F9</strong> (or the green Run button)</li>
+      <li>The Process Log shows the run; <code>Example01.lst</code> opens automatically</li>
+    </ol>
+    <p class="note-box">Live: first delete one <code>;</code> → red error line + <code>$</code> marker in the listing, then fix it.</p>
+    <aside class="notes">[0:34–0:37] LIVE DEMO in GAMS Studio. Show the error first, then the clean run.</aside>
+  </section>
+
+  <!-- ═══ 29 · RESULTS IN LST ═════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Example 1</span><span class="band-sub">Results</span></div>
+    <h2>Results in the listing file</h2>
+    <div class="cols-2" style="grid-template-columns:1.3fr 1fr;gap:1em;">
+<pre class="code sm"><code>               S O L V E      S U M M A R Y
+
+     MODEL   Example01      OBJECTIVE  Z
+     TYPE    LP             DIRECTION  MAXIMIZE
+     SOLVER  CPLEX          FROM LINE  18
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE            6.0000</code></pre>
+      <div>
+<pre class="code sm"><code>----   20 VARIABLE x1.L  =  2.000
+          VARIABLE x2.L  =  0.000
+          VARIABLE Z.L   =  6.000</code></pre>
+        <p class="result">✅ Same as the graphical solution: x₁ = 2, x₂ = 0, Z = 6</p>
+        <p class="small-p">Default <abbr title="Linear Programming">LP</abbr> solver: <strong>CPLEX</strong></p>
+      </div>
+    </div>
+    <aside class="notes">[0:37–0:38] Real output of Example01.gms with GAMS 54.6.</aside>
+  </section>
+
+  <!-- ═══ 30 · TRY IT YOURSELF ════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Example 1</span><span class="band-sub">Exercise</span></div>
+    <h2>Try it yourself</h2>
+    <ul class="compact">
+      <li>Change the objective to <strong>Z = 2x₁ + 3x₂</strong> – which corner wins now?</li>
+      <li>Look at the <strong>marginals</strong> <code>eq1.m</code>, <code>eq2.m</code> – which constraint is binding?</li>
+      <li>Switch the solver: add <code>option LP = HiGHS;</code> before <code>Solve</code></li>
+      <li>Change <code>maximizing</code> to <code>minimizing</code> – what happens and why?</li>
+    </ul>
+    <p class="next-line">➡ Next: the same model in <strong>Python with GAMSPy</strong></p>
+    <aside class="notes">[0:38–0:40] Answers: C (1,1) Z = 5; eq2 binding (marginal 3), eq1 marginal 0; minimizing → A (0,0), Z = 0.</aside>
+  </section>
+
+  <!-- ═══ 31 · PART 3 ═════════════════════════════════════════════════════ -->
+  <section class="divider">
+    <h2>3 · From <abbr title="General Algebraic Modeling System">GAMS</abbr> to GAMSPy</h2>
+    <p style="color:#f0b0b8;">Installing Python, GAMSPy and Visual Studio Code on Windows</p>
+    <aside class="notes">[0:40] Part 3, 15 minutes. Shorten if everything is installed.</aside>
+  </section>
+
+  <!-- ═══ 32 · WHAT IS GAMSPY ═════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">GAMSPy</span><span class="band-sub">What is it?</span></div>
+    <h2>What is GAMSPy?</h2>
+    <ul class="compact">
+      <li>A <strong>Python package</strong> for algebraic modelling – sets, parameters, variables, equations as Python objects</li>
+      <li>Uses the <strong><abbr title="General Algebraic Modeling System">GAMS</abbr> engine and solvers</strong> in the background</li>
+      <li><strong>No separate <abbr title="General Algebraic Modeling System">GAMS</abbr> installation</strong> – <code>pip install gamspy</code> brings its own <abbr title="General Algebraic Modeling System">GAMS</abbr> core</li>
+      <li>Works with <strong>pandas, NumPy, Matplotlib, Jupyter, web apps</strong></li>
+      <li>Free <strong>demo license</strong>; <strong>free for academics</strong> (<a href="https://www.gams.com/academics/" target="_blank"><abbr title="General Algebraic Modeling System">GAMS</abbr> Academic Program</a>)</li>
+    </ul>
+    <p class="warn-box">⚠ <abbr title="General Algebraic Modeling System">GAMS</abbr> and GAMSPy licenses are <strong>different</strong> – a <abbr title="General Algebraic Modeling System">GAMS</abbr> license cannot be used for GAMSPy.</p>
+    <aside class="notes">[0:40–0:41] Stress the license difference.</aside>
+  </section>
+
+  <!-- ═══ 33 · STEP 1 PYTHON ══════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">GAMSPy</span><span class="band-sub">Installation</span></div>
+    <h2>Step 1 – Install Python</h2>
+    <ul class="compact">
+      <li>GAMSPy needs <strong>Python 3.11 or newer</strong></li>
+      <li>Download from <a href="https://www.python.org/downloads/" target="_blank">python.org/downloads</a></li>
+      <li>In the installer tick ✅ <strong>"Add python.exe to PATH"</strong></li>
+      <li>Check in <strong>PowerShell</strong>:</li>
+    </ul>
+<pre class="code"><code>python --version</code></pre>
+    <aside class="notes">[0:41–0:42] Anaconda users can use the Anaconda Prompt; the rest is the same.</aside>
+  </section>
+
+  <!-- ═══ 34 · STEP 2 VENV ════════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">GAMSPy</span><span class="band-sub">Installation</span></div>
+    <h2>Step 2 – Create a virtual environment</h2>
+    <p class="small-p">Open <strong>PowerShell</strong> in your working folder (e.g. <code>C:\GAMS_lecture</code>):</p>
+<pre class="code"><code>python -m venv .gamspy_venv
+.gamspy_venv\Scripts\Activate.ps1</code></pre>
+    <p class="small-p">The prompt now starts with <code>(.gamspy_venv)</code> ✅</p>
+    <p class="warn-box">⚠ PowerShell blocks the script ("running scripts is disabled")?</p>
+<pre class="code"><code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code></pre>
+    <aside class="notes">[0:42–0:43] Git Bash: source .gamspy_venv/Scripts/activate · cmd: .gamspy_venv\Scripts\activate.bat</aside>
+  </section>
+
+  <!-- ═══ 35 · STEP 3 INSTALL ═════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">GAMSPy</span><span class="band-sub">Installation</span></div>
+    <h2>Step 3 – Install GAMSPy</h2>
+<pre class="code"><code>pip install gamspy</code></pre>
+    <p class="small-p">Check the installation:</p>
+<pre class="code"><code>gamspy --version</code></pre>
+<pre class="code"><code>GAMSPy version: 1.29.0
+GAMS version: 54.6.0
+gamspy_base version: 54.6.0</code></pre>
+    <p class="small-p">Update later with <code>pip install gamspy --upgrade</code></p>
+    <aside class="notes">[0:43–0:44] One command; the version check confirms the bundled GAMS core.</aside>
+  </section>
+
+  <!-- ═══ 36 · STEP 4 SOLVERS ═════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">GAMSPy</span><span class="band-sub">Installation</span></div>
+    <h2>Step 4 – Solvers</h2>
+    <div class="cols-2" style="gap:1.2em;">
+      <div>
+        <p class="small-p">Show the installed solvers:</p>
+<pre class="code"><code>gamspy list solvers</code></pre>
+        <p class="small-p">Included by default: <strong>CPLEX</strong> (<abbr title="Linear Programming">LP</abbr>, <abbr title="Mixed-Integer Programming">MIP</abbr>), <strong>CONOPT4</strong> (<abbr title="Nonlinear Programming">NLP</abbr>), <strong><abbr title="Simple Branch-and-Bound">SBB</abbr></strong> (<abbr title="Mixed-Integer Nonlinear Programming">MINLP</abbr>), <strong>PATH</strong> (<abbr title="Mixed Complementarity Problem">MCP</abbr>)</p>
+      </div>
+      <div>
+        <p class="small-p">Install more on demand:</p>
+<pre class="code"><code>gamspy list solvers --all
+gamspy install solver highs ipopt</code></pre>
+        <p class="small-p">Choose the solver in Python:<br><code>model.solve(solver="highs")</code></p>
+      </div>
+    </div>
+    <aside class="notes">[0:44–0:45] Four solvers come with the package; others on demand.</aside>
+  </section>
+
+  <!-- ═══ 37 · STEP 5 LICENSE ═════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">GAMSPy</span><span class="band-sub">Installation</span></div>
+    <h2>Step 5 – License (optional)</h2>
+    <p class="small-p">The <strong>demo license</strong> works out of the box for small models – enough for this lecture.</p>
+    <p class="small-p">With an academic or full license (36-character access code):</p>
+<pre class="code"><code>gamspy install license &lt;access_code&gt;
+gamspy show license</code></pre>
+    <p class="small-p">Back to demo: <code>gamspy uninstall license</code> · Demo limits: <a href="https://www.gams.com/latest/docs/UG_License.html#UG_License_Additional_Solver_Limits" target="_blank"><abbr title="General Algebraic Modeling System">GAMS</abbr> documentation</a></p>
+    <aside class="notes">[0:45–0:46] Not needed today.</aside>
+  </section>
+
+  <!-- ═══ 38 · STEP 6 TEST ════════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">GAMSPy</span><span class="band-sub">Installation</span></div>
+    <h2>Step 6 – Test it</h2>
+    <div class="cols-2" style="grid-template-columns:1.35fr 1fr;gap:1em;">
+<pre class="code sm"><code><span class="k">import</span> gamspy <span class="k">as</span> gp
+
+m = gp.Container()
+x = gp.Variable(m, <span class="s">"x"</span>)
+e = gp.Equation(m, <span class="s">"e"</span>)
+e[...] = x &gt;= 1
+
+model = gp.Model(m, <span class="s">"test"</span>, equations=[e],
+                 problem=<span class="s">"LP"</span>, sense=<span class="s">"min"</span>, objective=x)
+model.solve()
+
+print(model.status, model.objective_value)</code></pre>
+      <div>
+        <p class="small-p">Save as <code>test_gamspy.py</code>, run <code>python test_gamspy.py</code>:</p>
+<pre class="code sm"><code>ModelStatus.OptimalGlobal 1.0</code></pre>
+        <p class="result">✅ GAMSPy is ready</p>
+      </div>
+    </div>
+    <aside class="notes">[0:46–0:47] Smallest possible model: min x subject to x ≥ 1.</aside>
+  </section>
+
+  <!-- ═══ 39 · QUICK REFERENCE ════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">GAMSPy</span><span class="band-sub">Installation</span></div>
+    <h2>Quick reference</h2>
+    <table class="tight">
+      <tr><th>Task</th><th>Command</th></tr>
+      <tr><td>Create environment</td><td><code>python -m venv .gamspy_venv</code></td></tr>
+      <tr><td>Activate (PowerShell)</td><td><code>.gamspy_venv\Scripts\Activate.ps1</code></td></tr>
+      <tr><td>Install GAMSPy</td><td><code>pip install gamspy</code></td></tr>
+      <tr><td>Version</td><td><code>gamspy --version</code></td></tr>
+      <tr><td>List solvers</td><td><code>gamspy list solvers</code></td></tr>
+      <tr><td>Add a solver</td><td><code>gamspy install solver &lt;name&gt;</code></td></tr>
+      <tr><td>Install license</td><td><code>gamspy install license &lt;access_code&gt;</code></td></tr>
+      <tr><td>Show license</td><td><code>gamspy show license</code></td></tr>
+    </table>
+    <p class="slide-source">Docs: <a href="https://gamspy.readthedocs.io/en/latest/user/installation.html" target="_blank">gamspy.readthedocs.io – Installation and Licensing</a></p>
+    <aside class="notes">[0:47–0:48] Reference slide for the PDF.</aside>
+  </section>
+
+  <!-- ═══ 40 · VS CODE STEP 1 ═════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">VS Code</span><span class="band-sub">Setup</span></div>
+    <h2>Step 1 – Install VS Code</h2>
+    <ol class="compact steps">
+      <li>Download from <a href="https://code.visualstudio.com/" target="_blank">code.visualstudio.com</a> → <strong>Download for Windows</strong></li>
+      <li>Run the installer and tick:<br>✅ <strong>Add "Open with Code"</strong> to the Explorer context menu · ✅ <strong>Add to PATH</strong></li>
+      <li>Start VS Code</li>
+    </ol>
+    <p class="note-box">VS Code is <strong>free</strong>, light and runs on Windows, macOS and Linux.</p>
+    <aside class="notes">[0:48–0:49] Two ticks in the installer matter.</aside>
+  </section>
+
+  <!-- ═══ 41 · VS CODE PYTHON EXTENSION ═══════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">VS Code</span><span class="band-sub">Setup</span></div>
+    <h2>Step 2 – Python extension</h2>
+    <ol class="compact steps">
+      <li>Open <strong>Extensions</strong> (<strong>Ctrl + Shift + X</strong>)</li>
+      <li>Search <strong>Python</strong> → install the extension by <strong>Microsoft</strong> (<code>ms-python.python</code>)</li>
+      <li>The <strong>Python Debugger</strong> is installed automatically with it</li>
+    </ol>
+    <p class="small-p">Optional: <strong>Jupyter</strong> extension (Microsoft) for notebooks (<code>.ipynb</code>)</p>
+    <p class="warn-box">⚠ The extension does <strong>not</strong> include Python itself – Python 3.11+ must be installed first.</p>
+    <aside class="notes">[0:49–0:50] Extension ≠ Python.</aside>
+  </section>
+
+  <!-- ═══ 42 · VS CODE OPEN FOLDER ════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">VS Code</span><span class="band-sub">Setup</span></div>
+    <h2>Step 3 – Open your project folder</h2>
+    <ul class="compact">
+      <li><em>File → Open Folder…</em> → e.g. <code>C:\GAMS_lecture</code></li>
+      <li>or right-click the folder in Windows Explorer → <strong>Open with Code</strong></li>
+      <li>Confirm <strong>"Yes, I trust the authors"</strong></li>
+    </ul>
+    <p class="key-idea">One folder = one project – your <code>.py</code> files and <code>.gamspy_venv</code> live here.</p>
+    <aside class="notes">[0:50–0:51] Always open the folder, not a single file.</aside>
+  </section>
+
+  <!-- ═══ 43 · VS CODE INTERPRETER ════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">VS Code</span><span class="band-sub">Setup</span></div>
+    <h2>Step 4 – Select the Python environment</h2>
+    <p class="small-p">Command Palette <strong>Ctrl + Shift + P</strong>:</p>
+    <div class="cols-2" style="gap:1.2em;">
+      <div class="flow-box"><strong>A) Environment exists</strong> (created in PowerShell)<br>→ <code>Python: Select Interpreter</code> → choose <strong><code>.gamspy_venv</code></strong></div>
+      <div class="flow-box"><strong>B) Create a new one in VS Code</strong><br>→ <code>Python: Create Environment</code> → <strong>Venv</strong> → Python 3.11+</div>
+    </div>
+    <p class="small-p">The selected environment is shown in the <strong>status bar</strong> (bottom right).</p>
+    <aside class="notes">[0:51–0:52] Option B is easiest if students skipped PowerShell: VS Code creates .venv and activates it.</aside>
+  </section>
+
+  <!-- ═══ 44 · VS CODE INSTALL GAMSPY ═════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">VS Code</span><span class="band-sub">Setup</span></div>
+    <h2>Step 5 – Install GAMSPy in the environment</h2>
+    <p class="small-p">Integrated terminal: <strong>Terminal → New Terminal</strong> (<strong>Ctrl + Shift + `</strong>)</p>
+    <p class="small-p">The prompt should start with the environment name, e.g. <code>(.gamspy_venv)</code> ✅</p>
+<pre class="code"><code>pip install gamspy matplotlib
+gamspy --version</code></pre>
+    <p class="small-p">We install <strong>Matplotlib</strong> now as well – for plotting results later.</p>
+    <aside class="notes">[0:52–0:53] Check the environment name in the prompt before pip install.</aside>
+  </section>
+
+  <!-- ═══ 45 · VS CODE RUN ════════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">VS Code</span><span class="band-sub">Setup</span></div>
+    <h2>Step 6 – Run your first script</h2>
+    <p class="small-p">Create <code>test_gamspy.py</code>, paste the test model, save (<strong>Ctrl + S</strong>):</p>
+    <ul class="compact">
+      <li>Click ▶ <strong>Run Python File</strong> (top right of the editor), or</li>
+      <li>Right-click → <em>Run Python → Run Python File in Terminal</em></li>
+      <li>Select lines + <strong>Shift + Enter</strong> → run only the selection</li>
+    </ul>
+    <p class="small-p">Output in the <strong>Terminal</strong> panel:</p>
+<pre class="code"><code>ModelStatus.OptimalGlobal 1.0</code></pre>
+    <aside class="notes">[0:53–0:54] Three ways to run.</aside>
+  </section>
+
+  <!-- ═══ 46 · VS CODE SHORTCUTS ══════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">VS Code</span><span class="band-sub">Shortcuts</span></div>
+    <h2>VS Code shortcuts for this lecture</h2>
+    <table class="tight">
+      <tr><th>Action</th><th>Shortcut</th></tr>
+      <tr><td>Command Palette</td><td><strong>Ctrl + Shift + P</strong></td></tr>
+      <tr><td>Extensions</td><td>Ctrl + Shift + X</td></tr>
+      <tr><td>New terminal</td><td>Ctrl + Shift + `</td></tr>
+      <tr><td>Run selection in terminal</td><td>Shift + Enter</td></tr>
+      <tr><td>Debug (start)</td><td>F5</td></tr>
+      <tr><td>Comment / uncomment line</td><td>Ctrl + /</td></tr>
+      <tr><td>Quick open file</td><td>Ctrl + P</td></tr>
+    </table>
+    <p class="next-line">➡ Next: Example 1 written in <strong>GAMSPy</strong></p>
+    <aside class="notes">[0:54–0:55] Ctrl + Shift + P is the one to remember.</aside>
+  </section>
+
+  <!-- ═══ 47 · PART 4 ═════════════════════════════════════════════════════ -->
+  <section class="divider">
+    <h2>4 · Example 1 in GAMSPy</h2>
+    <p style="color:#f0b0b8;">Same model – now in Python</p>
+    <aside class="notes">[0:55] Part 4, 10 minutes.</aside>
+  </section>
+
+  <!-- ═══ 48 · DICTIONARY ═════════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">GAMSPy</span><span class="band-sub">Example 1</span></div>
+    <h2><abbr title="General Algebraic Modeling System">GAMS</abbr> → GAMSPy: the dictionary</h2>
+    <table class="tight dict">
+      <tr><th><abbr title="General Algebraic Modeling System">GAMS</abbr></th><th>GAMSPy</th></tr>
+      <tr><td><em>(the whole .gms file)</em></td><td><code>m = gp.Container()</code></td></tr>
+      <tr><td><code>Set i / i1, i2 /;</code></td><td><code>i = gp.Set(m, "i", records=["i1", "i2"])</code></td></tr>
+      <tr><td><code>Parameter p(i) / … /;</code></td><td><code>p = gp.Parameter(m, "p", domain=i, records=…)</code></td></tr>
+      <tr><td><code>Positive Variable x;</code></td><td><code>x = gp.Variable(m, "x", type="positive")</code></td></tr>
+      <tr><td><code>Free Variable Z;</code></td><td><code>Z = gp.Variable(m, "Z", type="free")</code></td></tr>
+      <tr><td><code>Equation e;</code></td><td><code>e = gp.Equation(m, "e")</code></td></tr>
+      <tr><td><code>e.. lhs =e= rhs;</code></td><td><code>e[...] = lhs == rhs</code></td></tr>
+      <tr><td><code>=l=</code> / <code>=g=</code></td><td><code>&lt;=</code> / <code>&gt;=</code></td></tr>
+      <tr><td><code>sum(i, a(i))</code></td><td><code>gp.Sum(i, a[i])</code></td></tr>
+      <tr><td><code>Model mod /all/;</code></td><td><code>gp.Model(m, "mod", equations=m.getEquations(), …)</code></td></tr>
+      <tr><td><code>Solve mod using LP maximizing Z;</code></td><td><code>problem="LP", sense="max", objective=Z</code> + <code>mod.solve()</code></td></tr>
+      <tr><td><code>Display x.l;</code></td><td><code>print(x.toValue())</code> or <code>print(x.records)</code></td></tr>
+    </table>
+    <aside class="notes">[0:55–0:57] Every GAMS symbol becomes a Python object in a Container; [...] = for all elements of the domain.</aside>
+  </section>
+
+  <!-- ═══ 49 · SIDE BY SIDE ═══════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">GAMSPy</span><span class="band-sub">Example 1</span></div>
+    <h2>Side by side</h2>
+    <div class="cols-2" style="grid-template-columns:0.85fr 1.15fr;gap:0.8em;">
+<pre class="code xs"><code><span class="k">Positive</span> <span class="k">Variables</span> x1, x2;
+<span class="k">Free</span> <span class="k">Variable</span>      Z;
+
+<span class="k">Equations</span> obj, eq1, eq2;
+
+obj..  Z <span class="k">=e=</span> 3*x1 + 2*x2;
+eq1..  x1 + 3*x2 <span class="k">=l=</span> 4;
+eq2..  x1 +   x2 <span class="k">=l=</span> 2;
+
+<span class="k">Model</span> Example01 /all/;
+<span class="k">Solve</span> Example01 <span class="k">maximizing</span> Z <span class="k">using</span> LP;
+
+<span class="k">Display</span> x1.l, x2.l, Z.l;</code></pre>
+<pre class="code xs"><code><span class="k">import</span> gamspy <span class="k">as</span> gp
+m = gp.Container()
+
+x1 = gp.Variable(m, <span class="s">"x1"</span>, type=<span class="s">"positive"</span>)
+x2 = gp.Variable(m, <span class="s">"x2"</span>, type=<span class="s">"positive"</span>)
+Z  = gp.Variable(m, <span class="s">"Z"</span>,  type=<span class="s">"free"</span>)
+
+obj = gp.Equation(m, <span class="s">"obj"</span>)
+eq1 = gp.Equation(m, <span class="s">"eq1"</span>)
+eq2 = gp.Equation(m, <span class="s">"eq2"</span>)
+
+obj[...] = Z == 3*x1 + 2*x2
+eq1[...] = x1 + 3*x2 &lt;= 4
+eq2[...] = x1 + x2 &lt;= 2
+
+example01 = gp.Model(m, <span class="s">"example01"</span>,
+    equations=m.getEquations(),
+    problem=<span class="s">"LP"</span>, sense=<span class="s">"max"</span>, objective=Z)
+example01.solve()
+
+print(x1.toValue(), x2.toValue(), Z.toValue())</code></pre>
+    </div>
+    <aside class="notes">[0:57–0:59] Go block by block: variables, equations, model, solve, output.</aside>
+  </section>
+
+  <!-- ═══ 50 · HOW TO CONVERT ═════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">GAMSPy</span><span class="band-sub">Example 1</span></div>
+    <h2>How to convert – step by step</h2>
+    <ol class="xs steps">
+      <li><strong>Import and create a Container</strong> – <code>import gamspy as gp</code>, <code>m = gp.Container()</code></li>
+      <li><strong>Variables</strong> – each declaration becomes <code>gp.Variable(...)</code> with <code>type=</code></li>
+      <li><strong>Equations</strong> – declare with <code>gp.Equation(...)</code>, define with <code>eq[...] = …</code></li>
+      <li><strong>Relations</strong> – <code>=e=</code> → <code>==</code>, <code>=l=</code> → <code>&lt;=</code>, <code>=g=</code> → <code>&gt;=</code>; no <code>;</code></li>
+      <li><strong>Model</strong> – list of equations + <code>problem</code>, <code>sense</code>, <code>objective</code></li>
+      <li><strong>Solve</strong> – <code>model.solve()</code> (default <abbr title="Linear Programming">LP</abbr> solver: CPLEX)</li>
+      <li><strong>Results</strong> – <code>.toValue()</code> for scalars, <code>.records</code> (pandas DataFrame) for indexed symbols</li>
+    </ol>
+    <p class="warn-box">⚠ <code>eq1 = x1 + 3*x2 &lt;= 4</code> without <code>[...]</code> overwrites the Python variable instead of defining the equation.</p>
+    <aside class="notes">[0:59–1:00] The [...] pitfall is the most common one.</aside>
+  </section>
+
+  <!-- ═══ 51 · RUN IN VS CODE ═════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">GAMSPy</span><span class="band-sub">Example 1</span></div>
+    <h2>Run it in VS Code <span class="tag">LIVE</span></h2>
+    <ol class="compact steps">
+      <li>Open the folder <code>C:\GAMS_lecture</code> – environment <code>.gamspy_venv</code> selected</li>
+      <li>New file <code>example01_gams_style.py</code> – paste the code, <strong>Ctrl + S</strong></li>
+      <li>Click ▶ <strong>Run Python File</strong></li>
+      <li>Read the result in the <strong>Terminal</strong> panel</li>
+    </ol>
+    <p class="small-p">Full solver log as in <abbr title="General Algebraic Modeling System">GAMS</abbr> Studio:</p>
+<pre class="code"><code><span class="k">import</span> sys
+example01.solve(output=sys.stdout)</code></pre>
+    <aside class="notes">[1:00–1:02] LIVE DEMO: run example01_gams_style.py in VS Code.</aside>
+  </section>
+
+  <!-- ═══ 52 · RESULTS ════════════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">GAMSPy</span><span class="band-sub">Example 1</span></div>
+    <h2>Results</h2>
+    <p class="small-p"><code>solve()</code> returns a summary table (pandas DataFrame):</p>
+<pre class="code sm"><code>      Solver Status   Model Status  Objective  ...  Model Type  Solver  Solver Time
+0  NormalCompletion  OptimalGlobal        6.0  ...          LP   CPLEX       0.014</code></pre>
+    <div class="cols-2" style="gap:1em;">
+      <div>
+        <p class="small-p">Values:</p>
+<pre class="code sm"><code>x1 = 2.0   x2 = 0.0   Z = 6.0</code></pre>
+      </div>
+      <div>
+        <p class="small-p">Full record – <code>print(x1.records)</code>:</p>
+<pre class="code sm"><code>   level  marginal  lower  upper  scale
+0    2.0       0.0    0.0    inf    1.0</code></pre>
+      </div>
+    </div>
+    <p class="result">✅ Same as graphical solution and <abbr title="General Algebraic Modeling System">GAMS</abbr>: x₁ = 2, x₂ = 0, Z = 6</p>
+    <aside class="notes">[1:02–1:03] Three ways to look at the result.</aside>
+  </section>
+
+  <!-- ═══ 53 · PYTHON WAY ═════════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">GAMSPy</span><span class="band-sub">Example 1</span></div>
+    <h2>The Python way – shorter</h2>
+    <p class="small-p">The objective is written <strong>directly as an expression</strong> – no <code>Z</code> variable, no <code>obj</code> equation:</p>
+    <div class="cols-2" style="grid-template-columns:1.4fr 1fr;gap:1em;">
+<pre class="code sm"><code>example01 = gp.Model(m, <span class="s">"example01"</span>,
+    equations=[eq1, eq2],
+    problem=<span class="s">"LP"</span>, sense=<span class="s">"max"</span>,
+    objective=3 * x1 + 2 * x2)
+example01.solve()
+
+print(<span class="s">"Model status :"</span>, example01.status)
+print(<span class="s">"Objective Z  :"</span>, example01.objective_value)
+print(<span class="s">"Marginals    :"</span>, eq1.records[<span class="s">"marginal"</span>][0],
+                         eq2.records[<span class="s">"marginal"</span>][0])</code></pre>
+      <div>
+<pre class="code sm"><code>Model status : ModelStatus.OptimalGlobal
+Objective Z  : 6.0
+Marginals    : 0.0 3.0</code></pre>
+        <p class="small-p">eq2 is <strong>binding</strong> (shadow price 3), eq1 has slack (0).</p>
+      </div>
+    </div>
+    <aside class="notes">[1:03–1:04] Marginals answer the exercise question from part 2.</aside>
+  </section>
+
+  <!-- ═══ 54 · BONUS EXPORT ═══════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">GAMSPy</span><span class="band-sub">Example 1</span></div>
+    <h2>Bonus: back to <abbr title="General Algebraic Modeling System">GAMS</abbr> and LaTeX</h2>
+    <div class="cols-2" style="grid-template-columns:1fr 1fr;gap:1em;">
+      <div>
+        <p class="small-p">A GAMSPy model can be exported:</p>
+<pre class="code sm"><code>example01.toGams(<span class="s">"exported"</span>)  <span class="c"># exported/example01.gms</span>
+example01.toLatex(<span class="s">"latex"</span>)    <span class="c"># latex/example01.tex</span></code></pre>
+        <p class="small-p">Open the model in <abbr title="General Algebraic Modeling System">GAMS</abbr> Studio, or paste the equations into a paper.</p>
+        <p class="next-line">➡ Next: more realistic data – Example 3</p>
+      </div>
+      <div>
+        <p class="small-p">Generated <code>example01.gms</code>:</p>
+<pre class="code sm"><code><span class="k">positive</span> <span class="k">Variable</span> x1;
+<span class="k">positive</span> <span class="k">Variable</span> x2;
+<span class="k">free</span> <span class="k">Variable</span> Z;
+...
+obj .. Z <span class="k">=e=</span> 3 * x1 + 2 * x2;
+eq1 .. x1 + 3 * x2 <span class="k">=l=</span> 4;
+eq2 .. x1 + x2 <span class="k">=l=</span> 2;
+<span class="k">solve</span> example01 <span class="k">using</span> LP <span class="k">MAX</span> Z;</code></pre>
+      </div>
+    </div>
+    <aside class="notes">[1:04–1:05] Useful for students who want GAMS Studio, or LaTeX for papers.</aside>
+  </section>
+
+  <!-- ═══ 55 · PART 5 ═════════════════════════════════════════════════════ -->
+  <section class="divider">
+    <h2>5 · Example 3 – Mixing of streams</h2>
+    <p style="color:#f0b0b8;">Sets, parameters and data in GAMSPy</p>
+    <p class="divider-credit">Example after Prof. Elvis Ahmetović; problem from M. R. Eden (2011)</p>
+    <aside class="notes">[1:05] Part 5, 15 minutes.</aside>
+  </section>
+
+  <!-- ═══ 56 · PROBLEM ════════════════════════════════════════════════════ -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Example 3</span><span class="band-sub">Problem</span></div>
+    <h2>The problem</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1fr;">
+      <div class="v-center">
+        <p class="small-p">Two feed streams are mixed into an <strong><abbr title="Monoethanolamine">MEA</abbr> / water mixture</strong>.</p>
+        <table class="tight">
+          <tr><th>Feed</th><th><abbr title="Monoethanolamine">MEA</abbr></th><th>Water</th><th>Cost</th></tr>
+          <tr><td>Feed 1</td><td>80 %</td><td>20 %</td><td>80 cent/kg</td></tr>
+          <tr><td>Feed 2</td><td>68 %</td><td>32 %</td><td>60 cent/kg</td></tr>
+        </table>
+        <p class="small-p"><strong>Product:</strong> max. <strong>25 mass.% water</strong></p>
+        <p class="key-idea">Which mixing ratio gives the <strong>minimum cost</strong> per 1 kg of mixture?</p>
+      </div>
+      <div class="figure">
+        <img src="images/example3_mixer.png" alt="Mixer with feed 1 and feed 2 and product stream">
+        <p class="img-caption">Mixing of two streams (own work)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:05–1:06] MEA = monoethanolamine, a solvent used e.g. in CO2 capture.</aside>
+  </section>
+
+  <!-- ═══ 57 · FORMULATION ════════════════════════════════════════════════ -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Example 3</span><span class="band-sub">Model</span></div>
+    <h2>Mathematical formulation</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.1fr;">
+      <div class="v-center">
+        <ul class="xs">
+          <li>\(m_1, m_2\) – mass of feed 1 and feed 2 [kg] (basis 1 kg)</li>
+          <li>\(z\) – cost of 1 kg mixture [cent]</li>
+        </ul>
+        <div class="equation sm">$$\begin{aligned} \min\; & z = 80\,m_1 + 60\,m_2 \\ \text{s.t.}\; & 0.20\,m_1 + 0.32\,m_2 \le 0.25 \\ & m_1 + m_2 = 1 \\ & m_1,\, m_2 \ge 0 \end{aligned}$$</div>
+        <p class="result">Graphically: m₁ = 0.583, m₂ = 0.417, z = 71.67 cent/kg</p>
+      </div>
+      <div class="figure">
+        <img src="images/example3_graphical.png" alt="Graphical solution of Example 3">
+        <p class="img-caption">Graphical solution of Example 3 (own work)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:06–1:08] Original lecture used NLP; all equations are linear, so LP is correct – discussion point.</aside>
+  </section>
+
+  <!-- ═══ 58 · DIRECT TRANSLATION ═════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Example 3</span><span class="band-sub">Step 1</span></div>
+    <h2>Step 1 – direct translation</h2>
+    <div class="cols-2" style="grid-template-columns:1.6fr 1fr;gap:0.8em;">
+<pre class="code xs"><code><span class="k">import</span> gamspy <span class="k">as</span> gp
+m = gp.Container()
+
+m1 = gp.Variable(m, <span class="s">"m1"</span>, type=<span class="s">"positive"</span>, description=<span class="s">"mass of feed 1 [kg]"</span>)
+m2 = gp.Variable(m, <span class="s">"m2"</span>, type=<span class="s">"positive"</span>, description=<span class="s">"mass of feed 2 [kg]"</span>)
+z  = gp.Variable(m, <span class="s">"z"</span>,  type=<span class="s">"free"</span>,     description=<span class="s">"cost [cent/kg]"</span>)
+
+obj     = gp.Equation(m, <span class="s">"obj"</span>)
+water   = gp.Equation(m, <span class="s">"water"</span>)
+balance = gp.Equation(m, <span class="s">"balance"</span>)
+
+obj[...]     = z == 80 * m1 + 60 * m2
+water[...]   = 0.20 * m1 + 0.32 * m2 &lt;= 0.25
+balance[...] = m1 + m2 == 1
+
+mixing = gp.Model(m, <span class="s">"mixing"</span>, equations=m.getEquations(),
+                  problem=<span class="s">"LP"</span>, sense=<span class="s">"min"</span>, objective=z)
+mixing.solve()</code></pre>
+      <div>
+<pre class="code sm"><code>z  = 71.667 cent/kg
+m1 = 0.583 kg
+m2 = 0.417 kg</code></pre>
+        <p class="result">✅ Same pattern as Example 1</p>
+        <p class="small-p">New: <code>==</code> for the balance and <code>description=</code> texts.</p>
+      </div>
+    </div>
+    <aside class="notes">[1:08–1:10] Nothing new except == and descriptions.</aside>
+  </section>
+
+  <!-- ═══ 59 · NUMBERS INSIDE ═════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Example 3</span><span class="band-sub">Model vs. data</span></div>
+    <h2>Problem: numbers are inside the equations</h2>
+    <ul class="xs">
+      <li>Costs and compositions are <strong>hard-coded</strong> – a 3rd feed or component → rewrite the model</li>
+      <li>Real models: <strong>hundreds of streams</strong>, data from Excel / databases → <span class="hl">separate model and data</span></li>
+    </ul>
+    <table class="tight small-t">
+      <tr><th>Concept</th><th><abbr title="General Algebraic Modeling System">GAMS</abbr></th><th>GAMSPy</th></tr>
+      <tr><td>Index set</td><td><code>Set f /feed1, feed2/;</code></td><td><code>gp.Set(m, "f", records=[...])</code></td></tr>
+      <tr><td>Data</td><td><code>Parameter cost(f) /.../;</code></td><td><code>gp.Parameter(m, "cost", domain=f, records=...)</code></td></tr>
+      <tr><td>Table</td><td><code>Table w(f,c)</code></td><td><code>gp.Parameter(..., domain=[f, c], records=DataFrame)</code></td></tr>
+      <tr><td>Indexed variable</td><td><code>x(f)</code></td><td><code>gp.Variable(m, "x", domain=f)</code></td></tr>
+      <tr><td>Sum</td><td><code>sum(f, cost(f)*x(f))</code></td><td><code>gp.Sum(f, cost[f] * x[f])</code></td></tr>
+    </table>
+    <aside class="notes">[1:10–1:11] Motivation for sets and parameters.</aside>
+  </section>
+
+  <!-- ═══ 60 · INDEXED FORMULATION ════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Example 3</span><span class="band-sub">Step 2</span></div>
+    <h2>Step 2 – general (indexed) formulation</h2>
+    <div class="cols-2" style="grid-template-columns:1fr 1.15fr;gap:1.2em;">
+      <ul class="xs">
+        <li><strong>Sets:</strong> \(f\) – feeds, \(c\) – components</li>
+        <li><strong>Parameters:</strong> \(cost_f\), \(w_{f,c}\) mass fraction, \(wmax_c\) limit, \(M\) product amount</li>
+        <li><strong>Variable:</strong> \(x_f \ge 0\) – mass of feed \(f\) in product</li>
+      </ul>
+      <div class="equation sm">$$\begin{aligned} \min\; & \sum_f cost_f\, x_f \\ \text{s.t.}\; & \sum_f w_{f,c}\, x_f \le wmax_c\, M \quad \forall c \text{ with a limit} \\ & \sum_f x_f = M \end{aligned}$$</div>
+    </div>
+    <p class="key-idea">➡ The model <strong>does not change</strong> when you add feeds or components – only the data.</p>
+    <aside class="notes">[1:11–1:13] Read the indexed model; compare with the 2-variable version.</aside>
+  </section>
+
+  <!-- ═══ 61 · SETS AND DATA ══════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Example 3</span><span class="band-sub">Step 2</span></div>
+    <h2>Sets and data</h2>
+<pre class="code xs"><code><span class="k">import</span> pandas <span class="k">as</span> pd
+<span class="k">import</span> gamspy <span class="k">as</span> gp
+
+m = gp.Container()
+
+<span class="c"># Sets</span>
+f = gp.Set(m, <span class="s">"f"</span>, records=[<span class="s">"feed1"</span>, <span class="s">"feed2"</span>], description=<span class="s">"feed streams"</span>)
+c = gp.Set(m, <span class="s">"c"</span>, records=[<span class="s">"MEA"</span>, <span class="s">"water"</span>],  description=<span class="s">"components"</span>)
+
+<span class="c"># Data – composition as a pandas DataFrame (could come from Excel)</span>
+composition = pd.DataFrame(
+    [[<span class="s">"feed1"</span>, <span class="s">"MEA"</span>, 0.80], [<span class="s">"feed1"</span>, <span class="s">"water"</span>, 0.20],
+     [<span class="s">"feed2"</span>, <span class="s">"MEA"</span>, 0.68], [<span class="s">"feed2"</span>, <span class="s">"water"</span>, 0.32]],
+    columns=[<span class="s">"f"</span>, <span class="s">"c"</span>, <span class="s">"value"</span>])
+
+w    = gp.Parameter(m, <span class="s">"w"</span>, domain=[f, c], records=composition)
+cost = gp.Parameter(m, <span class="s">"cost"</span>, domain=f, records=[[<span class="s">"feed1"</span>, 80], [<span class="s">"feed2"</span>, 60]])
+wmax = gp.Parameter(m, <span class="s">"wmax"</span>, domain=c, records=[[<span class="s">"water"</span>, 0.25]])
+M    = gp.Parameter(m, <span class="s">"M"</span>, records=1)</code></pre>
+    <aside class="notes">[1:13–1:14] Reading from Excel would be one line: pd.read_excel("feeds.xlsx").</aside>
+  </section>
+
+  <!-- ═══ 62 · VARIABLES EQUATIONS MODEL ══════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Example 3</span><span class="band-sub">Step 2</span></div>
+    <h2>Variables, equations, model</h2>
+<pre class="code xs"><code>x = gp.Variable(m, <span class="s">"x"</span>, type=<span class="s">"positive"</span>, domain=f)
+
+spec    = gp.Equation(m, <span class="s">"spec"</span>, domain=c)
+balance = gp.Equation(m, <span class="s">"balance"</span>)
+
+<span class="c"># one equation for every component c that has a limit</span>
+spec[c].where[wmax[c]] = gp.Sum(f, w[f, c] * x[f]) &lt;= wmax[c] * M
+balance[...]           = gp.Sum(f, x[f]) == M
+
+mixing = gp.Model(m, <span class="s">"mixing"</span>, equations=m.getEquations(),
+                  problem=<span class="s">"LP"</span>, sense=<span class="s">"min"</span>,
+                  objective=gp.Sum(f, cost[f] * x[f]))
+mixing.solve()</code></pre>
+    <table class="tight small-t">
+      <tr><th>GAMSPy</th><th><abbr title="General Algebraic Modeling System">GAMS</abbr> equivalent</th></tr>
+      <tr><td><code>spec[c]</code></td><td><code>spec(c)..</code> – an equation for each c</td></tr>
+      <tr><td><code>.where[wmax[c]]</code></td><td><code>$wmax(c)</code> – only where a limit exists</td></tr>
+      <tr><td><code>gp.Sum(f, …)</code></td><td><code>sum(f, …)</code></td></tr>
+    </table>
+    <aside class="notes">[1:14–1:16] Focus on .where – the GAMS dollar condition.</aside>
+  </section>
+
+  <!-- ═══ 63 · RESULTS ════════════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Example 3</span><span class="band-sub">Results</span></div>
+    <h2>Results</h2>
+    <div class="cols-2" style="gap:1em;">
+      <div>
+<pre class="code sm"><code>print(mixing.objective_value)
+print(x.records[[<span class="s">"f"</span>, <span class="s">"level"</span>]])</code></pre>
+<pre class="code sm"><code>Minimum cost: 71.667 cent/kg
+       f     level
+0  feed1  0.583333
+1  feed2  0.416667</code></pre>
+      </div>
+      <div>
+        <p class="small-p">Check the product composition:</p>
+<pre class="code sm"><code>product = gp.Parameter(m, <span class="s">"product"</span>, domain=c)
+product[c] = gp.Sum(f, w[f, c] * x.l[f]) / M</code></pre>
+<pre class="code sm"><code>       c  value
+0    MEA   0.75
+1  water   0.25    ← constraint is active</code></pre>
+      </div>
+    </div>
+    <aside class="notes">[1:16–1:17] Water is exactly at the 25 % limit → active constraint.</aside>
+  </section>
+
+  <!-- ═══ 64 · WHAT-IF ════════════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Example 3</span><span class="band-sub">What-if</span></div>
+    <h2>What-if: change the water limit <span class="tag">LIVE</span></h2>
+    <div class="cols-2" style="grid-template-columns:1.15fr 1fr;gap:1em;">
+      <div>
+<pre class="code sm"><code><span class="k">for</span> limit <span class="k">in</span> [0.20, 0.22, 0.25, 0.28, 0.32]:
+    wmax.setRecords([[<span class="s">"water"</span>, limit]])
+    mixing.solve()
+    x1, x2 = x.records[<span class="s">"level"</span>]
+    print(limit, mixing.objective_value, x1, x2)</code></pre>
+        <p class="small-p">Change data → solve again, <strong>no model rewriting</strong>.</p>
+      </div>
+      <table class="tight">
+        <tr><th>Water limit</th><th>Cost</th><th>Feed 1</th><th>Feed 2</th></tr>
+        <tr><td>0.20</td><td>80.000</td><td>1.000</td><td>0.000</td></tr>
+        <tr><td>0.22</td><td>76.667</td><td>0.833</td><td>0.167</td></tr>
+        <tr><td><strong>0.25</strong></td><td><strong>71.667</strong></td><td><strong>0.583</strong></td><td><strong>0.417</strong></td></tr>
+        <tr><td>0.28</td><td>66.667</td><td>0.333</td><td>0.667</td></tr>
+        <tr><td>0.32</td><td>60.000</td><td>0.000</td><td>1.000</td></tr>
+      </table>
+    </div>
+    <p class="next-line">➡ Next: turn this table into a <strong>plot with Matplotlib</strong></p>
+    <aside class="notes">[1:17–1:19] LIVE: run example03_indexed.py. Below 0.20 infeasible; above 0.32 the limit is inactive.</aside>
+  </section>
+
+  <!-- ═══ 65 · TRY IT YOURSELF ════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Example 3</span><span class="band-sub">Exercise</span></div>
+    <h2>Try it yourself</h2>
+    <ul class="compact">
+      <li>Add a <strong>third feed</strong>: 90 % <abbr title="Monoethanolamine">MEA</abbr>, 10 % water, 95 cent/kg – only the data changes!</li>
+      <li>Add a <strong>minimum <abbr title="Monoethanolamine">MEA</abbr> content</strong> of 72 % – hint: a <code>wmin(c)</code> and a <code>&gt;=</code> equation</li>
+      <li>Produce <strong>M = 1000 kg</strong> instead of 1 kg</li>
+      <li>Water limit <strong>0.15</strong>? Check <code>mixing.status</code></li>
+    </ul>
+    <aside class="notes">[1:19–1:20] 0.15 → infeasible; show how to read model status in Python.</aside>
+  </section>
+
+  <!-- ═══ 66 · PART 6 ═════════════════════════════════════════════════════ -->
+  <section class="divider">
+    <h2>6 · From model to web page</h2>
+    <p style="color:#f0b0b8;">GAMSPy + Matplotlib + Flask – in 7 testable steps</p>
+    <aside class="notes">[1:20] Part 6, 20 minutes. Every step ends with a TEST – run it before moving on.</aside>
+  </section>
+
+  <!-- ═══ 67 · WHAT WE BUILD ══════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Web app</span><span class="band-sub">Architecture</span></div>
+    <h2>What we are going to build</h2>
+    <div class="figure">
+      <img src="images/webapp_architecture.png" alt="Web app architecture: browser, Flask, GAMSPy, solver, Matplotlib" style="max-height:26vh;box-shadow:none;">
+    </div>
+    <table class="tight small-t">
+      <tr><th>File</th><th>Step</th><th>Role</th></tr>
+      <tr><td><code>mixing_model.py</code></td><td>2</td><td>Example 3 as a Python function</td></tr>
+      <tr><td><code>plot_mixing.py</code></td><td>3</td><td>What-if chart with Matplotlib</td></tr>
+      <tr><td><code>app_step4.py</code> … <code>app_step6.py</code></td><td>4–6</td><td>Flask, growing step by step</td></tr>
+      <tr><td><code>app.py</code> + <code>templates/index.html</code></td><td>7</td><td>Final interactive page</td></tr>
+    </table>
+    <aside class="notes">[1:20–1:22] Follow one request through the diagram: browser → Flask → GAMSPy → solver, and back as JSON + PNG.</aside>
+  </section>
+
+  <!-- ═══ 68 · STEP 1 INSTALL ═════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Web app</span><span class="band-sub">Step 1</span></div>
+    <h2>Step 1 – Install Matplotlib and Flask</h2>
+    <div class="cols-2" style="gap:1em;">
+      <div>
+        <p class="small-p">VS Code terminal, <code>.gamspy_venv</code> active:</p>
+<pre class="code sm"><code>pip install matplotlib flask</code></pre>
+        <div class="test-box"><strong>✅ TEST</strong>
+<pre class="code sm"><code>python -c <span class="s">"import gamspy, matplotlib, flask; print('all OK')"</span></code></pre>
+        </div>
+      </div>
+      <div>
+        <p class="small-p">Folder structure:</p>
+<pre class="code sm"><code>C:\GAMS_lecture\webapp\
+    mixing_model.py
+    plot_mixing.py
+    app_step4.py  app_step5.py  app_step6.py
+    app.py
+    templates\index.html</code></pre>
+      </div>
+    </div>
+    <aside class="notes">[1:22–1:23] Expected test output: all OK.</aside>
+  </section>
+
+  <!-- ═══ 69 · STEP 2 FUNCTION ════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Web app</span><span class="band-sub">Step 2</span></div>
+    <h2>Step 2 – Model as a reusable function</h2>
+    <p class="small-p"><code>mixing_model.py</code> – Example 3 wrapped in a function: <strong>inputs → results dictionary</strong></p>
+<pre class="code xs"><code><span class="k">def</span> solve_mixing(water_limit=0.25, cost1=80.0, cost2=60.0, amount=1.0):
+    m = gp.Container()                 <span class="c"># new container for every call</span>
+    ...                                <span class="c"># sets, parameters, x(f), spec(c), balance</span>
+    mixing.solve()
+
+    <span class="k">if</span> <span class="s">"Optimal"</span> <span class="k">not</span> <span class="k">in</span> mixing.status.name:
+        <span class="k">return</span> {<span class="s">"ok"</span>: <span class="k">False</span>, <span class="s">"status"</span>: mixing.status.name}
+    x1, x2 = x.records[<span class="s">"level"</span>]
+    <span class="k">return</span> {<span class="s">"ok"</span>: <span class="k">True</span>, <span class="s">"cost"</span>: mixing.objective_value,
+            <span class="s">"feed1"</span>: x1, <span class="s">"feed2"</span>: x2, ...}</code></pre>
+    <div class="test-box"><strong>✅ TEST</strong> – <code>python mixing_model.py</code>
+<pre class="code xs"><code>{'ok': True, 'status': 'OptimalGlobal', 'water_limit': 0.25, 'cost': 71.666..., 'feed1': 0.583..., ...}
+{'ok': False, 'status': 'InfeasibleNoSolution', 'water_limit': 0.15}</code></pre>
+    </div>
+    <aside class="notes">[1:23–1:25] Why a function: the server calls it for every request. A dict converts to JSON easily.</aside>
+  </section>
+
+  <!-- ═══ 70 · STEP 3 CHART ═══════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Web app</span><span class="band-sub">Step 3</span></div>
+    <h2>Step 3 – What-if chart with Matplotlib</h2>
+    <div class="cols-2" style="grid-template-columns:1.15fr 1fr;gap:0.8em;align-items:center;">
+      <div>
+<pre class="code xs"><code><span class="k">import</span> matplotlib
+matplotlib.use(<span class="s">"Agg"</span>)    <span class="c"># no window – draw to file / memory</span>
+<span class="k">import</span> matplotlib.pyplot <span class="k">as</span> plt
+
+res = sweep(limits)      <span class="c"># 13 GAMSPy solves</span>
+ax1.plot(lim, [r[<span class="s">"cost"</span>]  <span class="k">for</span> r <span class="k">in</span> res])
+ax2.plot(lim, [r[<span class="s">"feed1"</span>] <span class="k">for</span> r <span class="k">in</span> res], label=<span class="s">"Feed 1"</span>)
+ax2.plot(lim, [r[<span class="s">"feed2"</span>] <span class="k">for</span> r <span class="k">in</span> res], label=<span class="s">"Feed 2"</span>)
+fig.savefig(<span class="s">"mixing_whatif.png"</span>)</code></pre>
+        <div class="test-box"><strong>✅ TEST</strong> – <code>python plot_mixing.py</code> → open <code>mixing_whatif.png</code></div>
+      </div>
+      <div class="figure">
+        <img src="images/example3_whatif.png" alt="What-if chart: cost and feed amounts versus water limit">
+        <p class="img-caption">Output of plot_mixing.py (own work)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:25–1:27] Two charts on purpose – different units. @lru_cache keeps the page fast.</aside>
+  </section>
+
+  <!-- ═══ 71 · STEP 4 FLASK ═══════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Web app</span><span class="band-sub">Step 4</span></div>
+    <h2>Step 4 – The smallest Flask app</h2>
+    <div class="cols-2" style="grid-template-columns:1.1fr 1fr;gap:1em;">
+<pre class="code sm"><code><span class="c"># app_step4.py</span>
+<span class="k">from</span> flask <span class="k">import</span> Flask
+app = Flask(__name__)
+
+@app.route(<span class="s">"/"</span>)
+<span class="k">def</span> home():
+    <span class="k">return</span> <span class="s">"&lt;h1&gt;Hello from Flask!&lt;/h1&gt;"</span>
+
+<span class="k">if</span> __name__ == <span class="s">"__main__"</span>:
+    app.run(debug=<span class="k">True</span>)</code></pre>
+      <div>
+        <div class="test-box"><strong>✅ TEST</strong> – <code>python app_step4.py</code>, open <strong>http://127.0.0.1:5000</strong></div>
+        <p class="small-p">Stop the server with <strong>Ctrl + C</strong> before the next step.</p>
+        <ul class="xs">
+          <li><code>@app.route("/")</code> – URL → Python function</li>
+          <li><code>debug=True</code> – restarts on every save</li>
+        </ul>
+      </div>
+    </div>
+    <aside class="notes">[1:27–1:29] Live: run it, open the browser.</aside>
+  </section>
+
+  <!-- ═══ 72 · STEP 5 FORM ════════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Web app</span><span class="band-sub">Step 5</span></div>
+    <h2>Step 5 – A form that solves the model</h2>
+<pre class="code xs"><code><span class="c"># app_step5.py – the browser sends a number, Flask calls GAMSPy</span>
+<span class="k">from</span> flask <span class="k">import</span> Flask, request, render_template_string
+<span class="k">from</span> mixing_model <span class="k">import</span> solve_mixing
+
+PAGE = <span class="s">""</span>"
+&lt;form method=<span class="s">"post"</span>&gt;
+  Max. water content [%]: &lt;input name=<span class="s">"water"</span> type=<span class="s">"number"</span> value=<span class="s">"&#123;&#123; water &#125;&#125;"</span>&gt;
+  &lt;button&gt;Solve&lt;/button&gt;
+&lt;/form&gt;
+{% <span class="k">if</span> r.ok %} &lt;p&gt;Minimum cost: &lt;b&gt;&#123;&#123; <span class="s">"%.2f"</span>|format(r.cost) &#125;&#125; cent/kg&lt;/b&gt;&lt;/p&gt;
+{% <span class="k">else</span> %}    &lt;p&gt;No feasible mixture (&#123;&#123; r.status &#125;&#125;)&lt;/p&gt; {% endif %}
+<span class="s">""</span>"
+
+@app.route(<span class="s">"/"</span>, methods=[<span class="s">"GET"</span>, <span class="s">"POST"</span>])
+<span class="k">def</span> home():
+    water = float(request.form.get(<span class="s">"water"</span>, 25))
+    <span class="k">return</span> render_template_string(PAGE, water=water,
+                                  r=solve_mixing(water_limit=water / 100))</code></pre>
+    <div class="test-box"><strong>✅ TEST</strong> – enter <strong>22</strong> → <code>76.67 cent/kg</code>; enter <strong>15</strong> → <em>No feasible mixture</em></div>
+    <aside class="notes">[1:29–1:31] Jinja template inside a Python string: &#123;&#123; &#125;&#125; prints, {% %} decides.</aside>
+  </section>
+
+  <!-- ═══ 73 · STEP 6 CHART ROUTE ═════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Web app</span><span class="band-sub">Step 6</span></div>
+    <h2>Step 6 – Add the Matplotlib chart</h2>
+    <p class="small-p"><code>app_step6.py</code> – a second route returns the chart as a <strong><abbr title="Portable Network Graphics">PNG</abbr> image</strong>:</p>
+<pre class="code xs"><code><span class="k">import</span> io
+<span class="k">from</span> flask <span class="k">import</span> Response
+<span class="k">from</span> plot_mixing <span class="k">import</span> make_figure
+<span class="k">import</span> matplotlib.pyplot <span class="k">as</span> plt
+
+@app.route(<span class="s">"/plot.png"</span>)
+<span class="k">def</span> plot_png():
+    water = float(request.args.get(<span class="s">"water"</span>, 25))
+    fig = make_figure(current=solve_mixing(water_limit=water / 100))
+    buf = io.BytesIO()
+    fig.savefig(buf, format=<span class="s">"png"</span>)       <span class="c"># save into memory, not to disk</span>
+    plt.close(fig)                       <span class="c"># free memory</span>
+    <span class="k">return</span> Response(buf.getvalue(), mimetype=<span class="s">"image/png"</span>)</code></pre>
+    <p class="small-p">In the page: <code>&lt;img src="/plot.png?water=&#123;&#123; water &#125;&#125;"&gt;</code></p>
+    <div class="test-box"><strong>✅ TEST</strong> – open <strong>http://127.0.0.1:5000/plot.png?water=22</strong>, then the main page</div>
+    <aside class="notes">[1:31–1:33] BytesIO = file in memory; always close the figure.</aside>
+  </section>
+
+  <!-- ═══ 74 · STEP 7 JSON API ════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Web app</span><span class="band-sub">Step 7</span></div>
+    <h2>Step 7 – Interactive page: <abbr title="JavaScript Object Notation">JSON</abbr> <abbr title="Application Programming Interface">API</abbr></h2>
+<pre class="code xs"><code><span class="c"># app.py – two data routes + one page</span>
+@app.route(<span class="s">"/"</span>)
+<span class="k">def</span> index():
+    <span class="k">return</span> render_template(<span class="s">"index.html"</span>, feeds=FEEDS)
+
+@app.route(<span class="s">"/api/solve"</span>)                 <span class="c"># results as JSON</span>
+<span class="k">def</span> api_solve():
+    water, cost1, cost2 = read_inputs()
+    <span class="k">return</span> jsonify(solve_mixing(water_limit=water, cost1=cost1, cost2=cost2))
+
+@app.route(<span class="s">"/plot.png"</span>)                  <span class="c"># chart as PNG (as in step 6)</span>
+<span class="k">def</span> plot_png(): ...</code></pre>
+    <div class="test-box"><strong>✅ TEST</strong> – open <strong>http://127.0.0.1:5000/api/solve?water=25&amp;cost1=80&amp;cost2=60</strong>
+<pre class="code xs"><code>{ <span class="s">"cost"</span>: 71.67, <span class="s">"feed1"</span>: 0.583, <span class="s">"feed2"</span>: 0.417, <span class="s">"ok"</span>: <span class="k">true</span>,
+  <span class="s">"status"</span>: <span class="s">"OptimalGlobal"</span>, <span class="s">"water"</span>: 0.25, <span class="s">"water_limit"</span>: 0.25 }</code></pre>
+    </div>
+    <aside class="notes">[1:33–1:35] The page asks for data; the server answers with JSON.</aside>
+  </section>
+
+  <!-- ═══ 75 · STEP 7 SLIDERS ═════════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Web app</span><span class="band-sub">Step 7</span></div>
+    <h2>Step 7 – Interactive page: sliders + JavaScript</h2>
+    <p class="small-p"><code>templates/index.html</code> – sliders call the <abbr title="Application Programming Interface">API</abbr> on every change:</p>
+<pre class="code xs"><code>&lt;input id=<span class="s">"water"</span> type=<span class="s">"range"</span> min=<span class="s">"15"</span> max=<span class="s">"35"</span> step=<span class="s">"0.5"</span> value=<span class="s">"25"</span>&gt;
+&lt;input id=<span class="s">"cost1"</span> type=<span class="s">"range"</span> min=<span class="s">"40"</span> max=<span class="s">"120"</span> value=<span class="s">"80"</span>&gt;
+&lt;input id=<span class="s">"cost2"</span> type=<span class="s">"range"</span> min=<span class="s">"40"</span> max=<span class="s">"120"</span> value=<span class="s">"60"</span>&gt;
+&lt;img id=<span class="s">"plot"</span>&gt;</code></pre>
+<pre class="code xs"><code><span class="k">async</span> <span class="k">function</span> update() {
+  <span class="k">const</span> q = <span class="k">new</span> URLSearchParams({ water: water.value,
+                                  cost1: cost1.value, cost2: cost2.value });
+  <span class="k">const</span> r = <span class="k">await</span> (<span class="k">await</span> fetch(<span class="s">"/api/solve?"</span> + q)).json();   <span class="c">// GAMSPy</span>
+  document.getElementById(<span class="s">"cost"</span>).textContent = r.cost.toFixed(2);
+  document.getElementById(<span class="s">"plot"</span>).src = <span class="s">"/plot.png?"</span> + q;    <span class="c">// Matplotlib</span>
+}</code></pre>
+    <div class="test-box"><strong>✅ TEST</strong> – <code>python app.py</code>, move the sliders – numbers and chart update</div>
+    <aside class="notes">[1:35–1:36] fetch → JSON → numbers; img.src → new chart.</aside>
+  </section>
+
+  <!-- ═══ 76 · THE RESULT (LIVE) ══════════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Web app</span><span class="band-sub">Result</span></div>
+    <h2>The result <span class="tag">LIVE</span></h2>
+    <div class="cols-2" style="grid-template-columns:1.5fr 1fr;gap:1em;align-items:center;">
+      <div class="figure">
+        <img src="images/webapp_screenshot.png" alt="Interactive mixing optimizer – screenshot of app.py">
+        <p class="img-caption">app.py with water limit 22 % (own work)</p>
+      </div>
+      <ul class="xs">
+        <li><strong>Sliders:</strong> water limit, cost of feed 1 and 2</li>
+        <li><strong>Cards:</strong> minimum cost, feed ratio, water in product</li>
+        <li><strong>Chart:</strong> what-if analysis, current case marked</li>
+        <li>Infeasible input (&lt; 20 % water) → red warning</li>
+      </ul>
+    </div>
+    <aside class="notes">[1:36–1:39] LIVE DEMO: python app.py. Feed 1 cheaper than feed 2 (70 vs 90) → only feed 1. Then water below 20 %.</aside>
+  </section>
+
+  <!-- ═══ 77 · SUMMARY & NEXT STEPS ═══════════════════════════════════════ -->
+  <section>
+    <div class="band"><span class="band-title">Web app</span><span class="band-sub">Summary</span></div>
+    <h2>Summary &amp; next steps</h2>
+    <table class="tight">
+      <tr><th>Layer</th><th>Tool</th><th>Our file</th></tr>
+      <tr><td>Optimization model</td><td><strong>GAMSPy</strong></td><td><code>mixing_model.py</code></td></tr>
+      <tr><td>Visualization</td><td><strong>Matplotlib</strong></td><td><code>plot_mixing.py</code></td></tr>
+      <tr><td>Web server</td><td><strong>Flask</strong></td><td><code>app.py</code></td></tr>
+      <tr><td>User interface</td><td><abbr title="HyperText Markup Language">HTML</abbr> + JavaScript</td><td><code>templates/index.html</code></td></tr>
+    </table>
+    <ul class="xs">
+      <li>Third feed or minimum <abbr title="Monoethanolamine">MEA</abbr> content – only <code>mixing_model.py</code> changes</li>
+      <li>Read feed data from Excel with <code>pandas.read_excel</code></li>
+      <li>Deploy for students – a university server, or <abbr title="General Algebraic Modeling System">GAMS</abbr> <abbr title="Model Interface with Rapid Orchestration">MIRO</abbr> for a ready-made <abbr title="User Interface">UI</abbr></li>
+    </ul>
+    <aside class="notes">[1:39–1:40] Same pattern for any GAMSPy model: function → JSON route → page.</aside>
+  </section>
+
+  <!-- ═══ 78 · WHAT WE LEARNED ════════════════════════════════════════════ -->
+  <section style="text-align:left;">
+    <hr class="top-rule">
+    <h2>What we learned today</h2>
+    <table class="tight">
+      <tr><th></th><th><abbr title="General Algebraic Modeling System">GAMS</abbr></th><th>GAMSPy</th></tr>
+      <tr><td><strong>Language</strong></td><td>own algebraic language (<code>.gms</code>)</td><td>Python package</td></tr>
+      <tr><td><strong>Environment</strong></td><td><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio</td><td>VS Code / Jupyter</td></tr>
+      <tr><td><strong>Results</strong></td><td>listing file <code>.lst</code>, <abbr title="GAMS Data Exchange">GDX</abbr></td><td>pandas DataFrames, <code>.toValue()</code></td></tr>
+      <tr><td><strong>Data</strong></td><td>tables in the model, <abbr title="GAMS Data Exchange">GDX</abbr></td><td>pandas, Excel, databases</td></tr>
+      <tr><td><strong>Apps</strong></td><td><abbr title="General Algebraic Modeling System">GAMS</abbr> <abbr title="Model Interface with Rapid Orchestration">MIRO</abbr></td><td>Matplotlib, Flask, any Python tool</td></tr>
+      <tr><td><strong>Solvers</strong></td><td colspan="2">the same: CPLEX, CONOPT, <abbr title="Branch-And-Reduce Optimization Navigator">BARON</abbr>, HiGHS, …</td></tr>
+    </table>
+    <p class="key-idea"><strong>Same algebraic model – two ways to write it.</strong> <abbr title="General Algebraic Modeling System">GAMS</abbr> for pure modelling, GAMSPy when the model is part of a bigger Python workflow.</p>
+    <aside class="notes">[1:40–1:43] One sentence per row.</aside>
+  </section>
+
+  <!-- ═══ 79 · REVIEW QUESTIONS ═══════════════════════════════════════════ -->
+  <section>
+    <h2>Review questions</h2>
+    <ol class="compact" style="font-size:0.6em;line-height:1.6;">
+      <li>What is the key idea of an algebraic modelling language like <abbr title="General Algebraic Modeling System">GAMS</abbr>? <button class="answer-btn" data-answer="1">answer</button></li>
+      <li>Why must the objective variable Z be declared <code>Free</code> in <abbr title="General Algebraic Modeling System">GAMS</abbr>? <button class="answer-btn" data-answer="2">answer</button></li>
+      <li>What do <code>=e=</code>, <code>=l=</code>, <code>=g=</code> mean and what are they in GAMSPy? <button class="answer-btn" data-answer="3">answer</button></li>
+      <li>Which constraint is binding at the optimum of Example 1 and how do you see it? <button class="answer-btn" data-answer="4">answer</button></li>
+      <li>What does <code>[...]</code> do in <code>eq1[...] = …</code> – and what happens without it? <button class="answer-btn" data-answer="5">answer</button></li>
+      <li>Why is <abbr title="Linear Programming">LP</abbr>, not <abbr title="Nonlinear Programming">NLP</abbr>, the correct model type for Example 3? <button class="answer-btn" data-answer="6">answer</button></li>
+      <li>Why separate the model from the data with sets and parameters? <button class="answer-btn" data-answer="7">answer</button></li>
+      <li>Why is a water limit below 20 % infeasible? <button class="answer-btn" data-answer="8">answer</button></li>
+    </ol>
+    <aside class="notes">[1:43–1:52] Let students answer each question first.</aside>
+  </section>
+
+  <!-- ═══ 80 · WHERE TO CONTINUE ══════════════════════════════════════════ -->
+  <section style="text-align:left;">
+    <hr class="top-rule">
+    <h2>Where to continue</h2>
+    <ul class="xs links">
+      <li><abbr title="General Algebraic Modeling System">GAMS</abbr> Model Library – 400+ models, many from chemical and mechanical engineering</li>
+      <li>GAMSPy examples – <a href="https://github.com/GAMS-dev/gamspy-examples" target="_blank">github.com/GAMS-dev/gamspy-examples</a></li>
+      <li>GAMSPy for <abbr title="General Algebraic Modeling System">GAMS</abbr> users – <a href="https://gamspy.readthedocs.io/en/latest/user/gamspy_for_gams_users.html" target="_blank">gamspy.readthedocs.io/…/gamspy_for_gams_users</a></li>
+      <li>All code from today – <a href="gamspy_lecture_code.zip" download>⬇ gamspy_lecture_code.zip</a></li>
+    </ul>
+    <p class="key-idea"><strong>Homework:</strong> extend Example 3 with a third feed and a minimum <abbr title="Monoethanolamine">MEA</abbr> content, then show the result in the web app.</p>
+    <aside class="notes">[1:52–1:53] Point to the code download.</aside>
+  </section>
+
+  <!-- ═══ 81 · ACKNOWLEDGEMENTS ═══════════════════════════════════════════ -->
+  <section style="text-align:left;">
+    <hr class="top-rule">
+    <h2>Acknowledgements</h2>
+    <ul class="xs">
+      <li>Examples 1 and 3 adapted from the lecture of <strong>Prof. Elvis Ahmetović</strong> (University of Tuzla) – <em>Mathematical modelling in <abbr title="General Algebraic Modeling System">GAMS</abbr></em>, Erasmus+ lecture at <abbr title="Slovak University of Technology in Bratislava">STU</abbr>, November 2025</li>
+      <li>Example 3 problem from M. R. Eden: <em>Process Synthesis, Simulation and Optimization</em>, 2011</li>
+      <li>Thanks to the hosts for the invitation</li>
+    </ul>
+    <aside class="notes">[1:53–1:54] Thank Prof. Ahmetović and the hosts.</aside>
+  </section>
+
+  <!-- ═══ 82 · THANK YOU / SOURCES ════════════════════════════════════════ -->
+  <section style="text-align:left;">
+    <hr class="top-rule">
+    <h2>Thank you – questions?</h2>
+    <p class="contact" style="font-size:0.6em;">Martin Necpal · martin.necpal@stuba.sk · martinnecpal.aiplaces.org</p>
+    <p class="lib-head" style="margin-top:0.8em;">Sources and further reading</p>
+    <ul class="xs" style="line-height:1.5;">
+      <li>Ahmetović, E.: <em>Mathematical modelling in General Algebraic Modelling System (<abbr title="General Algebraic Modeling System">GAMS</abbr>).</em> Erasmus+ lecture, <abbr title="Slovak University of Technology in Bratislava">STU</abbr> Bratislava, 2025</li>
+      <li>Eden, M. R.: <em>Process Synthesis, Simulation and Optimization.</em> 2011</li>
+      <li>Brooke, A.; Kendrick, D.; Meeraus, A.; Raman, R.: <em><abbr title="General Algebraic Modeling System">GAMS</abbr> – A User's Guide.</em> <abbr title="General Algebraic Modeling System">GAMS</abbr> Development Corp.</li>
+      <li><abbr title="General Algebraic Modeling System">GAMS</abbr> documentation and Model Library – <a href="https://www.gams.com/latest/docs/" target="_blank">gams.com/latest/docs</a></li>
+      <li>GAMSPy documentation – <a href="https://gamspy.readthedocs.io/en/latest/" target="_blank">gamspy.readthedocs.io</a></li>
+      <li>VS Code Python tutorial – <a href="https://code.visualstudio.com/docs/python/python-tutorial" target="_blank">code.visualstudio.com/docs/python/python-tutorial</a></li>
+      <li>Matplotlib – <a href="https://matplotlib.org/" target="_blank">matplotlib.org</a> · Flask – <a href="https://flask.palletsprojects.com/" target="_blank">flask.palletsprojects.com</a></li>
+    </ul>
+    <p class="institution" style="margin-top:0.6em;">Screenshots of <abbr title="General Algebraic Modeling System">GAMS</abbr> Studio © <abbr title="General Algebraic Modeling System">GAMS</abbr> Development Corp., linked for teaching purposes</p>
+    <aside class="notes">[1:54–2:00] Keep this slide up during the questions.</aside>
+  </section>
+
+</div></div>
+
+<audio id="narration"></audio>
+
+<div id="navBar">
+  <button class="nav-btn" id="prevBtn" title="Previous slide (←)">
+    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+  </button>
+  <div id="slideIndicators"></div>
+  <span id="slideCounter"></span>
+  <button class="nav-btn" id="playBtn" title="Play commentary (space)">
+    <svg viewBox="0 0 24 24"><path id="playIconPath" d="M8 5v14l11-7z"/></svg>
+  </button>
+  <button class="nav-btn" id="nextBtn" title="Next slide (→)">
+    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+  </button>
+  <label id="autoLabel" title="Auto-advance to next slide when narration ends">
+    <input type="checkbox" id="autoPlay" checked> Auto
+  </label>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/zoom/zoom.js"></script>
+<script>
+  /* ══ CONFIG ══════════════════════════════════════════════════════════════
+     NARRATION  – true: plays voice_for_gamspy/slide_NN.mp3 for slide N (1-based)
+                  false: hides play button, Auto toggle and answer buttons
+  ═══════════════════════════════════════════════════════════════════════ */
+  const CONFIG = {
+    NARRATION:  true,
+    AUDIO_PATH: n => `voice_for_gamspy/slide_${String(n).padStart(2, '0')}.mp3`,
+    AUTO_DELAY: 800,
+  };
+
+  if (!CONFIG.NARRATION) document.body.classList.add('no-narration');
+
+  /* ── Missing images → link placeholder (no internet or moved file) ── */
+  document.querySelectorAll('.slides img').forEach(img => {
+    img.addEventListener('error', () => {
+      if (img.closest('.video-card')) return;
+      const box = document.createElement('div');
+      box.className = 'img-missing';
+      box.innerHTML = `Image not available offline:<br><strong>${img.alt}</strong><br>
+        <a href="${img.src}" target="_blank">${img.src}</a>`;
+      img.replaceWith(box);
+    });
+  });
+
+  /* ── YouTube cards: thumbnail opens YouTube; "Play here" embeds ── */
+  document.querySelectorAll('.video-card[data-yt]').forEach(card => {
+    const id = card.dataset.yt;
+    const url = `https://www.youtube.com/watch?v=${id}`;
+    card.innerHTML = `<a class="thumb" href="${url}" target="_blank" title="Open on YouTube">
+        <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="Video thumbnail"></a><span class="play"></span>`;
+  });
+  document.querySelectorAll('.video-actions[data-yt]').forEach(bar => {
+    const id = bar.dataset.yt;
+    const link = document.createElement('a');
+    link.href = `https://www.youtube.com/watch?v=${id}`; link.target = '_blank';
+    link.textContent = 'open on YouTube';
+    const btn = document.createElement('button');
+    btn.textContent = '▶ Play here';
+    btn.addEventListener('click', () => {
+      const card = bar.previousElementSibling;
+      card.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0"
+        allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+    });
+    bar.append(' · ', link, btn);
+  });
+  /* ── Popup buttons: open media in a separate window ── */
+  document.querySelectorAll('.popup-btn[data-popup]').forEach(btn => {
+    btn.addEventListener('click', () =>
+      window.open(btn.dataset.popup, 'media-popup', 'width=1100,height=500'));
+  });
+  /* stop embedded videos when leaving a slide */
+  function stopVideos(slide) {
+    slide?.querySelectorAll('.video-card iframe').forEach(f => {
+      const card = f.parentElement, id = card.dataset.yt;
+      card.innerHTML = `<a class="thumb" href="https://www.youtube.com/watch?v=${id}" target="_blank">
+        <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="Video thumbnail"></a><span class="play"></span>`;
+    });
+    slide?.querySelectorAll('.video-card video').forEach(v => v.pause());
+  }
+
+  /* ── Audio ── */
+  const narration    = document.getElementById('narration');
+  const playIconPath = document.getElementById('playIconPath');
+  const PLAY_D  = 'M8 5v14l11-7z';
+  const PAUSE_D = 'M6 19h4V5H6v14zm8-14v14h4V5h-4z';
+
+  const setPlayIcon = playing => playIconPath.setAttribute('d', playing ? PAUSE_D : PLAY_D);
+
+  function loadAudio(idx) {
+    if (!CONFIG.NARRATION) return;
+    const custom = Reveal.getCurrentSlide()?.dataset.audio;
+    narration.src = custom || CONFIG.AUDIO_PATH(idx + 1);
+  }
+  function playAudio()   { if (CONFIG.NARRATION) narration.play().catch(() => {}); }
+  /* start narration on open; if the browser blocks autoplay, start on first click/key */
+  function autoStart() {
+    if (!CONFIG.NARRATION || /print-pdf/.test(location.search)) return;
+    narration.play().catch(() => {
+      const events = ['pointerdown', 'keydown'];
+      const start = e => {
+        events.forEach(t => document.removeEventListener(t, start, true));
+        /* bottom bar and space start audio themselves; playing here would toggle it off */
+        if (e.target.closest?.('#navBar') || e.key === ' ') return;
+        if (narration.paused) playAudio();
+      };
+      events.forEach(t => document.addEventListener(t, start, true));
+    });
+  }
+  function toggleAudio() {
+    if (!CONFIG.NARRATION) return;
+    narration.paused ? narration.play().catch(() => {}) : narration.pause();
+  }
+
+  /* a slide video and the narration should not talk over each other */
+  document.querySelectorAll('.video-card video').forEach(v =>
+    v.addEventListener('play', () => narration.pause()));
+
+  /* ── Answer buttons (Review questions): play voice_for_gamspy/answerN.mp3 ── */
+  const answerAudio = new Audio();
+  let answerBtn = null;
+  function stopAnswer() {
+    answerAudio.pause();
+    answerBtn?.classList.remove('playing');
+    answerBtn = null;
+  }
+  answerAudio.addEventListener('ended', stopAnswer);
+  document.querySelectorAll('.answer-btn[data-answer]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (answerBtn === btn) { stopAnswer(); return; }
+      stopAnswer();
+      narration.pause();
+      answerAudio.src = `voice_for_gamspy/answer${btn.dataset.answer}.mp3`;
+      answerAudio.play().catch(() => {});
+      btn.classList.add('playing');
+      answerBtn = btn;
+    });
+  });
+  narration.addEventListener('play', stopAnswer);
+
+  narration.addEventListener('play',  () => setPlayIcon(true));
+  narration.addEventListener('pause', () => setPlayIcon(false));
+  narration.addEventListener('ended', () => {
+    setPlayIcon(false);
+    if (document.getElementById('autoPlay').checked) {
+      setTimeout(() => Reveal.next(), CONFIG.AUTO_DELAY);
+    }
+  });
+
+  /* ── Dot indicators ── */
+  function buildIndicators(total) {
+    const bar = document.getElementById('slideIndicators');
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 'dot';
+      d.setAttribute('aria-label', `Slide ${i + 1}`);
+      d.addEventListener('click', () => Reveal.slide(i));
+      bar.appendChild(d);
+    }
+  }
+  function updateNav(idx, total) {
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+    document.getElementById('slideCounter').textContent = `${idx + 1} / ${total}`;
+    document.getElementById('prevBtn').style.opacity = idx === 0         ? '0.3' : '1';
+    document.getElementById('nextBtn').style.opacity = idx === total - 1 ? '0.3' : '1';
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', () => Reveal.prev());
+  document.getElementById('nextBtn').addEventListener('click', () => Reveal.next());
+  document.getElementById('playBtn').addEventListener('click', () => toggleAudio());
+
+  /* ── Reveal ── */
+  Reveal.initialize({
+    hash: true,
+    slideNumber: false,
+    transition: 'slide',
+    backgroundTransition: 'none',
+    controls: false,
+    progress: false,
+    plugins: [RevealNotes, RevealMath.KaTeX, RevealZoom],
+    keyboard: {
+      32: () => toggleAudio(),
+      37: () => Reveal.prev(),
+      39: () => Reveal.next(),
+    },
+  });
+
+  Reveal.on('ready', () => {
+    const total = Reveal.getHorizontalSlides().length;
+    buildIndicators(total);
+    updateNav(0, total);
+    loadAudio(0);
+    autoStart();
+  });
+
+  Reveal.on('slidechanged', e => {
+    const total = Reveal.getHorizontalSlides().length;
+    updateNav(e.indexh, total);
+    stopVideos(e.previousSlide);
+    stopAnswer();
+    loadAudio(e.indexh);
+    playAudio();
+  });
+</script>
+</body>
+</html>
