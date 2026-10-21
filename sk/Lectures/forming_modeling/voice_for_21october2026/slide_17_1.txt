@@ -1,0 +1,6 @@
+Rodina zákonov spevnenia
+
+Mocninový zákon je najjednoduchší model pretvárneho odporu v DEFORMe, preto sa oplatí vedieť, odkiaľ pochádza a akých má príbuzných. Táto krátka podprezentácia sa venuje rodine zákonov spevnenia, významu n a m, ich meraniu a jednej veľkej pasci – extrapolácii.
+Ludwik v roku 1909 navrhol počiatočnú medzu klzu plus mocninu deformácie. Hollomon v roku 1945 počiatočnú medzu klzu vynechal – známe K krát epsilon na n, z ktorého pochádza n-hodnota plechov. Swift v roku 1952 pridal počiatočnú deformáciu epsilon nula, takže napätie pri nulovej deformácii nie je nulové. Voce v roku 1948 išiel inou cestou: exponenciálnym priblížením k napätiu nasýtenia.
+Prvé tri rastú bez obmedzenia; Voce sa nasýti. Tento rozdiel bude veľmi dôležitý na piatej snímke.
+Mocninový zákon v DEFORMe je Ludwikov tvar s pridaným rýchlostným členom: c krát deformácia na n krát rýchlosť deformácie na m, plus y. Pamätajte, že všetky tieto zákony sú empirické fity tvaru krivky – žiadny z nich nie je odvodený z teórie dislokácií.

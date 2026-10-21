@@ -1,0 +1,6 @@
+Varovanie pred extrapoláciou
+
+Čo sa stane mimo tabuľky? Program musí hádať – buď podrží poslednú hodnotu, alebo predĺži posledný sklon. Ľavý graf: materiál sa správa podľa Johnsona–Cooka, ale tabuľka siaha len do 10 za sekundu. Pri simulácii obrábania s desaťtisíc za sekundu takto orezaná tabuľka podhodnotí pretvárny odpor asi o 8,2 percenta – a to pri izbovej teplote a s miernym vplyvom rýchlosti.
+Pravý graf je mapa, ktorú by ste mali mať v hlave. Vodorovná os: rýchlosť deformácie v logaritmickej mierke. Zvislá: homologická teplota. Čiarkované obdĺžniky ukazujú, kam siahajú skúšky; plné obdĺžniky, kde bežia procesy. Kovanie za tepla sa dobre prekrýva s tlakovou skúškou na Gleeble. Obrábanie leží pri rýchlostiach deformácie, ku ktorým sa priblíži len Hopkinsonova tyč. Tečenie v prevádzke je pri rýchlostiach miliónkrát pomalších ako akákoľvek skúška tvárnenia.
+Praktické pravidlo teda znie: po prvom výpočte otvorte postprocesor, skontrolujte maximálnu deformáciu, rýchlosť deformácie a teplotu a porovnajte ich s tabuľkou. DEFORM vás nevaruje.
+Otázka pre študentov: Vaša tabuľka končí pri deformácii 1,0; simulácia dosiahne vo výronku deformáciu 3. Čo tam DEFORM použije a záleží na tom?

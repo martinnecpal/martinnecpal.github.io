@@ -1,0 +1,1 @@
+Pri izotropnom spevnení plocha plasticity rovnomerne rastie okolo pevného stredu. Pri kinematickom si zachová veľkosť a posúva sa o spätné napätie. To vedie ku skorému plastickému tečeniu pri obrátení zaťaženia, teda k Bauschingerovmu efektu, ktorý je dôležitý pre odpruženie.

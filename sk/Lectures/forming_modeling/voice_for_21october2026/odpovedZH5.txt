@@ -1,0 +1,1 @@
+Konštanty sú polynómy nafitované len do deformácie nula celá osem. Mimo tohto rozsahu polynómy divergujú a dávajú nezmysly, pričom deformácie pri kovaní, napríklad vo výronku alebo v rohoch, tento rozsah ľahko prekročia.

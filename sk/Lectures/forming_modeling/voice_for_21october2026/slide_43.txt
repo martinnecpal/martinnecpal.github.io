@@ -1,0 +1,12 @@
+Kvíz a zdroje
+
+Na záver osem otázok – všetky sú na snímke; odpovede hovorte nahlas. Takýto typ otázok uvidíte na písomnej skúške.
+Vpravo sú hlavné zdroje: manuál DEFORMu, naša učebnica a pôvodné články k modelom, ktoré sme použili. Všetky grafy v tejto prednáške boli vypočítané z rovníc na snímkach s uvedenými konštantami, takže si ich môžete zopakovať. Budúci týždeň: preprocesing – sieť, okrajové podmienky a trenie. Ďakujem.
+Otázka jedna: Napíšte všeobecnú funkciu pretvárneho odporu a pomenujte jej tri premenné.
+Otázka dva: Prečo môže tuhoplastická simulácia kovania bežať bez Youngovho modulu a Poissonovho čísla?
+Otázka tri: Aký model pretvárneho odporu by ste použili pre obrábanie, aký pre kovanie za tepla – a prečo?
+Otázka štyri: Čo sa stane, ak proces prekročí rozsah rýchlostí deformácie v tabuľke?
+Otázka päť: Ako vstupujú R-hodnoty do Hillovej podmienky 48? A čo predpovedá delta r?
+Otázka šesť: Izotropné verzus kinematické spevnenie: čo sa deje s plochou plasticity?
+Otázka sedem: Tepelná kapacita verzus merná tepelná kapacita – čo očakáva DEFORM v jednotkách SI?
+Otázka osem: Ako sa získa konštanta C kritéria Cockcrofta–Lathama?

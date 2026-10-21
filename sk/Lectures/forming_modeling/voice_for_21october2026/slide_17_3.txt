@@ -1,0 +1,6 @@
+Určenie K a n
+
+Ako získate K a n? Zlogaritmujte Hollomonov zákon: ln sigma sa rovná ln K plus n krát ln epsilon – priamka v grafe log–log.
+Postup: skúšku ťahom prepočítajte na skutočné napätie a skutočnú plastickú deformáciu – odpočítajte elastickú časť. Použite len rovnomernú oblasť, od približne dvoch percent deformácie po maximum sily; norma ISO 10275 to štandardizuje ako n-hodnotu plechu. Preložte priamku: sklon je n, napätie pri deformácii jedna je K. V grafe syntetické body s n rovným 0,24 vrátia n rovné 0,237.
+Pre tvar DEFORMu s členom y najprv zafixujte y ako medzu klzu a potom fitujte logaritmus sigma mínus y.
+A dôležitý praktický bod: skúška ťahom končí krčkom, pri deformácii okolo 20 až 30 percent. Kovanie za studena dosahuje deformácie dva alebo tri. Pre objemové tvárnenie potrebujete tlakové skúšky do deformácie asi jedna, korigované na trenie. Ak graf log–log nie je priamka, materiál sa jednoducho neriadi mocninovým zákonom – použite Voceov zákon alebo tabuľku.

@@ -1,0 +1,6 @@
+Porušenie: Cockcroft–Latham
+
+Posledná téma: porušenie. DEFORM ponúka mnoho kritérií tvárneho porušenia; najpoužívanejšie je normalizované kritérium Cockcrofta–Lathama. Poškodenie je integrál maximálneho hlavného napätia deleného efektívnym napätím pozdĺž dráhy deformácie, pričom sa počíta len ťahové napätie. Keď D dosiahne kritickú hodnotu C, očakáva sa trhlina.
+Pri pechovaní – náčrt – má vydutý povrch ťahové obvodové napätie, takže poškodenie tam rastie najskôr; práve tam vznikajú trhliny pri pechovaní za studena. Pri priečnom klinovom valcovaní vpravo je stred tyče zaťažovaný striedavým ťahom a môže sa otvoriť – Mannesmannov efekt.
+Pre materiálové údaje je dôležité, že C nie je univerzálne. Kalibrujete ho simuláciou skúšky – pechovania, ťahu, vrubovaných tyčí – do deformácie, pri ktorej skutočná vzorka praskla. Jeho hodnota závisí od čistoty ocele a teploty. Hodnota C z inej tavby materiálu je len hrubým vodidlom.
+Otázka pre študentov: Prečo poškodenie rastie na rovníku pechovaného valca, ale nie v jeho strede?

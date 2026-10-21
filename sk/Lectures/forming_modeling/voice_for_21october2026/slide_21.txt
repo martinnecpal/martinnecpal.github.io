@@ -1,0 +1,7 @@
+Za hranicou rovníc
+
+Rozbaľovací zoznam vľavo ukazuje, že DEFORM ponúka viac ako klasické rovnice. Prejdime tabuľku.
+Model hustoty dislokácií počíta pretvárny odpor z hustoty dislokácií, ktorá sa sama vyvíja s deformáciou, rýchlosťou deformácie a teplotou – užitočné, keď záleží na histórii materiálu, napríklad medzi údermi pri viacoperačnom kovaní za tepla.
+Modely textúry a kryštálovej plasticity vychádzajú z orientácie zŕn; záleží na nich pri titáne, horčíku a cípatosti plechov.
+Od verzie 13 je k dispozícii prediktor na báze hlbokej neurónovej siete, ktorý odhadne krivku spevnenia z chemického zloženia – veľmi praktické v ranom návrhu, keď nemáte skúšobné údaje, ale berte to ako odhad.
+A ak nič nesedí, môžete napísať vlastný podprogram a skompilovať ho do riešiča. Napokon Material Suite, samostatný nástroj firmy SFTC, fituje pretvárny odpor z tlakových skúšok a počíta diagramy IRA a konštanty JMAK.

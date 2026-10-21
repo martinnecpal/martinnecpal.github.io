@@ -1,0 +1,5 @@
+Tvárnenie za tepla: Norton–Hoff a sinh-Arrhenius
+
+Pri tvárnení za tepla štandardný prístup spája teplotu a rýchlosť deformácie do jedného parametra – Zenerovho–Hollomonovho parametra Z, rýchlosť deformácie krát exp Q lomeno RT. Q je aktivačná energia deformácie za tepla: približne 300 až 320 kilojoulov na mól pre uhlíkovo-mangánové ocele, polovica pre hliník.
+Zákon hyperbolického sínusu podľa Sellarsa a Tegarta viaže Z s pretvárnym odporom. Pri nízkych napätiach sa správa ako mocninový zákon a pri vysokých ako exponenciála, takže pokryje údaje pre tvárnenie za tepla v mnohých rádoch. Keď ho invertujete, máte napätie ako funkciu Z – graf. Pri 1000 stupňoch a jednej za sekundu je ustálené napätie asi 110 megapascalov; prechod na 900 stupňov a desať za sekundu ho takmer zdvojnásobí.
+Norton–Hoff je viskoplastický mocninový zákon používaný vo viacerých európskych programoch – napätie úmerné rýchlosti deformácie na m. V rozbaľovacom zozname DEFORMu nájdete tvar so sínusom hyperbolickým aj mocninovo-exponenciálny tvar s aktivačnou energiou zapísanou ako delta H.

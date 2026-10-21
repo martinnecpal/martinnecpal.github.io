@@ -1,0 +1,1 @@
+Kalibráciou. Simuluje sa skúška – pechovanie, ťah alebo vrubovaná tyč – do deformácie, pri ktorej skutočná vzorka praskla. Poškodenie v mieste trhliny v tom okamihu je konštanta C. Závisí od tavby materiálu, jeho čistoty a teploty.

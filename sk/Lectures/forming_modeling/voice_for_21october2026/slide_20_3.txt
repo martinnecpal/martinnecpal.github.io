@@ -1,0 +1,5 @@
+Mocninový, exponenciálny a sinh zákon
+
+Historicky sa používali dva zákony. Pri nízkych napätiach – podmienky tečenia – je Z úmerné napätiu na mocninu n s čiarkou. Pri vysokých napätiach – rýchle tvárnenie za tepla – rastie Z s napätím exponenciálne. Každý funguje vo svojej oblasti a v tej druhej zlyháva; prechod je v literatúre o tečení známy ako zlyhanie mocninového zákona.
+Garofalo v roku 1963 a potom Sellars a Tegart v roku 1966 pre tvárnenie za tepla navrhli hyperbolický sínus. Pre malé argumenty je sinh x približne x, takže zákon prejde na mocninový. Pre veľké argumenty je sinh x približne e na x lomeno dva, takže prejde na exponenciálny. Graf to ukazuje s jednou sadou konštánt: červená krivka sinh sleduje modrý mocninový zákon pri nízkom napätí a oranžovú exponenciálu pri vysokom napätí a v sivom páse sa prepne.
+Konštanty: n medzi približne 3 a 6, alfa – násobiteľ napätia – okolo 0,01 na megapascal pre ocele a viac pre hliníkové zliatiny. Alfa sa zvyčajne berie ako beta delené n s čiarkou, čo už napovedá, ako sa meria.

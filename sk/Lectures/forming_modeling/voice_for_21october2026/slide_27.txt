@@ -1,0 +1,4 @@
+Izotropné spevnenie
+
+Spevnenie opisuje, ako sa plocha plasticity mení s narastajúcou plastickou deformáciou. Vľavo vidíte efekt: po deformácii potrebuje materiál na ďalšiu deformáciu vyššie napätie.
+Pri izotropnom spevnení si plocha plasticity zachová stred a rovnomerne rastie – ľavá kružnica. Polomer je jednoducho pretvárny odpor pri aktuálnej plastickej deformácii. Presne to opisuje krivka spevnenia, takže izotropné spevnenie nepotrebuje žiadne ďalšie údaje. Je predvolené v DEFORMe a je presné, kým zaťaženie pôsobí jedným smerom – čo platí pre väčšinu kovania.

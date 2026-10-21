@@ -1,0 +1,1 @@
+Sila je napätie krát prierez. Pri maximálnej sile je jej zmena nulová, takže rýchlosť spevnenia sa rovná napätiu. Ak dosadíte Hollomonov zákon, vyjde, že rovnomerná deformácia sa rovná exponentu n.

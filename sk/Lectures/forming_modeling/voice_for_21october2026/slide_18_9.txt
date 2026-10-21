@@ -1,0 +1,10 @@
+Tipy, zhrnutie a otázky
+
+Niekoľko praktických tipov pre DEFORM. V zozname pretvárneho odporu zvoľte položku Johnson–Cook; pri D a E rovných jednej a alfa rovnom nule sa rozšírený tvar DEFORMu zredukuje na pôvodný. Referenčnú teplotu a teplotu tavenia zadajte v jednotkách vašej úlohy a referenčnú rýchlosť deformácie z publikovanej sady. Počítajte so zviazaným prestupom tepla a krivky si pred výpočtom vykreslite.
+Zhrnutie: tri nezávislé zátvorky – spevnenie, rýchlosť, zmäkčenie; päť konštánt z kvázistatických skúšok, z Hopkinsonovej tyče a zo skúšok za tepla; silný v kombinácii s adiabatickým ohrevom – šmykové pásy, triesky, náraz; slabý tam, kde sa teplota a rýchlosť deformácie vzájomne ovplyvňujú – tvárnenie za tepla a veľmi vysoké rýchlosti.
+Päť otázok na kontrolu a potom späť hore do hlavnej prednášky, alebo rovno ďalej na Zerilliho–Armstronga – ktorý, ako uvidíte, vznikol práve na to, aby doplnil chýbajúcu väzbu.
+Otázka jedna: Ktorá skúška dá C a ktorá m?
+Otázka dva: Čo robí rýchlostná zátvorka pod referenčnou rýchlosťou deformácie a ako sa tomu vyhnete?
+Otázka tri: Prečo treba krivky z Hopkinsonovej tyče pred fitovaním korigovať?
+Otázka štyri: Pomenujte dva fyzikálne javy, ktoré Johnson–Cook nedokáže opísať.
+Otázka päť: Ako mení triaxialita napätia deformáciu pri porušení podľa Johnsona–Cooka?

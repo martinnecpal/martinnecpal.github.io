@@ -1,0 +1,4 @@
+Kontrolný zoznam podľa procesu
+
+Tu je zhrnutie celej prednášky v jednej tabuľke – odložte si ju na cvičenia. Nájdite svoj proces v ľavom stĺpci a v riadku prečítajte, aké údaje potrebujete. Tučné položky sú tie, na ktoré študenti najčastejšie zabúdajú: tepelné údaje pri kovaní za tepla, anizotropia a kinematické spevnenie pri odpružení a údaje o premenách pri tepelnom spracovaní.
+A štyri kontroly dole, pre každú simuláciu: jednotky, rozsah platnosti, teplotná závislosť a jedno overenie meraním – silou lisu alebo termočlánkom. Ak prejdú všetky štyri, môžete začať veriť farebným obrázkom.

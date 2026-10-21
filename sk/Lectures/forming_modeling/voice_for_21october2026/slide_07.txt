@@ -1,0 +1,6 @@
+Pasca jednotiek
+
+A teraz pasca. Snímka obrazovky spred dvoch snímok ukazuje meď C10100 s Youngovým modulom 16 679. Šestnásťtisíc megapascalov pre meď? To by bolo sedemkrát mäkšie. Číslo je v ksi – materiál bol uložený v anglických jednotkách. 16 679 ksi je 115 gigapascalov, čo pre meď sedí. To isté platí pre teplotnú rozťažnosť na stupeň Fahrenheita a referenčnú teplotu 68 stupňov Fahrenheita, čo je 20 stupňov Celzia.
+DEFORM nastavuje sústavu jednotiek pre celú úlohu. Ak prenesiete materiál v anglických jednotkách do úlohy v SI, prepočítajte ho tlačidlom Unit conversion – čísla neprepisujte ručne. Všimnite si jednotky SI, ktoré DEFORM používa: napätie v megapascaloch, hustotu v tonách na kubický milimeter – pre oceľ 7,7 krát desať na mínus deviatu – a objemovú tepelnú kapacitu v newtonoch na štvorcový milimeter a stupeň.
+Pravá tabuľka odpovedá na otázku „ktoré záložky naozaj potrebujem?“. Izotermické kovanie potrebuje iba záložku Plastic. Hneď ako sa mení teplota, sú potrebné tepelné údaje. Elastické údaje iba vtedy, keď záleží na elastických deformáciách – odpruženie, zvyškové napätia, napätia v zápustke. Tepelné spracovanie potrebuje všetko.
+Otázka pre študentov: Meď s modulom 16 679 megapascalov – čo je zle a ako to overíte za desať sekúnd?

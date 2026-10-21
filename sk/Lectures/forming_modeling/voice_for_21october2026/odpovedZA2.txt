@@ -1,0 +1,1 @@
+Konštanta C štyri, ktorá v exponenciálnom člene násobí teplotu a logaritmus rýchlosti deformácie.

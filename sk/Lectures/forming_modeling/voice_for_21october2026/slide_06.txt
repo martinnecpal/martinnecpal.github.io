@@ -1,0 +1,5 @@
+Regular alebo Mixture
+
+Prepínač Regular a Mixture rozhoduje, koľko súborov údajov potrebujete. Pre tvárnenie a obrábanie stačí jedna fáza: materiál je typu Regular s jednou krivkou spevnenia, jednou tepelnou vodivosťou a tak ďalej.
+Pri tepelnom spracovaní sa materiál počas simulácie mení – austenit sa mení na ferit, perlit, bainit alebo martenzit. Vtedy definujete Mixture: každá fáza má vlastné vlastnosti a DEFORM ich spriemeruje podľa objemových podielov, ako v jednoduchom zmiešavacom pravidle. Navyše tlačidlo Transformation obsahuje údaje medzi fázami: kinetiku, uvoľnené latentné teplo, zmenu objemu a transformačnú plasticitu.
+Obrázok ukazuje, prečo na tom záleží: cementované a zakalené ozubené koleso s podielom martenzitu. Bez zmesi nedostanete tento obrázok, ani deformácie a zvyškové napätia, ktoré z neho vyplývajú.

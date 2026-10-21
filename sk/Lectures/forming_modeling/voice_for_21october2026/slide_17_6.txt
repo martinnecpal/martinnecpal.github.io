@@ -1,0 +1,5 @@
+Teplotná závislosť
+
+Konštantné c a n opisujú len jednu teplotu. DEFORM umožňuje, aby každá konštanta – c, n, m aj y – bola tabuľkou v závislosti od teploty, čím sa mocninový zákon rozšíri na tvárnenie za poloohrevu.
+Trendy sú vždy rovnaké: s rastúcou teplotou materiál mäkne, takže c klesá; zotavenie obmedzuje spevnenie, takže n klesá; a citlivosť na rýchlosť deformácie m rastie. Tabuľka to ilustruje pre strednouhlíkovú oceľ – čísla ukazujú trend, nie údaje pre konkrétnu značku. Všimnite si riadok pri 200 stupňoch: dynamické deformačné starnutie, m blízko nuly alebo záporné – tejto oblasti sa vyhnite.
+Dve praktické poznámky. DEFORM medzi teplotnými bodmi interpoluje lineárne, takže dajte dosť bodov tam, kde sa vlastnosti rýchlo menia. A pri rýchlom kovaní za studena sa polotovar plastickou prácou ohreje o sto až tristo stupňov. Aj „studená“ simulácia by preto mala byť zviazaná s prestupom tepla a používať c ako funkciu teploty. Nad približne 0,6 teploty tavenia prejdite na zákon sinh alebo na tabuľku.

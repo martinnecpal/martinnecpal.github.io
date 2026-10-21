@@ -1,0 +1,5 @@
+Súčiniteľ prestupu tepla na rozhraní a Inverse HTC
+
+Posledná tepelná položka nie je v okne Material, ale patrí sem: prestup tepla medzi zápustkou a výrobkom. Tepelný tok je h krát rozdiel teplôt a h závisí od kontaktného tlaku, času, maziva a okovín. Nastavuje sa v dialógu Inter-object. Predvolená hodnota DEFORMu pre kontakt pri tvárnení je asi 11 kilowattov na štvorcový meter a kelvin a 0,02 pre konvekciu na voľných povrchoch.
+Odkiaľ získať lepšie hodnoty? Tri obrázky ukazujú modul Inverse HTC od SFTC: urobíte skúšku s termočlánkami v zápustke alebo vo výrobku, potom DEFORM mení h, kým sa simulované teplotné krivky nezhodujú s nameranými, a vráti nafitované h.
+Zapamätajte si túto myšlienku inverznej analýzy – je to rovnaký trik, akým sa koriguje trenie v tlakových skúškach pri určovaní pretvárneho odporu. Simulácia nie je iba používateľom materiálových údajov; je aj nástrojom na ich meranie.

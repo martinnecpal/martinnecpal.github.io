@@ -1,0 +1,1 @@
+Tepelná kapacita je vztiahnutá na objem, merná tepelná kapacita na hmotnosť. Predvolené pole DEFORMu očakáva tepelnú kapacitu, pre oceľ približne tri celé štyridsaťpäť newtona na štvorcový milimeter a stupeň. Ak tam zadáte štyristošesťdesiat, polotovar sa prakticky nikdy nezohreje.

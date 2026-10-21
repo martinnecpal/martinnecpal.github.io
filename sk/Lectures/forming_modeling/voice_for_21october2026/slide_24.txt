@@ -1,0 +1,5 @@
+von Mises a Tresca
+
+Dve klasické izotropné podmienky. Tresca hovorí, že plastické tečenie začne, keď maximálne šmykové napätie dosiahne kritickú hodnotu – šesťuholník. Von Mises používa efektívne napätie z predchádzajúcej snímky – elipsa.
+Zhodujú sa pri jednoosovom ťahu a pri rovnomernom dvojosovom ťahu a najviac sa líšia pri čistom šmyku, asi o 15 percent. Experimenty na väčšine kovov ležia bližšie k von Misesovi a keďže je elipsa hladká, je oveľa jednoduchšia pre riešič metódy konečných prvkov. Preto je von Mises predvolený v DEFORMe aj takmer v každom programe na simuláciu tvárnenia.
+Vpravo je rozbaľovací zoznam podmienky plasticity v DEFORMe: von Mises, Hillove kvadratické tvary a ďalšie možnosti. Objemové tvárnenie izotropných polotovarov – zostaňte pri von Misesovi. Plechy s valcovacou textúrou – nasledujúca snímka.

@@ -1,0 +1,1 @@
+Pre malé argumenty je hyperbolický sínus približne rovný argumentu, a zákon prejde na mocninový, platný v oblasti tečenia. Pre veľké argumenty sa správa ako exponenciála, a zákon prejde na exponenciálny. Jeden vzorec tak pokryje oboje.

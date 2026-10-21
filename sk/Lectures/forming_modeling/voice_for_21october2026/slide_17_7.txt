@@ -1,0 +1,4 @@
+Kde sa mocninový zákon používa
+
+Kde je mocninový zákon správna voľba? Všade, kde dominuje deformačné spevnenie a vplyvy teploty a rýchlosti sú malé: kovanie za studena, pechovanie za studena a pretláčanie za studena – pokiaľ máte údaje do veľkých deformácií. Ťahanie drôtov a tyčí, kde sa deformácia hromadí v mnohých ťahoch. Lisovanie a hlboké ťahanie plechov, kde je Swift alebo Hollomon spolu s r-hodnotou štandardným opisom. Ohýbanie a profilovanie valcovaním. A s teplotnými tabuľkami kovanie za poloohrevu.
+Pre plechy má n ešte jeden veľmi praktický význam. Empirický Keelerov–Brazierov vzťah pre nízkouhlíkové ocele spája najnižší bod diagramu medzných pretvorení – medzu pri rovinnej deformácii – s n a hrúbkou plechu. Graf to ukazuje: plech s n rovným 0,2 a hrúbkou jeden milimeter znesie pri rovinnej deformácii asi 35 percent hlavnej deformácie; s n rovným 0,1 len polovicu. Preto lisovne požadujú n-hodnotu na každom atteste zvitku.

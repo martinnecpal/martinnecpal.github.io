@@ -1,0 +1,5 @@
+Johnson–Cook
+
+Johnson–Cook je štandardný model pre obrábanie a náraz. Je to súčin troch zátvoriek: spevnenia, rýchlosti a tepelného zmäkčenia. Každá zátvorka má vlastné konštanty a navzájom sa neovplyvňujú – to uľahčuje fitovanie a zároveň je to slabina modelu.
+Konštanty sú tu pre oceľ AISI 1045, publikované Jaspersom a Dautzenbergom zo skúšok na Hopkinsonovej tyči, a graf je z nich vypočítaný. Prechod z 1 na desaťtisíc za sekundu zvýši krivku asi o 12 percent; ohrev na 700 stupňov odoberie zhruba polovicu pevnosti.
+Verzia DEFORMu v rozbaľovacom zozname má dva parametre navyše – exponent na rýchlosti deformácie a pružnejšiu teplotnú zátvorku. Model je výborný pre obrábanie, kde sú rýchlosti deformácie extrémne a teploty mierne. Slabý je blízko teploty tavenia a pri kovaní za tepla, kde rekryštalizácia viaže teplotu a rýchlosť deformácie – a to oddelené zátvorky nedokážu opísať.

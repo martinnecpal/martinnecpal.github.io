@@ -1,0 +1,6 @@
+Kalibrácia konštánt
+
+Ako získate konštanty? Najprv matica skúšok: kvázistatické skúšky a skúšky na Hopkinsonovej tyči pri niekoľkých teplotách – od kvapalného dusíka po približne polovicu teploty tavenia.
+Po druhé atermická časť: exponent deformačného spevnenia a C5 pochádzajú z prírastkov spevnenia v grafe log–log; C0 z veľkosti zrna alebo z plató pri vysokej teplote, kde tepelná časť zmizla.
+Po tretie – kľúčový trik – zlogaritmujte, čo zostane. Logaritmus tepelného napätia je lineárny v teplote, s úsekom ln C1 a sklonom, ktorý závisí od rýchlosti deformácie. Graf ukazuje tieto priamky pre tri rýchlosti deformácie so syntetickými skúšobnými bodmi rozptýlenými okolo nich.
+Po štvrté vyneste sklony voči logaritmu rýchlosti deformácie: úsek dá C3, sklon C4. Napokon fit overte mierou chyby a ideálne simuláciou nezávislej skúšky. Varovanie: pri rýchlostiach Hopkinsonovej tyče sa vzorka adiabaticky ohrieva, takže nameraná krivka nie je izotermická – pred fitovaním to korigujte.

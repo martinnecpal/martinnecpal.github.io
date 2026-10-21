@@ -1,0 +1,5 @@
+Hyperelastické materiály
+
+Posledná elastická téma je hyperelasticita – materiály ako guma, ktoré sa natiahnu o niekoľko sto percent a stále sa vrátia. Lineárna pružnosť tu zlyháva: pozrite sa na graf. Do niekoľkých percent sa obe krivky zhodujú; pri väčšom natiahnutí sa neo-Hookova krivka od priamky odchyľuje a v tlaku sa výrazne stuží.
+Namiesto E a ný používa hyperelastický model funkciu deformačnej energie. Neo-Hookov model má jednu konštantu, Mooney–Rivlinov dve. V tvárnení sa s nimi stretnete pri tvárnení gumovým vankúšom v leteckom priemysle, pri pružných nástrojoch a keď sú tesnenia súčasťou zostavy. Jedno pravidlo: konštanty fitujte aspoň z dvoch druhov deformácie, pretože fit iba z ťahu môže byť v tlaku nestabilný.
+Tým končí blok o pružnosti. Teraz jadro prednášky – pretvárny odpor.

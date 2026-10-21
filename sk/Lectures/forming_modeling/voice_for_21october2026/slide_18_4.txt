@@ -1,0 +1,6 @@
+Kalibrácia krok za krokom
+
+Kalibrácia postupuje po zátvorkách, a to je veľká výhoda modelu. Prvý krok: A je medza klzu v kvázistatickej skúške pri izbovej teplote. Druhý krok: odpočítajte A, zlogaritmujte a sklon grafu log–log dá n a úsek B.
+Tretí krok, graf: pri konštantnej deformácii vydeľte napätie pri každej rýchlosti deformácie napätím pri referenčnej rýchlosti a vyneste ho voči logaritmu rýchlosti deformácie. Sklon je C. So syntetickými kvázistatickými bodmi a bodmi z Hopkinsonovej tyče dá regresia 0,0137.
+Štvrtý krok: skúšky pri zvýšenej teplote; logaritmus jednej mínus pomer napätí voči logaritmu T s hviezdičkou dá m.
+Piaty krok, kontrola: vzorky na Hopkinsonovej tyči sa adiabaticky ohrievajú, preto tieto krivky najprv korigujte; potom model overte na skúške, ktorú ste na fitovanie nepoužili. Alternatívou je globálny fit všetkých piatich konštánt metódou najmenších štvorcov alebo inverzná MKP – menšia celková chyba, ale stratíte prehľadnosť.

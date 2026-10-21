@@ -1,0 +1,1 @@
+Pri vysokých rýchlostiach sa asi deväťdesiat percent plastickej práce premení na teplo, ktoré nestihne odtiecť. Vzorka sa adiabaticky ohreje až o stovky kelvinov, takže krivka nie je izotermická. Bez korekcie by tepelné zmäkčenie skončilo v konštantách n, C a m.

@@ -1,0 +1,5 @@
+Modul pružnosti a teplotná rozťažnosť v závislosti od teploty
+
+Obe elastické vlastnosti závisia od teploty. Ľavý graf je redukčný súčiniteľ modulu uhlíkovej ocele podľa Eurokódu: pri 600 stupňoch zostáva len asi tretina hodnoty pri izbovej teplote a blízko kovacej teploty takmer nič. Ak simulujete kalenie z 850 stupňov s konštantným modulom 210 gigapascalov, napätia na začiatku ochladzovania výrazne nadhodnotíte.
+Vpravo je teplotná rozťažnosť niekoľkých ocelí tak, ako je uložená v DEFORMe. Všimnite si pole „Reference temperature“ v záložke Elastic. DEFORM používa sečnicový súčiniteľ: tepelná deformácia je alfa krát rozdiel od referenčnej teploty. Ak prevezmete okamžité hodnoty z príručky, nie je to to isté – overte si, ktorú hodnotu váš zdroj uvádza.
+A pri tepelnom spracovaní: austenit sa rozťahuje viac ako ferit, takže v zmesi potrebuje každá fáza vlastné alfa – zmena objemu pri premene sa zadáva samostatne v dialógu Transformation.

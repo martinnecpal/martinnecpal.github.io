@@ -1,0 +1,4 @@
+Tepelná vodivosť k(T)
+
+Tepelná vodivosť rozhoduje, ako rýchlo sa teplo vo výrobku šíri. Graf: uhlíková oceľ začína okolo 54 wattov na meter a kelvin a pri 800 stupňoch klesne asi na 27; austenitická nehrdzavejúca oceľ začína pri 15 a stúpa. Použiť konštantu pri izbovej teplote pre kovanie za tepla je preto chyba o faktor dva.
+Tabuľka ukazuje rozsah: meď vedie teplo 50-krát lepšie ako titán. Titánové a niklové zliatiny vedú teplo zle, takže povrch v kontakte so studenou zápustkou vychladne, kým jadro zostáva horúce – a pri rýchlej deformácii teplo zostane v šmykových pásoch. Preto sú titánové výkovky také citlivé na teplotu zápustky a preto sa titán ťažko obrába.

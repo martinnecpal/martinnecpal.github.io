@@ -1,0 +1,8 @@
+Garbage in, garbage out
+
+Začnem malým numerickým experimentom. Pechujeme valec s priemerom 20 milimetrov a výškou 30 na výšku 15. Rovnaká geometria, rovnaký súčiniteľ trenia. Jediný rozdiel je krivka spevnenia. Krivka A je typická knižničná krivka pre oceľ C45 za studena; krivka B je to, čo by ste namerali na vlastnej žíhanej tyči tej istej nominálnej značky.
+Sily na konci zdvihu sú približne 540 a 427 kilonewtonov – rozdiel zhruba 27 percent.
+Ak zjemníte sieť, zmeníte silu o niekoľko percent. Ak zvolíte nesprávnu krivku spevnenia, zmeníte ju o desiatky percent – a možno objednáte nesprávny lis.
+To je význam hesla „garbage in, garbage out“. Riešič veľmi dobre rieši rovnice; netuší však, či materiál, ktorý ste mu dali, je materiál, ktorý je v dielni. To je vaša úloha a je to úloha dnešnej prednášky.
+Pozrite sa na rámček dole: sila a energia, teplota, zaplnenie zápustky, porušenie, odpruženie, mikroštruktúra – každý z týchto výsledkov závisí od inej časti materiálových údajov. Stretneme sa so všetkými.
+Otázka pre študentov: Čo by ste zmenili ako prvé, ak je simulovaná sila o 30 percent nižšia, ako namerali na lise – sieť, trenie alebo materiál?

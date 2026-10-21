@@ -1,0 +1,6 @@
+Kde sa ZA používa
+
+Kde sa model používa? Prvý riadok je to, ako bol overený: Taylorova nárazová skúška. Valček sa vystrelí na tuhú kovadlinu rýchlosťou 100 až 300 metrov za sekundu; skráti sa a vytvorí hríbovitý tvar. Jedna skúška pokryje celý rozsah deformácií, rýchlostí deformácie a teplôt, takže porovnanie konečného tvaru so simuláciou MKP overí model naraz. Zerilli a Armstrong to presne takto urobili pre meď a železo.
+Potom obranné aplikácie – balistické penetrátory a výbuchom formované projektily zo železa, tantalu alebo volfrámu, všetko kovy BCC so silným vplyvom rýchlosti.
+Pre náš odbor sú najdôležitejšie vysokorýchlostné obrábanie, kde štúdie porovnávali ZA a Johnsona–Cooka pri tvorbe triesky v oceliach, a vysokorýchlostné tvárnenie – elektromagnetické tvárnenie, tvárnenie výbuchom, kovanie feritických materiálov na bucharoch. Tiež pechovanie za studena a simulácia nárazu, kde záleží na rozdiele medzi BCC a FCC.
+Napokon kovanie a valcovanie za tepla, ale len cez modifikovaný ZA, použitý ako poloempirický fit tlakových údajov za tepla.

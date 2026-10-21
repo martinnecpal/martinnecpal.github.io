@@ -1,0 +1,5 @@
+Rozloženie okna Material
+
+Toto je to okno. Vľavo je zoznam materiálov: každý materiál použitý v projekte a každý objekt – polotovar, zápustka – sa na jeden z nich odkazuje číslom. Vpravo hore je prepínač medzi Regular a Mixture; pod ním tlačidlá Phase, ktoré sa aktivujú pre zmesi.
+Cez stred vidíte záložky. Plastic obsahuje pretvárny odpor, podmienku plasticity a spevnenie. Elastic – Youngov modul, Poissonovo číslo a teplotnú rozťažnosť. Thermal – tepelnú vodivosť, tepelnú kapacitu, emisivitu a hustotu. Potom Diffusion, Dislocation, Hardness, Electro-magnetic, Advanced a Texture, ktorých sa dotkneme v bloku 8.
+Dva praktické detaily. Každá hodnota môže byť konštanta alebo funkcia teploty; ikona ceruzky otvorí tabuľku. A vpravo dole je tlačidlo Unit conversion – zapamätajte si ho, budeme ho potrebovať o tri minúty.

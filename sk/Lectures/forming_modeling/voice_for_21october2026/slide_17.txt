@@ -1,0 +1,5 @@
+Mocninový zákon
+
+Teraz rovnice. Prvá v zozname DEFORMu je mocninový zákon: c krát deformácia na n, krát rýchlosť deformácie na m, plus y. Bez rýchlostného člena a posunu je to Hollomonov zákon; Swift pridáva počiatočnú deformáciu epsilon nula.
+Exponent n je exponent deformačného spevnenia. V skúške ťahom sa rovná rovnomernej deformácii pri vzniku krčku – to je pekná kontrola vášho fitu. Pozrite sa na graf: pri n rovnom 0,35 krivka stále stúpa; pri 0,1 je po prvých percentách takmer plochá. Nehrdzavejúca oceľ má n okolo 0,45, a preto sa pri hlbokom ťahaní tak silno spevňuje.
+Jedna praktická poznámka. Čistý Hollomon dáva pri nulovej deformácii nulové napätie – na začiatku nekonečne mäkký materiál. DEFORM to rieši členom y, alebo použijete Swifta. V DEFORMe môže byť každé z c, n, m a y funkciou teploty, čo stačí na jednoduché tvárnenie za poloohrevu.

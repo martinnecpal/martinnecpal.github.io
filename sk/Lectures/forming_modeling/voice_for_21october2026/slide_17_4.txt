@@ -1,0 +1,6 @@
+Exponent citlivosti na rýchlosť m
+
+Druhý exponent je m, citlivosť na rýchlosť deformácie: sklon logaritmu napätia voči logaritmu rýchlosti deformácie. Najjednoduchšie sa meria skokovou skúškou: deformujete pri jednej rýchlosti, náhle ju zvýšite desaťkrát a odčítate skok napätia. Graf to ukazuje pre oceľ za studena s m rovným 0,012 – asi trojpercentný nárast napätia pri desaťnásobnej zmene rýchlosti.
+Tabuľka uvádza typické hodnoty. Kovy za studena majú m blízko nuly – preto sa pri kovaní za studena rýchlostný člen často vynecháva. Pri tvárnení za poloohrevu m stúpa na niekoľko percent, za tepla na 0,1 až 0,2 a superplastické zliatiny dosahujú 0,5 – desaťkrát rýchlejšia deformácia potom potrebuje trojnásobné napätie.
+Fyzikálne kladné m stabilizuje tečenie: kde sa začína tvoriť krčok, lokálna rýchlosť deformácie stúpne, potrebné napätie stúpne a krčok sa spomalí. To je tajomstvo superplastických predĺžení o niekoľko sto percent.
+Jedno varovanie pre ocele medzi približne 150 a 350 stupňami: dynamické deformačné starnutie robí m záporným a tečenie prerušovaným – klasická oblasť modrej krehkosti. Tvárneniu ocele za poloohrevu v tejto oblasti sa vyhnite.

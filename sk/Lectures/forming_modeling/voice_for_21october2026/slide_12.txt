@@ -1,0 +1,5 @@
+Definícia pretvárneho odporu
+
+Pretvárny odpor je skutočné napätie potrebné na to, aby materiál plasticky tiekol pri danej deformácii, rýchlosti deformácie a teplote. Táto rovnica – sigma s pruhom ako funkcia epsilon s pruhom, epsilon s pruhom a bodkou a T – je jediný riadok, ktorý si z dneška zapamätajte.
+Vľavo: inžinierska a skutočná krivka. Trhacie stroje dávajú silu a predĺženie, teda inžinierske hodnoty. MKP potrebuje skutočné napätie a logaritmickú deformáciu; prepočtové vzťahy sú tu a platia iba do vzniku krčku.
+V strede: zaťaženie nad medzu klzu zanechá trvalú deformáciu. Tuhoplastický program ako DEFORM používa iba plastickú časť krivky – krivka spevnenia v DEFORMe preto začína pri počiatočnej medzi klzu pri nulovej plastickej deformácii.

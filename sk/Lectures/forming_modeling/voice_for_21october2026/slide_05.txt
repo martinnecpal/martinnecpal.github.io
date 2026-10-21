@@ -1,0 +1,5 @@
+Knižnica materiálov
+
+Väčšina z vás začne knižnicou. Load from library ponúkne zoznam podľa triedy materiálu a potom podľa značky. Dôležité je, že materiál sa skopíruje do vášho projektu. Ak ho upravíte, upravujete svoju kópiu, nie knižnicu.
+Keď máte namerané vlastné údaje, použite Save in library, aby ďalší projekt začínal od vašich údajov, a nie od všeobecných. Export a Import prenášajú materiál ako súbor – medzi kolegami, medzi univerzitou a firmou alebo medzi verziami DEFORMu.
+A varovanie v rámčeku: knižničné značky sú namerané v určitom rozsahu teplôt a rýchlostí deformácie a tento rozsah je zvyčajne uvedený v názve. Ak vezmete krivku pre tvárnenie za studena do simulácie kovania za tepla pri 1100 stupňoch, DEFORM sa nebude sťažovať – bude extrapolovať a výsledok bude nesprávny. K extrapolácii sa vrátime v bloku 4.

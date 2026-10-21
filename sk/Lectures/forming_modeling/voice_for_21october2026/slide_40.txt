@@ -1,0 +1,4 @@
+Difúzia a elektromagnetické údaje
+
+Ďalšie dve záložky. Difúzia sa používa pri cementovaní a nitridovaní: druhý Fickov zákon s difúznym súčiniteľom závislým od teploty. Pre uhlík v austenite je D nula približne 2,3 krát desať na mínus piatu štvorcového metra za sekundu a aktivačná energia asi 148 kilojoulov na mól. Obsah uhlíka potom mení teplotu Ms, tvrdosť a krivky IRA – difúzia je teda previazaná s fázovými údajmi.
+Záložka Electro-magnetic obsahuje elektrický merný odpor a magnetickú permeabilitu pre indukčný ohrev. Kľúčovou fyzikou je hĺbka vniku. Pod Curieovým bodom je oceľ feromagnetická a prúd tečie v tenkej povrchovej vrstve; nad približne 770 stupňami klesne permeabilita na jednu, hĺbka vniku vzrastie zhruba desaťnásobne a ohrievaná zóna sa posunie dovnútra. Bez permeability závislej od teploty nedokážete predpovedať zakalený obrys na tomto ozubenom kolese.

@@ -1,0 +1,5 @@
+Tabuľkové údaje a interpolácia
+
+Najčastejšia forma pretvárneho odporu v DEFORMe je tabuľka: súbor kriviek, každá pre jednu teplotu a jednu rýchlosť deformácie, každá vzorkovaná pri niekoľkých deformáciách. Vľavo vidíte graf v DEFORMe a tabuľku za ním.
+Medzi bodmi tabuľky musí program interpolovať. Rýchlosť deformácie pri kovaní pokrýva päť až šesť rádov, takže záleží na tom, ako. Vpravo som vzal štyri body tejto tabuľky – rýchlosti deformácie 1, 10, 100 a 1000 – a pýtal som sa na hodnotu pri 50 za sekundu. Lineárna interpolácia dá približne 1012 megapascalov, logaritmická približne 1028. Rozdiel je tu mierny, ale rastie, keď je tabuľka hrubá. Pretvárny odpor je približne lineárny v logaritme rýchlosti deformácie, takže logaritmická interpolácia je fyzikálne rozumná voľba.
+Dobrá tabuľka má päť až osem teplôt a štyri až šesť rýchlostí deformácie, ktoré pokrývajú proces. Táto posledná podmienka je témou nasledujúcej snímky.

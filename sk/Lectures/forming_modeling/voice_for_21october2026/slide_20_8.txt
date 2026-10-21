@@ -1,0 +1,5 @@
+Príbuzné zákony a vstup do DEFORMu
+
+Dvaja príbuzní, s ktorými sa stretnete v iných programoch. Norton–Hoff je viskoplastický mocninový zákon – napätie úmerné rýchlosti deformácie na m, s konzistenciou K, ktorá závisí od teploty a deformácie. Je základom programu FORGE. Hensel–Spittel je dlhý empirický súčin teplotného, deformačného a rýchlostného člena – až deväť exponentov – používaný v knižniciach FORGE, QForm a Simufact. Nemá Z, ale fituje sa na rovnaké tlakové údaje za tepla.
+V DEFORMe obsahuje zoznam pretvárneho odporu zákon sinh aj mocninový zákon presne tak, ako ich vidíte vpravo, s aktivačnou energiou zapísanou ako delta H a s absolútnou teplotou. Pred zadaním publikovaných hodnôt skontrolujte, aké jednotky DEFORM vo vašej sústave jednotiek očakáva pre delta H a R.
+Praktická alternatíva, ktorú mnohí inžinieri uprednostňujú: zákon vyhodnoťte v tabuľkovom procesore alebo v Pythone a výsledok zadajte ako tabuľku pretvárneho odporu v závislosti od deformácie, rýchlosti deformácie a teploty. Vidíte čísla, pri malých deformáciách môžete pridať spevnenie a krivky si pred výpočtom vykreslíte v okne Material.

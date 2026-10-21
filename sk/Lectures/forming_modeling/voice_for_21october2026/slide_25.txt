@@ -1,0 +1,5 @@
+Hill 48
+
+Valcované plechy nie sú izotropné: valcovanie vytvára textúru a plech sa správa inak v smere valcovania, naprieč a po hrúbke. Hill v roku 1948 navrhol najjednoduchšie rozšírenie von Misesovej podmienky pre takéto ortotropné materiály – kvadratickú funkciu so šiestimi konštantami: F, G, H pre rozdiely normálových napätí a L, M, N pre šmyk.
+Ak nastavíte F, G a H rovnaké a L, M, N trikrát väčšie, dostanete späť von Misesa – dobrá kontrola vstupu.
+V DEFORMe môžete šesť konštánt zadať priamo – tento dialóg – alebo ich nechať DEFORM vypočítať z R-hodnôt. Vzťahy sú dole: tri R-hodnoty namerané pri 0, 45 a 90 stupňoch určujú pomery.

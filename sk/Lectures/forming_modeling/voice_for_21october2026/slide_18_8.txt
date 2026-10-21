@@ -1,0 +1,5 @@
+Kde sa Johnson–Cook používa
+
+Kde sa Johnson–Cook používa? Predovšetkým pri obrábaní – je to predvolený model pretvárneho odporu vo väčšine simulácií rezania, vrátane DEFORM-3D Machining. Náčrt ukazuje prečo: v primárnej šmykovej zóne dosahujú deformácie jedna až päť pri rýchlostiach deformácie až milión za sekundu a na rozhraní nástroja a triesky stúpne teplota na 800 až 1000 stupňov. V kombinácii s modelom porušenia Johnson–Cook reprodukuje článkovanie triesky.
+Potom jeho pôvodná oblasť: náraz, balistika a Taylorove skúšky, kde je v explicitných programoch robustný a lacný. Simulácia nárazu karosárskych konštrukcií, vysokorýchlostné tvárnenie – elektromagnetické, výbuchom a kovanie na bucharoch – a strihanie a dierovanie.
+A jeden riadok, kde sa neodporúča: kovanie za tepla nad približne 0,6 teploty tavenia. Tam sú správnymi nástrojmi zákon sinh alebo namerané tabuľky – rekryštalizácia je mimo sveta Johnsona–Cooka.

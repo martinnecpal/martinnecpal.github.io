@@ -1,0 +1,6 @@
+Pôvod a myšlienka parametra Z
+
+Tento hĺbkový pohľad je o najpoužívanejšej myšlienke tvárnenia za tepla: o Zenerovom–Hollomonovom parametri a o zákone hyperbolického sínusu, ktorý je na ňom postavený.
+V roku 1944 publikovali Clarence Zener a John Hollomon štúdiu o vplyve rýchlosti deformácie na plastické tečenie ocele. Ich kľúčové pozorovanie: zvýšenie rýchlosti deformácie má na pretvárny odpor rovnaký účinok ako zníženie teploty. Obe veličiny sa preto dajú spojiť do jednej premennej – teplotne kompenzovanej rýchlosti deformácie Z: rýchlosť deformácie krát exp Q lomeno RT. Z má jednotku rýchlosti deformácie a teplota musí byť absolútna.
+Pozrite sa na čísla pre uhlíkovo-mangánovú oceľ. Pri 1000 stupňoch a jednej za sekundu je Z asi 6,3 krát desať na dvanástu. Pri 900 stupňoch a desiatich za sekundu je viac ako stokrát vyššie – 7,8 krát desať na štrnástu; pri 1200 stupňoch a 0,01 za sekundu asi desaťtisíckrát nižšie.
+Graf ukazuje čiary konštantného Z v rovine teplota – rýchlosť deformácie. Každý bod na jednej čiare dáva rovnaký pretvárny odpor a podobnú rekryštalizovanú veľkosť zrna. To je veľmi praktické: pomalá laboratórna skúška pri vyššej teplote môže zastupovať rýchly priemyselný lis pri nižšej teplote.

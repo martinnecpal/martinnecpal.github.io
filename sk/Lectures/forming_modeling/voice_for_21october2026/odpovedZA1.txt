@@ -1,0 +1,1 @@
+Je to plocha, ktorú dislokácia opíše pri jednom tepelne aktivovanom preskoku. V kovoch BCC je prekážkou Peierlsova bariéra mriežky, takže plocha je konštantná. V kovoch FCC sú prekážkami lesné dislokácie a plocha sa s deformáciou zmenšuje.

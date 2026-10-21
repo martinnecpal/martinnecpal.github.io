@@ -1,0 +1,5 @@
+Kompenzácia deformácie a krivky s DRX
+
+Zákon sinh dá jedno číslo – maximálne alebo ustálené napätie. MKP potrebuje celú krivku. Bežné sú dva prístupy.
+Prvý je čisto matematický: Arrheniov model s kompenzáciou deformácie. Kalibráciu zopakujete pri mnohých deformáciách – povedzme každých 0,05 od 0,05 do 0,8 – a každú konštantu, alfa, n, Q a ln A, nafitujete polynómom v deformácii. Lin a spolupracovníci to v roku 2008 spopularizovali pre oceľ 42CrMo a fit má typicky chybu tri až šesť percent. Cena: dvadsať až tridsať koeficientov bez fyzikálneho významu a nezmysly mimo nafitovaného rozsahu deformácie.
+Druhý prístup využíva fyziku: graf ukazuje typický tvar. Krivka stúpa k maximu, pri kritickej deformácii, asi 0,8 deformácie v maxime, začne dynamická rekryštalizácia a napätie klesne na ustálenú hodnotu. Čím vyššie Z, tým vyššie a neskoršie maximum. Tieto krivky sú ilustračné, ale trendy sú presne tie, ktoré používajú mikroštruktúrne modely v DEFORMe.

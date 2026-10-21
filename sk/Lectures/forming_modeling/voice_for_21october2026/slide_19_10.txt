@@ -1,0 +1,8 @@
+Zhrnutie ZA a otázky
+
+Na uzavretie hĺbkového pohľadu päť bodov. Model je odvodený z tepelne aktivovaného pohybu dislokácií. Jeho exponenciálny člen viaže teplotu a rýchlosť deformácie. Tvar určuje mriežka: BCC – citlivá je medza klzu; FCC – citlivé je spevnenie; HCP – oboje. Je to správna voľba pre vysoké rýchlosti deformácie pod približne polovicou teploty tavenia: náraz, obrábanie, vysokorýchlostné tvárnenie. Pre tvárnenie za tepla existuje modifikovaná, poloempirická verzia a DEFORM má zabudovaný tvar pre BCC.
+Štyri otázky na kontrolu – budem ich odkrývať jednu po druhej. Potom sa vrátime hore do hlavnej prednášky a pokračujeme modelmi pre tvárnenie za tepla.
+Otázka jedna: Čo je aktivačná plocha a ako sa líši medzi kovmi BCC a FCC?
+Otázka dva: Ktorá konštanta viaže teplotu a rýchlosť deformácie?
+Otázka tri: Prečo je Zerilli–Armstrong lepší ako Johnson–Cook pre železo pri tisíc za sekundu a mínus 50 stupňoch?
+Otázka štyri: Prečo by ste nemali použiť pôvodný model Zerilli–Armstrong pre kovanie pri 1150 stupňoch?

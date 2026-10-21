@@ -1,0 +1,1 @@
+DEFORM extrapoluje bez varovania – podrží poslednú hodnotu alebo predĺži posledný sklon – takže pretvárny odpor je tam len odhad. Tabuľka do desať za sekundu použitá pri desaťtisíc za sekundu dá asi o osem percent nižšie napätie. Preto porovnajte maximálnu deformáciu, rýchlosť deformácie a teplotu z postprocesora s rozsahom tabuľky.

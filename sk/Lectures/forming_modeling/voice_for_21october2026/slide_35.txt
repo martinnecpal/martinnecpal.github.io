@@ -1,0 +1,6 @@
+Tepelná kapacita alebo merná tepelná kapacita
+
+A tu je tá mätúca. Predvolená hodnota v DEFORMe je tepelná kapacita – energia na objem a stupeň – nie merná tepelná kapacita na hmotnosť. Pre oceľ: 7850 kilogramov na kubický meter krát 440 joulov na kilogram a kelvin dá približne 3,45 megajoulu na kubický meter a kelvin, čo je v jednotkách DEFORMu 3,45 newtona na štvorcový milimeter a stupeň. Ak tam napíšete 440, váš polotovar sa prakticky nikdy nezohreje.
+Alternatívou je možnosť Specific heat; vtedy DEFORM sám násobí hustotou – a to je dôvod, prečo je hustota v záložke Thermal.
+Graf je merná tepelná kapacita uhlíkovej ocele podľa Eurokódu. Všimnite si špičku pri približne 735 stupňoch – premena alfa na gama pohlcuje latentné teplo. V materiáli typu Regular táto špička predstavuje latentné teplo. V zmesi sa latentné teplo zadáva v údajoch o premene – takže ho nesmiete mať dvakrát.
+Otázka pre študentov: Študent zadá mernú tepelnú kapacitu 460 do poľa tepelnej kapacity v úlohe v SI. Čo sa stane s teplotou polotovaru?

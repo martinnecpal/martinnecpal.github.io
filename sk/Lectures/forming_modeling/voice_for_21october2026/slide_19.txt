@@ -1,0 +1,5 @@
+Zerilli–Armstrong
+
+Zerilli a Armstrong odvodili svoj model z mechaniky dislokácií. Kľúčový fyzikálny poznatok je rozdiel medzi kryštálovými mriežkami. V kovoch s priestorovo centrovanou kubickou mriežkou – feritických oceliach – pôsobí teplota a rýchlosť deformácie hlavne na medzu klzu, pretože dislokácie musia prekonať odpor mriežky. V kovoch s plošne centrovanou kubickou mriežkou – meď, hliník, nikel – pôsobia na člen spevnenia.
+Graf používa pôvodné konštanty z roku 1987. Medzi teplotou kvapalného dusíka a izbovou teplotou stratí železo asi polovicu pevnosti, meď len asi tretinu – a počiatočná medza klzu medi sa takmer nemení. To je známa krehkosť feritických ocelí pri nízkych teplotách oproti húževnatosti medi a austenitických ocelí.
+DEFORM ponúka vo svojom zozname tvar pre BCC. Použite ZA namiesto Johnsona–Cooka, keď potrebujete fyzikálne podloženú väzbu teploty a rýchlosti, napríklad pri vysokorýchlostnom tvárnení v širokom rozsahu teplôt.

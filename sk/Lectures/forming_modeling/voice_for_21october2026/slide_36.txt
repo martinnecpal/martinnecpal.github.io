@@ -1,0 +1,5 @@
+Emisivita a hustota
+
+Emisivita riadi sálanie z voľných povrchov. Sálanie rastie so štvrtou mocninou absolútnej teploty, takže pri polotovare s 1200 stupňami dominuje tepelným stratám počas prenosu z pece k lisu. Oxidovaná oceľ má emisivitu 0,7 až 0,9 – hodnota 0,7, ktorú ste videli na snímke obrazovky. Leštený hliník je pod 0,1 – preto hliníkové polotovary chladnú sálaním pomaly.
+Obrázok ukazuje voľné kovanie veľkého ingotu: proces trvá hodiny a väčšina teplotných strát vzniká sálaním medzi úbermi. Tu je emisivita vstupom prvého rádu.
+Hustota má tri úlohy: hmotnosť a zotrvačnosť pri bucharoch a vretenových lisoch, možnosť Specific heat a hustotu ako funkciu teploty, ktorá spôsobuje zmenu objemu pri tepelnom spracovaní.

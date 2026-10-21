@@ -1,0 +1,7 @@
+Pasca extrapolácie
+
+Toto je najdôležitejšia snímka podprezentácie. Vygeneroval som body skúšky ťahom medzi 2 a 20 percentami deformácie a metódou najmenších štvorcov som na ne nafitoval všetky štyri zákony. V nameranom rozsahu – modrý pás – ich nerozlíšite; chyby sú pod jedným percentom.
+Teraz extrapolujte do deformácie dva, čo je pri pechovaní za studena bežné. Voce dá asi 667 megapascalov, Hollomon 714, Swift 1184 a Ludwik 1401. To je dvojnásobný rozdiel medzi najnižšou a najvyššou hodnotou – z tých istých údajov.
+Sila lisu a napätia v zápustke sú úmerné pretvárnemu odporu, takže samotná voľba zákona zmení predpovedanú silu zhruba o plus mínus tridsaťpäť percent. Ktorý je správny? To vám žiadne údaje zo skúšky ťahom nepovedia. Fyzikálne sa nasýtenie podľa Voceho hodí pre hliník a meď; ocele s malým zotavením sa spevňujú ďalej skôr podľa mocninového zákona.
+Z toho pravidlo: fitujte na údaje, ktoré pokrývajú rozsah deformácií procesu. Pre kovanie za studena to znamená tlakové alebo krútiace skúšky do deformácie jedna či dva. Fity iba zo skúšky ťahom sú v poriadku pre tvárnenie plechov, nie pre objemové tvárnenie.
+Otázka pre študentov: Ktorému zo štyroch zákonov by ste verili pri pechovaní hliníkového nitu za studena – a prečo?

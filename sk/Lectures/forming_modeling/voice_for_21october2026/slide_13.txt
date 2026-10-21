@@ -1,0 +1,6 @@
+Vplyv teploty a rýchlosti deformácie
+
+Dve krivky z učebnice predmetu: pri konštantnej rýchlosti deformácie zvýšenie teploty krivku zníži; pri konštantnej teplote zvýšenie rýchlosti deformácie krivku zvýši. Aký silný je každý z vplyvov, závisí od homologickej teploty – teploty delenej teplotou tavenia v kelvinoch.
+Tvárnenie za studena, pod približne 0,3 teploty tavenia: dominuje deformačné spevnenie a citlivosť na rýchlosť deformácie m je blízko nuly. Tvárnenie za tepla, nad približne polovicou teploty tavenia: spevnenie je vyvážené zotavením a dynamickou rekryštalizáciou, krivka sa splošťuje a citlivosť na rýchlosť stúpa na 0,1 až 0,2. Superplastické zliatiny idú nad 0,3.
+Nezabudnite, že teplota sa počas tvárnenia sama mení: asi 90 percent plastickej práce sa premení na teplo. Pri rýchlom kovaní za studena sa polotovar môže zohriať o sto stupňov aj viac, takže aj „studená“ simulácia potrebuje tepelné údaje.
+Otázka pre študentov: Oceľ pri 1100 stupňov Celzia, teplota tavenia približne 1500 stupňov Celzia: tvárnenie za studena, za poloohrevu alebo za tepla? A hliník pri 20 stupňov Celzia?

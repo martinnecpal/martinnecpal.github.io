@@ -1,0 +1,5 @@
+Tri zátvorky
+
+Pozrime sa na každú zátvorku zvlášť. Prvá je jednoducho Ludwikov zákon spevnenia – krivka spevnenia pri referenčnej rýchlosti deformácie a teplote.
+Druhá, ľavý graf, je rýchlostný faktor. Je lineárny v logaritme rýchlosti deformácie: pri C rovnom 0,0134 dajú štyri rády rýchlosti deformácie o dvanásť percent vyššie napätie. Dva praktické detaily. Pod referenčnou rýchlosťou je faktor menší ako jedna, preto zvoľte ako referenciu svoju najnižšiu skúšobnú rýchlosť alebo nechajte program hodnotu orezať. A keďže je C konštantné, model nedokáže ukázať prudký nárast pretvárneho odporu, ktorý mnohé kovy vykazujú nad približne tisíc až desaťtisíc za sekundu.
+Tretia, pravý graf, je tepelné zmäkčenie: jedna mínus homologická teplota na m. Pri m menšom ako jedna materiál mäkne skoro; pri m väčšom ako jedna si pevnosť udrží dlhšie. Pri teplote tavenia je napätie nulové. Pod referenčnou teplotou je T s hviezdičkou záporné a neceločíselná mocnina záporného čísla nie je definovaná – väčšina programov tam T s hviezdičkou jednoducho nastaví na nulu.

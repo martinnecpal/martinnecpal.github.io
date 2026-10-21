@@ -1,0 +1,1 @@
+Exponent n dá graf logaritmu rýchlosti deformácie voči logaritmu hyperbolického sínusu pri konštantnej teplote. Aktivačnú energiu Q dá graf logaritmu hyperbolického sínusu voči prevrátenej hodnote teploty pri konštantnej rýchlosti deformácie; Q je R krát n krát sklon.

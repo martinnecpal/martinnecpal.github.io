@@ -1,0 +1,10 @@
+Obmedzenia, zhrnutie a otázky
+
+Napokon obmedzenia. Zákon sinh opisuje ustálené alebo maximálne napätie; pre celú krivku potrebujete kompenzáciu deformácie alebo model rekryštalizácie. Konštanty platia len v odskúšanom okne a fázová premena – ferit na austenit, alfa na beta v titáne – mení aktivačnú energiu, takže cez ňu nefitujte. Nie je to model pre tvárnenie za studena ani za poloohrevu. A pri vysokých rýchlostiach deformácie sa skúšobná vzorka ohrieva, takže údaje pred fitovaním korigujte.
+Zhrnutie v štyroch bodoch: Z spája teplotu a rýchlosť deformácie do jedného parametra s absolútnou teplotou. Jeho fyzikou je tepelne aktivované, difúziou riadené tečenie. Zákon sinh spája mocninový a exponenciálny zákon a dá sa invertovať na pretvárny odpor v uzavretom tvare. A Z určuje aj rekryštalizovanú veľkosť zrna a bezpečné procesné okná.
+Na záver päť otázok. Na prvú si vezmite kalkulačky: vyjde približne 1,3 krát desať na dvanástu. Potom sa vrátime hore do hlavnej prednášky.
+Otázka jedna: Vypočítajte Z pre 1100 stupňov, 5 za sekundu a aktivačnú energiu 300 kilojoulov na mól.
+Otázka dva: Prečo zákon sinh funguje pri nízkych aj pri vysokých napätiach?
+Otázka tri: Ktorý graf dá n a ktorý Q?
+Otázka štyri: Výkovok má mať jemnejšie zrno. Zvýšite alebo znížite Z – a ako v praxi?
+Otázka päť: Prečo je model s kompenzáciou deformácie riskantný nad deformáciou 0,8?

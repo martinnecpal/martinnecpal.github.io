@@ -1,0 +1,5 @@
+Youngov modul a Poissonovo číslo
+
+Hookov zákon, Poissonovo číslo a modul pružnosti v šmyku – tie poznáte z pružnosti a pevnosti. V DEFORMe zadáte E a ný; modul v šmyku a objemový modul z nich vyplývajú.
+Pozrite sa na stĺpcový graf v logaritmickej mierke. Tvárnené kovy ležia v úzkom pásme medzi približne 45 a 210 gigapascalmi; vložky zo spekaného karbidu sú trikrát tuhšie ako oceľ, a práve preto sa používajú tam, kde sa zápustka nesmie prehnúť.
+Jeden dôsledok uvidíte v prednáške o plechoch: odpruženie rastie s pomerom napätia a modulu. Hliník má tretinový modul oproti oceli, takže pri rovnakom napätí odpruží približne trikrát viac. Preto sú hliníkové karosárske diely problémom odpruženia.

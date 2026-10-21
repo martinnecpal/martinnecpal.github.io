@@ -1,0 +1,6 @@
+Kde sa Z a zákon sinh používajú
+
+Kde sa toto všetko používa? Prakticky všade nad polovicou teploty tavenia. Pri zápustkovom kovaní za tepla dáva zákon sinh pretvárny odpor pre zaplnenie zápustky a silu lisu a Z vstupuje do predpovede veľkosti zrna. Pri valcovaní za tepla dáva stredný pretvárny odpor každého úberu a Z rozhoduje, nakoľko materiál medzi úbermi rekryštalizuje.
+Pretláčanie hliníka je klasická aplikácia: model sinh podľa Shepparda a Wrighta je štandardom už desaťročia a používa sa na predpoveď výstupnej teploty a maximálnej rýchlosti pretláčania pred vznikom povrchových trhlín.
+Pri izotermickom kovaní titánových a niklových zliatin sú rýchlosti deformácie nízke, blízko oblasti tečenia, a záleží na citlivosti na rýchlosť zo zákona sinh. A pri návrhu procesu umožňuje myšlienka rovnakého Z prenášať laboratórne výsledky na lis a procesné mapy pomáhajú zvoliť bezpečné okno.
+Obrázky ukazujú dve typické aplikácie DEFORMu: postup kovania disku za tepla a valcovanie krúžkov, kde sa teplota a rýchlosť deformácie – a teda Z – plynule menia pozdĺž valcovacej medzery.

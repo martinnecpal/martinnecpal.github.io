@@ -1,0 +1,5 @@
+Kinematické spevnenie a Bauschingerov efekt
+
+Kinematické spevnenie je druhý extrém: plocha plasticity si zachová veľkosť, ale posúva sa, stred je posunutý o spätné napätie alfa. Prečo by na tom malo záležať? Pozrite sa na graf. Materiál natiahneme na 5 percent deformácie a potom zaťaženie obrátime. Pri izotropnom spevnení začne v tlaku tiecť až pri rovnakej veľkosti napätia, akú dosiahol v ťahu. Pri kinematickom spevnení zostáva elastický rozsah široký dve sigma nula, takže v tlaku začne tiecť oveľa skôr. Toto skoré plastické tečenie pri obrátení zaťaženia je Bauschingerov efekt a skutočné kovy ho vykazujú.
+Pri tvárnení plechov sa kov ohýba a vyrovnáva cez polomery nástroja a brzdiace rebrá – presne obrátenie zaťaženia. Ak Bauschingerov efekt zanedbáte, predpoveď odpruženia nesedí. Najjednoduchšie zákony sú Pragerov a Zieglerov; Armstrong–Frederick pridáva nasýtenie. V praxi sa v rozbaľovacom zozname pravidla spevnenia volí zmiešané pravidlo – časť izotropná, časť kinematická.
+Otázka pre študentov: Aké pravidlo spevnenia pre zápustkový výkovok a aké pre U-profil s odpružením?

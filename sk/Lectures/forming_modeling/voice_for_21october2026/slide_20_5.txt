@@ -1,0 +1,7 @@
+Kalibrácia alfa, n, Q a A
+
+Ako sa určia štyri konštanty? Začnite tlakovými skúškami za tepla, typicky na Gleeble: štyri až šesť teplôt a štyri rýchlosti deformácie. Z každej krivky vezmite maximálne napätie alebo ustálené napätie.
+Druhý krok: vyneste logaritmus rýchlosti deformácie voči logaritmu napätia – sklon dá n s čiarkou – a voči samotnému napätiu – sklon dá beta. Alfa je beta lomeno n s čiarkou.
+Tretí krok: zlogaritmujte zákon sinh. Graf ln sinh alfa sigma voči ln rýchlosti deformácie dá rovnobežné priamky, jednu pre každú teplotu – graf. Sklon je jedna lomeno n.
+Štvrtý krok: zvislé vzdialenosti medzi týmito priamkami pochádzajú od teploty. Vyneste ln sinh voči jednej lomeno T pri konštantnej rýchlosti deformácie; sklon krát n krát R je aktivačná energia Q. Piaty krok: úsek dá A.
+Pod rámčekmi je publikovaný príklad pre oceľ 30CrMoA: alfa 0,011, n 4,4, Q 262 kilojoulov na mól, s koreláciou 0,98. To je štandardný postup – nájdete ho v stovkách článkov.

@@ -1,0 +1,1 @@
+Železo má mriežku BCC, takže jeho medza klzu závisí silno a súčasne od teploty aj od rýchlosti deformácie. Model Zerilli–Armstrong ich viaže, kým Johnson–Cook má konštantné C, nezávislé zátvorky a pod referenčnou teplotou zápornú homologickú teplotu.

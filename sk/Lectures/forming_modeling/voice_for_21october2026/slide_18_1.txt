@@ -1,0 +1,5 @@
+Pôvod modelu
+
+Model Johnson–Cook publikovali v roku 1983 Gordon Johnson a William Cook z firmy Honeywell na Medzinárodnom sympóziu o balistike v Haagu. Ich cieľ bol praktický: model dostatočne jednoduchý na to, aby bežal v explicitných programoch pre náraz – v ich vlastnom programe EPIC – a s konštantami, ktoré sa dajú získať z niekoľkých štandardných skúšok.
+Použili skúšky krutom v rozsahu rýchlostí deformácie, statický ťah a ťahové skúšky na Hopkinsonovej tyči pri zvýšených teplotách. Model potom overili Taylorovými nárazovými skúškami valčekov s deformáciami nad dva – skúškami, ktoré sa pri fitovaní nepoužili. O dva roky neskôr publikovali doplnkový model porušenia.
+Vpravo: rovnica a päť konštánt. A, B a n pochádzajú z kvázistatických skúšok; C zo skúšok pri vysokej rýchlosti; m zo skúšok pri zvýšenej teplote. K tomu tri referenčné hodnoty: referenčná rýchlosť deformácie, často jedna za sekundu; referenčná teplota; a teplota tavenia.

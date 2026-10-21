@@ -1,0 +1,5 @@
+Modely tečenia v DEFORMe
+
+Možnosti tečenia v DEFORMe. Najbežnejší je Nortonov mocninový zákon: rýchlosť tečenia úmerná napätiu na n. Opisuje ustálené tečenie a používa sa na relaxáciu napätí. Bailey–Norton pridáva čas na mocninu menšiu ako jedna, čím zachytí aj primárne tečenie.
+Perzyna je viskoplastický model nadmerného napätia: rýchlosť tečenia závisí od toho, o koľko napätie prekročí medzu klzu. Soderbergov a exponenciálny zákon pokrývajú oblasti nízkych a vysokých napätí a tabuľková možnosť priamo preberá namerané údaje.
+Poznámka k Nortonovmu exponentu: tri až osem znamená dislokačné tečenie; približne jedna znamená difúzne tečenie, typické pre jemnozrnné alebo superplastické materiály. A údaje o tečení sa extrapolujú ešte horšie ako pretvárny odpor – fitujte ich na rozsah napätí a teplôt, ktorý simulujete.

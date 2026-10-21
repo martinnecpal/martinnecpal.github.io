@@ -1,0 +1,4 @@
+Titulná snímka
+
+Dobrý deň. Minulý týždeň sme porovnali programy na simuláciu tvárnenia a pol hodiny sme venovali programu DEFORM. Dnes v preprocesore DEFORMu otvoríme jedno okno – okno Material – a zostaneme v ňom dve hodiny.
+Znie to úzko, ale takmer každé číslo, ktoré simulácia vráti – sila lisu, teplota, zaplnenie zápustky, veľkosť zrna, trhliny – sa počíta z toho, čo do tohto okna zadáte. Na konci dnešnej prednášky by ste mali vedieť pozrieť sa na materiál v DEFORMe a povedať, aké údaje potrebuje pre váš proces, odkiaľ tieto údaje pochádzajú a kedy im nemôžete veriť.

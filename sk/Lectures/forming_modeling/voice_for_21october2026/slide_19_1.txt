@@ -1,0 +1,6 @@
+Pôvod a motivácia
+
+Táto krátka podprezentácia ide hlbšie do jedného modelu, modelu Zerilli–Armstrong, ktorý som vám pred chvíľou ukázal na jednej snímke. Pôjdeme dole, snímku po snímke, a potom sa vrátime hore k hlavnej línii prednášky.
+Model publikovali v roku 1987 Frank Zerilli a Ronald Armstrong, ktorí pracovali pre US Naval Surface Warfare Center. Ich zákazníkmi boli ľudia, ktorí simulovali náraz, prienik pancierom a výbuchové zaťaženie – veľmi vysoké rýchlosti deformácie, široký rozsah teplôt. Model Johnson–Cook sa objavil o štyri roky skôr a bol štandardom. Johnson–Cook je však fit: tri nezávislé zátvorky, rovnaký tvar pre každý kov.
+Zerilli a Armstrong si všimli niečo, čo experimenty ukazovali už dlho: železo a meď reagujú inak. V železe závisí od teploty a rýchlosti deformácie silno samotná medza klzu. V medi sa medza klzu takmer nemení – mení sa spevnenie. Namiesto fitovania preto rovnicu odvodili z toho, ako sa pohybujú dislokácie, a tvar nechali zvoliť kryštálovú mriežku.
+Tabuľka zhŕňa rozdiel. Zapamätajte si dve kľúčové slová: väzba teploty a rýchlosti deformácie a tvar závislý od mriežky.

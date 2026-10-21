@@ -1,0 +1,4 @@
+Publikované konštanty
+
+Tu sú konštanty z pôvodného článku z roku 1983 a k nim sada pre AISI 1045, ktorú sme použili na hlavnej snímke. Všimnite si rozsahy: A od 90 megapascalov pre žíhanú meď po takmer 800 pre zakalenú oceľ 4340; C medzi 0,006 a 0,06 – vplyv rýchlosti je teda mierny; a m okolo jednej, čo znamená zhruba lineárne zmäkčovanie s teplotou.
+Dve varovania. Každá sada patrí jednému stavu materiálu – tepelnému spracovaniu, tvrdosti – a rozsahu skúšok, na ktoré bola nafitovaná. A publikované sady pre tú istú značku sa veľmi líšia; len pre AISI 1045 nájdete v literatúre niekoľko dosť odlišných sád. Preto pred použitím akejkoľvek sady vykreslite krivky spevnenia pri vašej rýchlosti deformácie a teplote a porovnajte ich s údajmi, ktoré máte.

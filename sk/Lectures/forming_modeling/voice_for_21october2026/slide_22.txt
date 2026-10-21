@@ -1,0 +1,5 @@
+Voľba modelu pretvárneho odporu
+
+Na záver bloku o pretvárnom odpore rozhodovací návod. Začnite procesom. Tvárnenie za studena – mocninový zákon, pretože dominuje spevnenie. Kovanie za poloohrevu a za tepla – nameraná tabuľka alebo model sinh-Arrhenius, ak musíte extrapolovať v teplote. Obrábanie – Johnson–Cook alebo Zerilli–Armstrong. Dlhá výdrž na teplote – model tečenia, to je náš blok 6. Tvárnenie plechov s odpružením – anizotropná podmienka plasticity a kinematické spevnenie, to je blok 5.
+A pod tým všetkým červená čiara: nech zvolíte akýkoľvek model, porovnajte rozsah deformácie, rýchlosti deformácie a teploty, na ktorý bol fitovaný, s rozsahom, ktorý dosahuje váš proces. To je pol hodiny látky v jednej vete.
+Otázka pre študentov: Kovanie kľukového hriadeľa za tepla pri 1200 stupňov Celzia – aký model a akú skúšku by ste objednali?

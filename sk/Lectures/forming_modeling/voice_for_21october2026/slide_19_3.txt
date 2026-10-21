@@ -1,0 +1,7 @@
+Od Arrhenia k rovnici ZA
+
+Teraz matematika v štyroch krokoch. Prvý krok: z Arrheniovho zákona Zerilli a Armstrong odvodili, že tepelné napätie klesá s teplotou exponenciálne, s exponentom beta, ktorý sám závisí od logaritmu rýchlosti deformácie. Amplitúda obsahuje Taylorov faktor M, aktivačnú energiu pri absolútnej nule, Burgersov vektor b a aktivačnú plochu A – plochu, ktorú dislokácia opíše počas jednej aktivácie.
+Druhý krok, kovy BCC. Prekážkou je samotná mriežka – Peierlsova bariéra – a jej veľkosť sa s deformáciou nemení. A je teda konštantné a tepelný člen nezávisí od deformácie. Deformačné spevnenie sa objaví ako samostatný atermický mocninový člen C5 krát deformácia na n. To je tvar pre BCC.
+Tretí krok, kovy FCC. Prekážkami sú lesné dislokácie. Ich hustota rastie s deformáciou lineárne, takže vzdialenosť medzi nimi – aj aktivačná plocha – klesá s odmocninou deformácie. Dosaďte A úmerné deformácii na mínus jednu polovicu do prvého kroku a dostanete tvar pre FCC: odmocnina deformácie násobená exponenciálou. Deformácia a teplota sú teraz zviazané v jednom člene.
+Štvrtý krok: C0 zhŕňa atermické napätie a Hallov–Petchov člen pre veľkosť zrna. Vpravo je význam a jednotka každej konštanty. Zapamätajte si posledný riadok: teplota v kelvinoch, rýchlosť deformácie za sekundu.
+Otázka pre študentov: Prečo tvar pre FCC násobí odmocninu deformácie exponenciálou, kým tvar pre BCC ich sčítava?

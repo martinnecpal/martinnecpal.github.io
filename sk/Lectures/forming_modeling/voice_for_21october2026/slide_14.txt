@@ -1,0 +1,7 @@
+Skúšky na získanie kriviek spevnenia
+
+Odkiaľ tieto krivky pochádzajú? Zo štyroch skúšok. Skúška ťahom je štandard, ale krčok ju obmedzuje na deformácie 0,2 až 0,3 – sama osebe je pre kovanie nepoužiteľná, pretože tam deformácie dosahujú 2 až 3.
+Skúška tlakom – pechovanie valčeka – dosahuje deformácie okolo jednej. Jej slabinou je trenie: vzorka sa súdkovito vydúva, napätie už nie je jednoosové a nameranú silu treba korigovať, často inverznou MKP priamo v DEFORMe.
+Gleeble – na fotografii – je termomechanický simulátor. Vzorku ohrieva priamym odporovým ohrevom a stláča ju pri riadenej teplote a rýchlosti deformácie; takto sa meria väčšina kriviek za tepla v knižniciach. Pod obrázkom je odkaz na krátke video o Gleeble, ak si ho chcete pozrieť.
+Pre rýchlosti deformácie tisícok za sekundu – obrábanie, náraz – používame delenú Hopkinsonovu tyč, náčrt vpravo: úderník narazí do tyče, vlna prejde malou vzorkou a tenzometre dajú napätie a rýchlosť deformácie.
+Tabuľka hovorí, na čo je ktorá skúška vhodná. Skúšku krutom pridávam pre úplnosť: dosahuje obrovské deformácie a používa sa pri štúdiu valcovania za tepla a rekryštalizácie.

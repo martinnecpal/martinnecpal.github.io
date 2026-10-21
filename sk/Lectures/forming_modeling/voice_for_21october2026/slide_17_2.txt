@@ -1,0 +1,7 @@
+Význam n: Considèrovo kritérium
+
+Čo vlastne n znamená? Zderivujte Hollomonov zákon: rýchlosť spevnenia je n krát napätie lomeno deformácia. Exponent n teda hovorí, ako silno sa materiál spevňuje v pomere k aktuálnemu napätiu.
+Teraz skúška ťahom. Sila je napätie krát aktuálny prierez. Keď sa vzorka predlžuje, prierez klesá a napätie rastie. Sila dosiahne maximum – a začne sa tvoriť krčok – keď rýchlosť spevnenia klesne na hodnotu samotného napätia. To je Considèrovo kritérium. Dosaďte Hollomonov zákon a dostanete krásny výsledok: rovnomerná skutočná deformácia sa rovná n.
+Graf to ukazuje: červená krivka skutočného napätia a modrá krivka rýchlosti spevnenia sa pretínajú presne pri deformácii 0,24, kde má sivá inžinierska krivka – sila lomeno pôvodný prierez – svoje maximum.
+Exponent n je teda mierou toho, ako dlho materiál rozkladá deformáciu, kým sa lokalizuje. Austenitická nehrdzavejúca oceľ s n okolo 0,45 sa veľmi natiahne a silno sa spevní; za studena tvárnená alebo vysokopevná oceľ s n rovným 0,1 vytvorí krčok skoro. A máte zadarmo kontrolu: n, ktoré nafitujete, by malo byť blízko rovnomerného predĺženia zo skúšky ťahom.
+Otázka pre študentov: Skúška ťahom ukazuje rovnomerné predĺženie 22 percent (inžinierske). Aké n očakávate?

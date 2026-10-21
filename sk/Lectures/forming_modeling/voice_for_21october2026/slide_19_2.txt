@@ -1,0 +1,6 @@
+Fyzikálny základ: tepelná aktivácia
+
+Tu je fyzika. Pohybujúca sa dislokácia naráža na dva druhy prekážok. Prekážky s dlhým dosahom – napäťové polia iných dislokácií, hranice zŕn – sú široké; tepelné kmitanie atómov nepomôže ich prekonať. Dávajú atermickú časť, sigma G.
+Prekážky s krátkym dosahom sú úzke vrcholy: v kovoch BCC Peierlsove kopce samotnej mriežky, v kovoch FCC lesné dislokácie, ktoré musí pohybujúca sa dislokácia pretnúť. Tu tepelné kmitanie pomáha. Pôsobiace napätie zdvihne dislokáciu časť cesty a tepelná fluktuácia urobí zvyšok.
+Frekvencia úspešných preskokov sa riadi Arrheniovým zákonom. Z neho vyplývajú dva známe javy. Ak teplota stúpne, tepelné fluktuácie sú silnejšie, takže treba menšie napätie. Ak stúpne rýchlosť deformácie, dislokácia má menej času čakať na šťastnú fluktuáciu, takže treba väčšie napätie. A veľkosť zrna pridáva Hallov–Petchov člen.
+Celkový pretvárny odpor je teda atermická časť plus tepelná časť plus Hallov–Petchov člen. Celý model ZA je o tom, ako správne zapísať tepelnú časť.

@@ -1,0 +1,5 @@
+Model porušenia Johnson–Cook
+
+Johnson a Cook pridali v roku 1985 model porušenia s rovnakou štruktúrou. Deformácia pri porušení závisí od triaxiality napätia – stredné napätie lomeno efektívne napätie – krát rýchlostná zátvorka a teplotná zátvorka. Poškodenie sa akumuluje ako súčet prírastkov deformácie delených aktuálnou deformáciou pri porušení; keď dosiahne jednotku, prvok zlyhá a zvyčajne sa odstráni.
+Graf pre oceľ 4340 s konštantami z roku 1985: deformácia pri porušení prudko klesá s rastúcou triaxialitou – od čistého šmyku pri nule cez jednoosový ťah pri jednej tretine po vrubované tyče s vysokou triaxialitou. Vyššia teplota deformáciu pri porušení zvyšuje.
+Konštanty pochádzajú z vrubovaných tyčí s rôznymi polomermi vrubu, zo skúšok krutom, z Hopkinsonovej tyče a zo skúšok za tepla. Model sa používa na oddeľovanie triesky pri obrábaní, pri strihaní a pri balistickej perforácii. Porovnajte ho s normalizovaným kritériom Cockcrofta–Lathama z hlavnej prednášky: Cockcroft–Latham má jednu konštantu; Johnson–Cook päť, ale zachytí rýchlosť a teplotu.

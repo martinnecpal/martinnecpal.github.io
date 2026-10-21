@@ -1,0 +1,5 @@
+Základy tečenia
+
+Tečenie je pomalá plastická deformácia pri konštantnom napätí. Dôležitým sa stáva nad približne 0,4 teploty tavenia – pre oceľ to je približne od 450 stupňov, pre hliník pri dlhých časoch už blízko izbovej teploty, pre olovo dokonca pri izbovej teplote.
+Krivka tečenia má tri štádiá: primárne tečenie, pri ktorom rýchlosť klesá, lebo sa materiál spevňuje; sekundárne alebo ustálené tečenie s minimálnou rýchlosťou, pri ktorom sú spevnenie a zotavenie v rovnováhe; a terciárne tečenie, pri ktorom ho póry a zaškrcovanie urýchlia až k lomu. Vyššie napätie – červená krivka – všetko skráti.
+V DEFORMe je tečenie ďalší člen rýchlosti deformácie popri elastickej, plastickej a tepelnej deformácii; zapína sa v záložke Plastic pre elasticko-plastické objekty – dialóg vpravo.

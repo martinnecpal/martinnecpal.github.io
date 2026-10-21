@@ -1,0 +1,1 @@
+Logaritmus pomernej rýchlosti deformácie je záporný, takže rýchlostný faktor klesne pod jednu a pri veľmi nízkych rýchlostiach je dokonca záporný – napätie je podhodnotené. Ako referenciu zvoľte najnižšiu skúšobnú rýchlosť alebo hodnotu orežte.

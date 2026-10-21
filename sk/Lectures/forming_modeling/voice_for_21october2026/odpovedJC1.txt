@@ -1,0 +1,1 @@
+Konštantu C dajú skúšky pri niekoľkých rýchlostiach deformácie, kvázistatické aj na Hopkinsonovej tyči, pri referenčnej teplote – je to sklon pomeru napätí voči logaritmu rýchlosti deformácie. Exponent m dajú skúšky pri zvýšených teplotách pri referenčnej rýchlosti.

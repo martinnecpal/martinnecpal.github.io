@@ -29,6 +29,11 @@ lang: "sk"
       <td><a href="30september2026.html" target="_blank" rel="noopener">Softvér a metódy simulácie procesov tvárnenia</a></td>
       <td>Analytické metódy teórie plasticity, prehľad softvéru (Ansys Forming, Simufact Forming, Abaqus, Moldflow), DEFORM ako softvér cvičení a špeciálny simulačný softvér.</td>
     </tr>
+    <tr>
+      <td>21. 10. 2026</td>
+      <td><a href="21october2026.html" target="_blank" rel="noopener">Materiálové údaje v programe DEFORM</a></td>
+      <td>Okno Material, elastické údaje, pretvárny odpor a jeho modely (mocninový zákon, Johnson–Cook, Zerilli–Armstrong, sinh-Arrhenius) s hĺbkovými pohľadmi, podmienky plasticity a spevnenie, tečenie, tepelné údaje, mikroštruktúra a porušenie.</td>
+    </tr>
   </tbody>
 </table>
 

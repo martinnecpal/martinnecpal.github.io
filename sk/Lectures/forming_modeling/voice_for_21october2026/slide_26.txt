@@ -1,0 +1,5 @@
+R-hodnoty, Lankford, Barlat
+
+R-hodnota, alebo Lankfordov súčiniteľ, sa meria v skúške ťahom plechu: pomer deformácie v šírke k deformácii v hrúbke. R väčšie ako jedna znamená, že plech odoláva stenčovaniu – dobré pre hlboké ťahanie. Hlbokoťažné ocele ako DC04 majú priemerné R približne 1,6 až 1,9.
+Zmena R so smerom, delta r, spôsobuje cípy na ťahaných výťažkoch – náčrt v strede: štyri cípy pri 0 a 90 stupňoch, keď je delta r kladné.
+Vpravo je Hillova plocha plasticity pre R rovné 1,8 a 0,6 v porovnaní s von Misesom. Vysoké R natiahne plochu v dvojosovom smere – plech je pevnejší pri rovnomernom dvojosovom naťahovaní. Hliníkové zliatiny s R pod jednou vykazujú správanie, ktoré Hill 48 dobre neopíše; na to bola navrhnutá nekvadratická podmienka Barlata z roku 1991 s exponentom 8 pre kovy FCC.

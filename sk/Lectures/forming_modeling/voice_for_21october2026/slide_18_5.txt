@@ -1,0 +1,5 @@
+Adiabatický ohrev a väzba
+
+Johnson–Cook ukáže svoj skutočný charakter, až keď je zviazaný s teplotou. Pri rýchlej deformácii sa asi deväťdesiat percent plastickej práce premení na teplo – Taylorov–Quinneyho súčiniteľ – a nad približne desať až sto za sekundu teplo nestihne odtiecť. Deformácia je adiabatická.
+Graf: AISI 1045 pri desaťtisíc za sekundu. Sivá krivka je izotermická pri 20 stupňoch. Červená zahŕňa nárast teploty z plastickej práce – asi 258 kelvinov pri deformácii jedna – a tepelná zátvorka krivku stiahne nadol. Spevnenie a zmäkčenie súperia; kde vyhrá zmäkčenie, deformácia sa lokalizuje do adiabatických šmykových pásov. To je presne mechanizmus článkovitej triesky pri obrábaní zakalených ocelí a titánu.
+Dva dôsledky pre prax: simulácie obrábania a nárazu počítajte ako zviazané termomechanické analýzy s hustotou, mernou tepelnou kapacitou a tepelnou vodivosťou; a nikdy nefitujte Johnsona–Cooka na krivky z Hopkinsonovej tyče, akoby boli izotermické.

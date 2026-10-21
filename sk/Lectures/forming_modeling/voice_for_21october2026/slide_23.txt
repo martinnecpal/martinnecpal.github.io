@@ -1,0 +1,5 @@
+Od tenzora napätia k efektívnemu napätiu
+
+Krivka spevnenia pochádza z jednoosovej skúšky, ale vo výkovku má každý bod úplný trojrozmerný stav napätosti – deväť zložiek, šesť nezávislých. Ako ich porovnáme? Tenzor zhustíme do jedného čísla, efektívneho napätia, a povieme, že materiál začne plasticky tiecť, keď efektívne napätie dosiahne pretvárny odpor.
+Najprv odstránime hydrostatickú časť, stredné napätie, pretože samotný tlak kompaktné kovy plasticky nedeformuje. Zostane deviátor napätia. Efektívne napätie podľa von Misesa je odmocnina z troch polovíc jeho dvojitého skalárneho súčinu – alebo v hlavných napätiach známy vzorec s tromi rozdielmi.
+Ako presne sa efektívne napätie počíta, určuje podmienka plasticity v záložke Plastic. O tom sú nasledujúce tri snímky.

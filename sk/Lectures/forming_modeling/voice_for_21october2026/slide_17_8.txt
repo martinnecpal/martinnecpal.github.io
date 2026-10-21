@@ -1,0 +1,9 @@
+Obmedzenia, zhrnutie a otázky
+
+Na záver obmedzenia. Mocninový zákon je empirický, takže ho nemožno bezpečne extrapolovať v deformácii, rýchlosti deformácie ani teplote. Spevnenie je neohraničené a čistý Hollomon začína pri nulovom napätí – v MKP vždy použite člen y alebo Swiftovu počiatočnú deformáciu. Rýchlosť a teplota vstupujú len cez m a teplotné tabuľky, takže to nie je model pre tvárnenie za tepla ani pre náraz. A nehovorí nič o Bauschingerovom efekte ani o anizotropii – tie pochádzajú z podmienky plasticity a pravidla spevnenia, o ktorých hovoríme v bloku 5.
+Zhrnutie v štyroch bodoch je vľavo. Potom päť otázok – k tretej: stonásobné zvýšenie rýchlosti pri m rovnom 0,15 zvýši napätie asi dvojnásobne. Späť hore do hlavnej prednášky, alebo rovno ďalej na Johnsona–Cooka.
+Otázka jedna: Odvoďte z Considèrovho kritéria, že rovnomerná deformácia sa rovná n.
+Otázka dva: Prečo Hollomonov zákon potrebuje v MKP člen y alebo Swiftovu počiatočnú deformáciu?
+Otázka tri: Pri m rovnom 0,15 – ako sa zmení pretvárny odpor, ak rýchlosť deformácie vzrastie stokrát?
+Otázka štyri: Váš fit použil údaje zo skúšky ťahom do deformácie 0,2. Môžete ho použiť pre pechovanie za studena do deformácie 2,5?
+Otázka päť: Ktorý zákon sa nasýti a pre aké materiály je to realistické?

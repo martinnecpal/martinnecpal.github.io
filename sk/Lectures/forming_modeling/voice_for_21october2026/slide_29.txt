@@ -1,0 +1,5 @@
+Yoshida–Uemori a odpruženie
+
+Pokročilé vysokopevné ocele sú najťažší prípad odpruženia a najpoužívanejší model pre ne je Yoshida–Uemori. Používa dve plochy: malú plochu plasticity, ktorá sa pohybuje vnútri väčšej ohraničujúcej plochy. Tým zachytí detaily, ktoré obyčajné kinematické spevnenie nezachytí – plynulý prechod po obrátení zaťaženia, trvalé zmäkčenie a stagnáciu spevnenia.
+Rovnako dôležitý je ďalší jav: modul pri odľahčení ocele klesne po plastickej deformácii o 10 až 20 percent. Vzorec tu opisuje tento pokles a mnohé štúdie odpruženia ukazujú, že je rovnako dôležitý ako model spevnenia.
+Rámček použite ako kontrolný zoznam pre odpruženie: elasticko-plastický objekt, znížený modul, kinematické spevnenie alebo Yoshida–Uemori, anizotropná podmienka plasticity a dostatok prvkov po hrúbke. Yoshida–Uemori potrebuje asi sedem konštánt z cyklických skúšok – to v bežnej knižnici nenájdete.

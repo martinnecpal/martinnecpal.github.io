@@ -1,0 +1,1 @@
+Pri objemovom tvárnení sú plastické deformácie stovky percent a elastické len zlomky percenta, preto tuhoplastická formulácia pružnosť zanedbáva. Modul pružnosti a Poissonovo číslo sú potrebné len pre elastické zápustky, odpruženie, zvyškové napätia a tepelné spracovanie.

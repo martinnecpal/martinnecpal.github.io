@@ -1,0 +1,5 @@
+Citlivosť na teplotu a rýchlosť deformácie
+
+Dva pohľady na citlivosti. Vľavo železo pri deformácii 20 percent: sivá plocha je atermická – deformačné spevnenie a veľkosť zrna – a s teplotou sa nemení. Červená plocha je tepelná časť; pri izbovej teplote a vysokej rýchlosti tvorí asi dve tretiny celku a nad 800 kelvinmi takmer zmizne.
+Vpravo vplyv rýchlosti deformácie pri deformácii 20 percent. Od desať na mínus tretiu po desať na štvrtú za sekundu získa železo pri izbovej teplote asi 350 megapascalov, meď len asi 100.
+Derivácia dole vysvetľuje tento obraz: citlivosť na rýchlosť je C4 krát T krát tepelné napätie. Pri veľmi nízkej teplote je T malé; pri vysokej teplote je malé tepelné napätie; niekde medzi je citlivosť na rýchlosť najväčšia. Johnson–Cook so svojím konštantným C to ukázať nedokáže – a práve preto ZA opisuje kovy BCC pri vysokých rýchlostiach lepšie.

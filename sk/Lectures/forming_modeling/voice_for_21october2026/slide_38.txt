@@ -1,0 +1,5 @@
+Veľkosť zrna a JMAK
+
+Blok 8 – údaje, ktoré idú nad rámec mechaniky. Najprv mikroštruktúra. Počas deformácie za tepla a po nej materiál rekryštalizuje a rekryštalizovaný podiel sa riadi rovnicou JMAK, teda Avramiho rovnicou – krivky v tvare S. Čas do 50-percentnej rekryštalizácie závisí od počiatočnej veľkosti zrna, deformácie, rýchlosti deformácie a teploty cez Arrheniov člen: pri 1100 stupňoch je to zlomok sekundy, pri 900 stupňoch desiatky sekúnd.
+Podobné rovnice dávajú veľkosť zrna po dynamickej rekryštalizácii a rast zrna počas výdrže. V DEFORMe sa tieto konštanty zadávajú pod tlačidlom Grain v oblasti Phase.
+Výsledok je obrázok vpravo: veľkosť zrna v kovanom disku turbíny. Pri leteckých diskoch zákazník predpisuje veľkosť zrna, nielen tvar – je to teda konštrukčná veličina.

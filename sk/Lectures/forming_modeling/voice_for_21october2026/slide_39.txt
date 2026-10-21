@@ -1,0 +1,5 @@
+Fázové premeny a tvrdosť
+
+Pri tepelnom spracovaní potrebuje každá fázová premena kinetiku. Difúzne premeny – ferit, perlit, bainit – sa riadia Avramiho rovnicami, ktorých konštanty pochádzajú z diagramu IRA, rozšíreného na plynulé ochladzovanie pravidlom aditivity. Martenzit je atermický a riadi sa Koistinenovou–Marburgerovou rovnicou: podiel závisí len od toho, ako hlboko pod teplotou Ms sa nachádzate.
+Tvrdosť je potom zmesou tvrdostí fáz, z ktorých každá závisí od zloženia a rýchlosti ochladzovania – to je záložka Hardness. Údaje IRA pochádzajú z dilatometrických skúšok alebo sa vypočítajú zo zloženia, napríklad v Material Suite od SFTC alebo v JMatPro.
+Obrázky: zvyškové obvodové napätie po kalení disku – výsledok zmeny objemu pri premene a tepelného zmrštenia – a matica pechovaná za studena, kde rozloženie tvrdosti pochádza len z deformačného spevnenia.

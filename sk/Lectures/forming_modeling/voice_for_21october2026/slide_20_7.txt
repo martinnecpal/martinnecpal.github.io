@@ -1,0 +1,4 @@
+Z riadi mikroštruktúru
+
+Z nie je len o napätí. Riadi mikroštruktúru. Veľkosť dynamicky rekryštalizovaného zrna sa riadi mocninovým zákonom v Z s malým záporným exponentom, typicky 0,1 až 0,3. Vysoká teplota a pomalé tvárnenie – nízke Z – dajú hrubé zrno; nízka teplota a rýchle tvárnenie – vysoké Z – jemné zrno. Preto sa posledná operácia kovania často robí chladnejšie a rýchlejšie. Tieto rovnice sú tie v údajoch Grain v DEFORMe, s ktorými sa znovu stretneme v bloku 8.
+Z je aj základom procesných máp. V Prasadovom dynamickom materiálovom modeli sa citlivosť na rýchlosť deformácie m – ktorú sme práve odvodili zo zákona sinh – premení na účinnosť disipácie výkonu, dva m lomeno m plus jedna. Oblasti s vysokou účinnosťou, okolo 30 až 55 percent, zvyčajne zodpovedajú dynamickej rekryštalizácii – bezpečné okno. Kde je parameter nestability záporný, materiál má sklon tvoriť šmykové pásy alebo trhliny. Technológovia používajú tieto mapy na voľbu kovacej teploty a rýchlosti.

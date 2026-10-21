@@ -1,0 +1,4 @@
+Kedy sú potrebné elastické údaje
+
+Elastické údaje sa často nechávajú na predvolených knižničných hodnotách, preto si ujasnime, kedy na nich záleží. Pri tuhoplastickom polotovare – štandardnom type objektu pri kovaní – DEFORM elastickú deformáciu zanedbáva. Youngov modul sa jednoducho nepoužije. Plastické deformácie sú stovky percent, elastické zlomok percenta.
+Elastické údaje sú nevyhnutné v troch prípadoch. Po prvé, elastické zápustky: tu je obrázok napätí v zápustke, vložky zápustiek a bandážovacie krúžky. Po druhé, elasticko-plastické výrobky, pri ktorých nás zaujíma, čo sa stane pri odľahčení – odpruženie pri tvárnení plechov, zvyškové napätia. Po tretie, tepelné spracovanie, kde je celková deformácia súčtom elastickej, plastickej, tepelnej a transformačnej zložky a deformácie súčiastky vznikajú z ich súhry.

@@ -1,0 +1,6 @@
+Matematika zákona sinh
+
+Matematika v troch riadkoch. Po prvé inverzia: argument hyperbolického sínusu zapísaný logaritmom dá pretvárny odpor priamo ako funkciu Z. Tento vzorec vyhodnocujú programy MKP v každom integračnom bode.
+Po druhé, derivácia podľa logaritmu rýchlosti deformácie dá citlivosť na rýchlosť m: tangens hyperbolický z alfa sigma delený n krát alfa sigma. Pri nízkom napätí sa blíži k jednej lomeno n – hodnota pre tečenie, okolo 0,2. Pri vysokom napätí klesá k nule. Graf to ukazuje pre tri hodnoty n.
+Po tretie, citlivosť na teplotu vyplýva z tej istej derivácie vynásobenej Q lomeno R T na druhú. Pre našu oceľ pri 1000 stupňoch a jednej za sekundu je alfa sigma 1,32, m asi 0,15 a ochladenie len o desať kelvinov zvýši pretvárny odpor asi o tri percentá. Preto je ochladenie povrchu zápustkou pri kovaní za tepla také dôležité.
+Otázka pre študentov: Ak m rovné 0,15, o koľko stúpne pretvárny odpor, keď sa rýchlosť deformácie zvýši desaťnásobne?

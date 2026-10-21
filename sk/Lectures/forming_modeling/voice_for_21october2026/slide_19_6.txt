@@ -1,0 +1,6 @@
+Konštanty a varianty modelu
+
+Tu sú skutočné konštanty. Pre meď OFHC uvádza pôvodný článok C2 rovné 890 megapascalov, C3 rovné 0,0028 a C4 rovné 1,15 krát desať na mínus štvrtú. C0 je asi 65 megapascalov, zložené z atermických 46,5 plus Hallovho–Petchovho člena pre veľkosť zrna 73 mikrometrov. Pre železo Armco je C1 rovné 1033, C3 asi 0,007, C4 asi 4 krát desať na mínus štvrtú a atermické spevnenie 266 krát deformácia na 0,29. Tantal, používaný na výbuchom formované projektily, má podobnú sadu pre BCC.
+DEFORM ponúka tvar pre BCC priamo v rozbaľovacom zozname pretvárneho odporu – presne výraz, ktorý tu vidíte.
+Vpravo je modifikovaný model ZA podľa Samantaraya, Mandala a Bhaduriho z roku 2009. Bol vyvinutý pre deformáciu za tepla a nafitovaný na tlakové údaje z Gleeble. Viaže deformáciu do teplotného člena a teplotu do rýchlostného člena. Údaje ocelí za tepla fituje dobre – korelácia okolo 0,995 pre titánom modifikovanú austenitickú nehrdzavejúcu oceľ – ale všimnite si, že stratil dislokačnú interpretáciu; je to poloempirický fit so štruktúrou podobnou ZA.
+Model je dostupný v DEFORMe, v LS-DYNA, v explicitných programoch Ansys a cez používateľské podprogramy v Abaqus.

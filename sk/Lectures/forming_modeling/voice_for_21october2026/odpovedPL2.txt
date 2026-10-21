@@ -1,0 +1,1 @@
+Hollomonov zákon dáva pri nulovej deformácii nulové napätie a nekonečný počiatočný sklon, takže nedeformovaný materiál by tiekol pri nulovom napätí. Člen y alebo Swiftova počiatočná deformácia dávajú konečnú počiatočnú medzu klzu.

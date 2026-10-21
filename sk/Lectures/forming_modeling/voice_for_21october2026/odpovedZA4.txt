@@ -1,0 +1,1 @@
+Pri 1150 stupňoch je oceľ približne pri nula celá osem teploty tavenia. Rozhoduje difúziou riadené tečenie, dynamické zotavenie, rekryštalizácia a austenit, a nič z toho model neobsahuje. Atermické spevnenie je navyše nadhodnotené. Použite tabuľku, zákon sinh alebo modifikovaný model.

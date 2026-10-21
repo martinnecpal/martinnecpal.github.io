@@ -1,0 +1,5 @@
+Záložka Thermal
+
+Záložka Thermal má štyri riadky: tepelnú vodivosť, tepelnú kapacitu – alebo mernú tepelnú kapacitu, je tam prepínač – emisivitu a hustotu. Vstupujú do rovnice vedenia tepla na snímke: akumulované teplo sa rovná vedenému teplu plus teplu vznikajúcemu z plastickej práce, z fázovej premeny a z indukcie.
+Všimnite si člen beta krát sigma krát epsilon s bodkou: to je plastická práca premenená na teplo, s beta okolo 0,9 – väzba medzi mechanikou a teplotou.
+Opäť jednotky: tepelná vodivosť v newtonoch na sekundu a stupeň, čo je to isté ako watty na meter a kelvin, takže hodnoty z príručky môžete prevziať priamo. Tepelná kapacita je objemová, v newtonoch na štvorcový milimeter a stupeň. Tá ľudí mätie – o dve snímky.

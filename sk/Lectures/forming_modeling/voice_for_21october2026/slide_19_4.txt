@@ -1,0 +1,7 @@
+Správanie BCC a FCC
+
+Tu je rozdiel viditeľný. Oba grafy sú vypočítané z konštánt z roku 1987 pri rýchlosti deformácie tisíc za sekundu, pre 77, 296 a 600 kelvinov.
+Vľavo železo Armco, BCC. Tri krivky sú rovnobežné: teplota posunie celú krivku nahor alebo nadol o rovnakú hodnotu, pretože pôsobí na medzu klzu. Pri teplote kvapalného dusíka má železo viac ako dvojnásobnú medzu klzu oproti izbovej teplote.
+Vpravo meď OFHC, FCC. Všetky krivky začínajú pri takmer rovnakej medzi klzu a potom sa rozbiehajú: pri nízkej teplote sa meď spevňuje rýchlejšie. Teplota pôsobí na sklon spevnenia, nie na medzu klzu.
+Praktické dôsledky: feritické ocele sú pri nízkych teplotách krehké a silno citlivé na rýchlosť; austenitické ocele, meď a hliník nie. Hexagonálne kovy ako titán a horčík vykazujú obe vlastnosti, preto sa pre ne neskôr navrhol kombinovaný tvar s oboma exponenciálnymi členmi.
+Otázka pre študentov: Feritická a austenitická oceľ sa skúšajú nárazom pri mínus 40 stupňov Celzia. Ktorej sa medza klzu zmení viac?

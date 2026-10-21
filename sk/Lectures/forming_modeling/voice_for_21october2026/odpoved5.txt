@@ -1,0 +1,1 @@
+R-hodnoty namerané pri nula, štyridsiatich piatich a deväťdesiatich stupňoch určujú pomery Hillových konštánt. Delta r predpovedá cípatosť ťahaných výťažkov: keď je kladné, cípy vzniknú pri nula a deväťdesiatich stupňoch, keď je záporné, pri štyridsiatich piatich stupňoch.
