@@ -169,6 +169,21 @@ strong, b {
     margin: 0 auto;
 }
 
+/* Site footer (AI-support note) */
+.site-footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0 0 4px;
+}
+
 /* Card-style section */
 .card {
     background-color: var(--bg-card);
