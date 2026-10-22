@@ -1,9 +1,9 @@
 <footer class="site-footer">
     {% assign footer_lang = page.lang | default: site.default_lang %}
     {% if footer_lang == "sk" %}
-    <p>Texty, prezentácie a hovorený komentár k prednáškam boli pripravené s podporou nástrojov umelej inteligencie (Claude, OmniVoice) a skontrolované autorom.</p>
+    <p>Materiály na tomto webe sú pripravené s podporou nástrojov umelej inteligencie (AI) a skontrolované autorom.</p>
     {% else %}
-    <p>Texts, presentations and lecture narration were prepared with the support of AI tools (Claude, OmniVoice) and reviewed by the author.</p>
+    <p>The materials on this website are created with the help of AI tools and reviewed by the author.</p>
     {% endif %}
     <p>&copy; {{ site.time | date: "%Y" }} Martin Necpal</p>
 </footer>
