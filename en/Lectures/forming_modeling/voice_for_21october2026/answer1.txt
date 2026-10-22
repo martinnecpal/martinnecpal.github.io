@@ -1,0 +1,1 @@
+Flow stress is a function of effective plastic strain, effective strain rate and temperature.

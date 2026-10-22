@@ -1,0 +1,1 @@
+n comes from the logarithm of strain rate against the logarithm of sinh alpha sigma at constant temperature; the slope gives n. Q comes from the logarithm of sinh alpha sigma against one over T at constant strain rate: Q is R times n times the slope.

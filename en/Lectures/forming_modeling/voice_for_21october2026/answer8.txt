@@ -1,0 +1,1 @@
+By calibration. Simulate a test, such as upsetting, tension or a notched bar, up to the strain at which the real specimen cracked. The damage value at the crack site at that moment is C. It depends on the heat of material, its cleanliness and the temperature.

@@ -1,0 +1,1 @@
+Iron is BCC: its yield stress depends strongly and jointly on temperature and strain rate, through the Peierls mechanism. Zerilli–Armstrong couples them through C4 times T. Johnson–Cook has a constant C and independent brackets, and T star becomes negative below the reference temperature.

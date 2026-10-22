@@ -1,0 +1,1 @@
+No. That is extrapolation by more than ten times. Laws fitted to the same tensile data differ by a factor of two at a strain of two. Use compression or torsion tests to strains of one to two.

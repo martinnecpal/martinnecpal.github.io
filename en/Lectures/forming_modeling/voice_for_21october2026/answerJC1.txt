@@ -1,0 +1,1 @@
+C comes from tests at several strain rates, quasi-static and Hopkinson bar, at the reference temperature: it is the slope of the stress ratio against the logarithm of the normalised strain rate. m comes from tests at elevated temperatures at the reference rate: from the logarithm of one minus the stress ratio against the logarithm of T star.

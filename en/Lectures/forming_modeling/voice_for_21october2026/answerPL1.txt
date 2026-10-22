@@ -1,0 +1,1 @@
+The force is stress times area. At maximum force the change of force is zero, so the hardening rate equals the stress. With Hollomon's law, n K epsilon to the n minus one equals K epsilon to the n, and therefore the uniform strain equals n.

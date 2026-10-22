@@ -1,0 +1,1 @@
+DEFORM extrapolates without a warning. It holds the last value or extends the last slope, so the flow stress there is a guess. For example, a table up to ten per second used at ten thousand per second is about eight percent too low. Compare the maximum strain, strain rate and temperature from the post-processor with the table range.

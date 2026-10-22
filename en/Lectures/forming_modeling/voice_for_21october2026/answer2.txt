@@ -1,0 +1,1 @@
+In bulk forming the plastic strains, hundreds of percent, dwarf the elastic ones, fractions of a percent, so the rigid-plastic formulation neglects elasticity. Young's modulus and Poisson's ratio are needed only for elastic dies, springback and residual stresses, and heat treatment.

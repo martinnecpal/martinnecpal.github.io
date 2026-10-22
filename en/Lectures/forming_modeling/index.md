@@ -29,6 +29,11 @@ lang: "en"
       <td><a href="30september2026.html" target="_blank" rel="noopener">Software and methods for forming process simulation</a></td>
       <td>Analytical methods of plasticity theory, software overview (Ansys Forming, Simufact Forming, Abaqus, Moldflow), DEFORM as the lab software, and special simulation software.</td>
     </tr>
+    <tr>
+      <td>21 Oct 2026</td>
+      <td><a href="21october2026.html" target="_blank" rel="noopener">Material data in DEFORM</a></td>
+      <td>The Material window, elastic data, flow stress and its models (power law, Johnson–Cook, Zerilli–Armstrong, sinh-Arrhenius) with deep dives, yield criteria and hardening, creep, thermal data, microstructure and fracture.</td>
+    </tr>
   </tbody>
 </table>
 

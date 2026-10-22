@@ -1,0 +1,1 @@
+At 1150 degrees steel is at about 0.8 of its melting temperature. Diffusion-controlled flow, dynamic recovery, recrystallisation and austenite govern the behaviour, and none of these is in the model. The athermal hardening is also over-predicted. Use a table, the sinh law or the modified Zerilli–Armstrong model.

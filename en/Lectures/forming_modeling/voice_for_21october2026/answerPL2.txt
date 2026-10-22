@@ -1,0 +1,1 @@
+Hollomon gives zero stress at zero strain, with an infinite initial slope, so undeformed material would flow at zero stress. The y term or Swift's pre-strain gives a finite initial yield stress.

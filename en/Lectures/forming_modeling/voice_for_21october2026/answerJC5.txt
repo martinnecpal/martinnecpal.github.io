@@ -1,0 +1,1 @@
+The failure strain falls as triaxiality rises. It is high in pure shear, at zero triaxiality, lower in uniaxial tension, at one third, and lowest in notched bars.

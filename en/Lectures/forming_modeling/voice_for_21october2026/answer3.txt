@@ -1,0 +1,1 @@
+For machining, Johnson–Cook or Zerilli–Armstrong, because of very high strain rates and adiabatic heating. For hot forging, a measured table of flow stress versus strain, strain rate and temperature, or the sinh-Arrhenius law, because the flow is thermally activated and temperature and strain rate interact.

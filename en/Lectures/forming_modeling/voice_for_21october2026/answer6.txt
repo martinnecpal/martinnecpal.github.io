@@ -1,0 +1,1 @@
+In isotropic hardening the yield surface grows uniformly around a fixed centre, and its radius is the current flow stress. In kinematic hardening it keeps its size and moves by the back stress. That gives early reverse yielding, the Bauschinger effect, which is important for springback.

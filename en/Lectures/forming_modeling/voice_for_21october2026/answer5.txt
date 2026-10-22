@@ -1,0 +1,1 @@
+The R-values at zero, forty-five and ninety degrees set the ratios of Hill's constants. Delta r predicts earing of drawn cups: if it is positive, ears form at zero and ninety degrees; if it is negative, ears form at forty-five degrees.

@@ -1,0 +1,1 @@
+Below the reference rate the logarithm is negative, so the rate factor drops below one, and at very low rates it even turns negative. The stress is underestimated. Choose the lowest test rate as the reference, or clip the normalised rate at one.

@@ -1,0 +1,1 @@
+Voce saturates. That is realistic for materials with strong dynamic recovery, such as aluminium and copper, and at elevated temperature. Steels with little recovery keep hardening like a power law.

@@ -1,0 +1,1 @@
+For small x, sinh x is about x, which gives the power law of the creep range. For large x, sinh x is about e to the x over two, which gives the exponential law of power-law breakdown. One formula covers both.

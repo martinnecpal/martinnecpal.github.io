@@ -1,0 +1,1 @@
+It is the area a dislocation sweeps in one thermally activated jump. In BCC metals the obstacle is the Peierls barrier of the lattice, so the area is constant. In FCC metals the obstacles are forest dislocations, so the area is proportional to strain to the minus one half; it shrinks with strain.

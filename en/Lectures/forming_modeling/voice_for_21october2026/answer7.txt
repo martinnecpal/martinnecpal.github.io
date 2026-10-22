@@ -1,0 +1,1 @@
+Heat capacity is per volume, density times specific heat; specific heat is per mass. DEFORM's default field expects heat capacity. For steel, 7850 kilograms per cubic metre times 440 joules per kilogram-kelvin gives about 3.45 newtons per square millimetre per degree. Typing 460 there means the billet practically never heats up.
