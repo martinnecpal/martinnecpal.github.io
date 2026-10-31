@@ -34,13 +34,13 @@ Taktiež mám skúsenosti so základným programovaním v jazykoch Python a MATL
    onmouseover="showPreview(event, '/assets/images/kaggle.png')"
    onmouseout="hidePreview()"
    onclick="openImagePopup('/assets/images/kaggle.png')">dátach</a>,
-vrátane techník <span class="keyword">strojového učenia</span> a hlbokého učenia. Zaujíma ma najmä skúmanie nových technológií, ako je napríklad umelá inteligencia
+vrátane techník <span class="keyword">strojového učenia</span> a hĺbkového učenia. Zaujíma ma najmä skúmanie nových technológií, ako je napríklad umelá inteligencia
 <a href="javascript:void(0);"
    onmouseover="showPreview(event, '/assets/images/CourseraVGI4OHDNYT2Q.png')"
    onmouseout="hidePreview()"
    onclick="openImagePopup('/assets/images/CourseraVGI4OHDNYT2Q.png')"><span class="keyword">AI</span></a>,
 a jej praktické využitie.
-Absolvoval som aj 5-dňový kurz
+Absolvoval praktický kurz
 <a href="javascript:void(0);"
    onmouseover="showPreview(event, '/assets/images/AutumnDataSchool2026.png')"
    onmouseout="hidePreview()"
