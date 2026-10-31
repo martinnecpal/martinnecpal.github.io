@@ -40,6 +40,12 @@ vrátane techník <span class="keyword">strojového učenia</span> a hlbokého u
    onmouseout="hidePreview()"
    onclick="openImagePopup('/assets/images/CourseraVGI4OHDNYT2Q.png')"><span class="keyword">AI</span></a>,
 a jej praktické využitie.
+Absolvoval som aj 5-dňový kurz
+<a href="javascript:void(0);"
+   onmouseover="showPreview(event, '/assets/images/AutumnDataSchool2026.png')"
+   onmouseout="hidePreview()"
+   onclick="openImagePopup('/assets/images/AutumnDataSchool2026.png')"><span class="keyword">Autumn Data School</span></a>
+zameraný na analýzu dát, štatistiku a AI v jazyku Python.
 
 </div>
 

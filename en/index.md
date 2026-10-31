@@ -40,6 +40,12 @@ including <span class="keyword">Machine Learning</span> and deep learning techni
    onmouseout="hidePreview()"
    onclick="openImagePopup('/assets/images/CourseraVGI4OHDNYT2Q.png')"><span class="keyword">AI</span></a>,
 and their practical applications.
+I also completed the 5-day
+<a href="javascript:void(0);"
+   onmouseover="showPreview(event, '/assets/images/AutumnDataSchool2026.png')"
+   onmouseout="hidePreview()"
+   onclick="openImagePopup('/assets/images/AutumnDataSchool2026.png')"><span class="keyword">Autumn Data School</span></a>
+course on data analysis, statistics and AI in Python.
 
 </div>
 
