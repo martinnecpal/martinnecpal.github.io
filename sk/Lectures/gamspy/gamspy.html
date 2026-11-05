@@ -379,6 +379,7 @@
         <ul class="xs">
           <li><strong><abbr title="Philosophiae Doctor">PhD</abbr> (2010):</strong> automatizované projektovanie technologických postupov a integrácia do systémov CAx</li>
           <li>Aplikácie <strong><abbr title="Computer-Aided Design – počítačom podporované konštruovanie">CAD</abbr> / <abbr title="Computer-Aided Manufacturing – počítačom podporovaná výroba">CAM</abbr></strong> a programovanie <abbr title="Numerical Control – číslicové riadenie">NC</abbr> strojov</li>
+          <li><strong><abbr title="Finite Element Method – metóda konečných prvkov">FEM</abbr></strong> modelovanie a simulácia procesov obrábania a tvárnenia</li>
           <li><strong>Laserové obrábanie</strong> na 5-osovom stroji LASERTEC 80 Shape – výučba, záverečné práce, výskum</li>
           <li><strong>Python, <abbr title="MATrix LABoratory">MATLAB</abbr>, dátová veda, <abbr title="Umelá inteligencia">AI</abbr> / strojové učenie</strong> v praxi</li>
         </ul>
@@ -388,27 +389,14 @@
     <aside class="notes">[0:02–0:03] Dodržať jednu minútu. Prechod: projektovanie technológie a výroba sú plné optimalizačných úloh → GAMS a GAMSPy.</aside>
   </section>
 
-  <!-- ═══ 3 · PROGRAM ═════════════════════════════════════════════════════ -->
-  <section>
-    <h2>Program <span class="subtitle" style="font-size:0.55em;">(120 min)</span></h2>
-    <table class="agenda mid">
-      <tr><th>Čas</th><th>Blok</th><th>Obsah</th></tr>
-      <tr><td>0 – 5</td><td>Úvod</td><td>O mne, program</td></tr>
-      <tr><td>5 – 25</td><td>1 · Úvod do <abbr title="General Algebraic Modeling System">GAMS</abbr></td><td>Čo to je, kde sa používa, inštalácia, <abbr title="General Algebraic Modeling System">GAMS</abbr> Studio</td></tr>
-      <tr><td>25 – 40</td><td>2 · Príklad 1 v <abbr title="General Algebraic Modeling System">GAMS</abbr></td><td>Jednoduchá úloha <abbr title="Lineárne programovanie">LP</abbr> – grafické riešenie vs. riešenie v <abbr title="General Algebraic Modeling System">GAMS</abbr></td></tr>
-      <tr><td>40 – 55</td><td>3 · Príprava na GAMSPy</td><td>Python, GAMSPy, Visual Studio Code</td></tr>
-      <tr><td>55 – 65</td><td>4 · Príklad 1 v GAMSPy</td><td>Preklad z <abbr title="General Algebraic Modeling System">GAMS</abbr> do Pythonu</td></tr>
-      <tr class="main"><td>65 – 80</td><td>5 · Príklad 3 v GAMSPy</td><td>Miešanie prúdov – množiny, parametre, dáta, analýza „čo ak"</td></tr>
-      <tr class="main"><td>80 – 100</td><td>6 · Od modelu k webovej stránke</td><td>Matplotlib a Flask, krok za krokom</td></tr>
-      <tr><td>100 – 120</td><td>7 · Zhrnutie a otázky</td><td>Čo sme sa naučili, kontrolné otázky</td></tr>
-    </table>
-    <aside class="notes">[0:03–0:05] Jadrom sú časti 5 a 6. Inštalačné časti sa dajú skrátiť, ak si študenti všetko nainštalovali vopred.</aside>
-  </section>
-
   <!-- ═══ 4 · ČASŤ 1 ══════════════════════════════════════════════════════ -->
   <section class="divider">
     <h2>1 · Úvod do <abbr title="General Algebraic Modeling System">GAMS</abbr></h2>
     <p style="color:#f0b0b8;">General Algebraic Modeling System – čo to je, kde sa používa, ako ho nainštalovať a spustiť</p>
+    <div class="figure">
+      <img src="../../../en/Lectures/gamspy/images/gams_webpage.png" alt="Stránka About GAMS na gams.com" style="max-height:36vh; width:auto; margin:0 auto;">
+      <p class="img-caption" style="color:#f0b0b8; font-size:0.5em;">O spoločnosti <abbr title="General Algebraic Modeling System">GAMS</abbr> – <a href="https://www.gams.com" target="_blank" style="color:#fff;">www.gams.com</a> (© <abbr title="General Algebraic Modeling System">GAMS</abbr> Development Corp.)</p>
+    </div>
     <aside class="notes">[0:05] Časť 1, 20 minút.</aside>
   </section>
 
@@ -429,22 +417,6 @@
       </div>
     </div>
     <aside class="notes">[0:05–0:07] Zdôrazniť oddelenie modelu a riešiča: inžinieri opisujú fyziku/ekonomiku, riešič sa stará o algoritmus.</aside>
-  </section>
-
-  <!-- ═══ 6 · HISTÓRIA ════════════════════════════════════════════════════ -->
-  <section>
-    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr></span><span class="band-sub">História</span></div>
-    <h2>Stručná história</h2>
-    <div class="timeline">
-      <div class="tl-item"><span class="tl-year">1976</span>Výskumný projekt v <strong>Svetovej banke</strong> (Alexander Meeraus)</div>
-      <div class="tl-item"><span class="tl-year">1987</span><abbr title="General Algebraic Modeling System">GAMS</abbr> sa stáva komerčným produktom</div>
-      <div class="tl-item"><span class="tl-year">2001</span>Formát výmeny dát <abbr title="GAMS Data Exchange">GDX</abbr></div>
-      <div class="tl-item"><span class="tl-year">2012</span>Cena <abbr title="Institute for Operations Research and the Management Sciences">INFORMS</abbr> Impact Prize pre algebraické modelovacie jazyky</div>
-      <div class="tl-item"><span class="tl-year">2018</span><strong><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio</strong> – súčasné <abbr title="Integrované vývojové prostredie">IDE</abbr></div>
-      <div class="tl-item key"><span class="tl-year">2023</span><strong>GAMSPy</strong> – algebraické modelovanie v Pythone</div>
-    </div>
-    <p class="note-box">Dnes (október 2026): <abbr title="General Algebraic Modeling System">GAMS</abbr> 54.x · GAMSPy 1.29</p>
-    <aside class="notes">[0:07–0:08] Vznikol z potreby ekonómov Svetovej banky, ktorí písali veľké modely ručne ako generátory matíc.</aside>
   </section>
 
   <!-- ═══ 7 · EKOSYSTÉM ═══════════════════════════════════════════════════ -->
@@ -1074,15 +1046,23 @@ print(model.status, model.objective_value)</code></pre>
   </section>
 
   <!-- ═══ 40 · VS CODE KROK 1 ═════════════════════════════════════════════ -->
-  <section>
+  <section class="slide-full">
     <div class="band"><span class="band-title">VS Code</span><span class="band-sub">Nastavenie</span></div>
     <h2>Krok 1 – Inštalácia VS Code</h2>
-    <ol class="compact steps">
-      <li>Stiahnite z <a href="https://code.visualstudio.com/" target="_blank">code.visualstudio.com</a> → <strong>Download for Windows</strong></li>
-      <li>Spustite inštalátor a zaškrtnite:<br>✅ <strong>Add "Open with Code"</strong> do kontextovej ponuky Prieskumníka · ✅ <strong>Add to PATH</strong></li>
-      <li>Spustite VS Code</li>
-    </ol>
-    <p class="note-box">VS Code je <strong>bezplatný</strong>, nenáročný a beží vo Windows, macOS aj Linuxe.</p>
+    <div class="fig-row" style="grid-template-columns:1fr 1.1fr;">
+      <div class="v-center">
+        <ol class="compact steps">
+          <li>Stiahnite z <a href="https://code.visualstudio.com/" target="_blank">code.visualstudio.com</a> → <strong>Download for Windows</strong></li>
+          <li>Spustite inštalátor a zaškrtnite:<br>✅ <strong>Add "Open with Code"</strong> do kontextovej ponuky Prieskumníka · ✅ <strong>Add to PATH</strong></li>
+          <li>Spustite VS Code</li>
+        </ol>
+        <p class="note-box">VS Code je <strong>bezplatný</strong>, nenáročný a beží vo Windows, macOS aj Linuxe.</p>
+      </div>
+      <div class="figure">
+        <img src="../../../en/Lectures/gamspy/images/vs_code.png" alt="Stránka na stiahnutie VS Code">
+        <p class="img-caption">Stránka na stiahnutie VS Code – <a href="https://code.visualstudio.com/" target="_blank">code.visualstudio.com</a> (© Microsoft)</p>
+      </div>
+    </div>
     <aside class="notes">[0:48–0:49] V inštalátore sú dôležité dve zaškrtnutia.</aside>
   </section>
 
@@ -1118,12 +1098,19 @@ print(model.status, model.objective_value)</code></pre>
     <div class="band"><span class="band-title">VS Code</span><span class="band-sub">Nastavenie</span></div>
     <h2>Krok 4 – Výber prostredia Pythonu</h2>
     <p class="small-p">Command Palette <strong>Ctrl + Shift + P</strong>:</p>
-    <div class="cols-2" style="gap:1.2em;">
+    <div class="cols-2" style="grid-template-columns:1fr 1fr 1fr; gap:1em;">
       <div class="flow-box"><strong>A) Prostredie existuje</strong> (vytvorené v PowerShell)<br>→ <code>Python: Select Interpreter</code> → vyberte <strong><code>.gamspy_venv</code></strong></div>
       <div class="flow-box"><strong>B) Vytvorte nové vo VS Code</strong><br>→ <code>Python: Create Environment</code> → <strong>Venv</strong> → Python 3.11+</div>
+      <div class="flow-box"><strong>C) Vytvorte ho v termináli</strong><br>→ <code>python -m venv .gamspy_venv</code><br>(macOS / Linux: <code>python3</code>) → potom ako v A)</div>
     </div>
+    <table class="tight" style="margin-top:0.6em;">
+      <tr><th>Systém</th><th>Aktivácia</th><th>Deaktivácia</th></tr>
+      <tr><td>Windows – PowerShell</td><td><code>.gamspy_venv\Scripts\Activate.ps1</code></td><td rowspan="3"><code>deactivate</code></td></tr>
+      <tr><td>Windows – cmd</td><td><code>.gamspy_venv\Scripts\activate.bat</code></td></tr>
+      <tr><td>macOS / Linux</td><td><code>source .gamspy_venv/bin/activate</code></td></tr>
+    </table>
     <p class="small-p">Vybrané prostredie sa zobrazuje v <strong>stavovom riadku</strong> (vpravo dole).</p>
-    <aside class="notes">[0:51–0:52] Možnosť B je najjednoduchšia, ak študenti vynechali PowerShell: VS Code vytvorí .venv a aktivuje ho.</aside>
+    <aside class="notes">[0:51–0:52] Možnosť B je najjednoduchšia, ak študenti vynechali PowerShell: VS Code vytvorí .venv a aktivuje ho. Možnosť C: vytvoriť venv v integrovanom termináli, aktivovať ho príkazom pre daný systém a ukončiť príkazom deactivate.</aside>
   </section>
 
   <!-- ═══ 44 · VS CODE INŠTALÁCIA GAMSPY ══════════════════════════════════ -->
@@ -1201,44 +1188,18 @@ gamspy --version</code></pre>
   </section>
 
   <!-- ═══ 49 · VEDĽA SEBA ═════════════════════════════════════════════════ -->
-  <section>
+  <section class="slide-full">
     <div class="band"><span class="band-title">GAMSPy</span><span class="band-sub">Príklad 1</span></div>
     <h2>Vedľa seba</h2>
-    <div class="cols-2" style="grid-template-columns:0.85fr 1.15fr;gap:0.8em;">
-<pre class="code xs"><code><span class="k">Positive</span> <span class="k">Variables</span> x1, x2;
-<span class="k">Free</span> <span class="k">Variable</span>      Z;
-
-<span class="k">Equations</span> obj, eq1, eq2;
-
-obj..  Z <span class="k">=e=</span> 3*x1 + 2*x2;
-eq1..  x1 + 3*x2 <span class="k">=l=</span> 4;
-eq2..  x1 +   x2 <span class="k">=l=</span> 2;
-
-<span class="k">Model</span> Example01 /all/;
-<span class="k">Solve</span> Example01 <span class="k">maximizing</span> Z <span class="k">using</span> LP;
-
-<span class="k">Display</span> x1.l, x2.l, Z.l;</code></pre>
-<pre class="code xs"><code><span class="k">import</span> gamspy <span class="k">as</span> gp
-m = gp.Container()
-
-x1 = gp.Variable(m, <span class="s">"x1"</span>, type=<span class="s">"positive"</span>)
-x2 = gp.Variable(m, <span class="s">"x2"</span>, type=<span class="s">"positive"</span>)
-Z  = gp.Variable(m, <span class="s">"Z"</span>,  type=<span class="s">"free"</span>)
-
-obj = gp.Equation(m, <span class="s">"obj"</span>)
-eq1 = gp.Equation(m, <span class="s">"eq1"</span>)
-eq2 = gp.Equation(m, <span class="s">"eq2"</span>)
-
-obj[...] = Z == 3*x1 + 2*x2
-eq1[...] = x1 + 3*x2 &lt;= 4
-eq2[...] = x1 + x2 &lt;= 2
-
-example01 = gp.Model(m, <span class="s">"example01"</span>,
-    equations=m.getEquations(),
-    problem=<span class="s">"LP"</span>, sense=<span class="s">"max"</span>, objective=Z)
-example01.solve()
-
-print(x1.toValue(), x2.toValue(), Z.toValue())</code></pre>
+    <div class="fig-row" style="grid-template-columns:1fr 1.25fr;">
+      <div class="figure">
+        <img src="../../../en/Lectures/gamspy/images/ex1_gams.png" alt="Príklad 1 v GAMS Studio">
+        <p class="img-caption"><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio – <code>Example01.gms</code></p>
+      </div>
+      <div class="figure">
+        <img src="../../../en/Lectures/gamspy/images/ex1_vscode.png" alt="Príklad 1 v GAMSPy, VS Code">
+        <p class="img-caption">VS Code – <code>example01.py</code> (GAMSPy)</p>
+      </div>
     </div>
     <aside class="notes">[0:57–0:59] Prejsť blok po bloku: premenné, rovnice, model, riešenie, výstup.</aside>
   </section>
@@ -1266,14 +1227,14 @@ print(x1.toValue(), x2.toValue(), Z.toValue())</code></pre>
     <h2>Spustenie vo VS Code <span class="tag">NAŽIVO</span></h2>
     <ol class="compact steps">
       <li>Otvorte priečinok <code>C:\GAMS_lecture</code> – vybrané prostredie <code>.gamspy_venv</code></li>
-      <li>Nový súbor <code>example01_gams_style.py</code> – vložte kód, <strong>Ctrl + S</strong></li>
+      <li>Nový súbor <code>example01.py</code> – vložte kód, <strong>Ctrl + S</strong></li>
       <li>Kliknite na ▶ <strong>Run Python File</strong></li>
       <li>Výsledok si prečítajte v paneli <strong>Terminal</strong></li>
     </ol>
     <p class="small-p">Úplný log riešiča ako v <abbr title="General Algebraic Modeling System">GAMS</abbr> Studio:</p>
 <pre class="code"><code><span class="k">import</span> sys
 example01.solve(output=sys.stdout)</code></pre>
-    <aside class="notes">[1:00–1:02] UKÁŽKA NAŽIVO: spustiť example01_gams_style.py vo VS Code.</aside>
+    <aside class="notes">[1:00–1:02] UKÁŽKA NAŽIVO: spustiť example01.py vo VS Code.</aside>
   </section>
 
   <!-- ═══ 52 · VÝSLEDKY ═══════════════════════════════════════════════════ -->
@@ -1404,29 +1365,15 @@ eq2 .. x1 + x2 <span class="k">=l=</span> 2;
   </section>
 
   <!-- ═══ 58 · PRIAMY PREKLAD ═════════════════════════════════════════════ -->
-  <section>
+  <section class="slide-full">
     <div class="band"><span class="band-title">Príklad 3</span><span class="band-sub">Krok 1</span></div>
     <h2>Krok 1 – priamy preklad</h2>
-    <div class="cols-2" style="grid-template-columns:1.6fr 1fr;gap:0.8em;">
-<pre class="code xs"><code><span class="k">import</span> gamspy <span class="k">as</span> gp
-m = gp.Container()
-
-m1 = gp.Variable(m, <span class="s">"m1"</span>, type=<span class="s">"positive"</span>, description=<span class="s">"mass of feed 1 [kg]"</span>)
-m2 = gp.Variable(m, <span class="s">"m2"</span>, type=<span class="s">"positive"</span>, description=<span class="s">"mass of feed 2 [kg]"</span>)
-z  = gp.Variable(m, <span class="s">"z"</span>,  type=<span class="s">"free"</span>,     description=<span class="s">"cost [cent/kg]"</span>)
-
-obj     = gp.Equation(m, <span class="s">"obj"</span>)
-water   = gp.Equation(m, <span class="s">"water"</span>)
-balance = gp.Equation(m, <span class="s">"balance"</span>)
-
-obj[...]     = z == 80 * m1 + 60 * m2
-water[...]   = 0.20 * m1 + 0.32 * m2 &lt;= 0.25
-balance[...] = m1 + m2 == 1
-
-mixing = gp.Model(m, <span class="s">"mixing"</span>, equations=m.getEquations(),
-                  problem=<span class="s">"LP"</span>, sense=<span class="s">"min"</span>, objective=z)
-mixing.solve()</code></pre>
-      <div>
+    <div class="fig-row" style="grid-template-columns:1.6fr 1fr;">
+      <div class="figure">
+        <img src="../../../en/Lectures/gamspy/images/ex3_gamspy.png" alt="Príklad 3 v GAMSPy, VS Code">
+        <p class="img-caption">VS Code – <code>mixing_of_streams.py</code> (GAMSPy)</p>
+      </div>
+      <div class="v-center">
 <pre class="code sm"><code>z  = 71.667 cent/kg
 m1 = 0.583 kg
 m2 = 0.417 kg</code></pre>
@@ -1572,7 +1519,7 @@ product[c] = gp.Sum(f, w[f, c] * x.l[f]) / M</code></pre>
       </table>
     </div>
     <p class="next-line">➡ Ďalej: túto tabuľku premeníme na <strong>graf v Matplotlib</strong></p>
-    <aside class="notes">[1:17–1:19] NAŽIVO: spustiť example03_indexed.py. Pod 0,20 neprípustné; nad 0,32 je limit neaktívny.</aside>
+    <aside class="notes">[1:17–1:19] NAŽIVO: spustiť mixing_ind_formulation.py. Pod 0,20 neprípustné; nad 0,32 je limit neaktívny.</aside>
   </section>
 
   <!-- ═══ 65 · VYSKÚŠAJTE SI ══════════════════════════════════════════════ -->

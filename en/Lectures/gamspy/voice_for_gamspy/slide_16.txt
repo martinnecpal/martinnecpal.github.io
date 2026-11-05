@@ -1,0 +1,5 @@
+How to read the output. In the Process Log, the colour of a line tells you what happens when you double-click it. A blue line opens the listing file at that place. A red line is an error and jumps directly to the line in your source code. A green line opens a created file, for example a GDX file.
+
+The listing file has a navigation tree on the left: compilation, equation listing, model statistics, the solution report and the display output.
+
+What should you check first? Three lines: SOLVER STATUS 1, Normal Completion; MODEL STATUS 1, Optimal; and the OBJECTIVE VALUE.

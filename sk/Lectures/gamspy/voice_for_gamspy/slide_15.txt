@@ -1,0 +1,5 @@
+Vaše prvé spustenie v piatich krokoch.
+
+Jeden: vytvorte projekt cez File, New Project a vyberte pracovný priečinok. Dva: otvorte model, napríklad z Model Library Explorera klávesom F6 – vyskúšajte klasický dopravný model trnsport – alebo vytvorte nový súbor. Tri: skontrolujte hlavný súbor, zelený trojuholník v Project Exploreri. Štyri: spustite zeleným tlačidlom alebo klávesom F9. Päť: prečítajte si výsledky v Process Logu a vo výpise, ktorý sa otvorí automaticky.
+
+Jedno dôležité upozornenie: GAMS Studio spúšťa hlavný súbor projektu, nie nutne súbor, ktorý je práve otvorený v editore. To mnohých začiatočníkov mätie.

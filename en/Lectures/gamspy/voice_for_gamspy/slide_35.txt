@@ -1,0 +1,3 @@
+Step five, the license, is optional. The demo license works out of the box for small models, and that is enough for this lecture.
+
+If you have an academic or full license, you get a thirty-six character access code. Install it with gamspy install license and the code, and check it with gamspy show license. To go back to the demo license, use gamspy uninstall license.

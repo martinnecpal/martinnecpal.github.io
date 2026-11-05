@@ -1,0 +1,5 @@
+Najprv sa pozrime, čo postavíme. Sledujte jednu požiadavku diagramom.
+
+Používateľ posunie posuvník v prehliadači. JavaScript pošle požiadavku do Flasku, malého webového servera napísaného v Pythone, v súbore app bodka py. Flask zavolá náš model GAMSPy v súbore mixing podčiarkovník model bodka py, ktorý odovzdá úlohu riešiču, CPLEX. Výsledok sa vráti do Flasku. Flask tiež požiada Matplotlib v súbore plot podčiarkovník mixing bodka py, aby nakreslil graf. A potom Flask pošle prehliadaču čísla ako JSON a graf ako obrázok PNG.
+
+Tabuľka ukazuje súbory a krok, v ktorom každý z nich vytvoríme: model ako funkciu v druhom kroku, graf v treťom kroku, Flask rastúci od štvrtého po šiesty krok a výslednú interaktívnu stránku v siedmom kroku.

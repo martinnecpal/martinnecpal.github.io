@@ -1,0 +1,3 @@
+Výsledky. Minimálne náklady sú opäť sedemdesiatjeden celá šesťsto šesťdesiatsedem centov za kilogram. Keďže x je indexované, x bodka records dá malú tabuľku s jedným riadkom pre každý prúd: prúd jedna nula celá päťsto osemdesiattri, prúd dva nula celá štyristo sedemnásť.
+
+A odvodené hodnoty môžeme počítať priamo v GAMSPy. Tu vytvoríme parameter product a vypočítame zloženie produktu: sedemdesiatpäť percent MEA a dvadsaťpäť percent vody. Obsah vody je presne na limite – ohraničenie je aktívne. Preto optimum leží presne na tejto hranici.

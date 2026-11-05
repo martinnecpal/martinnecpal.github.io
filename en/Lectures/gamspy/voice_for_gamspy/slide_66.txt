@@ -1,0 +1,5 @@
+Step one: in the VS Code terminal, with our environment active, install Matplotlib and Flask with pip.
+
+Every step has a test. Here it is a one-line Python command that imports gamspy, matplotlib and flask, and prints all OK. If you see all OK, continue.
+
+On the right is the folder structure we are going to create: a folder webapp with the model, the plot script, three intermediate Flask apps, the final app and a templates folder with the HTML page.

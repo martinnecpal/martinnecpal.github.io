@@ -1,0 +1,1 @@
+Piata časť: Príklad 3, miešanie prúdov. Tu sa naučíme množiny, parametre a dáta v GAMSPy. Príklad je opäť podľa profesora Ahmetovića a úloha pochádza z knihy Edena.

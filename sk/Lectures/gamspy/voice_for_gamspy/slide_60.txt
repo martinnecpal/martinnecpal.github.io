@@ -1,0 +1,11 @@
+Teraz premenné, rovnice a model.
+
+Premenná x je kladná a má doménu f – v skutočnosti sú to teda dve premenné, jedna pre každý prúd.
+
+Rovnica spec má doménu c – jedna rovnica pre každú zložku. A balance je jediná rovnica.
+
+Pozrite sa na definíciu spec. Spec od c, bodka where, wmax od c. To znamená: vytvor rovnicu iba pre tie zložky, pre ktoré má wmax hodnotu. Pre MEA limit nemáme, takže rovnica nevznikne; pre vodu vznikne jedna. V GAMS je to dolárová podmienka. A potom súčet cez f z w krát x, menší alebo rovný wmax krát M. Bilancia hovorí, že súčet všetkých x sa rovná M.
+
+Model minimalizuje súčet cez f z ceny krát x a vyriešime ho.
+
+Malá tabuľka dole opakuje tri nové veci a ich ekvivalenty v GAMS: indexovanú rovnicu, podmienku where a súčet.

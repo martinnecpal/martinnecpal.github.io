@@ -1,0 +1,1 @@
+Part five: Example 3, the mixing of streams. Here we learn sets, parameters and data in GAMSPy. The example is again after Professor Ahmetović, and the problem comes from the book of Eden.

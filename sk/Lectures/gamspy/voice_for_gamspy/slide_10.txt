@@ -1,0 +1,5 @@
+A strojárstvo a výroba, ktoré sú bližšie mojej vlastnej oblasti.
+
+Návrh častí strojov, ako sú ozubené kolesá, pružiny a ložiská. Optimalizácia konštrukcií – priehradových konštrukcií a tvarov. Optimálne riadenie, napríklad trajektória ramena robota. Výrobné úlohy ako delenie materiálu a minimalizácia odpadu, plánovanie výroby a rozvrhovanie flow shop. A energia vo výrobe, kde sa stroje rozvrhujú tak, aby sa znížili náklady na energiu.
+
+Aj tu má knižnica modelov hotové príklady pre všetky: návrh ozubeného prevodu, skrutkovú tlačnú pružinu, ložiská, topológiu priehradovej konštrukcie, tvar vačky, rameno robota, delenie materiálu a rozvrhovanie. Pri obrábaní je napríklad voľba rezných podmienok nelineárna úloha a poradie operácií je zmiešaná celočíselná úloha.

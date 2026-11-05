@@ -1,0 +1,1 @@
+Acknowledgements. Examples 1 and 3 are adapted from the lecture of Professor Elvis Ahmetović from the University of Tuzla, Mathematical modelling in GAMS, which he gave as an Erasmus+ lecture at our university in November 2025. The Example 3 problem comes from the book of Eden, Process Synthesis, Simulation and Optimization. And many thanks to our hosts for the invitation.

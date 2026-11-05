@@ -1,0 +1,5 @@
+The problem. Two feed streams are mixed to produce a mixture of MEA and water. MEA is monoethanolamine, a solvent used for example in carbon dioxide capture.
+
+Feed one contains eighty percent MEA and twenty percent water, and costs eighty cents per kilogram. Feed two contains sixty-eight percent MEA and thirty-two percent water, and costs sixty cents per kilogram.
+
+The product may contain at most twenty-five mass percent of water. The question: which mixing ratio gives the minimum cost per one kilogram of mixture? Feed two is cheaper, but it has too much water – so we need to find the right balance.

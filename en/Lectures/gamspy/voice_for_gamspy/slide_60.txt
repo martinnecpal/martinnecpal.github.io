@@ -1,0 +1,11 @@
+Now the variables, equations and the model.
+
+The variable x is positive and has the domain f – so it is really two variables, one for each feed.
+
+The equation spec has the domain c – one equation for each component. And balance is a single equation.
+
+Look at the definition of spec. Spec of c, dot where, wmax of c. This means: create the equation only for those components where wmax has a value. For MEA we have no limit, so there is no equation; for water there is one. In GAMS this is the dollar condition. And then the sum over f of w times x, less or equal to wmax times M. The balance says that the sum of all x equals M.
+
+The model minimizes the sum over f of cost times x, and we solve it.
+
+The small table at the bottom repeats the three new things and their GAMS equivalents: the indexed equation, the where condition, and the sum.

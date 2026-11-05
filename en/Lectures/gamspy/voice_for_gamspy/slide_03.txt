@@ -1,0 +1,3 @@
+GAMS, the General Algebraic Modeling System. In the next twenty minutes we look at what it is, where it is used, and how to install and run it.
+
+On the slide you see the About page of the company, at www dot gams dot com. GAMS is one of the leading tool providers for the optimization industry, with offices in the US and Germany. It has customers in more than one hundred and twenty countries – multinational companies, universities, research institutions and governments – in the energy and chemical industries, in economic modelling, agricultural planning and manufacturing.

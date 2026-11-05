@@ -1,0 +1,7 @@
+Siedmy krok je výsledná interaktívna stránka a má dve časti. Najprv serverová strana, app bodka py.
+
+Sú tu tri trasy. Koreň vráti stránku HTML z priečinka templates. Trasa lomka api lomka solve vráti výsledky ako JSON: z adresy prečíta limit vody a obe ceny, zavolá solve mixing a slovník prevedie pomocou jsonify. A trasa lomka plot bodka png vráti graf, ako v šiestom kroku.
+
+Toto je malé API – aplikačné programové rozhranie. Stránka si pýta dáta a server odpovedá číslami, nie celou stránkou.
+
+Test: otvorte adresu API s water dvadsaťpäť a cenami osemdesiat a šesťdesiat. Mali by ste vidieť JSON zo snímky: cost sedemdesiatjeden celá šesťdesiatsedem, feed jedna nula celá päťsto osemdesiattri, feed dva nula celá štyristo sedemnásť, ok true.

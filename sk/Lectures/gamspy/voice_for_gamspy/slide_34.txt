@@ -1,0 +1,3 @@
+Štvrtý krok: riešiče. Príkaz gamspy list solvers zobrazí nainštalované riešiče. Štandardne dostanete CPLEX pre lineárne a zmiešané celočíselné úlohy, CONOPT pre nelineárne úlohy, SBB pre zmiešané celočíselné nelineárne úlohy a PATH pre komplementárne úlohy.
+
+Ďalšie môžete doinštalovať podľa potreby, napríklad gamspy install solver highs ipopt. A v Pythone vyberiete riešič jedným argumentom: model bodka solve, solver rovná sa highs.

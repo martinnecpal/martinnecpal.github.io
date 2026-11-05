@@ -1,0 +1,5 @@
+Druhou časťou je strana prehliadača, súbor index bodka html. Sú tu tri posuvníky – pre limit vody a dve ceny – a obrázok pre graf.
+
+Malá funkcia v JavaScripte, update, sa spustí pri každej zmene posuvníka. Zostaví dotaz z hodnôt posuvníkov, načíta JSON z nášho API – tam GAMSPy rieši model – a zapíše náklady do stránky. Potom zmení zdroj obrázka, takže Matplotlib nakreslí nový graf.
+
+Test: spustite python app bodka py a hýbte posuvníkmi. Čísla aj graf by sa mali aktualizovať.

@@ -1,0 +1,5 @@
+A few words about me. My name is Martin Necpal, I am a university lecturer at the Institute of Production Technology, Faculty of Materials Science and Technology in Trnava, which is part of the Slovak University of Technology in Bratislava.
+
+My PhD was about automated process planning and its integration into computer-aided systems. I teach CAD and CAM applications and NC programming, I work on FEM modelling and simulation of machining and forming processes, and I work with laser machining on a five-axis LASERTEC 80 Shape machine. In recent years I spend a lot of time with Python, data science and machine learning.
+
+Why optimization? Because process planning and manufacturing are full of optimization problems – cutting parameters, the order of operations, nesting of parts. That is exactly where tools like GAMS and GAMSPy help.

@@ -1,0 +1,3 @@
+Thank you very much for your attention. On the slide you find my contact and the sources and further reading: the lecture of Professor Ahmetović, the book of Eden, the GAMS User's Guide, the GAMS and GAMSPy documentation, and the documentation of VS Code, Matplotlib and Flask.
+
+Now I am happy to answer your questions.

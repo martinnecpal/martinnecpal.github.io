@@ -1,0 +1,1 @@
+Rovná sa, menšie alebo rovné, väčšie alebo rovné; v GAMSPy dvojité rovná sa, menšie alebo rovné a väčšie alebo rovné.

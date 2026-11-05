@@ -1,0 +1,5 @@
+Today, GAMS is not just one program, it is a small ecosystem of four products.
+
+The GAMS language itself, together with the GAMS Studio environment. GAMSPy, the Python-native interface, which gives you the same modelling power inside Python. GAMS MIRO, which turns a model into an interactive web application for people who are not optimization experts. And GAMS Engine, which runs optimization jobs at scale – in parallel, in the cloud, with large memory.
+
+Today we will work in depth with the first two, marked in red. And the idea behind MIRO – a model with a friendly web interface – we will build ourselves at the end of the lecture, with plain Python.

@@ -1,0 +1,3 @@
+A toto je výsledok: interaktívny optimalizátor miešania. Vľavo posuvníky pre limit vody a cenu prúdu jedna a prúdu dva. Hore karty s minimálnymi nákladmi, pomerom prúdov ako pruhom a obsahom vody v produkte. A graf čo ak, s aktuálnym prípadom vyznačeným prerušovanou čiarou. Ak je vstup neprípustný, pod dvadsať percent vody, namiesto čísel sa zobrazí červené upozornenie.
+
+S približne sto riadkami Pythonu a krátkou stránkou HTML sa teda z optimalizačného modelu stal nástroj, ktorý môže v prehliadači použiť ktokoľvek, bez toho, aby o GAMS čokoľvek vedel.

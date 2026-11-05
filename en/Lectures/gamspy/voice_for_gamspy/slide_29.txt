@@ -1,0 +1,1 @@
+Part three: from GAMS to GAMSPy. First we need to install Python, GAMSPy and Visual Studio Code on Windows.

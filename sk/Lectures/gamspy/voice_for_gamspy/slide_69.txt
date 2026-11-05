@@ -1,0 +1,5 @@
+Štvrtý krok: najmenšia možná aplikácia Flask, iba niekoľko riadkov.
+
+Importujeme Flask a vytvoríme aplikáciu. Dekorátor app bodka route s lomkou spája adresu – koreň webovej stránky – s funkciou Pythonu. Funkcia home vráti kúsok HTML, nadpis Hello from Flask. A app bodka run s debug rovná sa true spustí server; v režime ladenia sa automaticky reštartuje pri každom uložení zmeny.
+
+Test: spustite python app podčiarkovník step four bodka py a v prehliadači otvorte adresu sto dvadsaťsedem bodka nula bodka nula bodka jedna, dvojbodka päťtisíc. Mali by ste vidieť pozdrav. Pred ďalším krokom zastavte server cez Control C.

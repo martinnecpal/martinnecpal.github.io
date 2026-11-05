@@ -1,0 +1,19 @@
+Let us check what stayed in your head. I will ask the questions one by one – try to answer before I continue.
+
+Question one: What is the key idea of an algebraic modelling language like GAMS?
+
+Question two: Why must the objective variable Z be declared Free in GAMS?
+
+Question three: What do equals-e-equals, equals-l-equals and equals-g-equals mean, and what are they in GAMSPy?
+
+Question four: Which constraint is binding at the optimum of Example 1, and how do you see it?
+
+Question five: What do the three dots in square brackets do in eq one, bracket, dot dot dot, equals – and what happens without them?
+
+Question six: Why is LP, not NLP, the correct model type for Example 3?
+
+Question seven: Why do we separate the model from the data with sets and parameters?
+
+Question eight: Why is a water limit below twenty percent infeasible?
+
+Thank you. These were the most important points of today.

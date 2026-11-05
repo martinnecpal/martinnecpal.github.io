@@ -1,0 +1,7 @@
+Piaty krok: formulár, ktorý rieši model. Teraz prehliadač pošle číslo a Flask zavolá GAMSPy.
+
+Stránka je malá šablóna v reťazci Pythonu. Má formulár s jedným číselným vstupom pre maximálny obsah vody a tlačidlom Solve. Pod formulárom je podmienka: ak je výsledok ok, zobraz minimálne náklady; inak zobraz No feasible mixture so stavom. Dvojité zložené zátvorky vypisujú hodnotu a zložená zátvorka so znakmi percenta je rozhodovanie – to je šablónovací jazyk Jinja, ktorý Flask používa.
+
+Trasa teraz prijíma GET aj POST. Prečíta číslo z formulára, zavolá solve mixing s limitom vody vydeleným stom a vykreslí stránku s výsledkom.
+
+Test: zadajte dvadsaťdva a dostanete sedemdesiatšesť celá šesťdesiatsedem centov za kilogram. Zadajte pätnásť a dostanete no feasible mixture, teda žiadnu prípustnú zmes.

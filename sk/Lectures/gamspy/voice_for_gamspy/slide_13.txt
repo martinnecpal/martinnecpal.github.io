@@ -1,0 +1,7 @@
+Teraz, ako nainštalovať GAMS. Sú to tri kroky.
+
+Po prvé, stiahnite inštalátor zo stránky gams bodka com lomka download. Existuje pre Windows, Linux aj macOS.
+
+Po druhé, spustite inštalátor. GAMS Studio sa nainštaluje automaticky spolu s GAMS. Vo Windows sa môže zobraziť upozornenie SmartScreen – kliknite na More info a potom na Run anyway.
+
+Po tretie, licencia. Bezplatná demo licencia s obmedzenou veľkosťou modelu je súčasťou každého stiahnutia a na dnešok stačí. Bezplatné akademické licencie sú dostupné na webe GAMS. V GAMS Studio licenciu vložíte alebo skontrolujete v ponuke Help, GAMS Licensing.

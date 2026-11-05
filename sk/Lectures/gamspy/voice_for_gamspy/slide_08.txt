@@ -1,0 +1,5 @@
+Kde sa GAMS používa? Prakticky všade, kde sa rozhoduje pri obmedzeniach.
+
+V energetických systémoch: plánovanie elektrární, nasadzovanie zdrojov, zachytávanie a ukladanie uhlíka. V ekonomike a politike: modely vypočítateľnej všeobecnej rovnováhy a medzinárodný obchod, napríklad model METRO organizácie OECD. V poľnohospodárstve, vodnom hospodárstve a lesníctve: alokácia pôdy, vody a ďalších zdrojov. Vo financiách: optimalizácia portfólia a rizika. V logistike: doprava, rozvrhovanie, plánovanie trás vozidiel. A v inžinierstve: chemické procesy, konštruovanie strojov a výroba.
+
+Na webe GAMS nájdete prípadové štúdie od OECD, TotalEnergies, Alpro alebo Rhodium Group. Pozrime sa bližšie na dve inžinierske oblasti.

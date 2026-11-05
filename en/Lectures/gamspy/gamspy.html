@@ -378,6 +378,7 @@
         <ul class="xs">
           <li><strong><abbr title="Doctor of Philosophy">PhD</abbr> (2010):</strong> automated process planning and integration into CAx systems</li>
           <li><strong><abbr title="Computer-Aided Design">CAD</abbr> / <abbr title="Computer-Aided Manufacturing">CAM</abbr></strong> applications and <abbr title="Numerical Control">NC</abbr> programming</li>
+          <li><strong>FEM</strong> Modeling and simulation machining and forming processes</li>
           <li><strong>Laser machining</strong> on the 5-axis LASERTEC 80 Shape – teaching, theses, research</li>
           <li><strong>Python, <abbr title="MATrix LABoratory">MATLAB</abbr>, data science, <abbr title="Artificial Intelligence">AI</abbr> / machine learning</strong> in practice</li>
         </ul>
@@ -387,27 +388,14 @@
     <aside class="notes">[0:02–0:03] Keep to one minute. Bridge: process planning and manufacturing are full of optimization problems → GAMS and GAMSPy.</aside>
   </section>
 
-  <!-- ═══ 3 · AGENDA ══════════════════════════════════════════════════════ -->
-  <section>
-    <h2>Agenda <span class="subtitle" style="font-size:0.55em;">(120 min)</span></h2>
-    <table class="agenda mid">
-      <tr><th>Time</th><th>Block</th><th>Content</th></tr>
-      <tr><td>0 – 5</td><td>Opening</td><td>About me, agenda</td></tr>
-      <tr><td>5 – 25</td><td>1 · Introduction to <abbr title="General Algebraic Modeling System">GAMS</abbr></td><td>What it is, where it is used, installation, <abbr title="General Algebraic Modeling System">GAMS</abbr> Studio</td></tr>
-      <tr><td>25 – 40</td><td>2 · Example 1 in <abbr title="General Algebraic Modeling System">GAMS</abbr></td><td>A simple <abbr title="Linear Programming">LP</abbr> – graphical vs. <abbr title="General Algebraic Modeling System">GAMS</abbr> solution</td></tr>
-      <tr><td>40 – 55</td><td>3 · Getting ready for GAMSPy</td><td>Python, GAMSPy, Visual Studio Code</td></tr>
-      <tr><td>55 – 65</td><td>4 · Example 1 in GAMSPy</td><td>Translating <abbr title="General Algebraic Modeling System">GAMS</abbr> to Python</td></tr>
-      <tr class="main"><td>65 – 80</td><td>5 · Example 3 in GAMSPy</td><td>Mixing of streams – sets, parameters, data, what-if</td></tr>
-      <tr class="main"><td>80 – 100</td><td>6 · From model to web page</td><td>Matplotlib and Flask, step by step</td></tr>
-      <tr><td>100 – 120</td><td>7 · Summary &amp; Q&amp;A</td><td>What we learned, review questions</td></tr>
-    </table>
-    <aside class="notes">[0:03–0:05] Sections 5 and 6 are the core. Installation parts can be shortened if students installed beforehand.</aside>
-  </section>
-
   <!-- ═══ 4 · PART 1 ══════════════════════════════════════════════════════ -->
   <section class="divider">
     <h2>1 · Introduction to <abbr title="General Algebraic Modeling System">GAMS</abbr></h2>
     <p style="color:#f0b0b8;">General Algebraic Modeling System – what it is, where it is used, how to install and run it</p>
+    <div class="figure">
+      <img src="images/gams_webpage.png" alt="About GAMS page on gams.com" style="max-height:36vh; width:auto; margin:0 auto;">
+      <p class="img-caption" style="color:#f0b0b8; font-size:0.5em;">About <abbr title="General Algebraic Modeling System">GAMS</abbr> – <a href="https://www.gams.com" target="_blank" style="color:#fff;">www.gams.com</a> (© <abbr title="General Algebraic Modeling System">GAMS</abbr> Development Corp.)</p>
+    </div>
     <aside class="notes">[0:05] Part 1, 20 minutes.</aside>
   </section>
 
@@ -428,22 +416,6 @@
       </div>
     </div>
     <aside class="notes">[0:05–0:07] Emphasize model vs. solver separation: engineers describe physics/economics, the solver handles the algorithm.</aside>
-  </section>
-
-  <!-- ═══ 6 · HISTORY ═════════════════════════════════════════════════════ -->
-  <section>
-    <div class="band"><span class="band-title"><abbr title="General Algebraic Modeling System">GAMS</abbr></span><span class="band-sub">History</span></div>
-    <h2>A short history</h2>
-    <div class="timeline">
-      <div class="tl-item"><span class="tl-year">1976</span>Research project at the <strong>World Bank</strong> (Alexander Meeraus)</div>
-      <div class="tl-item"><span class="tl-year">1987</span><abbr title="General Algebraic Modeling System">GAMS</abbr> becomes a commercial product</div>
-      <div class="tl-item"><span class="tl-year">2001</span><abbr title="GAMS Data Exchange">GDX</abbr> data exchange format</div>
-      <div class="tl-item"><span class="tl-year">2012</span><abbr title="Institute for Operations Research and the Management Sciences">INFORMS</abbr> Impact Prize for algebraic modelling languages</div>
-      <div class="tl-item"><span class="tl-year">2018</span><strong><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio</strong> – the current <abbr title="Integrated Development Environment">IDE</abbr></div>
-      <div class="tl-item key"><span class="tl-year">2023</span><strong>GAMSPy</strong> – algebraic modelling in Python</div>
-    </div>
-    <p class="note-box">Today (October 2026): <abbr title="General Algebraic Modeling System">GAMS</abbr> 54.x · GAMSPy 1.29</p>
-    <aside class="notes">[0:07–0:08] Born from World Bank economists writing large models by hand as matrix generators.</aside>
   </section>
 
   <!-- ═══ 7 · ECOSYSTEM ═══════════════════════════════════════════════════ -->
@@ -1073,15 +1045,23 @@ print(model.status, model.objective_value)</code></pre>
   </section>
 
   <!-- ═══ 40 · VS CODE STEP 1 ═════════════════════════════════════════════ -->
-  <section>
+  <section class="slide-full">
     <div class="band"><span class="band-title">VS Code</span><span class="band-sub">Setup</span></div>
     <h2>Step 1 – Install VS Code</h2>
-    <ol class="compact steps">
-      <li>Download from <a href="https://code.visualstudio.com/" target="_blank">code.visualstudio.com</a> → <strong>Download for Windows</strong></li>
-      <li>Run the installer and tick:<br>✅ <strong>Add "Open with Code"</strong> to the Explorer context menu · ✅ <strong>Add to PATH</strong></li>
-      <li>Start VS Code</li>
-    </ol>
-    <p class="note-box">VS Code is <strong>free</strong>, light and runs on Windows, macOS and Linux.</p>
+    <div class="fig-row" style="grid-template-columns:1fr 1.1fr;">
+      <div class="v-center">
+        <ol class="compact steps">
+          <li>Download from <a href="https://code.visualstudio.com/" target="_blank">code.visualstudio.com</a> → <strong>Download for Windows</strong></li>
+          <li>Run the installer and tick:<br>✅ <strong>Add "Open with Code"</strong> to the Explorer context menu · ✅ <strong>Add to PATH</strong></li>
+          <li>Start VS Code</li>
+        </ol>
+        <p class="note-box">VS Code is <strong>free</strong>, light and runs on Windows, macOS and Linux.</p>
+      </div>
+      <div class="figure">
+        <img src="images/vs_code.png" alt="VS Code download page">
+        <p class="img-caption">VS Code download page – <a href="https://code.visualstudio.com/" target="_blank">code.visualstudio.com</a> (© Microsoft)</p>
+      </div>
+    </div>
     <aside class="notes">[0:48–0:49] Two ticks in the installer matter.</aside>
   </section>
 
@@ -1117,12 +1097,19 @@ print(model.status, model.objective_value)</code></pre>
     <div class="band"><span class="band-title">VS Code</span><span class="band-sub">Setup</span></div>
     <h2>Step 4 – Select the Python environment</h2>
     <p class="small-p">Command Palette <strong>Ctrl + Shift + P</strong>:</p>
-    <div class="cols-2" style="gap:1.2em;">
+    <div class="cols-2" style="grid-template-columns:1fr 1fr 1fr; gap:1em;">
       <div class="flow-box"><strong>A) Environment exists</strong> (created in PowerShell)<br>→ <code>Python: Select Interpreter</code> → choose <strong><code>.gamspy_venv</code></strong></div>
       <div class="flow-box"><strong>B) Create a new one in VS Code</strong><br>→ <code>Python: Create Environment</code> → <strong>Venv</strong> → Python 3.11+</div>
+      <div class="flow-box"><strong>C) Create it in the terminal</strong><br>→ <code>python -m venv .gamspy_venv</code><br>(macOS / Linux: <code>python3</code>) → then as in A)</div>
     </div>
+    <table class="tight" style="margin-top:0.6em;">
+      <tr><th>System</th><th>Activate</th><th>Deactivate</th></tr>
+      <tr><td>Windows – PowerShell</td><td><code>.gamspy_venv\Scripts\Activate.ps1</code></td><td rowspan="3"><code>deactivate</code></td></tr>
+      <tr><td>Windows – cmd</td><td><code>.gamspy_venv\Scripts\activate.bat</code></td></tr>
+      <tr><td>macOS / Linux</td><td><code>source .gamspy_venv/bin/activate</code></td></tr>
+    </table>
     <p class="small-p">The selected environment is shown in the <strong>status bar</strong> (bottom right).</p>
-    <aside class="notes">[0:51–0:52] Option B is easiest if students skipped PowerShell: VS Code creates .venv and activates it.</aside>
+    <aside class="notes">[0:51–0:52] Option B is easiest if students skipped PowerShell: VS Code creates .venv and activates it. Option C: create the venv in the integrated terminal, activate it with the command for your system, leave it with deactivate.</aside>
   </section>
 
   <!-- ═══ 44 · VS CODE INSTALL GAMSPY ═════════════════════════════════════ -->
@@ -1200,44 +1187,18 @@ gamspy --version</code></pre>
   </section>
 
   <!-- ═══ 49 · SIDE BY SIDE ═══════════════════════════════════════════════ -->
-  <section>
+  <section class="slide-full">
     <div class="band"><span class="band-title">GAMSPy</span><span class="band-sub">Example 1</span></div>
     <h2>Side by side</h2>
-    <div class="cols-2" style="grid-template-columns:0.85fr 1.15fr;gap:0.8em;">
-<pre class="code xs"><code><span class="k">Positive</span> <span class="k">Variables</span> x1, x2;
-<span class="k">Free</span> <span class="k">Variable</span>      Z;
-
-<span class="k">Equations</span> obj, eq1, eq2;
-
-obj..  Z <span class="k">=e=</span> 3*x1 + 2*x2;
-eq1..  x1 + 3*x2 <span class="k">=l=</span> 4;
-eq2..  x1 +   x2 <span class="k">=l=</span> 2;
-
-<span class="k">Model</span> Example01 /all/;
-<span class="k">Solve</span> Example01 <span class="k">maximizing</span> Z <span class="k">using</span> LP;
-
-<span class="k">Display</span> x1.l, x2.l, Z.l;</code></pre>
-<pre class="code xs"><code><span class="k">import</span> gamspy <span class="k">as</span> gp
-m = gp.Container()
-
-x1 = gp.Variable(m, <span class="s">"x1"</span>, type=<span class="s">"positive"</span>)
-x2 = gp.Variable(m, <span class="s">"x2"</span>, type=<span class="s">"positive"</span>)
-Z  = gp.Variable(m, <span class="s">"Z"</span>,  type=<span class="s">"free"</span>)
-
-obj = gp.Equation(m, <span class="s">"obj"</span>)
-eq1 = gp.Equation(m, <span class="s">"eq1"</span>)
-eq2 = gp.Equation(m, <span class="s">"eq2"</span>)
-
-obj[...] = Z == 3*x1 + 2*x2
-eq1[...] = x1 + 3*x2 &lt;= 4
-eq2[...] = x1 + x2 &lt;= 2
-
-example01 = gp.Model(m, <span class="s">"example01"</span>,
-    equations=m.getEquations(),
-    problem=<span class="s">"LP"</span>, sense=<span class="s">"max"</span>, objective=Z)
-example01.solve()
-
-print(x1.toValue(), x2.toValue(), Z.toValue())</code></pre>
+    <div class="fig-row" style="grid-template-columns:1fr 1.25fr;">
+      <div class="figure">
+        <img src="images/ex1_gams.png" alt="Example 1 in GAMS Studio">
+        <p class="img-caption"><abbr title="General Algebraic Modeling System">GAMS</abbr> Studio – <code>Example01.gms</code></p>
+      </div>
+      <div class="figure">
+        <img src="images/ex1_vscode.png" alt="Example 1 in GAMSPy, VS Code">
+        <p class="img-caption">VS Code – <code>example01.py</code> (GAMSPy)</p>
+      </div>
     </div>
     <aside class="notes">[0:57–0:59] Go block by block: variables, equations, model, solve, output.</aside>
   </section>
@@ -1265,14 +1226,14 @@ print(x1.toValue(), x2.toValue(), Z.toValue())</code></pre>
     <h2>Run it in VS Code <span class="tag">LIVE</span></h2>
     <ol class="compact steps">
       <li>Open the folder <code>C:\GAMS_lecture</code> – environment <code>.gamspy_venv</code> selected</li>
-      <li>New file <code>example01_gams_style.py</code> – paste the code, <strong>Ctrl + S</strong></li>
+      <li>New file <code>example01.py</code> – paste the code, <strong>Ctrl + S</strong></li>
       <li>Click ▶ <strong>Run Python File</strong></li>
       <li>Read the result in the <strong>Terminal</strong> panel</li>
     </ol>
     <p class="small-p">Full solver log as in <abbr title="General Algebraic Modeling System">GAMS</abbr> Studio:</p>
 <pre class="code"><code><span class="k">import</span> sys
 example01.solve(output=sys.stdout)</code></pre>
-    <aside class="notes">[1:00–1:02] LIVE DEMO: run example01_gams_style.py in VS Code.</aside>
+    <aside class="notes">[1:00–1:02] LIVE DEMO: run example01.py in VS Code.</aside>
   </section>
 
   <!-- ═══ 52 · RESULTS ════════════════════════════════════════════════════ -->
@@ -1403,29 +1364,15 @@ eq2 .. x1 + x2 <span class="k">=l=</span> 2;
   </section>
 
   <!-- ═══ 58 · DIRECT TRANSLATION ═════════════════════════════════════════ -->
-  <section>
+  <section class="slide-full">
     <div class="band"><span class="band-title">Example 3</span><span class="band-sub">Step 1</span></div>
     <h2>Step 1 – direct translation</h2>
-    <div class="cols-2" style="grid-template-columns:1.6fr 1fr;gap:0.8em;">
-<pre class="code xs"><code><span class="k">import</span> gamspy <span class="k">as</span> gp
-m = gp.Container()
-
-m1 = gp.Variable(m, <span class="s">"m1"</span>, type=<span class="s">"positive"</span>, description=<span class="s">"mass of feed 1 [kg]"</span>)
-m2 = gp.Variable(m, <span class="s">"m2"</span>, type=<span class="s">"positive"</span>, description=<span class="s">"mass of feed 2 [kg]"</span>)
-z  = gp.Variable(m, <span class="s">"z"</span>,  type=<span class="s">"free"</span>,     description=<span class="s">"cost [cent/kg]"</span>)
-
-obj     = gp.Equation(m, <span class="s">"obj"</span>)
-water   = gp.Equation(m, <span class="s">"water"</span>)
-balance = gp.Equation(m, <span class="s">"balance"</span>)
-
-obj[...]     = z == 80 * m1 + 60 * m2
-water[...]   = 0.20 * m1 + 0.32 * m2 &lt;= 0.25
-balance[...] = m1 + m2 == 1
-
-mixing = gp.Model(m, <span class="s">"mixing"</span>, equations=m.getEquations(),
-                  problem=<span class="s">"LP"</span>, sense=<span class="s">"min"</span>, objective=z)
-mixing.solve()</code></pre>
-      <div>
+    <div class="fig-row" style="grid-template-columns:1.6fr 1fr;">
+      <div class="figure">
+        <img src="images/ex3_gamspy.png" alt="Example 3 in GAMSPy, VS Code">
+        <p class="img-caption">VS Code – <code>mixing_of_streams.py</code> (GAMSPy)</p>
+      </div>
+      <div class="v-center">
 <pre class="code sm"><code>z  = 71.667 cent/kg
 m1 = 0.583 kg
 m2 = 0.417 kg</code></pre>
@@ -1571,7 +1518,7 @@ product[c] = gp.Sum(f, w[f, c] * x.l[f]) / M</code></pre>
       </table>
     </div>
     <p class="next-line">➡ Next: turn this table into a <strong>plot with Matplotlib</strong></p>
-    <aside class="notes">[1:17–1:19] LIVE: run example03_indexed.py. Below 0.20 infeasible; above 0.32 the limit is inactive.</aside>
+    <aside class="notes">[1:17–1:19] LIVE: run mixing_ind_formulation.py. Below 0.20 infeasible; above 0.32 the limit is inactive.</aside>
   </section>
 
   <!-- ═══ 65 · TRY IT YOURSELF ════════════════════════════════════════════ -->

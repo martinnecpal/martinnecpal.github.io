@@ -1,0 +1,5 @@
+So why should you, as engineers, use GAMS?
+
+Because the model reads like the mathematical formulation on paper. Because you can use the same model with many solvers and compare local and global results. Because it scales from classroom examples to industrial models. Because there are more than four hundred and fifty ready models in the library to learn from. Because a free demo license comes with every download, and academic licenses are available. And because with GAMSPy, the model can live inside Python, next to your data, your plots and your web applications.
+
+Next, we take one example and solve it first in GAMS and later in GAMSPy.

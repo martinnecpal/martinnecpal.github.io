@@ -1,0 +1,5 @@
+Let us run it, live in VS Code. Open the folder, check the environment, create the file example01 dot py, paste the code, save it and click Run Python File. The result appears in the terminal.
+
+If you want to see the full solver log, as you know it from GAMS Studio, pass output equals sys dot stdout to the solve method.
+
+So the model runs in Python, and the log is the same log as in GAMS – because underneath it is the same engine.

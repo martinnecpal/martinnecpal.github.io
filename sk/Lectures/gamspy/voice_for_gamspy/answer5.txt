@@ -1,0 +1,1 @@
+Definujú rovnicu na celej jej doméne; bez nich prepíšete premennú Pythonu a ohraničenie sa stratí.

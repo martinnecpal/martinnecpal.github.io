@@ -1,0 +1,11 @@
+Grafické riešenie. Každé ohraničenie je polrovina ohraničená priamkou. Modrá priamka je x jedna plus tri x dva rovná sa štyri, oranžová priamka je x jedna plus x dva rovná sa dva. Spolu s dvoma osami uzatvárajú prípustnú oblasť, modrý mnohouholník s vrcholmi A, B, C a D.
+
+Základná vlastnosť lineárneho programovania: ak optimum existuje, leží vo vrchole prípustnej oblasti. Stačí teda vyčísliť účelovú funkciu v štyroch vrcholoch.
+
+V bode A, v začiatku, je Z rovné nule. V bode B, v bode dva, nula, je Z rovné šiestim. V bode C je Z rovné piatim. A v bode D, v bode nula, štyri tretiny, je Z rovné ôsmim tretinám.
+
+Ako sme našli bod C? Je to priesečník dvoch priamok. Odčítajte druhú rovnicu od prvej a dostanete dva x dva rovná sa dva, teda x dva rovná sa jedna, a potom x jedna rovná sa jedna.
+
+Optimum je teda v bode B: x jedna rovná sa dva, x dva rovná sa nula, Z rovná sa šesť.
+
+Vidíte to aj na obrázku: prerušované čiary sú čiary konštantného Z. Keď posúvame priamku Z rovná sa konštanta ďalej doprava hore, posledný bod oblasti, ktorého sa dotkne, je B. Zapamätajte si tento výsledok – šesť – pretože ho teraz overíme v GAMS.

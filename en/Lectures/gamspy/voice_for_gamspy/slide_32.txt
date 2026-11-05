@@ -1,0 +1,5 @@
+Step two: a virtual environment. It keeps the GAMSPy packages separate from your other Python projects.
+
+Open PowerShell in your working folder, for example C colon GAMS underscore lecture. Type python dash m venv dot gamspy underscore venv to create it, and then run the activate script. When the prompt starts with the environment name in brackets, it works.
+
+If PowerShell refuses to run the script because running scripts is disabled, run the Set-ExecutionPolicy command shown on the slide once, and try again.

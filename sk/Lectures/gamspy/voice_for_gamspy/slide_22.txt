@@ -1,0 +1,7 @@
+Tu je úloha. Chceme maximalizovať Z rovná sa tri x jedna plus dva x dva.
+
+Za dvoch podmienok: x jedna plus tri x dva je menšie alebo rovné štyrom a x jedna plus x dva je menšie alebo rovné dvom. A obe premenné musia byť nezáporné.
+
+Je to úloha lineárneho programovania: účelová funkcia je lineárna a všetky ohraničenia sú lineárne. A má iba dve premenné. To je skvelé na učenie, pretože ju môžeme nakresliť do roviny a vyriešiť graficky. Potom overíme, že GAMS nám dá rovnakú odpoveď. To je vo všeobecnosti dobrý zvyk: keď začínate s novým nástrojom, najprv vyriešte úlohu, ktorej odpoveď už poznáte.
+
+Obrázok vpravo ukazuje prípustnú oblasť – množinu všetkých bodov, ktoré spĺňajú všetky ohraničenia. Podrobne si ju pozrieme na ďalšej snímke.

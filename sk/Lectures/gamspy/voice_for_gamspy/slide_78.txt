@@ -1,0 +1,3 @@
+Kde pokračovať? Knižnica modelov GAMS Model Library s viac ako štyristo modelmi, mnohé z nich z chemického inžinierstva a strojárstva. Príklady GAMSPy na GitHube. Príručka GAMSPy pre používateľov GAMS. A všetok dnešný kód, ktorý si môžete stiahnuť ako súbor zip z odkazu na tejto snímke.
+
+A nápad na domácu úlohu: rozšírte Príklad 3 o tretí prúd a minimálny obsah MEA a potom výsledok zobrazte vo webovej aplikácii.

@@ -1,0 +1,9 @@
+Step three: the what-if chart with Matplotlib.
+
+The first two lines are important for web applications. Matplotlib use Agg means: no window, draw only into a file or into memory. A web server has no screen.
+
+Then we solve the model for thirteen water limits, from twenty to thirty-two percent, and draw two charts: the cost on the left, and the feed amounts on the right.
+
+Why two separate charts? Because the cost is in cents per kilogram and the amounts are in kilograms – different units. Never put them on one chart with two y-axes; it is confusing. In the code we also use a cache, so that the thirteen solves are remembered for each combination of costs and the page stays fast.
+
+The test: run plot underscore mixing dot py and open the PNG file. It should look like the picture on the right.

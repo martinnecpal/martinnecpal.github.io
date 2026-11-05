@@ -1,0 +1,7 @@
+Step six: we add the chart. A second route, slash plot dot png, returns the Matplotlib chart as an image.
+
+The function reads the water limit from the address, solves the model, and draws the figure with the current case marked. Then it saves the figure not to a disk, but into memory – into a BytesIO object, which behaves like a file in memory. We close the figure to free memory – this is important on a server that runs for days. And we return the bytes with the type image slash png.
+
+In the page we simply use an image tag whose source is this address, with the water limit as a parameter.
+
+The test: open the plot address directly in the browser, with water equals twenty-two, and you should see the chart. Then open the main page – the chart is now under the form.

@@ -1,0 +1,3 @@
+This is GAMS Studio. Let us look at the main areas.
+
+On the left, the Project Explorer with all files of the project. The main file – the one that will be run – is marked with a green triangle. In the centre, the code editor for the model file, with syntax highlighting and code completion. After a run, the listing file opens with the results. At the bottom, the Process Log shows the run messages and errors, with clickable links. And at the top, the toolbar, with the most important button: Run, or the key F9.

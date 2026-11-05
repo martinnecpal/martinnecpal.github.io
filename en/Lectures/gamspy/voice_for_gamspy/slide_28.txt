@@ -1,0 +1,13 @@
+Now it is your turn. Four small exercises.
+
+First, change the objective to Z equals two x one plus three x two. Which corner wins now?
+
+Second, look at the marginals of the equations, eq one dot m and eq two dot m. Which constraint is binding?
+
+Third, switch the solver: add the line option LP equals HiGHS before the solve statement, and compare.
+
+And fourth, change maximizing to minimizing. What happens, and why?
+
+The answers. With the new objective, point C, one, one, wins with Z equals five, while D gives only four. The constraint eq two is binding at point B, its marginal is three, while eq one has slack and its marginal is zero. HiGHS gives the same optimum. And minimizing gives the trivial solution in the origin, A, with Z equals zero – of course, if you want the smallest value and all coefficients are positive, you produce nothing.
+
+Next, the same model in Python, with GAMSPy.

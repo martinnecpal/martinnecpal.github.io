@@ -1,0 +1,9 @@
+The mathematical formulation, on the basis of one kilogram of mixture.
+
+The variables are m one and m two, the masses of feed one and feed two in kilograms, and z, the cost of one kilogram of mixture in cents.
+
+We minimize z equals eighty m one plus sixty m two. Subject to the water content: zero point two m one plus zero point three two m two is less than or equal to zero point two five. And the mass balance: m one plus m two equals one. Both masses are non-negative.
+
+The picture on the right shows the graphical solution. Because of the mass balance, all feasible points lie on the thick line segment. The water constraint cuts this segment, and the cheapest feasible point is where the water content is exactly twenty-five percent: m one equals zero point five eight three, m two equals zero point four one seven, and the cost is seventy-one point six seven cents per kilogram.
+
+A small discussion point: in the original GAMS lecture this model was solved as NLP. But all equations are linear, so LP is the correct model type. Always choose the simplest model type that fits your equations.

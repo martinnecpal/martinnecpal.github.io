@@ -1,0 +1,1 @@
+Druhá časť: Príklad 1, jednoduchá úloha lineárneho programovania. Tento príklad je prevzatý z prednášky profesora Elvisa Ahmetovića z Univerzity v Tuzle.

@@ -1,0 +1,3 @@
+Step two: the Python extension. Open the Extensions view with Control Shift X, search for Python and install the extension by Microsoft. The Python Debugger is installed automatically with it. Optionally, you can add the Jupyter extension for notebooks.
+
+But remember: the extension does not contain Python itself. Python 3.11 or newer must already be installed, as we did a moment ago.

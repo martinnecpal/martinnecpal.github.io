@@ -1,0 +1,5 @@
+Step six: test it. This is the smallest possible GAMSPy model.
+
+We import gamspy as gp, create a Container, one variable x and one equation e, which says x is greater than or equal to one. The model minimizes x, so the answer must be one. We solve it and print the status and the objective value.
+
+Save it as test underscore gamspy dot py and run it. If you see ModelStatus OptimalGlobal and one point zero, GAMSPy is ready.

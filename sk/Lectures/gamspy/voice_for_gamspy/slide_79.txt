@@ -1,0 +1,1 @@
+Poďakovanie. Príklady 1 a 3 sú prevzaté z prednášky profesora Elvisa Ahmetovića z Univerzity v Tuzle, Matematické modelovanie v GAMS, ktorú predniesol ako prednášku Erasmus+ na našej univerzite v novembri 2025. Úloha Príkladu 3 pochádza z knihy Edena, Process Synthesis, Simulation and Optimization. A veľká vďaka našim hostiteľom za pozvanie.

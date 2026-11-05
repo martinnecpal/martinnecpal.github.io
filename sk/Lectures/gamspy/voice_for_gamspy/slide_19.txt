@@ -1,0 +1,3 @@
+Niekoľko skratiek. F9 spustí model, Shift F9 ho iba skompiluje. F6 otvorí knižnicu modelov, F1 pomoc. Control medzerník ponúkne dopĺňanie kódu a Control hviezdička zakomentuje alebo odkomentuje riadky. Ak si zapamätáte iba jednu, zapamätajte si F9.
+
+Ďalej náš prvý príklad, zapísaný v GAMS.

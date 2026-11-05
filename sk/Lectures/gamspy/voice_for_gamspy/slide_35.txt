@@ -1,0 +1,3 @@
+Piaty krok, licencia, je voliteľný. Demo licencia funguje hneď pre malé modely a na túto prednášku stačí.
+
+Ak máte akademickú alebo plnú licenciu, dostanete tridsaťšesťznakový prístupový kód. Nainštalujete ho príkazom gamspy install license a kódom a skontrolujete príkazom gamspy show license. Na návrat k demo licencii použite gamspy uninstall license.

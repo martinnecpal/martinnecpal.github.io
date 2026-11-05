@@ -1,0 +1,7 @@
+Šiesty krok: pridáme graf. Druhá trasa, lomka plot bodka png, vráti graf z Matplotlib ako obrázok.
+
+Funkcia prečíta limit vody z adresy, vyrieši model a nakreslí graf s vyznačeným aktuálnym prípadom. Potom graf uloží nie na disk, ale do pamäte – do objektu BytesIO, ktorý sa správa ako súbor v pamäti. Graf zatvoríme, aby sme uvoľnili pamäť – to je dôležité na serveri, ktorý beží celé dni. A bajty vrátime s typom image lomka png.
+
+Na stránke jednoducho použijeme značku obrázka, ktorej zdrojom je táto adresa, s limitom vody ako parametrom.
+
+Test: otvorte adresu grafu priamo v prehliadači, s water rovná sa dvadsaťdva, a mali by ste vidieť graf. Potom otvorte hlavnú stránku – graf je teraz pod formulárom.

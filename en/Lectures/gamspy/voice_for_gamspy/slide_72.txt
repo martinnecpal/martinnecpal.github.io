@@ -1,0 +1,7 @@
+Step seven is the final interactive page, and it has two parts. First, the server side, app dot py.
+
+There are three routes. The root returns the HTML page from the templates folder. The route slash api slash solve returns the results as JSON: it reads the water limit and both costs from the address, calls solve mixing and converts the dictionary with jsonify. And the route slash plot dot png returns the chart, as in step six.
+
+This is a small API – an application programming interface. The page asks for data, and the server answers with numbers, not with a whole page.
+
+The test: open the API address with water twenty-five and costs eighty and sixty. You should see the JSON on the slide: cost seventy-one point six seven, feed one zero point five eight three, feed two zero point four one seven, ok true.

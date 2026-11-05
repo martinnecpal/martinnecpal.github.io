@@ -1,0 +1,5 @@
+Where is GAMS used? Practically everywhere where decisions are made under constraints.
+
+In energy systems: power plant planning, unit commitment, carbon capture and storage. In economics and policy: computable general equilibrium models and international trade, for example the METRO model of the OECD. In agriculture, water and forestry: allocation of land, water and other resources. In finance: portfolio and risk optimization. In logistics: transport, scheduling, vehicle routing. And in engineering: chemical processes, mechanical design and manufacturing.
+
+On the GAMS website you can find case studies from the OECD, TotalEnergies, Alpro or the Rhodium Group. Let us look at the two engineering fields more closely.

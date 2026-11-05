@@ -1,0 +1,3 @@
+Prevod ako recept v siedmich krokoch. Importujte gamspy a vytvorte Container. Každá deklarácia premennej sa stáva gp bodka Variable s typom. Rovnice sa deklarujú pomocou gp bodka Equation a definujú pomocou troch bodiek v zátvorkách. Relácie sa stávajú operátormi Pythonu a bodkočiarky odpadajú. Model dostane zoznam rovníc, typ úlohy, smer a účelovú funkciu. Zavoláte solve – predvolený riešič LP je opäť CPLEX. A výsledky čítate pomocou toValue pre skaláry alebo records, čo je pandas DataFrame, pre indexované symboly.
+
+Upozornenie dole je najčastejšou pascou. Ak napíšete eq jedna rovná sa, bez zátvoriek a troch bodiek, rovnicu nedefinujete. Jednoducho prepíšete premennú Pythonu eq jedna výrazom a model potichu stratí svoje ohraničenie.

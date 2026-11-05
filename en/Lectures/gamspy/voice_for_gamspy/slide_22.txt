@@ -1,0 +1,7 @@
+Here is the problem. We want to maximize Z equals three x one plus two x two.
+
+Subject to two constraints: x one plus three x two is less than or equal to four, and x one plus x two is less than or equal to two. And both variables must be non-negative.
+
+This is a linear program: the objective is linear and all constraints are linear. And it has only two variables. That is great for learning, because we can draw it in a plane and solve it graphically. Then we check that GAMS gives us the same answer. This is a good habit in general: whenever you start with a new tool, first solve a problem where you already know the answer.
+
+The picture on the right shows the feasible region – the set of all points that satisfy all constraints. We look at it in detail on the next slide.

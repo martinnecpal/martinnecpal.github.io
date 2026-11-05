@@ -1,0 +1,5 @@
+Ako čítať výstup. V Process Logu farba riadka hovorí, čo sa stane po dvojkliku. Modrý riadok otvorí výpis na danom mieste. Červený riadok je chyba a skočí priamo na riadok vo vašom zdrojovom kóde. Zelený riadok otvorí vytvorený súbor, napríklad súbor GDX.
+
+Výpis má vľavo navigačný strom: kompilácia, výpis rovníc, štatistika modelu, správa o riešení a výstup príkazu display.
+
+Čo skontrolovať ako prvé? Tri riadky: SOLVER STATUS 1, Normal Completion; MODEL STATUS 1, Optimal; a OBJECTIVE VALUE, hodnotu účelovej funkcie.

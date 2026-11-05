@@ -1,0 +1,7 @@
+Druhý krok: Príklad 3 zabalíme do opakovane použiteľnej funkcie solve mixing. Jej vstupmi sú limit vody, dve ceny a množstvo. Jej výstupom je slovník s výsledkami.
+
+Vnútri vytvoríme pri každom volaní nový container, potom množiny, parametre, premenné a rovnice, presne ako predtým, a model vyriešime. Ak stav nie je optimálny, vrátime ok false a stav. Inak vrátime ok true, náklady a množstvá oboch prúdov.
+
+Prečo funkcia? Pretože webový server ju bude volať s rôznymi vstupmi pri každej požiadavke. A prečo slovník? Pretože slovník sa veľmi ľahko pošle prehliadaču ako JSON.
+
+Test: spustite python mixing podčiarkovník model bodka py. Mali by ste vidieť jeden optimálny výsledok pre dvadsaťpäť percent a jeden neprípustný výsledok pre pätnásť percent.

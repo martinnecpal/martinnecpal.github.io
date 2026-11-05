@@ -1,0 +1,9 @@
+And now the real power of Python. A what-if analysis: how does the optimum change if we change the water limit?
+
+We write a simple loop over several limits. In each step we set new records for wmax, solve the model again and print the results. We change only the data – the model is not rewritten.
+
+Look at the table. With a twenty percent limit, the cost is eighty, and only feed one is used. As the limit grows, more of the cheap feed two can be used and the cost falls. At thirty-two percent only feed two is used, at sixty cents.
+
+Below twenty percent the problem is infeasible, because even pure feed one already contains twenty percent water. And above thirty-two percent the limit is no longer active, and the cheaper feed two is used alone.
+
+Next, we turn this table into a plot with Matplotlib.

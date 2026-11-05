@@ -1,0 +1,15 @@
+Čo sme sa dnes naučili? Porovnajme GAMS a GAMSPy riadok po riadku.
+
+Jazyk: GAMS má vlastný algebraický jazyk v súboroch bodka gms, kým GAMSPy je balík pre Python.
+
+Prostredie: GAMS Studio pre GAMS a VS Code alebo Jupyter pre GAMSPy.
+
+Výsledky: v GAMS výpis a súbory GDX; v GAMSPy pandas DataFrames a metóda toValue.
+
+Dáta: v GAMS tabuľky v modeli alebo súbory GDX; v GAMSPy pandas, Excel a databázy – celý svet Pythonu.
+
+Aplikácie: GAMS má MIRO; s GAMSPy môžete použiť Matplotlib, Flask alebo akýkoľvek iný nástroj Pythonu, ako sme to dnes urobili.
+
+A riešiče sú rovnaké: CPLEX, CONOPT, BARON, HiGHS a mnohé ďalšie.
+
+Takže: rovnaký algebraický model, dva spôsoby zápisu. GAMS si vyberte na čisté modelovanie a GAMSPy, keď je model súčasťou väčšieho pracovného postupu v Pythone – s dátami, grafmi a webovými stránkami.

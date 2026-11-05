@@ -1,0 +1,7 @@
+Takto zadáme množiny a dáta v GAMSPy.
+
+Množina f má záznamy feed jedna a feed dva a množina c má záznamy MEA a water.
+
+Zloženie je pandas DataFrame s jedným riadkom pre každú kombináciu prúdu a zložky a jej hodnotou. V praxi by mohlo prísť priamo z Excelu – to by bol jeden riadok, pandas read excel.
+
+Potom parametre: w s doménou f a c, naplnený z DataFrame; cost s doménou f; wmax s doménou c – všimnite si, že limit zadávame iba pre vodu; a skalár M rovný jednej.

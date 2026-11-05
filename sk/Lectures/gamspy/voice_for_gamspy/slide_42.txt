@@ -1,0 +1,3 @@
+Piaty krok: nainštalujte GAMSPy do tohto prostredia. Otvorte integrovaný terminál cez Terminal, New Terminal. Výzva by mala začínať názvom prostredia – skontrolujte to skôr, ako niečo nainštalujete.
+
+Potom napíšte pip install gamspy matplotlib a znova skontrolujte verziu. Matplotlib inštalujeme už teraz, pretože neskôr ho použijeme na vykreslenie výsledkov.

@@ -1,0 +1,13 @@
+Prečítajme si kód riadok po riadku, pretože týchto pár príkazov je jadrom GAMS.
+
+Positive Variables deklaruje rozhodovacie premenné s dolnou hranicou nula. Free Variable Z deklaruje účelovú premennú. V GAMS musí byť účelová premenná voľná, bez akéhokoľvek obmedzenia znamienka.
+
+Kľúčové slovo Equations iba deklaruje názvy. Definícia prichádza neskôr, s dvoma bodkami: názov, dve bodky a potom telo rovnice.
+
+Rovná-e-rovná znamená rovná sa, rovná-l-rovná znamená menšie alebo rovné a rovná-g-rovná znamená väčšie alebo rovné.
+
+Model Example01 lomka all lomka hovorí, že model obsahuje všetky deklarované rovnice. Príkaz Solve obsahuje tri informácie: smer, maximalizácia alebo minimalizácia, účelovú premennú a typ modelu, tu LP.
+
+Display x jedna bodka l vypíše úroveň premennej, teda jej optimálnu hodnotu. Okrem bodka l majú premenné aj bodka lo a bodka up pre hranice a bodka m pre marginálnu hodnotu, ktorá je pri rovniciach tieňovou cenou.
+
+A všimnite si prosím: každý príkaz končí bodkočiarkou. Chýbajúca bodkočiarka je najčastejšou chybou začiatočníkov vôbec.

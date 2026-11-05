@@ -1,0 +1,7 @@
+This is how we enter the sets and the data in GAMSPy.
+
+The set f has the records feed one and feed two, and the set c has the records MEA and water.
+
+The composition is a pandas DataFrame, with one row for each combination of feed and component and its value. In practice it could come directly from Excel – that would be one line, pandas read excel.
+
+Then the parameters: w with the domain f and c, filled from the DataFrame; cost with the domain f; wmax with the domain c – notice that we give a limit only for water; and the scalar M, equal to one.

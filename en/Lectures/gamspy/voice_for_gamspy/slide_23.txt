@@ -1,0 +1,11 @@
+The graphical solution. Each constraint is a half-plane bounded by a straight line. The blue line is x one plus three x two equals four, the orange line is x one plus x two equals two. Together with the two axes, they enclose the feasible region, the blue polygon with corners A, B, C and D.
+
+A fundamental property of linear programming: if an optimum exists, it lies in a corner point of the feasible region. So we only need to evaluate the objective in the four corners.
+
+In A, the origin, Z equals zero. In B, the point two, zero, Z equals six. In C, Z equals five. And in D, the point zero, four thirds, Z equals eight thirds.
+
+How did we find point C? It is the intersection of the two lines. Subtract the second equation from the first, and you get two x two equals two, so x two equals one, and then x one equals one.
+
+So the optimum is in point B: x one equals two, x two equals zero, Z equals six.
+
+You can also see it in the picture: the dashed lines are lines of constant Z. As we push the line Z equals constant further to the upper right, the last point of the region it touches is B. Remember this result – six – because we will now check it in GAMS.

@@ -1,0 +1,1 @@
+New feeds or components change only the data, not the equations; data can come from Excel or databases, and what-if analyses only change data.

@@ -1,0 +1,9 @@
+So what is GAMS?
+
+GAMS is a high-level algebraic modelling language for mathematical optimization. The important word is algebraic. You do not write an algorithm, you do not write loops that build a matrix. You write the model the same way you would write it on paper, as mathematics: you define sets, parameters, variables and equations.
+
+GAMS then compiles this model and passes it to a solver. The solver is a separate program that contains the numerical algorithm – for example the simplex method for linear problems, or an interior point method for nonlinear ones.
+
+And because the model and the solver are separate, the same model can be solved with different solvers without rewriting a single equation. GAMS handles linear, nonlinear, discrete, stochastic and equilibrium models, also at a very large scale, with millions of variables.
+
+Look at the box on the right, because this is the key idea of the whole lecture: separate what the problem is – the model – from how it is solved – the solver. You, as engineers, describe the physics, the economics, the technology. The solver takes care of the mathematics of finding the optimum.

@@ -1,0 +1,5 @@
+A small bonus. A GAMSPy model can be exported back to GAMS with toGams, and to LaTeX with toLatex. On the right you see the generated GAMS file – the same model we wrote by hand at the beginning.
+
+This is useful if you want to open the model in GAMS Studio, or if you write a paper or a thesis and need the equations in LaTeX.
+
+Next, more realistic data: Example 3.

@@ -1,0 +1,7 @@
+GAMS vie riešiť mnoho typov úloh. Tabuľka ukazuje tie najdôležitejšie.
+
+LP – lineárne programovanie – všetko je lineárne, typické riešiče sú CPLEX, HiGHS, Gurobi alebo XPRESS. MIP – zmiešané celočíselné programovanie – lineárny model, v ktorom niektoré premenné musia byť celé čísla, napríklad rozhodnutia áno alebo nie. NLP – nelineárne programovanie – riešia ho CONOPT, IPOPT, SNOPT alebo KNITRO. MINLP – zmiešané celočíselné nelineárne – najťažšia bežná trieda, s riešičmi ako DICOPT, SBB, SHOT alebo BARON. Ďalej modely s kvadratickými ohraničeniami, rovnovážne a komplementárne úlohy a nakoniec globálna optimalizácia.
+
+Ten posledný riadok je dôležitý. Nelineárna úloha môže mať niekoľko lokálnych optím. Riešiče ako CONOPT alebo IPOPT nájdu lokálne optimum – dobrý bod, ale nie nutne najlepší. Globálne riešiče ako BARON alebo SCIP dokážu, že riešenie je globálnym optimom.
+
+A teraz krása GAMS: zmena riešiča je jediný riadok, napríklad option NLP rovná sa BARON. Samotný model sa vôbec nemení.

@@ -1,0 +1,1 @@
+Model píšete ako matematiku – množiny, parametre, premenné, rovnice – a je oddelený od riešiča; ten istý model sa dá riešiť rôznymi riešičmi.

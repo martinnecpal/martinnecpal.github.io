@@ -1,0 +1,1 @@
+Eq two, x one plus x two less or equal to two; its marginal is three, while eq one has marginal zero and slack.

@@ -1,0 +1,5 @@
+Step six: run your first script. Create the file test underscore gamspy dot py, paste the test model and save it.
+
+Now there are three ways to run it. Click the Run Python File button at the top right of the editor. Or right-click and choose Run Python File in Terminal. Or select a few lines and press Shift Enter to run only the selection.
+
+The output appears in the Terminal panel – and again, ModelStatus OptimalGlobal and one point zero means everything works.

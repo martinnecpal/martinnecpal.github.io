@@ -1,0 +1,9 @@
+Prvý krok: priamy preklad, presne v štýle Príkladu 1. Snímka obrazovky ukazuje súbor mixing of streams bodka py vo VS Code.
+
+Vytvoríme container a dve kladné premenné, m jedna a m dva. Nový je tu argument description – krátky text, ktorý dokumentuje význam a jednotku každej premennej, tu hmotnosť prúdu jedna a prúdu dva v kilogramoch. Je to dobrá prax a zobrazí sa aj vo výsledkoch.
+
+Potom dve rovnice: water a balance. Obsah vody, nula celá dva m jedna plus nula celá tridsaťdva m dva, musí byť menší alebo rovný nula celá dvadsaťpäť. A bilancia, m jedna plus m dva dvojité rovná sa jedna. Dvojité rovná sa sa používa pre ohraničenie typu rovnosť.
+
+Všimnite si, že tu nie je premenná z ani rovnica účelovej funkcie. Náklady, osemdesiat m jedna plus šesťdesiat m dva, odovzdáme modelu priamo ako účelovú funkciu – kratší pythonovský spôsob, ktorý sme videli v Príklade 1. Problem LP, sense min a riešenie. Potom vypíšeme hodnotu účelovej funkcie a hodnoty m jedna a m dva.
+
+Výsledok: sedemdesiatjeden celá šesťsto šesťdesiatsedem centov za kilogram, m jedna nula celá päťsto osemdesiattri, m dva nula celá štyristo sedemnásť. Presne grafické riešenie. Nové sú iba dvojité rovná sa pre bilanciu a popisy.

@@ -1,0 +1,5 @@
+Teraz ho spustíme, naživo v GAMS Studio. Kroky sú na snímke.
+
+Vytvorte nový projekt, napríklad v priečinku GAMS podčiarkovník lecture. Vytvorte nový súbor Example01 bodka gms a napíšte alebo vložte kód. Uložte ho cez Control S a skontrolujte zelenú značku hlavného súboru. Stlačte F9. Process Log zobrazí beh a výpis sa otvorí automaticky.
+
+Videli ste teda, ako vyzerá chyba a ako rýchlo ju nájdete, keď začnete od prvého červeného riadka. Teraz sa pozrime na výsledky správneho behu.

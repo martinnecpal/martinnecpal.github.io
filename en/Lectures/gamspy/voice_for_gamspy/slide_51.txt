@@ -1,0 +1,5 @@
+In GAMSPy we can write it shorter. The objective does not need a variable Z and an equation obj. We can pass the expression three x one plus two x two directly as the objective of the model.
+
+Then we print the model status, the objective value, and the marginals of the two constraints, which we read from the records.
+
+The output: optimal, six, and the marginals zero and three. This answers one of the exercise questions from part two: eq two is binding, with a shadow price of three, and eq one has slack. If we could relax the second constraint by one unit, the objective would grow by three.

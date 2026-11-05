@@ -1,0 +1,1 @@
+Šiesta časť: od modelu k webovej stránke. GAMSPy, Matplotlib a Flask, v siedmich krokoch, z ktorých každý môžete otestovať skôr, ako budete pokračovať.

@@ -1,0 +1,7 @@
+Tu je teda všeobecná, indexovaná formulácia.
+
+Máme dve množiny: f, vstupné prúdy, a c, zložky. Parametre: cost od f, cena každého prúdu; w od f a c, hmotnostný zlomok zložky c v prúde f; wmax od c, najvyšší povolený podiel zložky c v produkte; a M, množstvo produktu. A jednu indexovanú premennú: x od f, hmotnosť prúdu f v produkte.
+
+Minimalizujeme súčet cez f z ceny krát x. Za podmienok: pre každú zložku c, ktorá má limit, je súčet cez f z w krát x menší alebo rovný wmax krát M. A súčet všetkých x sa rovná M.
+
+Porovnajte to s verziou s dvoma premennými. Tam bolo každé číslo zapísané v rovnici. Tu rovnice obsahujú iba symboly. A to je veľká výhoda: model sa nemení, keď pridáte prúdy alebo zložky. Menia sa iba dáta.

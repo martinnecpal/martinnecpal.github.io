@@ -1,0 +1,15 @@
+What did we learn today? Let us compare GAMS and GAMSPy row by row.
+
+The language: GAMS has its own algebraic language in dot gms files, while GAMSPy is a Python package.
+
+The environment: GAMS Studio for GAMS, and VS Code or Jupyter for GAMSPy.
+
+The results: in GAMS the listing file and GDX files; in GAMSPy pandas DataFrames and the toValue method.
+
+The data: in GAMS, tables in the model or GDX files; in GAMSPy, pandas, Excel and databases – the whole Python world.
+
+Applications: GAMS has MIRO; with GAMSPy you can use Matplotlib, Flask or any other Python tool, as we did today.
+
+And the solvers are the same: CPLEX, CONOPT, BARON, HiGHS and many others.
+
+So: the same algebraic model, two ways to write it. Choose GAMS when you do pure modelling, and GAMSPy when the model is a part of a bigger Python workflow – with data, plots and web pages.

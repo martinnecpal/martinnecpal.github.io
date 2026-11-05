@@ -1,0 +1,3 @@
+Step four: solvers. The command gamspy list solvers shows the installed ones. By default you get CPLEX for linear and mixed-integer problems, CONOPT for nonlinear problems, SBB for mixed-integer nonlinear problems, and PATH for complementarity problems.
+
+You can install more on demand, for example gamspy install solver highs ipopt. And in Python, you choose the solver with one argument: model dot solve, solver equals highs.

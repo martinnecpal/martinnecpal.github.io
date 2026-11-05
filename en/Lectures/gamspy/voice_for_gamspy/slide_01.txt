@@ -1,0 +1,5 @@
+The title of today's lecture is From GAMS to GAMSPy: optimization modelling in Python, from the model all the way to an interactive web page.
+
+What will you take home from the next two hours? Three things. First, you will write a small optimization model in GAMS, the classic algebraic modelling language. Second, you will write exactly the same model in Python, with the package GAMSPy. And third, you will turn such a model into a small web page, where anybody can move a slider and immediately see the new optimal solution.
+
+The picture on the right shows where we will end: a page that mixes two chemical streams at minimum cost. Everything you see there is computed by an optimization model running in the background.

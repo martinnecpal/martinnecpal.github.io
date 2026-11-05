@@ -1,0 +1,5 @@
+Niekoľko slov o mne. Volám sa Martin Necpal, som vysokoškolský učiteľ na Ústave výrobných technológií Materiálovotechnologickej fakulty v Trnave, ktorá je súčasťou Slovenskej technickej univerzity v Bratislave.
+
+Moja dizertačná práca sa venovala automatizovanému projektovaniu technologických postupov a jeho integrácii do počítačom podporovaných systémov. Učím aplikácie CAD a CAM a programovanie NC strojov, venujem sa modelovaniu a simulácii procesov obrábania a tvárnenia metódou konečných prvkov a pracujem s laserovým obrábaním na päťosovom stroji LASERTEC 80 Shape. V posledných rokoch sa veľa venujem Pythonu, dátovej vede a strojovému učeniu.
+
+Prečo optimalizácia? Pretože projektovanie technológie a výroba sú plné optimalizačných úloh – rezné podmienky, poradie operácií, rozmiestnenie dielcov na plechu. Presne tam pomáhajú nástroje ako GAMS a GAMSPy.

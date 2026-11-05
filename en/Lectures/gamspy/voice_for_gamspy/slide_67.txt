@@ -1,0 +1,7 @@
+Step two: we wrap Example 3 into a reusable function, solve mixing. Its inputs are the water limit, the two costs and the amount. Its output is a dictionary with the results.
+
+Inside, we create a new container for every call, then the sets, parameters, variables and equations, exactly as before, and we solve. If the status is not optimal, we return ok false and the status. Otherwise we return ok true, the cost and the two feed amounts.
+
+Why a function? Because the web server will call it with different inputs for every request. And why a dictionary? Because a dictionary is very easy to send to the browser as JSON.
+
+The test: run python mixing underscore model dot py. You should see one optimal result for twenty-five percent, and one infeasible result for fifteen percent.

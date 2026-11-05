@@ -1,0 +1,5 @@
+Čo je GAMSPy? Je to balík pre Python na algebraické modelovanie. Množiny, parametre, premenné a rovnice sa stávajú objektmi Pythonu. Na pozadí využíva výpočtové jadro GAMS a riešiče GAMS.
+
+Nepotrebujete samostatnú inštaláciu GAMS: pip install gamspy prinesie vlastné jadro GAMS. A keďže ide o Python, spolupracuje s pandas, NumPy, Matplotlib, Jupyterom a webovými aplikáciami. Demo licencia je súčasťou a pre akademickú obec je GAMSPy zadarmo cez GAMS Academic Program.
+
+Jedno upozornenie: licencie GAMS a GAMSPy sú rozdielne. Licenciu GAMS nemožno použiť pre GAMSPy.

@@ -1,0 +1,3 @@
+Teraz editor. Budeme používať Visual Studio Code, ktorý je bezplatný, nenáročný a beží vo Windows, macOS aj Linuxe.
+
+Stiahnite ho zo stránky code bodka visualstudio bodka com a spustite inštalátor. Snímka obrazovky vpravo ukazuje stránku na stiahnutie – web vám automaticky ponúkne inštalátor pre váš operačný systém. Dôležité sú dve zaškrtnutia: Add Open with Code do kontextovej ponuky Prieskumníka a Add to PATH. Potom spustite VS Code.

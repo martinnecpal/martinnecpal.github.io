@@ -1,0 +1,5 @@
+Now let us run it, live in GAMS Studio. The steps are on the slide.
+
+Create a new project, for example in a folder called GAMS underscore lecture. Create a new file Example01 dot gms and type or paste the code. Save it with Control S and check the green main-file marker. Press F9. The Process Log shows the run, and the listing file opens automatically.
+
+So, you have seen what an error looks like and how quickly you find it when you start from the first red line. Now let us look at the results of the correct run.

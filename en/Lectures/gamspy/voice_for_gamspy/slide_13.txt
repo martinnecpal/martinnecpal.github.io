@@ -1,0 +1,7 @@
+Now, how to install GAMS. There are three steps.
+
+First, download the installer from gams dot com slash download. It exists for Windows, Linux and macOS.
+
+Second, run the installer. GAMS Studio is installed automatically together with GAMS. On Windows you may see a SmartScreen warning – click More info and then Run anyway.
+
+Third, the license. A free demo license, limited in model size, comes with every download, and it is enough for today. Free academic licenses are available on the GAMS website. In GAMS Studio, you can paste or check the license under Help, GAMS Licensing.

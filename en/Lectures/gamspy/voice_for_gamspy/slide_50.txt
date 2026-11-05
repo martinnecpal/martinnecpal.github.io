@@ -1,0 +1,7 @@
+The results. The solve method returns a summary table, a pandas DataFrame: solver status normal completion, model status optimal global, objective six, model type LP, solver CPLEX, and solver time a few milliseconds.
+
+The values: x one equals two, x two equals zero, Z equals six.
+
+And if you print x one dot records, you get the full record of the variable – the level, the marginal, the lower and upper bound, and the scale.
+
+Once again the same result as on paper and in GAMS: x one equals two, x two equals zero, Z equals six.

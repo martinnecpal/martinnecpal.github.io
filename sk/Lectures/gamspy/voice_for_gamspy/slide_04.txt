@@ -1,0 +1,9 @@
+Čo je teda GAMS?
+
+GAMS je vysokoúrovňový algebraický modelovací jazyk pre matematickú optimalizáciu. Dôležité slovo je algebraický. Nepíšete algoritmus, nepíšete cykly, ktoré skladajú maticu. Model zapíšete rovnako, ako by ste ho napísali na papier, ako matematiku: definujete množiny, parametre, premenné a rovnice.
+
+GAMS potom tento model skompiluje a odovzdá ho riešiču. Riešič je samostatný program, ktorý obsahuje numerický algoritmus – napríklad simplexovú metódu pre lineárne úlohy alebo metódu vnútorného bodu pre nelineárne.
+
+A keďže model a riešič sú oddelené, ten istý model sa dá riešiť rôznymi riešičmi bez prepísania jedinej rovnice. GAMS zvláda lineárne, nelineárne, diskrétne, stochastické a rovnovážne modely, a to aj vo veľmi veľkom rozsahu, s miliónmi premenných.
+
+Pozrite sa na rámček vpravo, pretože toto je kľúčová myšlienka celej prednášky: oddeliť, čo je úloha – model – od toho, ako sa rieši – riešič. Vy ako inžinieri opisujete fyziku, ekonomiku, technológiu. O matematiku hľadania optima sa postará riešič.

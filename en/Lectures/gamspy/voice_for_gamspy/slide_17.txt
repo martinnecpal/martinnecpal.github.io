@@ -1,0 +1,5 @@
+Errors. They appear as red lines in the Process Log. The golden rule: always start with the first error. The later errors are very often only consequences of the first one.
+
+Click the red line and the cursor jumps to the error in your model file. In the listing file, the error position is marked with a dollar sign and an error number.
+
+The most common beginner errors are: a missing semicolon, a symbol that was not declared, a misspelled set element, or an equals sign written instead of equals-e-equals.

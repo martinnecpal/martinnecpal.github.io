@@ -1,0 +1,13 @@
+Teraz je rad na vás. Štyri malé cvičenia.
+
+Po prvé, zmeňte účelovú funkciu na Z rovná sa dva x jedna plus tri x dva. Ktorý vrchol vyhrá teraz?
+
+Po druhé, pozrite sa na marginálne hodnoty rovníc, eq jedna bodka m a eq dva bodka m. Ktoré ohraničenie je aktívne?
+
+Po tretie, zmeňte riešič: pred príkaz solve pridajte riadok option LP rovná sa HiGHS a porovnajte.
+
+A po štvrté, zmeňte maximalizáciu na minimalizáciu. Čo sa stane a prečo?
+
+Odpovede. S novou účelovou funkciou vyhrá bod C, jedna, jedna, so Z rovným piatim, kým D dáva iba štyri. V bode B je aktívne ohraničenie eq dva, jeho marginálna hodnota je tri, kým eq jedna má rezervu a jeho marginálna hodnota je nula. HiGHS dá rovnaké optimum. A minimalizácia dá triviálne riešenie v začiatku, v bode A, so Z rovným nule – samozrejme, ak chcete najmenšiu hodnotu a všetky koeficienty sú kladné, nevyrobíte nič.
+
+Ďalej ten istý model v Pythone, s GAMSPy.

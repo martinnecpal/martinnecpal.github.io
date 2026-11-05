@@ -1,0 +1,3 @@
+Tretí krok: otvorte priečinok projektu – File, Open Folder, a vyberte C dvojbodka GAMS podčiarkovník lecture. Alebo kliknite pravým tlačidlom na priečinok v Prieskumníkovi Windows a vyberte Open with Code. Potvrďte, že dôverujete autorom.
+
+Pravidlo znie: jeden priečinok je jeden projekt. Vaše súbory Pythonu aj virtuálne prostredie sú v tomto priečinku. Vždy otvárajte celý priečinok, nie iba jeden súbor.

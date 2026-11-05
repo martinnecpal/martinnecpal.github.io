@@ -1,0 +1,3 @@
+Veľmi pekne ďakujem za pozornosť. Na snímke nájdete môj kontakt a zdroje a ďalšie čítanie: prednášku profesora Ahmetovića, knihu Edena, príručku GAMS User's Guide, dokumentáciu GAMS a GAMSPy a dokumentáciu VS Code, Matplotlib a Flask.
+
+Teraz rád odpoviem na vaše otázky.

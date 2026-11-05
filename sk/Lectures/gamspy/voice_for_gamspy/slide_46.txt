@@ -1,0 +1,11 @@
+Na preklad z GAMS do GAMSPy potrebujeme malý slovník. Tu je.
+
+Celý súbor GAMS zodpovedá jednému Containeru v GAMSPy. Každý symbol žije vnútri tohto containera.
+
+Množina GAMS sa stáva gp bodka Set, s containerom, názvom a záznamami. Parameter sa stáva gp bodka Parameter, s doménou a záznamami. Kladná premenná sa stáva gp bodka Variable s type rovná sa positive a voľná premenná s type rovná sa free. Rovnica sa stáva gp bodka Equation.
+
+Definícia s dvoma bodkami sa stáva priradením s hranatými zátvorkami a tromi bodkami: e, zátvorka, bodka bodka bodka, zátvorka, rovná sa ľavá strana, dvojité rovná sa, pravá strana. Rovná-l-rovná a rovná-g-rovná sa stávajú operátormi Pythonu menšie alebo rovné a väčšie alebo rovné. Súčet sum z GAMS sa stáva gp bodka Sum.
+
+Príkaz model sa stáva gp bodka Model so zoznamom rovníc a príkaz solve sa rozdelí: typ úlohy, smer a účelová funkcia sú argumentmi modelu a potom zavoláme metódu solve. A namiesto Display používame print, s toValue alebo records.
+
+Kľúčová myšlienka: každý symbol GAMS sa stáva objektom Pythonu, ktorý žije v Containeri. A tri bodky v hranatých zátvorkách znamenajú: pre všetky prvky domény.

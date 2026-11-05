@@ -1,0 +1,3 @@
+Tretí krok: inštalácia GAMSPy. Jeden príkaz: pip install gamspy.
+
+Potom ho overte príkazom gamspy pomlčka pomlčka version. Mali by ste vidieť verziu GAMSPy, 1.29, a verziu jadra GAMS, ktoré prišlo s ním, 54.6. Neskôr ho aktualizujete príkazom pip install gamspy pomlčka pomlčka upgrade.

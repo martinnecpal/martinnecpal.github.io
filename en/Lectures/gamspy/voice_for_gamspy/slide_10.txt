@@ -1,0 +1,5 @@
+And mechanical and manufacturing engineering, which is closer to my own field.
+
+Design of machine elements like gears, springs and bearings. Structural optimization of trusses and shapes. Optimal control, for example the trajectory of a robot arm. Manufacturing problems like cutting stock and trim loss, production planning and flow shop scheduling. And energy in production, where machines are scheduled to reduce energy costs.
+
+Again, the Model Library has ready examples for all of them: gear train design, a coil compression spring, bearings, truss topology, cam shape, robot arm, cutting and scheduling. In machining, for example, choosing the cutting parameters is a nonlinear problem, and the sequence of operations is a mixed-integer problem.

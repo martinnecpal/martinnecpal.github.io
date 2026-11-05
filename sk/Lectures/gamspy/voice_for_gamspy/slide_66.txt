@@ -1,0 +1,5 @@
+Prvý krok: v termináli VS Code, s aktívnym prostredím, nainštalujte Matplotlib a Flask pomocou pip.
+
+Každý krok má test. Tu je to jednoriadkový príkaz Pythonu, ktorý importuje gamspy, matplotlib a flask a vypíše all OK. Ak uvidíte all OK, pokračujte.
+
+Vpravo je štruktúra priečinka, ktorú vytvoríme: priečinok webapp s modelom, skriptom na graf, tromi priebežnými aplikáciami Flask, výslednou aplikáciou a priečinkom templates so stránkou HTML.

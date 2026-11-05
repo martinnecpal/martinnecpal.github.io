@@ -1,0 +1,3 @@
+Step three: open your project folder – File, Open Folder, and choose C colon GAMS underscore lecture. Or right-click the folder in Windows Explorer and choose Open with Code. Confirm that you trust the authors.
+
+The rule is: one folder is one project. Your Python files and your virtual environment live in this folder. Always open the whole folder, not just a single file.

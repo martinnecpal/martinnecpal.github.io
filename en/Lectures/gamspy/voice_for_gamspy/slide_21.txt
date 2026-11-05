@@ -1,0 +1,1 @@
+Part two: Example 1, a simple linear program. This example is adapted from the lecture of Professor Elvis Ahmetović from the University of Tuzla.

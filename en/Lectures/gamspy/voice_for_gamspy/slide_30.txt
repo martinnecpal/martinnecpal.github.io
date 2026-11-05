@@ -1,0 +1,5 @@
+What is GAMSPy? It is a Python package for algebraic modelling. Sets, parameters, variables and equations become Python objects. In the background, it uses the GAMS engine and the GAMS solvers.
+
+You do not need a separate GAMS installation: pip install gamspy brings its own GAMS core. And because it is Python, it works with pandas, NumPy, Matplotlib, Jupyter and web applications. A demo license is included, and GAMSPy is free for academics through the GAMS Academic Program.
+
+One warning: GAMS and GAMSPy licenses are different. A GAMS license cannot be used for GAMSPy.

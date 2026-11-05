@@ -1,0 +1,5 @@
+Dnes GAMS nie je len jeden program, ale malý ekosystém štyroch produktov.
+
+Samotný jazyk GAMS spolu s prostredím GAMS Studio. GAMSPy, natívne rozhranie pre Python, ktoré vám dáva rovnaké modelovacie možnosti priamo v Pythone. GAMS MIRO, ktoré z modelu urobí interaktívnu webovú aplikáciu pre ľudí, ktorí nie sú odborníkmi na optimalizáciu. A GAMS Engine, ktorý spúšťa optimalizačné úlohy vo veľkom – paralelne, v cloude, s veľkou pamäťou.
+
+Dnes budeme podrobne pracovať s prvými dvoma, označenými červenou. A myšlienku MIRO – model s priateľským webovým rozhraním – si na konci prednášky postavíme sami, v čistom Pythone.

@@ -1,0 +1,3 @@
+And this is the result: an interactive mixing optimizer. On the left the sliders for the water limit and the cost of feed one and feed two. At the top the cards with the minimum cost, the feed ratio as a bar, and the water content of the product. And the what-if chart, with the current case marked by the dashed line. If the input is infeasible, below twenty percent water, a red warning appears instead of numbers.
+
+So, with about one hundred lines of Python and a short HTML page, an optimization model became a tool that anybody can use in a browser, without knowing anything about GAMS.

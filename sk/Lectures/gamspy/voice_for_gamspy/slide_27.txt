@@ -1,0 +1,7 @@
+Toto sú výsledky z výpisu, skopírované zo skutočného behu v GAMS 54.
+
+Súhrn riešenia nám hovorí: model Example01, typ LP, smer maximalizácia, riešič CPLEX. Stav riešiča jedna, normálne dokončenie. Stav modelu jedna, optimálny. Hodnota účelovej funkcie šesť.
+
+A výstup príkazu display vpravo: x jedna rovná sa dva, x dva rovná sa nula, Z rovná sa šesť.
+
+Presne rovnako ako grafické riešenie. Všimnite si tiež, že sme riešič nevyberali – CPLEX je jednoducho predvolený riešič pre LP.

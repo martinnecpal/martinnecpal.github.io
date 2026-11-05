@@ -1,0 +1,1 @@
+This table is a quick reference of all the commands from the installation: create and activate the environment, install GAMSPy, check the version, list and add solvers, and install and show the license. You do not need to remember them – keep this slide from the PDF next to your computer when you install at home.

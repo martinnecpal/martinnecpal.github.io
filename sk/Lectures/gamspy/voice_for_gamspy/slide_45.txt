@@ -1,0 +1,1 @@
+Štvrtá časť: ten istý model ako predtým, teraz v Pythone.

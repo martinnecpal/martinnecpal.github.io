@@ -1,0 +1,5 @@
+V GAMSPy to môžeme napísať kratšie. Účelová funkcia nepotrebuje premennú Z a rovnicu obj. Výraz tri x jedna plus dva x dva môžeme odovzdať priamo ako účelovú funkciu modelu.
+
+Potom vypíšeme stav modelu, hodnotu účelovej funkcie a marginálne hodnoty dvoch ohraničení, ktoré prečítame zo záznamov.
+
+Výstup: optimálny, šesť a marginálne hodnoty nula a tri. To odpovedá na jednu z otázok cvičenia z druhej časti: eq dva je aktívne, s tieňovou cenou tri, a eq jedna má rezervu. Ak by sme mohli druhé ohraničenie uvoľniť o jednu jednotku, účelová funkcia by narástla o tri.

@@ -1,0 +1,3 @@
+Druhý krok: rozšírenie Python. Otvorte zobrazenie Extensions cez Control Shift X, vyhľadajte Python a nainštalujte rozšírenie od Microsoftu. Python Debugger sa nainštaluje automaticky spolu s ním. Voliteľne môžete pridať rozšírenie Jupyter pre notebooky.
+
+Pamätajte však: rozšírenie neobsahuje samotný Python. Python 3.11 alebo novší už musí byť nainštalovaný, ako sme to urobili pred chvíľou.

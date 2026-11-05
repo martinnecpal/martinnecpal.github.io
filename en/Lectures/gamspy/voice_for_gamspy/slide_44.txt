@@ -1,0 +1,3 @@
+And the VS Code shortcuts we need today. The most important one is Control Shift P, the Command Palette – from there you can do everything. Control Shift X for extensions, Control Shift backtick for a new terminal, Shift Enter to run a selection, F5 to start the debugger, Control slash to comment a line, and Control P to quickly open a file.
+
+Now we are ready: Example 1, written in GAMSPy.

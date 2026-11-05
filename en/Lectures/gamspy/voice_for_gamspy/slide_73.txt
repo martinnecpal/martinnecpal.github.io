@@ -1,0 +1,5 @@
+The second part is the browser side, the file index dot html. There are three sliders – for the water limit and the two costs – and an image for the chart.
+
+A small JavaScript function update runs on every change of a slider. It builds the query from the slider values, fetches the JSON from our API – that is where GAMSPy solves the model – and writes the cost into the page. Then it changes the source of the image, so Matplotlib draws the new chart.
+
+The test: run python app dot py and move the sliders. The numbers and the chart should update.

@@ -2,7 +2,7 @@
 
 **Hovorený text — hosťovská prednáška** · Martin Necpal · MTF STU Trnava
 
-Prezentácia: gamspy.html (82 snímok) · Trvanie: 120 minút
+Prezentácia: gamspy.html (80 snímok) · Trvanie: 120 minút
 
 > [!TIP]
 > **Ako používať tento text**
@@ -18,93 +18,91 @@ Prezentácia: gamspy.html (82 snímok) · Trvanie: 120 minút
 | | **[ÚVOD](#úvod-000--005)** | **0:00 – 0:05** |
 | 1 | [Úvodná snímka](#snímka-1--úvodná-snímka) | 0:00–0:02 |
 | 2 | [O mne](#snímka-2--o-mne) | 0:02–0:03 |
-| 3 | [Program](#snímka-3--program) | 0:03–0:05 |
 | | **[ČASŤ 1 — ÚVOD DO GAMS](#časť-1--úvod-do-gams-005--025)** | **0:05 – 0:25** |
-| 4 | [Časť 1 — Úvod do GAMS](#snímka-4--časť-1--úvod-do-gams) | 0:05 |
-| 5 | [Čo je GAMS?](#snímka-5--čo-je-gams) | 0:05–0:07 |
-| 6 | [Stručná história](#snímka-6--stručná-história) | 0:07–0:08 |
-| 7 | [Ekosystém GAMS](#snímka-7--ekosystém-gams) | 0:08–0:09 |
-| 8 | [Ako funguje GAMS](#snímka-8--ako-funguje-gams) | 0:09–0:11 |
-| 9 | [Typy úloh a riešiče](#snímka-9--typy-úloh-a-riešiče) | 0:11–0:13 |
-| 10 | [Kde sa GAMS používa?](#snímka-10--kde-sa-gams-používa) | 0:13–0:14 |
-| 11 | [GAMS v chemickom inžinierstve](#snímka-11--gams-v-chemickom-inžinierstve) | 0:14–0:15 |
-| 12 | [GAMS v strojárstve a výrobe](#snímka-12--gams-v-strojárstve-a-výrobe) | 0:15–0:16 |
-| 13 | [Prečo by inžinieri mali používať GAMS?](#snímka-13--prečo-by-inžinieri-mali-používať-gams) | 0:16–0:17 |
-| 14 | [Zdroje](#snímka-14--zdroje) | 0:17–0:18 |
-| 15 | [Inštalácia GAMS](#snímka-15--inštalácia-gams) | 0:18–0:19 |
-| 16 | [GAMS Studio v kocke](#snímka-16--gams-studio-v-kocke) | 0:19–0:20 |
-| 17 | [Prvé spustenie v 5 krokoch](#snímka-17--prvé-spustenie-v-5-krokoch) | 0:20–0:21 |
-| 18 | [Čítanie výstupu](#snímka-18--čítanie-výstupu) | 0:21–0:22 |
-| 19 | [Hľadanie a oprava chýb](#snímka-19--hľadanie-a-oprava-chýb) | 0:22–0:23 |
-| 20 | [Ďalšie užitočné nástroje Studia](#snímka-20--ďalšie-užitočné-nástroje-studia) | 0:23–0:24 |
-| 21 | [Užitočné klávesové skratky](#snímka-21--užitočné-klávesové-skratky) | 0:24–0:25 |
-| 22 | [Odkazy](#snímka-22--odkazy) | 0:25 |
+| 3 | [Časť 1 — Úvod do GAMS](#snímka-3--časť-1--úvod-do-gams) | 0:05 |
+| 4 | [Čo je GAMS?](#snímka-4--čo-je-gams) | 0:05–0:07 |
+| 5 | [Ekosystém GAMS](#snímka-5--ekosystém-gams) | 0:08–0:09 |
+| 6 | [Ako funguje GAMS](#snímka-6--ako-funguje-gams) | 0:09–0:11 |
+| 7 | [Typy úloh a riešiče](#snímka-7--typy-úloh-a-riešiče) | 0:11–0:13 |
+| 8 | [Kde sa GAMS používa?](#snímka-8--kde-sa-gams-používa) | 0:13–0:14 |
+| 9 | [GAMS v chemickom inžinierstve](#snímka-9--gams-v-chemickom-inžinierstve) | 0:14–0:15 |
+| 10 | [GAMS v strojárstve a výrobe](#snímka-10--gams-v-strojárstve-a-výrobe) | 0:15–0:16 |
+| 11 | [Prečo by inžinieri mali používať GAMS?](#snímka-11--prečo-by-inžinieri-mali-používať-gams) | 0:16–0:17 |
+| 12 | [Zdroje](#snímka-12--zdroje) | 0:17–0:18 |
+| 13 | [Inštalácia GAMS](#snímka-13--inštalácia-gams) | 0:18–0:19 |
+| 14 | [GAMS Studio v kocke](#snímka-14--gams-studio-v-kocke) | 0:19–0:20 |
+| 15 | [Prvé spustenie v 5 krokoch](#snímka-15--prvé-spustenie-v-5-krokoch) | 0:20–0:21 |
+| 16 | [Čítanie výstupu](#snímka-16--čítanie-výstupu) | 0:21–0:22 |
+| 17 | [Hľadanie a oprava chýb](#snímka-17--hľadanie-a-oprava-chýb) | 0:22–0:23 |
+| 18 | [Ďalšie užitočné nástroje Studia](#snímka-18--ďalšie-užitočné-nástroje-studia) | 0:23–0:24 |
+| 19 | [Užitočné klávesové skratky](#snímka-19--užitočné-klávesové-skratky) | 0:24–0:25 |
+| 20 | [Odkazy](#snímka-20--odkazy) | 0:25 |
 | | **[ČASŤ 2 — PRÍKLAD 1 V GAMS](#časť-2--príklad-1-v-gams-025--040)** | **0:25 – 0:40** |
-| 23 | [Časť 2 — Príklad 1 v GAMS](#snímka-23--časť-2--príklad-1-v-gams) | 0:25 |
-| 24 | [Úloha](#snímka-24--úloha) | 0:25–0:27 |
-| 25 | [Grafické riešenie](#snímka-25--grafické-riešenie) | 0:27–0:30 |
-| 26 | [Ten istý model v GAMS](#snímka-26--ten-istý-model-v-gams) | 0:30–0:32 |
-| 27 | [Čítanie kódu riadok po riadku](#snímka-27--čítanie-kódu-riadok-po-riadku) | 0:32–0:34 |
-| 28 | [Spustenie v GAMS Studio (NAŽIVO)](#snímka-28--spustenie-v-gams-studio-naživo) | 0:34–0:37 |
-| 29 | [Výsledky vo výpise](#snímka-29--výsledky-vo-výpise) | 0:37–0:38 |
-| 30 | [Vyskúšajte si](#snímka-30--vyskúšajte-si) | 0:38–0:40 |
+| 21 | [Časť 2 — Príklad 1 v GAMS](#snímka-21--časť-2--príklad-1-v-gams) | 0:25 |
+| 22 | [Úloha](#snímka-22--úloha) | 0:25–0:27 |
+| 23 | [Grafické riešenie](#snímka-23--grafické-riešenie) | 0:27–0:30 |
+| 24 | [Ten istý model v GAMS](#snímka-24--ten-istý-model-v-gams) | 0:30–0:32 |
+| 25 | [Čítanie kódu riadok po riadku](#snímka-25--čítanie-kódu-riadok-po-riadku) | 0:32–0:34 |
+| 26 | [Spustenie v GAMS Studio (NAŽIVO)](#snímka-26--spustenie-v-gams-studio-naživo) | 0:34–0:37 |
+| 27 | [Výsledky vo výpise](#snímka-27--výsledky-vo-výpise) | 0:37–0:38 |
+| 28 | [Vyskúšajte si](#snímka-28--vyskúšajte-si) | 0:38–0:40 |
 | | **[ČASŤ 3 — OD GAMS KU GAMSPY](#časť-3--od-gams-ku-gamspy-040--055)** | **0:40 – 0:55** |
-| 31 | [Časť 3 — Od GAMS ku GAMSPy](#snímka-31--časť-3--od-gams-ku-gamspy) | 0:40 |
-| 32 | [Čo je GAMSPy?](#snímka-32--čo-je-gamspy) | 0:40–0:41 |
-| 33 | [Krok 1 – Inštalácia Pythonu](#snímka-33--krok-1--inštalácia-pythonu) | 0:41–0:42 |
-| 34 | [Krok 2 – Vytvorenie virtuálneho prostredia](#snímka-34--krok-2--vytvorenie-virtuálneho-prostredia) | 0:42–0:43 |
-| 35 | [Krok 3 – Inštalácia GAMSPy](#snímka-35--krok-3--inštalácia-gamspy) | 0:43–0:44 |
-| 36 | [Krok 4 – Riešiče](#snímka-36--krok-4--riešiče) | 0:44–0:45 |
-| 37 | [Krok 5 – Licencia (voliteľné)](#snímka-37--krok-5--licencia-voliteľné) | 0:45–0:46 |
-| 38 | [Krok 6 – Otestujte to](#snímka-38--krok-6--otestujte-to) | 0:46–0:47 |
-| 39 | [Rýchly prehľad](#snímka-39--rýchly-prehľad) | 0:47–0:48 |
-| 40 | [Krok 1 – Inštalácia VS Code](#snímka-40--krok-1--inštalácia-vs-code) | 0:48–0:49 |
-| 41 | [Krok 2 – Rozšírenie Python](#snímka-41--krok-2--rozšírenie-python) | 0:49–0:50 |
-| 42 | [Krok 3 – Otvorenie priečinka projektu](#snímka-42--krok-3--otvorenie-priečinka-projektu) | 0:50–0:51 |
-| 43 | [Krok 4 – Výber prostredia Pythonu](#snímka-43--krok-4--výber-prostredia-pythonu) | 0:51–0:52 |
-| 44 | [Krok 5 – Inštalácia GAMSPy do prostredia](#snímka-44--krok-5--inštalácia-gamspy-do-prostredia) | 0:52–0:53 |
-| 45 | [Krok 6 – Spustenie prvého skriptu](#snímka-45--krok-6--spustenie-prvého-skriptu) | 0:53–0:54 |
-| 46 | [Skratky VS Code pre túto prednášku](#snímka-46--skratky-vs-code-pre-túto-prednášku) | 0:54–0:55 |
+| 29 | [Časť 3 — Od GAMS ku GAMSPy](#snímka-29--časť-3--od-gams-ku-gamspy) | 0:40 |
+| 30 | [Čo je GAMSPy?](#snímka-30--čo-je-gamspy) | 0:40–0:41 |
+| 31 | [Krok 1 – Inštalácia Pythonu](#snímka-31--krok-1--inštalácia-pythonu) | 0:41–0:42 |
+| 32 | [Krok 2 – Vytvorenie virtuálneho prostredia](#snímka-32--krok-2--vytvorenie-virtuálneho-prostredia) | 0:42–0:43 |
+| 33 | [Krok 3 – Inštalácia GAMSPy](#snímka-33--krok-3--inštalácia-gamspy) | 0:43–0:44 |
+| 34 | [Krok 4 – Riešiče](#snímka-34--krok-4--riešiče) | 0:44–0:45 |
+| 35 | [Krok 5 – Licencia (voliteľné)](#snímka-35--krok-5--licencia-voliteľné) | 0:45–0:46 |
+| 36 | [Krok 6 – Otestujte to](#snímka-36--krok-6--otestujte-to) | 0:46–0:47 |
+| 37 | [Rýchly prehľad](#snímka-37--rýchly-prehľad) | 0:47–0:48 |
+| 38 | [Krok 1 – Inštalácia VS Code](#snímka-38--krok-1--inštalácia-vs-code) | 0:48–0:49 |
+| 39 | [Krok 2 – Rozšírenie Python](#snímka-39--krok-2--rozšírenie-python) | 0:49–0:50 |
+| 40 | [Krok 3 – Otvorenie priečinka projektu](#snímka-40--krok-3--otvorenie-priečinka-projektu) | 0:50–0:51 |
+| 41 | [Krok 4 – Výber prostredia Pythonu](#snímka-41--krok-4--výber-prostredia-pythonu) | 0:51–0:52 |
+| 42 | [Krok 5 – Inštalácia GAMSPy do prostredia](#snímka-42--krok-5--inštalácia-gamspy-do-prostredia) | 0:52–0:53 |
+| 43 | [Krok 6 – Spustenie prvého skriptu](#snímka-43--krok-6--spustenie-prvého-skriptu) | 0:53–0:54 |
+| 44 | [Skratky VS Code pre túto prednášku](#snímka-44--skratky-vs-code-pre-túto-prednášku) | 0:54–0:55 |
 | | **[ČASŤ 4 — PRÍKLAD 1 V GAMSPY](#časť-4--príklad-1-v-gamspy-055--105)** | **0:55 – 1:05** |
-| 47 | [Časť 4 — Príklad 1 v GAMSPy](#snímka-47--časť-4--príklad-1-v-gamspy) | 0:55 |
-| 48 | [GAMS → GAMSPy: slovník](#snímka-48--gams--gamspy-slovník) | 0:55–0:57 |
-| 49 | [Vedľa seba](#snímka-49--vedľa-seba) | 0:57–0:59 |
-| 50 | [Ako previesť model – krok za krokom](#snímka-50--ako-previesť-model--krok-za-krokom) | 0:59–1:00 |
-| 51 | [Spustenie vo VS Code (NAŽIVO)](#snímka-51--spustenie-vo-vs-code-naživo) | 1:00–1:02 |
-| 52 | [Výsledky](#snímka-52--výsledky) | 1:02–1:03 |
-| 53 | [Po pythonovsky – kratšie](#snímka-53--po-pythonovsky--kratšie) | 1:03–1:04 |
-| 54 | [Bonus: späť do GAMS a LaTeXu](#snímka-54--bonus-späť-do-gams-a-latexu) | 1:04–1:05 |
+| 45 | [Časť 4 — Príklad 1 v GAMSPy](#snímka-45--časť-4--príklad-1-v-gamspy) | 0:55 |
+| 46 | [GAMS → GAMSPy: slovník](#snímka-46--gams--gamspy-slovník) | 0:55–0:57 |
+| 47 | [Vedľa seba](#snímka-47--vedľa-seba) | 0:57–0:59 |
+| 48 | [Ako previesť model – krok za krokom](#snímka-48--ako-previesť-model--krok-za-krokom) | 0:59–1:00 |
+| 49 | [Spustenie vo VS Code (NAŽIVO)](#snímka-49--spustenie-vo-vs-code-naživo) | 1:00–1:02 |
+| 50 | [Výsledky](#snímka-50--výsledky) | 1:02–1:03 |
+| 51 | [Po pythonovsky – kratšie](#snímka-51--po-pythonovsky--kratšie) | 1:03–1:04 |
+| 52 | [Bonus: späť do GAMS a LaTeXu](#snímka-52--bonus-späť-do-gams-a-latexu) | 1:04–1:05 |
 | | **[ČASŤ 5 — PRÍKLAD 3: MIEŠANIE PRÚDOV](#časť-5--príklad-3-miešanie-prúdov-105--120)** | **1:05 – 1:20** |
-| 55 | [Časť 5 — Príklad 3: Miešanie prúdov](#snímka-55--časť-5--príklad-3-miešanie-prúdov) | 1:05 |
-| 56 | [Úloha](#snímka-56--úloha) | 1:05–1:06 |
-| 57 | [Matematická formulácia](#snímka-57--matematická-formulácia) | 1:06–1:08 |
-| 58 | [Krok 1 – priamy preklad](#snímka-58--krok-1--priamy-preklad) | 1:08–1:10 |
-| 59 | [Problém: čísla sú vnútri rovníc](#snímka-59--problém-čísla-sú-vnútri-rovníc) | 1:10–1:11 |
-| 60 | [Krok 2 – všeobecná (indexovaná) formulácia](#snímka-60--krok-2--všeobecná-indexovaná-formulácia) | 1:11–1:13 |
-| 61 | [Množiny a dáta](#snímka-61--množiny-a-dáta) | 1:13–1:14 |
-| 62 | [Premenné, rovnice, model](#snímka-62--premenné-rovnice-model) | 1:14–1:16 |
-| 63 | [Výsledky](#snímka-63--výsledky) | 1:16–1:17 |
-| 64 | [Čo ak: zmena limitu vody (NAŽIVO)](#snímka-64--čo-ak-zmena-limitu-vody-naživo) | 1:17–1:19 |
-| 65 | [Vyskúšajte si](#snímka-65--vyskúšajte-si) | 1:19–1:20 |
+| 53 | [Časť 5 — Príklad 3: Miešanie prúdov](#snímka-53--časť-5--príklad-3-miešanie-prúdov) | 1:05 |
+| 54 | [Úloha](#snímka-54--úloha) | 1:05–1:06 |
+| 55 | [Matematická formulácia](#snímka-55--matematická-formulácia) | 1:06–1:08 |
+| 56 | [Krok 1 – priamy preklad](#snímka-56--krok-1--priamy-preklad) | 1:08–1:10 |
+| 57 | [Problém: čísla sú vnútri rovníc](#snímka-57--problém-čísla-sú-vnútri-rovníc) | 1:10–1:11 |
+| 58 | [Krok 2 – všeobecná (indexovaná) formulácia](#snímka-58--krok-2--všeobecná-indexovaná-formulácia) | 1:11–1:13 |
+| 59 | [Množiny a dáta](#snímka-59--množiny-a-dáta) | 1:13–1:14 |
+| 60 | [Premenné, rovnice, model](#snímka-60--premenné-rovnice-model) | 1:14–1:16 |
+| 61 | [Výsledky](#snímka-61--výsledky) | 1:16–1:17 |
+| 62 | [Čo ak: zmena limitu vody (NAŽIVO)](#snímka-62--čo-ak-zmena-limitu-vody-naživo) | 1:17–1:19 |
+| 63 | [Vyskúšajte si](#snímka-63--vyskúšajte-si) | 1:19–1:20 |
 | | **[ČASŤ 6 — OD MODELU K WEBOVEJ STRÁNKE](#časť-6--od-modelu-k-webovej-stránke-120--140)** | **1:20 – 1:40** |
-| 66 | [Časť 6 — Od modelu k webovej stránke](#snímka-66--časť-6--od-modelu-k-webovej-stránke) | 1:20 |
-| 67 | [Čo postavíme](#snímka-67--čo-postavíme) | 1:20–1:22 |
-| 68 | [Krok 1 – Inštalácia Matplotlib a Flask](#snímka-68--krok-1--inštalácia-matplotlib-a-flask) | 1:22–1:23 |
-| 69 | [Krok 2 – Model ako opakovane použiteľná funkcia](#snímka-69--krok-2--model-ako-opakovane-použiteľná-funkcia) | 1:23–1:25 |
-| 70 | [Krok 3 – Graf „čo ak" v Matplotlib](#snímka-70--krok-3--graf-čo-ak-v-matplotlib) | 1:25–1:27 |
-| 71 | [Krok 4 – Najmenšia aplikácia Flask](#snímka-71--krok-4--najmenšia-aplikácia-flask) | 1:27–1:29 |
-| 72 | [Krok 5 – Formulár, ktorý rieši model](#snímka-72--krok-5--formulár-ktorý-rieši-model) | 1:29–1:31 |
-| 73 | [Krok 6 – Pridanie grafu z Matplotlib](#snímka-73--krok-6--pridanie-grafu-z-matplotlib) | 1:31–1:33 |
-| 74 | [Krok 7 – Interaktívna stránka: JSON API](#snímka-74--krok-7--interaktívna-stránka-json-api) | 1:33–1:35 |
-| 75 | [Krok 7 – Interaktívna stránka: posuvníky + JavaScript](#snímka-75--krok-7--interaktívna-stránka-posuvníky--javascript) | 1:35–1:36 |
-| 76 | [Výsledok (NAŽIVO)](#snímka-76--výsledok-naživo) | 1:36–1:39 |
-| 77 | [Zhrnutie a ďalšie kroky](#snímka-77--zhrnutie-a-ďalšie-kroky) | 1:39–1:40 |
+| 64 | [Časť 6 — Od modelu k webovej stránke](#snímka-64--časť-6--od-modelu-k-webovej-stránke) | 1:20 |
+| 65 | [Čo postavíme](#snímka-65--čo-postavíme) | 1:20–1:22 |
+| 66 | [Krok 1 – Inštalácia Matplotlib a Flask](#snímka-66--krok-1--inštalácia-matplotlib-a-flask) | 1:22–1:23 |
+| 67 | [Krok 2 – Model ako opakovane použiteľná funkcia](#snímka-67--krok-2--model-ako-opakovane-použiteľná-funkcia) | 1:23–1:25 |
+| 68 | [Krok 3 – Graf „čo ak" v Matplotlib](#snímka-68--krok-3--graf-čo-ak-v-matplotlib) | 1:25–1:27 |
+| 69 | [Krok 4 – Najmenšia aplikácia Flask](#snímka-69--krok-4--najmenšia-aplikácia-flask) | 1:27–1:29 |
+| 70 | [Krok 5 – Formulár, ktorý rieši model](#snímka-70--krok-5--formulár-ktorý-rieši-model) | 1:29–1:31 |
+| 71 | [Krok 6 – Pridanie grafu z Matplotlib](#snímka-71--krok-6--pridanie-grafu-z-matplotlib) | 1:31–1:33 |
+| 72 | [Krok 7 – Interaktívna stránka: JSON API](#snímka-72--krok-7--interaktívna-stránka-json-api) | 1:33–1:35 |
+| 73 | [Krok 7 – Interaktívna stránka: posuvníky + JavaScript](#snímka-73--krok-7--interaktívna-stránka-posuvníky--javascript) | 1:35–1:36 |
+| 74 | [Výsledok (NAŽIVO)](#snímka-74--výsledok-naživo) | 1:36–1:39 |
+| 75 | [Zhrnutie a ďalšie kroky](#snímka-75--zhrnutie-a-ďalšie-kroky) | 1:39–1:40 |
 | | **[ZHRNUTIE A OTÁZKY](#zhrnutie-a-otázky-140--200)** | **1:40 – 2:00** |
-| 78 | [Čo sme sa dnes naučili](#snímka-78--čo-sme-sa-dnes-naučili) | 1:40–1:43 |
-| 79 | [Kontrolné otázky](#snímka-79--kontrolné-otázky) | 1:43–1:52 |
-| 80 | [Kde pokračovať](#snímka-80--kde-pokračovať) | 1:52–1:53 |
-| 81 | [Poďakovanie](#snímka-81--poďakovanie) | 1:53–1:54 |
-| 82 | [Ďakujem – otázky?](#snímka-82--ďakujem--otázky) | 1:54–2:00 |
+| 76 | [Čo sme sa dnes naučili](#snímka-76--čo-sme-sa-dnes-naučili) | 1:40–1:43 |
+| 77 | [Kontrolné otázky](#snímka-77--kontrolné-otázky) | 1:43–1:52 |
+| 78 | [Kde pokračovať](#snímka-78--kde-pokračovať) | 1:52–1:53 |
+| 79 | [Poďakovanie](#snímka-79--poďakovanie) | 1:53–1:54 |
+| 80 | [Ďakujem – otázky?](#snímka-80--ďakujem--otázky) | 1:54–2:00 |
 
 ---
 
@@ -128,35 +126,23 @@ Obrázok vpravo ukazuje, kde skončíme: stránku, ktorá s minimálnymi náklad
 
 Niekoľko slov o mne. Volám sa Martin Necpal, som vysokoškolský učiteľ na Ústave výrobných technológií Materiálovotechnologickej fakulty v Trnave, ktorá je súčasťou Slovenskej technickej univerzity v Bratislave.
 
-Moja dizertačná práca sa venovala automatizovanému projektovaniu technologických postupov a jeho integrácii do počítačom podporovaných systémov. Učím aplikácie CAD a CAM a programovanie NC strojov a pracujem s laserovým obrábaním na päťosovom stroji LASERTEC 80 Shape. V posledných rokoch sa veľa venujem Pythonu, dátovej vede a strojovému učeniu.
+Moja dizertačná práca sa venovala automatizovanému projektovaniu technologických postupov a jeho integrácii do počítačom podporovaných systémov. Učím aplikácie CAD a CAM a programovanie NC strojov, venujem sa modelovaniu a simulácii procesov obrábania a tvárnenia metódou konečných prvkov a pracujem s laserovým obrábaním na päťosovom stroji LASERTEC 80 Shape. V posledných rokoch sa veľa venujem Pythonu, dátovej vede a strojovému učeniu.
 
 Prečo optimalizácia? Pretože projektovanie technológie a výroba sú plné optimalizačných úloh – rezné podmienky, poradie operácií, rozmiestnenie dielcov na plechu. Presne tam pomáhajú nástroje ako GAMS a GAMSPy.
-
-### Snímka 3 · Program
-
-⏱️ `0:03–0:05`
-
-Tu je plán na dnes.
-
-V prvých dvadsiatich minútach predstavím GAMS: čo to je, kde sa používa, ako ho nainštalovať a ako pracovať v GAMS Studio. Potom pätnásť minút riešime náš prvý príklad, jednoduchú úlohu lineárneho programovania, najprv ručne na papieri a potom v GAMS.
-
-V tretej časti sa pripravíme na Python: nainštalujeme Python, GAMSPy a Visual Studio Code. Ak už máte všetko nainštalované, touto časťou prejdeme rýchlo.
-
-Vo štvrtej časti preložíme Príklad 1 z GAMS do GAMSPy. Piata časť je prvým jadrom prednášky: skutočný inžiniersky príklad, miešanie dvoch prúdov, na ktorom sa naučíme množiny, parametre a dáta. Šiesta časť je druhým jadrom: krok za krokom z tohto modelu urobíme webovú stránku pomocou Matplotlib a Flask.
-
-Na konci bude zhrnutie, kontrolné otázky a čas na vaše otázky.
 
 ---
 
 ## ČASŤ 1 — ÚVOD DO GAMS 0:05 – 0:25
 
-### Snímka 4 · Časť 1 — Úvod do GAMS
+### Snímka 3 · Časť 1 — Úvod do GAMS
 
 ⏱️ `0:05`
 
-Začnime prvou časťou: GAMS, General Algebraic Modeling System, teda všeobecný algebraický modelovací systém.
+Začnime prvou časťou: GAMS, General Algebraic Modeling System, teda všeobecný algebraický modelovací systém. V nasledujúcich dvadsiatich minútach si povieme, čo to je, kde sa používa a ako ho nainštalovať a spustiť.
 
-### Snímka 5 · Čo je GAMS?
+Na snímke vidíte stránku O nás spoločnosti GAMS, na adrese www bodka gams bodka com. GAMS patrí medzi popredných dodávateľov nástrojov pre optimalizáciu, s pobočkami v USA a v Nemecku. Má zákazníkov vo viac ako stodvadsiatich krajinách – nadnárodné firmy, univerzity, výskumné inštitúcie aj vlády – v energetike, chemickom priemysle, ekonomickom modelovaní, plánovaní v poľnohospodárstve aj vo výrobe.
+
+### Snímka 4 · Čo je GAMS?
 
 ⏱️ `0:05–0:07`
 
@@ -170,15 +156,7 @@ A keďže model a riešič sú oddelené, ten istý model sa dá riešiť rôzny
 
 Pozrite sa na rámček vpravo, pretože toto je kľúčová myšlienka celej prednášky: oddeliť, čo je úloha – model – od toho, ako sa rieši – riešič. Vy ako inžinieri opisujete fyziku, ekonomiku, technológiu. O matematiku hľadania optima sa postará riešič.
 
-### Snímka 6 · Stručná história
-
-⏱️ `0:07–0:08`
-
-Stručná história. GAMS vznikol v roku 1976 ako výskumný projekt vo Svetovej banke pod vedením Alexandra Meerausa. Tamojší ekonómovia budovali veľké ekonomické modely a písali ich ručne ako takzvané generátory matíc – bolo to pomalé a plné chýb. Cieľom bola jedna reprezentácia modelu, ktorú vedia čítať ľudia aj počítače.
-
-V roku 1987 sa GAMS stal komerčným produktom. V roku 2001 pribudol formát GDX na výmenu dát. V roku 2012 získali tvorcovia algebraických modelovacích jazykov cenu INFORMS Impact Prize. V roku 2018 prišlo GAMS Studio, súčasné vývojové prostredie. A v roku 2023 GAMSPy: algebraické modelovanie priamo v Pythone, s GAMS ako výpočtovým jadrom. Dnes máme GAMS vo verzii 54 a GAMSPy vo verzii 1.29.
-
-### Snímka 7 · Ekosystém GAMS
+### Snímka 5 · Ekosystém GAMS
 
 ⏱️ `0:08–0:09`
 
@@ -188,7 +166,7 @@ Samotný jazyk GAMS spolu s prostredím GAMS Studio. GAMSPy, natívne rozhranie 
 
 Dnes budeme podrobne pracovať s prvými dvoma, označenými červenou. A myšlienku MIRO – model s priateľským webovým rozhraním – si na konci prednášky postavíme sami, v čistom Pythone.
 
-### Snímka 8 · Ako funguje GAMS
+### Snímka 6 · Ako funguje GAMS
 
 ⏱️ `0:09–0:11`
 
@@ -204,7 +182,7 @@ A nakoniec GAMS zapíše výpis, súbor s príponou bodka lst. Tento súbor čí
 
 Dole vidíte pevné poradie každého modelu v GAMS. Najprv množiny, potom dáta – parametre, tabuľky a skaláry – potom premenné, rovnice, príkaz model, príkaz solve a nakoniec výpis výsledkov. Toto poradie si zapamätajte. Uvidíte ho dnes v každom príklade, v GAMS aj v GAMSPy.
 
-### Snímka 9 · Typy úloh a riešiče
+### Snímka 7 · Typy úloh a riešiče
 
 ⏱️ `0:11–0:13`
 
@@ -216,7 +194,7 @@ Ten posledný riadok je dôležitý. Nelineárna úloha môže mať niekoľko lo
 
 A teraz krása GAMS: zmena riešiča je jediný riadok, napríklad option NLP rovná sa BARON. Samotný model sa vôbec nemení.
 
-### Snímka 10 · Kde sa GAMS používa?
+### Snímka 8 · Kde sa GAMS používa?
 
 ⏱️ `0:13–0:14`
 
@@ -226,7 +204,7 @@ V energetických systémoch: plánovanie elektrární, nasadzovanie zdrojov, zac
 
 Na webe GAMS nájdete prípadové štúdie od OECD, TotalEnergies, Alpro alebo Rhodium Group. Pozrime sa bližšie na dve inžinierske oblasti.
 
-### Snímka 11 · GAMS v chemickom inžinierstve
+### Snímka 9 · GAMS v chemickom inžinierstve
 
 ⏱️ `0:14–0:15`
 
@@ -236,7 +214,7 @@ Syntéza procesov rozhoduje o štruktúre celej technologickej schémy – ktor�
 
 Vpravo vidíte príklady z knižnice modelov GAMS Model Library. Všetky sa dajú otvoriť priamo v GAMS Studio. A náš dnešný Príklad 3, miešanie dvoch prúdov, je najjednoduchším možným prípadom úlohy blendingu.
 
-### Snímka 12 · GAMS v strojárstve a výrobe
+### Snímka 10 · GAMS v strojárstve a výrobe
 
 ⏱️ `0:15–0:16`
 
@@ -246,7 +224,7 @@ Návrh častí strojov, ako sú ozubené kolesá, pružiny a ložiská. Optimali
 
 Aj tu má knižnica modelov hotové príklady pre všetky: návrh ozubeného prevodu, skrutkovú tlačnú pružinu, ložiská, topológiu priehradovej konštrukcie, tvar vačky, rameno robota, delenie materiálu a rozvrhovanie. Pri obrábaní je napríklad voľba rezných podmienok nelineárna úloha a poradie operácií je zmiešaná celočíselná úloha.
 
-### Snímka 13 · Prečo by inžinieri mali používať GAMS?
+### Snímka 11 · Prečo by inžinieri mali používať GAMS?
 
 ⏱️ `0:16–0:17`
 
@@ -256,13 +234,13 @@ Pretože model sa číta ako matematická formulácia na papieri. Pretože ten i
 
 Ďalej si vezmeme jeden príklad a vyriešime ho najprv v GAMS a neskôr v GAMSPy.
 
-### Snímka 14 · Zdroje
+### Snímka 12 · Zdroje
 
 ⏱️ `0:17–0:18`
 
 Tu sú najdôležitejšie zdroje: domovská stránka GAMS, dokumentácia, knižnica modelov, dokumentácia GAMSPy a príklady GAMSPy na GitHube a klasická kniha GAMS – A User's Guide od autorov Brooke, Kendrick, Meeraus a Raman. Nemusíte si ich zapisovať – všetky odkazy sú v PDF tejto prezentácie.
 
-### Snímka 15 · Inštalácia GAMS
+### Snímka 13 · Inštalácia GAMS
 
 ⏱️ `0:18–0:19`
 
@@ -274,7 +252,7 @@ Po druhé, spustite inštalátor. GAMS Studio sa nainštaluje automaticky spolu 
 
 Po tretie, licencia. Bezplatná demo licencia s obmedzenou veľkosťou modelu je súčasťou každého stiahnutia a na dnešok stačí. Bezplatné akademické licencie sú dostupné na webe GAMS. V GAMS Studio licenciu vložíte alebo skontrolujete v ponuke Help, GAMS Licensing.
 
-### Snímka 16 · GAMS Studio v kocke
+### Snímka 14 · GAMS Studio v kocke
 
 ⏱️ `0:19–0:20`
 
@@ -282,7 +260,7 @@ Toto je GAMS Studio. Pozrime sa na hlavné oblasti.
 
 Vľavo Project Explorer so všetkými súbormi projektu. Hlavný súbor – ten, ktorý sa bude spúšťať – je označený zeleným trojuholníkom. V strede editor kódu pre súbor modelu, so zvýrazňovaním syntaxe a dopĺňaním kódu. Po spustení sa otvorí výpis s výsledkami. Dole Process Log zobrazuje hlásenia behu a chyby s klikateľnými odkazmi. A hore panel nástrojov s najdôležitejším tlačidlom: Run, alebo kláves F9.
 
-### Snímka 17 · Prvé spustenie v 5 krokoch
+### Snímka 15 · Prvé spustenie v 5 krokoch
 
 ⏱️ `0:20–0:21`
 
@@ -292,7 +270,7 @@ Jeden: vytvorte projekt cez File, New Project a vyberte pracovný priečinok. Dv
 
 Jedno dôležité upozornenie: GAMS Studio spúšťa hlavný súbor projektu, nie nutne súbor, ktorý je práve otvorený v editore. To mnohých začiatočníkov mätie.
 
-### Snímka 18 · Čítanie výstupu
+### Snímka 16 · Čítanie výstupu
 
 ⏱️ `0:21–0:22`
 
@@ -302,7 +280,7 @@ Výpis má vľavo navigačný strom: kompilácia, výpis rovníc, štatistika mo
 
 Čo skontrolovať ako prvé? Tri riadky: SOLVER STATUS 1, Normal Completion; MODEL STATUS 1, Optimal; a OBJECTIVE VALUE, hodnotu účelovej funkcie.
 
-### Snímka 19 · Hľadanie a oprava chýb
+### Snímka 17 · Hľadanie a oprava chýb
 
 ⏱️ `0:22–0:23`
 
@@ -312,13 +290,13 @@ Kliknite na červený riadok a kurzor skočí na chybu vo vašom súbore modelu.
 
 Najčastejšie chyby začiatočníkov sú: chýbajúca bodkočiarka, nedeklarovaný symbol, preklep v prvku množiny alebo znak rovná sa napísaný namiesto rovná-e-rovná.
 
-### Snímka 20 · Ďalšie užitočné nástroje Studia
+### Snímka 18 · Ďalšie užitočné nástroje Studia
 
 ⏱️ `0:23–0:24`
 
 GAMS Studio má ďalšie užitočné nástroje. GDX Viewer zobrazuje množiny, parametre a hodnoty riešenia ako tabuľky a vie ich exportovať do Excelu – ten budete používať veľa. Model Library Explorer s viac ako štyristo modelmi. Editor nastavení riešiča, kde vytvoríte súbory nastavení cez formulár namiesto písania. Integrovanú pomoc klávesom F1 ku kľúčovému slovu pod kurzorom. Debugger s bodmi prerušenia. A možnosť riešiť model vzdialene, na serveri NEOS alebo v GAMS Engine.
 
-### Snímka 21 · Užitočné klávesové skratky
+### Snímka 19 · Užitočné klávesové skratky
 
 ⏱️ `0:24–0:25`
 
@@ -326,7 +304,7 @@ Niekoľko skratiek. F9 spustí model, Shift F9 ho iba skompiluje. F6 otvorí kni
 
 Ďalej náš prvý príklad, zapísaný v GAMS.
 
-### Snímka 22 · Odkazy
+### Snímka 20 · Odkazy
 
 ⏱️ `0:25`
 
@@ -336,13 +314,13 @@ Toto sú odkazy na stiahnutie, inštaláciu a príručku a návod ku GAMS Studio
 
 ## ČASŤ 2 — PRÍKLAD 1 V GAMS 0:25 – 0:40
 
-### Snímka 23 · Časť 2 — Príklad 1 v GAMS
+### Snímka 21 · Časť 2 — Príklad 1 v GAMS
 
 ⏱️ `0:25`
 
 Druhá časť: Príklad 1, jednoduchá úloha lineárneho programovania. Tento príklad je prevzatý z prednášky profesora Elvisa Ahmetovića z Univerzity v Tuzle.
 
-### Snímka 24 · Úloha
+### Snímka 22 · Úloha
 
 ⏱️ `0:25–0:27`
 
@@ -354,7 +332,7 @@ Je to úloha lineárneho programovania: účelová funkcia je lineárna a všetk
 
 Obrázok vpravo ukazuje prípustnú oblasť – množinu všetkých bodov, ktoré spĺňajú všetky ohraničenia. Podrobne si ju pozrieme na ďalšej snímke.
 
-### Snímka 25 · Grafické riešenie
+### Snímka 23 · Grafické riešenie
 
 ⏱️ `0:27–0:30`
 
@@ -370,7 +348,7 @@ Optimum je teda v bode B: x jedna rovná sa dva, x dva rovná sa nula, Z rovná 
 
 Vidíte to aj na obrázku: prerušované čiary sú čiary konštantného Z. Keď posúvame priamku Z rovná sa konštanta ďalej doprava hore, posledný bod oblasti, ktorého sa dotkne, je B. Zapamätajte si tento výsledok – šesť – pretože ho teraz overíme v GAMS.
 
-### Snímka 26 · Ten istý model v GAMS
+### Snímka 24 · Ten istý model v GAMS
 
 ⏱️ `0:30–0:32`
 
@@ -384,7 +362,7 @@ Príkaz model hovorí, že model Example01 tvoria všetky rovnice. Príkaz solve
 
 Prakticky každý riadok matematickej formulácie má v kóde svoj riadok.
 
-### Snímka 27 · Čítanie kódu riadok po riadku
+### Snímka 25 · Čítanie kódu riadok po riadku
 
 ⏱️ `0:32–0:34`
 
@@ -402,7 +380,7 @@ Display x jedna bodka l vypíše úroveň premennej, teda jej optimálnu hodnotu
 
 A všimnite si prosím: každý príkaz končí bodkočiarkou. Chýbajúca bodkočiarka je najčastejšou chybou začiatočníkov vôbec.
 
-### Snímka 28 · Spustenie v GAMS Studio (NAŽIVO)
+### Snímka 26 · Spustenie v GAMS Studio (NAŽIVO)
 
 ⏱️ `0:34–0:37`
 
@@ -414,7 +392,7 @@ Vytvorte nový projekt, napríklad v priečinku GAMS podčiarkovník lecture. Vy
 
 Videli ste teda, ako vyzerá chyba a ako rýchlo ju nájdete, keď začnete od prvého červeného riadka. Teraz sa pozrime na výsledky správneho behu.
 
-### Snímka 29 · Výsledky vo výpise
+### Snímka 27 · Výsledky vo výpise
 
 ⏱️ `0:37–0:38`
 
@@ -426,7 +404,7 @@ A výstup príkazu display vpravo: x jedna rovná sa dva, x dva rovná sa nula, 
 
 Presne rovnako ako grafické riešenie. Všimnite si tiež, že sme riešič nevyberali – CPLEX je jednoducho predvolený riešič pre LP.
 
-### Snímka 30 · Vyskúšajte si
+### Snímka 28 · Vyskúšajte si
 
 ⏱️ `0:38–0:40`
 
@@ -450,13 +428,13 @@ Odpovede. S novou účelovou funkciou vyhrá bod C, jedna, jedna, so Z rovným p
 
 ## ČASŤ 3 — OD GAMS KU GAMSPY 0:40 – 0:55
 
-### Snímka 31 · Časť 3 — Od GAMS ku GAMSPy
+### Snímka 29 · Časť 3 — Od GAMS ku GAMSPy
 
 ⏱️ `0:40`
 
 Tretia časť: od GAMS ku GAMSPy. Najprv musíme vo Windows nainštalovať Python, GAMSPy a Visual Studio Code.
 
-### Snímka 32 · Čo je GAMSPy?
+### Snímka 30 · Čo je GAMSPy?
 
 ⏱️ `0:40–0:41`
 
@@ -466,13 +444,13 @@ Nepotrebujete samostatnú inštaláciu GAMS: pip install gamspy prinesie vlastn�
 
 Jedno upozornenie: licencie GAMS a GAMSPy sú rozdielne. Licenciu GAMS nemožno použiť pre GAMSPy.
 
-### Snímka 33 · Krok 1 – Inštalácia Pythonu
+### Snímka 31 · Krok 1 – Inštalácia Pythonu
 
 ⏱️ `0:41–0:42`
 
 Prvý krok: Python. GAMSPy potrebuje Python 3.11 alebo novší. Stiahnite ho zo stránky python bodka org. V inštalátore nezabudnite zaškrtnúť Add python bodka exe to PATH. Potom otvorte PowerShell a overte ho príkazom python pomlčka pomlčka version. Ak už používate Anacondu, môžete namiesto toho použiť Anaconda Prompt – ostatné kroky sú rovnaké.
 
-### Snímka 34 · Krok 2 – Vytvorenie virtuálneho prostredia
+### Snímka 32 · Krok 2 – Vytvorenie virtuálneho prostredia
 
 ⏱️ `0:42–0:43`
 
@@ -482,7 +460,7 @@ Otvorte PowerShell vo svojom pracovnom priečinku, napríklad C dvojbodka GAMS p
 
 Ak PowerShell odmietne spustiť skript, pretože spúšťanie skriptov je zakázané, raz spustite príkaz Set-ExecutionPolicy zo snímky a skúste to znova.
 
-### Snímka 35 · Krok 3 – Inštalácia GAMSPy
+### Snímka 33 · Krok 3 – Inštalácia GAMSPy
 
 ⏱️ `0:43–0:44`
 
@@ -490,7 +468,7 @@ Tretí krok: inštalácia GAMSPy. Jeden príkaz: pip install gamspy.
 
 Potom ho overte príkazom gamspy pomlčka pomlčka version. Mali by ste vidieť verziu GAMSPy, 1.29, a verziu jadra GAMS, ktoré prišlo s ním, 54.6. Neskôr ho aktualizujete príkazom pip install gamspy pomlčka pomlčka upgrade.
 
-### Snímka 36 · Krok 4 – Riešiče
+### Snímka 34 · Krok 4 – Riešiče
 
 ⏱️ `0:44–0:45`
 
@@ -498,7 +476,7 @@ Potom ho overte príkazom gamspy pomlčka pomlčka version. Mali by ste vidieť 
 
 Ďalšie môžete doinštalovať podľa potreby, napríklad gamspy install solver highs ipopt. A v Pythone vyberiete riešič jedným argumentom: model bodka solve, solver rovná sa highs.
 
-### Snímka 37 · Krok 5 – Licencia (voliteľné)
+### Snímka 35 · Krok 5 – Licencia (voliteľné)
 
 ⏱️ `0:45–0:46`
 
@@ -506,7 +484,7 @@ Piaty krok, licencia, je voliteľný. Demo licencia funguje hneď pre malé mode
 
 Ak máte akademickú alebo plnú licenciu, dostanete tridsaťšesťznakový prístupový kód. Nainštalujete ho príkazom gamspy install license a kódom a skontrolujete príkazom gamspy show license. Na návrat k demo licencii použite gamspy uninstall license.
 
-### Snímka 38 · Krok 6 – Otestujte to
+### Snímka 36 · Krok 6 – Otestujte to
 
 ⏱️ `0:46–0:47`
 
@@ -516,21 +494,21 @@ Importujeme gamspy ako gp, vytvoríme Container, jednu premennú x a jednu rovni
 
 Uložte ho ako test podčiarkovník gamspy bodka py a spustite ho. Ak uvidíte ModelStatus OptimalGlobal a jedna celá nula, GAMSPy je pripravený.
 
-### Snímka 39 · Rýchly prehľad
+### Snímka 37 · Rýchly prehľad
 
 ⏱️ `0:47–0:48`
 
 Táto tabuľka je rýchlym prehľadom všetkých príkazov z inštalácie: vytvorenie a aktivácia prostredia, inštalácia GAMSPy, kontrola verzie, výpis a pridanie riešičov a inštalácia a zobrazenie licencie. Nemusíte si ich pamätať – keď budete inštalovať doma, majte túto snímku z PDF vedľa počítača.
 
-### Snímka 40 · Krok 1 – Inštalácia VS Code
+### Snímka 38 · Krok 1 – Inštalácia VS Code
 
 ⏱️ `0:48–0:49`
 
 Teraz editor. Budeme používať Visual Studio Code, ktorý je bezplatný, nenáročný a beží vo Windows, macOS aj Linuxe.
 
-Stiahnite ho zo stránky code bodka visualstudio bodka com a spustite inštalátor. Dôležité sú dve zaškrtnutia: Add Open with Code do kontextovej ponuky Prieskumníka a Add to PATH. Potom spustite VS Code.
+Stiahnite ho zo stránky code bodka visualstudio bodka com a spustite inštalátor. Snímka obrazovky vpravo ukazuje stránku na stiahnutie – web vám automaticky ponúkne inštalátor pre váš operačný systém. Dôležité sú dve zaškrtnutia: Add Open with Code do kontextovej ponuky Prieskumníka a Add to PATH. Potom spustite VS Code.
 
-### Snímka 41 · Krok 2 – Rozšírenie Python
+### Snímka 39 · Krok 2 – Rozšírenie Python
 
 ⏱️ `0:49–0:50`
 
@@ -538,7 +516,7 @@ Druhý krok: rozšírenie Python. Otvorte zobrazenie Extensions cez Control Shif
 
 Pamätajte však: rozšírenie neobsahuje samotný Python. Python 3.11 alebo novší už musí byť nainštalovaný, ako sme to urobili pred chvíľou.
 
-### Snímka 42 · Krok 3 – Otvorenie priečinka projektu
+### Snímka 40 · Krok 3 – Otvorenie priečinka projektu
 
 ⏱️ `0:50–0:51`
 
@@ -546,19 +524,23 @@ Tretí krok: otvorte priečinok projektu – File, Open Folder, a vyberte C dvoj
 
 Pravidlo znie: jeden priečinok je jeden projekt. Vaše súbory Pythonu aj virtuálne prostredie sú v tomto priečinku. Vždy otvárajte celý priečinok, nie iba jeden súbor.
 
-### Snímka 43 · Krok 4 – Výber prostredia Pythonu
+### Snímka 41 · Krok 4 – Výber prostredia Pythonu
 
 ⏱️ `0:51–0:52`
 
-Štvrtý krok: výber prostredia Pythonu. Otvorte Command Palette cez Control Shift P.
+Štvrtý krok: výber prostredia Pythonu. Otvorte Command Palette cez Control Shift P. Máme tri možnosti.
 
 Možnosť A: ak prostredie už existuje, pretože ste ho vytvorili v PowerShell, vyberte Python: Select Interpreter a zvoľte bodka gamspy podčiarkovník venv.
 
 Možnosť B: ak ste kroky v PowerShell vynechali, vyberte Python: Create Environment, potom Venv a potom svoju verziu Pythonu. VS Code vytvorí prostredie v priečinku a automaticky ho aktivuje. Toto je najjednoduchšia cesta.
 
+Možnosť C: vytvorte ho sami v integrovanom termináli príkazom python pomlčka m venv bodka gamspy podčiarkovník venv. V macOS a Linuxe je to zvyčajne python3. Potom ho vyberte ako v možnosti A.
+
+Tabuľka ukazuje, ako prostredie aktivovať v termináli. Vo Windows PowerShell spustite skript Activate bodka ps1 v priečinku Scripts daného prostredia. V klasickom príkazovom riadku Windows spustite activate bodka bat v tom istom priečinku. V macOS a Linuxe napíšte source a cestu k prostrediu, lomka bin lomka activate. Na ukončenie prostredia stačí v každom systéme napísať deactivate.
+
 Vybrané prostredie sa zobrazuje v stavovom riadku vpravo dole.
 
-### Snímka 44 · Krok 5 – Inštalácia GAMSPy do prostredia
+### Snímka 42 · Krok 5 – Inštalácia GAMSPy do prostredia
 
 ⏱️ `0:52–0:53`
 
@@ -566,7 +548,7 @@ Piaty krok: nainštalujte GAMSPy do tohto prostredia. Otvorte integrovaný termi
 
 Potom napíšte pip install gamspy matplotlib a znova skontrolujte verziu. Matplotlib inštalujeme už teraz, pretože neskôr ho použijeme na vykreslenie výsledkov.
 
-### Snímka 45 · Krok 6 – Spustenie prvého skriptu
+### Snímka 43 · Krok 6 – Spustenie prvého skriptu
 
 ⏱️ `0:53–0:54`
 
@@ -576,7 +558,7 @@ Teraz sú tri spôsoby, ako ho spustiť. Kliknite na tlačidlo Run Python File v
 
 Výstup sa zobrazí v paneli Terminal – a opäť, ModelStatus OptimalGlobal a jedna celá nula znamená, že všetko funguje.
 
-### Snímka 46 · Skratky VS Code pre túto prednášku
+### Snímka 44 · Skratky VS Code pre túto prednášku
 
 ⏱️ `0:54–0:55`
 
@@ -588,13 +570,13 @@ Teraz sme pripravení: Príklad 1 zapísaný v GAMSPy.
 
 ## ČASŤ 4 — PRÍKLAD 1 V GAMSPY 0:55 – 1:05
 
-### Snímka 47 · Časť 4 — Príklad 1 v GAMSPy
+### Snímka 45 · Časť 4 — Príklad 1 v GAMSPy
 
 ⏱️ `0:55`
 
 Štvrtá časť: ten istý model ako predtým, teraz v Pythone.
 
-### Snímka 48 · GAMS → GAMSPy: slovník
+### Snímka 46 · GAMS → GAMSPy: slovník
 
 ⏱️ `0:55–0:57`
 
@@ -610,25 +592,25 @@ Príkaz model sa stáva gp bodka Model so zoznamom rovníc a príkaz solve sa ro
 
 Kľúčová myšlienka: každý symbol GAMS sa stáva objektom Pythonu, ktorý žije v Containeri. A tri bodky v hranatých zátvorkách znamenajú: pre všetky prvky domény.
 
-### Snímka 49 · Vedľa seba
+### Snímka 47 · Vedľa seba
 
 ⏱️ `0:57–0:59`
 
-Tu sú obe verzie vedľa seba – GAMS vľavo, GAMSPy vpravo. Prejdime ich blok po bloku.
+Tu sú obe verzie vedľa seba, ako snímky obrazovky z oboch programov – GAMS Studio vľavo a VS Code s GAMSPy vpravo. Prejdime ich blok po bloku.
 
-Premenné: v GAMS jeden riadok deklaruje x jedna a x dva ako kladné. V Pythone je každá premenná samostatný objekt, s type rovná sa positive, a Z s type rovná sa free.
+Súbor GAMS začína príkazom dolár title, teda názvom modelu. Súbor v Pythone začína krátkym popisom v úvodzovkách a importuje sys a gamspy. Potom vytvoríme Container a komentáre označujú každý blok kódu v Pythone.
 
-Rovnice: v GAMS jeden riadok s tromi názvami. V Pythone tri objekty, obj, eq jedna a eq dva.
+Premenné: v GAMS jeden riadok deklaruje x jedna a x dva ako kladné. V Pythone je každá premenná samostatný objekt, s type rovná sa positive, a z s type rovná sa free.
 
-Definície: riadky GAMS s dvoma bodkami sa stávajú priradeniami s tromi bodkami v zátvorkách. Relácie sa píšu operátormi Pythonu: dvojité rovná sa a menšie alebo rovné. Všimnite si, že na konci nie je bodkočiarka.
+Rovnice: v GAMS jeden riadok deklaruje tri názvy. V Pythone vytvoríme eq jedna a eq dva pomocou gp bodka Equation a definujeme ich tromi bodkami v hranatých zátvorkách. Relácie sa píšu operátormi Pythonu, menšie alebo rovné, a na konci nie je bodkočiarka. Účelová funkcia je samostatná rovnica s názvom obj: z dvojité rovná sa tri x jedna plus dva x dva.
 
-Model a riešenie: v GAMS dva príkazy. V Pythone jedno volanie gp bodka Model, s equations rovná sa m bodka getEquations – to je ekvivalent lomka all lomka – a problem LP, sense max, objective Z. Potom example01 bodka solve.
+Model a riešenie: v GAMS dva príkazy. V Pythone jedno volanie gp bodka Model s názvom Primjer01 – primjer znamená po bosniansky príklad – a equations rovná sa m bodka getEquations, čo je ekvivalent lomka all lomka. Potom problem LP, sense gp bodka Sense bodka MAX a objective z. Metódu solve voláme s output rovná sa sys bodka stdout, takže vidíme rovnaký protokol riešiča ako v GAMS Studio.
 
-A nakoniec print s toValue.
+A nakoniec namiesto Display tri riadky print: x jedna a x dva cez toValue a hodnota účelovej funkcie modelu.
 
 Verzia v Pythone je o niečo dlhšia, ale každý riadok má vľavo svojho priameho partnera.
 
-### Snímka 50 · Ako previesť model – krok za krokom
+### Snímka 48 · Ako previesť model – krok za krokom
 
 ⏱️ `0:59–1:00`
 
@@ -636,19 +618,19 @@ Prevod ako recept v siedmich krokoch. Importujte gamspy a vytvorte Container. Ka
 
 Upozornenie dole je najčastejšou pascou. Ak napíšete eq jedna rovná sa, bez zátvoriek a troch bodiek, rovnicu nedefinujete. Jednoducho prepíšete premennú Pythonu eq jedna výrazom a model potichu stratí svoje ohraničenie.
 
-### Snímka 51 · Spustenie vo VS Code (NAŽIVO)
+### Snímka 49 · Spustenie vo VS Code (NAŽIVO)
 
 ⏱️ `1:00–1:02`
 
-Spustime ho, naživo vo VS Code. Otvorte priečinok, skontrolujte prostredie, vytvorte súbor example01 podčiarkovník gams podčiarkovník style bodka py, vložte kód, uložte ho a kliknite na Run Python File. Výsledok sa zobrazí v termináli.
+Spustime ho, naživo vo VS Code. Otvorte priečinok, skontrolujte prostredie, vytvorte súbor example01 bodka py, vložte kód, uložte ho a kliknite na Run Python File. Výsledok sa zobrazí v termináli.
 
 Ak chcete vidieť úplný log riešiča, ako ho poznáte z GAMS Studio, odovzdajte metóde solve argument output rovná sa sys bodka stdout.
 
-> 🗒️ *UKÁŽKA NAŽIVO: spustiť code/gamspy/example01_gams_style.py vo VS Code, potom ešte raz s output=sys.stdout, aby bol vidieť log riešiča. Približne 1,5 minúty.*
+> 🗒️ *UKÁŽKA NAŽIVO: spustiť example01.py vo VS Code, potom ešte raz s output=sys.stdout, aby bol vidieť log riešiča. Približne 1,5 minúty.*
 
 Model teda beží v Pythone a log je rovnaký ako v GAMS – pretože pod ním je to isté výpočtové jadro.
 
-### Snímka 52 · Výsledky
+### Snímka 50 · Výsledky
 
 ⏱️ `1:02–1:03`
 
@@ -660,7 +642,7 @@ A ak vypíšete x jedna bodka records, dostanete úplný záznam premennej – �
 
 Opäť rovnaký výsledok ako na papieri a v GAMS: x jedna rovná sa dva, x dva rovná sa nula, Z rovná sa šesť.
 
-### Snímka 53 · Po pythonovsky – kratšie
+### Snímka 51 · Po pythonovsky – kratšie
 
 ⏱️ `1:03–1:04`
 
@@ -670,7 +652,7 @@ Potom vypíšeme stav modelu, hodnotu účelovej funkcie a marginálne hodnoty d
 
 Výstup: optimálny, šesť a marginálne hodnoty nula a tri. To odpovedá na jednu z otázok cvičenia z druhej časti: eq dva je aktívne, s tieňovou cenou tri, a eq jedna má rezervu. Ak by sme mohli druhé ohraničenie uvoľniť o jednu jednotku, účelová funkcia by narástla o tri.
 
-### Snímka 54 · Bonus: späť do GAMS a LaTeXu
+### Snímka 52 · Bonus: späť do GAMS a LaTeXu
 
 ⏱️ `1:04–1:05`
 
@@ -684,13 +666,13 @@ To sa hodí, ak chcete model otvoriť v GAMS Studio, alebo ak píšete článok 
 
 ## ČASŤ 5 — PRÍKLAD 3: MIEŠANIE PRÚDOV 1:05 – 1:20
 
-### Snímka 55 · Časť 5 — Príklad 3: Miešanie prúdov
+### Snímka 53 · Časť 5 — Príklad 3: Miešanie prúdov
 
 ⏱️ `1:05`
 
 Piata časť: Príklad 3, miešanie prúdov. Tu sa naučíme množiny, parametre a dáta v GAMSPy. Príklad je opäť podľa profesora Ahmetovića a úloha pochádza z knihy Edena.
 
-### Snímka 56 · Úloha
+### Snímka 54 · Úloha
 
 ⏱️ `1:05–1:06`
 
@@ -700,7 +682,7 @@ Prúd jedna obsahuje osemdesiat percent MEA a dvadsať percent vody a stojí ose
 
 Produkt môže obsahovať najviac dvadsaťpäť hmotnostných percent vody. Otázka: pri akom pomere miešania sú náklady na jeden kilogram zmesi minimálne? Prúd dva je lacnejší, ale má príliš veľa vody – musíme teda nájsť správnu rovnováhu.
 
-### Snímka 57 · Matematická formulácia
+### Snímka 55 · Matematická formulácia
 
 ⏱️ `1:06–1:08`
 
@@ -714,21 +696,21 @@ Obrázok vpravo ukazuje grafické riešenie. Vďaka hmotnostnej bilancii ležia 
 
 Malý bod na diskusiu: v pôvodnej prednáške o GAMS sa tento model riešil ako NLP. Všetky rovnice sú však lineárne, preto je správnym typom modelu LP. Vždy vyberajte najjednoduchší typ modelu, ktorý zodpovedá vašim rovniciam.
 
-### Snímka 58 · Krok 1 – priamy preklad
+### Snímka 56 · Krok 1 – priamy preklad
 
 ⏱️ `1:08–1:10`
 
-Prvý krok: priamy preklad, presne v štýle Príkladu 1.
+Prvý krok: priamy preklad, presne v štýle Príkladu 1. Snímka obrazovky ukazuje súbor mixing of streams bodka py vo VS Code.
 
-Vytvoríme container a tri premenné, m jedna, m dva a z. Nový je tu argument description – krátky text, ktorý dokumentuje význam a jednotku každej premennej. Je to dobrá prax a zobrazí sa aj vo výsledkoch.
+Vytvoríme container a dve kladné premenné, m jedna a m dva. Nový je tu argument description – krátky text, ktorý dokumentuje význam a jednotku každej premennej, tu hmotnosť prúdu jedna a prúdu dva v kilogramoch. Je to dobrá prax a zobrazí sa aj vo výsledkoch.
 
-Potom tri rovnice: obj, water a balance. Definície nasledujú matematiku: z sa rovná osemdesiat m jedna plus šesťdesiat m dva, obsah vody menší alebo rovný nula celá dvadsaťpäť a bilancia, m jedna plus m dva dvojité rovná sa jedna. Dvojité rovná sa sa používa pre ohraničenie typu rovnosť.
+Potom dve rovnice: water a balance. Obsah vody, nula celá dva m jedna plus nula celá tridsaťdva m dva, musí byť menší alebo rovný nula celá dvadsaťpäť. A bilancia, m jedna plus m dva dvojité rovná sa jedna. Dvojité rovná sa sa používa pre ohraničenie typu rovnosť.
 
-Potom model s problem LP, sense min a objective z, a riešenie.
+Všimnite si, že tu nie je premenná z ani rovnica účelovej funkcie. Náklady, osemdesiat m jedna plus šesťdesiat m dva, odovzdáme modelu priamo ako účelovú funkciu – kratší pythonovský spôsob, ktorý sme videli v Príklade 1. Problem LP, sense min a riešenie. Potom vypíšeme hodnotu účelovej funkcie a hodnoty m jedna a m dva.
 
-Výsledok: z sa rovná sedemdesiatjeden celá šesťsto šesťdesiatsedem centov za kilogram, m jedna nula celá päťsto osemdesiattri, m dva nula celá štyristo sedemnásť. Presne grafické riešenie. Takže tu nič nové – iba dvojité rovná sa pre bilanciu a popisy.
+Výsledok: sedemdesiatjeden celá šesťsto šesťdesiatsedem centov za kilogram, m jedna nula celá päťsto osemdesiattri, m dva nula celá štyristo sedemnásť. Presne grafické riešenie. Nové sú iba dvojité rovná sa pre bilanciu a popisy.
 
-### Snímka 59 · Problém: čísla sú vnútri rovníc
+### Snímka 57 · Problém: čísla sú vnútri rovníc
 
 ⏱️ `1:10–1:11`
 
@@ -736,7 +718,7 @@ Tento model má však problém. Všetky čísla – ceny a zloženia – sú nap
 
 Riešením je oddeliť model od dát. Na to slúžia množiny a parametre. Tabuľka ukazuje pojmy: indexovú množinu, dáta ako parameter, dvojrozmernú tabuľku, indexovanú premennú a súčet cez množinu – každý v GAMS aj v GAMSPy.
 
-### Snímka 60 · Krok 2 – všeobecná (indexovaná) formulácia
+### Snímka 58 · Krok 2 – všeobecná (indexovaná) formulácia
 
 ⏱️ `1:11–1:13`
 
@@ -748,7 +730,7 @@ Minimalizujeme súčet cez f z ceny krát x. Za podmienok: pre každú zložku c
 
 Porovnajte to s verziou s dvoma premennými. Tam bolo každé číslo zapísané v rovnici. Tu rovnice obsahujú iba symboly. A to je veľká výhoda: model sa nemení, keď pridáte prúdy alebo zložky. Menia sa iba dáta.
 
-### Snímka 61 · Množiny a dáta
+### Snímka 59 · Množiny a dáta
 
 ⏱️ `1:13–1:14`
 
@@ -760,7 +742,7 @@ Zloženie je pandas DataFrame s jedným riadkom pre každú kombináciu prúdu a
 
 Potom parametre: w s doménou f a c, naplnený z DataFrame; cost s doménou f; wmax s doménou c – všimnite si, že limit zadávame iba pre vodu; a skalár M rovný jednej.
 
-### Snímka 62 · Premenné, rovnice, model
+### Snímka 60 · Premenné, rovnice, model
 
 ⏱️ `1:14–1:16`
 
@@ -776,7 +758,7 @@ Model minimalizuje súčet cez f z ceny krát x a vyriešime ho.
 
 Malá tabuľka dole opakuje tri nové veci a ich ekvivalenty v GAMS: indexovanú rovnicu, podmienku where a súčet.
 
-### Snímka 63 · Výsledky
+### Snímka 61 · Výsledky
 
 ⏱️ `1:16–1:17`
 
@@ -784,7 +766,7 @@ Výsledky. Minimálne náklady sú opäť sedemdesiatjeden celá šesťsto šes�
 
 A odvodené hodnoty môžeme počítať priamo v GAMSPy. Tu vytvoríme parameter product a vypočítame zloženie produktu: sedemdesiatpäť percent MEA a dvadsaťpäť percent vody. Obsah vody je presne na limite – ohraničenie je aktívne. Preto optimum leží presne na tejto hranici.
 
-### Snímka 64 · Čo ak: zmena limitu vody (NAŽIVO)
+### Snímka 62 · Čo ak: zmena limitu vody (NAŽIVO)
 
 ⏱️ `1:17–1:19`
 
@@ -792,7 +774,7 @@ A teraz skutočná sila Pythonu. Analýza čo ak: ako sa zmení optimum, ak zmen
 
 Napíšeme jednoduchý cyklus cez niekoľko limitov. V každom kroku nastavíme nové záznamy pre wmax, model znova vyriešime a vypíšeme výsledky. Meníme iba dáta – model sa neprepisuje.
 
-> 🗒️ *NAŽIVO: spustiť code/gamspy/example03_indexed.py a ukázať tabuľku čo ak v termináli. Približne 1 minúta.*
+> 🗒️ *NAŽIVO: spustiť mixing_ind_formulation.py a ukázať tabuľku čo ak v termináli. Približne 1 minúta.*
 
 Pozrite sa na tabuľku. Pri limite dvadsať percent sú náklady osemdesiat a používa sa iba prúd jedna. S rastúcim limitom sa dá použiť viac lacného prúdu dva a náklady klesajú. Pri tridsiatich dvoch percentách sa používa iba prúd dva, za šesťdesiat centov.
 
@@ -800,7 +782,7 @@ Pod dvadsať percent je úloha neprípustná, pretože už aj čistý prúd jedn
 
 Ďalej túto tabuľku premeníme na graf v Matplotlib.
 
-### Snímka 65 · Vyskúšajte si
+### Snímka 63 · Vyskúšajte si
 
 ⏱️ `1:19–1:20`
 
@@ -810,13 +792,13 @@ Niekoľko cvičení pre vás. Pridajte tretí prúd s deväťdesiatimi percentam
 
 ## ČASŤ 6 — OD MODELU K WEBOVEJ STRÁNKE 1:20 – 1:40
 
-### Snímka 66 · Časť 6 — Od modelu k webovej stránke
+### Snímka 64 · Časť 6 — Od modelu k webovej stránke
 
 ⏱️ `1:20`
 
 Šiesta časť: od modelu k webovej stránke. GAMSPy, Matplotlib a Flask, v siedmich krokoch, z ktorých každý môžete otestovať skôr, ako budete pokračovať.
 
-### Snímka 67 · Čo postavíme
+### Snímka 65 · Čo postavíme
 
 ⏱️ `1:20–1:22`
 
@@ -826,7 +808,7 @@ Používateľ posunie posuvník v prehliadači. JavaScript pošle požiadavku do
 
 Tabuľka ukazuje súbory a krok, v ktorom každý z nich vytvoríme: model ako funkciu v druhom kroku, graf v treťom kroku, Flask rastúci od štvrtého po šiesty krok a výslednú interaktívnu stránku v siedmom kroku.
 
-### Snímka 68 · Krok 1 – Inštalácia Matplotlib a Flask
+### Snímka 66 · Krok 1 – Inštalácia Matplotlib a Flask
 
 ⏱️ `1:22–1:23`
 
@@ -836,7 +818,7 @@ Každý krok má test. Tu je to jednoriadkový príkaz Pythonu, ktorý importuje
 
 Vpravo je štruktúra priečinka, ktorú vytvoríme: priečinok webapp s modelom, skriptom na graf, tromi priebežnými aplikáciami Flask, výslednou aplikáciou a priečinkom templates so stránkou HTML.
 
-### Snímka 69 · Krok 2 – Model ako opakovane použiteľná funkcia
+### Snímka 67 · Krok 2 – Model ako opakovane použiteľná funkcia
 
 ⏱️ `1:23–1:25`
 
@@ -848,7 +830,7 @@ Prečo funkcia? Pretože webový server ju bude volať s rôznymi vstupmi pri ka
 
 Test: spustite python mixing podčiarkovník model bodka py. Mali by ste vidieť jeden optimálny výsledok pre dvadsaťpäť percent a jeden neprípustný výsledok pre pätnásť percent.
 
-### Snímka 70 · Krok 3 – Graf „čo ak" v Matplotlib
+### Snímka 68 · Krok 3 – Graf „čo ak" v Matplotlib
 
 ⏱️ `1:25–1:27`
 
@@ -862,7 +844,7 @@ Prečo dva samostatné grafy? Pretože náklady sú v centoch na kilogram a mno�
 
 Test: spustite plot podčiarkovník mixing bodka py a otvorte súbor PNG. Mal by vyzerať ako obrázok vpravo.
 
-### Snímka 71 · Krok 4 – Najmenšia aplikácia Flask
+### Snímka 69 · Krok 4 – Najmenšia aplikácia Flask
 
 ⏱️ `1:27–1:29`
 
@@ -872,7 +854,7 @@ Importujeme Flask a vytvoríme aplikáciu. Dekorátor app bodka route s lomkou s
 
 Test: spustite python app podčiarkovník step four bodka py a v prehliadači otvorte adresu sto dvadsaťsedem bodka nula bodka nula bodka jedna, dvojbodka päťtisíc. Mali by ste vidieť pozdrav. Pred ďalším krokom zastavte server cez Control C.
 
-### Snímka 72 · Krok 5 – Formulár, ktorý rieši model
+### Snímka 70 · Krok 5 – Formulár, ktorý rieši model
 
 ⏱️ `1:29–1:31`
 
@@ -884,7 +866,7 @@ Trasa teraz prijíma GET aj POST. Prečíta číslo z formulára, zavolá solve 
 
 Test: zadajte dvadsaťdva a dostanete sedemdesiatšesť celá šesťdesiatsedem centov za kilogram. Zadajte pätnásť a dostanete no feasible mixture, teda žiadnu prípustnú zmes.
 
-### Snímka 73 · Krok 6 – Pridanie grafu z Matplotlib
+### Snímka 71 · Krok 6 – Pridanie grafu z Matplotlib
 
 ⏱️ `1:31–1:33`
 
@@ -896,7 +878,7 @@ Na stránke jednoducho použijeme značku obrázka, ktorej zdrojom je táto adre
 
 Test: otvorte adresu grafu priamo v prehliadači, s water rovná sa dvadsaťdva, a mali by ste vidieť graf. Potom otvorte hlavnú stránku – graf je teraz pod formulárom.
 
-### Snímka 74 · Krok 7 – Interaktívna stránka: JSON API
+### Snímka 72 · Krok 7 – Interaktívna stránka: JSON API
 
 ⏱️ `1:33–1:35`
 
@@ -908,7 +890,7 @@ Toto je malé API – aplikačné programové rozhranie. Stránka si pýta dáta
 
 Test: otvorte adresu API s water dvadsaťpäť a cenami osemdesiat a šesťdesiat. Mali by ste vidieť JSON zo snímky: cost sedemdesiatjeden celá šesťdesiatsedem, feed jedna nula celá päťsto osemdesiattri, feed dva nula celá štyristo sedemnásť, ok true.
 
-### Snímka 75 · Krok 7 – Interaktívna stránka: posuvníky + JavaScript
+### Snímka 73 · Krok 7 – Interaktívna stránka: posuvníky + JavaScript
 
 ⏱️ `1:35–1:36`
 
@@ -918,17 +900,17 @@ Malá funkcia v JavaScripte, update, sa spustí pri každej zmene posuvníka. Zo
 
 Test: spustite python app bodka py a hýbte posuvníkmi. Čísla aj graf by sa mali aktualizovať.
 
-### Snímka 76 · Výsledok (NAŽIVO)
+### Snímka 74 · Výsledok (NAŽIVO)
 
 ⏱️ `1:36–1:39`
 
 A toto je výsledok: interaktívny optimalizátor miešania. Vľavo posuvníky pre limit vody a cenu prúdu jedna a prúdu dva. Hore karty s minimálnymi nákladmi, pomerom prúdov ako pruhom a obsahom vody v produkte. A graf čo ak, s aktuálnym prípadom vyznačeným prerušovanou čiarou. Ak je vstup neprípustný, pod dvadsať percent vody, namiesto čísel sa zobrazí červené upozornenie.
 
-> 🗒️ *UKÁŽKA NAŽIVO: python app.py v code/webapp, otvoriť http://127.0.0.1:5000. Nastaviť prúd 1 lacnejší ako prúd 2 (70 vs 90): limit vody už nie je aktívny a používa sa iba prúd 1. Potom posunúť limit vody pod 20 %. Približne 2,5 minúty.*
+> 🗒️ *UKÁŽKA NAŽIVO: python app.py v webapp, otvoriť http://127.0.0.1:5000. Nastaviť prúd 1 lacnejší ako prúd 2 (70 vs 90): limit vody už nie je aktívny a používa sa iba prúd 1. Potom posunúť limit vody pod 20 %. Približne 2,5 minúty.*
 
 S približne sto riadkami Pythonu a krátkou stránkou HTML sa teda z optimalizačného modelu stal nástroj, ktorý môže v prehliadači použiť ktokoľvek, bez toho, aby o GAMS čokoľvek vedel.
 
-### Snímka 77 · Zhrnutie a ďalšie kroky
+### Snímka 75 · Zhrnutie a ďalšie kroky
 
 ⏱️ `1:39–1:40`
 
@@ -940,7 +922,7 @@ Ako pokračovať? Pridajte tretí prúd alebo minimálny obsah MEA – mení sa 
 
 ## ZHRNUTIE A OTÁZKY 1:40 – 2:00
 
-### Snímka 78 · Čo sme sa dnes naučili
+### Snímka 76 · Čo sme sa dnes naučili
 
 ⏱️ `1:40–1:43`
 
@@ -960,7 +942,7 @@ A riešiče sú rovnaké: CPLEX, CONOPT, BARON, HiGHS a mnohé ďalšie.
 
 Takže: rovnaký algebraický model, dva spôsoby zápisu. GAMS si vyberte na čisté modelovanie a GAMSPy, keď je model súčasťou väčšieho pracovného postupu v Pythone – s dátami, grafmi a webovými stránkami.
 
-### Snímka 79 · Kontrolné otázky
+### Snímka 77 · Kontrolné otázky
 
 ⏱️ `1:43–1:52`
 
@@ -1002,7 +984,7 @@ Overme si, čo vám zostalo v hlave. Otázky budem klásť jednu po druhej – s
 
 Ďakujem. Toto boli najdôležitejšie body dneška.
 
-### Snímka 80 · Kde pokračovať
+### Snímka 78 · Kde pokračovať
 
 ⏱️ `1:52–1:53`
 
@@ -1010,13 +992,13 @@ Kde pokračovať? Knižnica modelov GAMS Model Library s viac ako štyristo mode
 
 A nápad na domácu úlohu: rozšírte Príklad 3 o tretí prúd a minimálny obsah MEA a potom výsledok zobrazte vo webovej aplikácii.
 
-### Snímka 81 · Poďakovanie
+### Snímka 79 · Poďakovanie
 
 ⏱️ `1:53–1:54`
 
 Poďakovanie. Príklady 1 a 3 sú prevzaté z prednášky profesora Elvisa Ahmetovića z Univerzity v Tuzle, Matematické modelovanie v GAMS, ktorú predniesol ako prednášku Erasmus+ na našej univerzite v novembri 2025. Úloha Príkladu 3 pochádza z knihy Edena, Process Synthesis, Simulation and Optimization. A veľká vďaka našim hostiteľom za pozvanie.
 
-### Snímka 82 · Ďakujem – otázky?
+### Snímka 80 · Ďakujem – otázky?
 
 ⏱️ `1:54–2:00`
 

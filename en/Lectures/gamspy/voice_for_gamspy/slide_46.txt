@@ -1,0 +1,11 @@
+To translate from GAMS to GAMSPy, we need a small dictionary. Here it is.
+
+The whole GAMS file corresponds to one Container in GAMSPy. Every symbol lives inside this container.
+
+A GAMS set becomes gp dot Set, with the container, the name and the records. A parameter becomes gp dot Parameter, with a domain and records. A positive variable becomes gp dot Variable with type equals positive, and a free variable with type equals free. An equation becomes gp dot Equation.
+
+The definition with two dots becomes an assignment with square brackets and three dots: e, bracket, dot dot dot, bracket, equals left-hand side, double equals, right-hand side. Equals-l-equals and equals-g-equals become the Python operators less or equal and greater or equal. The GAMS sum becomes gp dot Sum.
+
+The model statement becomes gp dot Model with the list of equations, and the solve statement is split: the problem type, the sense and the objective are arguments of the model, and then we call the method solve. And instead of Display, we use print, with toValue or records.
+
+The key idea: every GAMS symbol becomes a Python object that lives in a Container. And the three dots in square brackets mean: for all elements of the domain.

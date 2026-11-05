@@ -1,0 +1,9 @@
+A tu je ten istý model v GAMS. Všimnite si, ako blízko je k matematike.
+
+Prvý riadok je len nadpis. Potom deklarujeme premenné: x jedna a x dva ako kladné premenné, čo znamená väčšie alebo rovné nule, a Z ako voľnú premennú.
+
+Potom deklarujeme názvy troch rovníc: obj, eq jedna a eq dva. A potom ich definujeme. Obj hovorí, že Z sa rovná tri x jedna plus dva x dva. Eq jedna hovorí, že x jedna plus tri x dva je menšie alebo rovné štyrom. Eq dva hovorí, že x jedna plus x dva je menšie alebo rovné dvom.
+
+Príkaz model hovorí, že model Example01 tvoria všetky rovnice. Príkaz solve hovorí: vyrieš Example01 maximalizáciou Z pomocou LP. A príkaz display vypíše výsledky.
+
+Prakticky každý riadok matematickej formulácie má v kóde svoj riadok.

@@ -1,0 +1,1 @@
+Here are the most important resources: the GAMS homepage, the documentation, the Model Library, the GAMSPy documentation and the GAMSPy examples on GitHub, and the classic book GAMS – A User's Guide by Brooke, Kendrick, Meeraus and Raman. You do not need to write them down – all links are in the PDF of this presentation.

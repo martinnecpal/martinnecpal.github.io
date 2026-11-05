@@ -1,0 +1,11 @@
+Štvrtý krok: výber prostredia Pythonu. Otvorte Command Palette cez Control Shift P. Máme tri možnosti.
+
+Možnosť A: ak prostredie už existuje, pretože ste ho vytvorili v PowerShell, vyberte Python: Select Interpreter a zvoľte bodka gamspy podčiarkovník venv.
+
+Možnosť B: ak ste kroky v PowerShell vynechali, vyberte Python: Create Environment, potom Venv a potom svoju verziu Pythonu. VS Code vytvorí prostredie v priečinku a automaticky ho aktivuje. Toto je najjednoduchšia cesta.
+
+Možnosť C: vytvorte ho sami v integrovanom termináli príkazom python pomlčka m venv bodka gamspy podčiarkovník venv. V macOS a Linuxe je to zvyčajne python3. Potom ho vyberte ako v možnosti A.
+
+Tabuľka ukazuje, ako prostredie aktivovať v termináli. Vo Windows PowerShell spustite skript Activate bodka ps1 v priečinku Scripts daného prostredia. V klasickom príkazovom riadku Windows spustite activate bodka bat v tom istom priečinku. V macOS a Linuxe napíšte source a cestu k prostrediu, lomka bin lomka activate. Na ukončenie prostredia stačí v každom systéme napísať deactivate.
+
+Vybrané prostredie sa zobrazuje v stavovom riadku vpravo dole.

@@ -1,0 +1,13 @@
+Tu sú obe verzie vedľa seba, ako snímky obrazovky z oboch programov – GAMS Studio vľavo a VS Code s GAMSPy vpravo. Prejdime ich blok po bloku.
+
+Súbor GAMS začína príkazom dolár title, teda názvom modelu. Súbor v Pythone začína krátkym popisom v úvodzovkách a importuje sys a gamspy. Potom vytvoríme Container a komentáre označujú každý blok kódu v Pythone.
+
+Premenné: v GAMS jeden riadok deklaruje x jedna a x dva ako kladné. V Pythone je každá premenná samostatný objekt, s type rovná sa positive, a z s type rovná sa free.
+
+Rovnice: v GAMS jeden riadok deklaruje tri názvy. V Pythone vytvoríme eq jedna a eq dva pomocou gp bodka Equation a definujeme ich tromi bodkami v hranatých zátvorkách. Relácie sa píšu operátormi Pythonu, menšie alebo rovné, a na konci nie je bodkočiarka. Účelová funkcia je samostatná rovnica s názvom obj: z dvojité rovná sa tri x jedna plus dva x dva.
+
+Model a riešenie: v GAMS dva príkazy. V Pythone jedno volanie gp bodka Model s názvom Primjer01 – primjer znamená po bosniansky príklad – a equations rovná sa m bodka getEquations, čo je ekvivalent lomka all lomka. Potom problem LP, sense gp bodka Sense bodka MAX a objective z. Metódu solve voláme s output rovná sa sys bodka stdout, takže vidíme rovnaký protokol riešiča ako v GAMS Studio.
+
+A nakoniec namiesto Display tri riadky print: x jedna a x dva cez toValue a hodnota účelovej funkcie modelu.
+
+Verzia v Pythone je o niečo dlhšia, ale každý riadok má vľavo svojho priameho partnera.

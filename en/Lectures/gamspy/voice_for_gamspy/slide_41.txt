@@ -1,0 +1,11 @@
+Step four: select the Python environment. Open the Command Palette with Control Shift P. There are three ways.
+
+Option A: if the environment already exists, because you created it in PowerShell, choose Python: Select Interpreter and pick dot gamspy underscore venv.
+
+Option B: if you skipped the PowerShell steps, choose Python: Create Environment, then Venv, then your Python version. VS Code creates the environment in the folder and activates it automatically. This is the easiest path.
+
+Option C: create it yourself in the integrated terminal, with python dash m venv dot gamspy underscore venv. On macOS and Linux the command is usually python3. Then select it as in option A.
+
+The table shows how to activate the environment in a terminal. In Windows PowerShell, run the script Activate dot ps1 in the Scripts folder of the environment. In the classic Windows command prompt, run activate dot bat in the same folder. On macOS and Linux, type source, and the path to the environment, slash bin slash activate. To leave the environment, on every system, just type deactivate.
+
+The selected environment is shown in the status bar at the bottom right.

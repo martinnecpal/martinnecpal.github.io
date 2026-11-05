@@ -1,0 +1,1 @@
+You write the model as mathematics – sets, parameters, variables, equations – and it is separated from the solver; the same model can be solved by different solvers.

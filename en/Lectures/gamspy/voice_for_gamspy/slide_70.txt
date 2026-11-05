@@ -1,0 +1,7 @@
+Step five: a form that solves the model. Now the browser sends a number, and Flask calls GAMSPy.
+
+The page is a small template in a Python string. It has a form with one number input for the maximum water content and a button Solve. Below the form there is a condition: if the result is ok, show the minimum cost; otherwise show No feasible mixture with the status. The double curly braces print a value, and the curly brace with percent signs is a decision – this is the Jinja template language used by Flask.
+
+The route now accepts both GET and POST. It reads the number from the form, calls solve mixing with the water limit divided by one hundred, and renders the page with the result.
+
+The test: enter twenty-two, and you get seventy-six point six seven cents per kilogram. Enter fifteen, and you get no feasible mixture.

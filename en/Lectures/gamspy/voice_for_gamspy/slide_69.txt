@@ -1,0 +1,5 @@
+Step four: the smallest possible Flask application, only a few lines.
+
+We import Flask and create the app. The decorator app dot route with a slash connects the address – the root of the web page – with a Python function. The function home returns a piece of HTML, a heading Hello from Flask. And app dot run with debug equals true starts the server; in debug mode it restarts automatically every time you save a change.
+
+The test: run python app underscore step four dot py and open the address one two seven dot zero dot zero dot one, colon five thousand, in your browser. You should see the greeting. Stop the server with Control C before the next step.

@@ -1,0 +1,5 @@
+Your first run in five steps.
+
+One: create a project with File, New Project, and choose a working folder. Two: open a model, for example from the Model Library Explorer with F6 – try the classic transport model trnsport – or create a new file. Three: check the main file, the green triangle in the Project Explorer. Four: run with the green button or F9. Five: read the results in the Process Log and in the listing file, which opens automatically.
+
+One important warning: GAMS Studio runs the main file of the project, not necessarily the file that is currently open in the editor. This confuses many beginners.

@@ -1,0 +1,1 @@
+Účelová funkcia môže nadobudnúť akúkoľvek hodnotu, kladnú aj zápornú; GAMS vyžaduje, aby účelová premenná bola voľná, bez obmedzenia znamienka.

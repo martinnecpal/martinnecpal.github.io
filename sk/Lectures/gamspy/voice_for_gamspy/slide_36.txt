@@ -1,0 +1,5 @@
+Šiesty krok: test. Toto je najmenší možný model v GAMSPy.
+
+Importujeme gamspy ako gp, vytvoríme Container, jednu premennú x a jednu rovnicu e, ktorá hovorí, že x je väčšie alebo rovné jednej. Model minimalizuje x, takže odpoveď musí byť jedna. Vyriešime ho a vypíšeme stav a hodnotu účelovej funkcie.
+
+Uložte ho ako test podčiarkovník gamspy bodka py a spustite ho. Ak uvidíte ModelStatus OptimalGlobal a jedna celá nula, GAMSPy je pripravený.

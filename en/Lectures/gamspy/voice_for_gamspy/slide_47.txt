@@ -1,0 +1,13 @@
+Here are both versions side by side, as screenshots from the two programs – GAMS Studio on the left, and VS Code with GAMSPy on the right. Let us go block by block.
+
+The GAMS file starts with dollar title, a title for the model. The Python file starts with a short description in quotes, and imports sys and gamspy. Then we create the Container, and comments mark every block of the Python code.
+
+Variables: in GAMS one line declares x one and x two as positive. In Python each variable is a separate object, with type equals positive, and z with type equals free.
+
+Equations: in GAMS one line declares the three names. In Python we create eq one and eq two with gp dot Equation and define them with the three dots in square brackets. The relations are written with Python operators, less or equal, and there is no semicolon at the end. The objective is a separate equation named obj: z double equals three x one plus two x two.
+
+Model and solve: in GAMS two statements. In Python one gp dot Model call, with the name Primjer01 – primjer means example in Bosnian – and equations equals m dot getEquations, which is the equivalent of slash all slash. Then problem LP, sense gp dot Sense dot MAX, and objective z. We call solve with output equals sys dot stdout, so we see the same solver log as in GAMS Studio.
+
+And finally, instead of Display, three print lines: x one and x two with toValue, and the objective value of the model.
+
+The Python version is a bit longer, but every line has a direct partner on the left.

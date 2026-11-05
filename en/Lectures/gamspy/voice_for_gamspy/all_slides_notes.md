@@ -2,7 +2,7 @@
 
 **Spoken text — guest lecture** · Martin Necpal · MTF STU Trnava
 
-Presentation: gamspy.html (82 slides) · Duration: 120 minutes
+Presentation: gamspy.html (80 slides) · Duration: 120 minutes
 
 > [!TIP]
 > **How to use this text**
@@ -18,93 +18,91 @@ Presentation: gamspy.html (82 slides) · Duration: 120 minutes
 | | **[OPENING](#opening-000--005)** | **0:00 – 0:05** |
 | 1 | [Title slide](#slide-1--title-slide) | 0:00–0:02 |
 | 2 | [About me](#slide-2--about-me) | 0:02–0:03 |
-| 3 | [Agenda](#slide-3--agenda) | 0:03–0:05 |
 | | **[PART 1 — INTRODUCTION TO GAMS](#part-1--introduction-to-gams-005--025)** | **0:05 – 0:25** |
-| 4 | [Part 1 — Introduction to GAMS](#slide-4--part-1--introduction-to-gams) | 0:05 |
-| 5 | [What is GAMS?](#slide-5--what-is-gams) | 0:05–0:07 |
-| 6 | [A short history](#slide-6--a-short-history) | 0:07–0:08 |
-| 7 | [The GAMS ecosystem](#slide-7--the-gams-ecosystem) | 0:08–0:09 |
-| 8 | [How GAMS works](#slide-8--how-gams-works) | 0:09–0:11 |
-| 9 | [Problem types and solvers](#slide-9--problem-types-and-solvers) | 0:11–0:13 |
-| 10 | [Where is GAMS used?](#slide-10--where-is-gams-used) | 0:13–0:14 |
-| 11 | [GAMS in chemical engineering](#slide-11--gams-in-chemical-engineering) | 0:14–0:15 |
-| 12 | [GAMS in mechanical & manufacturing engineering](#slide-12--gams-in-mechanical--manufacturing-engineering) | 0:15–0:16 |
-| 13 | [Why should engineers use GAMS?](#slide-13--why-should-engineers-use-gams) | 0:16–0:17 |
-| 14 | [Resources](#slide-14--resources) | 0:17–0:18 |
-| 15 | [Installing GAMS](#slide-15--installing-gams) | 0:18–0:19 |
-| 16 | [GAMS Studio at a glance](#slide-16--gams-studio-at-a-glance) | 0:19–0:20 |
-| 17 | [Your first run in 5 steps](#slide-17--your-first-run-in-5-steps) | 0:20–0:21 |
-| 18 | [Reading the output](#slide-18--reading-the-output) | 0:21–0:22 |
-| 19 | [Finding and fixing errors](#slide-19--finding-and-fixing-errors) | 0:22–0:23 |
-| 20 | [More useful Studio tools](#slide-20--more-useful-studio-tools) | 0:23–0:24 |
-| 21 | [Handy shortcuts](#slide-21--handy-shortcuts) | 0:24–0:25 |
-| 22 | [Links](#slide-22--links) | 0:25 |
+| 3 | [Part 1 — Introduction to GAMS](#slide-3--part-1--introduction-to-gams) | 0:05 |
+| 4 | [What is GAMS?](#slide-4--what-is-gams) | 0:05–0:07 |
+| 5 | [The GAMS ecosystem](#slide-5--the-gams-ecosystem) | 0:08–0:09 |
+| 6 | [How GAMS works](#slide-6--how-gams-works) | 0:09–0:11 |
+| 7 | [Problem types and solvers](#slide-7--problem-types-and-solvers) | 0:11–0:13 |
+| 8 | [Where is GAMS used?](#slide-8--where-is-gams-used) | 0:13–0:14 |
+| 9 | [GAMS in chemical engineering](#slide-9--gams-in-chemical-engineering) | 0:14–0:15 |
+| 10 | [GAMS in mechanical & manufacturing engineering](#slide-10--gams-in-mechanical--manufacturing-engineering) | 0:15–0:16 |
+| 11 | [Why should engineers use GAMS?](#slide-11--why-should-engineers-use-gams) | 0:16–0:17 |
+| 12 | [Resources](#slide-12--resources) | 0:17–0:18 |
+| 13 | [Installing GAMS](#slide-13--installing-gams) | 0:18–0:19 |
+| 14 | [GAMS Studio at a glance](#slide-14--gams-studio-at-a-glance) | 0:19–0:20 |
+| 15 | [Your first run in 5 steps](#slide-15--your-first-run-in-5-steps) | 0:20–0:21 |
+| 16 | [Reading the output](#slide-16--reading-the-output) | 0:21–0:22 |
+| 17 | [Finding and fixing errors](#slide-17--finding-and-fixing-errors) | 0:22–0:23 |
+| 18 | [More useful Studio tools](#slide-18--more-useful-studio-tools) | 0:23–0:24 |
+| 19 | [Handy shortcuts](#slide-19--handy-shortcuts) | 0:24–0:25 |
+| 20 | [Links](#slide-20--links) | 0:25 |
 | | **[PART 2 — EXAMPLE 1 IN GAMS](#part-2--example-1-in-gams-025--040)** | **0:25 – 0:40** |
-| 23 | [Part 2 — Example 1 in GAMS](#slide-23--part-2--example-1-in-gams) | 0:25 |
-| 24 | [The problem](#slide-24--the-problem) | 0:25–0:27 |
-| 25 | [Graphical solution](#slide-25--graphical-solution) | 0:27–0:30 |
-| 26 | [The same model in GAMS](#slide-26--the-same-model-in-gams) | 0:30–0:32 |
-| 27 | [Reading the code line by line](#slide-27--reading-the-code-line-by-line) | 0:32–0:34 |
-| 28 | [Running it in GAMS Studio (LIVE)](#slide-28--running-it-in-gams-studio-live) | 0:34–0:37 |
-| 29 | [Results in the listing file](#slide-29--results-in-the-listing-file) | 0:37–0:38 |
-| 30 | [Try it yourself](#slide-30--try-it-yourself) | 0:38–0:40 |
+| 21 | [Part 2 — Example 1 in GAMS](#slide-21--part-2--example-1-in-gams) | 0:25 |
+| 22 | [The problem](#slide-22--the-problem) | 0:25–0:27 |
+| 23 | [Graphical solution](#slide-23--graphical-solution) | 0:27–0:30 |
+| 24 | [The same model in GAMS](#slide-24--the-same-model-in-gams) | 0:30–0:32 |
+| 25 | [Reading the code line by line](#slide-25--reading-the-code-line-by-line) | 0:32–0:34 |
+| 26 | [Running it in GAMS Studio (LIVE)](#slide-26--running-it-in-gams-studio-live) | 0:34–0:37 |
+| 27 | [Results in the listing file](#slide-27--results-in-the-listing-file) | 0:37–0:38 |
+| 28 | [Try it yourself](#slide-28--try-it-yourself) | 0:38–0:40 |
 | | **[PART 3 — FROM GAMS TO GAMSPY](#part-3--from-gams-to-gamspy-040--055)** | **0:40 – 0:55** |
-| 31 | [Part 3 — From GAMS to GAMSPy](#slide-31--part-3--from-gams-to-gamspy) | 0:40 |
-| 32 | [What is GAMSPy?](#slide-32--what-is-gamspy) | 0:40–0:41 |
-| 33 | [Step 1 – Install Python](#slide-33--step-1--install-python) | 0:41–0:42 |
-| 34 | [Step 2 – Create a virtual environment](#slide-34--step-2--create-a-virtual-environment) | 0:42–0:43 |
-| 35 | [Step 3 – Install GAMSPy](#slide-35--step-3--install-gamspy) | 0:43–0:44 |
-| 36 | [Step 4 – Solvers](#slide-36--step-4--solvers) | 0:44–0:45 |
-| 37 | [Step 5 – License (optional)](#slide-37--step-5--license-optional) | 0:45–0:46 |
-| 38 | [Step 6 – Test it](#slide-38--step-6--test-it) | 0:46–0:47 |
-| 39 | [Quick reference](#slide-39--quick-reference) | 0:47–0:48 |
-| 40 | [Step 1 – Install VS Code](#slide-40--step-1--install-vs-code) | 0:48–0:49 |
-| 41 | [Step 2 – Python extension](#slide-41--step-2--python-extension) | 0:49–0:50 |
-| 42 | [Step 3 – Open your project folder](#slide-42--step-3--open-your-project-folder) | 0:50–0:51 |
-| 43 | [Step 4 – Select the Python environment](#slide-43--step-4--select-the-python-environment) | 0:51–0:52 |
-| 44 | [Step 5 – Install GAMSPy in the environment](#slide-44--step-5--install-gamspy-in-the-environment) | 0:52–0:53 |
-| 45 | [Step 6 – Run your first script](#slide-45--step-6--run-your-first-script) | 0:53–0:54 |
-| 46 | [VS Code shortcuts for this lecture](#slide-46--vs-code-shortcuts-for-this-lecture) | 0:54–0:55 |
+| 29 | [Part 3 — From GAMS to GAMSPy](#slide-29--part-3--from-gams-to-gamspy) | 0:40 |
+| 30 | [What is GAMSPy?](#slide-30--what-is-gamspy) | 0:40–0:41 |
+| 31 | [Step 1 – Install Python](#slide-31--step-1--install-python) | 0:41–0:42 |
+| 32 | [Step 2 – Create a virtual environment](#slide-32--step-2--create-a-virtual-environment) | 0:42–0:43 |
+| 33 | [Step 3 – Install GAMSPy](#slide-33--step-3--install-gamspy) | 0:43–0:44 |
+| 34 | [Step 4 – Solvers](#slide-34--step-4--solvers) | 0:44–0:45 |
+| 35 | [Step 5 – License (optional)](#slide-35--step-5--license-optional) | 0:45–0:46 |
+| 36 | [Step 6 – Test it](#slide-36--step-6--test-it) | 0:46–0:47 |
+| 37 | [Quick reference](#slide-37--quick-reference) | 0:47–0:48 |
+| 38 | [Step 1 – Install VS Code](#slide-38--step-1--install-vs-code) | 0:48–0:49 |
+| 39 | [Step 2 – Python extension](#slide-39--step-2--python-extension) | 0:49–0:50 |
+| 40 | [Step 3 – Open your project folder](#slide-40--step-3--open-your-project-folder) | 0:50–0:51 |
+| 41 | [Step 4 – Select the Python environment](#slide-41--step-4--select-the-python-environment) | 0:51–0:52 |
+| 42 | [Step 5 – Install GAMSPy in the environment](#slide-42--step-5--install-gamspy-in-the-environment) | 0:52–0:53 |
+| 43 | [Step 6 – Run your first script](#slide-43--step-6--run-your-first-script) | 0:53–0:54 |
+| 44 | [VS Code shortcuts for this lecture](#slide-44--vs-code-shortcuts-for-this-lecture) | 0:54–0:55 |
 | | **[PART 4 — EXAMPLE 1 IN GAMSPY](#part-4--example-1-in-gamspy-055--105)** | **0:55 – 1:05** |
-| 47 | [Part 4 — Example 1 in GAMSPy](#slide-47--part-4--example-1-in-gamspy) | 0:55 |
-| 48 | [GAMS → GAMSPy: the dictionary](#slide-48--gams--gamspy-the-dictionary) | 0:55–0:57 |
-| 49 | [Side by side](#slide-49--side-by-side) | 0:57–0:59 |
-| 50 | [How to convert – step by step](#slide-50--how-to-convert--step-by-step) | 0:59–1:00 |
-| 51 | [Run it in VS Code (LIVE)](#slide-51--run-it-in-vs-code-live) | 1:00–1:02 |
-| 52 | [Results](#slide-52--results) | 1:02–1:03 |
-| 53 | [The Python way – shorter](#slide-53--the-python-way--shorter) | 1:03–1:04 |
-| 54 | [Bonus: back to GAMS and LaTeX](#slide-54--bonus-back-to-gams-and-latex) | 1:04–1:05 |
+| 45 | [Part 4 — Example 1 in GAMSPy](#slide-45--part-4--example-1-in-gamspy) | 0:55 |
+| 46 | [GAMS → GAMSPy: the dictionary](#slide-46--gams--gamspy-the-dictionary) | 0:55–0:57 |
+| 47 | [Side by side](#slide-47--side-by-side) | 0:57–0:59 |
+| 48 | [How to convert – step by step](#slide-48--how-to-convert--step-by-step) | 0:59–1:00 |
+| 49 | [Run it in VS Code (LIVE)](#slide-49--run-it-in-vs-code-live) | 1:00–1:02 |
+| 50 | [Results](#slide-50--results) | 1:02–1:03 |
+| 51 | [The Python way – shorter](#slide-51--the-python-way--shorter) | 1:03–1:04 |
+| 52 | [Bonus: back to GAMS and LaTeX](#slide-52--bonus-back-to-gams-and-latex) | 1:04–1:05 |
 | | **[PART 5 — EXAMPLE 3: MIXING OF STREAMS](#part-5--example-3-mixing-of-streams-105--120)** | **1:05 – 1:20** |
-| 55 | [Part 5 — Example 3: Mixing of streams](#slide-55--part-5--example-3-mixing-of-streams) | 1:05 |
-| 56 | [The problem](#slide-56--the-problem) | 1:05–1:06 |
-| 57 | [Mathematical formulation](#slide-57--mathematical-formulation) | 1:06–1:08 |
-| 58 | [Step 1 – direct translation](#slide-58--step-1--direct-translation) | 1:08–1:10 |
-| 59 | [Problem: numbers are inside the equations](#slide-59--problem-numbers-are-inside-the-equations) | 1:10–1:11 |
-| 60 | [Step 2 – general (indexed) formulation](#slide-60--step-2--general-indexed-formulation) | 1:11–1:13 |
-| 61 | [Sets and data](#slide-61--sets-and-data) | 1:13–1:14 |
-| 62 | [Variables, equations, model](#slide-62--variables-equations-model) | 1:14–1:16 |
-| 63 | [Results](#slide-63--results) | 1:16–1:17 |
-| 64 | [What-if: change the water limit (LIVE)](#slide-64--what-if-change-the-water-limit-live) | 1:17–1:19 |
-| 65 | [Try it yourself](#slide-65--try-it-yourself) | 1:19–1:20 |
+| 53 | [Part 5 — Example 3: Mixing of streams](#slide-53--part-5--example-3-mixing-of-streams) | 1:05 |
+| 54 | [The problem](#slide-54--the-problem) | 1:05–1:06 |
+| 55 | [Mathematical formulation](#slide-55--mathematical-formulation) | 1:06–1:08 |
+| 56 | [Step 1 – direct translation](#slide-56--step-1--direct-translation) | 1:08–1:10 |
+| 57 | [Problem: numbers are inside the equations](#slide-57--problem-numbers-are-inside-the-equations) | 1:10–1:11 |
+| 58 | [Step 2 – general (indexed) formulation](#slide-58--step-2--general-indexed-formulation) | 1:11–1:13 |
+| 59 | [Sets and data](#slide-59--sets-and-data) | 1:13–1:14 |
+| 60 | [Variables, equations, model](#slide-60--variables-equations-model) | 1:14–1:16 |
+| 61 | [Results](#slide-61--results) | 1:16–1:17 |
+| 62 | [What-if: change the water limit (LIVE)](#slide-62--what-if-change-the-water-limit-live) | 1:17–1:19 |
+| 63 | [Try it yourself](#slide-63--try-it-yourself) | 1:19–1:20 |
 | | **[PART 6 — FROM MODEL TO WEB PAGE](#part-6--from-model-to-web-page-120--140)** | **1:20 – 1:40** |
-| 66 | [Part 6 — From model to web page](#slide-66--part-6--from-model-to-web-page) | 1:20 |
-| 67 | [What we are going to build](#slide-67--what-we-are-going-to-build) | 1:20–1:22 |
-| 68 | [Step 1 – Install Matplotlib and Flask](#slide-68--step-1--install-matplotlib-and-flask) | 1:22–1:23 |
-| 69 | [Step 2 – Model as a reusable function](#slide-69--step-2--model-as-a-reusable-function) | 1:23–1:25 |
-| 70 | [Step 3 – What-if chart with Matplotlib](#slide-70--step-3--what-if-chart-with-matplotlib) | 1:25–1:27 |
-| 71 | [Step 4 – The smallest Flask app](#slide-71--step-4--the-smallest-flask-app) | 1:27–1:29 |
-| 72 | [Step 5 – A form that solves the model](#slide-72--step-5--a-form-that-solves-the-model) | 1:29–1:31 |
-| 73 | [Step 6 – Add the Matplotlib chart](#slide-73--step-6--add-the-matplotlib-chart) | 1:31–1:33 |
-| 74 | [Step 7 – Interactive page: JSON API](#slide-74--step-7--interactive-page-json-api) | 1:33–1:35 |
-| 75 | [Step 7 – Interactive page: sliders + JavaScript](#slide-75--step-7--interactive-page-sliders--javascript) | 1:35–1:36 |
-| 76 | [The result (LIVE)](#slide-76--the-result-live) | 1:36–1:39 |
-| 77 | [Summary & next steps](#slide-77--summary--next-steps) | 1:39–1:40 |
+| 64 | [Part 6 — From model to web page](#slide-64--part-6--from-model-to-web-page) | 1:20 |
+| 65 | [What we are going to build](#slide-65--what-we-are-going-to-build) | 1:20–1:22 |
+| 66 | [Step 1 – Install Matplotlib and Flask](#slide-66--step-1--install-matplotlib-and-flask) | 1:22–1:23 |
+| 67 | [Step 2 – Model as a reusable function](#slide-67--step-2--model-as-a-reusable-function) | 1:23–1:25 |
+| 68 | [Step 3 – What-if chart with Matplotlib](#slide-68--step-3--what-if-chart-with-matplotlib) | 1:25–1:27 |
+| 69 | [Step 4 – The smallest Flask app](#slide-69--step-4--the-smallest-flask-app) | 1:27–1:29 |
+| 70 | [Step 5 – A form that solves the model](#slide-70--step-5--a-form-that-solves-the-model) | 1:29–1:31 |
+| 71 | [Step 6 – Add the Matplotlib chart](#slide-71--step-6--add-the-matplotlib-chart) | 1:31–1:33 |
+| 72 | [Step 7 – Interactive page: JSON API](#slide-72--step-7--interactive-page-json-api) | 1:33–1:35 |
+| 73 | [Step 7 – Interactive page: sliders + JavaScript](#slide-73--step-7--interactive-page-sliders--javascript) | 1:35–1:36 |
+| 74 | [The result (LIVE)](#slide-74--the-result-live) | 1:36–1:39 |
+| 75 | [Summary & next steps](#slide-75--summary--next-steps) | 1:39–1:40 |
 | | **[SUMMARY AND QUESTIONS](#summary-and-questions-140--200)** | **1:40 – 2:00** |
-| 78 | [What we learned today](#slide-78--what-we-learned-today) | 1:40–1:43 |
-| 79 | [Review questions](#slide-79--review-questions) | 1:43–1:52 |
-| 80 | [Where to continue](#slide-80--where-to-continue) | 1:52–1:53 |
-| 81 | [Acknowledgements](#slide-81--acknowledgements) | 1:53–1:54 |
-| 82 | [Thank you – questions?](#slide-82--thank-you--questions) | 1:54–2:00 |
+| 76 | [What we learned today](#slide-76--what-we-learned-today) | 1:40–1:43 |
+| 77 | [Review questions](#slide-77--review-questions) | 1:43–1:52 |
+| 78 | [Where to continue](#slide-78--where-to-continue) | 1:52–1:53 |
+| 79 | [Acknowledgements](#slide-79--acknowledgements) | 1:53–1:54 |
+| 80 | [Thank you – questions?](#slide-80--thank-you--questions) | 1:54–2:00 |
 
 ---
 
@@ -128,35 +126,23 @@ The picture on the right shows where we will end: a page that mixes two chemical
 
 A few words about me. My name is Martin Necpal, I am a university lecturer at the Institute of Production Technology, Faculty of Materials Science and Technology in Trnava, which is part of the Slovak University of Technology in Bratislava.
 
-My PhD was about automated process planning and its integration into computer-aided systems. I teach CAD and CAM applications and NC programming, and I work with laser machining on a five-axis LASERTEC 80 Shape machine. In recent years I spend a lot of time with Python, data science and machine learning.
+My PhD was about automated process planning and its integration into computer-aided systems. I teach CAD and CAM applications and NC programming, I work on FEM modelling and simulation of machining and forming processes, and I work with laser machining on a five-axis LASERTEC 80 Shape machine. In recent years I spend a lot of time with Python, data science and machine learning.
 
 Why optimization? Because process planning and manufacturing are full of optimization problems – cutting parameters, the order of operations, nesting of parts. That is exactly where tools like GAMS and GAMSPy help.
-
-### Slide 3 · Agenda
-
-⏱️ `0:03–0:05`
-
-Here is the plan for today.
-
-In the first twenty minutes, I will introduce GAMS: what it is, where it is used, how to install it and how to work in GAMS Studio. Then, for fifteen minutes, we solve our first example, a simple linear program, first by hand on paper and then in GAMS.
-
-In part three we get ready for Python: we install Python, GAMSPy and Visual Studio Code. If you have already installed everything, we will move through this part quickly.
-
-In part four we translate Example 1 from GAMS into GAMSPy. Part five is the first core of the lecture: a real engineering example, the mixing of two streams, where we learn sets, parameters and data. Part six is the second core: we turn this model into a web page with Matplotlib and Flask, step by step.
-
-At the end, a summary, review questions and time for your own questions.
 
 ---
 
 ## PART 1 — INTRODUCTION TO GAMS 0:05 – 0:25
 
-### Slide 4 · Part 1 — Introduction to GAMS
+### Slide 3 · Part 1 — Introduction to GAMS
 
 ⏱️ `0:05`
 
-Let us start with part one: GAMS, the General Algebraic Modeling System.
+Let us start with part one: GAMS, the General Algebraic Modeling System. In the next twenty minutes we look at what it is, where it is used, and how to install and run it.
 
-### Slide 5 · What is GAMS?
+On the slide you see the About page of the company, at www dot gams dot com. GAMS is one of the leading tool providers for the optimization industry, with offices in the US and Germany. It has customers in more than one hundred and twenty countries – multinational companies, universities, research institutions and governments – in the energy and chemical industries, in economic modelling, agricultural planning and manufacturing.
+
+### Slide 4 · What is GAMS?
 
 ⏱️ `0:05–0:07`
 
@@ -170,15 +156,7 @@ And because the model and the solver are separate, the same model can be solved 
 
 Look at the box on the right, because this is the key idea of the whole lecture: separate what the problem is – the model – from how it is solved – the solver. You, as engineers, describe the physics, the economics, the technology. The solver takes care of the mathematics of finding the optimum.
 
-### Slide 6 · A short history
-
-⏱️ `0:07–0:08`
-
-A short history. GAMS started in 1976 as a research project at the World Bank, led by Alexander Meeraus. Economists there were building large economic models, and they were writing them by hand as so-called matrix generators – that was slow and full of errors. The goal was one representation of the model that both humans and computers can read.
-
-In 1987 GAMS became a commercial product. In 2001 the GDX format for data exchange was introduced. In 2012 the originators of algebraic modelling languages received the INFORMS Impact Prize. In 2018 came GAMS Studio, the current development environment. And in 2023, GAMSPy: algebraic modelling directly in Python, with GAMS as the engine. Today we have GAMS version 54 and GAMSPy version 1.29.
-
-### Slide 7 · The GAMS ecosystem
+### Slide 5 · The GAMS ecosystem
 
 ⏱️ `0:08–0:09`
 
@@ -188,7 +166,7 @@ The GAMS language itself, together with the GAMS Studio environment. GAMSPy, the
 
 Today we will work in depth with the first two, marked in red. And the idea behind MIRO – a model with a friendly web interface – we will build ourselves at the end of the lecture, with plain Python.
 
-### Slide 8 · How GAMS works
+### Slide 6 · How GAMS works
 
 ⏱️ `0:09–0:11`
 
@@ -204,7 +182,7 @@ And finally, GAMS writes the listing file, with the extension dot lst. This is t
 
 At the bottom you see the fixed order of every GAMS model. First the sets, then the data – parameters, tables and scalars – then the variables, the equations, the model statement, the solve statement and finally the display of results. Remember this order. You will see it in every example today, in GAMS and also in GAMSPy.
 
-### Slide 9 · Problem types and solvers
+### Slide 7 · Problem types and solvers
 
 ⏱️ `0:11–0:13`
 
@@ -216,7 +194,7 @@ That last row is important. A nonlinear problem can have several local optima. S
 
 And now the beauty of GAMS: switching the solver is one single line, for example option NLP equals BARON. The model itself does not change at all.
 
-### Slide 10 · Where is GAMS used?
+### Slide 8 · Where is GAMS used?
 
 ⏱️ `0:13–0:14`
 
@@ -226,7 +204,7 @@ In energy systems: power plant planning, unit commitment, carbon capture and sto
 
 On the GAMS website you can find case studies from the OECD, TotalEnergies, Alpro or the Rhodium Group. Let us look at the two engineering fields more closely.
 
-### Slide 11 · GAMS in chemical engineering
+### Slide 9 · GAMS in chemical engineering
 
 ⏱️ `0:14–0:15`
 
@@ -236,7 +214,7 @@ Process synthesis decides the structure of the whole flowsheet – which units t
 
 On the right you see examples from the GAMS Model Library. All of them can be opened directly in GAMS Studio. And our Example 3 today, the mixing of two streams, is the simplest possible case of a blending problem.
 
-### Slide 12 · GAMS in mechanical & manufacturing engineering
+### Slide 10 · GAMS in mechanical & manufacturing engineering
 
 ⏱️ `0:15–0:16`
 
@@ -246,7 +224,7 @@ Design of machine elements like gears, springs and bearings. Structural optimiza
 
 Again, the Model Library has ready examples for all of them: gear train design, a coil compression spring, bearings, truss topology, cam shape, robot arm, cutting and scheduling. In machining, for example, choosing the cutting parameters is a nonlinear problem, and the sequence of operations is a mixed-integer problem.
 
-### Slide 13 · Why should engineers use GAMS?
+### Slide 11 · Why should engineers use GAMS?
 
 ⏱️ `0:16–0:17`
 
@@ -256,13 +234,13 @@ Because the model reads like the mathematical formulation on paper. Because you 
 
 Next, we take one example and solve it first in GAMS and later in GAMSPy.
 
-### Slide 14 · Resources
+### Slide 12 · Resources
 
 ⏱️ `0:17–0:18`
 
 Here are the most important resources: the GAMS homepage, the documentation, the Model Library, the GAMSPy documentation and the GAMSPy examples on GitHub, and the classic book GAMS – A User's Guide by Brooke, Kendrick, Meeraus and Raman. You do not need to write them down – all links are in the PDF of this presentation.
 
-### Slide 15 · Installing GAMS
+### Slide 13 · Installing GAMS
 
 ⏱️ `0:18–0:19`
 
@@ -274,7 +252,7 @@ Second, run the installer. GAMS Studio is installed automatically together with 
 
 Third, the license. A free demo license, limited in model size, comes with every download, and it is enough for today. Free academic licenses are available on the GAMS website. In GAMS Studio, you can paste or check the license under Help, GAMS Licensing.
 
-### Slide 16 · GAMS Studio at a glance
+### Slide 14 · GAMS Studio at a glance
 
 ⏱️ `0:19–0:20`
 
@@ -282,7 +260,7 @@ This is GAMS Studio. Let us look at the main areas.
 
 On the left, the Project Explorer with all files of the project. The main file – the one that will be run – is marked with a green triangle. In the centre, the code editor for the model file, with syntax highlighting and code completion. After a run, the listing file opens with the results. At the bottom, the Process Log shows the run messages and errors, with clickable links. And at the top, the toolbar, with the most important button: Run, or the key F9.
 
-### Slide 17 · Your first run in 5 steps
+### Slide 15 · Your first run in 5 steps
 
 ⏱️ `0:20–0:21`
 
@@ -292,7 +270,7 @@ One: create a project with File, New Project, and choose a working folder. Two: 
 
 One important warning: GAMS Studio runs the main file of the project, not necessarily the file that is currently open in the editor. This confuses many beginners.
 
-### Slide 18 · Reading the output
+### Slide 16 · Reading the output
 
 ⏱️ `0:21–0:22`
 
@@ -302,7 +280,7 @@ The listing file has a navigation tree on the left: compilation, equation listin
 
 What should you check first? Three lines: SOLVER STATUS 1, Normal Completion; MODEL STATUS 1, Optimal; and the OBJECTIVE VALUE.
 
-### Slide 19 · Finding and fixing errors
+### Slide 17 · Finding and fixing errors
 
 ⏱️ `0:22–0:23`
 
@@ -312,13 +290,13 @@ Click the red line and the cursor jumps to the error in your model file. In the 
 
 The most common beginner errors are: a missing semicolon, a symbol that was not declared, a misspelled set element, or an equals sign written instead of equals-e-equals.
 
-### Slide 20 · More useful Studio tools
+### Slide 18 · More useful Studio tools
 
 ⏱️ `0:23–0:24`
 
 GAMS Studio has more useful tools. The GDX Viewer shows sets, parameters and solution values as tables, and can export them to Excel – you will use this one a lot. The Model Library Explorer with more than four hundred models. A solver option editor, where you create option files with a form instead of typing. Integrated help with F1 for the keyword under the cursor. A debugger with breakpoints. And the possibility to solve your model remotely, on the NEOS server or on GAMS Engine.
 
-### Slide 21 · Handy shortcuts
+### Slide 19 · Handy shortcuts
 
 ⏱️ `0:24–0:25`
 
@@ -326,7 +304,7 @@ A few shortcuts. F9 runs the model, Shift F9 only compiles it. F6 opens the Mode
 
 Next, our first example, written in GAMS.
 
-### Slide 22 · Links
+### Slide 20 · Links
 
 ⏱️ `0:25`
 
@@ -336,13 +314,13 @@ These are the links for download, installation and the GAMS Studio manual and tu
 
 ## PART 2 — EXAMPLE 1 IN GAMS 0:25 – 0:40
 
-### Slide 23 · Part 2 — Example 1 in GAMS
+### Slide 21 · Part 2 — Example 1 in GAMS
 
 ⏱️ `0:25`
 
 Part two: Example 1, a simple linear program. This example is adapted from the lecture of Professor Elvis Ahmetović from the University of Tuzla.
 
-### Slide 24 · The problem
+### Slide 22 · The problem
 
 ⏱️ `0:25–0:27`
 
@@ -354,7 +332,7 @@ This is a linear program: the objective is linear and all constraints are linear
 
 The picture on the right shows the feasible region – the set of all points that satisfy all constraints. We look at it in detail on the next slide.
 
-### Slide 25 · Graphical solution
+### Slide 23 · Graphical solution
 
 ⏱️ `0:27–0:30`
 
@@ -370,7 +348,7 @@ So the optimum is in point B: x one equals two, x two equals zero, Z equals six.
 
 You can also see it in the picture: the dashed lines are lines of constant Z. As we push the line Z equals constant further to the upper right, the last point of the region it touches is B. Remember this result – six – because we will now check it in GAMS.
 
-### Slide 26 · The same model in GAMS
+### Slide 24 · The same model in GAMS
 
 ⏱️ `0:30–0:32`
 
@@ -384,7 +362,7 @@ The model statement says that the model Example01 consists of all equations. The
 
 Practically every line of the mathematical formulation has its line in the code.
 
-### Slide 27 · Reading the code line by line
+### Slide 25 · Reading the code line by line
 
 ⏱️ `0:32–0:34`
 
@@ -402,7 +380,7 @@ Display x one dot l prints the level of the variable, which is its optimal value
 
 And please notice: every statement ends with a semicolon. A missing semicolon is the most common beginner error of all.
 
-### Slide 28 · Running it in GAMS Studio (LIVE)
+### Slide 26 · Running it in GAMS Studio (LIVE)
 
 ⏱️ `0:34–0:37`
 
@@ -414,7 +392,7 @@ Create a new project, for example in a folder called GAMS underscore lecture. Cr
 
 So, you have seen what an error looks like and how quickly you find it when you start from the first red line. Now let us look at the results of the correct run.
 
-### Slide 29 · Results in the listing file
+### Slide 27 · Results in the listing file
 
 ⏱️ `0:37–0:38`
 
@@ -426,7 +404,7 @@ And the display output on the right: x one equals two, x two equals zero, Z equa
 
 Exactly the same as the graphical solution. Note also that we did not choose a solver – CPLEX is simply the default LP solver.
 
-### Slide 30 · Try it yourself
+### Slide 28 · Try it yourself
 
 ⏱️ `0:38–0:40`
 
@@ -450,13 +428,13 @@ Next, the same model in Python, with GAMSPy.
 
 ## PART 3 — FROM GAMS TO GAMSPY 0:40 – 0:55
 
-### Slide 31 · Part 3 — From GAMS to GAMSPy
+### Slide 29 · Part 3 — From GAMS to GAMSPy
 
 ⏱️ `0:40`
 
 Part three: from GAMS to GAMSPy. First we need to install Python, GAMSPy and Visual Studio Code on Windows.
 
-### Slide 32 · What is GAMSPy?
+### Slide 30 · What is GAMSPy?
 
 ⏱️ `0:40–0:41`
 
@@ -466,13 +444,13 @@ You do not need a separate GAMS installation: pip install gamspy brings its own 
 
 One warning: GAMS and GAMSPy licenses are different. A GAMS license cannot be used for GAMSPy.
 
-### Slide 33 · Step 1 – Install Python
+### Slide 31 · Step 1 – Install Python
 
 ⏱️ `0:41–0:42`
 
 Step one: Python. GAMSPy needs Python 3.11 or newer. Download it from python dot org. In the installer, do not forget to tick Add python dot exe to PATH. Then open PowerShell and check it with python dash dash version. If you already use Anaconda, you can use the Anaconda Prompt instead – the rest of the steps are the same.
 
-### Slide 34 · Step 2 – Create a virtual environment
+### Slide 32 · Step 2 – Create a virtual environment
 
 ⏱️ `0:42–0:43`
 
@@ -482,7 +460,7 @@ Open PowerShell in your working folder, for example C colon GAMS underscore lect
 
 If PowerShell refuses to run the script because running scripts is disabled, run the Set-ExecutionPolicy command shown on the slide once, and try again.
 
-### Slide 35 · Step 3 – Install GAMSPy
+### Slide 33 · Step 3 – Install GAMSPy
 
 ⏱️ `0:43–0:44`
 
@@ -490,7 +468,7 @@ Step three: install GAMSPy. One command: pip install gamspy.
 
 Then check it with gamspy dash dash version. You should see the GAMSPy version, 1.29, and the version of the GAMS core that came with it, 54.6. Later, you can update with pip install gamspy dash dash upgrade.
 
-### Slide 36 · Step 4 – Solvers
+### Slide 34 · Step 4 – Solvers
 
 ⏱️ `0:44–0:45`
 
@@ -498,7 +476,7 @@ Step four: solvers. The command gamspy list solvers shows the installed ones. By
 
 You can install more on demand, for example gamspy install solver highs ipopt. And in Python, you choose the solver with one argument: model dot solve, solver equals highs.
 
-### Slide 37 · Step 5 – License (optional)
+### Slide 35 · Step 5 – License (optional)
 
 ⏱️ `0:45–0:46`
 
@@ -506,7 +484,7 @@ Step five, the license, is optional. The demo license works out of the box for s
 
 If you have an academic or full license, you get a thirty-six character access code. Install it with gamspy install license and the code, and check it with gamspy show license. To go back to the demo license, use gamspy uninstall license.
 
-### Slide 38 · Step 6 – Test it
+### Slide 36 · Step 6 – Test it
 
 ⏱️ `0:46–0:47`
 
@@ -516,21 +494,21 @@ We import gamspy as gp, create a Container, one variable x and one equation e, w
 
 Save it as test underscore gamspy dot py and run it. If you see ModelStatus OptimalGlobal and one point zero, GAMSPy is ready.
 
-### Slide 39 · Quick reference
+### Slide 37 · Quick reference
 
 ⏱️ `0:47–0:48`
 
 This table is a quick reference of all the commands from the installation: create and activate the environment, install GAMSPy, check the version, list and add solvers, and install and show the license. You do not need to remember them – keep this slide from the PDF next to your computer when you install at home.
 
-### Slide 40 · Step 1 – Install VS Code
+### Slide 38 · Step 1 – Install VS Code
 
 ⏱️ `0:48–0:49`
 
 Now the editor. We will use Visual Studio Code, which is free, light and runs on Windows, macOS and Linux.
 
-Download it from code dot visualstudio dot com and run the installer. Two ticks are important: Add Open with Code to the Explorer context menu, and Add to PATH. Then start VS Code.
+Download it from code dot visualstudio dot com and run the installer. The screenshot on the right shows the download page – the website offers the installer for your operating system automatically. Two ticks are important: Add Open with Code to the Explorer context menu, and Add to PATH. Then start VS Code.
 
-### Slide 41 · Step 2 – Python extension
+### Slide 39 · Step 2 – Python extension
 
 ⏱️ `0:49–0:50`
 
@@ -538,7 +516,7 @@ Step two: the Python extension. Open the Extensions view with Control Shift X, s
 
 But remember: the extension does not contain Python itself. Python 3.11 or newer must already be installed, as we did a moment ago.
 
-### Slide 42 · Step 3 – Open your project folder
+### Slide 40 · Step 3 – Open your project folder
 
 ⏱️ `0:50–0:51`
 
@@ -546,19 +524,23 @@ Step three: open your project folder – File, Open Folder, and choose C colon G
 
 The rule is: one folder is one project. Your Python files and your virtual environment live in this folder. Always open the whole folder, not just a single file.
 
-### Slide 43 · Step 4 – Select the Python environment
+### Slide 41 · Step 4 – Select the Python environment
 
 ⏱️ `0:51–0:52`
 
-Step four: select the Python environment. Open the Command Palette with Control Shift P.
+Step four: select the Python environment. Open the Command Palette with Control Shift P. There are three ways.
 
 Option A: if the environment already exists, because you created it in PowerShell, choose Python: Select Interpreter and pick dot gamspy underscore venv.
 
 Option B: if you skipped the PowerShell steps, choose Python: Create Environment, then Venv, then your Python version. VS Code creates the environment in the folder and activates it automatically. This is the easiest path.
 
+Option C: create it yourself in the integrated terminal, with python dash m venv dot gamspy underscore venv. On macOS and Linux the command is usually python3. Then select it as in option A.
+
+The table shows how to activate the environment in a terminal. In Windows PowerShell, run the script Activate dot ps1 in the Scripts folder of the environment. In the classic Windows command prompt, run activate dot bat in the same folder. On macOS and Linux, type source, and the path to the environment, slash bin slash activate. To leave the environment, on every system, just type deactivate.
+
 The selected environment is shown in the status bar at the bottom right.
 
-### Slide 44 · Step 5 – Install GAMSPy in the environment
+### Slide 42 · Step 5 – Install GAMSPy in the environment
 
 ⏱️ `0:52–0:53`
 
@@ -566,7 +548,7 @@ Step five: install GAMSPy in this environment. Open the integrated terminal with
 
 Then type pip install gamspy matplotlib, and check the version again. We install Matplotlib already now, because later we will use it for plotting the results.
 
-### Slide 45 · Step 6 – Run your first script
+### Slide 43 · Step 6 – Run your first script
 
 ⏱️ `0:53–0:54`
 
@@ -576,7 +558,7 @@ Now there are three ways to run it. Click the Run Python File button at the top 
 
 The output appears in the Terminal panel – and again, ModelStatus OptimalGlobal and one point zero means everything works.
 
-### Slide 46 · VS Code shortcuts for this lecture
+### Slide 44 · VS Code shortcuts for this lecture
 
 ⏱️ `0:54–0:55`
 
@@ -588,13 +570,13 @@ Now we are ready: Example 1, written in GAMSPy.
 
 ## PART 4 — EXAMPLE 1 IN GAMSPY 0:55 – 1:05
 
-### Slide 47 · Part 4 — Example 1 in GAMSPy
+### Slide 45 · Part 4 — Example 1 in GAMSPy
 
 ⏱️ `0:55`
 
 Part four: the same model as before, now in Python.
 
-### Slide 48 · GAMS → GAMSPy: the dictionary
+### Slide 46 · GAMS → GAMSPy: the dictionary
 
 ⏱️ `0:55–0:57`
 
@@ -610,25 +592,25 @@ The model statement becomes gp dot Model with the list of equations, and the sol
 
 The key idea: every GAMS symbol becomes a Python object that lives in a Container. And the three dots in square brackets mean: for all elements of the domain.
 
-### Slide 49 · Side by side
+### Slide 47 · Side by side
 
 ⏱️ `0:57–0:59`
 
-Here are both versions side by side – GAMS on the left, GAMSPy on the right. Let us go block by block.
+Here are both versions side by side, as screenshots from the two programs – GAMS Studio on the left, and VS Code with GAMSPy on the right. Let us go block by block.
 
-Variables: in GAMS one line declares x one and x two as positive. In Python each variable is a separate object, with type equals positive, and Z with type equals free.
+The GAMS file starts with dollar title, a title for the model. The Python file starts with a short description in quotes, and imports sys and gamspy. Then we create the Container, and comments mark every block of the Python code.
 
-Equations: in GAMS one line with three names. In Python three objects, obj, eq one and eq two.
+Variables: in GAMS one line declares x one and x two as positive. In Python each variable is a separate object, with type equals positive, and z with type equals free.
 
-Definitions: the GAMS lines with two dots become assignments with the three dots in brackets. The relations are written with Python operators: double equals and less or equal. Notice that there is no semicolon at the end.
+Equations: in GAMS one line declares the three names. In Python we create eq one and eq two with gp dot Equation and define them with the three dots in square brackets. The relations are written with Python operators, less or equal, and there is no semicolon at the end. The objective is a separate equation named obj: z double equals three x one plus two x two.
 
-Model and solve: in GAMS two statements. In Python one gp dot Model call, with equations equals m dot getEquations – that is the equivalent of slash all slash – and problem LP, sense max, objective Z. Then example01 dot solve.
+Model and solve: in GAMS two statements. In Python one gp dot Model call, with the name Primjer01 – primjer means example in Bosnian – and equations equals m dot getEquations, which is the equivalent of slash all slash. Then problem LP, sense gp dot Sense dot MAX, and objective z. We call solve with output equals sys dot stdout, so we see the same solver log as in GAMS Studio.
 
-And finally, print with toValue.
+And finally, instead of Display, three print lines: x one and x two with toValue, and the objective value of the model.
 
 The Python version is a bit longer, but every line has a direct partner on the left.
 
-### Slide 50 · How to convert – step by step
+### Slide 48 · How to convert – step by step
 
 ⏱️ `0:59–1:00`
 
@@ -636,19 +618,19 @@ The conversion as a recipe in seven steps. Import gamspy and create a Container.
 
 The warning at the bottom is the most common pitfall. If you write eq one equals, without the brackets and the three dots, you do not define the equation. You simply overwrite the Python variable eq one with an expression, and the model silently loses its constraint.
 
-### Slide 51 · Run it in VS Code (LIVE)
+### Slide 49 · Run it in VS Code (LIVE)
 
 ⏱️ `1:00–1:02`
 
-Let us run it, live in VS Code. Open the folder, check the environment, create the file example01 underscore gams underscore style dot py, paste the code, save it and click Run Python File. The result appears in the terminal.
+Let us run it, live in VS Code. Open the folder, check the environment, create the file example01 dot py, paste the code, save it and click Run Python File. The result appears in the terminal.
 
 If you want to see the full solver log, as you know it from GAMS Studio, pass output equals sys dot stdout to the solve method.
 
-> 🗒️ *LIVE DEMO: run code/gamspy/example01_gams_style.py in VS Code, then once more with output=sys.stdout to show the solver log. About 1.5 minutes.*
+> 🗒️ *LIVE DEMO: run example01.py in VS Code, then once more with output=sys.stdout to show the solver log. About 1.5 minutes.*
 
 So the model runs in Python, and the log is the same log as in GAMS – because underneath it is the same engine.
 
-### Slide 52 · Results
+### Slide 50 · Results
 
 ⏱️ `1:02–1:03`
 
@@ -660,7 +642,7 @@ And if you print x one dot records, you get the full record of the variable – 
 
 Once again the same result as on paper and in GAMS: x one equals two, x two equals zero, Z equals six.
 
-### Slide 53 · The Python way – shorter
+### Slide 51 · The Python way – shorter
 
 ⏱️ `1:03–1:04`
 
@@ -670,7 +652,7 @@ Then we print the model status, the objective value, and the marginals of the tw
 
 The output: optimal, six, and the marginals zero and three. This answers one of the exercise questions from part two: eq two is binding, with a shadow price of three, and eq one has slack. If we could relax the second constraint by one unit, the objective would grow by three.
 
-### Slide 54 · Bonus: back to GAMS and LaTeX
+### Slide 52 · Bonus: back to GAMS and LaTeX
 
 ⏱️ `1:04–1:05`
 
@@ -684,13 +666,13 @@ Next, more realistic data: Example 3.
 
 ## PART 5 — EXAMPLE 3: MIXING OF STREAMS 1:05 – 1:20
 
-### Slide 55 · Part 5 — Example 3: Mixing of streams
+### Slide 53 · Part 5 — Example 3: Mixing of streams
 
 ⏱️ `1:05`
 
 Part five: Example 3, the mixing of streams. Here we learn sets, parameters and data in GAMSPy. The example is again after Professor Ahmetović, and the problem comes from the book of Eden.
 
-### Slide 56 · The problem
+### Slide 54 · The problem
 
 ⏱️ `1:05–1:06`
 
@@ -700,7 +682,7 @@ Feed one contains eighty percent MEA and twenty percent water, and costs eighty 
 
 The product may contain at most twenty-five mass percent of water. The question: which mixing ratio gives the minimum cost per one kilogram of mixture? Feed two is cheaper, but it has too much water – so we need to find the right balance.
 
-### Slide 57 · Mathematical formulation
+### Slide 55 · Mathematical formulation
 
 ⏱️ `1:06–1:08`
 
@@ -714,21 +696,21 @@ The picture on the right shows the graphical solution. Because of the mass balan
 
 A small discussion point: in the original GAMS lecture this model was solved as NLP. But all equations are linear, so LP is the correct model type. Always choose the simplest model type that fits your equations.
 
-### Slide 58 · Step 1 – direct translation
+### Slide 56 · Step 1 – direct translation
 
 ⏱️ `1:08–1:10`
 
-Step one: a direct translation, exactly in the style of Example 1.
+Step one: a direct translation, exactly in the style of Example 1. The screenshot shows the file mixing of streams dot py in VS Code.
 
-We create a container and three variables, m one, m two and z. New here is the description argument – a short text that documents the meaning and the unit of each variable. It is good practice and it appears in the results.
+We create a container and two positive variables, m one and m two. New here is the description argument – a short text that documents the meaning and the unit of each variable, here mass of feed one and mass of feed two in kilograms. It is good practice and it appears in the results.
 
-Then three equations: obj, water and balance. The definitions follow the mathematics: z equals eighty m one plus sixty m two, the water content less or equal to zero point two five, and the balance, m one plus m two double equals one. Double equals is used for an equality constraint.
+Then two equations: water and balance. The water content, zero point two m one plus zero point three two m two, must be less or equal to zero point two five. And the balance, m one plus m two double equals one. Double equals is used for an equality constraint.
 
-Then the model, with problem LP, sense min and objective z, and solve.
+Notice that there is no variable z and no objective equation. We pass the cost, eighty m one plus sixty m two, directly as the objective of the model – the shorter Python way we saw in Example 1. Problem LP, sense min, and solve. Then we print the objective value and the values of m one and m two.
 
-The result: z equals seventy-one point six six seven cents per kilogram, m one zero point five eight three, m two zero point four one seven. Exactly the graphical solution. So nothing new here – only the double equals for the balance and the descriptions.
+The result: seventy-one point six six seven cents per kilogram, m one zero point five eight three, m two zero point four one seven. Exactly the graphical solution. New are only the double equals for the balance and the descriptions.
 
-### Slide 59 · Problem: numbers are inside the equations
+### Slide 57 · Problem: numbers are inside the equations
 
 ⏱️ `1:10–1:11`
 
@@ -736,7 +718,7 @@ But this model has a problem. All the numbers – the costs and the compositions
 
 The solution is to separate the model from the data. That is what sets and parameters are for. The table shows the concepts: an index set, data as a parameter, a two-dimensional table, an indexed variable, and a sum over a set – each one in GAMS and in GAMSPy.
 
-### Slide 60 · Step 2 – general (indexed) formulation
+### Slide 58 · Step 2 – general (indexed) formulation
 
 ⏱️ `1:11–1:13`
 
@@ -748,7 +730,7 @@ We minimize the sum over f of cost times x. Subject to: for every component c th
 
 Compare it with the two-variable version. There, each number was written in an equation. Here the equations contain only symbols. And this is the big advantage: the model does not change when you add feeds or components. Only the data change.
 
-### Slide 61 · Sets and data
+### Slide 59 · Sets and data
 
 ⏱️ `1:13–1:14`
 
@@ -760,7 +742,7 @@ The composition is a pandas DataFrame, with one row for each combination of feed
 
 Then the parameters: w with the domain f and c, filled from the DataFrame; cost with the domain f; wmax with the domain c – notice that we give a limit only for water; and the scalar M, equal to one.
 
-### Slide 62 · Variables, equations, model
+### Slide 60 · Variables, equations, model
 
 ⏱️ `1:14–1:16`
 
@@ -776,7 +758,7 @@ The model minimizes the sum over f of cost times x, and we solve it.
 
 The small table at the bottom repeats the three new things and their GAMS equivalents: the indexed equation, the where condition, and the sum.
 
-### Slide 63 · Results
+### Slide 61 · Results
 
 ⏱️ `1:16–1:17`
 
@@ -784,7 +766,7 @@ The results. The minimum cost is again seventy-one point six six seven cents per
 
 And we can compute derived values directly in GAMSPy. Here we create a parameter product and calculate the composition of the product: seventy-five percent MEA and twenty-five percent water. The water content is exactly at the limit – the constraint is active. That is why the optimum lies exactly on this boundary.
 
-### Slide 64 · What-if: change the water limit (LIVE)
+### Slide 62 · What-if: change the water limit (LIVE)
 
 ⏱️ `1:17–1:19`
 
@@ -792,7 +774,7 @@ And now the real power of Python. A what-if analysis: how does the optimum chang
 
 We write a simple loop over several limits. In each step we set new records for wmax, solve the model again and print the results. We change only the data – the model is not rewritten.
 
-> 🗒️ *LIVE: run code/gamspy/example03_indexed.py and show the what-if table in the terminal. About 1 minute.*
+> 🗒️ *LIVE: run mixing_ind_formulation.py and show the what-if table in the terminal. About 1 minute.*
 
 Look at the table. With a twenty percent limit, the cost is eighty, and only feed one is used. As the limit grows, more of the cheap feed two can be used and the cost falls. At thirty-two percent only feed two is used, at sixty cents.
 
@@ -800,7 +782,7 @@ Below twenty percent the problem is infeasible, because even pure feed one alrea
 
 Next, we turn this table into a plot with Matplotlib.
 
-### Slide 65 · Try it yourself
+### Slide 63 · Try it yourself
 
 ⏱️ `1:19–1:20`
 
@@ -810,13 +792,13 @@ Some exercises for you. Add a third feed with ninety percent MEA, ten percent wa
 
 ## PART 6 — FROM MODEL TO WEB PAGE 1:20 – 1:40
 
-### Slide 66 · Part 6 — From model to web page
+### Slide 64 · Part 6 — From model to web page
 
 ⏱️ `1:20`
 
 Part six: from model to web page. GAMSPy, Matplotlib and Flask, in seven steps, each of which you can test before you continue.
 
-### Slide 67 · What we are going to build
+### Slide 65 · What we are going to build
 
 ⏱️ `1:20–1:22`
 
@@ -826,7 +808,7 @@ The user moves a slider in the browser. JavaScript sends a request to Flask, a s
 
 The table shows the files and the step in which we create each one: the model as a function in step two, the chart in step three, Flask growing from step four to step six, and the final interactive page in step seven.
 
-### Slide 68 · Step 1 – Install Matplotlib and Flask
+### Slide 66 · Step 1 – Install Matplotlib and Flask
 
 ⏱️ `1:22–1:23`
 
@@ -836,7 +818,7 @@ Every step has a test. Here it is a one-line Python command that imports gamspy,
 
 On the right is the folder structure we are going to create: a folder webapp with the model, the plot script, three intermediate Flask apps, the final app and a templates folder with the HTML page.
 
-### Slide 69 · Step 2 – Model as a reusable function
+### Slide 67 · Step 2 – Model as a reusable function
 
 ⏱️ `1:23–1:25`
 
@@ -848,7 +830,7 @@ Why a function? Because the web server will call it with different inputs for ev
 
 The test: run python mixing underscore model dot py. You should see one optimal result for twenty-five percent, and one infeasible result for fifteen percent.
 
-### Slide 70 · Step 3 – What-if chart with Matplotlib
+### Slide 68 · Step 3 – What-if chart with Matplotlib
 
 ⏱️ `1:25–1:27`
 
@@ -862,7 +844,7 @@ Why two separate charts? Because the cost is in cents per kilogram and the amoun
 
 The test: run plot underscore mixing dot py and open the PNG file. It should look like the picture on the right.
 
-### Slide 71 · Step 4 – The smallest Flask app
+### Slide 69 · Step 4 – The smallest Flask app
 
 ⏱️ `1:27–1:29`
 
@@ -872,7 +854,7 @@ We import Flask and create the app. The decorator app dot route with a slash con
 
 The test: run python app underscore step four dot py and open the address one two seven dot zero dot zero dot one, colon five thousand, in your browser. You should see the greeting. Stop the server with Control C before the next step.
 
-### Slide 72 · Step 5 – A form that solves the model
+### Slide 70 · Step 5 – A form that solves the model
 
 ⏱️ `1:29–1:31`
 
@@ -884,7 +866,7 @@ The route now accepts both GET and POST. It reads the number from the form, call
 
 The test: enter twenty-two, and you get seventy-six point six seven cents per kilogram. Enter fifteen, and you get no feasible mixture.
 
-### Slide 73 · Step 6 – Add the Matplotlib chart
+### Slide 71 · Step 6 – Add the Matplotlib chart
 
 ⏱️ `1:31–1:33`
 
@@ -896,7 +878,7 @@ In the page we simply use an image tag whose source is this address, with the wa
 
 The test: open the plot address directly in the browser, with water equals twenty-two, and you should see the chart. Then open the main page – the chart is now under the form.
 
-### Slide 74 · Step 7 – Interactive page: JSON API
+### Slide 72 · Step 7 – Interactive page: JSON API
 
 ⏱️ `1:33–1:35`
 
@@ -908,7 +890,7 @@ This is a small API – an application programming interface. The page asks for 
 
 The test: open the API address with water twenty-five and costs eighty and sixty. You should see the JSON on the slide: cost seventy-one point six seven, feed one zero point five eight three, feed two zero point four one seven, ok true.
 
-### Slide 75 · Step 7 – Interactive page: sliders + JavaScript
+### Slide 73 · Step 7 – Interactive page: sliders + JavaScript
 
 ⏱️ `1:35–1:36`
 
@@ -918,17 +900,17 @@ A small JavaScript function update runs on every change of a slider. It builds t
 
 The test: run python app dot py and move the sliders. The numbers and the chart should update.
 
-### Slide 76 · The result (LIVE)
+### Slide 74 · The result (LIVE)
 
 ⏱️ `1:36–1:39`
 
 And this is the result: an interactive mixing optimizer. On the left the sliders for the water limit and the cost of feed one and feed two. At the top the cards with the minimum cost, the feed ratio as a bar, and the water content of the product. And the what-if chart, with the current case marked by the dashed line. If the input is infeasible, below twenty percent water, a red warning appears instead of numbers.
 
-> 🗒️ *LIVE DEMO: python app.py in code/webapp, open http://127.0.0.1:5000. Set feed 1 cheaper than feed 2 (70 vs 90): the water limit is no longer active and only feed 1 is used. Then move the water limit below 20 %. About 2.5 minutes.*
+> 🗒️ *LIVE DEMO: python app.py in webapp, open http://127.0.0.1:5000. Set feed 1 cheaper than feed 2 (70 vs 90): the water limit is no longer active and only feed 1 is used. Then move the water limit below 20 %. About 2.5 minutes.*
 
 So, with about one hundred lines of Python and a short HTML page, an optimization model became a tool that anybody can use in a browser, without knowing anything about GAMS.
 
-### Slide 77 · Summary & next steps
+### Slide 75 · Summary & next steps
 
 ⏱️ `1:39–1:40`
 
@@ -940,7 +922,7 @@ How to continue? Add a third feed or a minimum MEA content – only the model fi
 
 ## SUMMARY AND QUESTIONS 1:40 – 2:00
 
-### Slide 78 · What we learned today
+### Slide 76 · What we learned today
 
 ⏱️ `1:40–1:43`
 
@@ -960,7 +942,7 @@ And the solvers are the same: CPLEX, CONOPT, BARON, HiGHS and many others.
 
 So: the same algebraic model, two ways to write it. Choose GAMS when you do pure modelling, and GAMSPy when the model is a part of a bigger Python workflow – with data, plots and web pages.
 
-### Slide 79 · Review questions
+### Slide 77 · Review questions
 
 ⏱️ `1:43–1:52`
 
@@ -1002,7 +984,7 @@ Let us check what stayed in your head. I will ask the questions one by one – t
 
 Thank you. These were the most important points of today.
 
-### Slide 80 · Where to continue
+### Slide 78 · Where to continue
 
 ⏱️ `1:52–1:53`
 
@@ -1010,13 +992,13 @@ Where to continue? The GAMS Model Library, with more than four hundred models, m
 
 And a homework idea: extend Example 3 with a third feed and a minimum MEA content, and then show the result in the web app.
 
-### Slide 81 · Acknowledgements
+### Slide 79 · Acknowledgements
 
 ⏱️ `1:53–1:54`
 
 Acknowledgements. Examples 1 and 3 are adapted from the lecture of Professor Elvis Ahmetović from the University of Tuzla, Mathematical modelling in GAMS, which he gave as an Erasmus+ lecture at our university in November 2025. The Example 3 problem comes from the book of Eden, Process Synthesis, Simulation and Optimization. And many thanks to our hosts for the invitation.
 
-### Slide 82 · Thank you – questions?
+### Slide 80 · Thank you – questions?
 
 ⏱️ `1:54–2:00`
 

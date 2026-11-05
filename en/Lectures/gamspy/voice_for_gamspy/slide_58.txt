@@ -1,0 +1,7 @@
+So here is the general, indexed formulation.
+
+We have two sets: f, the feeds, and c, the components. Parameters: cost of f, the cost of each feed; w of f and c, the mass fraction of component c in feed f; wmax of c, the maximum allowed fraction of component c in the product; and M, the product amount. And one indexed variable: x of f, the mass of feed f in the product.
+
+We minimize the sum over f of cost times x. Subject to: for every component c that has a limit, the sum over f of w times x is less than or equal to wmax times M. And the sum of all x equals M.
+
+Compare it with the two-variable version. There, each number was written in an equation. Here the equations contain only symbols. And this is the big advantage: the model does not change when you add feeds or components. Only the data change.

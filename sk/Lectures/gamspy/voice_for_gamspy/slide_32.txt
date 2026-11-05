@@ -1,0 +1,5 @@
+Druhý krok: virtuálne prostredie. Udržiava balíky GAMSPy oddelene od vašich ostatných projektov v Pythone.
+
+Otvorte PowerShell vo svojom pracovnom priečinku, napríklad C dvojbodka GAMS podčiarkovník lecture. Napíšte python pomlčka m venv bodka gamspy podčiarkovník venv, čím ho vytvoríte, a potom spustite aktivačný skript. Keď výzva príkazového riadka začína názvom prostredia v zátvorkách, funguje to.
+
+Ak PowerShell odmietne spustiť skript, pretože spúšťanie skriptov je zakázané, raz spustite príkaz Set-ExecutionPolicy zo snímky a skúste to znova.

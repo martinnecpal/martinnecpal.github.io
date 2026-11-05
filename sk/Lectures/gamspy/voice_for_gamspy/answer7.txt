@@ -1,0 +1,1 @@
+Nové prúdy alebo zložky menia iba dáta, nie rovnice; dáta môžu prichádzať z Excelu alebo databáz a analýzy čo ak menia iba dáta.

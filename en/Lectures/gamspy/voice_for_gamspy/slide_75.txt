@@ -1,0 +1,3 @@
+Let us summarise the web part as four layers. The optimization model is GAMSPy, in mixing underscore model dot py. The visualization is Matplotlib, in plot underscore mixing dot py. The web server is Flask, in app dot py. And the user interface is HTML and JavaScript, in index dot html.
+
+How to continue? Add a third feed or a minimum MEA content – only the model file changes. Read the feed data from Excel with pandas. And deploy the app for students, on a university server, or use GAMS MIRO if you want a ready-made interface. The same pattern works for any GAMSPy model: a function, a JSON route and a page.

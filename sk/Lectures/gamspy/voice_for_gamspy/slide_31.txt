@@ -1,0 +1,1 @@
+Prvý krok: Python. GAMSPy potrebuje Python 3.11 alebo novší. Stiahnite ho zo stránky python bodka org. V inštalátore nezabudnite zaškrtnúť Add python bodka exe to PATH. Potom otvorte PowerShell a overte ho príkazom python pomlčka pomlčka version. Ak už používate Anacondu, môžete namiesto toho použiť Anaconda Prompt – ostatné kroky sú rovnaké.

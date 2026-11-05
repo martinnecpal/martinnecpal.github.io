@@ -1,0 +1,7 @@
+Výsledky. Metóda solve vráti súhrnnú tabuľku, pandas DataFrame: stav riešiča normálne dokončenie, stav modelu globálne optimálny, účelová funkcia šesť, typ modelu LP, riešič CPLEX a čas riešenia niekoľko milisekúnd.
+
+Hodnoty: x jedna rovná sa dva, x dva rovná sa nula, Z rovná sa šesť.
+
+A ak vypíšete x jedna bodka records, dostanete úplný záznam premennej – úroveň, marginálnu hodnotu, dolnú a hornú hranicu a mierku.
+
+Opäť rovnaký výsledok ako na papieri a v GAMS: x jedna rovná sa dva, x dva rovná sa nula, Z rovná sa šesť.

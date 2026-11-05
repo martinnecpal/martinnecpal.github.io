@@ -1,0 +1,5 @@
+Šiesty krok: spustite svoj prvý skript. Vytvorte súbor test podčiarkovník gamspy bodka py, vložte testovací model a uložte ho.
+
+Teraz sú tri spôsoby, ako ho spustiť. Kliknite na tlačidlo Run Python File vpravo hore v editore. Alebo kliknite pravým tlačidlom a vyberte Run Python File in Terminal. Alebo označte niekoľko riadkov a stlačte Shift Enter, čím spustíte iba výber.
+
+Výstup sa zobrazí v paneli Terminal – a opäť, ModelStatus OptimalGlobal a jedna celá nula znamená, že všetko funguje.

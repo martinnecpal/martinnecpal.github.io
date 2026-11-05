@@ -1,0 +1,7 @@
+These are the results from the listing file, copied from a real run with GAMS 54.
+
+The solve summary tells us: model Example01, type LP, direction maximize, solver CPLEX. Solver status one, normal completion. Model status one, optimal. Objective value six.
+
+And the display output on the right: x one equals two, x two equals zero, Z equals six.
+
+Exactly the same as the graphical solution. Note also that we did not choose a solver – CPLEX is simply the default LP solver.

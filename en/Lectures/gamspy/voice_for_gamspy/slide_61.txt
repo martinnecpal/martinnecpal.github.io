@@ -1,0 +1,3 @@
+The results. The minimum cost is again seventy-one point six six seven cents per kilogram. Because x is indexed, x dot records gives a small table with one row per feed: feed one zero point five eight three, feed two zero point four one seven.
+
+And we can compute derived values directly in GAMSPy. Here we create a parameter product and calculate the composition of the product: seventy-five percent MEA and twenty-five percent water. The water content is exactly at the limit – the constraint is active. That is why the optimum lies exactly on this boundary.

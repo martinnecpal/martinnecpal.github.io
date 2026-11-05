@@ -1,0 +1,9 @@
+Matematická formulácia, na báze jedného kilogramu zmesi.
+
+Premenné sú m jedna a m dva, hmotnosti prúdu jedna a prúdu dva v kilogramoch, a z, náklady na jeden kilogram zmesi v centoch.
+
+Minimalizujeme z rovná sa osemdesiat m jedna plus šesťdesiat m dva. Za podmienky obsahu vody: nula celá dva m jedna plus nula celá tridsaťdva m dva je menšie alebo rovné nula celá dvadsaťpäť. A hmotnostnej bilancie: m jedna plus m dva rovná sa jedna. Obe hmotnosti sú nezáporné.
+
+Obrázok vpravo ukazuje grafické riešenie. Vďaka hmotnostnej bilancii ležia všetky prípustné body na hrubej úsečke. Ohraničenie vody túto úsečku pretína a najlacnejší prípustný bod je tam, kde je obsah vody presne dvadsaťpäť percent: m jedna rovná sa nula celá päťsto osemdesiattri, m dva rovná sa nula celá štyristo sedemnásť a náklady sú sedemdesiatjeden celá šesťdesiatsedem centov za kilogram.
+
+Malý bod na diskusiu: v pôvodnej prednáške o GAMS sa tento model riešil ako NLP. Všetky rovnice sú však lineárne, preto je správnym typom modelu LP. Vždy vyberajte najjednoduchší typ modelu, ktorý zodpovedá vašim rovniciam.

@@ -1,0 +1,1 @@
+Step one: Python. GAMSPy needs Python 3.11 or newer. Download it from python dot org. In the installer, do not forget to tick Add python dot exe to PATH. Then open PowerShell and check it with python dash dash version. If you already use Anaconda, you can use the Anaconda Prompt instead – the rest of the steps are the same.

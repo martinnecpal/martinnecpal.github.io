@@ -1,0 +1,5 @@
+Úloha. Dva vstupné prúdy sa miešajú na zmes MEA a vody. MEA je monoetanolamín, rozpúšťadlo používané napríklad pri zachytávaní oxidu uhličitého.
+
+Prúd jedna obsahuje osemdesiat percent MEA a dvadsať percent vody a stojí osemdesiat centov za kilogram. Prúd dva obsahuje šesťdesiatosem percent MEA a tridsaťdva percent vody a stojí šesťdesiat centov za kilogram.
+
+Produkt môže obsahovať najviac dvadsaťpäť hmotnostných percent vody. Otázka: pri akom pomere miešania sú náklady na jeden kilogram zmesi minimálne? Prúd dva je lacnejší, ale má príliš veľa vody – musíme teda nájsť správnu rovnováhu.

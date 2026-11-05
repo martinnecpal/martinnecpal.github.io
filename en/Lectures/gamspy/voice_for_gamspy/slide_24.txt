@@ -1,0 +1,9 @@
+And here is the same model in GAMS. Look at how close it is to the mathematics.
+
+The first line is just a title. Then we declare the variables: x one and x two as positive variables, which means greater than or equal to zero, and Z as a free variable.
+
+Then we declare the names of three equations: obj, eq one and eq two. And then we define them. Obj says Z equals three x one plus two x two. Eq one says x one plus three x two is less than or equal to four. Eq two says x one plus x two is less than or equal to two.
+
+The model statement says that the model Example01 consists of all equations. The solve statement says: solve Example01 by maximizing Z, using LP. And the display statement prints the results.
+
+Practically every line of the mathematical formulation has its line in the code.

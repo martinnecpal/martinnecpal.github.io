@@ -1,0 +1,3 @@
+Tento model má však problém. Všetky čísla – ceny a zloženia – sú napevno zapísané vnútri rovníc. Ak chcete tretí prúd alebo tretiu zložku, musíte prepísať celý model. A skutočné modely majú stovky prúdov, s dátami, ktoré prichádzajú zo súborov Excelu alebo z databáz.
+
+Riešením je oddeliť model od dát. Na to slúžia množiny a parametre. Tabuľka ukazuje pojmy: indexovú množinu, dáta ako parameter, dvojrozmernú tabuľku, indexovanú premennú a súčet cez množinu – každý v GAMS aj v GAMSPy.

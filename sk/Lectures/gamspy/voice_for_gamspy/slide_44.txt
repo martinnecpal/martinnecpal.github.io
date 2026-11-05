@@ -1,0 +1,3 @@
+A skratky VS Code, ktoré dnes potrebujeme. Najdôležitejšia je Control Shift P, Command Palette – odtiaľ urobíte všetko. Control Shift X pre rozšírenia, Control Shift spätný apostrof pre nový terminál, Shift Enter na spustenie výberu, F5 na spustenie ladenia, Control lomka na zakomentovanie riadka a Control P na rýchle otvorenie súboru.
+
+Teraz sme pripravení: Príklad 1 zapísaný v GAMSPy.

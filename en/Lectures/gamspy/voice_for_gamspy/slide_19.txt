@@ -1,0 +1,3 @@
+A few shortcuts. F9 runs the model, Shift F9 only compiles it. F6 opens the Model Library, F1 the help. Control space gives code completion, and Control star comments or uncomments lines. If you remember only one, remember F9.
+
+Next, our first example, written in GAMS.

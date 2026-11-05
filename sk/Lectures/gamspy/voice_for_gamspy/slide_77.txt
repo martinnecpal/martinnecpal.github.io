@@ -1,0 +1,19 @@
+Overme si, čo vám zostalo v hlave. Otázky budem klásť jednu po druhej – skúste odpovedať skôr, ako budem pokračovať.
+
+Otázka jedna: Aká je kľúčová myšlienka algebraického modelovacieho jazyka, ako je GAMS?
+
+Otázka dva: Prečo musí byť účelová premenná Z v GAMS deklarovaná ako Free?
+
+Otázka tri: Čo znamenajú rovná-e-rovná, rovná-l-rovná a rovná-g-rovná a ako sa zapisujú v GAMSPy?
+
+Otázka štyri: Ktoré ohraničenie je v optime Príkladu 1 aktívne a ako to zistíte?
+
+Otázka päť: Čo robia tri bodky v hranatých zátvorkách v eq jedna, zátvorka, bodka bodka bodka, rovná sa – a čo sa stane bez nich?
+
+Otázka šesť: Prečo je pre Príklad 3 správnym typom modelu LP, a nie NLP?
+
+Otázka sedem: Prečo oddeľujeme model od dát pomocou množín a parametrov?
+
+Otázka osem: Prečo je limit vody pod dvadsať percent neprípustný?
+
+Ďakujem. Toto boli najdôležitejšie body dneška.

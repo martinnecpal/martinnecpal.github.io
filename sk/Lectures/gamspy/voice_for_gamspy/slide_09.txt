@@ -1,0 +1,5 @@
+Chemické inžinierstvo je klasickou oblasťou použitia, ktorú výrazne rozvinul profesor Grossmann na Carnegie Mellon University a mnohí ďalší.
+
+Syntéza procesov rozhoduje o štruktúre celej technologickej schémy – ktoré zariadenia postaviť a ako ich prepojiť – a typicky ide o zmiešanú celočíselnú nelineárnu úlohu. Ďalej siete výmenníkov tepla, poradie destilačných kolón, siete reaktorov a kinetika, pooling a blending v rafinériách a návrh a rozvrhovanie vsádzkových prevádzok.
+
+Vpravo vidíte príklady z knižnice modelov GAMS Model Library. Všetky sa dajú otvoriť priamo v GAMS Studio. A náš dnešný Príklad 3, miešanie dvoch prúdov, je najjednoduchším možným prípadom úlohy blendingu.

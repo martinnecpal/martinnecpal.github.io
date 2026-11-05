@@ -1,0 +1,5 @@
+Chyby. Zobrazujú sa ako červené riadky v Process Logu. Zlaté pravidlo: vždy začnite prvou chybou. Ďalšie chyby sú veľmi často len dôsledkom tej prvej.
+
+Kliknite na červený riadok a kurzor skočí na chybu vo vašom súbore modelu. Vo výpise je miesto chyby označené znakom dolára a číslom chyby.
+
+Najčastejšie chyby začiatočníkov sú: chýbajúca bodkočiarka, nedeklarovaný symbol, preklep v prvku množiny alebo znak rovná sa napísaný namiesto rovná-e-rovná.

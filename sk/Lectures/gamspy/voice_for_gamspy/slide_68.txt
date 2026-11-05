@@ -1,0 +1,9 @@
+Tretí krok: graf čo ak v Matplotlib.
+
+Prvé dva riadky sú pre webové aplikácie dôležité. Matplotlib use Agg znamená: bez okna, kresli iba do súboru alebo do pamäte. Webový server nemá obrazovku.
+
+Potom model vyriešime pre trinásť limitov vody, od dvadsiatich po tridsaťdva percent, a nakreslíme dva grafy: náklady vľavo a množstvá prúdov vpravo.
+
+Prečo dva samostatné grafy? Pretože náklady sú v centoch na kilogram a množstvá v kilogramoch – rôzne jednotky. Nikdy ich nedávajte do jedného grafu s dvoma osami y; je to mätúce. V kóde používame aj vyrovnávaciu pamäť, takže trinásť riešení sa zapamätá pre každú kombináciu cien a stránka zostane rýchla.
+
+Test: spustite plot podčiarkovník mixing bodka py a otvorte súbor PNG. Mal by vyzerať ako obrázok vpravo.

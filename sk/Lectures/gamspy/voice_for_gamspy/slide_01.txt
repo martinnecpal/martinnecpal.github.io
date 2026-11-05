@@ -1,0 +1,7 @@
+Dobré ráno a vitajte. Veľmi pekne ďakujem za pozvanie – naozaj ma teší, že som dnes tu s vami.
+
+Názov dnešnej prednášky je Od GAMS ku GAMSPy: optimalizačné modelovanie v Pythone, od modelu až po interaktívnu webovú stránku.
+
+Čo si z nasledujúcich dvoch hodín odnesiete? Tri veci. Po prvé, napíšete malý optimalizačný model v GAMS, klasickom algebraickom modelovacom jazyku. Po druhé, napíšete presne ten istý model v Pythone, pomocou balíka GAMSPy. A po tretie, z takého modelu urobíte malú webovú stránku, na ktorej ktokoľvek posunie posuvník a hneď uvidí nové optimálne riešenie.
+
+Obrázok vpravo ukazuje, kde skončíme: stránku, ktorá s minimálnymi nákladmi mieša dva chemické prúdy. Všetko, čo na nej vidíte, počíta na pozadí optimalizačný model.

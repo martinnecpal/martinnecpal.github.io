@@ -1,0 +1,5 @@
+Spustime ho, naživo vo VS Code. Otvorte priečinok, skontrolujte prostredie, vytvorte súbor example01 bodka py, vložte kód, uložte ho a kliknite na Run Python File. Výsledok sa zobrazí v termináli.
+
+Ak chcete vidieť úplný log riešiča, ako ho poznáte z GAMS Studio, odovzdajte metóde solve argument output rovná sa sys bodka stdout.
+
+Model teda beží v Pythone a log je rovnaký ako v GAMS – pretože pod ním je to isté výpočtové jadro.

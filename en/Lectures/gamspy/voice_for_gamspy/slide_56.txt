@@ -1,0 +1,9 @@
+Step one: a direct translation, exactly in the style of Example 1. The screenshot shows the file mixing of streams dot py in VS Code.
+
+We create a container and two positive variables, m one and m two. New here is the description argument – a short text that documents the meaning and the unit of each variable, here mass of feed one and mass of feed two in kilograms. It is good practice and it appears in the results.
+
+Then two equations: water and balance. The water content, zero point two m one plus zero point three two m two, must be less or equal to zero point two five. And the balance, m one plus m two double equals one. Double equals is used for an equality constraint.
+
+Notice that there is no variable z and no objective equation. We pass the cost, eighty m one plus sixty m two, directly as the objective of the model – the shorter Python way we saw in Example 1. Problem LP, sense min, and solve. Then we print the objective value and the values of m one and m two.
+
+The result: seventy-one point six six seven cents per kilogram, m one zero point five eight three, m two zero point four one seven. Exactly the graphical solution. New are only the double equals for the balance and the descriptions.

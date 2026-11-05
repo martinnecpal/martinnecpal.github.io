@@ -1,0 +1,1 @@
+Equal, less than or equal, greater than or equal; in GAMSPy double equals, less or equal and greater or equal.

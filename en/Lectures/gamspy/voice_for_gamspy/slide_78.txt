@@ -1,0 +1,3 @@
+Where to continue? The GAMS Model Library, with more than four hundred models, many of them from chemical and mechanical engineering. The GAMSPy examples on GitHub. The guide GAMSPy for GAMS users. And all the code from today, which you can download as a zip file from the link on this slide.
+
+And a homework idea: extend Example 3 with a third feed and a minimum MEA content, and then show the result in the web app.

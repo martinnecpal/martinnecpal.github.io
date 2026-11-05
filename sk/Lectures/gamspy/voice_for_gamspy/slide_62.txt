@@ -1,0 +1,9 @@
+A teraz skutočná sila Pythonu. Analýza čo ak: ako sa zmení optimum, ak zmeníme limit vody?
+
+Napíšeme jednoduchý cyklus cez niekoľko limitov. V každom kroku nastavíme nové záznamy pre wmax, model znova vyriešime a vypíšeme výsledky. Meníme iba dáta – model sa neprepisuje.
+
+Pozrite sa na tabuľku. Pri limite dvadsať percent sú náklady osemdesiat a používa sa iba prúd jedna. S rastúcim limitom sa dá použiť viac lacného prúdu dva a náklady klesajú. Pri tridsiatich dvoch percentách sa používa iba prúd dva, za šesťdesiat centov.
+
+Pod dvadsať percent je úloha neprípustná, pretože už aj čistý prúd jedna obsahuje dvadsať percent vody. A nad tridsaťdva percent limit už nie je aktívny a lacnejší prúd dva sa použije samostatne.
+
+Ďalej túto tabuľku premeníme na graf v Matplotlib.

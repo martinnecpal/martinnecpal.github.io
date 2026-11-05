@@ -1,0 +1,5 @@
+Prečo by ste teda vy ako inžinieri mali používať GAMS?
+
+Pretože model sa číta ako matematická formulácia na papieri. Pretože ten istý model môžete použiť s mnohými riešičmi a porovnať lokálne a globálne výsledky. Pretože sa škáluje od školských príkladov po priemyselné modely. Pretože v knižnici je viac ako štyristopäťdesiat hotových modelov, z ktorých sa môžete učiť. Pretože bezplatná demo licencia je súčasťou každého stiahnutia a dostupné sú aj akademické licencie. A pretože s GAMSPy môže model žiť priamo v Pythone, vedľa vašich dát, grafov a webových aplikácií.
+
+Ďalej si vezmeme jeden príklad a vyriešime ho najprv v GAMS a neskôr v GAMSPy.

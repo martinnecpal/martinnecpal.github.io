@@ -1,0 +1,13 @@
+Let us read the code line by line, because these few statements are the core of GAMS.
+
+Positive Variables declares decision variables with the lower bound zero. Free Variable Z declares the objective variable. In GAMS, the objective must be a free variable, without any sign restriction.
+
+The keyword Equations only declares the names. The definition comes later, with two dots: the name, two dots, and then the body of the equation.
+
+Equals-e-equals means equal, equals-l-equals means less than or equal, and equals-g-equals means greater than or equal.
+
+Model Example01 slash all slash says that the model contains all declared equations. The Solve statement contains three pieces of information: the direction, maximizing or minimizing, the objective variable, and the model type, here LP.
+
+Display x one dot l prints the level of the variable, which is its optimal value. Besides dot l, variables also have dot lo and dot up for the bounds, and dot m for the marginal value, which for equations is the shadow price.
+
+And please notice: every statement ends with a semicolon. A missing semicolon is the most common beginner error of all.

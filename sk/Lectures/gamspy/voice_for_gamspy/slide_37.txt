@@ -1,0 +1,1 @@
+Táto tabuľka je rýchlym prehľadom všetkých príkazov z inštalácie: vytvorenie a aktivácia prostredia, inštalácia GAMSPy, kontrola verzie, výpis a pridanie riešičov a inštalácia a zobrazenie licencie. Nemusíte si ich pamätať – keď budete inštalovať doma, majte túto snímku z PDF vedľa počítača.

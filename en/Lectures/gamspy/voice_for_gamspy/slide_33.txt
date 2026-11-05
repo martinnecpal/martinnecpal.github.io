@@ -1,0 +1,3 @@
+Step three: install GAMSPy. One command: pip install gamspy.
+
+Then check it with gamspy dash dash version. You should see the GAMSPy version, 1.29, and the version of the GAMS core that came with it, 54.6. Later, you can update with pip install gamspy dash dash upgrade.

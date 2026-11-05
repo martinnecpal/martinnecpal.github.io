@@ -1,0 +1,5 @@
+Chemical engineering is the classic field of application, strongly developed by Professor Grossmann at Carnegie Mellon University and many others.
+
+Process synthesis decides the structure of the whole flowsheet – which units to build and how to connect them – and this is typically a mixed-integer nonlinear problem. Then heat exchanger networks, distillation sequencing, reactor networks and kinetics, pooling and blending in refineries, and the design and scheduling of batch plants.
+
+On the right you see examples from the GAMS Model Library. All of them can be opened directly in GAMS Studio. And our Example 3 today, the mixing of two streams, is the simplest possible case of a blending problem.

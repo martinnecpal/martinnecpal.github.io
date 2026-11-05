@@ -1,0 +1,3 @@
+Začnime prvou časťou: GAMS, General Algebraic Modeling System, teda všeobecný algebraický modelovací systém. V nasledujúcich dvadsiatich minútach si povieme, čo to je, kde sa používa a ako ho nainštalovať a spustiť.
+
+Na snímke vidíte stránku O nás spoločnosti GAMS, na adrese www bodka gams bodka com. GAMS patrí medzi popredných dodávateľov nástrojov pre optimalizáciu, s pobočkami v USA a v Nemecku. Má zákazníkov vo viac ako stodvadsiatich krajinách – nadnárodné firmy, univerzity, výskumné inštitúcie aj vlády – v energetike, chemickom priemysle, ekonomickom modelovaní, plánovaní v poľnohospodárstve aj vo výrobe.

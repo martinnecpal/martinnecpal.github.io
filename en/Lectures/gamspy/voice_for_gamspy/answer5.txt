@@ -1,0 +1,1 @@
+They define the equation over its whole domain; without them you overwrite the Python variable and the constraint is lost.

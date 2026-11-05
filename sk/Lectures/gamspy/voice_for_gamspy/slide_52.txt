@@ -1,0 +1,5 @@
+Malý bonus. Model GAMSPy sa dá exportovať späť do GAMS pomocou toGams a do LaTeXu pomocou toLatex. Vpravo vidíte vygenerovaný súbor GAMS – ten istý model, ktorý sme na začiatku napísali ručne.
+
+To sa hodí, ak chcete model otvoriť v GAMS Studio, alebo ak píšete článok či záverečnú prácu a potrebujete rovnice v LaTeXu.
+
+Ďalej realistickejšie dáta: Príklad 3.

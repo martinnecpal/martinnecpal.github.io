@@ -1,0 +1,11 @@
+How does GAMS work? Follow the four boxes from left to right.
+
+On the left is the model file, with the extension dot gms. This is the file you write: sets, data, variables and equations.
+
+The GAMS compiler reads this file, checks the syntax and generates the concrete model instance – all the numbers the solver needs.
+
+The solver – for example CPLEX, CONOPT or BARON – then runs the numerical algorithm and finds the optimum.
+
+And finally, GAMS writes the listing file, with the extension dot lst. This is the file you read: the solver status, the model status and the values of all variables.
+
+At the bottom you see the fixed order of every GAMS model. First the sets, then the data – parameters, tables and scalars – then the variables, the equations, the model statement, the solve statement and finally the display of results. Remember this order. You will see it in every example today, in GAMS and also in GAMSPy.

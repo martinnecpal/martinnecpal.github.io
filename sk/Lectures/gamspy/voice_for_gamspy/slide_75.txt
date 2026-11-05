@@ -1,0 +1,3 @@
+Zhrňme webovú časť ako štyri vrstvy. Optimalizačný model je GAMSPy, v mixing podčiarkovník model bodka py. Vizualizácia je Matplotlib, v plot podčiarkovník mixing bodka py. Webový server je Flask, v app bodka py. A používateľské rozhranie je HTML a JavaScript, v index bodka html.
+
+Ako pokračovať? Pridajte tretí prúd alebo minimálny obsah MEA – mení sa iba súbor modelu. Načítajte dáta o prúdoch z Excelu pomocou pandas. A nasaďte aplikáciu pre študentov, na univerzitnom serveri, alebo použite GAMS MIRO, ak chcete hotové rozhranie. Rovnaký vzor funguje pre ľubovoľný model GAMSPy: funkcia, trasa JSON a stránka.

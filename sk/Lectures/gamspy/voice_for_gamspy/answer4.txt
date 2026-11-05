@@ -1,0 +1,1 @@
+Eq dva, x jedna plus x dva menšie alebo rovné dvom; jeho marginálna hodnota je tri, kým eq jedna má marginálnu hodnotu nula a rezervu.

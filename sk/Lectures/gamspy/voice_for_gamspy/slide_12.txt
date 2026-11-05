@@ -1,0 +1,1 @@
+Tu sú najdôležitejšie zdroje: domovská stránka GAMS, dokumentácia, knižnica modelov, dokumentácia GAMSPy a príklady GAMSPy na GitHube a klasická kniha GAMS – A User's Guide od autorov Brooke, Kendrick, Meeraus a Raman. Nemusíte si ich zapisovať – všetky odkazy sú v PDF tejto prezentácie.

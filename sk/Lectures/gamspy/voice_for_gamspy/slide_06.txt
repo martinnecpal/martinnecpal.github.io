@@ -1,0 +1,11 @@
+Ako GAMS funguje? Sledujte štyri bloky zľava doprava.
+
+Vľavo je súbor modelu s príponou bodka gms. Tento súbor píšete vy: množiny, dáta, premenné a rovnice.
+
+Kompilátor GAMS tento súbor prečíta, skontroluje syntax a vygeneruje konkrétnu inštanciu modelu – všetky čísla, ktoré riešič potrebuje.
+
+Riešič – napríklad CPLEX, CONOPT alebo BARON – potom spustí numerický algoritmus a nájde optimum.
+
+A nakoniec GAMS zapíše výpis, súbor s príponou bodka lst. Tento súbor čítate vy: stav riešiča, stav modelu a hodnoty všetkých premenných.
+
+Dole vidíte pevné poradie každého modelu v GAMS. Najprv množiny, potom dáta – parametre, tabuľky a skaláry – potom premenné, rovnice, príkaz model, príkaz solve a nakoniec výpis výsledkov. Toto poradie si zapamätajte. Uvidíte ho dnes v každom príklade, v GAMS aj v GAMSPy.

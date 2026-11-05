@@ -1,0 +1,7 @@
+GAMS can solve many types of problems. The table shows the most important ones.
+
+LP – linear programming – everything is linear, typical solvers are CPLEX, HiGHS, Gurobi or XPRESS. MIP – mixed-integer programming – a linear model where some variables must be integers, for example yes or no decisions. NLP – nonlinear programming – solved by CONOPT, IPOPT, SNOPT or KNITRO. MINLP – mixed-integer nonlinear – the hardest common class, with solvers like DICOPT, SBB, SHOT or BARON. Then models with quadratic constraints, equilibrium and complementarity problems, and finally global optimization.
+
+That last row is important. A nonlinear problem can have several local optima. Solvers like CONOPT or IPOPT find a local optimum – a good point, but not necessarily the best one. Global solvers like BARON or SCIP prove that the solution is the global optimum.
+
+And now the beauty of GAMS: switching the solver is one single line, for example option NLP equals BARON. The model itself does not change at all.

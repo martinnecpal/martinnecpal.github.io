@@ -1,0 +1,5 @@
+First, let us look at what we are going to build. Follow one request through the diagram.
+
+The user moves a slider in the browser. JavaScript sends a request to Flask, a small web server written in Python, in the file app dot py. Flask calls our GAMSPy model, in the file mixing underscore model dot py, which passes the problem to the solver, CPLEX. The result comes back to Flask. Flask also asks Matplotlib, in plot underscore mixing dot py, to draw a chart. And then Flask sends back to the browser the numbers as JSON and the chart as a PNG image.
+
+The table shows the files and the step in which we create each one: the model as a function in step two, the chart in step three, Flask growing from step four to step six, and the final interactive page in step seven.
