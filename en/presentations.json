@@ -77,9 +77,11 @@
   {
     "id": "gamspy-tuzla-2026",
     "name": "From GAMS to GAMSPy: Optimization Modelling in Python, from Model to Interactive Web Page",
+    "conferenceUrl": "https://tf.untz.ba/gostujuca-predavanja-i-nastavak-saradnje-u-sklopu-erasmus-programa-guest-lectures-and-continuation-of-cooperation-within-the-erasmus-program/",
     "start_date": "2026-11-11",
     "location": "University of Tuzla, Faculty of Technology, Tuzla, Bosnia and Herzegovina",
     "description": "Guest lecture within the Erasmus+ programme. A hands-on introduction to optimization modelling: from the algebraic modelling language GAMS to GAMSPy in Python, a real engineering case (mixing of streams with sets, parameters and what-if analysis), and finally an interactive optimization web page built with Matplotlib and Flask.",
+    "photo": "/en/Lectures/gamspy/images/tf_untz_logo.jpg",
     "presentationUrl": "/en/Lectures/gamspy/gamspy.html",
     "type": "guest lecture",
     "notes": "Available resources: <a href='/en/Lectures/gamspy/gamspy.pdf' target='_blank'>Slides (PDF)</a> · <a href='/en/Lectures/gamspy/gamspy_lecture_code.zip'>Code from the lecture (ZIP)</a>",

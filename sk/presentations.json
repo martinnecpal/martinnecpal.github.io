@@ -77,9 +77,11 @@
   {
     "id": "gamspy-tuzla-2026",
     "name": "Od GAMS ku GAMSPy: optimalizačné modelovanie v Pythone, od modelu po interaktívnu webovú stránku",
+    "conferenceUrl": "https://tf.untz.ba/gostujuca-predavanja-i-nastavak-saradnje-u-sklopu-erasmus-programa-guest-lectures-and-continuation-of-cooperation-within-the-erasmus-program/",
     "start_date": "2026-11-11",
     "location": "Univerzita v Tuzle, Technologická fakulta, Tuzla, Bosna a Hercegovina",
     "description": "Hosťovská prednáška v rámci programu Erasmus+. Praktický úvod do optimalizačného modelovania: od algebraického modelovacieho jazyka GAMS ku GAMSPy v Pythone, reálna inžinierska úloha (miešanie prúdov s množinami, parametrami a analýzou čo ak) až po interaktívnu optimalizačnú webovú stránku vytvorenú pomocou Matplotlib a Flask.",
+    "photo": "/en/Lectures/gamspy/images/tf_untz_logo.jpg",
     "presentationUrl": "/sk/Lectures/gamspy/gamspy.html",
     "type": "guest lecture",
     "notes": "Dostupné materiály: <a href='/sk/Lectures/gamspy/gamspy.pdf' target='_blank'>Snímky (PDF)</a> · <a href='/en/Lectures/gamspy/gamspy_lecture_code.zip'>Kód z prednášky (ZIP)</a>",
