@@ -53,6 +53,28 @@
     "tags": ["conference"]
   },
   {
+    "id": "lasertec-80-shape",
+    "name": "LASERTEC 80 Shape – 5-Axis Precision Laser Machining System",
+    "start_date": "2026-05-28",
+    "location": "Centre of Excellence for 5-Axis Machining (CE5AM), MTF STU Trnava",
+    "description": "Narrated overview of the DMG MORI LASERTEC 80 Shape laser machine at MTF STU Trnava: fiber laser parameters, 5-axis configuration and linear drives, control and software, the laser texturing process chain, fields of application, surface texture examples from CE5AM, typical process parameters, and safety requirements.",
+    "photo": "/assets/images/LASERTEC.jpeg",
+    "presentationUrl": "/en/presentations/LASERTEC_80_Shape/index.html",
+    "type": "machine overview",
+    "tags": ["laser machining", "LASERTEC 80 Shape", "surface texturing", "5-axis"]
+  },
+  {
+    "id": "laser-research-gm",
+    "name": "Laser Micromachining Research – Student Theses on the LASERTEC 80 Shape",
+    "start_date": "2026-05-29",
+    "location": "Centre of Excellence for 5-Axis Machining (CE5AM), MTF STU Trnava",
+    "description": "Narrated overview of seven student theses on laser micromachining with the LASERTEC 80 Shape: surface roughness of titanium GRADE 2 (Taguchi L9 design), micromachining of sintered carbide WC-Co, laser surface texturing of steels and its effect on friction (ring test, lubricant study), chip breaker production from CAD to laser and 3D scan, and texturing of injection mold cavities.",
+    "photo": "/en/presentations/laser_research_gm/images/t7/zaverecna_prace-6_p69_img1.jpeg",
+    "presentationUrl": "/en/presentations/laser_research_gm/index.html",
+    "type": "research overview",
+    "tags": ["laser micromachining", "surface texturing", "friction", "student theses"]
+  },
+  {
     "id": "gamspy-tuzla-2026",
     "name": "From GAMS to GAMSPy: Optimization Modelling in Python, from Model to Interactive Web Page",
     "start_date": "2026-11-11",

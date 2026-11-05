@@ -53,6 +53,28 @@
     "tags": ["conference"]
   },
   {
+    "id": "lasertec-80-shape",
+    "name": "LASERTEC 80 Shape – päťosový presný laserový obrábací systém",
+    "start_date": "2026-05-28",
+    "location": "Centrum excelentnosti 5-osového obrábania (CE5AM), MTF STU Trnava",
+    "description": "Ozvučený prehľad laserového stroja DMG MORI LASERTEC 80 Shape na MTF STU v Trnave: parametre vláknového lasera, päťosová konfigurácia a lineárne pohony, riadenie a softvér, technologický reťazec laserového texturovania, oblasti použitia, príklady textúr povrchu z CE5AM, typické procesné parametre a bezpečnostné požiadavky.",
+    "photo": "/assets/images/LASERTEC.jpeg",
+    "presentationUrl": "/sk/presentations/LASERTEC_80_Shape/index.html",
+    "type": "machine overview",
+    "tags": ["laserové obrábanie", "LASERTEC 80 Shape", "texturovanie povrchu", "5-osové obrábanie"]
+  },
+  {
+    "id": "laser-research-gm",
+    "name": "Výskum laserového mikroobrábania – záverečné práce na stroji LASERTEC 80 Shape",
+    "start_date": "2026-05-29",
+    "location": "Centrum excelentnosti 5-osového obrábania (CE5AM), MTF STU Trnava",
+    "description": "Ozvučený prehľad siedmich záverečných prác o laserovom mikroobrábaní na stroji LASERTEC 80 Shape: drsnosť povrchu titánu GRADE 2 (návrh experimentu Taguchi L9), mikroobrábanie spekaného karbidu WC-Co, laserové textúrovanie povrchu ocelí a jeho vplyv na trenie (ring test, štúdia mazív), výroba lámača triesok od CAD po laser a 3D sken a textúrovanie dutín vstrekovacích foriem.",
+    "photo": "/sk/presentations/laser_research_gm/images/t7/zaverecna_prace-6_p69_img1.jpeg",
+    "presentationUrl": "/sk/presentations/laser_research_gm/index.html",
+    "type": "research overview",
+    "tags": ["laserové mikroobrábanie", "textúrovanie povrchu", "trenie", "záverečné práce"]
+  },
+  {
     "id": "gamspy-tuzla-2026",
     "name": "Od GAMS ku GAMSPy: optimalizačné modelovanie v Pythone, od modelu po interaktívnu webovú stránku",
     "start_date": "2026-11-11",
