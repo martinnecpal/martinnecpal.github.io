@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mixing Optimizer</title>
+  <style>
+    :root {
+      --page: #f9f9f7; --surface: #fcfcfb; --line: #e4e3df;
+      --ink: #0b0b0b; --ink2: #52514e; --muted: #8a8984;
+      --blue: #2a78d6; --orange: #eb6834; --critical: #d03b3b;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--page); color: var(--ink);
+           font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    main { max-width: 1060px; margin: 0 auto; padding: 32px 16px 48px; }
+    header p { color: var(--ink2); margin: 4px 0 24px; }
+    h1 { font-size: 26px; margin: 0; letter-spacing: -0.01em; }
+    h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em;
+         color: var(--muted); margin: 0 0 12px; font-weight: 600; }
+
+    .grid { display: grid; grid-template-columns: 320px 1fr; gap: 20px; }
+    @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
+    .card { background: var(--surface); border: 1px solid var(--line);
+            border-radius: 12px; padding: 20px; }
+
+    /* inputs */
+    .field { margin-bottom: 20px; }
+    .field label { display: flex; justify-content: space-between; font-weight: 600; }
+    .field output { font-variant-numeric: tabular-nums; color: var(--blue); }
+    .field small { color: var(--muted); }
+    input[type=range] { width: 100%; accent-color: var(--blue); }
+    table.feeds { width: 100%; border-collapse: collapse; font-size: 13px; }
+    table.feeds td, table.feeds th { padding: 4px 0; border-bottom: 1px solid var(--line);
+                                     text-align: left; }
+    .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+           margin-right: 6px; vertical-align: middle; }
+
+    /* results */
+    .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+    @media (max-width: 520px) { .kpis { grid-template-columns: 1fr; } }
+    .kpi { background: var(--surface); border: 1px solid var(--line);
+           border-radius: 12px; padding: 14px 16px; }
+    .kpi .label { font-size: 13px; color: var(--ink2); }
+    .kpi .value { white-space: nowrap; font-size: 28px; font-weight: 650; font-variant-numeric: tabular-nums; }
+    .kpi .unit { font-size: 14px; color: var(--muted); font-weight: 400; }
+    .bar { display: flex; height: 14px; border-radius: 7px; overflow: hidden;
+           gap: 2px; background: var(--line); margin-top: 6px; }
+    .bar div { transition: width .3s; }
+    .status { padding: 10px 14px; border-radius: 8px; margin-bottom: 16px;
+              font-weight: 600; display: none; }
+    .status.bad { display: block; background: #fbe9e9; color: var(--critical); }
+        .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 700px) { .charts { grid-template-columns: 1fr; } }
+    svg text { font: 11px system-ui, sans-serif; fill: var(--ink2); }
+    svg .title { font-size: 13px; fill: var(--ink); }
+    footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Mixing of streams – cost optimizer</h1>
+    <p>Two MEA/water feeds are mixed into 1 kg of product. The LP is solved in JavaScript on every change.</p>
+  </header>
+
+  <div class="grid">
+    <!-- INPUTS -->
+    <section class="card">
+      <h2>Inputs</h2>
+      <div class="field">
+        <label>Max. water in product <output id="waterOut">25.0 %</output></label>
+        <input id="water" type="range" min="15" max="35" step="0.5" value="25">
+        <small>Feeds contain 20 % and 32 % water</small>
+      </div>
+      <div class="field">
+        <label><span><span class="dot" style="background:var(--blue)"></span>Cost feed 1</span>
+               <output id="cost1Out">80 cent/kg</output></label>
+        <input id="cost1" type="range" min="40" max="120" step="1" value="80">
+      </div>
+      <div class="field">
+        <label><span><span class="dot" style="background:var(--orange)"></span>Cost feed 2</span>
+               <output id="cost2Out">60 cent/kg</output></label>
+        <input id="cost2" type="range" min="40" max="120" step="1" value="60">
+      </div>
+
+      <h2>Feed composition</h2>
+      <table class="feeds">
+        <tr><th>Feed</th><th>MEA</th><th>Water</th></tr>
+        <tr><td>feed1</td><td>80 %</td><td>20 %</td></tr>
+        <tr><td>feed2</td><td>68 %</td><td>32 %</td></tr>
+      </table>
+    </section>
+
+    <!-- RESULTS -->
+    <section>
+      <div id="status" class="status"></div>
+      <div class="kpis">
+        <div class="kpi"><div class="label">Minimum cost</div>
+          <div class="value"><span id="cost">–</span> <span class="unit">cent/kg</span></div></div>
+        <div class="kpi"><div class="label">Feed 1 / Feed 2</div>
+          <div class="value" style="font-size:22px"><span id="ratio">–</span> <span class="unit">kg</span></div>
+          <div class="bar"><div id="bar1" style="background:var(--blue)"></div>
+                           <div id="bar2" style="background:var(--orange)"></div></div></div>
+        <div class="kpi"><div class="label">Water in product</div>
+          <div class="value"><span id="waterRes">–</span> <span class="unit">%</span></div></div>
+      </div>
+      <div class="card chart">
+        <h2>What-if: water limit 20–32 %</h2>
+        <div class="charts"><svg id="chart1" viewBox="0 0 400 300"></svg>
+          <svg id="chart2" viewBox="0 0 400 300"></svg></div>
+      </div>
+    </section>
+  </div>
+
+  <footer>Example after Prof. E. Ahmetović (University of Tuzla); problem from M. R. Eden (2011).
+          Pure HTML + JavaScript demo (no server, no GAMSPy).</footer>
+</main>
+
+<script>
+  const $ = id => document.getElementById(id);
+  const fmt = (v, d) => Number(v).toFixed(d);
+  const BLUE = "#2a78d6", ORANGE = "#eb6834";
+
+  // ---- the LP:  min c1*x1 + c2*x2   s.t.  x1 + x2 = 1,  w1*x1 + w2*x2 <= wmax,  x >= 0
+  // With x1 = 1 - x2 it is a 1-D problem, so the optimum is at a vertex (same as GAMSPy/CPLEX).
+  const W1 = 0.20, W2 = 0.32;                       // water fractions of the feeds
+  function solve(wmax, c1, c2) {
+    if (wmax < W1 - 1e-12) return { ok: false, status: "Infeasible", water_limit: wmax };
+    const x2max = Math.min(1, (wmax - W1) / (W2 - W1));   // most feed 2 the water limit allows
+    const x2 = c2 < c1 ? x2max : 0;                       // use the cheaper feed as much as possible
+    const x1 = 1 - x2;
+    return { ok: true, status: "Optimal", water_limit: wmax, feed1: x1, feed2: x2,
+             cost: c1 * x1 + c2 * x2, water: W1 * x1 + W2 * x2 };
+  }
+
+  // ---- minimal SVG line chart
+  function chart(svg, title, ylabel, xs, series, mark) {
+    const W = 400, H = 300, L = 48, R = 12, T = 34, B = 40;
+    const ys = series.flatMap(s => s.y);
+    let y0 = Math.min(...ys), y1 = Math.max(...ys);
+    if (y1 - y0 < 1e-9) { y0 -= 1; y1 += 1; }
+    const pad = (y1 - y0) * 0.08; y0 -= pad; y1 += pad;
+    const x0 = xs[0], x1 = xs[xs.length - 1];
+    const X = v => L + (v - x0) / (x1 - x0) * (W - L - R);
+    const Y = v => H - B - (v - y0) / (y1 - y0) * (H - T - B);
+    let o = `<text class="title" x="${L}" y="18">${title}</text>`;
+    for (let i = 0; i <= 4; i++) {                       // horizontal grid + y labels
+      const v = y0 + (y1 - y0) * i / 4;
+      o += `<line x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}" stroke="#e4e3df"/>` +
+           `<text x="${L - 6}" y="${Y(v) + 4}" text-anchor="end">${fmt(v, y1 - y0 > 5 ? 0 : 2)}</text>`;
+    }
+    for (let v = Math.ceil(x0); v <= x1; v += 2)         // x labels
+      o += `<text x="${X(v)}" y="${H - B + 16}" text-anchor="middle">${v}</text>`;
+    o += `<text x="${(L + W - R) / 2}" y="${H - 6}" text-anchor="middle">Max. water content in product [%]</text>` +
+         `<text x="12" y="${(T + H - B) / 2}" text-anchor="middle" transform="rotate(-90 12 ${(T + H - B) / 2})">${ylabel}</text>`;
+    series.forEach(s => {
+      o += `<polyline fill="none" stroke="${s.color}" stroke-width="2" points="${xs.map((x, i) => X(x) + "," + Y(s.y[i])).join(" ")}"/>`;
+      o += xs.map((x, i) => `<circle cx="${X(x)}" cy="${Y(s.y[i])}" r="3" fill="${s.color}"/>`).join("");
+    });
+    series.forEach((s, i) => {                           // legend
+      if (series.length > 1)
+        o += `<rect x="${L + 10 + i * 130}" y="${T + 4}" width="10" height="10" fill="${s.color}"/>` +
+             `<text x="${L + 24 + i * 130}" y="${T + 13}">${s.name}</text>`;
+    });
+    if (mark) {                                          // currently selected case
+      o += `<line x1="${X(mark.x)}" x2="${X(mark.x)}" y1="${T}" y2="${H - B}" stroke="#52514e" stroke-dasharray="4 3"/>`;
+      if (mark.label) o += `<text x="${X(mark.x) + 6}" y="${Y(mark.y) - 8}" style="fill:#0b0b0b">${mark.label}</text>`;
+    }
+    svg.innerHTML = o;
+  }
+
+  function update() {
+    const wmax = $("water").value / 100, c1 = +$("cost1").value, c2 = +$("cost2").value;
+    $("waterOut").textContent = fmt($("water").value, 1) + " %";
+    $("cost1Out").textContent = c1 + " cent/kg";
+    $("cost2Out").textContent = c2 + " cent/kg";
+
+    const r = solve(wmax, c1, c2);
+    if (r.ok) {
+      $("status").className = "status";
+      $("cost").textContent = fmt(r.cost, 2);
+      $("ratio").textContent = fmt(r.feed1, 3) + " / " + fmt(r.feed2, 3);
+      $("waterRes").textContent = fmt(r.water * 100, 1);
+      $("bar1").style.width = (r.feed1 * 100) + "%";
+      $("bar2").style.width = (r.feed2 * 100) + "%";
+    } else {
+      $("status").className = "status bad";
+      $("status").textContent = "No feasible mixture – " + r.status +
+        " (even pure feed 1 contains 20 % water)";
+      ["cost", "ratio", "waterRes"].forEach(id => $(id).textContent = "–");
+      $("bar1").style.width = $("bar2").style.width = "0";
+    }
+
+    // what-if sweep: water limit 20-32 %
+    const xs = [], res = [];
+    for (let p = 20; p <= 32; p++) { xs.push(p); res.push(solve(p / 100, c1, c2)); }
+    const mark = r.ok ? { x: wmax * 100, y: r.cost, label: fmt(r.cost, 2) + " cent/kg" } : null;
+    chart($("chart1"), "Minimum cost of 1 kg mixture", "cent / kg", xs,
+          [{ name: "cost", color: BLUE, y: res.map(q => q.cost) }], mark);
+    chart($("chart2"), "Optimal feed amounts", "kg per 1 kg mixture", xs,
+          [{ name: "Feed 1 (80 % MEA)", color: BLUE, y: res.map(q => q.feed1) },
+           { name: "Feed 2 (68 % MEA)", color: ORANGE, y: res.map(q => q.feed2) }],
+          mark && { x: mark.x });
+  }
+
+  ["water", "cost1", "cost2"].forEach(id => $(id).addEventListener("input", update));
+  update();
+</script>
+</body>
+</html>

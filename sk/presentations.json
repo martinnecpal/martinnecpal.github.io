@@ -84,7 +84,7 @@
     "photo": "/en/Lectures/gamspy/images/tf_untz_logo.jpg",
     "presentationUrl": "/sk/Lectures/gamspy/gamspy.html",
     "type": "guest lecture",
-    "notes": "Dostupné materiály: <a href='/sk/Lectures/gamspy/gamspy.pdf' target='_blank'>Snímky (PDF)</a> · <a href='/en/Lectures/gamspy/gamspy_lecture_code.zip'>Kód z prednášky (ZIP)</a>",
+    "notes": "Dostupné materiály: <a href='/sk/Lectures/gamspy/gamspy.pdf' target='_blank'>Snímky (PDF)</a> · <a href='/en/Lectures/gamspy/gamspy_lecture_code.zip'>Kód z prednášky (ZIP)</a> · <a href='/en/Lectures/gamspy/simpleweb.html' target='_blank'>Interaktívny optimalizátor miešania (webová stránka)</a>",
     "tags": ["GAMS", "GAMSPy", "Python", "optimalizácia", "Erasmus+"]
   }
 ]

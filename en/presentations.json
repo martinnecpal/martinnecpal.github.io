@@ -84,7 +84,7 @@
     "photo": "/en/Lectures/gamspy/images/tf_untz_logo.jpg",
     "presentationUrl": "/en/Lectures/gamspy/gamspy.html",
     "type": "guest lecture",
-    "notes": "Available resources: <a href='/en/Lectures/gamspy/gamspy.pdf' target='_blank'>Slides (PDF)</a> · <a href='/en/Lectures/gamspy/gamspy_lecture_code.zip'>Code from the lecture (ZIP)</a>",
+    "notes": "Available resources: <a href='/en/Lectures/gamspy/gamspy.pdf' target='_blank'>Slides (PDF)</a> · <a href='/en/Lectures/gamspy/gamspy_lecture_code.zip'>Code from the lecture (ZIP)</a> · <a href='/en/Lectures/gamspy/simpleweb.html' target='_blank'>Interactive mixing optimizer (web page)</a>",
     "tags": ["GAMS", "GAMSPy", "Python", "optimization", "Erasmus+"]
   }
 ]
