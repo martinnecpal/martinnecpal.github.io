@@ -1,0 +1,1 @@
+It grows exponentially with the length of the bearing. A longer bearing and higher friction increase the drawing force.

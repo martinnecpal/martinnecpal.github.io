@@ -1,0 +1,10 @@
+Overme si, čo vám zostalo v hlave. Otázky budem ukazovať jednu po druhej, skúste odpovedať skôr, než pokračujem.
+Otázka jedna: Rúra s priemerom sedemdesiat milimetrov a stenou šesť celých tri sa ťahá na priemer päťdesiatpäť a stenu štyri celé sedemdesiatpäť. Vypočítajte redukciu a pretvorenie.
+Otázka dva: Prečo existuje optimálny uhol prievlaku?
+Otázka tri: Aká je podmienka medznej redukcie a aká je jej ideálna hodnota bez spevnenia?
+Otázka štyri: Ako sa mení hrúbka steny pri prievlačnom ťahaní a pri ťahaní na pevnom tŕni?
+Otázka päť: Prečo explicitná simulácia pomalého ťahania potrebuje zrýchlenie alebo škálovanie hmotnosti a ako overíte, že je výsledok kvázistatický?
+Otázka šesť: Ako sa určí súčiniteľ trenia inverznou analýzou?
+Otázka sedem: Prečo nemožno model validovať tou istou silou, z ktorej sa kalibrovalo trenie?
+Otázka osem: Kedy stačí dvojrozmerný osovo symetrický model a kedy treba trojrozmerný?
+Ďakujem. Zostáva nám niekoľko minút. Máte nejaké vlastné otázky?

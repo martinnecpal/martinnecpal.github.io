@@ -1,0 +1,6 @@
+Let us sum up. A designed experiment combined with simulation is a cheap way to select the important parameters. But a real experiment is still needed for validation. And one subtle remark: a simulation is deterministic. The same input gives the same result. So the scatter between replicates does not come from chance, as in a real experiment, but from numerics, for example from the mesh or the step size.
+Question one: How many simulations does a two to the third design with five replicates have?
+Question two: Which factor affects the final outer diameter most?
+Question three: What does a significant interaction of tube diameter and die diameter mean?
+Question four: Why does a designed experiment in simulation not replace a real experiment?
+Press the up arrow to return to the main lecture, or the right arrow to continue.

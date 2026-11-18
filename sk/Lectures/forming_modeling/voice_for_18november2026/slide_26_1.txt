@@ -1,0 +1,4 @@
+V zóne jedna sa zmenšuje iba priemer. Odvodenie je rovnaké ako pri drôte, len namiesto polomeru drôtu vystupuje polomer strednice steny. R es je polomer strednice v danom reze a er es nula na vstupe.
+Parameter A je jedna plus ef krát kotangens alfa, lomeno jedna mínus ef krát tangens alfa. Napätie v zóne jedna je A lomeno A mínus jedna, krát pretvárny odpor, krát jedna mínus pomer polomerov umocnený na A mínus jedna.
+Okrajová podmienka na vstupe je, že napätie je nula, pretože rúru zozadu nič neťahá. Hovoríme, že nemáme protiťah. Ak dosadíme polomer na konci zóny jedna, teda tam, kde sa rúra dotkne tŕňa, dostaneme napätie sigma I nula. To je vstup do zóny dva.
+Všimnite si, že ak by trenie bolo nulové, A by sa rovnalo jednej a vzorec by prešiel na ideálnu prácu. Tak si môžete vždy overiť, či ste vzorec opísali správne.

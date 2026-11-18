@@ -1,0 +1,3 @@
+Zhrňme, čo nás štúdie naučili, do ôsmich bodov. Trenie treba merať, nie preberať z literatúry. Sila rastie s trením lineárne a s rýchlosťou takmer vôbec. Uhol prievlaku má ploché optimum, ktoré závisí od trenia. Pretvorenie určuje geometria, nie oceľ.
+Pri prievlačnom ťahaní sa stena zhrubne o dve až päť percent a výsledný priemer je menší ako priemer prievlaku. Dvojrozmerný model stačí na silu a pretvorenie, trojrozmerný potrebujeme pri profiloch a na napätia. Geometriu tŕňa možno optimalizovať virtuálne. A každý model potrebuje nezávislé overenie.
+Ten posledný bod nás privádza k piatej časti.

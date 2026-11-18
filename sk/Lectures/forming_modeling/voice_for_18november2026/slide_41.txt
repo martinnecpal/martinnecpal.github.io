@@ -1,0 +1,3 @@
+Tabuľka zhŕňa porovnanie. Implicitný výpočet má veľký a drahý krok, explicitný malý a lacný. Implicitný je bezpodmienečne stabilný, explicitný len podmienečne. Pri kontakte môže implicitný výpočet prestať konvergovať, explicitný je robustný. Sila z implicitného výpočtu je hladká, z explicitného osciluje a treba ju priemerovať. Zvyškové napätia dá implicitný výpočet priamo, explicitný až po prenose výsledku do implicitného riešiča.
+Pre ťahanie sa implicitný výpočet používa v DEFORM a v Abaqus Standard, explicitný v Abaqus Explicit a LS-DYNA.
+V priemyselnej praxi sa často kombinujú. Samotné tvárnenie sa počíta explicitne, pretože je robustné. Výsledok sa potom prenesie do implicitného riešiča, ktorý vypočíta odpruženie a zvyškové napätia. Tomu sa hovorí hybridný postup.

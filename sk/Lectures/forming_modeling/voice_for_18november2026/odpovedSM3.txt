@@ -1,0 +1,1 @@
+Rastie exponenciálne s dĺžkou kalibrácie. Dlhšia kalibrácia a vyššie trenie zvyšujú ťažnú silu.

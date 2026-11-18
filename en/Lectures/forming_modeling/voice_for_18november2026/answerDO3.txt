@@ -1,0 +1,1 @@
+The effect of the tube diameter on the result depends on the die diameter. The effects cannot simply be added independently.

@@ -1,0 +1,1 @@
+Because the model contains assumptions about friction, the material and rigid tools. The statistics assess the model, not reality, so validation is still needed.

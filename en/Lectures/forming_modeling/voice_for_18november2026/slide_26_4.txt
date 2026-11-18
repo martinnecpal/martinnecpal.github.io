@@ -1,0 +1,6 @@
+Let us sum up the deep dive. In plug drawing the stress accumulates zone by zone, and the output of one zone is the input to the next. Friction on the plug in zones two and three makes plug drawing more demanding than sinking. And the method gives the mean force, not the stress distribution in the wall.
+Question one: Why is the parameter B in zone two larger than the parameter A in zone one?
+Question two: What is the boundary condition at the entry to zone one?
+Question three: How does the stress in the bearing zone change with its length?
+Question four: What does this method not give you?
+Press the up arrow to return to the main lecture, or the right arrow to continue.

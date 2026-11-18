@@ -1,0 +1,1 @@
+Pretože práca trenia s rastúcim uhlom klesá a redundantná práca rastie. Ich súčet s ideálnou prácou má ploché minimum, približne medzi ôsmimi a štrnástimi stupňami.

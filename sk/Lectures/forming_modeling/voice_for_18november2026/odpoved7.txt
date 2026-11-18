@@ -1,0 +1,1 @@
+Pretože zhoda je vynútená kalibráciou. Validácia potrebuje nezávislú veličinu, napríklad rozmery, pretvorenie alebo silu pri iných podmienkach.

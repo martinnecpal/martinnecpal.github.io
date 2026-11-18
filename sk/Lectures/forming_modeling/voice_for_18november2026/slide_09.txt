@@ -1,0 +1,4 @@
+Ťahanie je tvárnenie za studena, výnimočne za tepla, pri ktorom sa drôt, tyč alebo rúra preťahuje cez nepohyblivý prievlak. Prierez sa zmenšuje a dĺžka sa zväčšuje, pretože objem ostáva rovnaký.
+Pozrite sa na schému vpravo. Sila F pôsobí na výstupe ako ťah. Samotné tvarovanie však prebieha tlakom: v kontakte s prievlakom vzniká normálový tlak p a k nemu trecie napätie mí krát p. Materiál sa teda deformuje tlakom, ale potrebnú silu prenáša ťahom už pretvorená časť za prievlakom. Z toho vyplýva hlavné obmedzenie ťahania, ku ktorému sa ešte vrátime: ťahané už pretvorené vlákno nesmie začať tiecť ani sa pretrhnúť.
+Cieľmi ťahania sú presné rozmery, kvalitný povrch a vyššia pevnosť, ktorú materiál získa spevnením.
+Rúra je dutý polotovar. Oproti drôtu preto pribúdajú dve veličiny, ktoré treba kontrolovať: hrúbka steny a vnútorný povrch. Často sa preto používa vnútorný nástroj, tŕň.

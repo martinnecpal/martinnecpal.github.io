@@ -1,0 +1,2342 @@
+<!doctype html>
+<!--
+  ════════════════════════════════════════════════════════════════════════════
+   MTF STU — reveal.js lecture (template: .claude/skills/mtf-lecture)
+   MSPO2_6I · Prednáška 4 · Ťahanie bezšvových rúr: teória, simulácia a validácia (SK)
+   152 min. Timing cues are in the speaker notes (press S).
+   Spoken text per slide: voice_for_18november2026/all_slides_notes.md
+
+   Keys: ← → navigate · Esc overview · S speaker notes · ?print-pdf → PDF.
+   Pictures are local files in img/ (figures from the authors' own book and
+   papers, © publishers). Charts and schemes are inline SVG.
+   If a picture cannot load, the slide shows a link to it instead.
+  ════════════════════════════════════════════════════════════════════════════
+-->
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <title>Ťahanie rúr – MTF STU</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <style>
+    :root {
+      --mtf-red:   #c8001e;
+      --mtf-red2:  #e5001e;
+      --mtf-dark:  #8b0014;
+      --text:      #1a1a1a;
+      --muted:     #5a5a5a;
+      --bg:        #ffffff;
+      --line:      #c8001e;
+    }
+
+    .reveal-viewport { background: var(--bg); }
+    .reveal { color: var(--text); font-family: 'Segoe UI', Arial, sans-serif; }
+
+    /* ── Headings ── */
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: var(--mtf-dark); text-transform: none;
+      font-family: 'Segoe UI', Arial, sans-serif; font-weight: 700;
+    }
+    .reveal h1 {
+      font-size: 1.9em; border-left: 5px solid var(--mtf-red);
+      padding-left: 0.45em; text-align: left; line-height: 1.25;
+    }
+    .reveal h2 {
+      font-size: 1.3em; border-bottom: 2px solid var(--mtf-red);
+      padding-bottom: 0.2em; text-align: left;
+    }
+    .subtitle { font-size: 0.9em; color: var(--muted); margin-top: 0.3em; font-weight: 400; }
+
+    /* ── Lists ── */
+    .reveal ul, .reveal ol { text-align: left; font-size: 0.82em; line-height: 1.95; }
+    .reveal li { margin-bottom: 0.25em; }
+    .reveal ul > li::marker { color: var(--mtf-red); }
+    .reveal ul.compact, .reveal ol.compact { font-size: 0.75em; line-height: 1.8; }
+    .reveal ul.small { font-size: 0.78em; }
+
+    /* ── Images ── */
+    .reveal img {
+      max-height: 45vh; object-fit: contain;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+    }
+    .figure { display: flex; flex-direction: column; justify-content: center; text-align: center; }
+    .figure img { width: 100%; max-height: 58vh; object-fit: contain; border-radius: 3px; }
+    .figure.half img { max-height: 38vh; width: auto; }
+    .img-caption { font-size: 0.38em; color: var(--muted); text-align: center; margin-top: 0.3em; }
+
+    /* ── Title slide ── */
+    .reveal .top-rule { border: none; border-top: 4px solid var(--mtf-red); margin-bottom: 1.2em; }
+    .reveal .institution {
+      font-size: 0.52em; color: var(--muted); text-transform: uppercase;
+      letter-spacing: 0.1em; margin-top: 2em;
+    }
+    .reveal .author { font-size: 0.65em; color: var(--muted); }
+    .title-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.5em; align-items: center; }
+    .title-grid img {
+      max-height: 52vh; width: 100%; object-fit: cover;
+      border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+    }
+    .reveal a.pdf-download {
+      display: inline-block; margin-top: 0.5em; padding: 0.35em 1em; font-size: 0.8em; font-weight: 600;
+      color: #fff; background: var(--mtf-red); border-radius: 6px; text-decoration: none;
+    }
+    .reveal a.pdf-download:hover { background: var(--mtf-dark); }
+    .pdf-download-row { text-align: right; }
+    .print-pdf a.pdf-download { display: none; }
+    .nav-help {
+      margin-top: 0.6em; padding: 0.4em 0.8em; font-size: 0.6em; line-height: 1.45;
+      color: var(--muted); background: #fff8f9;
+      border-left: 4px solid var(--mtf-red); border-radius: 3px;
+    }
+    .nav-help strong { color: var(--mtf-dark); }
+    .reveal .nav-help ul { margin: 0.2em 0 0; padding-left: 1.2em; columns: 2; column-gap: 2em; font-size: 1em; line-height: 1.5; }
+    .reveal .nav-help li { margin-bottom: 0; }
+    .nav-help kbd {
+      font-family: inherit; font-size: 0.9em; padding: 0 0.35em;
+      border: 1px solid #bbb; border-bottom-width: 2px; border-radius: 3px; background: #fff;
+    }
+
+    .reveal .hl { color: var(--mtf-red); font-weight: bold; }
+
+    /* ── Section header band ── */
+    .band {
+      background: var(--mtf-dark); color: #fff; text-align: left;
+      padding: 0.5em 0.7em; margin: -0.5em -0.5em 0.5em -0.5em;
+      border-radius: 2px 2px 0 0;
+    }
+    .band-title { font-size: 1.7em; font-weight: 700; letter-spacing: 0.05em; }
+    .band-sub   { font-size: 1.4em; color: #f0b0b8; margin-left: 1em; }
+
+    /* ── Grid layouts ── */
+    .reveal section.slide-full { display: flex; flex-direction: column; height: 100%; }
+    .fig-row { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2em; align-items: center; }
+    .cols-2  { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8em; align-items: start; }
+    .slide-full .fig-row, .slide-full .cols-2 { flex: 1; align-items: stretch; margin-top: 0.4em; }
+    .v-center { display: flex; flex-direction: column; justify-content: center; align-self: center; }
+
+    /* ── Divider slide ── */
+    .reveal section.divider { background: var(--mtf-dark); color: #fff; }
+    .reveal section.divider h2 { color: #fff; border-bottom-color: var(--mtf-red2); font-size: 1.6em; }
+
+    .slide-source { font-size: 0.45em; color: var(--muted); text-align: right; margin: 0.6em 0 0; }
+
+    /* ── Tables ── */
+    .reveal table {
+      font-size: 0.72em; width: 100%; border-collapse: collapse;
+      margin-top: 0.6em; text-align: left;
+    }
+    .reveal table th {
+      background: var(--mtf-dark); color: #fff; padding: 0.35em 0.7em;
+      font-weight: 600; letter-spacing: 0.02em;
+    }
+    .reveal table td { padding: 0.3em 0.7em; border-bottom: 1px solid #e8e8e8; color: var(--text); }
+    .reveal table tr:nth-child(even) td { background: #f9f2f3; }
+    .reveal table tr:hover td { background: #fde8eb; }
+
+    /* ── Process flow ── */
+    .flow-box {
+      background: #fff5f6; border-left: 4px solid var(--mtf-red); border-radius: 4px;
+      padding: 0.4em 0.8em; font-size: 0.75em; margin: 0.25em 0;
+      text-align: left; color: var(--text);
+    }
+    .flow-box.key { background: #fff0f0; font-weight: 600; }
+    .flow-arrow { text-align: center; font-size: 1em; color: var(--mtf-red); line-height: 1.1; }
+    .flow-note { font-size: 0.7em; color: var(--muted); margin-left: 1em; }
+
+    /* ── Equations ── */
+    .equation {
+      background: #fff5f6; border-left: 4px solid var(--mtf-red); border-radius: 4px;
+      padding: 0.4em 1em; margin: 0.6em 0; font-size: 0.9em;
+    }
+
+    /* ══ COMPONENTS ══ */
+    .fig-row > *, .cols-2 > * { min-width: 0; }
+    .figure.half img { max-width: 100%; }
+    .cols-2.four { grid-template-columns: repeat(4, 1fr); align-items: center; }
+    .cols-2.four img { max-height: 46vh; }
+    .reveal table.tight { font-size: 0.7em; }
+    .reveal table.tight th, .reveal table.tight td { padding: 0.22em 0.5em; }
+    .reveal table.mid { font-size: 0.78em; }
+    .reveal ul.xs { font-size: 0.74em; line-height: 1.7; }
+    .equation.sm { font-size: 0.8em; padding: 0.25em 0.8em; margin: 0.35em 0; }
+    .svgfig svg { width: 100%; height: auto; max-height: 50vh; }
+    .reveal pre.code {
+      width: 100%; box-shadow: none; margin: 0.4em 0; font-size: 0.52em;
+      background: #1e1e1e; border-left: 4px solid var(--mtf-red); border-radius: 4px;
+    }
+    .reveal pre.code code { text-align: left; color: #eee; padding: 0.8em 1em; max-height: none; line-height: 1.45; }
+    .reveal pre.code .c { color: #8fbf7f; }
+    .reveal pre.code .k { color: #ff9aa8; }
+    .agenda td:first-child { white-space: nowrap; color: var(--mtf-dark); font-weight: 600; }
+    .agenda tr.main td { background: #fde8eb !important; font-weight: 600; }
+    .tag {
+      display: inline-block; background: var(--mtf-red); color: #fff; border-radius: 3px;
+      padding: 0 0.4em; font-size: 0.75em; font-weight: 600; vertical-align: middle;
+    }
+    .tag.grey { background: #777; }
+    .note-box {
+      background: #f6f6f6; border-left: 4px solid #888; border-radius: 4px;
+      padding: 0.35em 0.8em; font-size: 0.62em; text-align: left; margin-top: 0.5em;
+    }
+    /* video card: thumbnail link + optional embed */
+    .video-card { position: relative; width: 100%; aspect-ratio: 16 / 9; max-height: 50vh;
+      margin: 0 auto; background: #111; border-radius: 4px; overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
+    .video-card a.thumb { display: block; width: 100%; height: 100%; }
+    .video-card a.thumb img { width: 100%; height: 100%; max-height: none; object-fit: cover;
+      box-shadow: none; opacity: 0.85; }
+    .video-card .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+      width: 84px; height: 60px; background: var(--mtf-red); border-radius: 14px; pointer-events: none; }
+    .video-card .play::after { content: ""; position: absolute; left: 34px; top: 17px;
+      border-left: 22px solid #fff; border-top: 13px solid transparent; border-bottom: 13px solid transparent; }
+    .video-card iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-card video { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; background: #000; }
+    .video-actions { font-size: 0.5em; text-align: center; margin-top: 0.35em; color: var(--muted); }
+    .video-actions button { font: inherit; background: none; border: 1px solid var(--mtf-red);
+      color: var(--mtf-red); border-radius: 4px; padding: 0.1em 0.6em; cursor: pointer; margin-left: 0.6em; }
+    .video-actions a { color: var(--mtf-dark); }
+    .popup-btn { font: inherit; font-size: 0.55em; background: var(--mtf-red); color: #fff; border: 0;
+      border-radius: 6px; padding: 0.6em 1.2em; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
+    .answer-btn { font: inherit; font-size: 0.75em; background: none; border: 1px solid var(--mtf-red);
+      color: var(--mtf-red); border-radius: 4px; padding: 0 0.5em; cursor: pointer; margin-left: 0.4em; }
+    .answer-btn.playing { background: var(--mtf-red); color: #fff; }
+    /* answer text below the question, shown by its answer button (also without narration audio) */
+    .answer-text { display: none; font-size: 0.88em; line-height: 1.4; color: var(--mtf-dark); background: #fff5f6;
+      border-left: 3px solid var(--mtf-red); border-radius: 3px; padding: 0.1em 0.5em; margin: 0.15em 0 0.25em; }
+    .answer-text.show { display: block; }
+    .print-pdf .answer-btn, .print-pdf .answer-text { display: none !important; }
+    .img-missing { border: 2px dashed #d9a0a8; border-radius: 4px; padding: 1.2em 0.8em;
+      font-size: 0.45em; color: var(--muted); background: #fff8f9; }
+    .img-missing a { color: var(--mtf-dark); word-break: break-all; }
+    .reveal .fragment.highlight-red.visible { color: var(--mtf-red); }
+    .qnum { color: var(--mtf-red); font-weight: 700; }
+
+    /* ══ BOTTOM NAV BAR ══ */
+    #navBar {
+      position: fixed; bottom: 0; left: 0; right: 0; height: 54px;
+      background: rgba(14,14,14,0.93); backdrop-filter: blur(8px);
+      border-top: 2px solid var(--mtf-red);
+      display: flex; align-items: center; justify-content: center;
+      gap: 14px; z-index: 9998; padding: 0 20px;
+    }
+    #slideIndicators { display: flex; gap: 5px; align-items: center; }
+    .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.28); border: none; cursor: pointer;
+      padding: 0; flex-shrink: 0; transition: background 0.2s, transform 0.2s;
+    }
+    .dot:hover  { background: rgba(255,255,255,0.65); }
+    .dot.active { background: var(--mtf-red); transform: scale(1.55); }
+    .nav-btn {
+      background: none; border: 1px solid rgba(255,255,255,0.12); border-radius: 7px;
+      color: #fff; cursor: pointer; padding: 5px 9px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s; flex-shrink: 0;
+    }
+    .nav-btn:hover  { background: rgba(200,0,30,0.35); border-color: var(--mtf-red); }
+    .nav-btn:active { background: rgba(200,0,30,0.55); }
+    .nav-btn svg    { width: 22px; height: 22px; fill: #fff; display: block; }
+    #slideCounter {
+      font-family: 'Segoe UI', sans-serif; font-size: 11px;
+      color: rgba(255,255,255,0.5); min-width: 34px; text-align: center; flex-shrink: 0;
+    }
+    #autoLabel {
+      display: flex; align-items: center; gap: 5px; color: rgba(255,255,255,0.55);
+      font-size: 11px; font-family: 'Segoe UI', sans-serif;
+      cursor: pointer; user-select: none; flex-shrink: 0;
+    }
+    #autoLabel input { cursor: pointer; accent-color: var(--mtf-red); }
+    .no-narration #playBtn, .no-narration #autoLabel { display: none; }
+
+    /* ══ MTF STU LOGO – fixed bottom-left (above nav bar) ══ */
+    .mtf-logo-badge {
+      position: fixed; bottom: 62px; left: 18px; z-index: 9999;
+      display: flex; align-items: center; gap: 24px;
+      pointer-events: none; opacity: 0.92;
+    }
+    .mtf-logo-badge svg { width: 182px; height: 62px; flex-shrink: 0; }
+    .mtf-wordmark { display: flex; flex-direction: column; line-height: 1.2; }
+    .mtf-line2 {
+      font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px;
+      font-weight: 400; color: var(--muted); letter-spacing: 0.02em;
+    }
+
+    /* ══ FONT SIZE CONTROL – fixed top-right ══ */
+    :root { --fs: 1; }
+    .reveal .slides { font-size: calc(100% * var(--fs)); }
+    #fontCtl { position: fixed; top: 10px; right: 14px; z-index: 9999; display: flex; gap: 4px;
+      padding: 4px; background: rgba(14,14,14,0.85); border: 1px solid var(--mtf-red); border-radius: 8px; }
+    #fontCtl button { background: none; border: none; color: #fff; cursor: pointer;
+      font: 600 14px 'Segoe UI', Arial, sans-serif; padding: 2px 7px; border-radius: 4px; }
+    #fontCtl button:hover { background: var(--mtf-red); }
+    #fontCtl .pct { color: rgba(255,255,255,0.6); font: 11px 'Segoe UI', sans-serif; align-self: center; min-width: 34px; text-align: center; }
+    .print-pdf #fontCtl { display: none; }
+
+    /* ══ DEEP-DIVE STACKS (vertical sub-slides): right-side panel + "press ↓" badge ══ */
+    #vNav { position: fixed; right: 14px; top: 50%; transform: translateY(-50%); z-index: 9998;
+      display: none; flex-direction: column; align-items: center; gap: 7px; padding: 10px 6px;
+      background: rgba(14,14,14,0.85); border: 1px solid var(--mtf-red); border-radius: 14px; }
+    #vNav .dot { width: 9px; height: 9px; }
+    #vNav .vbtn { background: none; border: none; color: #fff; cursor: pointer; font-size: 14px; line-height: 1; padding: 2px; }
+    #vNav .vbtn:hover { color: var(--mtf-red); }
+    #vNav .vlabel { color: rgba(255,255,255,0.6); font: 10px 'Segoe UI', sans-serif; }
+    .deep-hint { display: table; margin: 0.4em 0 0 auto; font-size: 0.5em; color: #fff; background: var(--mtf-red);
+      padding: 0.2em 0.8em; border-radius: 14px; animation: bob 1.6s ease-in-out infinite; }
+    .nav-help .deep-hint { display: inline; animation: none; font-size: 0.9em; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+    .no-deep .deep-help { display: none; }
+
+    /* Hide chrome in PDF export */
+    .print-pdf #navBar, .print-pdf #vNav { display: none; }
+  </style>
+</head>
+<body>
+
+<div class="mtf-logo-badge" aria-label="MTF STU">
+<svg width="182" height="62" viewBox="0 0 91 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M2.29999 17.7807C3.59999 17.7807 4.60001 16.7807 4.60001 15.4807C4.60001 14.1807 3.59999 13.1807 2.29999 13.1807C0.999988 13.1807 0 14.1807 0 15.4807C0 16.7807 0.999988 17.7807 2.29999 17.7807Z" fill="#E72B1E"/>
+  <path d="M2.29999 30.4807C3.59999 30.4807 4.60001 29.4807 4.60001 28.1807C4.60001 26.8807 3.59999 25.8807 2.29999 25.8807C0.999988 25.8807 0 26.8807 0 28.1807C0 29.3807 0.999988 30.4807 2.29999 30.4807Z" fill="#E72B1E"/>
+  <path d="M15 17.7807C16.3 17.7807 17.3 16.7807 17.3 15.4807C17.3 14.1807 16.3 13.1807 15 13.1807C13.7 13.1807 12.7 14.1807 12.7 15.4807C12.7 16.7807 13.7 17.7807 15 17.7807Z" fill="#E72B1E"/>
+  <path d="M15 30.4807C16.3 30.4807 17.3 29.4807 17.3 28.1807C17.3 26.8807 16.3 25.8807 15 25.8807C13.7 25.8807 12.7 26.8807 12.7 28.1807C12.7 29.3807 13.7 30.4807 15 30.4807Z" fill="#E72B1E"/>
+  <path d="M27.6 17.7807C28.9 17.7807 29.9 16.7807 29.9 15.4807C29.9 14.1807 28.9 13.1807 27.6 13.1807C26.3 13.1807 25.3 14.1807 25.3 15.4807C25.3 16.7807 26.3 17.7807 27.6 17.7807Z" fill="#E72B1E"/>
+  <path d="M2.29999 5.18069C3.59999 5.18069 4.60001 4.18071 4.60001 2.88071C4.60001 1.58071 3.59999 0.580688 2.29999 0.580688C0.999988 0.580688 0 1.58071 0 2.88071C0 4.18071 0.999988 5.18069 2.29999 5.18069Z" fill="#E72B1E"/>
+  <path d="M15 5.18069C16.3 5.18069 17.3 4.18071 17.3 2.88071C17.3 1.58071 16.3 0.580688 15 0.580688C13.7 0.580688 12.7 1.58071 12.7 2.88071C12.7 4.18071 13.7 5.18069 15 5.18069Z" fill="#E72B1E"/>
+  <path d="M27.6 5.18069C28.9 5.18069 29.9 4.18071 29.9 2.88071C29.9 1.58071 28.9 0.580688 27.6 0.580688C26.3 0.580688 25.3 1.58071 25.3 2.88071C25.3 4.18071 26.3 5.18069 27.6 5.18069Z" fill="#E72B1E"/>
+  <path d="M27.6 30.4807C28.9 30.4807 29.9 29.4807 29.9 28.1807C29.9 26.8807 28.9 25.8807 27.6 25.8807C26.3 25.8807 25.3 26.8807 25.3 28.1807C25.3 29.3807 26.3 30.4807 27.6 30.4807Z" fill="#E72B1E"/>
+  <path d="M40.2 17.7807C41.5 17.7807 42.5 16.7807 42.5 15.4807C42.5 14.1807 41.5 13.1807 40.2 13.1807C38.9 13.1807 37.9 14.1807 37.9 15.4807C37.9 16.7807 39 17.7807 40.2 17.7807Z" fill="#E72B1E"/>
+  <path d="M40.2 30.4807C41.5 30.4807 42.5 29.4807 42.5 28.1807C42.5 26.8807 41.5 25.8807 40.2 25.8807C38.9 25.8807 37.9 26.8807 37.9 28.1807C37.9 29.3807 39 30.4807 40.2 30.4807Z" fill="#E72B1E"/>
+  <path d="M40.2 5.18069C41.5 5.18069 42.5 4.18071 42.5 2.88071C42.5 1.58071 41.5 0.580688 40.2 0.580688C38.9 0.580688 37.9 1.58071 37.9 2.88071C37.9 4.18071 39 5.18069 40.2 5.18069Z" fill="#E72B1E"/>
+  <path d="M85.8 19.5807C85.8 19.4807 85.9 19.4807 85.9 19.4807H90.7C90.8 19.4807 90.9 19.3807 90.9 19.2807V18.1807C90.9 18.0807 90.8 17.9807 90.7 17.9807H84.3C84.2 17.9807 84.1 18.0807 84.1 18.1807V30.0807C84.1 30.1807 84.2 30.2807 84.3 30.2807H85.7C85.8 30.2807 85.9 30.1807 85.9 30.0807V24.7807H89.7C89.8 24.7807 89.9 24.6807 89.9 24.5807V23.4807C89.9 23.3807 89.8 23.2807 89.7 23.2807H85.9V19.5807H85.8ZM75 30.2807C75.1 30.2807 75.2 30.1807 75.2 30.0807V19.5807C75.2 19.4807 75.2 19.4807 75.3 19.4807H78.3C78.4 19.4807 78.5 19.3807 78.5 19.2807V18.1807C78.5 18.0807 78.4 17.9807 78.3 17.9807H70.4C70.3 17.9807 70.2 18.0807 70.2 18.1807V19.2807C70.2 19.3807 70.3 19.4807 70.4 19.4807H73.3C73.4 19.4807 73.4 19.5807 73.4 19.5807V30.0807C73.4 30.1807 73.5 30.2807 73.6 30.2807H75ZM60 30.2807C60.1 30.2807 60.1 30.2807 60.2 30.1807L63 20.8807V30.0807C63 30.1807 63.1 30.2807 63.2 30.2807H64.5C64.6 30.2807 64.7 30.1807 64.7 30.0807V18.1807C64.7 18.0807 64.6 17.9807 64.5 17.9807H62.8C62.7 17.9807 62.6 17.9807 62.6 18.0807L59.4 28.1807L56.2 18.0807C56.2 17.9807 56.1 17.9807 56 17.9807H54.2C54.1 17.9807 54 18.0807 54 18.1807V30.0807C54 30.1807 54.1 30.2807 54.2 30.2807H55.5C55.6 30.2807 55.7 30.1807 55.7 30.0807V20.8807L58.5 30.1807C58.5 30.2807 58.6 30.2807 58.7 30.2807H60Z" fill="black"/>
+  <path d="M90.9 0.980713C90.9 0.780713 90.8 0.780701 90.7 0.780701H88.4C88.3 0.780701 88.2 0.880713 88.2 0.980713V9.18069C88.2 10.3807 87.5 10.9807 86.2 10.9807C84.9 10.9807 84.2 10.3807 84.2 9.18069V0.980713C84.2 0.780713 84.1 0.780701 84 0.780701H81.7C81.5 0.780701 81.5 0.880713 81.5 0.980713V9.2807C81.5 11.6807 82.8 13.1807 86.2 13.1807C89.5 13.1807 90.9 11.6807 90.9 9.2807V0.980713ZM72.4 12.9807C72.6 12.9807 72.6 12.8807 72.6 12.7807V3.08069C72.6 2.98069 72.6 2.98071 72.7 2.98071H75.6C75.7 2.98071 75.8 2.8807 75.8 2.7807V1.08069C75.8 0.880688 75.7 0.880707 75.6 0.880707H66.9C66.7 0.880707 66.7 0.980688 66.7 1.08069V2.7807C66.7 2.9807 66.8 2.98071 66.9 2.98071H69.7C69.8 2.98071 69.8 3.08069 69.8 3.08069V12.7807C69.8 12.9807 69.9 12.9807 70 12.9807H72.4ZM53.6 12.3807C54.8 12.9807 55.9 13.0807 57.3 13.0807C59.9 13.0807 61.6 11.7807 61.6 9.38071C61.6 7.68071 60.8 6.58069 58.7 5.68069C56.9 4.98069 56.6 4.58071 56.6 3.98071C56.6 3.28071 57.1 2.7807 58.2 2.7807C59 2.7807 59.7 2.88069 60.3 3.18069C60.5 3.28069 60.6 3.18069 60.6 3.08069L61.4 1.48071C61.5 1.38071 61.5 1.28069 61.3 1.18069C60.1 0.680695 59.3 0.480713 57.7 0.480713C55.2 0.480713 53.7 1.98071 53.7 3.98071C53.7 5.78071 54.6 6.8807 56.7 7.7807C58.3 8.4807 58.7 8.88069 58.7 9.58069C58.7 10.2807 58.1 10.7807 57.1 10.7807C55.9 10.7807 55.3 10.5807 54.6 10.1807C54.5 10.0807 54.4 10.1807 54.3 10.2807L53.5 12.0807C53.5 12.2807 53.5 12.3807 53.6 12.3807Z" fill="black"/>
+</svg>
+  <div class="mtf-wordmark">
+    <span class="mtf-line2">Materiálovotechnologická fakulta<br>so sídlom v Trnave</span>
+  </div>
+</div>
+
+
+<div class="reveal"><div class="slides">
+
+  <!-- ═══ 1 · TITULNÁ SNÍMKA ═══ -->
+  <section style="text-align:left;">
+    <div class="title-grid">
+      <div>
+        <hr class="top-rule">
+        <h1>Ťahanie bezšvových rúr: teória, simulácia a validácia</h1>
+        <p class="subtitle">Prednáška 4 &nbsp;·&nbsp; Modelovanie a simulácia procesov I – tvárnenie (<abbr title="kód predmetu Modelovanie a simulácia procesov I – tvárnenie">MSPO2_6I</abbr>)</p>
+        <p class="author">Ing. Martin Necpal, PhD.</p>
+        <p class="institution">Zimný semester 2026/2027<br>
+          Materiálovotechnologická fakulta &nbsp;·&nbsp; <abbr title="Slovak University of Technology in Bratislava (Slovenská technická univerzita v Bratislave)">STU</abbr> Bratislava</p>
+      </div>
+      <div class="figure">
+        <img src="img/book_sink_strain.jpeg" alt="Simulácia prievlačného ťahania rúry v programe DEFORM – efektívne pretvorenie">
+        <p class="img-caption">Prievlačné ťahanie rúry Ø16 → Ø12 mm, efektívne pretvorenie v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 3D (© Bílik, Necpal, Sobota 2023, Spektrum <abbr title="Slovak University of Technology in Bratislava (Slovenská technická univerzita v Bratislave)">STU</abbr>)</p>
+      </div>
+    </div>
+    <div class="nav-help">
+      <strong>Ako ovládať prezentáciu</strong> (lišta dole, panel vpravo)
+      <ul>
+        <li><kbd>←</kbd> <kbd>→</kbd> alebo tlačidlá ‹ › – predchádzajúca / nasledujúca hlavná snímka</li>
+        <li>Bodky dole – skok priamo na vybranú snímku</li>
+        <li class="deep-help"><span class="deep-hint">▼ Hĺbkový pohľad</span> – snímka má nepovinné podsnímky pod sebou</li>
+        <li class="deep-help"><kbd>↓</kbd> <kbd>↑</kbd> alebo ▼ ▲ v paneli vpravo – vstup / pohyb v hĺbkovom pohľade; <kbd>→</kbd> pokračuje ďalšou hlavnou snímkou</li>
+        <li>▶ alebo <kbd>medzerník</kbd> – prehrať / pozastaviť hovorený komentár</li>
+        <li><strong>Auto</strong> zapnuté – po skončení komentára sa prejde na ďalšiu snímku; vypnuté – snímka ostane</li>
+        <li><kbd>F</kbd> celá obrazovka · <kbd>Esc</kbd> prehľad snímok (hĺbkové pohľady ako zvislé stĺpce)</li>
+        <li><kbd>Alt</kbd> + klik (Linux: <kbd>Ctrl</kbd> + klik) – priblížiť miesto na snímke; ďalší klik oddiali</li>
+        <li>Podčiarknuté skratky – podržte myš nad nimi pre vysvetlenie</li>
+        <li><strong>A−</strong> / <strong>A+</strong> vpravo hore alebo <kbd>−</kbd> / <kbd>+</kbd> – zmenšiť / zväčšiť písmo na všetkých snímkach; <strong>A</strong> alebo <kbd>0</kbd> – pôvodná veľkosť</li>
+      </ul>
+    </div>
+    <div class="pdf-download-row"><a class="pdf-download" href="18november2026.pdf" download>⬇ Stiahnuť PDF</a></div>
+    <aside class="notes">[0:00–0:02] Privítanie. Dnes jeden konkrétny proces od technológie cez analytiku a MKP až po vlastné výskumné štúdie a validáciu. Prednáška je dlhšia ako zvyčajne.</aside>
+  </section>
+
+  <!-- ═══ 2 · MOTIVÁCIA ═══ -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Úvod</span><span class="band-sub">Motivácia</span></div>
+    <h2>Prečo práve ťahanie rúr?</h2>
+    <div class="fig-row">
+      <ul class="v-center compact">
+        <li><strong>Presné bezšvové rúry:</strong> hydraulické valce, automobily, kotly, výmenníky tepla</li>
+        <li>Za tepla sa dosiahne tvar, <span class="hl">za studena presnosť</span> rozmerov, povrch a pevnosť</li>
+        <li>Rúry s vnútorným rebrovaním – vyšší prestup tepla v energetike</li>
+        <li class="fragment">Skúšanie „pokus–omyl“ v prevádzke je drahé → <span class="hl">simulácia <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span></li>
+        <li class="fragment">Spolupráca s <abbr title="Železiarne Podbrezová (Železiarne Podbrezová a.s.)">ŽP</abbr> Podbrezová, projekty <abbr title="Slovak Research and Development Agency (Agentúra na podporu výskumu a vývoja)">APVV</abbr>-15-0319 a <abbr title="Slovak Research and Development Agency (Agentúra na podporu výskumu a vývoja)">APVV</abbr>-18-0418</li>
+      </ul>
+      <div class="figure">
+        <img src="img/book_tubes_18.jpeg" alt="Rúry Ø18 pred ťahaním a po prievlačnom ťahaní na Ø12 mm">
+        <p class="img-caption">Rúra Ø18 × 1 mm pred ťahaním a po ťahaní na Ø12 mm (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:02–0:04] Prečo nás zaujíma práve tento proces: presnosť, spevnenie, drahé skúšky v prevádzke.</aside>
+  </section>
+
+  <!-- ═══ 3 · MATERIÁLY A ROZSAH ═══ -->
+  <section>
+    <div class="band"><span class="band-title">Úvod</span><span class="band-sub">Materiály a rozmery</span></div>
+    <h2>Z čoho a v akých rozmeroch sa rúry ťahajú</h2>
+    <table class="tight">
+      <tr><th>Skupina</th><th>Príklady</th><th>Rozsah za studena</th><th>Použitie</th></tr>
+      <tr><td><strong>Uhlíkové a nízkolegované ocele</strong></td><td>E235, E355, 11353, 11523, 12022, 15020</td><td>presné rúry podľa <abbr title="European Norm (európska norma)">EN</abbr> 10305-1</td><td>valce, strojárstvo, tlakové potrubia, kotly</td></tr>
+      <tr><td><strong>Korózivzdorné ocele</strong></td><td>1.4301, 1.4404, 1.4541, duplex 1.4462</td><td>—</td><td>chemický a potravinársky priemysel</td></tr>
+      <tr><td><strong>Meď a jej zliatiny</strong></td><td>Cu 99,9, mosadze, Cu–Ni</td><td>Ø2–160 mm, stena 0,15–10 mm</td><td>chladiče, potravinárstvo</td></tr>
+      <tr><td><strong>Hliník a jeho zliatiny</strong></td><td><abbr title="European Norm (európska norma)">EN</abbr> AW 6060, 6061, 6082, 2024, 7075</td><td>Ø2–180 mm, stena 0,4–10 mm</td><td>doprava, ľahké konštrukcie</td></tr>
+    </table>
+    <ul class="small" style="margin-top:0.5em;">
+      <li>V našich štúdiách: <strong>E235</strong>, <strong>E355</strong> a <strong>SPT360</strong> – feriticko-perlitické ocele s dobrou tvárnosťou za studena</li>
+    </ul>
+    <p class="slide-source">Zdroj: Bílik, Necpal, Sobota 2023, kap. 1</p>
+    <aside class="notes">[0:04–0:06] Materiály, rozsahy rozmerov. Zdôrazniť, že vo všetkých našich štúdiách je oceľ E235/E355/SPT360.</aside>
+  </section>
+
+  <!-- ═══ 4 · VÝROBA ZA TEPLA ═══ -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Úvod</span><span class="band-sub">Výrobný reťazec</span></div>
+    <h2>Najprv za tepla: predvalok a valcovanie</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.2fr;">
+      <ul class="v-center compact">
+        <li>Kontinuálne liaty blok → ohrev → <strong>dierovanie</strong> → predlžovanie na tŕni</li>
+        <li>Kosé valcovanie: <strong>Mannesmannov jav</strong> – ťahové napätie v jadre otvorí dutinu</li>
+        <li>Pretlačovacia stolica, kroková pec, <strong>ťahová redukovňa</strong></li>
+        <li>Výsledok: rúra za tepla, napr. Ø70 × 6,3 mm alebo Ø28 × 4 mm</li>
+        <li class="fragment">Excentricita a vnútorný „polygón“ z valcovania sa prenášajú do ťahania</li>
+      </ul>
+      <div class="figure">
+        <img src="img/book_zp_hot_route.jpeg" alt="Výrobný postup valcovaných rúr v ŽP Podbrezová">
+        <p class="img-caption">Výroba rúr valcovaním za tepla v <abbr title="Železiarne Podbrezová (Železiarne Podbrezová a.s.)">ŽP</abbr> a.s. (© Bílik, Necpal, Sobota 2023 podľa <abbr title="Železiarne Podbrezová (Železiarne Podbrezová a.s.)">ŽP</abbr>)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:06–0:08] Krátko výroba za tepla, aby bolo jasné, odkiaľ prichádza vstupná rúra a jej chyby (excentricita).</aside>
+  </section>
+
+  <!-- ═══ 5 · VÝROBA ZA STUDENA ═══ -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Úvod</span><span class="band-sub">Výrobný reťazec</span></div>
+    <h2>Potom za studena: postup výroby presných rúr</h2>
+    <div class="cols-2" style="grid-template-columns:1fr 1.25fr;">
+      <div>
+        <div class="flow-box">1. Vstupná rúra valcovaná za tepla</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">2. Hrotovanie konca rúry (za tepla alebo za studena)</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">3. Chemická úprava: morenie, fosfátovanie, mazivo</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key">4. Ťahanie za studena <span class="flow-note">→ predmet dnešnej prednášky</span></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">5. Medzioperačné / finálne žíhanie v ochrannej atmosfére</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">6. Rovnanie, delenie, kontrola, konzervácia, expedícia</div>
+      </div>
+      <div class="figure">
+        <img src="img/book_zp_cold_route.png" alt="Výroba presných rúr ťahaním za studena v ŽP Podbrezová">
+        <p class="img-caption">Výroba presných rúr ťahaním za studena (© Bílik, Necpal, Sobota 2023 podľa Príručky <abbr title="Železiarne Podbrezová (Železiarne Podbrezová a.s.)">ŽP</abbr> 2017)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:08–0:10] Postup v ŽP Podbrezová. Ťahanie sa môže opakovať viackrát, medzi ťahmi žíhanie.</aside>
+  </section>
+
+  <!-- ═══ 6 · KAM ZAPADÁ ═══ -->
+  <section>
+    <h2>Kam zapadá dnešná prednáška</h2>
+    <div class="cols-2" style="gap:1.5em;">
+      <div>
+        <div class="flow-box">1. Úvod do modelovania tvárnenia</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">2. Analytické metódy a softvér na simuláciu</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">3. Materiálové údaje v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key">4. Ťahanie rúr – celý model jedného procesu <span class="flow-note">(sieť, okrajové podmienky, trenie, validácia)</span></div>
+      </div>
+      <div>
+        <ul class="small" style="line-height:1.8;">
+          <li><strong>Minule:</strong> pretvárny odpor a jeho modely – teraz ich použijeme</li>
+          <li><strong>Dnes:</strong> technológia → analytika → nastavenie modelu <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> → prípadové štúdie → optimalizácia a validácia</li>
+          <li><strong>Cieľ:</strong> aby ste vedeli sami zostaviť, overiť a kriticky posúdiť model ťahania</li>
+        </ul>
+      </div>
+    </div>
+    <aside class="notes">[0:10–0:12] Väzba na prednášku 3 (materiál) a na sľúbený preprocesing – dnes na konkrétnom procese.</aside>
+  </section>
+
+  <!-- ═══ 7 · PROGRAM ═══ -->
+  <section>
+    <h2>Program dnešnej prednášky <span class="subtitle" style="font-size:0.55em;">(152 min, s prestávkou podľa potreby)</span></h2>
+    <table class="agenda mid">
+      <tr><th>Čas</th><th>Blok</th><th>Obsah</th></tr>
+      <tr><td>0:00 – 0:14</td><td>Úvod</td><td>Motivácia, materiály, výrobný reťazec rúr</td></tr>
+      <tr><td>0:14 – 0:40</td><td>I · Základy ťahania</td><td>Spôsoby ťahania, prievlak a tŕň, pretvorenie, parametre</td></tr>
+      <tr><td>0:40 – 1:00</td><td>II · Analytické metódy</td><td>Ideálna práca, metóda rezov, optimálny uhol, medzná redukcia</td></tr>
+      <tr><td>1:00 – 1:32</td><td>III · Numerická simulácia</td><td>Implicitne / explicitne, Lagrange / <abbr title="Arbitrary Lagrangian–Eulerian (ľubovoľný Lagrangeov–Eulerov opis siete)">ALE</abbr>, nastavenie modelu</td></tr>
+      <tr class="main"><td>1:32 – 2:08</td><td>IV · Prípadové štúdie</td><td>Vlastné články: trenie, uhol, hrúbka steny, <abbr title="Design of Experiments (plánovanie experimentu)">DOE</abbr>, rebrované rúry</td></tr>
+      <tr><td>2:08 – 2:20</td><td>V · Optimalizácia a validácia</td><td>Kalibrácia vs validácia, odporúčania, postup</td></tr>
+      <tr><td>2:20 – 2:32</td><td>Zhrnutie a otázky</td><td>Hlavné poznatky, kontrolné otázky</td></tr>
+    </table>
+    <aside class="notes">[0:12–0:14] Program. Hlavný blok sú prípadové štúdie z vlastného výskumu.</aside>
+  </section>
+
+  <!-- ═══ ČASŤ I ═══ -->
+  <section class="divider">
+    <h2>Časť I — Základy procesu ťahania</h2>
+    <p style="color:#f0b0b8;">Drôt, tyč a rúra · prievlak a tŕň · pretvorenie · parametre procesu</p>
+    <aside class="notes">[0:14] Časť I.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Základy</span><span class="band-sub">Princíp</span></div>
+    <h2>Princíp ťahania</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.1fr;">
+      <ul class="v-center compact">
+        <li>Polotovar sa <strong>preťahuje</strong> cez nepohyblivý prievlak – prierez klesá, dĺžka rastie</li>
+        <li>Sila pôsobí ako <span class="hl">ťah na výstupe</span>, materiál sa tvaruje <strong>tlakom</strong> v styku s prievlakom</li>
+        <li>Ciele: presné rozmery, kvalitný povrch, vyššia pevnosť spevnením</li>
+        <li class="fragment">Rúra = dutý polotovar → navyše <strong>hrúbka steny</strong> a <strong>vnútorný povrch</strong>, často vnútorný nástroj (tŕň)</li>
+      </ul>
+      <div class="figure svgfig">
+        <svg viewBox="0 0 440 260" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial" font-size="13">
+          <polygon points="150,30 230,30 230,95 205,110 150,80" fill="#ddd" stroke="#777"/>
+          <polygon points="150,230 230,230 230,165 205,150 150,180" fill="#ddd" stroke="#777"/>
+          <rect x="20" y="80" width="135" height="100" fill="#fff5f6" stroke="#c8001e"/>
+          <polygon points="155,80 205,110 205,150 155,180" fill="#fff5f6" stroke="#c8001e"/>
+          <rect x="205" y="110" width="160" height="40" fill="#fff5f6" stroke="#c8001e"/>
+          <line x1="365" y1="130" x2="425" y2="130" stroke="#c8001e" stroke-width="3"/>
+          <polygon points="425,130 412,123 412,137" fill="#c8001e"/>
+          <text x="395" y="118" text-anchor="middle" fill="#c8001e" font-weight="700">F</text>
+          <text x="85" y="135" text-anchor="middle">D₀, S₀</text>
+          <text x="300" y="135" text-anchor="middle">D₁, S₁</text>
+          <text x="190" y="22" text-anchor="middle" fill="#555">prievlak</text>
+          <line x1="155" y1="60" x2="205" y2="60" stroke="#8b0014" stroke-dasharray="3 3"/>
+          <text x="168" y="74" fill="#8b0014">α</text>
+          <text x="220" y="250" text-anchor="middle" fill="#555">kontakt: tlak p a trenie μ·p</text>
+          <line x1="20" y1="130" x2="20" y2="130"/>
+        </svg>
+        <p class="img-caption">Schéma ťahania plného prierezu (vlastná schéma)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:14–0:16] Princíp – ťah na výstupe, tlak v prievlaku. Rúra pridáva stenu a vnútorný povrch.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Základy</span><span class="band-sub">Drôt, tyč, rúra</span></div>
+    <h2>Drôt, tyč a rúra – spoločné a rozdielne</h2>
+    <table class="mid">
+      <tr><th>Výrobok</th><th>Vstupný polotovar</th><th>Typický stroj</th><th>Poznámka</th></tr>
+      <tr><td><strong>Drôt</strong></td><td>valcovaný drôt vo zvitku</td><td>viacnásobný ťahací stroj s bubnami</td><td>veľa ťahov za sebou, vysoké rýchlosti, malá redukcia na ťah</td></tr>
+      <tr><td><strong>Tyč</strong></td><td>tyče alebo zvitky</td><td>ťahacia stolica</td><td>menej ťahov, väčšie priemery</td></tr>
+      <tr><td><strong>Rúra</strong></td><td>dutý predvalok</td><td>reťazová alebo hydraulická ťahacia stolica</td><td>kontrola hrúbky steny a vnútorného priemeru, tŕň</td></tr>
+    </table>
+    <ul class="small" style="margin-top:0.6em;">
+      <li>Fyzika je rovnaká: <span class="hl">ťahové napätie na výstupe</span> musí ostať pod medzou klzu ťahaného materiálu</li>
+    </ul>
+    <aside class="notes">[0:16–0:18] Porovnanie drôt / tyč / rúra.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Základy</span><span class="band-sub">Nástroj</span></div>
+    <h2>Geometria prievlaku</h2>
+    <div class="fig-row" style="grid-template-columns:1.1fr 1fr;">
+      <ul class="v-center compact">
+        <li><strong>Vstupný kužeľ</strong> – vedie mazivo do prievlaku</li>
+        <li><strong>Redukčný kužeľ</strong> s uhlom <span class="hl">2α</span> – tu prebieha deformácia</li>
+        <li><strong>Kalibračná časť</strong> (valček, napr. 4 mm) – určuje výsledný priemer, kompenzuje odpruženie</li>
+        <li><strong>Výstupný kužeľ</strong> – chráni výrobok na výstupe</li>
+        <li class="fragment">Materiál prievlaku: spekaný karbid (napr. G10–G60), nástrojová oceľ</li>
+      </ul>
+      <div class="figure">
+        <img src="img/book_die_drawing.png" alt="Výkres prievlaku Ø25 mm s redukčným uhlom 2α a kalibračnou časťou 4 mm">
+        <p class="img-caption">Prievlak Ø25 mm pre rúru Ø28 × 4 mm (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:18–0:20] Štyri zóny prievlaku. Pozor na označenie: v knihe 2α (celý uhol), v článkoch α (polovičný uhol).</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Základy</span><span class="band-sub">Spôsoby ťahania</span></div>
+    <h2>Štyri spôsoby ťahania rúr</h2>
+    <div class="cols-2 four" style="gap:0.8em;">
+      <div class="figure half"><img src="img/book_sinking.jpeg" alt="Prievlačné ťahanie bez tŕňa"><p class="img-caption">a) prievlačné ťahanie (bez tŕňa)</p></div>
+      <div class="figure half"><img src="img/book_fixed_plug_cyl.jpeg" alt="Ťahanie na pevnom valcovom tŕni"><p class="img-caption">b) pevný (valcový) tŕň na tyči</p></div>
+      <div class="figure half"><img src="img/book_floating_plug.jpeg" alt="Ťahanie na plávajúcom tŕni"><p class="img-caption">c) plávajúci tŕň</p></div>
+      <div class="figure half"><img src="img/book_mandrel_bar.png" alt="Ťahanie na tŕňovej tyči"><p class="img-caption">d) ťahanie na tyči (pohyblivý tŕň)</p></div>
+    </div>
+    <p class="slide-source">Obrázky © Bílik, Necpal, Sobota 2023 (d podľa Lenfeld 2005)</p>
+    <aside class="notes">[0:20–0:22] Štyri spôsoby – prejsť obrázky a), b), c), d).</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Základy</span><span class="band-sub">Spôsoby ťahania</span></div>
+    <h2>Porovnanie spôsobov ťahania</h2>
+    <table class="tight">
+      <tr><th>Spôsob</th><th>Vnútorný nástroj</th><th>Účinok na rúru</th><th>Výhody</th><th>Obmedzenia</th></tr>
+      <tr><td><strong>Prievlačné</strong></td><td>žiadny</td><td>zmenší D, stena sa mierne <span class="hl">zhrubne</span></td><td>najjednoduchšie</td><td>vnútorný povrch a d nekontrolované</td></tr>
+      <tr><td><strong>Pevný tŕň</strong></td><td>tŕň na tyči</td><td>určí D aj d, zmenší stenu</td><td>presnosť, vnútorný povrch</td><td>dĺžka rúry obmedzená tyčou, vyššia sila, R ≈ do 30 %</td></tr>
+      <tr><td><strong>Plávajúci tŕň</strong></td><td>voľný tŕň v rovnováhe</td><td>zmenší D aj stenu</td><td>dlhé rúry do zvitku, vyššie rýchlosti, R do ≈ 45 %</td><td>citlivý na geometriu a mazanie</td></tr>
+      <tr><td><strong>Na tyči</strong></td><td>tyč ide s rúrou</td><td>zmenší D aj stenu</td><td>tenké steny (&lt; 1 mm), trenie na tyči pomáha</td><td>tyč treba vytiahnuť – odvaľovanie rúry</td></tr>
+    </table>
+    <p class="note-box">Smer trenia: na pevnom tŕni trenie <strong>brzdí</strong> rúru (zvyšuje silu), na pohyblivej tyči ju <strong>ťahá dopredu</strong> (znižuje silu).</p>
+    <aside class="notes">[0:22–0:24] Tabuľka porovnania. Zdôrazniť smer trenia – dôležité pre okrajové podmienky v simulácii.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Základy</span><span class="band-sub">Tŕne</span></div>
+    <h2>Tŕne a ich poloha</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.2fr;">
+      <ul class="v-center compact">
+        <li><strong>Valcový</strong> alebo <strong>tvarový</strong> pevný tŕň na tŕňovej tyči</li>
+        <li>Krúžok zo spekaného karbidu naskrutkovaný na oceľové teleso</li>
+        <li>Poloha tŕňa voči kalibračnej časti určuje, kde sa stena stenčuje</li>
+        <li>Opotrebenie tŕňa býva väčšie ako opotrebenie prievlaku</li>
+        <li class="fragment">Rebrovaný (profilový) tŕň → rúry s <span class="hl">vnútorným rebrovaním</span> (časť IV)</li>
+      </ul>
+      <div class="cols-2" style="gap:0.5em;align-items:center;">
+        <div class="figure half"><img src="img/book_carbide_plug.jpeg" alt="Tŕň s karbidovým krúžkom: 1 krúžok, 2 teleso"><p class="img-caption">Tŕň: 1 – karbidový krúžok, 2 – teleso</p></div>
+        <div class="figure half"><img src="img/book_plug_position.jpeg" alt="Poloha tŕňa v prievlaku"><p class="img-caption">Poloha tŕňa v prievlaku</p></div>
+      </div>
+    </div>
+    <p class="slide-source">Obrázky © Bílik, Necpal, Sobota 2023</p>
+    <aside class="notes">[0:24–0:26] Tŕne, karbid, poloha tŕňa. Odkaz na rebrované tŕne v časti IV.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Základy</span><span class="band-sub">Príprava</span></div>
+    <h2>Hrotovanie – bez hrotu sa rúra neťahá</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.1fr;">
+      <ul class="v-center compact">
+        <li>Hrot musí prejsť prievlakom a dať sa uchopiť ťahacou stolicou</li>
+        <li><strong>Za tepla:</strong> rotačné kovanie (napr. 850–900 °C, Ø11 pre prievlak Ø12)</li>
+        <li><strong>Za studena:</strong> lisovanie – vhodné pre tenké steny</li>
+        <li class="fragment">V simulácii: hrot a neťahaný koniec sa <strong>nehodnotia</strong> – len ustálená stredná časť rúry</li>
+      </ul>
+      <div class="cols-2" style="gap:0.5em;align-items:center;">
+        <div class="figure half"><img src="img/book_pointing_press.png" alt="Hrotovanie lisovaním za studena"><p class="img-caption">Lisovanie hrotu za studena</p></div>
+        <div class="figure half"><img src="img/book_tip.png" alt="Hrot rúry"><p class="img-caption">Hrot rúry</p></div>
+      </div>
+    </div>
+    <p class="slide-source">Obrázky © Bílik, Necpal, Sobota 2023</p>
+    <aside class="notes">[0:26–0:28] Hrotovanie. Dôsledok pre vyhodnotenie simulácie.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Základy</span><span class="band-sub">Pretvorenie</span></div>
+    <h2>Redukcia, pretvorenie a súčiniteľ predĺženia</h2>
+    <div class="fig-row" style="grid-template-columns:1.15fr 1fr;">
+      <div class="v-center">
+        <ul class="xs">
+          <li><strong>Redukcia R</strong> – pomerné zmenšenie plochy prierezu rúry ťahaním, vyjadrené v % pôvodného prierezu S<sub>0</sub>.</li>
+          <li><strong>Pretvorenie φ</strong> (logaritmické) – prirodzený logaritmus pomeru prierezu pred a po ťahaní; pretvorenia po sebe idúcich ťahov sa sčítavajú.</li>
+          <li><strong>Súčiniteľ predĺženia λ</strong> – udáva, koľkokrát sa rúra ťahaním predĺži; pri stálom objeme sa rovná pomeru prierezov S<sub>0</sub>/S<sub>r</sub> (λ &gt; 1).</li>
+        </ul>
+        <div class="equation sm">$$S=\frac{\pi}{4}(D^2-d^2)=\pi(D-s)\,s \qquad R=\frac{S_0-S_r}{S_0}\cdot 100\,\%$$</div>
+        <div class="equation sm">$$\varphi=\ln\frac{S_0}{S_r} \qquad \lambda=\frac{S_0}{S_r}=\frac{L_r}{L_0}$$</div>
+        <div class="equation sm">$$\varphi_L+\varphi_d+\varphi_s=0,\quad \varphi_L=\ln\tfrac{L}{L_0},\ \varphi_d=\ln\tfrac{d_s}{d_{s0}},\ \varphi_s=\ln\tfrac{s}{s_0}$$</div>
+        <ul class="xs">
+          <li>\(d_s=D-s\) – stredný priemer steny</li>
+          <li class="fragment">Príklad: Ø70 × 6,3 → Ø55 × 4,75 mm: <span class="hl">R = 40,5 %, φ = 0,52</span></li>
+        </ul>
+      </div>
+      <div class="figure">
+        <img src="img/book_tube_dims.png" alt="Rozmery rúry pred ťahaním a po ťahaní">
+        <p class="img-caption">Rozmery rúry pred a po ťahaní (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:28–0:30] Vzorce. Príklad prepočítajte na tabuli: S0 = 1260,9, S = 749,9 mm².</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Základy</span><span class="band-sub">Napäťový stav</span></div>
+    <h2>Napäťovo-deformačný stav v prievlaku</h2>
+    <div class="fig-row" style="grid-template-columns:1.1fr 1fr;">
+      <div class="v-center">
+        <ul class="xs">
+          <li>Pozdĺžne: <span class="hl">ťahové σ₁</span>, radiálne a tangenciálne: tlakové σ₂, σ₃</li>
+          <li>Osovo symetrický stav, σ₂ ≈ σ₃</li>
+        </ul>
+        <div class="equation sm">$$\frac{\varphi_1-\varphi_2}{\sigma_1-\sigma_2}=\frac{\varphi_2-\varphi_3}{\sigma_2-\sigma_3}=\frac{3}{2}\,\frac{\varphi_i}{\sigma_i}$$</div>
+        <div class="equation sm">$$\sigma_1=\frac{F_{\check{t}}}{S_r},\qquad \sigma_1 &lt; R_{p0,2}\ \text{(spevnenej rúry)}$$</div>
+        <ul class="xs">
+          <li class="fragment">Ak σ₁ prekročí medzu klzu za prievlakom → rúra sa <strong>predlžuje alebo pretrhne</strong></li>
+        </ul>
+      </div>
+      <div class="figure">
+        <img src="img/book_stress_states.png" alt="Napäťový a deformačný stav pri ťahaní na pevnom tŕni">
+        <p class="img-caption">1 – držiak, 2 – prievlak, 3 – pevný tŕň; zóny I–III (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:30–0:32] Lévy–Mises, podmienka σ1 &lt; medza klzu spevnenej rúry – základné obmedzenie ťahania.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Základy</span><span class="band-sub">Parametre</span></div>
+    <h2>Kľúčové parametre procesu</h2>
+    <table class="tight">
+      <tr><th>Parameter</th><th>Vplyv</th></tr>
+      <tr><td><strong>Uhol prievlaku α</strong></td><td>malý α: dlhý kontakt, veľa trenia · veľký α: redundantná deformácia, tlak na nástroj → <span class="hl">optimum</span></td></tr>
+      <tr><td><strong>Redukcia</strong></td><td>určuje silu a spevnenie; obmedzená pevnosťou ťahaného materiálu</td></tr>
+      <tr><td><strong>Trenie a mazanie</strong></td><td>sila, opotrebenie, povrch, teplo; Coulomb μ alebo faktor trenia m</td></tr>
+      <tr><td><strong>Rýchlosť ťahania</strong></td><td>mazací film, ohrev; pri pomalom ťahaní rúr na silu takmer bez vplyvu</td></tr>
+      <tr><td><strong>Kalibračná dĺžka</strong></td><td>presnosť priemeru; príliš dlhá zvyšuje trenie</td></tr>
+      <tr><td><strong>Geometria tŕňa</strong></td><td>uhol a valcová dĺžka určujú d a hrúbku steny</td></tr>
+      <tr><td><strong>Materiál</strong></td><td>krivka spevnenia, citlivosť na rýchlosť, excentricita vstupnej rúry</td></tr>
+    </table>
+    <aside class="notes">[0:32–0:34] Prehľad parametrov – každý sa neskôr objaví ako vstup do modelu MKP.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Základy</span><span class="band-sub">Presnosť</span></div>
+    <h2>Čo ovplyvňuje presnosť ťahanej rúry</h2>
+    <div class="fig-row" style="grid-template-columns:1.2fr 1fr;">
+      <ul class="v-center compact">
+        <li><strong>Vstupná rúra:</strong> excentricita, vnútorný polygón → nerovnomerné pretvorenie</li>
+        <li><strong>Teplota:</strong> deformačné a trecie teplo – termokamera na výstupe <span class="hl">130–180 °C</span></li>
+        <li><strong>Nástroje:</strong> rozmery, presnosť výroby, opotrebenie</li>
+        <li><strong>Deformácia za prievlakom</strong>, ak σ₁ prekročí medzu klzu spevnenej rúry</li>
+        <li class="fragment">Pri prievlačnom ťahaní je výsledný D <strong>o niečo menší</strong> ako priemer prievlaku</li>
+      </ul>
+      <div class="figure">
+        <img src="img/book_cmm.jpeg" alt="Meranie rúry na súradnicovom meracom stroji ZEISS">
+        <p class="img-caption">Meranie rozmerov rúry na <abbr title="Coordinate Measuring Machine (súradnicový merací stroj)">CMM</abbr> ZEISS (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:34–0:36] Faktory presnosti. Meranie CMM – neskôr ho použijeme na validáciu.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Základy</span><span class="band-sub">Spevnenie</span></div>
+    <h2>Spevnenie za studena: jeden ťah, veľká zmena</h2>
+    <table class="mid">
+      <tr><th>Ťah (E235, stena 1 mm)</th><th>R [%]</th><th>R<sub>p0,2</sub> [MPa]</th><th>R<sub>m</sub> [MPa]</th><th>A [%]</th></tr>
+      <tr><td>Ø14 → Ø12</td><td>≈ 13,5</td><td>285 → 415</td><td>412 → 498</td><td>25 → 10</td></tr>
+      <tr><td>Ø16 → Ø12</td><td>≈ 24</td><td>295 → 439</td><td>408 → 531</td><td>28 → 10</td></tr>
+      <tr><td>Ø18 → Ø12</td><td>≈ 32,5</td><td>285 → 469</td><td>399 → 568</td><td>30 → 8</td></tr>
+    </table>
+    <ul class="small" style="margin-top:0.5em;">
+      <li>Pevnosť rastie, <span class="hl">ťažnosť klesá na tretinu</span> → po niekoľkých ťahoch treba žíhať</li>
+      <li class="fragment">Pre simuláciu: krivka spevnenia rozhoduje o sile aj o medznej redukcii</li>
+    </ul>
+    <p class="slide-source">Zdroj: Bílik, Necpal, Sobota 2023, kap. 3.4 (priemery dvoch skúšok)</p>
+    <aside class="notes">[0:36–0:38] Spevnenie po jednom ťahu – čísla z ťahových skúšok pred a po ťahaní.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Základy</span><span class="band-sub">Most k simulácii</span></div>
+    <h2>Čo musí model zachytiť</h2>
+    <div class="cols-2">
+      <div>
+        <ul class="small">
+          <li><strong>Sila a napätie</strong> ťahania – dimenzovanie stolice, riziko pretrhnutia</li>
+          <li><strong>Rozmery</strong>: D, d, hrúbka steny, kruhovitosť</li>
+          <li><strong>Pretvorenie</strong> a spevnenie v stene</li>
+          <li><strong>Zvyškové napätia</strong> z nerovnomernej deformácie</li>
+          <li><strong>Zaťaženie a opotrebenie</strong> prievlaku a tŕňa</li>
+        </ul>
+      </div>
+      <div>
+        <div class="flow-box">Vstupy: geometria, krivka spevnenia, trenie, rýchlosť</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key">Model <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Výstupy: sila, polia σ a ε, rozmery</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Overenie: analytika a experiment</div>
+      </div>
+    </div>
+    <aside class="notes">[0:38–0:40] Prechod: čo chceme od modelu – a čo najprv odhadneme analyticky.</aside>
+  </section>
+  <!-- ═══ ČASŤ II ═══ -->
+  <section class="divider">
+    <h2>Časť II — Analytické metódy ťahania</h2>
+    <p style="color:#f0b0b8;">Ideálna práca · metóda rezov · redundantná práca · medzná redukcia · optimálny uhol</p>
+    <aside class="notes">[0:40] Časť II.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Analytika</span><span class="band-sub">Prečo a čím</span></div>
+    <h2>Prečo najprv analytika – a označenie</h2>
+    <div class="cols-2" style="grid-template-columns:1fr 1.2fr;">
+      <ul class="small">
+        <li><strong>Rýchly odhad</strong> sily a výkonu – dimenzovanie stolice</li>
+        <li><strong>Trendy</strong>: vplyv redukcie, trenia a uhla</li>
+        <li><strong>Referencia</strong> na kontrolu simulácie</li>
+        <li class="fragment">Pravidlo: <span class="hl">simulácii neverte, kým ju neporovnáte</span> aspoň s jednoduchým odhadom</li>
+      </ul>
+      <table class="tight">
+        <tr><th>Symbol</th><th>Význam</th></tr>
+        <tr><td>\(A_0, A_1\) (\(S_0, S_r\))</td><td>prierez pred / po ťahu</td></tr>
+        <tr><td>\(r=(A_0-A_1)/A_0\)</td><td>redukcia prierezu</td></tr>
+        <tr><td>\(\varepsilon=\ln(A_0/A_1)\)</td><td>skutočné (logaritmické) pretvorenie</td></tr>
+        <tr><td>\(\sigma_f\)</td><td>stredný pretvárny odpor</td></tr>
+        <tr><td>\(\alpha,\ \mu\)</td><td>polovičný uhol prievlaku, súčiniteľ trenia</td></tr>
+        <tr><td>\(\sigma_d,\ F=\sigma_d A_1,\ P=F v\)</td><td>napätie ťahania, sila, výkon</td></tr>
+      </table>
+    </div>
+    <aside class="notes">[0:40–0:42] Prečo analytika. Označenie: ε tu = φ z predchádzajúcej časti.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Analytika</span><span class="band-sub">Ideálna práca</span></div>
+    <h2>Ideálna deformácia – dolná hranica</h2>
+    <div class="fig-row" style="grid-template-columns:1.1fr 1fr;">
+      <div class="v-center">
+        <div class="equation">$$\sigma_d=\sigma_f\,\ln\frac{A_0}{A_1}=\sigma_f\,\varepsilon$$</div>
+        <ul class="xs">
+          <li>Energetická bilancia: práca vonkajšej sily = práca homogénnej plastickej deformácie</li>
+          <li>Bez trenia a bez redundantnej (nadbytočnej) deformácie</li>
+          <li class="fragment">Skutočné napätie je <span class="hl">vždy vyššie</span> – typicky 1,5 až 2,5-násobok</li>
+        </ul>
+      </div>
+      <div class="v-center">
+        <div class="note-box" style="font-size:0.7em;"><strong>Príklad:</strong> σ<sub>f</sub> = 500 MPa, r = 20 %<br>ε = ln(1/0,8) = 0,223<br>σ<sub>d</sub> = 500 · 0,223 = <strong>112 MPa</strong></div>
+      </div>
+    </div>
+    <aside class="notes">[0:42–0:44] Ideálna práca, dolná hranica.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Analytika</span><span class="band-sub">Metóda rezov</span></div>
+    <h2>Metóda rezov (slab method)</h2>
+    <div class="fig-row" style="grid-template-columns:1.05fr 1fr;">
+      <div class="v-center">
+        <ul class="xs">
+          <li>Tenký element v redukčnom kuželi, rovnováha síl v smere ťahania</li>
+          <li>Predpoklady: konštantné σ<sub>f</sub>, Coulombovo trenie, rovinné rezy ostávajú rovinné</li>
+        </ul>
+        <div class="equation sm">$$\sigma_d=\sigma_f\,\frac{1+B}{B}\left[1-\left(\frac{A_1}{A_0}\right)^{B}\right],\quad B=\mu\cot\alpha$$</div>
+        <ul class="xs">
+          <li class="fragment">Pre rúry rovnaký princíp: B obsahuje aj trenie na tŕni, miesto plochy vystupuje hrúbka steny</li>
+          <li class="fragment">Redundantná práca tu <strong>nie je</strong> – pridáva sa korekciou</li>
+        </ul>
+      </div>
+      <div class="figure">
+        <img src="img/book_slab_zone1.png" alt="Rovnováha elementu v redukčnom kuželi">
+        <p class="img-caption">Element v redukčnom kuželi: σ, dσ, normálový tlak σn a trenie f·σn (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:44–0:46] Metóda rezov – princíp a výsledok pre drôt/tyč. Pre r = 20 %, α = 6°, μ = 0,1: B = 0,951, σd = 196 MPa.</aside>
+  </section>
+
+  <!-- ═══ DEEP DIVE SM: fixed plug zones ═══ -->
+  <section class="deep-stack">
+    <section class="slide-full">
+      <div class="band"><span class="band-title">Analytika</span><span class="band-sub">Rúra na pevnom tŕni</span></div>
+      <h2>Ťahanie na pevnom tŕni – tri zóny</h2>
+      <div class="fig-row" style="grid-template-columns:1fr 1.1fr;">
+        <ul class="v-center compact">
+          <li><strong>Zóna I:</strong> zmenšuje sa len priemer, stena konštantná</li>
+          <li><strong>Zóna II:</strong> zmenšuje sa priemer aj stena (tŕň v kontakte)</li>
+          <li><strong>Zóna III:</strong> kalibrácia – trenie na prievlaku <em>aj</em> na tŕni</li>
+          <li>\(F=\sigma_{IIIc}\,S_r\) – napätie na konci zóny III krát výsledný prierez</li>
+        </ul>
+        <div class="figure">
+          <img src="img/book_plug_zones.png" alt="Zóny I, II a III pri ťahaní rúry na pevnom tŕni">
+          <p class="img-caption">Zóny I–III pri ťahaní na pevnom tŕni (© Bílik, Necpal, Sobota 2023)</p>
+        </div>
+      </div>
+      <div class="deep-hint">▼ Hĺbkový pohľad: 4 snímky o odvodení síl v zónach I–III — stlačte <strong>↓</strong></div>
+      <aside class="notes">[0:46–0:48] Tri zóny. Nepovinné: šípka dole – 4-snímkový hĺbkový pohľad s odvodením. Inak pokračujte doprava.</aside>
+    </section>
+    <section class="slide-full">
+      <div class="band"><span class="band-title">Pevný tŕň ↓</span><span class="band-sub">1 · Zóna I</span></div>
+      <h2>Zóna I – zmenšenie priemeru</h2>
+      <div class="fig-row" style="grid-template-columns:1.2fr 1fr;">
+        <div class="v-center">
+          <div class="equation sm">$$A=\frac{1+f\cot\alpha}{1-f\tan\alpha},\qquad r_s=\frac{D-s_0}{2},\ r_{s0}=\frac{D_0-s_0}{2}$$</div>
+          <div class="equation sm">$$\sigma_I=\frac{A}{A-1}\,\sigma_{pI}\left[1-\left(\frac{r_s}{r_{s0}}\right)^{A-1}\right]$$</div>
+          <div class="equation sm">$$\sigma_{Io}=\frac{A}{A-1}\,\sigma_{pI}\left[1-\left(\frac{d_r+s_0}{D_0-s_0}\right)^{A-1}\right]$$</div>
+          <ul class="xs"><li>Okrajová podmienka: na vstupe σ<sub>I</sub> = 0 (bez protiťahu)</li></ul>
+        </div>
+        <div class="figure"><img src="img/book_slab_zone1.png" alt="Element v zóne I"><p class="img-caption">Element v zóne I (© Bílik, Necpal, Sobota 2023)</p></div>
+      </div>
+      <aside class="notes">[SM+0:00–0:01] Zóna I – rovnaký tvar ako pri drôte, len s polomerom strednice steny.</aside>
+    </section>
+    <section class="slide-full">
+      <div class="band"><span class="band-title">Pevný tŕň ↓</span><span class="band-sub">2 · Zóna II</span></div>
+      <h2>Zóna II – zmenšenie priemeru aj steny</h2>
+      <div class="equation sm">$$B=\frac{1+f\cot\alpha}{1-f\tan\alpha}+\frac{d_r}{d_r+s_0+s_r}\,f\cot\alpha$$</div>
+      <div class="equation sm">$$\sigma_{IIo}=\sigma_{Io}\,\Big[\tfrac{d_r+s_r}{d_r+s_0}\cdot\tfrac{s_r}{s_0}\Big]^{B-1}+\frac{B}{B-1}\,\sigma_{pII}\left(1-\Big[\tfrac{d_r+s_r}{d_r+s_0}\cdot\tfrac{s_r}{s_0}\Big]^{B-1}\right)$$</div>
+      <ul class="xs">
+        <li>Druhý člen v B = <span class="hl">trenie na tŕni</span> – preto je B &gt; A a sila rastie rýchlejšie</li>
+        <li>Napätie z konca zóny I vstupuje ako „protiťah“ do zóny II</li>
+        <li>D sa nahrádza stredným priemerom → \(d_r/D\approx d_r/(d_r+s_0+s_r)\)</li>
+      </ul>
+      <aside class="notes">[SM+0:01–0:02] Zóna II – kľúčový je prídavný člen trenia na tŕni.</aside>
+    </section>
+    <section class="slide-full">
+      <div class="band"><span class="band-title">Pevný tŕň ↓</span><span class="band-sub">3 · Zóna III a sila</span></div>
+      <h2>Zóna III – kalibrácia a ťažná sila</h2>
+      <div class="fig-row" style="grid-template-columns:1.2fr 1fr;">
+        <div class="v-center">
+          <div class="equation sm">$$\sigma_{III}=\sigma_{IIo}\,e^{2f x/s_r}+\sigma_{pIII}\left(1-e^{2f x/s_r}\right)$$</div>
+          <div class="equation sm">$$F=\sigma_{IIIc}\,S_r,\quad \sigma_{IIIc}=\sigma_{III}(x=l),\quad S_r=\pi(D_r-s_r)\,s_r$$</div>
+          <ul class="xs">
+            <li>Exponenciálny rast s dĺžkou kalibrácie l a trením f na <strong>oboch</strong> plochách</li>
+            <li>Zjednodušene: \(F_{\check{t}}=\sigma_{pstr}\,S_r\,\varphi/\eta_F\), \(\eta_F\) = 0,4–0,6 (φ = 0,15) až 0,7–0,8 (φ = 0,5)</li>
+          </ul>
+        </div>
+        <div class="figure"><img src="img/book_slab_zone3.png" alt="Element v kalibračnej zóne III"><p class="img-caption">Element v zóne III (© Bílik, Necpal, Sobota 2023)</p></div>
+      </div>
+      <aside class="notes">[SM+0:02–0:03] Zóna III – exponenciálny člen. Zjednodušený vzorec s účinnosťou ηF.</aside>
+    </section>
+    <section class="slide-full">
+      <div class="band"><span class="band-title">Pevný tŕň ↓</span><span class="band-sub">4 · Zhrnutie</span></div>
+      <h2>Zhrnutie a otázky</h2>
+      <ul class="xs">
+        <li>Napätie sa „načítava“ zónou po zóne: výstup jednej zóny je vstupom ďalšej</li>
+        <li>Trenie na tŕni (zóna II, III) robí ťahanie na tŕni náročnejším ako prievlačné ťahanie</li>
+        <li>Metóda dáva strednú silu, nie rozloženie napätí v stene</li>
+      </ul>
+      <ol class="xs">
+        <li class="fragment">Prečo je B v zóne II väčšie ako A v zóne I? <button class="answer-btn" data-answer="SM1">odpoveď</button><span class="answer-text">B obsahuje navyše člen trenia na tŕni d_r/(d_r+s_0+s_r)·f·cot α; v zóne II sa stena stenčuje medzi prievlakom a tŕňom.</span></li>
+        <li class="fragment">Čo je okrajová podmienka na vstupe do zóny I? <button class="answer-btn" data-answer="SM2">odpoveď</button><span class="answer-text">σ_I = 0 na vstupe (bez protiťahu); napätie na konci zóny I je vstupom do zóny II.</span></li>
+        <li class="fragment">Ako sa mení napätie v kalibračnej zóne s jej dĺžkou l? <button class="answer-btn" data-answer="SM3">odpoveď</button><span class="answer-text">Exponenciálne podľa e^(2f·l/s_r) – dlhšia kalibrácia a vyššie trenie zvyšujú ťažnú silu.</span></li>
+        <li class="fragment">Čo z tejto metódy nezískate? <button class="answer-btn" data-answer="SM4">odpoveď</button><span class="answer-text">Rozloženie napätí a pretvorení v stene, zvyškové napätia, zmenu hrúbky steny pri prievlačnom ťahaní – na to treba <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr>.</span></li>
+      </ol>
+      <p class="note-box">Stlačte <strong>↑</strong> pre návrat do hlavnej prednášky alebo <strong>→</strong> pre pokračovanie.</p>
+      <aside class="notes">[SM+0:03–0:04] Zhrnutie a otázky hĺbkového pohľadu.</aside>
+    </section>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Analytika</span><span class="band-sub">Redundantná práca</span></div>
+    <h2>Redundantná práca a vzorec typu Siebel</h2>
+    <div class="fig-row" style="grid-template-columns:1.2fr 1fr;">
+      <div class="v-center">
+        <div class="equation">$$\sigma_d=\sigma_f\Big[\underbrace{\varepsilon}_{\text{ideálna}}+\underbrace{\varepsilon\,\mu\cot\alpha}_{\text{trenie}}+\underbrace{\tfrac{2}{3}\alpha}_{\text{redundantná}}\Big]$$</div>
+        <ul class="xs">
+          <li>Šmyk na vstupe a výstupe z kužeľa → materiál sa deformuje viac, než vyžaduje zmena tvaru</li>
+          <li>Redundantná práca <span class="hl">rastie s uhlom α</span> (α v radiánoch)</li>
+          <li>Alternatíva: násobiť faktorom redundantnej práce (1,0 až ≈ 1,2 pre drôt)</li>
+        </ul>
+      </div>
+      <div class="v-center">
+        <div class="note-box" style="font-size:0.7em;"><strong>Príklad (tyč):</strong> σ<sub>f</sub> = 500 MPa, r = 20 %, α = 6°, μ = 0,1<br>ideálne: 112 MPa<br>metóda rezov: 196 MPa<br>Siebel: <strong>253 MPa</strong> (2,3 × ideál)</div>
+      </div>
+    </div>
+    <aside class="notes">[0:48–0:50] Tri zložky práce. Porovnanie troch modelov na jednom príklade.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Analytika</span><span class="band-sub">Optimálny uhol</span></div>
+    <h2>Optimálny uhol prievlaku</h2>
+    <div class="fig-row" style="grid-template-columns:0.9fr 1.3fr;">
+      <div class="v-center">
+        <div class="equation sm">$$\sin\alpha_{opt}\approx\sqrt{1{,}5\,\mu\,\varepsilon}$$</div>
+        <ul class="xs">
+          <li>Trenie klesá s α, redundantná práca rastie → <span class="hl">súčet má minimum</span></li>
+          <li>α<sub>opt</sub> rastie s trením aj s redukciou</li>
+          <li>Príklad: μ = 0,1, ε = 0,223 → α<sub>opt</sub> ≈ 10,5°</li>
+          <li class="fragment">Minimum je <strong>ploché</strong>: 8–14° dáva skoro rovnakú silu, 3° je o 47 % horší</li>
+        </ul>
+      </div>
+      <div class="figure svgfig">
+<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial" font-size="13">
+<rect x="55" y="20" width="385" height="235" fill="#fff" stroke="#bbb"/>
+<line x1="55" x2="440" y1="255.0" y2="255.0" stroke="#eee"/><text x="49" y="259.0" text-anchor="end" fill="#555">0</text>
+<line x1="55" x2="440" y1="202.8" y2="202.8" stroke="#eee"/><text x="49" y="206.8" text-anchor="end" fill="#555">100</text>
+<line x1="55" x2="440" y1="150.6" y2="150.6" stroke="#eee"/><text x="49" y="154.6" text-anchor="end" fill="#555">200</text>
+<line x1="55" x2="440" y1="98.3" y2="98.3" stroke="#eee"/><text x="49" y="102.3" text-anchor="end" fill="#555">300</text>
+<line x1="55" x2="440" y1="46.1" y2="46.1" stroke="#eee"/><text x="49" y="50.1" text-anchor="end" fill="#555">400</text>
+<text x="55.0" y="271" text-anchor="middle" fill="#555">2</text>
+<text x="97.8" y="271" text-anchor="middle" fill="#555">4</text>
+<text x="140.6" y="271" text-anchor="middle" fill="#555">6</text>
+<text x="183.3" y="271" text-anchor="middle" fill="#555">8</text>
+<text x="226.1" y="271" text-anchor="middle" fill="#555">10</text>
+<text x="268.9" y="271" text-anchor="middle" fill="#555">12</text>
+<text x="311.7" y="271" text-anchor="middle" fill="#555">14</text>
+<text x="354.4" y="271" text-anchor="middle" fill="#555">16</text>
+<text x="397.2" y="271" text-anchor="middle" fill="#555">18</text>
+<text x="440.0" y="271" text-anchor="middle" fill="#555">20</text>
+<text x="247.5" y="292" text-anchor="middle" fill="#333">polovičný uhol prievlaku α [°]</text>
+<text transform="translate(14,137.5) rotate(-90)" text-anchor="middle" fill="#333">napätie [MPa]</text>
+<polyline points="55.0,196.7 60.3,196.7 65.7,196.7 71.0,196.7 76.4,196.7 81.7,196.7 87.1,196.7 92.4,196.7 97.8,196.7 103.1,196.7 108.5,196.7 113.8,196.7 119.2,196.7 124.5,196.7 129.9,196.7 135.2,196.7 140.6,196.7 145.9,196.7 151.2,196.7 156.6,196.7 161.9,196.7 167.3,196.7 172.6,196.7 178.0,196.7 183.3,196.7 188.7,196.7 194.0,196.7 199.4,196.7 204.7,196.7 210.1,196.7 215.4,196.7 220.8,196.7 226.1,196.7 231.5,196.7 236.8,196.7 242.2,196.7 247.5,196.7 252.8,196.7 258.2,196.7 263.5,196.7 268.9,196.7 274.2,196.7 279.6,196.7 284.9,196.7 290.3,196.7 295.6,196.7 301.0,196.7 306.3,196.7 311.7,196.7 317.0,196.7 322.4,196.7 327.7,196.7 333.1,196.7 338.4,196.7 343.8,196.7 349.1,196.7 354.4,196.7 359.8,196.7 365.1,196.7 370.5,196.7 375.8,196.7 381.2,196.7 386.5,196.7 391.9,196.7 397.2,196.7 402.6,196.7 407.9,196.7 413.3,196.7 418.6,196.7 424.0,196.7 429.3,196.7 434.7,196.7 440.0,196.7" fill="none" stroke="#777" stroke-width="2" stroke-dasharray="6 4"/>
+<polyline points="55.0,88.2 60.3,106.7 65.7,121.6 71.0,133.7 76.4,143.8 81.7,152.4 87.1,159.7 92.4,166.1 97.8,171.7 103.1,176.6 108.5,181.0 113.8,184.9 119.2,188.4 124.5,191.6 129.9,194.5 135.2,197.1 140.6,199.6 145.9,201.8 151.2,203.9 156.6,205.8 161.9,207.5 167.3,209.2 172.6,210.7 178.0,212.2 183.3,213.5 188.7,214.8 194.0,216.0 199.4,217.1 204.7,218.2 210.1,219.2 215.4,220.2 220.8,221.1 226.1,222.0 231.5,222.8 236.8,223.6 242.2,224.3 247.5,225.0 252.8,225.7 258.2,226.4 263.5,227.0 268.9,227.6 274.2,228.2 279.6,228.7 284.9,229.3 290.3,229.8 295.6,230.3 301.0,230.7 306.3,231.2 311.7,231.6 317.0,232.1 322.4,232.5 327.7,232.9 333.1,233.3 338.4,233.6 343.8,234.0 349.1,234.3 354.4,234.7 359.8,235.0 365.1,235.3 370.5,235.6 375.8,235.9 381.2,236.2 386.5,236.5 391.9,236.8 397.2,237.1 402.6,237.3 407.9,237.6 413.3,237.8 418.6,238.1 424.0,238.3 429.3,238.5 434.7,238.8 440.0,239.0" fill="none" stroke="#e5001e" stroke-width="2" stroke-dasharray=""/>
+<polyline points="55.0,248.9 60.3,248.2 65.7,247.4 71.0,246.6 76.4,245.9 81.7,245.1 87.1,244.4 92.4,243.6 97.8,242.8 103.1,242.1 108.5,241.3 113.8,240.6 119.2,239.8 124.5,239.0 129.9,238.3 135.2,237.5 140.6,236.8 145.9,236.0 151.2,235.3 156.6,234.5 161.9,233.7 167.3,233.0 172.6,232.2 178.0,231.5 183.3,230.7 188.7,229.9 194.0,229.2 199.4,228.4 204.7,227.7 210.1,226.9 215.4,226.1 220.8,225.4 226.1,224.6 231.5,223.9 236.8,223.1 242.2,222.3 247.5,221.6 252.8,220.8 258.2,220.1 263.5,219.3 268.9,218.5 274.2,217.8 279.6,217.0 284.9,216.3 290.3,215.5 295.6,214.7 301.0,214.0 306.3,213.2 311.7,212.5 317.0,211.7 322.4,210.9 327.7,210.2 333.1,209.4 338.4,208.7 343.8,207.9 349.1,207.1 354.4,206.4 359.8,205.6 365.1,204.9 370.5,204.1 375.8,203.4 381.2,202.6 386.5,201.8 391.9,201.1 397.2,200.3 402.6,199.6 407.9,198.8 413.3,198.0 418.6,197.3 424.0,196.5 429.3,195.8 434.7,195.0 440.0,194.2" fill="none" stroke="#8b0014" stroke-width="2" stroke-dasharray="2 3"/>
+<polyline points="55.0,23.8 60.3,41.6 65.7,55.7 71.0,67.1 76.4,76.4 81.7,84.3 87.1,90.8 92.4,96.4 97.8,101.3 103.1,105.4 108.5,109.0 113.8,112.2 119.2,114.9 124.5,117.4 129.9,119.5 135.2,121.4 140.6,123.1 145.9,124.5 151.2,125.8 156.6,127.0 161.9,128.0 167.3,128.9 172.6,129.7 178.0,130.4 183.3,131.0 188.7,131.5 194.0,131.9 199.4,132.3 204.7,132.6 210.1,132.9 215.4,133.1 220.8,133.2 226.1,133.3 231.5,133.4 236.8,133.4 242.2,133.4 247.5,133.3 252.8,133.3 258.2,133.2 263.5,133.0 268.9,132.9 274.2,132.7 279.6,132.5 284.9,132.2 290.3,132.0 295.6,131.7 301.0,131.5 306.3,131.1 311.7,130.8 317.0,130.5 322.4,130.2 327.7,129.8 333.1,129.4 338.4,129.0 343.8,128.6 349.1,128.2 354.4,127.8 359.8,127.4 365.1,126.9 370.5,126.5 375.8,126.0 381.2,125.6 386.5,125.1 391.9,124.6 397.2,124.1 402.6,123.6 407.9,123.1 413.3,122.6 418.6,122.1 424.0,121.6 429.3,121.0 434.7,120.5 440.0,120.0" fill="none" stroke="#c8001e" stroke-width="3.5" stroke-dasharray=""/>
+<line x1="237.7" x2="237.7" y1="20" y2="255" stroke="#c8001e" stroke-dasharray="3 3"/>
+<circle cx="237.7" cy="133.4" r="5" fill="#c8001e"/>
+<text x="243.7" y="123.4" fill="#c8001e" font-weight="700">α<tspan baseline-shift="sub" font-size="9">opt</tspan> ≈ 10,5°</text>
+<line x1="290" x2="316" y1="34" y2="34" stroke="#c8001e" stroke-width="3.5" stroke-dasharray=""/><text x="322" y="38" fill="#222">celkové σ<tspan baseline-shift="sub" font-size="9">d</tspan></text>
+<line x1="290" x2="316" y1="52" y2="52" stroke="#e5001e" stroke-width="2" stroke-dasharray=""/><text x="322" y="56" fill="#222">trenie</text>
+<line x1="290" x2="316" y1="70" y2="70" stroke="#777" stroke-width="2" stroke-dasharray="6 4"/><text x="322" y="74" fill="#222">ideálna práca</text>
+<line x1="290" x2="316" y1="88" y2="88" stroke="#8b0014" stroke-width="2" stroke-dasharray="2 3"/><text x="322" y="92" fill="#222">redundantná práca</text>
+</svg>
+        <p class="img-caption">Zložky napätia podľa vzorca typu Siebel, σ<sub>f</sub> = 500 MPa, r = 20 %, μ = 0,1 (vlastný výpočet)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:50–0:52] Graf zložiek. Ploché minimum – dôležité pre interpretáciu rôznych „optimálnych“ uhlov v štúdiách.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Analytika</span><span class="band-sub">Medzná redukcia</span></div>
+    <h2>Medzná redukcia na jeden ťah</h2>
+    <div class="cols-2" style="grid-template-columns:1.1fr 1fr;">
+      <div>
+        <ul class="small">
+          <li>Podmienka: \(\sigma_d &lt; \sigma_f\) materiálu <strong>za prievlakom</strong></li>
+          <li>Ideálne, bez spevnenia: \(\varepsilon_{max}=1\Rightarrow r_{max}=1-1/e\approx 63\,\%\)</li>
+          <li>So spevnením \(\sigma=K\varepsilon^n\): \(r_{max}=1-e^{-(1+n)}\)</li>
+          <li class="fragment">S trením, redundantnou prácou a bezpečnosťou: <span class="hl">drôt 20–30 % na ťah</span></li>
+          <li class="fragment">Rúry: pevný tŕň ≈ do 30 %, plávajúci tŕň ≈ do 45 %, celkovo ≈ 50 %</li>
+        </ul>
+      </div>
+      <div>
+        <table class="tight">
+          <tr><th>n</th><th>r<sub>max</sub> (ideálne)</th></tr>
+          <tr><td>0</td><td>63 %</td></tr>
+          <tr><td>0,2</td><td>70 %</td></tr>
+          <tr><td>0,44</td><td>76 %</td></tr>
+        </table>
+        <p class="note-box">Spevnenie pomáha: ťahaná časť je pevnejšia ako deformovaná zóna.</p>
+      </div>
+    </div>
+    <aside class="notes">[0:52–0:54] Medzná redukcia, vplyv spevnenia, praktické hodnoty.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Analytika</span><span class="band-sub">Riešený príklad</span></div>
+    <h2>Riešený príklad: tyč Ø10 mm, r = 20 %</h2>
+    <div class="cols-2" style="grid-template-columns:1fr 1.2fr;">
+      <ul class="xs">
+        <li>A₀ = 78,54 mm², A₁ = 62,83 mm², D₁ = 8,94 mm</li>
+        <li>ε = 0,223, σ<sub>f</sub> = 500 MPa, α = 6°, μ = 0,1, v = 1 m/s</li>
+        <li class="fragment">F = 253 · 62,83 ≈ <strong>15,9 kN</strong>, P = F·v ≈ <strong>15,9 kW</strong></li>
+        <li class="fragment">Kontrola: 253 MPa &lt; 500 MPa → tyč sa ťahá, nepretrhne (rezerva ≈ 2×)</li>
+      </ul>
+      <table class="tight">
+        <tr><th>Model</th><th>σ<sub>d</sub> [MPa]</th></tr>
+        <tr><td>Ideálna práca</td><td>112</td></tr>
+        <tr><td>Metóda rezov (B = 0,951)</td><td>196</td></tr>
+        <tr><td>Siebel, α = 3°</td><td>342</td></tr>
+        <tr><td><strong>Siebel, α = 6°</strong></td><td><strong>253</strong></td></tr>
+        <tr><td>Siebel, α = 10°</td><td>233</td></tr>
+        <tr><td>Siebel, α = 15°</td><td>240</td></tr>
+      </table>
+    </div>
+    <aside class="notes">[0:54–0:56] Príklad – nechajte študentov prepočítať jeden riadok.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Analytika</span><span class="band-sub">Rúry</span></div>
+    <h2>Analytika verzus meranie pri rúre</h2>
+    <div class="cols-2" style="grid-template-columns:1fr 1fr;">
+      <div>
+        <p style="font-size:0.6em;margin:0;"><strong>a) Rúra na tŕni Ø30 × 3 → Ø27 × 2,5 mm</strong></p>
+        <ul class="xs">
+          <li>A₀ = 254,5 mm², A₁ = 192,4 mm², r = 24,4 %, ε = 0,28</li>
+          <li>σ<sub>f</sub> = 300 MPa → ideálne <strong>F ≈ 16 kN</strong></li>
+          <li>Zjednodušene, η<sub>F</sub> = 0,5 → <strong>F ≈ 32 kN</strong></li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:0.6em;margin:0;"><strong>b) Prievlačné ťahanie Ø16 × 2 → Ø12 mm (E235)</strong></p>
+        <ul class="xs">
+          <li>S₀ = 89,6 mm², S = 65,4 mm², φ = 0,315</li>
+          <li>σ<sub>pstr</sub> = (295 + 439)/2 ≈ 367 MPa</li>
+          <li class="fragment">Ideálne 7,6 kN · η<sub>F</sub> = 0,5–0,6 → 12,6–15,1 kN · Siebel (α ≈ 12°, μ = 0,08) → 13,8 kN</li>
+          <li class="fragment"><span class="hl">Meranie 21,5–22 kN</span> · <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> 20,5 kN</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note-box">Jednoduchá analytika pri prievlačnom ťahaní <strong>podhodnotí</strong> silu o ≈ 35 % – nezachytí ohyb steny na vstupe, zhrubnutie steny ani reálne mazanie. Dobrá na rád veličiny, nie na návrh.</p>
+    <p class="slide-source">Meranie a <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr>: Bílik, Necpal, Sobota 2023, kap. 3.3.2; analytický odhad: vlastný výpočet (uhol prievlaku pre odhad predpokladaný)</p>
+    <aside class="notes">[0:56–0:58] Dôležitá snímka: analytika vs meranie vs MKP. Uhol 12° je len predpoklad pre odhad.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Analytika</span><span class="band-sub">Hranice</span></div>
+    <h2>Čo analytika dokáže – a čo nie</h2>
+    <table class="mid">
+      <tr><th>Analytika dokáže</th><th>Analytika nedokáže</th></tr>
+      <tr><td>strednú silu a napätie ťahania</td><td>lokálne rozloženie pretvorení, napätí, teploty</td></tr>
+      <tr><td>trendy: redukcia, trenie, uhol</td><td>zvyškové napätia</td></tr>
+      <tr><td>medznú redukciu, optimálny uhol</td><td>tlak a opotrebenie nástroja v detaile</td></tr>
+      <tr><td>rýchlo, bez softvéru</td><td>excentricitu, ovalitu, rozloženie hrúbky steny</td></tr>
+      <tr><td></td><td>chyby (praskliny, povrchové chyby)</td></tr>
+    </table>
+    <p class="note-box">Analytika = prvý návrh a kontrola vierohodnosti. <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> = keď záleží na lokálnych poliach, rozmeroch, nástrojoch a chybách.</p>
+    <aside class="notes">[0:58–1:00] Hranice analytiky – prechod do časti III.</aside>
+  </section>
+  <!-- ═══ ČASŤ III ═══ -->
+  <section class="divider">
+    <h2>Časť III — Numerická simulácia a nastavenie modelu ťahania</h2>
+    <p style="color:#f0b0b8;">Implicitne / explicitne · Lagrange / <abbr title="Arbitrary Lagrangian–Eulerian (ľubovoľný Lagrangeov–Eulerov opis siete)">ALE</abbr> · materiál · trenie · sieť · okrajové podmienky</p>
+    <aside class="notes">[1:00] Časť III.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span><span class="band-sub">Štyri voľby</span></div>
+    <h2>Model = štyri nezávislé voľby</h2>
+    <table class="mid">
+      <tr><th>Voľba</th><th>Možnosti</th><th>Na čo odpovedá</th></tr>
+      <tr><td><strong>Časová integrácia</strong></td><td>implicitná / explicitná</td><td>Ako sa v kroku rieši pohybová rovnica?</td></tr>
+      <tr><td><strong>Opis siete</strong></td><td>Lagrange / <abbr title="Arbitrary Lagrangian–Eulerian (ľubovoľný Lagrangeov–Eulerov opis siete)">ALE</abbr> / Euler</td><td>Ide sieť s materiálom?</td></tr>
+      <tr><td><strong>Formulácia materiálu</strong></td><td>tuhoplastická / elastoplastická</td><td>Počítame aj pružné deformácie?</td></tr>
+      <tr><td><strong>Rozmer modelu</strong></td><td>2D osovo symetrický / 3D</td><td>Je úloha symetrická?</td></tr>
+    </table>
+    <p class="note-box">Často sa zamieňajú – napr. „explicitný“ neznamená „3D“ a „Lagrange“ neznamená „implicitný“.</p>
+    <aside class="notes">[1:00–1:02] Štyri osi rozhodovania – nezávislé.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span><span class="band-sub">Softvér</span></div>
+    <h2>Typické kombinácie v softvéri</h2>
+    <table class="tight">
+      <tr><th>Softvér / štúdia</th><th>Typická kombinácia</th></tr>
+      <tr><td><strong><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 2D / 3D</strong></td><td>implicitne, aktualizovaný Lagrange s automatickým preskieťovaním; tuhoplastický (tokový) alebo elastoplastický materiál; <abbr title="Arbitrary Lagrangian–Eulerian (ľubovoľný Lagrangeov–Eulerov opis siete)">ALE</abbr> riešič pre ustálené procesy</td></tr>
+      <tr><td><strong>Abaqus/Standard</strong></td><td>implicitne, Lagrange, elastoplasticky</td></tr>
+      <tr><td><strong>Abaqus/Explicit</strong></td><td>explicitne, Lagrange alebo adaptívna <abbr title="Arbitrary Lagrangian–Eulerian (ľubovoľný Lagrangeov–Eulerov opis siete)">ALE</abbr> sieť, elastoplasticky</td></tr>
+      <tr><td><strong>LS-DYNA</strong></td><td>explicitne aj implicitne; plávajúci tŕň riešený implicitne, 2D osovo symetricky</td></tr>
+      <tr><td><strong>MSC.Superform</strong> (Neves a kol.)</td><td>elastoplastická <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> ťahania na pevnom tŕni, porovnaná s riešením hornej hranice</td></tr>
+    </table>
+    <p class="slide-source">Zdroje: dokumentácia <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> a Abaqus; Neves a kol. 2005; konferencia LS-DYNA 2009</p>
+    <aside class="notes">[1:02–1:04] Kde sa s čím stretnete. Naše štúdie: DEFORM, implicitne, Lagrange.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span><span class="band-sub">Základný model</span></div>
+    <h2>Základný model ťahania rúry – vstupy</h2>
+    <table class="tight">
+      <tr><th>Položka</th><th>Čo zadať</th><th>Poznámka z praxe</th></tr>
+      <tr><td><strong>Geometria</strong></td><td>rúra D₀, s₀, L; prievlak α, kalibrácia; tŕň</td><td>rúra dosť dlhá na ustálený stav</td></tr>
+      <tr><td><strong>Nástroje</strong></td><td>tuhé alebo pružné</td><td>tuhé stačia na silu a pretvorenie</td></tr>
+      <tr><td><strong>Materiál</strong></td><td>krivka σ(ε, ε̇, T), príp. E, ν</td><td>z ťahovej skúšky, napr. σ = c·εⁿ·ε̇ᵐ + y</td></tr>
+      <tr><td><strong>Trenie</strong></td><td>μ alebo m, zvlášť prievlak a tŕň</td><td><span class="hl">najcitlivejší vstup</span> – kalibrovať meraním sily</td></tr>
+      <tr><td><strong>Okrajové podmienky</strong></td><td>rýchlosť / posuv; uchytenie tŕňa</td><td>9 m/min v našich štúdiách</td></tr>
+      <tr><td><strong>Sieť</strong></td><td>veľkosť prvkov, prvky cez stenu</td><td>4–8 prvkov cez stenu v 2D</td></tr>
+      <tr><td><strong>Teplo</strong></td><td>deformačné a trecie teplo</td><td>pri pomalom ťahaní často zanedbané</td></tr>
+      <tr><td><strong>Viac ťahov</strong></td><td>stav po 1. ťahu = začiatok 2. ťahu</td><td>bez žíhania sa prenáša aj spevnenie</td></tr>
+    </table>
+    <aside class="notes">[1:04–1:06] Spoločné vstupy pre každý model. Kvalita krivky spevnenia a trenia rozhoduje viac ako voľba riešiča.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span><span class="band-sub">Materiál</span></div>
+    <h2>Materiálové modely v našich štúdiách</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.25fr;">
+      <div class="v-center">
+        <div class="equation sm">$$\sigma=c\,\bar\varepsilon^{\,n}\,\dot{\bar\varepsilon}^{\,m}+y$$</div>
+        <table class="tight">
+          <tr><th>Oceľ</th><th>c</th><th>n</th><th>m</th><th>y [MPa]</th></tr>
+          <tr><td>E235</td><td>178</td><td>0,61</td><td>0,02</td><td>235,5</td></tr>
+          <tr><td>E355</td><td>404</td><td>0,63</td><td>0,02</td><td>345</td></tr>
+          <tr><td>SPT360</td><td>632,8</td><td>0,1914</td><td>0</td><td>71,27</td></tr>
+        </table>
+        <ul class="xs">
+          <li>Mäkká oceľ: \(\sigma=513\,\bar\varepsilon^{0,44}+325\) MPa (Holmquist–Johnson)</li>
+          <li>Plastický, izotropné spevnenie, von Mises, bez vplyvu teploty</li>
+        </ul>
+      </div>
+      <div class="figure svgfig">
+<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial" font-size="13">
+<rect x="55" y="20" width="385" height="235" fill="#fff" stroke="#bbb"/>
+<line x1="55" x2="440" y1="255.0" y2="255.0" stroke="#eee"/><text x="49" y="259.0" text-anchor="end" fill="#555">0</text>
+<line x1="55" x2="440" y1="215.8" y2="215.8" stroke="#eee"/><text x="49" y="219.8" text-anchor="end" fill="#555">150</text>
+<line x1="55" x2="440" y1="176.7" y2="176.7" stroke="#eee"/><text x="49" y="180.7" text-anchor="end" fill="#555">300</text>
+<line x1="55" x2="440" y1="137.5" y2="137.5" stroke="#eee"/><text x="49" y="141.5" text-anchor="end" fill="#555">450</text>
+<line x1="55" x2="440" y1="98.3" y2="98.3" stroke="#eee"/><text x="49" y="102.3" text-anchor="end" fill="#555">600</text>
+<line x1="55" x2="440" y1="59.2" y2="59.2" stroke="#eee"/><text x="49" y="63.2" text-anchor="end" fill="#555">750</text>
+<line x1="55" x2="440" y1="20.0" y2="20.0" stroke="#eee"/><text x="49" y="24.0" text-anchor="end" fill="#555">900</text>
+<text x="55.0" y="271" text-anchor="middle" fill="#555">0.0</text>
+<text x="132.0" y="271" text-anchor="middle" fill="#555">0.2</text>
+<text x="209.0" y="271" text-anchor="middle" fill="#555">0.4</text>
+<text x="286.0" y="271" text-anchor="middle" fill="#555">0.6</text>
+<text x="363.0" y="271" text-anchor="middle" fill="#555">0.8</text>
+<text x="440.0" y="271" text-anchor="middle" fill="#555">1.0</text>
+<text x="247.5" y="292" text-anchor="middle" fill="#333">efektívne pretvorenie ε̄ [-]</text>
+<text transform="translate(14,137.5) rotate(-90)" text-anchor="middle" fill="#333">pretvárny odpor σ [MPa]</text>
+<polyline points="55.0,193.5 58.9,190.7 62.7,189.2 66.5,188.0 70.4,187.0 74.2,186.0 78.1,185.2 82.0,184.3 85.8,183.6 89.7,182.8 93.5,182.1 97.3,181.4 101.2,180.8 105.1,180.1 108.9,179.5 112.8,178.9 116.6,178.3 120.5,177.7 124.3,177.2 128.2,176.6 132.0,176.1 135.8,175.6 139.7,175.1 143.6,174.5 147.4,174.0 151.2,173.6 155.1,173.1 158.9,172.6 162.8,172.1 166.6,171.7 170.5,171.2 174.3,170.8 178.2,170.3 182.1,169.9 185.9,169.4 189.8,169.0 193.6,168.6 197.4,168.2 201.3,167.8 205.2,167.3 209.0,166.9 212.8,166.5 216.7,166.1 220.6,165.7 224.4,165.3 228.2,165.0 232.1,164.6 235.9,164.2 239.8,163.8 243.7,163.4 247.5,163.1 251.3,162.7 255.2,162.3 259.1,162.0 262.9,161.6 266.8,161.2 270.6,160.9 274.4,160.5 278.3,160.2 282.1,159.8 286.0,159.5 289.9,159.1 293.7,158.8 297.6,158.4 301.4,158.1 305.2,157.8 309.1,157.4 312.9,157.1 316.8,156.8 320.6,156.4 324.5,156.1 328.3,155.8 332.2,155.5 336.1,155.1 339.9,154.8 343.8,154.5 347.6,154.2 351.4,153.9 355.3,153.6 359.2,153.3 363.0,152.9 366.9,152.6 370.7,152.3 374.6,152.0 378.4,151.7 382.2,151.4 386.1,151.1 389.9,150.8 393.8,150.5 397.6,150.2 401.5,149.9 405.4,149.6 409.2,149.3 413.1,149.0 416.9,148.8 420.8,148.5 424.6,148.2 428.4,147.9 432.3,147.6 436.1,147.3 440.0,147.0" fill="none" stroke="#777" stroke-width="2.5" stroke-dasharray=""/>
+<line x1="225" x2="251" y1="181" y2="181" stroke="#777" stroke-width="2.5" stroke-dasharray=""/><text x="257" y="185" fill="#222">E235 (02, 03, 04)</text>
+<polyline points="55.0,164.9 58.9,159.1 62.7,155.9 66.5,153.3 70.4,151.0 74.2,148.9 78.1,147.0 82.0,145.2 85.8,143.4 89.7,141.8 93.5,140.2 97.3,138.7 101.2,137.2 105.1,135.7 108.9,134.3 112.8,133.0 116.6,131.7 120.5,130.4 124.3,129.1 128.2,127.9 132.0,126.6 135.8,125.5 139.7,124.3 143.6,123.1 147.4,122.0 151.2,120.9 155.1,119.8 158.9,118.7 162.8,117.6 166.6,116.6 170.5,115.5 174.3,114.5 178.2,113.5 182.1,112.5 185.9,111.5 189.8,110.5 193.6,109.5 197.4,108.5 201.3,107.6 205.2,106.6 209.0,105.7 212.8,104.8 216.7,103.8 220.6,102.9 224.4,102.0 228.2,101.1 232.1,100.2 235.9,99.4 239.8,98.5 243.7,97.6 247.5,96.8 251.3,95.9 255.2,95.0 259.1,94.2 262.9,93.4 266.8,92.5 270.6,91.7 274.4,90.9 278.3,90.1 282.1,89.3 286.0,88.5 289.9,87.7 293.7,86.9 297.6,86.1 301.4,85.3 305.2,84.5 309.1,83.7 312.9,83.0 316.8,82.2 320.6,81.4 324.5,80.7 328.3,79.9 332.2,79.1 336.1,78.4 339.9,77.7 343.8,76.9 347.6,76.2 351.4,75.4 355.3,74.7 359.2,74.0 363.0,73.3 366.9,72.5 370.7,71.8 374.6,71.1 378.4,70.4 382.2,69.7 386.1,69.0 389.9,68.3 393.8,67.6 397.6,66.9 401.5,66.2 405.4,65.5 409.2,64.8 413.1,64.1 416.9,63.5 420.8,62.8 424.6,62.1 428.4,61.4 432.3,60.8 436.1,60.1 440.0,59.4" fill="none" stroke="#8b0014" stroke-width="2.5" stroke-dasharray=""/>
+<line x1="225" x2="251" y1="199" y2="199" stroke="#8b0014" stroke-width="2.5" stroke-dasharray=""/><text x="257" y="203" fill="#222">E355 (02)</text>
+<polyline points="55.0,236.4 58.9,168.0 62.7,158.2 66.5,151.9 70.4,147.2 74.2,143.3 78.1,140.0 82.0,137.1 85.8,134.5 89.7,132.2 93.5,130.1 97.3,128.1 101.2,126.3 105.1,124.6 108.9,123.0 112.8,121.5 116.6,120.0 120.5,118.7 124.3,117.4 128.2,116.2 132.0,115.0 135.8,113.8 139.7,112.7 143.6,111.7 147.4,110.7 151.2,109.7 155.1,108.7 158.9,107.8 162.8,106.9 166.6,106.0 170.5,105.2 174.3,104.3 178.2,103.5 182.1,102.8 185.9,102.0 189.8,101.2 193.6,100.5 197.4,99.8 201.3,99.1 205.2,98.4 209.0,97.7 212.8,97.1 216.7,96.4 220.6,95.8 224.4,95.2 228.2,94.6 232.1,94.0 235.9,93.4 239.8,92.8 243.7,92.2 247.5,91.7 251.3,91.1 255.2,90.6 259.1,90.1 262.9,89.5 266.8,89.0 270.6,88.5 274.4,88.0 278.3,87.5 282.1,87.0 286.0,86.5 289.9,86.1 293.7,85.6 297.6,85.1 301.4,84.7 305.2,84.2 309.1,83.8 312.9,83.4 316.8,82.9 320.6,82.5 324.5,82.1 328.3,81.6 332.2,81.2 336.1,80.8 339.9,80.4 343.8,80.0 347.6,79.6 351.4,79.2 355.3,78.8 359.2,78.4 363.0,78.1 366.9,77.7 370.7,77.3 374.6,76.9 378.4,76.6 382.2,76.2 386.1,75.9 389.9,75.5 393.8,75.2 397.6,74.8 401.5,74.5 405.4,74.1 409.2,73.8 413.1,73.4 416.9,73.1 420.8,72.8 424.6,72.4 428.4,72.1 432.3,71.8 436.1,71.5 440.0,71.2" fill="none" stroke="#e5001e" stroke-width="2.5" stroke-dasharray="6 4"/>
+<line x1="225" x2="251" y1="217" y2="217" stroke="#e5001e" stroke-width="2.5" stroke-dasharray="6 4"/><text x="257" y="221" fill="#222">SPT360 (09)</text>
+<polyline points="55.0,170.1 58.9,152.5 62.7,146.2 66.5,141.5 70.4,137.6 74.2,134.3 78.1,131.3 82.0,128.6 85.8,126.1 89.7,123.7 93.5,121.5 97.3,119.4 101.2,117.4 105.1,115.6 108.9,113.7 112.8,112.0 116.6,110.3 120.5,108.7 124.3,107.2 128.2,105.6 132.0,104.2 135.8,102.7 139.7,101.3 143.6,100.0 147.4,98.7 151.2,97.4 155.1,96.1 158.9,94.8 162.8,93.6 166.6,92.4 170.5,91.3 174.3,90.1 178.2,89.0 182.1,87.9 185.9,86.8 189.8,85.7 193.6,84.7 197.4,83.7 201.3,82.6 205.2,81.6 209.0,80.6 212.8,79.7 216.7,78.7 220.6,77.7 224.4,76.8 228.2,75.9 232.1,75.0 235.9,74.1 239.8,73.2 243.7,72.3 247.5,71.4 251.3,70.5 255.2,69.7 259.1,68.8 262.9,68.0 266.8,67.2 270.6,66.4 274.4,65.5 278.3,64.7 282.1,63.9 286.0,63.2 289.9,62.4 293.7,61.6 297.6,60.8 301.4,60.1 305.2,59.3 309.1,58.6 312.9,57.8 316.8,57.1 320.6,56.4 324.5,55.6 328.3,54.9 332.2,54.2 336.1,53.5 339.9,52.8 343.8,52.1 347.6,51.4 351.4,50.7 355.3,50.1 359.2,49.4 363.0,48.7 366.9,48.1 370.7,47.4 374.6,46.7 378.4,46.1 382.2,45.4 386.1,44.8 389.9,44.2 393.8,43.5 397.6,42.9 401.5,42.3 405.4,41.6 409.2,41.0 413.1,40.4 416.9,39.8 420.8,39.2 424.6,38.6 428.4,38.0 432.3,37.4 436.1,36.8 440.0,36.2" fill="none" stroke="#c8001e" stroke-width="2.5" stroke-dasharray="2 3"/>
+<line x1="225" x2="251" y1="235" y2="235" stroke="#c8001e" stroke-width="2.5" stroke-dasharray="2 3"/><text x="257" y="239" fill="#222">mäkká oceľ (05, 07, 10)</text>
+</svg>
+        <p class="img-caption">Krivky pretvárneho odporu pri \(\dot{\bar\varepsilon}\) = 1 s⁻¹ (vlastný výpočet z parametrov v článkoch)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:06–1:08] Väzba na prednášku 3. SPT360: m = 0, lebo z ťahovej skúšky sa citlivosť na rýchlosť nedá určiť.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span><span class="band-sub">Trenie</span></div>
+    <h2>Trenie – najcitlivejší vstup</h2>
+    <div class="cols-2" style="grid-template-columns:1.1fr 1fr;">
+      <div>
+        <div class="equation sm">$$\text{Coulomb: }\tau=\mu\,p \qquad \text{šmykové: }\tau=m\,k=m\,\frac{\sigma_f}{\sqrt3}$$</div>
+        <ul class="xs">
+          <li>Coulomb – pri nízkom tlaku; šmykový model – pri vysokom tlaku (objemové tvárnenie, <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr>)</li>
+          <li>Literatúra uvádza pre ťahanie μ ≈ 0,02–0,03 – <span class="hl">nespoľahlivé</span> pre konkrétne mazivo a nástroj</li>
+          <li class="fragment">Naše hodnoty: m = 0,08 (všeobecne), m ≈ 0,053–0,054 (karbidový prievlak, inverzne z merania)</li>
+          <li class="fragment">LS-DYNA, plávajúci tŕň: μ prievlaku 0,05 → 0,10 zvýši silu ≈ o 20 %</li>
+        </ul>
+      </div>
+      <div>
+        <div class="flow-box">Zmerať silu ťahania</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Simulovať pre niekoľko hodnôt trenia</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key">Nájsť trenie, pri ktorom sa sily zhodujú <span class="flow-note">(inverzná analýza, časť IV)</span></div>
+      </div>
+    </div>
+    <aside class="notes">[1:08–1:10] Dva modely trenia. Kalibrácia trenia meraním – podrobne v štúdii z roku 2018.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span><span class="band-sub">Implicitne</span></div>
+    <h2>Implicitná analýza</h2>
+    <div class="cols-2">
+      <div>
+        <ul class="xs">
+          <li>V každom kroku sa rieši <strong>sústava rovníc</strong> (Newton–Raphson)</li>
+          <li><strong>Bezpodmienečne stabilná</strong> – veľký krok, obmedzený len konvergenciou</li>
+          <li>Rieši rovnováhu (kvázistaticky)</li>
+        </ul>
+        <p style="font-size:0.6em;margin:0.3em 0 0;"><strong>Nastavenie pre ťahanie:</strong></p>
+        <ul class="xs">
+          <li>kvázistatický krok, riadený posuvom</li>
+          <li>zabrániť pohybu tuhého telesa (tŕň uchytiť)</li>
+          <li>kontakt prievlak–rúra a tŕň–rúra s trením, malé kroky pri prvom dotyku</li>
+          <li>krok: uzol sa nesmie posunúť o viac ako zlomok najmenšieho prvku</li>
+        </ul>
+      </div>
+      <table class="tight">
+        <tr><th>Výhody</th><th>Nevýhody</th></tr>
+        <tr><td>efektívna pre pomalé procesy</td><td>drahé kroky, veľa pamäte</td></tr>
+        <tr><td>hladké výsledky</td><td>konvergencia pri zmenách kontaktu</td></tr>
+        <tr><td>priamo odľahčenie a zvyškové napätia</td><td>plávajúci tŕň treba stabilizovať</td></tr>
+        <tr><td>veľké kroky</td><td>chyby z mapovania pri preskieťovaní</td></tr>
+      </table>
+    </div>
+    <p class="note-box">LS-DYNA, plávajúci tŕň: statické riešenie dalo podobnú silu ako dynamické za 22 min namiesto 104 min.</p>
+    <aside class="notes">[1:10–1:12] Implicitná analýza – princíp, nastavenie, výhody a nevýhody.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span><span class="band-sub">Explicitne</span></div>
+    <h2>Explicitná analýza</h2>
+    <div class="cols-2" style="grid-template-columns:1.1fr 1fr;">
+      <div>
+        <ul class="xs">
+          <li>Nový stav sa vypočíta <strong>priamo</strong> zo súčasného – lacný krok</li>
+          <li><strong>Podmienečne stabilná:</strong> \(\Delta t \le L_{min}/c\), \(c=\sqrt{E/\rho}\)</li>
+          <li>Vždy dynamická rovnováha – rýchlosť zaťaženia má vplyv</li>
+        </ul>
+        <div class="note-box" style="font-size:0.62em;"><strong>Odhad:</strong> c ≈ 5000 m/s, L = 0,25 mm → Δt ≈ 5·10⁻⁸ s<br>50 mm pri 9 m/min = 0,33 s → <strong>≈ 7 miliónov krokov</strong></div>
+        <ul class="xs">
+          <li class="fragment">Preto: zrýchlenie procesu a / alebo <span class="hl">škálovanie hmotnosti</span></li>
+          <li class="fragment">Kontrola: kinetická / vnútorná energia (<abbr title="Abaqus output: total kinetic energy (celková kinetická energia)">ALLKE</abbr>/<abbr title="Abaqus output: total internal energy (celková vnútorná energia)">ALLIE</abbr>) &lt; 5–10 %</li>
+        </ul>
+      </div>
+      <table class="tight">
+        <tr><th>Výhody</th><th>Nevýhody</th></tr>
+        <tr><td>žiadne problémy s konvergenciou</td><td>veľmi malý krok</td></tr>
+        <tr><td>lacné kroky, málo pamäte</td><td>zrýchlenie môže pokaziť kvázistatiku</td></tr>
+        <tr><td>voľný pohyb plávajúceho tŕňa</td><td>zašumené výsledky – filtrovať</td></tr>
+        <tr><td>jednoduché porušovanie</td><td>citlivosť na malé prvky</td></tr>
+      </table>
+    </div>
+    <aside class="notes">[1:12–1:14] Explicitne – odhad počtu krokov je vlastný výpočet rádu veličiny.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span><span class="band-sub">Porovnanie</span></div>
+    <h2>Implicitne alebo explicitne?</h2>
+    <table class="mid">
+      <tr><th></th><th>Implicitne</th><th>Explicitne</th></tr>
+      <tr><td><strong>Krok</strong></td><td>veľký, drahý</td><td>malý, lacný</td></tr>
+      <tr><td><strong>Stabilita</strong></td><td>bezpodmienečná</td><td>podmienečná (Δt kritické)</td></tr>
+      <tr><td><strong>Kontakt</strong></td><td>môže zlyhať konvergencia</td><td>robustný</td></tr>
+      <tr><td><strong>Sila</strong></td><td>hladká</td><td>oscilujúca – priemerovať</td></tr>
+      <tr><td><strong>Zvyškové napätia</strong></td><td>priamo</td><td>prenosom do implicitného riešiča</td></tr>
+      <tr><td><strong>Typicky pre ťahanie</strong></td><td><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr>, Abaqus/Standard</td><td>Abaqus/Explicit, LS-DYNA</td></tr>
+    </table>
+    <p class="note-box"><strong>Hybrid v praxi:</strong> tvárnenie explicitne → prenos výsledku → odpruženie a zvyškové napätia implicitne.</p>
+    <aside class="notes">[1:14–1:16] Súhrnná tabuľka a hybridný postup.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span><span class="band-sub">Lagrange</span></div>
+    <h2>Lagrangeov opis – sieť ide s materiálom</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.2fr;">
+      <ul class="v-center xs">
+        <li>Uzly sú pripojené k materiálovým bodom; <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr>: <strong>aktualizovaný Lagrange</strong>, neznáme sú rýchlosti</li>
+        <li>Prirodzene sleduje voľné povrchy, kontakt a <strong>históriu</strong> každého bodu</li>
+        <li>2D: štruktúrovaná sieť, <strong>4–8 prvkov cez stenu</strong>; pri strednom pretvorení bez preskieťovania</li>
+        <li>Fázy: <strong>nábeh → ustálený stav → dobeh</strong>; silu čítame v ustálenej časti</li>
+        <li class="fragment">Viac ťahov: konečná sieť a stav 1. ťahu → začiatok 2. ťahu</li>
+      </ul>
+      <div class="figure">
+        <img src="img/p02_phi3.jpeg" alt="2D osovo symetrický model dvoch ťahov rúry v DEFORM so sieťou">
+        <p class="img-caption">2D osovo symetrický Lagrangeov model, 1. a 2. ťah, pozdĺžne pretvorenie (© Necpal, Martinkovič 2019, CC BY 3.0)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:16–1:18] Lagrange – sieť na obrázku sa deformuje s materiálom.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span><span class="band-sub"><abbr title="Arbitrary Lagrangian–Eulerian (ľubovoľný Lagrangeov–Eulerov opis siete)">ALE</abbr> a Euler</span></div>
+    <h2><abbr title="Arbitrary Lagrangian–Eulerian (ľubovoľný Lagrangeov–Eulerov opis siete)">ALE</abbr> a Eulerov opis</h2>
+    <div class="cols-2">
+      <div>
+        <ul class="xs">
+          <li><strong><abbr title="Arbitrary Lagrangian–Eulerian (ľubovoľný Lagrangeov–Eulerov opis siete)">ALE</abbr>:</strong> sieť sa môže pohybovať nezávisle od materiálu, zachováva topológiu → menšie skreslenie</li>
+          <li><strong>Euler:</strong> sieť je pevná v priestore, materiál ňou preteká (Abaqus <abbr title="Coupled Eulerian–Lagrangian (zviazaný Eulerov–Lagrangeov opis)">CEL</abbr>)</li>
+          <li><strong>Ustálený stav:</strong> geometria v prievlaku sa nemení → modelovať len krátky úsek s vtokom a výtokom</li>
+          <li class="fragment">Publikované nastavenie <abbr title="Arbitrary Lagrangian–Eulerian (ľubovoľný Lagrangeov–Eulerov opis siete)">ALE</abbr> pre ťahanie rúr sme v zdrojoch <strong>nenašli</strong> – väčšina štúdií je lagrangeovská</li>
+        </ul>
+      </div>
+      <table class="tight">
+        <tr><th>Výhody</th><th>Nevýhody</th></tr>
+        <tr><td>menšie skreslenie siete</td><td>náročnejšie okrajové podmienky</td></tr>
+        <tr><td>malá oblasť, krátky výpočet</td><td>len ustálený stav – bez nábehu a dobehu</td></tr>
+        <tr><td>hladké polia</td><td>história sa prenáša s chybou</td></tr>
+        <tr><td></td><td>nie je v každom riešiči</td></tr>
+      </table>
+    </div>
+    <aside class="notes">[1:18–1:20] ALE a Euler – princíp ustáleného stavu.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span><span class="band-sub">Formulácia</span></div>
+    <h2>Tuhoplastická verzus elastoplastická formulácia</h2>
+    <table class="tight">
+      <tr><th></th><th>Tuhoplastická (toková)</th><th>Elastoplastická</th></tr>
+      <tr><td><strong>Myšlienka</strong></td><td>pružné deformácie zanedbané, neznáme rýchlosti, nestlačiteľnosť penalizáciou</td><td>pružné aj plastické deformácie</td></tr>
+      <tr><td><strong>Základ</strong></td><td>Kobayashi, Oh, Altan; klasický riešič <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr></td><td>Abaqus, MSC.Superform, voľba v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr></td></tr>
+      <tr><td><strong>Vhodná na</strong></td><td>silu, pretvorenie, hrúbku steny</td><td><span class="hl">zvyškové napätia</span>, odpruženie</td></tr>
+      <tr><td><strong>Nevhodná na</strong></td><td>zvyškové napätia, pružné javy</td><td>– (vyššia cena, horšia konvergencia)</td></tr>
+    </table>
+    <div class="equation sm">$$\delta\Pi=\int_V\bar\sigma\,\delta\dot{\bar\varepsilon}\,dV+K\!\int_V\dot\varepsilon_V\,\delta\dot\varepsilon_V\,dV-\int_{S_F}\bar t_i\,\delta v_i\,dS=0$$</div>
+    <p class="note-box">Nástroje: tuhé stačia na silu a pretvorenie; <strong>pružný prievlak</strong> (prípadne s nalisovaným krúžkom) pre napätie a opotrebenie nástroja.</p>
+    <aside class="notes">[1:20–1:22] Tuhoplastický funkcionál z našich článkov 2020. Vysvetliť penalizačný člen K.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span><span class="band-sub">2D / 3D</span></div>
+    <h2>2D osovo symetricky alebo 3D?</h2>
+    <div class="fig-row" style="grid-template-columns:1.1fr 1fr;">
+      <div class="v-center">
+        <table class="tight">
+          <tr><th></th><th>2D osovo symetricky</th><th>3D</th></tr>
+          <tr><td>Platí, keď</td><td>rúra, prievlak, tŕň sú súosové</td><td>excentricita, ovalita, profil</td></tr>
+          <tr><td>Výsledky</td><td>sila, pretvorenie, stena</td><td>+ excentricita, ovalita, plný obraz zvyškových napätí</td></tr>
+          <tr><td>Čas</td><td>nízky – parametrické štúdie</td><td>vysoký</td></tr>
+          <tr><td>Krok (naša štúdia)</td><td>1·10⁻⁴ s</td><td>1·10⁻⁵ s</td></tr>
+        </table>
+        <ul class="xs"><li class="fragment">Rebrovaný tŕň: <strong>štvrtinový 3D model</strong> (zrkadlová symetria), zjemnená sieť v rebre</li></ul>
+      </div>
+      <div class="figure">
+        <img src="img/p10_mesh.jpeg" alt="Tetraedrická sieť so zjemnením v oblasti rebra: 0,7 mm a 0,07 mm">
+        <p class="img-caption">Zjemnenie siete v rebre: 0,7 mm → 0,07 mm (© Necpal, Martinkovič 2019, <abbr title="Danube Adria Association for Automation and Manufacturing (organizátor sympózia)">DAAAM</abbr>)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:22–1:24] 2D vs 3D. Rozdiel časového kroku o rád.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span><span class="band-sub">Nastavenie v praxi</span></div>
+    <h2>Ako sme nastavovali modely v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr></h2>
+    <table class="tight">
+      <tr><th>Položka</th><th>2D (02, 03, 04, 09)</th><th>3D (05, 07, 10; kniha)</th></tr>
+      <tr><td>Opis</td><td>Lagrange, osovo symetricky</td><td>Lagrange, štvrtinový model / celá rúra</td></tr>
+      <tr><td>Sieť</td><td>4–8 štvoruholníkov cez stenu, bez preskieťovania</td><td>tetraédre, 160 000–592 000 prvkov, preskieťovanie každých 50 krokov</td></tr>
+      <tr><td>Nástroje</td><td colspan="2">tuhý prievlak, tuhý tŕň</td></tr>
+      <tr><td>Rýchlosť</td><td>9 m/min; 60 mm/min (<abbr title="Design of Experiments (plánovanie experimentu)">DOE</abbr>)</td><td>9 m/min; 1–800 mm/s (parametrické štúdie)</td></tr>
+      <tr><td>Trenie</td><td colspan="2">šmykové, m = 0,08 alebo 0,054 (z merania)</td></tr>
+      <tr><td>Okrajová podmienka</td><td>ťahá sa hrot rúry</td><td>rúra 10: <strong>posúvajú sa nástroje</strong>, koniec rúry upnutý – lepšia konvergencia</td></tr>
+      <tr><td>Vyhodnotenie</td><td colspan="2">len ustálená stredná časť rúry; sila = priemer v ustálenom stave</td></tr>
+    </table>
+    <aside class="notes">[1:24–1:26] Konkrétne nastavenia z našich článkov – čísla v zátvorkách sú čísla zdrojov.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span><span class="band-sub">Očakávania</span></div>
+    <h2>Čo môžeme od ktorej simulácie čakať</h2>
+    <table class="tight">
+      <tr><th>Výsledok</th><th>Impl. Lagrange tuhoplast.</th><th>Impl. Lagrange elastoplast.</th><th>Explicitne</th><th><abbr title="Arbitrary Lagrangian–Eulerian (ľubovoľný Lagrangeov–Eulerov opis siete)">ALE</abbr> ustálený</th></tr>
+      <tr><td>Sila ťahania</td><td>áno</td><td>áno</td><td>áno, filtrovať</td><td>áno</td></tr>
+      <tr><td>Pretvorenie, hrúbka steny</td><td>áno</td><td>áno</td><td>áno</td><td>áno (hladké)</td></tr>
+      <tr><td>Zvyškové napätia</td><td>nie</td><td><strong>áno</strong></td><td>prenosom</td><td>podľa riešiča</td></tr>
+      <tr><td>Tlak / napätie v nástroji</td><td>len tlak</td><td>áno, pružný prievlak</td><td>len tlak</td><td>áno</td></tr>
+      <tr><td>Nábeh a dobeh</td><td>áno</td><td>áno</td><td>áno</td><td><strong>nie</strong></td></tr>
+      <tr><td>Poloha plávajúceho tŕňa</td><td>ťažko</td><td>ťažko</td><td>prirodzene</td><td>nevhodné</td></tr>
+      <tr><td>Chyby (porušenie)</td><td>s kritériom</td><td>áno</td><td>áno</td><td>obmedzene</td></tr>
+    </table>
+    <p class="note-box">Príklad z literatúry: väčší uhol 2α (6° → 38°) zvýšil opotrebenie tŕňa o viac ako 80 %, prievlaku len o ≈ 5 % (Wasilewski a kol. 2025).</p>
+    <aside class="notes">[1:26–1:28] Matica očakávaní.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span><span class="band-sub">Problémy</span></div>
+    <h2>Typické numerické problémy a nápravy</h2>
+    <table class="tight">
+      <tr><th>Problém</th><th>Príčina</th><th>Náprava</th></tr>
+      <tr><td>Skreslenie siete na vstupe / pri tŕni</td><td>veľké lokálne pretvorenie</td><td>jemnejšia sieť, preskieťovanie, <abbr title="Arbitrary Lagrangian–Eulerian (ľubovoľný Lagrangeov–Eulerov opis siete)">ALE</abbr></td></tr>
+      <tr><td>Implicitný výpočet nekonverguje</td><td>zmeny kontaktu, pohyb tuhého telesa</td><td>menší krok, lepší počiatočný kontakt, väzby</td></tr>
+      <tr><td>Tŕň „prejde“ prievlakom</td><td>vysoké trenie na tŕni, nestabilná poloha</td><td>znížiť trenie na tŕni, samozachytávací tvar</td></tr>
+      <tr><td>Explicitný výpočet trvá príliš dlho</td><td>malé prvky, pomalý proces</td><td>zrýchlenie, škálovanie hmotnosti + kontrola energie</td></tr>
+      <tr><td>Strata objemu rúry</td><td>preskieťovanie, hrubá sieť</td><td>jemnejšia sieť, kontrola objemu</td></tr>
+      <tr><td>Sila nesedí s meraním</td><td>zlé trenie alebo krivka spevnenia</td><td>kalibrovať trenie, overiť krivku</td></tr>
+      <tr><td>Výsledok závisí od siete</td><td>málo prvkov cez stenu</td><td>štúdia citlivosti siete</td></tr>
+    </table>
+    <aside class="notes">[1:28–1:30] Problémy a nápravy – vyberte 2–3 a okomentujte.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span><span class="band-sub">Rozhodovanie</span></div>
+    <h2>Ako si vybrať model</h2>
+    <table class="mid">
+      <tr><th>Otázka</th><th>Voľba</th></tr>
+      <tr><td>Sila a pretvorenie, parametrická štúdia (α, R, μ)</td><td>2D osovo symetricky, implicitne, Lagrange, tuhé nástroje</td></tr>
+      <tr><td>Zvyškové napätia</td><td>elastoplasticky, implicitne (alebo explicitne → implicitne), 3D pri excentricite</td></tr>
+      <tr><td>Napätie a opotrebenie nástroja</td><td>pružný prievlak, model opotrebenia</td></tr>
+      <tr><td>Plávajúci tŕň, nábeh</td><td>explicitne alebo implicitne so stabilizáciou tŕňa</td></tr>
+      <tr><td>Dlhý ustálený proces, jemná sieť v prievlaku</td><td><abbr title="Arbitrary Lagrangian–Eulerian (ľubovoľný Lagrangeov–Eulerov opis siete)">ALE</abbr> / ustálený riešič</td></tr>
+      <tr><td>Profilový tŕň, rebrá</td><td>3D, symetria, lokálne zjemnenie siete</td></tr>
+    </table>
+    <p class="note-box"><strong>Vždy:</strong> porovnať s analytickým odhadom a s nameranou silou – presne to robia prípadové štúdie.</p>
+    <aside class="notes">[1:30–1:32] Rozhodovacia tabuľka – prechod do časti IV.</aside>
+  </section>
+  <!-- ═══ ČASŤ IV ═══ -->
+  <section class="divider">
+    <h2>Časť IV — Prípadové štúdie z vlastného výskumu</h2>
+    <p style="color:#f0b0b8;">Desať publikácií 2017–2023 · <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 2D / 3D · experimenty v <abbr title="Železiarne Podbrezová (Železiarne Podbrezová a.s.)">ŽP</abbr> Podbrezová a na <abbr title="Faculty of Materials Science and Technology (Materiálovotechnologická fakulta)">MTF</abbr></p>
+    <aside class="notes">[1:32] Časť IV – hlavný blok.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Štúdie</span><span class="band-sub">Mapa</span></div>
+    <h2>Mapa štúdií: jedna výskumná línia</h2>
+    <table class="tight">
+      <tr><th>Téma</th><th>Spôsob</th><th>Model</th><th>Validácia</th><th>Zdroj</th></tr>
+      <tr><td>Dva ťahy E235 / E355, pretvorenie</td><td>pevný tŕň</td><td><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 2D</td><td>stereológia, <abbr title="Vickers Hardness (tvrdosť podľa Vickersa)">HV</abbr>, R<sub>m</sub></td><td>Necpal 2017, 2019</td></tr>
+      <tr><td>Voronoiove zrná, FLOWNET</td><td>pevný tŕň</td><td><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 2D</td><td>analyticky</td><td>Necpal 2021</td></tr>
+      <tr><td>Súčiniteľ trenia inverzne</td><td>prievlačné</td><td><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 2D</td><td>meraná sila</td><td>Necpal 2018</td></tr>
+      <tr><td>Trenie, uhol, rýchlosť → sila</td><td>prievlačné</td><td><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 3D</td><td>—</td><td>Kapustová 2019, kniha</td></tr>
+      <tr><td>Hrúbka steny, sila, rozmery</td><td>prievlačné</td><td><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 3D</td><td><abbr title="Coordinate Measuring Machine (súradnicový merací stroj)">CMM</abbr>, sila</td><td>kniha 2023</td></tr>
+      <tr><td><abbr title="Design of Experiments (plánovanie experimentu)">DOE</abbr> + <abbr title="Analysis of Variance (analýza rozptylu)">ANOVA</abbr> rozmerov</td><td>prievlačné</td><td><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 2D</td><td>štatistika</td><td>Necpal 2022</td></tr>
+      <tr><td>Rebrovaný tŕň: uhol drážky, sila, napätia</td><td>profilový tŕň</td><td><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 2D / 3D</td><td>2D hranice</td><td>Necpal 2019, 2020</td></tr>
+    </table>
+    <p class="slide-source">Projekty <abbr title="Slovak Research and Development Agency (Agentúra na podporu výskumu a vývoja)">APVV</abbr>-15-0319, <abbr title="Slovak Research and Development Agency (Agentúra na podporu výskumu a vývoja)">APVV</abbr>-18-0418, <abbr title="Scientific Grant Agency (Vedecká grantová agentúra MŠVVaŠ SR a SAV)">VEGA</abbr> 1/0122/16 · partner <abbr title="Železiarne Podbrezová (Železiarne Podbrezová a.s.)">ŽP</abbr> Podbrezová</p>
+    <aside class="notes">[1:32–1:34] Mapa – ako štúdie na seba nadväzujú.</aside>
+  </section>
+
+  <!-- Štúdia 1 -->
+  <section>
+    <div class="band"><span class="band-title">Štúdia 1</span><span class="band-sub">Dva ťahy na pevnom tŕni</span></div>
+    <h2>Dva ťahy bez žíhania: E235 a E355</h2>
+    <div class="cols-2" style="grid-template-columns:1.15fr 1fr;">
+      <table class="tight">
+        <tr><th>Ťah</th><th>Vstup</th><th>Výstup</th><th>R [%]</th><th>R steny [%]</th><th>R D [%]</th></tr>
+        <tr><td>1</td><td>Ø70 × 6,3</td><td>Ø55 × 4,75</td><td>40,5</td><td>25</td><td>21</td></tr>
+        <tr><td>2</td><td>Ø55 × 4,75</td><td>Ø50 × 3,75</td><td>27,3</td><td>21</td><td>9</td></tr>
+      </table>
+      <ul class="xs">
+        <li>Rúra valcovaná za tepla, <abbr title="Železiarne Podbrezová (Železiarne Podbrezová a.s.)">ŽP</abbr> Podbrezová, hrot Ø40 mm</li>
+        <li><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 2D, Lagrange, 9 m/min, m = 0,08</li>
+        <li>8 prvkov cez stenu (2. ťah: 6), bez preskieťovania</li>
+        <li><strong>2. ťah začína zo stavu po 1. ťahu</strong> – prenesené pretvorenie aj spevnenie</li>
+        <li class="fragment">Otázka: <span class="hl">je vypočítané pretvorenie správne?</span></li>
+      </ul>
+    </div>
+    <p class="slide-source">Necpal, Martinkovič, Buranský 2017 (MATEC 137, 05005); Necpal, Martinkovič 2019 (<abbr title="Institute of Physics (vydavateľ IOP Publishing)">IOP</abbr> <abbr title="Materials Science and Engineering (názov zborníka)">MSE</abbr> 465, 012007)</p>
+    <aside class="notes">[1:34–1:36] Technológia dvoch ťahov. Celková redukcia ≈ 57 %.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Štúdia 1</span><span class="band-sub">Validácia stereológiou</span></div>
+    <h2>Pretvorenie z mikroštruktúry</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.15fr;">
+      <div class="v-center">
+        <ul class="xs">
+          <li>Rezy pri vnútornom (I), strednom (M) a vonkajšom (O) povrchu</li>
+          <li>Orientované hranice zŕn (Saltykovova metóda) → stupeň orientácie → <strong>lokálne pretvorenie</strong></li>
+        </ul>
+        <table class="tight">
+          <tr><th>E235</th><th>φ₃ stereológia</th><th>φ₃ <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></th><th>ln(S₀/S)</th></tr>
+          <tr><td>1. ťah</td><td>0,520</td><td>0,537</td><td>0,520</td></tr>
+          <tr><td>2. ťah</td><td>0,839</td><td>0,874</td><td>0,839</td></tr>
+        </table>
+        <ul class="xs"><li class="fragment"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> nadhodnocuje o 3–4 %; stereológia sedí s výpočtom z rozmerov</li></ul>
+      </div>
+      <div class="figure">
+        <img src="img/p02_cuts.png" alt="Schéma metalografických rezov I, M, O a smerov pretvorenia">
+        <img src="img/p02_microstructure.jpeg" alt="Mikroštruktúra pred ťahaním a po dvoch ťahoch" style="margin-top:0.3em;">
+        <p class="img-caption">Rezy a mikroštruktúra pred / po dvoch ťahoch (© Necpal, Martinkovič 2019, CC BY 3.0)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:36–1:38] Tri nezávislé čísla pre to isté pretvorenie. Stĺpec ln(S0/S) je vlastný prepočet z rozmerov.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Štúdia 1</span><span class="band-sub">Výsledky</span></div>
+    <h2>Pretvorenie cez stenu a spevnenie</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.2fr;">
+      <ul class="v-center xs">
+        <li>φ₁ (tangenciálne): vonku −0,24, vnútri −0,22 → vnútorný povrch sa deformuje <strong>menej</strong></li>
+        <li>1. ťah: lokálne <strong>kladné φ₂</strong> v deformačnej zóne, 2. ťah len záporné</li>
+        <li>E235 vs E355: <span class="hl">materiál takmer nemení pretvorenie</span> – určuje ho geometria</li>
+        <li class="fragment">Po 2 ťahoch: E235 R<sub>m</sub> 747 MPa, 177 <abbr title="Vickers Hardness (tvrdosť podľa Vickersa)">HV</abbr>; E355 R<sub>m</sub> 893 MPa, 211 <abbr title="Vickers Hardness (tvrdosť podľa Vickersa)">HV</abbr></li>
+        <li class="fragment">Záver: tuhé nástroje + plastický mocninový materiál <strong>stačia</strong> na pretvorenie pri ťahaní za studena</li>
+      </ul>
+      <div class="figure">
+        <img src="img/p02_mech_e235.jpeg" alt="Medza klzu, pevnosť, ťažnosť a tvrdosť E235 pred ťahaním a po 1. a 2. ťahu">
+        <p class="img-caption">E235: R<sub>e</sub>, R<sub>m</sub>, A a <abbr title="Vickers Hardness (tvrdosť podľa Vickersa)">HV</abbr> pred ťahaním, po 1. a 2. ťahu (© Necpal, Martinkovič 2019, CC BY 3.0)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:38–1:40] Výsledky a spevnenie.</aside>
+  </section>
+
+  <!-- Štúdia 2 -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Štúdia 2</span><span class="band-sub">Viacúrovňový pohľad</span></div>
+    <h2>Voronoiova mozaika ako „virtuálne zrná“</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.2fr;">
+      <ul class="v-center xs">
+        <li>Rúra Ø28 × 4 → Ø25 × 3,5 mm (tŕň Ø18), α = 12°, kalibrácia 4 mm</li>
+        <li>Analyticky: R = 21,6 %, ε = (S₀ − S)/S = 0,276</li>
+        <li>MATLAB: Voronoiova mozaika → vzor <strong>FLOWNET</strong> v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 2D</li>
+        <li>FLOWNET sa deformuje s materiálom a prežije preskieťovanie – ako vyleptaná sieťka</li>
+        <li class="fragment">Stupeň orientácie ω z „virtuálnych zŕn“ → pretvorenie ≈ 0,24–0,27</li>
+      </ul>
+      <div class="figure">
+        <img src="img/p03_flownet.jpeg" alt="Voronoiova mozaika vložená do steny rúry medzi tŕň a prievlak">
+        <img src="img/p03_orientation.jpeg" alt="Stupeň orientácie a hlavné pretvorenie pred a po ťahaní" style="margin-top:0.3em;">
+        <p class="img-caption">Vzor v stene rúry a stupeň orientácie pred / po ťahaní (© Necpal, Martinkovič, Kuruc 2021, CC BY 3.0)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:40–1:42] Prepojenie makro a mikro. Rozmery: článok uvádza prievlak 24 mm, ale prierez 236,4 mm² zodpovedá Ø25 × d18.</aside>
+  </section>
+
+  <!-- Štúdia 3 -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Štúdia 3</span><span class="band-sub">Trenie inverzne</span></div>
+    <h2>Ako zmerať trenie: ťahanie na trhacom stroji</h2>
+    <div class="fig-row" style="grid-template-columns:0.8fr 1.2fr;">
+      <div class="figure">
+        <img src="img/p09_machine.png" alt="Upravený trhací stroj na ťahanie rúr">
+        <p class="img-caption">Upravený trhací stroj (© Necpal, Martinkovič, Václav 2018)</p>
+      </div>
+      <div class="v-center">
+        <ul class="xs">
+          <li>Rúra Ø28 × 4 mm, oceľ SPT360, prievlačné ťahanie na Ø25 mm</li>
+          <li>4 prievlaky zo spekaného karbidu, α = 6°, 8°, 10°, 12°, kalibrácia 2 mm, rastlinný olej</li>
+          <li>Sila nabehne a ustáli sa – berie sa <strong>priemer ustálenej časti</strong></li>
+        </ul>
+        <img src="img/p09_forces.png" alt="Namerané sily pre štyri uhly prievlaku" style="max-height:30vh;">
+        <p class="img-caption">Namerané sily: 6° 38,0 kN, 8° 40,3 kN, 10° 42,0 kN, 12° 43,9 kN (© Necpal a kol. 2018)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:42–1:44] Experiment. Všimnite si: v experimente sila rastie s uhlom.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Štúdia 3</span><span class="band-sub">Trenie inverzne</span></div>
+    <h2>Inverzná analýza: sila je lineárna v trení</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1fr;">
+      <div class="figure">
+        <img src="img/p09_force_mu.png" alt="Simulovaná sila v závislosti od súčiniteľa trenia, lineárna závislosť">
+        <p class="img-caption"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr>, α = 8°: F(μ) pre μ = 0,02–0,06 (© Necpal a kol. 2018)</p>
+      </div>
+      <div class="v-center">
+        <div class="equation sm">$$\mu=\frac{F-3{,}062\cdot10^4}{1{,}838\cdot10^5}$$</div>
+        <ul class="xs">
+          <li>F = 40 349 N → <span class="hl">μ ≈ 0,053</span> (v článku 0,0526)</li>
+          <li>Neskoršie štúdie (05, 07, 10) používajú 0,05421</li>
+          <li class="fragment">Platí len pre tento prievlak, mazivo a materiál – <strong>nie je to univerzálna konštanta</strong></li>
+          <li class="fragment">Text článku uvádza rozsah 0,2–0,6, graf ukazuje 0,02–0,06 → výsledok leží <strong>vnútri</strong> rozsahu</li>
+        </ul>
+      </div>
+    </div>
+    <aside class="notes">[1:44–1:46] Inverzná analýza. Upozorniť na nezrovnalosť text vs graf v článku – vždy kontrolujte jednotky a rozsahy.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Štúdia 3</span><span class="band-sub">Uhol prievlaku</span></div>
+    <h2>S kalibrovaným trením: vplyv uhla prievlaku</h2>
+    <div class="fig-row" style="grid-template-columns:1.1fr 1fr;">
+      <div class="figure">
+        <img src="img/p09_force_angle.png" alt="Simulovaná sila v závislosti od uhla prievlaku 2 až 14 stupňov">
+        <p class="img-caption"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr>, μ = 0,0526: sila pre α = 2–14° (© Necpal a kol. 2018)</p>
+      </div>
+      <ul class="v-center xs">
+        <li>2°: 67,2 kN – obrovské trenie na dlhom kontakte</li>
+        <li>6–10°: 40,4 / 40,3 / 39,1 kN – <span class="hl">ploché minimum</span></li>
+        <li>12–14°: 42,2 / 43,9 kN – rastie redundantná práca</li>
+        <li class="fragment">Presne tvar krivky zo Siebelovho odhadu (časť II)</li>
+        <li class="fragment">Experiment pri 6–12° ukázal rast sily s uhlom – iné trenie pri reálnych prievlakoch? → otázka pre validáciu</li>
+      </ul>
+    </div>
+    <aside class="notes">[1:46–1:48] Väzba na optimálny uhol. Článok uvádza optimum ≈ 8°, graf má minimum pri 10° – minimum je ploché.</aside>
+  </section>
+
+  <!-- Štúdia 4 -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Štúdia 4</span><span class="band-sub">Trenie a uhol</span></div>
+    <h2>Trenie × uhol prievlaku → sila (<abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 3D)</h2>
+    <div class="fig-row" style="grid-template-columns:1.2fr 1fr;">
+      <div class="figure">
+        <img src="img/p06_force_chart.jpeg" alt="Maximálna sila v závislosti od súčiniteľa trenia pre uhly 6, 8, 10 a 12 stupňov">
+        <p class="img-caption">F<sub>max</sub> pre f = 0,06–0,12 a α = 6–12° (© Kapustová, Sobota, Necpal 2019, Trans Tech)</p>
+      </div>
+      <ul class="v-center xs">
+        <li>Ø28 × 4 → Ø25 × 4 mm, E235, 160 000 prvkov, 200 mm/s</li>
+        <li>Sila rastie s trením pri všetkých uhloch</li>
+        <li><strong>6°:</strong> 49 → 65 kN – najcitlivejší na trenie</li>
+        <li><strong>10°:</strong> 46 → 53 kN – najnižšia sila</li>
+        <li class="fragment">Odporúčanie: α = 10°, trenie 0,06–0,08</li>
+      </ul>
+    </div>
+    <aside class="notes">[1:48–1:50] Interakcia trenia a uhla – pri malom uhle je trenie dôležitejšie (B = μ·cot α).</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Štúdia 4</span><span class="band-sub">Rýchlosť</span></div>
+    <h2>Rýchlosť ťahania silu takmer nemení</h2>
+    <table class="tight">
+      <tr><th>f</th><th>2α</th><th>100</th><th>200</th><th>300</th><th>400</th><th>500</th><th>800 mm/s</th></tr>
+      <tr><td>0,08</td><td>20°</td><td>50,8</td><td>50,9</td><td>51,0</td><td>51,0</td><td>51,0</td><td>51,1</td></tr>
+      <tr><td>0,08</td><td>24°</td><td>50,9</td><td>51,0</td><td>51,1</td><td>51,1</td><td>51,1</td><td>51,2</td></tr>
+      <tr><td>0,12</td><td>20°</td><td>56,5</td><td>56,6</td><td>56,6</td><td>56,7</td><td>56,7</td><td>56,8</td></tr>
+      <tr><td>0,12</td><td>24°</td><td>54,7</td><td>54,8</td><td>54,9</td><td>54,9</td><td>54,9</td><td>55,0</td></tr>
+    </table>
+    <ul class="small" style="margin-top:0.4em;">
+      <li>F<sub>max</sub> [kN]: 8-násobná rýchlosť → <span class="hl">+0,6 %</span>; trenie 0,08 → 0,12 → <strong>+7 až +11 %</strong></li>
+      <li class="fragment">Pozor: model bez teploty a s malým m – rýchlosť sa prejaví cez ohrev a mazací film, ktoré model nemá</li>
+    </ul>
+    <p class="slide-source">Zdroj: Bílik, Necpal, Sobota 2023, tab. 3.7 (Kapustová 2019)</p>
+    <aside class="notes">[1:50–1:52] Rýchlosť vs trenie. Kritický pohľad: model to ani nemohol ukázať inak.</aside>
+  </section>
+
+  <!-- Štúdia 5 -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Štúdia 5</span><span class="band-sub">Hrúbka steny</span></div>
+    <h2>Prievlačné ťahanie: stena sa zhrubne</h2>
+    <div class="fig-row" style="grid-template-columns:1.15fr 1fr;">
+      <div class="v-center">
+        <table class="tight">
+          <tr><th>Ťah (s₀ ≈ 1 mm)</th><th>R [%]</th><th>Δs [mm]</th><th>Δs [%]</th></tr>
+          <tr><td>Ø14 → Ø12</td><td>13,4–13,9</td><td>0,018–0,024</td><td>1,8–2,3</td></tr>
+          <tr><td>Ø16 → Ø12</td><td>23,8–23,9</td><td>0,045</td><td>4,4–4,6</td></tr>
+          <tr><td>Ø18 → Ø12</td><td>32,2–32,7</td><td>0,045–0,053</td><td>4,4–5,2</td></tr>
+        </table>
+        <ul class="xs">
+          <li>E235, prievlak R35, Molykote, 60 mm/min, meranie <abbr title="Coordinate Measuring Machine (súradnicový merací stroj)">CMM</abbr> ZEISS (500 bodov na kružnicu)</li>
+          <li class="fragment">Súbor Ø14–18 × 1 a 2 mm (Sobota 2022): <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 3D Δs = 0,04–0,10 mm, experiment 0,04–0,14 mm – <span class="hl">rovnaký rád a trend</span></li>
+          <li class="fragment">Rozptyl vstupnej hrúbky steny obmedzuje presnosť porovnania</li>
+        </ul>
+      </div>
+      <div class="figure">
+        <img src="img/book_wall_histogram.jpeg" alt="Histogram hrúbky steny z DEFORM a farebné pole hrúbky na rúre">
+        <p class="img-caption">Hrúbka steny v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 3D – histogram ustálenej časti (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:52–1:54] Zhrubnutie steny – experiment, simulácia. Prečo: obvodové stláčanie sa časť rozdelí do hrúbky.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Štúdia 5</span><span class="band-sub">Sila a napätie</span></div>
+    <h2>Experiment verzus <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr>: Ø16 → Ø12 mm</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.1fr;">
+      <div class="v-center">
+        <table class="tight">
+          <tr><th></th><th>Experiment</th><th><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 3D</th></tr>
+          <tr><td>Sila [kN]</td><td>21,5–22,0</td><td>≈ 20,5</td></tr>
+          <tr><td>Pretvorenie φ</td><td>0,29–0,32</td><td>0,3–0,4</td></tr>
+          <tr><td>Napätie [MPa]</td><td>328–330</td><td>280–350</td></tr>
+        </table>
+        <ul class="xs">
+          <li>Hydraulický stroj EU 40 (400 kN), 1 mm/s, 220 000 prvkov, m = 0,08</li>
+          <li class="fragment"><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> o ≈ 5 % nižšie: rúry mazané ručne minerálnym olejom → trenie <strong>nebolo konštantné</strong></li>
+        </ul>
+      </div>
+      <div class="figure">
+        <img src="img/book_sink_force.jpeg" alt="Priebeh sily ťahania z DEFORM v závislosti od dráhy">
+        <p class="img-caption">Priebeh sily v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 3D: nábeh a ustálený stav ≈ 20 kN (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:54–1:56] Validácia sily. Vysvetlenie odchýlky – mazanie.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Štúdia 5</span><span class="band-sub">Rozmery</span></div>
+    <h2>Uhol a trenie verzus rozmery rúry</h2>
+    <div class="fig-row" style="grid-template-columns:1.2fr 1fr;">
+      <div class="figure">
+        <img src="img/book_diam_vs_angle.jpeg" alt="Vnútorný a vonkajší priemer pre uhly 12 až 24 stupňov pri trení 0,08">
+        <p class="img-caption">d a D pre 2α = 12–24°, f = 0,08 – vyhodnotené v GOM Inspect (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+      <ul class="v-center xs">
+        <li>Ø28 × 4 → Ø25, 16 simulácií (f 0,06–0,12 × 2α 12–24°)</li>
+        <li>Trenie: <strong>bez významného vplyvu</strong> na rozmery, kruhovitosť a súosovosť</li>
+        <li>Väčší 2α → <span class="hl">menší D aj d</span>: D 24,65 → 24,26 mm pri prievlaku Ø25</li>
+        <li>Kruhovitosť a súosovosť: rozdiely ≤ 0,03 mm – nepreukázané</li>
+        <li class="fragment">Pre sila ↔ rozmery je kompromis: väčší uhol šetrí silu, ale zväčšuje odchýlku od Ø prievlaku</li>
+      </ul>
+    </div>
+    <aside class="notes">[1:56–1:58] Rozmery z výsledkov STL v GOM Inspect – v simulácii sa dá „merať“ ako v metrológii.</aside>
+  </section>
+
+  <!-- Štúdia 6: DOE deep dive -->
+  <section class="deep-stack">
+    <section class="slide-full">
+      <div class="band"><span class="band-title">Štúdia 6</span><span class="band-sub"><abbr title="Design of Experiments (plánovanie experimentu)">DOE</abbr> v <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></span></div>
+      <h2>Plánovaný experiment v simulácii</h2>
+      <div class="fig-row" style="grid-template-columns:1fr 1.1fr;">
+        <ul class="v-center xs">
+          <li>Prievlačné ťahanie, plný faktorový plán <strong>2³</strong>, 5 opakovaní = 40 simulácií</li>
+          <li>A: Ø rúry 16 / 18 · B: stena 1 / 2 · C: Ø prievlaku 12 / 14 mm</li>
+          <li>Odozvy: výsledný D a hrúbka steny; Minitab 17 – regresia a <abbr title="Analysis of Variance (analýza rozptylu)">ANOVA</abbr></li>
+          <li class="fragment"><strong>D:</strong> rozhoduje C, potom A a interakcia A×C; stena B nie</li>
+          <li class="fragment"><strong>Stena:</strong> významné všetko, najviac B (vstupná stena) a A</li>
+        </ul>
+        <div class="figure">
+          <img src="img/p04_main_od.png" alt="Graf hlavných efektov pre vonkajší priemer">
+          <p class="img-caption">Hlavné efekty na výsledný D (© Necpal, Morovič, Bočáková 2022, CC BY 3.0)</p>
+        </div>
+      </div>
+      <div class="deep-hint">▼ Hĺbkový pohľad: 3 snímky o <abbr title="Design of Experiments (plánovanie experimentu)">DOE</abbr> a <abbr title="Analysis of Variance (analýza rozptylu)">ANOVA</abbr> — stlačte <strong>↓</strong></div>
+      <aside class="notes">[1:58–2:00] DOE v MKP. Nepovinné: šípka dole – 3 snímky o pláne a ANOVA. Inak doprava.</aside>
+    </section>
+    <section>
+      <div class="band"><span class="band-title"><abbr title="Design of Experiments (plánovanie experimentu)">DOE</abbr> ↓</span><span class="band-sub">1 · Plán</span></div>
+      <h2>Ako navrhnúť experiment v <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></h2>
+      <div class="cols-2" style="grid-template-columns:1fr 1fr;">
+        <ol class="xs">
+          <li>Definovať problém (skríning, optimalizácia, validácia)</li>
+          <li>Odozva a spôsob jej merania (postprocesor)</li>
+          <li>Faktory a úrovne</li>
+          <li>Typ plánu (zakrivenie, opakovania, poradie)</li>
+          <li>Vykonať v softvéri (modul <abbr title="Design of Experiments (plánovanie experimentu)">DOE</abbr> v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr>)</li>
+          <li>Merací systém (možnosti postprocesora)</li>
+          <li>Štatistický softvér (Minitab, SPSS)</li>
+          <li>Interpretovať v kontexte úlohy</li>
+        </ol>
+        <table class="tight">
+          <tr><th>Beh</th><th>A Ø</th><th>B s</th><th>C Ø prievlaku</th></tr>
+          <tr><td>1</td><td>16</td><td>1</td><td>12</td></tr>
+          <tr><td>2</td><td>18</td><td>1</td><td>12</td></tr>
+          <tr><td>3</td><td>16</td><td>2</td><td>12</td></tr>
+          <tr><td>4</td><td>18</td><td>2</td><td>12</td></tr>
+          <tr><td>5–8</td><td colspan="3">to isté s prievlakom Ø14</td></tr>
+        </table>
+      </div>
+      <p class="note-box">Model: Lagrange 2D, α = 8°, kalibrácia 4 mm, m = 0,08, 4 prvky cez stenu, 60 mm/min.</p>
+      <aside class="notes">[DO+0:00–0:01] Osem krokov podľa Montgomeryho a matica plánu.</aside>
+    </section>
+    <section>
+      <div class="band"><span class="band-title"><abbr title="Design of Experiments (plánovanie experimentu)">DOE</abbr> ↓</span><span class="band-sub">2 · <abbr title="Analysis of Variance (analýza rozptylu)">ANOVA</abbr></span></div>
+      <h2>Výsledky <abbr title="Analysis of Variance (analýza rozptylu)">ANOVA</abbr></h2>
+      <div class="cols-2">
+        <table class="tight">
+          <tr><th>Výsledný D</th><th>F</th><th>p</th></tr>
+          <tr><td>A Ø rúry</td><td>31,3</td><td>0,000</td></tr>
+          <tr><td>B stena</td><td>3,1</td><td>0,090</td></tr>
+          <tr><td><strong>C Ø prievlaku</strong></td><td><strong>46,8</strong></td><td>0,000</td></tr>
+          <tr><td>A×C</td><td>26,8</td><td>0,000</td></tr>
+          <tr><td>B×C</td><td>4,0</td><td>0,055</td></tr>
+        </table>
+        <table class="tight">
+          <tr><th>Výsledná stena</th><th>F</th><th>p</th></tr>
+          <tr><td>A Ø rúry</td><td>315</td><td>0,000</td></tr>
+          <tr><td><strong>B stena</strong></td><td><strong>325</strong></td><td>0,000</td></tr>
+          <tr><td>C Ø prievlaku</td><td>258</td><td>0,000</td></tr>
+          <tr><td>A×C</td><td>283</td><td>0,000</td></tr>
+          <tr><td>A×B, B×C</td><td>6,3 / 5,3</td><td>0,017 / 0,028</td></tr>
+        </table>
+      </div>
+      <ul class="xs">
+        <li>Rezíduá: normálne, bez odľahlých hodnôt; mierny trend v poradí → viac opakovaní</li>
+        <li>Pozorovanie: D vychádza <strong>menší</strong> ako prievlak (≈ 11,4–11,6 pre Ø12), stena hrubne</li>
+      </ul>
+      <aside class="notes">[DO+0:01–0:02] Tabuľky ANOVA – F a p hodnoty.</aside>
+    </section>
+    <section>
+      <div class="band"><span class="band-title"><abbr title="Design of Experiments (plánovanie experimentu)">DOE</abbr> ↓</span><span class="band-sub">3 · Zhrnutie</span></div>
+      <h2>Zhrnutie a otázky</h2>
+      <ul class="xs">
+        <li><abbr title="Design of Experiments (plánovanie experimentu)">DOE</abbr> + <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> = lacný skríning parametrov, ale reálny experiment je stále potrebný na validáciu</li>
+        <li>„Opakovania“ v deterministickej simulácii nie sú náhodné – rozptyl pochádza z numeriky (sieť, kroky)</li>
+      </ul>
+      <ol class="xs">
+        <li class="fragment">Koľko simulácií má plán 2³ s piatimi opakovaniami? <button class="answer-btn" data-answer="DO1">odpoveď</button><span class="answer-text">2³ = 8 kombinácií × 5 opakovaní = 40 simulácií.</span></li>
+        <li class="fragment">Ktorý faktor najviac ovplyvňuje výsledný D? <button class="answer-btn" data-answer="DO2">odpoveď</button><span class="answer-text">Priemer prievlaku C (F = 46,8), potom priemer vstupnej rúry A a interakcia A×C.</span></li>
+        <li class="fragment">Čo znamená významná interakcia A×C? <button class="answer-btn" data-answer="DO3">odpoveď</button><span class="answer-text">Vplyv priemeru rúry na výsledok závisí od priemeru prievlaku – efekty nemožno sčítať nezávisle.</span></li>
+        <li class="fragment">Prečo <abbr title="Design of Experiments (plánovanie experimentu)">DOE</abbr> v <abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> nenahradí reálny experiment? <button class="answer-btn" data-answer="DO4">odpoveď</button><span class="answer-text">Model obsahuje predpoklady (trenie, materiál, tuhé nástroje); štatistika hodnotí model, nie realitu – treba validáciu.</span></li>
+      </ol>
+      <p class="note-box">Stlačte <strong>↑</strong> pre návrat do hlavnej prednášky alebo <strong>→</strong> pre pokračovanie.</p>
+      <aside class="notes">[DO+0:02–0:03] Zhrnutie a otázky.</aside>
+    </section>
+  </section>
+
+  <!-- Štúdia 7 -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Štúdia 7</span><span class="band-sub">Rebrované rúry</span></div>
+    <h2>Rúry s vnútorným rebrovaním: uhol drážky tŕňa</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.15fr;">
+      <div class="v-center">
+        <ul class="xs">
+          <li>Výmenníky tepla, výparníky – rebrá zväčšujú vnútorný povrch</li>
+          <li>Posledný ťah na <strong>rebrovanom tŕni</strong>; kvalita = <span class="hl">vyplnenie rebier</span></li>
+          <li><abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> 3D, tetraédre, preskieťovanie každých 50 krokov, m = 0,05421, R = 12,5 %</li>
+        </ul>
+        <table class="tight">
+          <tr><th>δ [°]</th><th>5</th><th>10</th><th>15</th><th>−5</th><th>−10</th><th>−15</th></tr>
+          <tr><td>medzera [mm]</td><td>0,22</td><td>0,21</td><td>0,21</td><td>0,18</td><td>0,17</td><td><strong>0,15</strong></td></tr>
+        </table>
+        <ul class="xs"><li class="fragment"><strong>Záporný uhol drážky</strong> plní rebrá lepšie – najlepšie −15°</li></ul>
+      </div>
+      <div class="figure">
+        <img src="img/p05_gaps.jpeg" alt="Medzera medzi rúrou a tŕňom pre šesť uhlov drážky">
+        <p class="img-caption">Vyplnenie drážky pre δ = ±5°, ±10°, ±15° (© Necpal, Hodúlová, Martinkovič 2020, Trans Tech)</p>
+      </div>
+    </div>
+    <aside class="notes">[2:00–2:02] Optimalizácia geometrie nástroja simuláciou – bez výroby šiestich tŕňov.</aside>
+  </section>
+
+  <!-- Štúdia 8 -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Štúdia 8</span><span class="band-sub">2D verzus 3D</span></div>
+    <h2>Stačí 2D model na silu pri rebrovanom tŕni?</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.1fr;">
+      <div class="v-center">
+        <table class="tight">
+          <tr><th>Model</th><th>R [%]</th><th>Prievlak [N]</th><th>Tŕň [N]</th></tr>
+          <tr><td>2D, hladký tŕň Ø17</td><td>12,5</td><td>39 550</td><td>1 026</td></tr>
+          <tr><td><strong>3D, rebrovaný tŕň</strong></td><td>17</td><td><strong>44 890</strong></td><td>1 238</td></tr>
+          <tr><td>2D, hladký tŕň Ø18</td><td>21,6</td><td>47 010</td><td>5 245</td></tr>
+        </table>
+        <ul class="xs">
+          <li>Dva 2D modely <span class="hl">ohraničujú</span> 3D výsledok zdola a zhora</li>
+          <li class="fragment">Na hrubý odhad sily stačí 2D – lacno; na rebrá a napätia treba 3D</li>
+        </ul>
+      </div>
+      <div class="figure">
+        <img src="img/p07_die_force.png" alt="Priebeh sily na prievlak pre 3D model a dva 2D modely">
+        <p class="img-caption">Sila na prievlak: 3D a 2D (Ø17, Ø18) (© Necpal, Kapustová, Martinkovič 2020, Trans Tech)</p>
+      </div>
+    </div>
+    <aside class="notes">[2:02–2:04] Ohraničenie 3D dvoma 2D modelmi – praktický trik.</aside>
+  </section>
+
+  <!-- Štúdia 9 -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Štúdia 9</span><span class="band-sub">Rúra s rebrami</span></div>
+    <h2>Napätia v stene rúry s vnútornými rebrami</h2>
+    <div class="fig-row" style="grid-template-columns:0.9fr 1.3fr;">
+      <ul class="v-center xs">
+        <li>Sila: prievlak ≈ <strong>45 kN</strong>, tŕň ≈ <strong>1,5 kN</strong> ustálene, na začiatku špička (plnenie profilu) → dimenzovať tŕňovú tyč</li>
+        <li>Pozdĺžne napätie: <span class="hl">tlak pri vnútornom povrchu, ťah pri vonkajšom</span></li>
+        <li>Max normálové napätie pri vonkajšom povrchu</li>
+        <li class="fragment">Pravidlo návrhu: maximálny tlak vnútri (plnenie rebier), ťah vonku pod pevnosťou (praskliny)</li>
+        <li class="fragment">Výpočet ≈ 40 min; posúvajú sa nástroje, koniec rúry upnutý</li>
+      </ul>
+      <div class="figure">
+        <img src="img/p10_stress.jpeg" alt="Rozloženie efektívneho napätia v priečnom reze a priebeh napätí cez stenu">
+        <p class="img-caption">Efektívne napätie v reze a napätia cez stenu (© Necpal, Martinkovič 2019, <abbr title="Danube Adria Association for Automation and Manufacturing (organizátor sympózia)">DAAAM</abbr>)</p>
+      </div>
+    </div>
+    <aside class="notes">[2:04–2:06] Napätia cez stenu – čo analytika nikdy nedá.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Štúdie</span><span class="band-sub">Poučenia</span></div>
+    <h2>Čo nás štúdie naučili</h2>
+    <div class="cols-2">
+      <ul class="xs">
+        <li><strong>Trenie</strong> treba merať, nie preberať z literatúry</li>
+        <li><strong>Sila</strong> rastie s trením lineárne, s rýchlosťou takmer vôbec</li>
+        <li><strong>Uhol prievlaku</strong> má ploché optimum, ktoré závisí od trenia</li>
+        <li><strong>Pretvorenie</strong> určuje geometria, nie oceľ</li>
+      </ul>
+      <ul class="xs">
+        <li><strong>Prievlačné ťahanie</strong> zhrubne stenu o 2–5 % a D je menší ako prievlak</li>
+        <li><strong>2D</strong> stačí na silu a pretvorenie, <strong>3D</strong> na profily a napätia</li>
+        <li><strong>Geometria tŕňa</strong> sa dá optimalizovať virtuálne</li>
+        <li><strong>Každý model</strong> potrebuje nezávislé overenie</li>
+      </ul>
+    </div>
+    <aside class="notes">[2:06–2:08] Osem poučení – prechod do časti V.</aside>
+  </section>
+  <!-- ═══ ČASŤ V ═══ -->
+  <section class="divider">
+    <h2>Časť V — Optimalizácia a validácia</h2>
+    <p style="color:#f0b0b8;">Kalibrácia verzus validácia · rebrík overenia · odporúčania · postup optimalizácie · neistoty</p>
+    <aside class="notes">[2:08] Časť V – syntéza.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Validácia</span><span class="band-sub">Rebrík overenia</span></div>
+    <h2>Rebrík overenia modelu ťahania</h2>
+    <div class="fig-row" style="grid-template-columns:1.25fr 1fr;">
+      <div class="figure svgfig">
+        <svg viewBox="0 0 470 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial" font-size="13">
+          <rect x="10" y="240" width="300" height="44" rx="4" fill="#fff5f6" stroke="#c8001e"/>
+          <text x="22" y="260" font-weight="700" fill="#8b0014">1 · Analytický odhad</text><text x="22" y="277" fill="#555">rád sily, trend s α, μ, R</text>
+          <rect x="45" y="187" width="300" height="44" rx="4" fill="#fff5f6" stroke="#c8001e"/>
+          <text x="57" y="207" font-weight="700" fill="#8b0014">2 · Nameraná sila</text><text x="57" y="224" fill="#555">ustálená časť, trhací stroj / stolica</text>
+          <rect x="80" y="134" width="300" height="44" rx="4" fill="#fff5f6" stroke="#c8001e"/>
+          <text x="92" y="154" font-weight="700" fill="#8b0014">3 · Rozmery</text><text x="92" y="171" fill="#555">D, d, stena – <tspan style="cursor:help"><title>Coordinate Measuring Machine (súradnicový merací stroj)</title>CMM</tspan>, GOM Inspect</text>
+          <rect x="115" y="81" width="300" height="44" rx="4" fill="#fff5f6" stroke="#c8001e"/>
+          <text x="127" y="101" font-weight="700" fill="#8b0014">4 · Lokálne pretvorenie</text><text x="127" y="118" fill="#555">stereológia, orientácia zŕn</text>
+          <rect x="150" y="28" width="300" height="44" rx="4" fill="#c8001e" stroke="#8b0014"/>
+          <text x="162" y="48" font-weight="700" fill="#fff">5 · Vlastnosti a napätia</text><text x="162" y="65" fill="#ffe"><tspan style="cursor:help"><title>Vickers Hardness (tvrdosť podľa Vickersa)</title>HV</tspan>, R<tspan baseline-shift="sub" font-size="9">m</tspan>, zvyškové napätia</text>
+          <line x1="440" y1="282" x2="460" y2="40" stroke="#777" stroke-width="2"/>
+          <polygon points="460,32 453,47 465,47" fill="#777"/>
+          <text x="430" y="18" fill="#777" text-anchor="end">rastie cena aj dôvera ↗</text>
+        </svg>
+        <p class="img-caption">Úrovne overenia použité v našich štúdiách (vlastná schéma)</p>
+      </div>
+      <ul class="v-center xs">
+        <li>Každá vyššia úroveň je drahšia, ale hovorí viac</li>
+        <li>Úroveň 2 sme použili na <strong>kalibráciu</strong> trenia</li>
+        <li class="fragment">Úrovne 3–5 sú preto <span class="hl">nezávislá validácia</span></li>
+      </ul>
+    </div>
+    <aside class="notes">[2:08–2:10] Rebrík overenia. Kalibrácia na jednej úrovni, validácia na ďalších.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Validácia</span><span class="band-sub">Metodika</span></div>
+    <h2>Kalibrácia nie je validácia</h2>
+    <div class="cols-2">
+      <div>
+        <div class="flow-box"><strong>Kalibrácia</strong>: nastaviť neznámy parameter (trenie), aby model sedel s meraním</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key"><strong>Validácia</strong>: porovnať model s <em>inou</em> veličinou alebo <em>iným</em> prípadom, ktorý sa na kalibráciu nepoužil</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box"><strong>Predikcia</strong>: až potom použiť model na nové parametre</div>
+      </div>
+      <ul class="xs">
+        <li>Trenie z <strong>sily pri 8°</strong> → validovať na sile pri iných uhloch, na <strong>rozmeroch</strong>, na <strong>pretvorení</strong></li>
+        <li class="fragment">Ak by sme trenie kalibrovali pri každom uhle zvlášť, model „sedí“ vždy – a nič nedokazuje</li>
+        <li class="fragment">Rozdeliť dáta: časť na kalibráciu, časť na validáciu (ako v strojovom učení)</li>
+      </ul>
+    </div>
+    <aside class="notes">[2:10–2:12] Najdôležitejšia metodická snímka časti V.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Validácia</span><span class="band-sub">Súhrn</span></div>
+    <h2>Model verzus realita – súhrn našich porovnaní</h2>
+    <table class="tight">
+      <tr><th>Veličina</th><th>Experiment / referencia</th><th><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr></th><th>Odchýlka</th><th>Zdroj</th></tr>
+      <tr><td>φ₃ po 1. ťahu</td><td>0,520 (stereológia)</td><td>0,537</td><td>+3 %</td><td>Necpal 2019</td></tr>
+      <tr><td>φ₃ po 2. ťahu</td><td>0,839 (stereológia)</td><td>0,874</td><td>+4 %</td><td>Necpal 2019</td></tr>
+      <tr><td>Sila Ø16 → Ø12</td><td>21,5–22,0 kN</td><td>20,5 kN</td><td>−5 až −7 %</td><td>kniha 3.3.2</td></tr>
+      <tr><td>Napätie ťahania</td><td>328–330 MPa</td><td>280–350 MPa</td><td>v rozsahu</td><td>kniha 3.3.2</td></tr>
+      <tr><td>Δs pri prievlačnom ťahaní</td><td>0,04–0,14 mm</td><td>0,04–0,10 mm</td><td>rovnaký trend</td><td>kniha 3.3.1</td></tr>
+      <tr><td>Sila rebrovaný tŕň (3D)</td><td>2D hranice 39,6–47,0 kN</td><td>44,9 kN</td><td>vnútri</td><td>Necpal 2020</td></tr>
+      <tr><td>Analytika Ø16 → Ø12</td><td>21,5–22,0 kN</td><td>12,6–15,1 kN (analyt.)</td><td>≈ −35 %</td><td>vlastný odhad</td></tr>
+    </table>
+    <p class="note-box">Integrálne veličiny (sila, priemerné pretvorenie) sedia na <strong>±5 %</strong>; lokálne (hrúbka steny) skôr na trend – citlivé na rozptyl vstupnej rúry a sieť.</p>
+    <aside class="notes">[2:12–2:14] Súhrnná tabuľka validácie.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Optimalizácia</span><span class="band-sub">Uhol prievlaku</span></div>
+    <h2>Aký uhol prievlaku je optimálny? Záleží na podmienkach</h2>
+    <table class="tight">
+      <tr><th>Zdroj</th><th>Optimum</th><th>Podmienky</th></tr>
+      <tr><td>Siebel (analyticky)</td><td>α ≈ 10,5°</td><td>tyč, μ = 0,1, r = 20 %</td></tr>
+      <tr><td>Necpal 2018 (<abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> + meranie)</td><td>α ≈ 8° (graf: minimum 10°, 6–10° ploché)</td><td>karbid, μ ≈ 0,053, kalibrácia 2 mm</td></tr>
+      <tr><td>Kapustová 2019 (<abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> 3D)</td><td>α = 10°</td><td>f = 0,06–0,12, 200 mm/s</td></tr>
+      <tr><td>Kniha 3.3.3 (<abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr> 3D)</td><td>2α = 24° (α = 12°)</td><td>f = 0,08–0,12</td></tr>
+      <tr><td>Počta 1963 (prax)</td><td>2α = 24–28°</td><td>priemyselné ťahanie oceľových rúr</td></tr>
+    </table>
+    <ul class="small" style="margin-top:0.4em;">
+      <li>Všetky ležia v pásme <span class="hl">α ≈ 8–14°</span> – to je ploché minimum, nie rozpor</li>
+      <li class="fragment">Rozhoduje aj životnosť nástroja, rozmery (väčší α → menší D) a stabilita mazania</li>
+    </ul>
+    <aside class="notes">[2:14–2:16] Zdanlivý rozpor optimálnych uhlov – vysvetlenie plochým minimom a rôznym trením.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Optimalizácia</span><span class="band-sub">Postup</span></div>
+    <h2>Postup optimalizácie procesu simuláciou</h2>
+    <div class="cols-2" style="grid-template-columns:1fr 1fr;">
+      <div>
+        <div class="flow-box">1. Cieľ a obmedzenia <span class="flow-note">(min. sila, D v tolerancii, σ₁ &lt; R<sub>p0,2</sub>)</span></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">2. Kalibrovaný a validovaný základný model</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key">3. <abbr title="Design of Experiments (plánovanie experimentu)">DOE</abbr>: skríning faktorov → <abbr title="Analysis of Variance (analýza rozptylu)">ANOVA</abbr></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">4. Jemnejší plán okolo optima (plocha odozvy)</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">5. Overovacia simulácia + skúšobný ťah</div>
+      </div>
+      <table class="tight">
+        <tr><th>Cieľ</th><th>Páka</th></tr>
+        <tr><td>nižšia sila</td><td>α v pásme 8–12°, lepšie mazanie</td></tr>
+        <tr><td>presný D</td><td>Ø prievlaku (+ korekcia na pokles D), menší α</td></tr>
+        <tr><td>hrúbka steny</td><td>vstupná stena, tŕň, redukcia</td></tr>
+        <tr><td>vyplnenie rebier</td><td>záporný uhol drážky tŕňa, tlak vnútri</td></tr>
+        <tr><td>bez pretrhnutia</td><td>redukcia na ťah, σ₁ pod medzou klzu</td></tr>
+      </table>
+    </div>
+    <aside class="notes">[2:16–2:18] Postup a páky – zhrnutie všetkých štúdií do jednej tabuľky.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Validácia</span><span class="band-sub">Neistoty</span></div>
+    <h2>Neistoty a obmedzenia – buďte kritickí</h2>
+    <div class="cols-2">
+      <ul class="xs">
+        <li><strong>Trenie</strong> 0,0526 vs 0,05421 v nadväzujúcich článkoch – rovnaký pokus, iné číslo</li>
+        <li><strong>Teplota</strong> zanedbaná, hoci rúra má na výstupe 130–180 °C</li>
+        <li><strong>Tuhé nástroje</strong> – bez odpruženia prievlaku a jeho opotrebenia</li>
+        <li><strong>Vstupná rúra</strong> ideálna – bez excentricity a polygónu</li>
+      </ul>
+      <ul class="xs">
+        <li><strong>Preklepy</strong> v článkoch: prievlak 24 vs 25 mm, 10° vs 12°, „nehrdzavejúca“ oceľ pri E235</li>
+        <li><strong>Ručné mazanie</strong> v experimente → nekonštantné trenie</li>
+        <li><strong>Sieť</strong>: 4 prvky cez stenu v <abbr title="Design of Experiments (plánovanie experimentu)">DOE</abbr> – bez štúdie citlivosti</li>
+        <li class="fragment"><span class="hl">Simulácia je tak dobrá ako jej vstupy a jej overenie</span></li>
+      </ul>
+    </div>
+    <aside class="notes">[2:18–2:20] Kritický pohľad na vlastné štúdie – aj publikované výsledky treba čítať pozorne.</aside>
+  </section>
+
+  <!-- ═══ ZHRNUTIE ═══ -->
+  <section style="text-align:left;">
+    <hr class="top-rule">
+    <h2>Zhrnutie</h2>
+    <ul class="compact">
+      <li><strong>Základy:</strong> štyri spôsoby ťahania, σ₁ musí ostať pod medzou klzu spevnenej rúry</li>
+      <li><strong>Analytika:</strong> ideál &lt; metóda rezov &lt; Siebel; ploché optimum uhla, medzná redukcia</li>
+      <li><strong><abbr title="Finite Element Method (metóda konečných prvkov)">MKP</abbr>:</strong> štyri nezávislé voľby; trenie a krivka spevnenia rozhodujú najviac</li>
+      <li><strong>Štúdie:</strong> trenie inverzne, sila nezávislá od rýchlosti, stena hrubne, 2D ohraničí 3D, záporný uhol drážky</li>
+      <li><strong>Validácia:</strong> kalibrovať na jednej veličine, overiť na iných</li>
+    </ul>
+    <p class="institution" style="margin-top:1.2em;">Nabudúce: preprocesing v <abbr title="Design Environment for FORMing (názov softvéru)">DEFORM</abbr> – sieť, okrajové podmienky a trenie v praxi</p>
+    <aside class="notes">[2:20–2:22] Päť viet – jedna za každú časť.</aside>
+  </section>
+
+  <!-- ═══ KONTROLNÉ OTÁZKY ═══ -->
+  <section>
+    <h2>Kontrolné otázky</h2>
+    <ol class="compact" style="font-size:0.6em;line-height:1.6;">
+      <li class="fragment">Rúra Ø70 × 6,3 mm sa ťahá na Ø55 × 4,75 mm. Vypočítajte redukciu R a pretvorenie φ. <button class="answer-btn" data-answer="1">odpoveď</button><span class="answer-text">S₀ = π·63,7·6,3 = 1260,9 mm², S = π·50,25·4,75 = 749,9 mm²; R = 40,5 %, φ = ln(1260,9/749,9) = 0,52.</span></li>
+      <li class="fragment">Prečo existuje optimálny uhol prievlaku? <button class="answer-btn" data-answer="2">odpoveď</button><span class="answer-text">Práca trenia s uhlom klesá, redundantná práca rastie; ich súčet s ideálnou prácou má ploché minimum (≈ 8–14°).</span></li>
+      <li class="fragment">Aká je podmienka medznej redukcie a jej ideálna hodnota bez spevnenia? <button class="answer-btn" data-answer="3">odpoveď</button><span class="answer-text">Napätie ťahania musí byť menšie ako pretvárny odpor materiálu za prievlakom; ideálne r_max = 1 − 1/e ≈ 63 %.</span></li>
+      <li class="fragment">Ako sa mení hrúbka steny pri prievlačnom ťahaní a pri ťahaní na pevnom tŕni? <button class="answer-btn" data-answer="4">odpoveď</button><span class="answer-text">Prievlačne sa stena mierne zhrubne (≈ 2–5 %); na pevnom tŕni sa stenčí, lebo tŕň určuje vnútorný priemer.</span></li>
+      <li class="fragment">Prečo explicitná simulácia pomalého ťahania potrebuje zrýchlenie alebo škálovanie hmotnosti a ako overíte kvázistatickosť? <button class="answer-btn" data-answer="5">odpoveď</button><span class="answer-text">Stabilný krok ≈ 5·10⁻⁸ s by dal milióny krokov; kontrolou je pomer kinetickej a vnútornej energie pod 5–10 %.</span></li>
+      <li class="fragment">Ako sa určí súčiniteľ trenia inverznou analýzou? <button class="answer-btn" data-answer="6">odpoveď</button><span class="answer-text">Zmeria sa ustálená sila, simuluje sa niekoľko hodnôt trenia, z lineárnej závislosti F(μ) sa nájde μ pre nameranú silu (≈ 0,053).</span></li>
+      <li class="fragment">Prečo nemožno model validovať tou istou silou, z ktorej sa kalibrovalo trenie? <button class="answer-btn" data-answer="7">odpoveď</button><span class="answer-text">Zhoda je vynútená kalibráciou; validácia potrebuje nezávislú veličinu – rozmery, pretvorenie, silu pri iných podmienkach.</span></li>
+      <li class="fragment">Kedy stačí 2D osovo symetrický model a kedy treba 3D? <button class="answer-btn" data-answer="8">odpoveď</button><span class="answer-text">2D pri súosovej, symetrickej úlohe (sila, pretvorenie, stena); 3D pri excentricite, ovalite, profilových tŕňoch a pre napätia v rebrách.</span></li>
+    </ol>
+    <aside class="notes">[2:22–2:32] Otázky odkrývajte po jednej, nechajte študentov odpovedať. Potom priestor na ich otázky.</aside>
+  </section>
+
+  <!-- ═══ ZDROJE ═══ -->
+  <section style="text-align:left;">
+    <hr class="top-rule">
+    <h2>Zdroje a ďalšie čítanie</h2>
+    <ul class="xs" style="line-height:1.45;font-size:0.58em;">
+      <li>Bílik, J.; Necpal, M.; Sobota, R.: <em>Výroba bezšvových rúr. Teoreticko-technologické aspekty výroby.</em> Spektrum <abbr title="Slovak University of Technology in Bratislava (Slovenská technická univerzita v Bratislave)">STU</abbr>, 2023</li>
+      <li>Necpal, M.; Sobota, R.: <em>Modelovanie a simulácia procesov tvárnenia.</em> Spektrum <abbr title="Slovak University of Technology in Bratislava (Slovenská technická univerzita v Bratislave)">STU</abbr>, 2023</li>
+      <li>Necpal, M.; Martinkovič, M.: Evaluation of material deformation… carbon steel tube cold draw forming. <abbr title="Institute of Physics (vydavateľ IOP Publishing)">IOP</abbr> <abbr title="Materials Science and Engineering (názov zborníka)">MSE</abbr> 465 (2019) 012007</li>
+      <li>Necpal, M.; Martinkovič, M.; Buranský, I.: Deformation prediction and FEA of precision seamless tubes. MATEC 137 (2017) 05005</li>
+      <li>Necpal, M.; Martinkovič, M.; Kuruc, M.: Crystal plasticity… FEM and Voronoi tessellation. <abbr title="Institute of Physics (vydavateľ IOP Publishing)">IOP</abbr> <abbr title="Materials Science and Engineering (názov zborníka)">MSE</abbr> 1050 (2021) 012011</li>
+      <li>Necpal, M.; Morovič, L.; Bočáková, B.: A statistical approach in the FEM simulation… J. Phys. Conf. Ser. 2413 (2022) 012009</li>
+      <li>Necpal, M.; Martinkovič, M.; Václav, Š.: Determination of the coefficient of friction… Research Papers <abbr title="Faculty of Materials Science and Technology (Materiálovotechnologická fakulta)">MTF</abbr> <abbr title="Slovak University of Technology in Bratislava (Slovenská technická univerzita v Bratislave)">STU</abbr> 26(42) (2018) 29–34</li>
+      <li>Kapustová, M.; Sobota, R.; Necpal, M.: The influence of technological parameters on drawing force… Solid State Phen. 294 (2019) 124–128</li>
+      <li>Necpal, M.; Hodúlová, E.; Martinkovič, M.: Numerical simulation… contoured internal surface tubes. Key Eng. Mater. 841 (2020) 54–58</li>
+      <li>Necpal, M.; Kapustová, M.; Martinkovič, M.: Using 2D/3D FEM simulation to determine drawing force… Solid State Phen. 304 (2020) 121–125</li>
+      <li>Necpal, M.; Martinkovič, M.: Finite element modelling of cold drawing inner finned tube. 30th <abbr title="Danube Adria Association for Automation and Manufacturing (organizátor sympózia)">DAAAM</abbr> Proc. (2019) 0622–0627</li>
+      <li>Kobayashi, S.; Oh, S.-I.; Altan, T.: <em>Metal Forming and the Finite Element Method.</em> Oxford University Press, 1989 · Hosford, W.; Caddell, R.: <em>Metal Forming.</em> Cambridge University Press, 2011</li>
+      <li>Palkowski, H. a kol.: Residual stress state of drawn tubes. Materials 6 (2013) 5118 · Neves, F. O. a kol.: Tube drawing with fixed plug. <abbr title="Journal of the Brazilian Society of Mechanical Sciences and Engineering (názov časopisu)">JBSMSE</abbr> 27 (2005) 426</li>
+    </ul>
+    <p class="institution" style="margin-top:0.6em;">Obrázky © ich vlastníci (vydavatelia a autori), použité na účely výučby</p>
+  </section>
+
+</div></div>
+
+<audio id="narration"></audio>
+<div id="vNav"></div>
+
+<div id="navBar">
+  <button class="nav-btn" id="prevBtn" title="Predchádzajúca snímka (←)">
+    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+  </button>
+  <div id="slideIndicators"></div>
+  <span id="slideCounter"></span>
+  <button class="nav-btn" id="playBtn" title="Prehrať komentár (medzerník)">
+    <svg viewBox="0 0 24 24"><path id="playIconPath" d="M8 5v14l11-7z"/></svg>
+  </button>
+  <button class="nav-btn" id="nextBtn" title="Nasledujúca snímka (→)">
+    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+  </button>
+  <label id="autoLabel" title="Auto-advance to next slide when narration ends">
+    <input type="checkbox" id="autoPlay" checked> Auto
+  </label>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/zoom/zoom.js"></script>
+<script>
+  /* ══ CONFIG ══════════════════════════════════════════════════════════════
+     NARRATION  – true: plays voice_for_18november2026/slide_NN.mp3 for main slide N (1-based)
+                  and slide_NN_V.mp3 for deep-dive sub-slide N.V
+                  false: hides play button and Auto toggle (answer buttons still show the text)
+  ═══════════════════════════════════════════════════════════════════════ */
+  const CONFIG = {
+    NARRATION:  true,
+    AUDIO_PATH: (n, v) => `voice_for_18november2026/slide_${String(n).padStart(2, '0')}${v ? '_' + v : ''}.mp3`,
+    ANSWER_PATH: id => `voice_for_18november2026/odpoved${id}.mp3`,   /* en deck: answer${id}.mp3 */
+    AUTO_DELAY: 800,
+  };
+
+  if (!CONFIG.NARRATION) document.body.classList.add('no-narration');
+  if (!document.querySelector('.slides > section > section')) document.body.classList.add('no-deep');
+
+  /* ── Missing images → link placeholder (no internet or moved file) ── */
+  document.querySelectorAll('.slides img').forEach(img => {
+    img.addEventListener('error', () => {
+      if (img.closest('.video-card')) return;
+      const box = document.createElement('div');
+      box.className = 'img-missing';
+      box.innerHTML = `Obrázok nie je dostupný offline:<br><strong>${img.alt}</strong><br>
+        <a href="${img.src}" target="_blank">${img.src}</a>`;
+      img.replaceWith(box);
+    });
+  });
+
+  /* ── YouTube cards: thumbnail opens YouTube; "Play here" embeds ── */
+  document.querySelectorAll('.video-card[data-yt]').forEach(card => {
+    const id = card.dataset.yt;
+    const url = `https://www.youtube.com/watch?v=${id}`;
+    card.innerHTML = `<a class="thumb" href="${url}" target="_blank" title="Otvoriť na YouTube">
+        <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="Náhľad videa"></a><span class="play"></span>`;
+  });
+  document.querySelectorAll('.video-actions[data-yt]').forEach(bar => {
+    const id = bar.dataset.yt;
+    const link = document.createElement('a');
+    link.href = `https://www.youtube.com/watch?v=${id}`; link.target = '_blank';
+    link.textContent = 'otvoriť na YouTube';
+    const btn = document.createElement('button');
+    btn.textContent = '▶ Prehrať tu';
+    btn.addEventListener('click', () => {
+      const card = bar.previousElementSibling;
+      card.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0"
+        allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+    });
+    bar.append(' · ', link, btn);
+  });
+  /* ── Popup buttons: open media in a separate window ── */
+  document.querySelectorAll('.popup-btn[data-popup]').forEach(btn => {
+    btn.addEventListener('click', () =>
+      window.open(btn.dataset.popup, 'media-popup', 'width=1100,height=500'));
+  });
+  /* stop embedded videos when leaving a slide */
+  function stopVideos(slide) {
+    slide?.querySelectorAll('.video-card iframe').forEach(f => {
+      const card = f.parentElement, id = card.dataset.yt;
+      card.innerHTML = `<a class="thumb" href="https://www.youtube.com/watch?v=${id}" target="_blank">
+        <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="Náhľad videa"></a><span class="play"></span>`;
+    });
+    slide?.querySelectorAll('.video-card video').forEach(v => v.pause());
+  }
+
+  /* ── Audio ── */
+  const narration    = document.getElementById('narration');
+  const playIconPath = document.getElementById('playIconPath');
+  const PLAY_D  = 'M8 5v14l11-7z';
+  const PAUSE_D = 'M6 19h4V5H6v14zm8-14v14h4V5h-4z';
+
+  const setPlayIcon = playing => playIconPath.setAttribute('d', playing ? PAUSE_D : PLAY_D);
+
+  function loadAudio(idx, v = 0) {
+    if (!CONFIG.NARRATION) return;
+    const custom = Reveal.getCurrentSlide()?.dataset.audio;
+    narration.src = custom || CONFIG.AUDIO_PATH(idx + 1, v);
+  }
+  function playAudio()   { if (CONFIG.NARRATION) narration.play().catch(() => {}); }
+  /* start narration on open; if the browser blocks autoplay, start on first click/key */
+  function autoStart() {
+    if (!CONFIG.NARRATION || /print-pdf/.test(location.search)) return;
+    narration.play().catch(() => {
+      const events = ['pointerdown', 'keydown'];
+      const start = e => {
+        events.forEach(t => document.removeEventListener(t, start, true));
+        /* bottom bar and space start audio themselves; playing here would toggle it off */
+        if (e.target.closest?.('#navBar') || e.key === ' ') return;
+        if (narration.paused) playAudio();
+      };
+      events.forEach(t => document.addEventListener(t, start, true));
+    });
+  }
+  function toggleAudio() {
+    if (!CONFIG.NARRATION) return;
+    narration.paused ? narration.play().catch(() => {}) : narration.pause();
+  }
+
+  /* a slide video and the narration should not talk over each other */
+  document.querySelectorAll('.video-card video').forEach(v =>
+    v.addEventListener('play', () => narration.pause()));
+
+  /* ── Answer buttons: show the .answer-text after the button; with NARRATION also play
+        CONFIG.ANSWER_PATH(id) (id = 1…N for Kontrolné otázky, XX1… in deep dives) ── */
+  const answerAudio = new Audio();
+  let answerBtn = null;
+  function stopAnswer() {
+    answerAudio.pause();
+    if (answerBtn) {
+      answerBtn.classList.remove('playing');
+      answerBtn.nextElementSibling?.classList.remove('show');
+    }
+    answerBtn = null;
+  }
+  answerAudio.addEventListener('ended', () => answerBtn?.classList.remove('playing'));
+  document.querySelectorAll('.answer-btn[data-answer]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      if (answerBtn === btn) { stopAnswer(); return; }
+      stopAnswer();
+      btn.nextElementSibling?.classList.add('show');
+      answerBtn = btn;
+      if (!CONFIG.NARRATION) return;
+      narration.pause();
+      answerAudio.src = CONFIG.ANSWER_PATH(btn.dataset.answer);
+      answerAudio.play().catch(() => {});
+      btn.classList.add('playing');
+    });
+  });
+  narration.addEventListener('play', stopAnswer);
+
+  narration.addEventListener('play',  () => setPlayIcon(true));
+  narration.addEventListener('pause', () => setPlayIcon(false));
+  narration.addEventListener('ended', () => {
+    setPlayIcon(false);
+    if (document.getElementById('autoPlay').checked) {
+      setTimeout(() => (Reveal.getIndices().v > 0 && Reveal.availableRoutes().down) ? Reveal.down() : goRight(),
+                 CONFIG.AUTO_DELAY);
+    }
+  });
+
+  /* ── Dot indicators ── */
+  function buildIndicators(total) {
+    const bar = document.getElementById('slideIndicators');
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 'dot';
+      d.setAttribute('aria-label', `Snímka ${i + 1}`);
+      d.addEventListener('click', () => Reveal.slide(i));
+      bar.appendChild(d);
+    }
+  }
+  function updateNav(idx, total) {
+    document.querySelectorAll('#slideIndicators .dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+    document.getElementById('slideCounter').textContent = `${idx + 1} / ${total}`;
+    document.getElementById('prevBtn').style.opacity = idx === 0         ? '0.3' : '1';
+    document.getElementById('nextBtn').style.opacity = idx === total - 1 ? '0.3' : '1';
+  }
+
+  /* ← → step fragments, then move between MAIN slides (landing on top of a stack); ↑ ↓ inside a deep dive */
+  function goRight() {
+    if (Reveal.availableFragments().next) return Reveal.nextFragment();
+    Reveal.slide(Reveal.getIndices().h + 1, 0);
+  }
+  function goLeft() {
+    if (Reveal.availableFragments().prev) return Reveal.prevFragment();
+    const h = Reveal.getIndices().h;
+    if (h > 0) Reveal.slide(h - 1, 0);
+  }
+  /* right-side panel for deep-dive stacks: ▲, square = main slide, dots = sub-slides, ▼ */
+  function updateVNav(slide, h, v) {
+    const nav = document.getElementById('vNav');
+    const stack = slide.parentElement.classList.contains('stack') ? slide.parentElement : null;
+    const n = stack ? stack.querySelectorAll(':scope > section').length : 0;
+    if (n < 2) { nav.style.display = 'none'; nav.innerHTML = ''; return; }
+    nav.innerHTML = '';
+    const btn = (txt, title, fn, off) => { const b = document.createElement('button'); b.className = 'vbtn';
+      b.textContent = txt; b.title = title; b.onclick = fn; b.style.opacity = off ? 0.3 : 1; nav.appendChild(b); };
+    btn('▲', 'Hore (↑)', () => Reveal.up(), v === 0);
+    for (let i = 0; i < n; i++) {
+      const d = document.createElement('button'); d.className = 'dot' + (i === v ? ' active' : '');
+      d.title = i === 0 ? 'Hlavná snímka' : `Podsnímka ${i}`;
+      if (i === 0) d.style.borderRadius = '2px';
+      d.onclick = () => Reveal.slide(h, i); nav.appendChild(d);
+    }
+    btn('▼', 'Dole (↓)', () => Reveal.down(), v === n - 1);
+    const lb = document.createElement('span'); lb.className = 'vlabel';
+    lb.textContent = v === 0 ? `${n - 1}↓` : `${v}/${n - 1}`; nav.appendChild(lb);
+    nav.style.display = 'flex';
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', () => goLeft());
+  document.getElementById('nextBtn').addEventListener('click', () => goRight());
+  document.getElementById('playBtn').addEventListener('click', () => toggleAudio());
+
+  /* ── Font size (all slides, remembered per browser) ── */
+  const fontCtl = document.createElement('div');
+  fontCtl.id = 'fontCtl';
+  fontCtl.innerHTML = '<button data-d="-1" title="Zmenšiť písmo (−)">A−</button>'
+    + '<button data-d="0" title="Pôvodná veľkosť (0)">A</button>'
+    + '<span class="pct"></span>'
+    + '<button data-d="1" title="Zväčšiť písmo (+)">A+</button>';
+  document.body.appendChild(fontCtl);
+  let fontScale = 1;
+  try { fontScale = parseFloat(localStorage.getItem('fontScale')) || 1; } catch (e) { fontScale = 1; }
+  function setFont(s) {
+    fontScale = Math.min(1.6, Math.max(0.7, Math.round(s * 10) / 10));
+    document.documentElement.style.setProperty('--fs', fontScale);
+    fontCtl.querySelector('.pct').textContent = Math.round(fontScale * 100) + ' %';
+    try { localStorage.setItem('fontScale', fontScale); } catch (e) { /* storage blocked */ }
+    if (window.Reveal && Reveal.isReady()) Reveal.layout();
+  }
+  function stepFont(d) { setFont(d === 0 ? 1 : fontScale + d * 0.1); }
+  fontCtl.addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (b) { stepFont(+b.dataset.d); b.blur(); }
+  });
+  setFont(fontScale);
+
+  /* ── Reveal ── */
+  Reveal.initialize({
+    hash: true,
+    slideNumber: false,
+    transition: 'slide',
+    backgroundTransition: 'none',
+    controls: false,
+    progress: false,
+    plugins: [RevealNotes, RevealMath.KaTeX, RevealZoom],
+    keyboard: {
+      32: () => toggleAudio(),
+      37: () => goLeft(),
+      39: () => goRight(),
+      38: () => Reveal.up(),
+      40: () => Reveal.down(),
+      187: () => stepFont(1), 107: () => stepFont(1), 61: () => stepFont(1),     /* + (61: Firefox) */
+      189: () => stepFont(-1), 109: () => stepFont(-1), 173: () => stepFont(-1), /* − (173: Firefox) */
+      48: () => stepFont(0), 96: () => stepFont(0),     /* 0 */
+    },
+  });
+
+  Reveal.on('ready', () => {
+    const total = Reveal.getHorizontalSlides().length;
+    const ix = Reveal.getIndices();          /* deep link (#/17/2) opens on that slide */
+    buildIndicators(total);
+    updateNav(ix.h, total);
+    updateVNav(Reveal.getCurrentSlide(), ix.h, ix.v || 0);
+    loadAudio(ix.h, ix.v || 0);
+    autoStart();
+  });
+
+  Reveal.on('slidechanged', e => {
+    const total = Reveal.getHorizontalSlides().length;
+    updateNav(e.indexh, total);
+    updateVNav(e.currentSlide, e.indexh, e.indexv);
+    stopVideos(e.previousSlide);
+    stopAnswer();
+    loadAudio(e.indexh, e.indexv);
+    playAudio();
+  });
+</script>
+</body>
+</html>

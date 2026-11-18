@@ -1,0 +1,1 @@
+Because the agreement is forced by the calibration. Validation needs an independent quantity, such as dimensions, strain, or the force under other conditions.

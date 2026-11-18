@@ -1,0 +1,1 @@
+Vplyv priemeru rúry na výsledok závisí od priemeru prievlaku. Efekty preto nemožno jednoducho sčítať nezávisle.

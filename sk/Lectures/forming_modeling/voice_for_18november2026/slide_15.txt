@@ -1,0 +1,3 @@
+Aby sa rúra dala ťahať, musí sa jej koniec zúžiť. Tomu sa hovorí hrotovanie. Hrot musí prejsť prievlakom a ťahacia stolica ho musí vedieť uchopiť.
+Hrot sa robí buď za tepla rotačným kovaním, keď sa čeľuste pohybujú priamočiaro a rúra sa otáča. V našom experimente sme hrotovali pri teplote osemsto päťdesiat až deväťsto stupňov Celzia na priemer jedenásť milimetrov, teda menší ako prievlak s priemerom dvanásť. Druhou možnosťou je lisovanie za studena, ktoré sa hodí pre tenké steny. Na obrázkoch vidíte lisovanie hrotu a výsledný hrot.
+Pre simuláciu z toho vyplýva praktické pravidlo. Hrot a koniec rúry, ktorý sa ešte neťahal, sa nehodnotia. Výsledky, teda rozmery, hrúbku steny a silu, čítame len zo strednej časti rúry, kde je proces ustálený.

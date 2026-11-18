@@ -1,0 +1,4 @@
+Čo ovplyvňuje presnosť výslednej rúry? V prvom rade vstupná rúra. Jej excentricita a vnútorný mnohouholník spôsobia, že sa materiál po obvode nepretvára rovnomerne.
+Druhým faktorom je teplota. Deformačné teplo a teplo z trenia rúru ohrievajú. Termokamerou sme na výstupe z prievlaku namerali sto tridsať až sto osemdesiat stupňov Celzia. To nie je zanedbateľné, a pritom väčšina simulácií, aj našich, teplotu zanedbáva.
+Tretím faktorom sú nástroje, teda ich rozmery, presnosť výroby a opotrebenie. Štvrtým je deformácia rúry za prievlakom, ak napätie od ťažnej sily prekročí medzu klzu spevnenej rúry.
+Zaujímavý jav je pri prievlačnom ťahaní. Výsledný vonkajší priemer je o niečo menší ako priemer prievlaku. Rúra sa za prievlakom ešte mierne zúži. Obrázok vpravo ukazuje meranie rúry na súradnicovom meracom stroji ZEISS. Takto sme merali rozmery, ktoré potom slúžili na porovnanie so simuláciou.

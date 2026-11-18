@@ -1,0 +1,4 @@
+Pri Lagrangeovom opise sú uzly siete pripojené k materiálovým bodom a sieť sa deformuje spolu s materiálom. DEFORM používa aktualizovaný Lagrangeov opis a neznámymi sú rýchlosti uzlov. Výhodou je, že sa prirodzene sledujú voľné povrchy, kontakt a história každého bodu, teda koľko sa pretvoril a ako sa spevnil.
+V dvojrozmernom modeli používame štruktúrovanú sieť štvoruholníkov, v našich štúdiách štyri až osem prvkov cez stenu. Pri stredných pretvoreniach sme preskieťovanie nepotrebovali. Proces má tri fázy: nábeh, keď hrot vchádza do prievlaku, ustálený stav a dobeh na konci rúry. Silu čítame v ustálenej časti.
+Obrázok vpravo je z prvej štúdie. Vidíte dvojrozmerný osovo symetrický model dvoch ťahov a sieť, ktorá sa deformuje s materiálom. Farby ukazujú pozdĺžne pretvorenie.
+Pri viacerých ťahoch sa konečná sieť a stav po prvom ťahu použijú ako začiatok druhého ťahu. Tak sa prenesie aj spevnenie, ak sa medzi ťahmi nežíha.

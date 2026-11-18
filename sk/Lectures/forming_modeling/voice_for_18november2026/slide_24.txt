@@ -1,0 +1,4 @@
+Najjednoduchší odhad vychádza z energetickej bilancie. Práca vonkajšej sily sa rovná práci homogénnej plastickej deformácie. Dostaneme vzťah: napätie ťahania sa rovná pretvárnemu odporu krát logaritmus pomeru prierezov, teda sigma dé sa rovná sigma ef krát epsilon.
+Tento vzťah neobsahuje trenie ani redundantnú prácu, teda prácu, ktorú materiál spotrebuje na zbytočné zmeny smeru toku. Je to preto dolná hranica napätia ťahania.
+V príklade vpravo má materiál pretvárny odpor päťsto megapascalov a redukcia je dvadsať percent. Pretvorenie je logaritmus jednej lomeno nula celá osem, teda nula celá dvesto dvadsaťtri. Napätie ťahania vychádza sto dvanásť megapascalov.
+Skutočné napätie je vždy vyššie, typicky jedenapolnásobok až dvaapolnásobok ideálnej hodnoty. O koľko presne, to nám povie metóda rezov.

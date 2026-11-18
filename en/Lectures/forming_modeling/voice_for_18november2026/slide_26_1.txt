@@ -1,0 +1,4 @@
+In zone one only the diameter decreases. The derivation is the same as for wire, only the radius of the wall mid-line appears instead of the wire radius. r s is the mid-line radius in a given section, and r s zero at the entry.
+The parameter A is one plus f times the cotangent of alpha, divided by one minus f times the tangent of alpha. The stress in zone one is A over A minus one, times the flow stress, times one minus the radius ratio raised to the power A minus one.
+The boundary condition at the entry is that the stress is zero, because nothing pulls the tube from behind. We say there is no back tension. If we substitute the radius at the end of zone one, that is, where the tube touches the plug, we get the stress sigma I o. That is the input to zone two.
+Notice that if friction were zero, A would equal one and the formula would turn into the ideal work. That way you can always check that you copied the formula correctly.

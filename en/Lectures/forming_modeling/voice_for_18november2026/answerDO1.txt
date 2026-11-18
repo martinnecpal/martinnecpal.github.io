@@ -1,0 +1,1 @@
+Two to the third is eight combinations, times five replicates, which gives forty simulations.

@@ -1,0 +1,4 @@
+Rúry sa ťahajú štyrmi základnými spôsobmi. Na obrázku a je prievlačné ťahanie, teda ťahanie bez tŕňa. Rúra prechádza iba prievlakom, vnútri nie je nič. Zmenšuje sa priemer, hrúbka steny sa určuje sama. Používa sa najmä ako posledná operácia pri malých priemeroch.
+Na obrázku b je ťahanie na pevnom tŕni. Tŕň je upevnený na tŕňovej tyči a stojí v prievlaku. Rúra sa zmenšuje medzi prievlakom zvonka a tŕňom zvnútra, takže sa zmenšuje priemer aj hrúbka steny. Tŕň môže byť valcový alebo tvarový.
+Na obrázku c je plávajúci tŕň. Nie je nijako uchytený, drží ho na mieste rovnováha síl od trenia a tlaku. Výhodou je, že dĺžka rúry nie je obmedzená tyčou, takže sa dajú ťahať veľmi dlhé rúry a navíjať do zvitku.
+Na obrázku d je ťahanie na tyči. Dlhá tyč ide spolu s rúrou cez prievlak. Po ťahaní sa rúra musí z tyče stiahnuť, takže sa najprv odvaľuje, aby sa jej priemer o niekoľko desatín milimetra zväčšil.

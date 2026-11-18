@@ -1,0 +1,1 @@
+Nezískate rozloženie napätí a pretvorení v stene, zvyškové napätia ani zmenu hrúbky steny pri prievlačnom ťahaní. Na to treba metódu konečných prvkov.

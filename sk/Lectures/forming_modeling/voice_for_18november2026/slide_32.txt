@@ -1,0 +1,3 @@
+Zhrňme, čo analytika dokáže. Dá strednú silu a napätie ťahania. Ukáže trendy s redukciou, trením a uhlom. Dá medznú redukciu a optimálny uhol. A je rýchla, nepotrebujete žiadny softvér.
+Čo analytika nedokáže? Nedá lokálne rozloženie pretvorení, napätí a teploty. Nedá zvyškové napätia. Nedá rozloženie tlaku na nástroji ani jeho opotrebenie. Nezachytí excentricitu, ovalitu ani rozloženie hrúbky steny po obvode. A nepredpovie chyby, ako sú praskliny alebo povrchové chyby.
+Takže analytika slúži na prvý návrh a na kontrolu vierohodnosti. Metódu konečných prvkov potrebujeme vtedy, keď záleží na lokálnych poliach, na rozmeroch, na nástrojoch a na chybách. A tým sa dostávame do tretej časti.

@@ -1,0 +1,1 @@
+Two dimensions are enough for a coaxial, symmetric problem, for force, strain and wall thickness. Three dimensions are needed for eccentricity, ovality, profiled plugs, and for stresses in ribs.

@@ -1,0 +1,1 @@
+Zmeria sa ustálená ťažná sila, simuluje sa niekoľko hodnôt trenia a z lineárnej závislosti sily od trenia sa nájde trenie pre nameranú silu. V našom prípade asi nula celá nula päťdesiattri.

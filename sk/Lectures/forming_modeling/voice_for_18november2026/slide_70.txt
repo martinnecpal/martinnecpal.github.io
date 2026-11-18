@@ -1,0 +1,4 @@
+Validáciu si môžeme predstaviť ako rebrík. Na najnižšej priečke je analytický odhad. Dá rád sily a trendy s uhlom, trením a redukciou a je takmer zadarmo. Druhá priečka je nameraná sila, napríklad z trhacieho stroja alebo zo snímača na ťahacej stolici. Tretia priečka sú rozmery, teda vonkajší a vnútorný priemer a hrúbka steny, merané súradnicovým meracím strojom alebo skenom v GOM Inspect. Štvrtá priečka je lokálne pretvorenie zo stereológie, teda z orientácie zŕn. A najvyššia priečka sú vlastnosti a napätia: tvrdosť, pevnosť a zvyškové napätia.
+Každá vyššia priečka je drahšia a prácnejšia, ale povie o modeli viac. Všetky tieto úrovne sme v našich štúdiách použili.
+Druhú priečku, teda nameranú silu, sme však použili na kalibráciu trenia.
+A preto sú pre nás priečky tri až päť skutočnou, nezávislou validáciou. Prečo je to také dôležité, uvidíte na ďalšej snímke.

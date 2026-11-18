@@ -1,0 +1,2337 @@
+<!doctype html>
+<!--
+  ════════════════════════════════════════════════════════════════════════════
+   MTF STU — reveal.js lecture (template: .claude/skills/mtf-lecture)
+   MSPO2_6I · Lecture 4 · Cold Drawing of Seamless Tubes: Theory, Simulation and Validation (EN)
+   152 min. Timing cues are in the speaker notes (press S).
+   Spoken text per slide: voice_for_18november2026/all_slides_notes.md
+
+   Keys: ← → navigate · Esc overview · S speaker notes · ?print-pdf → PDF.
+   Pictures are local files in img/ (figures from the authors' own book and
+   papers, © publishers). Charts and schemes are inline SVG.
+   If a picture cannot load, the slide shows a link to it instead.
+  ════════════════════════════════════════════════════════════════════════════
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tube Drawing – MTF STU</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <style>
+    :root {
+      --mtf-red:   #c8001e;
+      --mtf-red2:  #e5001e;
+      --mtf-dark:  #8b0014;
+      --text:      #1a1a1a;
+      --muted:     #5a5a5a;
+      --bg:        #ffffff;
+      --line:      #c8001e;
+    }
+
+    .reveal-viewport { background: var(--bg); }
+    .reveal { color: var(--text); font-family: 'Segoe UI', Arial, sans-serif; }
+
+    /* ── Headings ── */
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: var(--mtf-dark); text-transform: none;
+      font-family: 'Segoe UI', Arial, sans-serif; font-weight: 700;
+    }
+    .reveal h1 {
+      font-size: 1.9em; border-left: 5px solid var(--mtf-red);
+      padding-left: 0.45em; text-align: left; line-height: 1.25;
+    }
+    .reveal h2 {
+      font-size: 1.3em; border-bottom: 2px solid var(--mtf-red);
+      padding-bottom: 0.2em; text-align: left;
+    }
+    .subtitle { font-size: 0.9em; color: var(--muted); margin-top: 0.3em; font-weight: 400; }
+
+    /* ── Lists ── */
+    .reveal ul, .reveal ol { text-align: left; font-size: 0.82em; line-height: 1.95; }
+    .reveal li { margin-bottom: 0.25em; }
+    .reveal ul > li::marker { color: var(--mtf-red); }
+    .reveal ul.compact, .reveal ol.compact { font-size: 0.75em; line-height: 1.8; }
+    .reveal ul.small { font-size: 0.78em; }
+
+    /* ── Images ── */
+    .reveal img {
+      max-height: 45vh; object-fit: contain;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+    }
+    .figure { display: flex; flex-direction: column; justify-content: center; text-align: center; }
+    .figure img { width: 100%; max-height: 58vh; object-fit: contain; border-radius: 3px; }
+    .figure.half img { max-height: 38vh; width: auto; }
+    .img-caption { font-size: 0.38em; color: var(--muted); text-align: center; margin-top: 0.3em; }
+
+    /* ── Title slide ── */
+    .reveal .top-rule { border: none; border-top: 4px solid var(--mtf-red); margin-bottom: 1.2em; }
+    .reveal .institution {
+      font-size: 0.52em; color: var(--muted); text-transform: uppercase;
+      letter-spacing: 0.1em; margin-top: 2em;
+    }
+    .reveal .author { font-size: 0.65em; color: var(--muted); }
+    .title-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.5em; align-items: center; }
+    .title-grid img {
+      max-height: 52vh; width: 100%; object-fit: cover;
+      border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+    }
+    .reveal a.pdf-download {
+      display: inline-block; margin-top: 0.5em; padding: 0.35em 1em; font-size: 0.8em; font-weight: 600;
+      color: #fff; background: var(--mtf-red); border-radius: 6px; text-decoration: none;
+    }
+    .reveal a.pdf-download:hover { background: var(--mtf-dark); }
+    .pdf-download-row { text-align: right; }
+    .print-pdf a.pdf-download { display: none; }
+    .nav-help {
+      margin-top: 0.6em; padding: 0.4em 0.8em; font-size: 0.6em; line-height: 1.45;
+      color: var(--muted); background: #fff8f9;
+      border-left: 4px solid var(--mtf-red); border-radius: 3px;
+    }
+    .nav-help strong { color: var(--mtf-dark); }
+    .reveal .nav-help ul { margin: 0.2em 0 0; padding-left: 1.2em; columns: 2; column-gap: 2em; font-size: 1em; line-height: 1.5; }
+    .reveal .nav-help li { margin-bottom: 0; }
+    .nav-help kbd {
+      font-family: inherit; font-size: 0.9em; padding: 0 0.35em;
+      border: 1px solid #bbb; border-bottom-width: 2px; border-radius: 3px; background: #fff;
+    }
+
+    .reveal .hl { color: var(--mtf-red); font-weight: bold; }
+
+    /* ── Section header band ── */
+    .band {
+      background: var(--mtf-dark); color: #fff; text-align: left;
+      padding: 0.5em 0.7em; margin: -0.5em -0.5em 0.5em -0.5em;
+      border-radius: 2px 2px 0 0;
+    }
+    .band-title { font-size: 1.7em; font-weight: 700; letter-spacing: 0.05em; }
+    .band-sub   { font-size: 1.4em; color: #f0b0b8; margin-left: 1em; }
+
+    /* ── Grid layouts ── */
+    .reveal section.slide-full { display: flex; flex-direction: column; height: 100%; }
+    .fig-row { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2em; align-items: center; }
+    .cols-2  { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8em; align-items: start; }
+    .slide-full .fig-row, .slide-full .cols-2 { flex: 1; align-items: stretch; margin-top: 0.4em; }
+    .v-center { display: flex; flex-direction: column; justify-content: center; align-self: center; }
+
+    /* ── Divider slide ── */
+    .reveal section.divider { background: var(--mtf-dark); color: #fff; }
+    .reveal section.divider h2 { color: #fff; border-bottom-color: var(--mtf-red2); font-size: 1.6em; }
+
+    .slide-source { font-size: 0.45em; color: var(--muted); text-align: right; margin: 0.6em 0 0; }
+
+    /* ── Tables ── */
+    .reveal table {
+      font-size: 0.72em; width: 100%; border-collapse: collapse;
+      margin-top: 0.6em; text-align: left;
+    }
+    .reveal table th {
+      background: var(--mtf-dark); color: #fff; padding: 0.35em 0.7em;
+      font-weight: 600; letter-spacing: 0.02em;
+    }
+    .reveal table td { padding: 0.3em 0.7em; border-bottom: 1px solid #e8e8e8; color: var(--text); }
+    .reveal table tr:nth-child(even) td { background: #f9f2f3; }
+    .reveal table tr:hover td { background: #fde8eb; }
+
+    /* ── Process flow ── */
+    .flow-box {
+      background: #fff5f6; border-left: 4px solid var(--mtf-red); border-radius: 4px;
+      padding: 0.4em 0.8em; font-size: 0.75em; margin: 0.25em 0;
+      text-align: left; color: var(--text);
+    }
+    .flow-box.key { background: #fff0f0; font-weight: 600; }
+    .flow-arrow { text-align: center; font-size: 1em; color: var(--mtf-red); line-height: 1.1; }
+    .flow-note { font-size: 0.7em; color: var(--muted); margin-left: 1em; }
+
+    /* ── Equations ── */
+    .equation {
+      background: #fff5f6; border-left: 4px solid var(--mtf-red); border-radius: 4px;
+      padding: 0.4em 1em; margin: 0.6em 0; font-size: 0.9em;
+    }
+
+    /* ══ COMPONENTS ══ */
+    .fig-row > *, .cols-2 > * { min-width: 0; }
+    .figure.half img { max-width: 100%; }
+    .cols-2.four { grid-template-columns: repeat(4, 1fr); align-items: center; }
+    .cols-2.four img { max-height: 46vh; }
+    .reveal table.tight { font-size: 0.7em; }
+    .reveal table.tight th, .reveal table.tight td { padding: 0.22em 0.5em; }
+    .reveal table.mid { font-size: 0.78em; }
+    .reveal ul.xs { font-size: 0.74em; line-height: 1.7; }
+    .equation.sm { font-size: 0.8em; padding: 0.25em 0.8em; margin: 0.35em 0; }
+    .svgfig svg { width: 100%; height: auto; max-height: 50vh; }
+    .reveal pre.code {
+      width: 100%; box-shadow: none; margin: 0.4em 0; font-size: 0.52em;
+      background: #1e1e1e; border-left: 4px solid var(--mtf-red); border-radius: 4px;
+    }
+    .reveal pre.code code { text-align: left; color: #eee; padding: 0.8em 1em; max-height: none; line-height: 1.45; }
+    .reveal pre.code .c { color: #8fbf7f; }
+    .reveal pre.code .k { color: #ff9aa8; }
+    .agenda td:first-child { white-space: nowrap; color: var(--mtf-dark); font-weight: 600; }
+    .agenda tr.main td { background: #fde8eb !important; font-weight: 600; }
+    .tag {
+      display: inline-block; background: var(--mtf-red); color: #fff; border-radius: 3px;
+      padding: 0 0.4em; font-size: 0.75em; font-weight: 600; vertical-align: middle;
+    }
+    .tag.grey { background: #777; }
+    .note-box {
+      background: #f6f6f6; border-left: 4px solid #888; border-radius: 4px;
+      padding: 0.35em 0.8em; font-size: 0.62em; text-align: left; margin-top: 0.5em;
+    }
+    /* video card: thumbnail link + optional embed */
+    .video-card { position: relative; width: 100%; aspect-ratio: 16 / 9; max-height: 50vh;
+      margin: 0 auto; background: #111; border-radius: 4px; overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
+    .video-card a.thumb { display: block; width: 100%; height: 100%; }
+    .video-card a.thumb img { width: 100%; height: 100%; max-height: none; object-fit: cover;
+      box-shadow: none; opacity: 0.85; }
+    .video-card .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+      width: 84px; height: 60px; background: var(--mtf-red); border-radius: 14px; pointer-events: none; }
+    .video-card .play::after { content: ""; position: absolute; left: 34px; top: 17px;
+      border-left: 22px solid #fff; border-top: 13px solid transparent; border-bottom: 13px solid transparent; }
+    .video-card iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-card video { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; background: #000; }
+    .video-actions { font-size: 0.5em; text-align: center; margin-top: 0.35em; color: var(--muted); }
+    .video-actions button { font: inherit; background: none; border: 1px solid var(--mtf-red);
+      color: var(--mtf-red); border-radius: 4px; padding: 0.1em 0.6em; cursor: pointer; margin-left: 0.6em; }
+    .video-actions a { color: var(--mtf-dark); }
+    .popup-btn { font: inherit; font-size: 0.55em; background: var(--mtf-red); color: #fff; border: 0;
+      border-radius: 6px; padding: 0.6em 1.2em; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
+    .answer-btn { font: inherit; font-size: 0.75em; background: none; border: 1px solid var(--mtf-red);
+      color: var(--mtf-red); border-radius: 4px; padding: 0 0.5em; cursor: pointer; margin-left: 0.4em; }
+    .answer-btn.playing { background: var(--mtf-red); color: #fff; }
+    /* answer text below the question, shown by its answer button (also without narration audio) */
+    .answer-text { display: none; font-size: 0.88em; line-height: 1.4; color: var(--mtf-dark); background: #fff5f6;
+      border-left: 3px solid var(--mtf-red); border-radius: 3px; padding: 0.1em 0.5em; margin: 0.15em 0 0.25em; }
+    .answer-text.show { display: block; }
+    .print-pdf .answer-btn, .print-pdf .answer-text { display: none !important; }
+    .img-missing { border: 2px dashed #d9a0a8; border-radius: 4px; padding: 1.2em 0.8em;
+      font-size: 0.45em; color: var(--muted); background: #fff8f9; }
+    .img-missing a { color: var(--mtf-dark); word-break: break-all; }
+    .reveal .fragment.highlight-red.visible { color: var(--mtf-red); }
+    .qnum { color: var(--mtf-red); font-weight: 700; }
+
+    /* ══ BOTTOM NAV BAR ══ */
+    #navBar {
+      position: fixed; bottom: 0; left: 0; right: 0; height: 54px;
+      background: rgba(14,14,14,0.93); backdrop-filter: blur(8px);
+      border-top: 2px solid var(--mtf-red);
+      display: flex; align-items: center; justify-content: center;
+      gap: 14px; z-index: 9998; padding: 0 20px;
+    }
+    #slideIndicators { display: flex; gap: 5px; align-items: center; }
+    .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.28); border: none; cursor: pointer;
+      padding: 0; flex-shrink: 0; transition: background 0.2s, transform 0.2s;
+    }
+    .dot:hover  { background: rgba(255,255,255,0.65); }
+    .dot.active { background: var(--mtf-red); transform: scale(1.55); }
+    .nav-btn {
+      background: none; border: 1px solid rgba(255,255,255,0.12); border-radius: 7px;
+      color: #fff; cursor: pointer; padding: 5px 9px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s; flex-shrink: 0;
+    }
+    .nav-btn:hover  { background: rgba(200,0,30,0.35); border-color: var(--mtf-red); }
+    .nav-btn:active { background: rgba(200,0,30,0.55); }
+    .nav-btn svg    { width: 22px; height: 22px; fill: #fff; display: block; }
+    #slideCounter {
+      font-family: 'Segoe UI', sans-serif; font-size: 11px;
+      color: rgba(255,255,255,0.5); min-width: 34px; text-align: center; flex-shrink: 0;
+    }
+    #autoLabel {
+      display: flex; align-items: center; gap: 5px; color: rgba(255,255,255,0.55);
+      font-size: 11px; font-family: 'Segoe UI', sans-serif;
+      cursor: pointer; user-select: none; flex-shrink: 0;
+    }
+    #autoLabel input { cursor: pointer; accent-color: var(--mtf-red); }
+    .no-narration #playBtn, .no-narration #autoLabel { display: none; }
+
+    /* ══ MTF STU LOGO – fixed bottom-left (above nav bar) ══ */
+    .mtf-logo-badge {
+      position: fixed; bottom: 62px; left: 18px; z-index: 9999;
+      display: flex; align-items: center; gap: 24px;
+      pointer-events: none; opacity: 0.92;
+    }
+    .mtf-logo-badge svg { width: 182px; height: 62px; flex-shrink: 0; }
+    .mtf-wordmark { display: flex; flex-direction: column; line-height: 1.2; }
+    .mtf-line2 {
+      font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px;
+      font-weight: 400; color: var(--muted); letter-spacing: 0.02em;
+    }
+
+    /* ══ FONT SIZE CONTROL – fixed top-right ══ */
+    :root { --fs: 1; }
+    .reveal .slides { font-size: calc(100% * var(--fs)); }
+    #fontCtl { position: fixed; top: 10px; right: 14px; z-index: 9999; display: flex; gap: 4px;
+      padding: 4px; background: rgba(14,14,14,0.85); border: 1px solid var(--mtf-red); border-radius: 8px; }
+    #fontCtl button { background: none; border: none; color: #fff; cursor: pointer;
+      font: 600 14px 'Segoe UI', Arial, sans-serif; padding: 2px 7px; border-radius: 4px; }
+    #fontCtl button:hover { background: var(--mtf-red); }
+    #fontCtl .pct { color: rgba(255,255,255,0.6); font: 11px 'Segoe UI', sans-serif; align-self: center; min-width: 34px; text-align: center; }
+    .print-pdf #fontCtl { display: none; }
+
+    /* ══ DEEP-DIVE STACKS (vertical sub-slides): right-side panel + "press ↓" badge ══ */
+    #vNav { position: fixed; right: 14px; top: 50%; transform: translateY(-50%); z-index: 9998;
+      display: none; flex-direction: column; align-items: center; gap: 7px; padding: 10px 6px;
+      background: rgba(14,14,14,0.85); border: 1px solid var(--mtf-red); border-radius: 14px; }
+    #vNav .dot { width: 9px; height: 9px; }
+    #vNav .vbtn { background: none; border: none; color: #fff; cursor: pointer; font-size: 14px; line-height: 1; padding: 2px; }
+    #vNav .vbtn:hover { color: var(--mtf-red); }
+    #vNav .vlabel { color: rgba(255,255,255,0.6); font: 10px 'Segoe UI', sans-serif; }
+    .deep-hint { display: table; margin: 0.4em 0 0 auto; font-size: 0.5em; color: #fff; background: var(--mtf-red);
+      padding: 0.2em 0.8em; border-radius: 14px; animation: bob 1.6s ease-in-out infinite; }
+    .nav-help .deep-hint { display: inline; animation: none; font-size: 0.9em; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+    .no-deep .deep-help { display: none; }
+
+    /* Hide chrome in PDF export */
+    .print-pdf #navBar, .print-pdf #vNav { display: none; }
+  </style>
+</head>
+<body>
+
+<div class="mtf-logo-badge" aria-label="MTF STU">
+<svg width="182" height="62" viewBox="0 0 91 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M2.29999 17.7807C3.59999 17.7807 4.60001 16.7807 4.60001 15.4807C4.60001 14.1807 3.59999 13.1807 2.29999 13.1807C0.999988 13.1807 0 14.1807 0 15.4807C0 16.7807 0.999988 17.7807 2.29999 17.7807Z" fill="#E72B1E"/>
+  <path d="M2.29999 30.4807C3.59999 30.4807 4.60001 29.4807 4.60001 28.1807C4.60001 26.8807 3.59999 25.8807 2.29999 25.8807C0.999988 25.8807 0 26.8807 0 28.1807C0 29.3807 0.999988 30.4807 2.29999 30.4807Z" fill="#E72B1E"/>
+  <path d="M15 17.7807C16.3 17.7807 17.3 16.7807 17.3 15.4807C17.3 14.1807 16.3 13.1807 15 13.1807C13.7 13.1807 12.7 14.1807 12.7 15.4807C12.7 16.7807 13.7 17.7807 15 17.7807Z" fill="#E72B1E"/>
+  <path d="M15 30.4807C16.3 30.4807 17.3 29.4807 17.3 28.1807C17.3 26.8807 16.3 25.8807 15 25.8807C13.7 25.8807 12.7 26.8807 12.7 28.1807C12.7 29.3807 13.7 30.4807 15 30.4807Z" fill="#E72B1E"/>
+  <path d="M27.6 17.7807C28.9 17.7807 29.9 16.7807 29.9 15.4807C29.9 14.1807 28.9 13.1807 27.6 13.1807C26.3 13.1807 25.3 14.1807 25.3 15.4807C25.3 16.7807 26.3 17.7807 27.6 17.7807Z" fill="#E72B1E"/>
+  <path d="M2.29999 5.18069C3.59999 5.18069 4.60001 4.18071 4.60001 2.88071C4.60001 1.58071 3.59999 0.580688 2.29999 0.580688C0.999988 0.580688 0 1.58071 0 2.88071C0 4.18071 0.999988 5.18069 2.29999 5.18069Z" fill="#E72B1E"/>
+  <path d="M15 5.18069C16.3 5.18069 17.3 4.18071 17.3 2.88071C17.3 1.58071 16.3 0.580688 15 0.580688C13.7 0.580688 12.7 1.58071 12.7 2.88071C12.7 4.18071 13.7 5.18069 15 5.18069Z" fill="#E72B1E"/>
+  <path d="M27.6 5.18069C28.9 5.18069 29.9 4.18071 29.9 2.88071C29.9 1.58071 28.9 0.580688 27.6 0.580688C26.3 0.580688 25.3 1.58071 25.3 2.88071C25.3 4.18071 26.3 5.18069 27.6 5.18069Z" fill="#E72B1E"/>
+  <path d="M27.6 30.4807C28.9 30.4807 29.9 29.4807 29.9 28.1807C29.9 26.8807 28.9 25.8807 27.6 25.8807C26.3 25.8807 25.3 26.8807 25.3 28.1807C25.3 29.3807 26.3 30.4807 27.6 30.4807Z" fill="#E72B1E"/>
+  <path d="M40.2 17.7807C41.5 17.7807 42.5 16.7807 42.5 15.4807C42.5 14.1807 41.5 13.1807 40.2 13.1807C38.9 13.1807 37.9 14.1807 37.9 15.4807C37.9 16.7807 39 17.7807 40.2 17.7807Z" fill="#E72B1E"/>
+  <path d="M40.2 30.4807C41.5 30.4807 42.5 29.4807 42.5 28.1807C42.5 26.8807 41.5 25.8807 40.2 25.8807C38.9 25.8807 37.9 26.8807 37.9 28.1807C37.9 29.3807 39 30.4807 40.2 30.4807Z" fill="#E72B1E"/>
+  <path d="M40.2 5.18069C41.5 5.18069 42.5 4.18071 42.5 2.88071C42.5 1.58071 41.5 0.580688 40.2 0.580688C38.9 0.580688 37.9 1.58071 37.9 2.88071C37.9 4.18071 39 5.18069 40.2 5.18069Z" fill="#E72B1E"/>
+  <path d="M85.8 19.5807C85.8 19.4807 85.9 19.4807 85.9 19.4807H90.7C90.8 19.4807 90.9 19.3807 90.9 19.2807V18.1807C90.9 18.0807 90.8 17.9807 90.7 17.9807H84.3C84.2 17.9807 84.1 18.0807 84.1 18.1807V30.0807C84.1 30.1807 84.2 30.2807 84.3 30.2807H85.7C85.8 30.2807 85.9 30.1807 85.9 30.0807V24.7807H89.7C89.8 24.7807 89.9 24.6807 89.9 24.5807V23.4807C89.9 23.3807 89.8 23.2807 89.7 23.2807H85.9V19.5807H85.8ZM75 30.2807C75.1 30.2807 75.2 30.1807 75.2 30.0807V19.5807C75.2 19.4807 75.2 19.4807 75.3 19.4807H78.3C78.4 19.4807 78.5 19.3807 78.5 19.2807V18.1807C78.5 18.0807 78.4 17.9807 78.3 17.9807H70.4C70.3 17.9807 70.2 18.0807 70.2 18.1807V19.2807C70.2 19.3807 70.3 19.4807 70.4 19.4807H73.3C73.4 19.4807 73.4 19.5807 73.4 19.5807V30.0807C73.4 30.1807 73.5 30.2807 73.6 30.2807H75ZM60 30.2807C60.1 30.2807 60.1 30.2807 60.2 30.1807L63 20.8807V30.0807C63 30.1807 63.1 30.2807 63.2 30.2807H64.5C64.6 30.2807 64.7 30.1807 64.7 30.0807V18.1807C64.7 18.0807 64.6 17.9807 64.5 17.9807H62.8C62.7 17.9807 62.6 17.9807 62.6 18.0807L59.4 28.1807L56.2 18.0807C56.2 17.9807 56.1 17.9807 56 17.9807H54.2C54.1 17.9807 54 18.0807 54 18.1807V30.0807C54 30.1807 54.1 30.2807 54.2 30.2807H55.5C55.6 30.2807 55.7 30.1807 55.7 30.0807V20.8807L58.5 30.1807C58.5 30.2807 58.6 30.2807 58.7 30.2807H60Z" fill="black"/>
+  <path d="M90.9 0.980713C90.9 0.780713 90.8 0.780701 90.7 0.780701H88.4C88.3 0.780701 88.2 0.880713 88.2 0.980713V9.18069C88.2 10.3807 87.5 10.9807 86.2 10.9807C84.9 10.9807 84.2 10.3807 84.2 9.18069V0.980713C84.2 0.780713 84.1 0.780701 84 0.780701H81.7C81.5 0.780701 81.5 0.880713 81.5 0.980713V9.2807C81.5 11.6807 82.8 13.1807 86.2 13.1807C89.5 13.1807 90.9 11.6807 90.9 9.2807V0.980713ZM72.4 12.9807C72.6 12.9807 72.6 12.8807 72.6 12.7807V3.08069C72.6 2.98069 72.6 2.98071 72.7 2.98071H75.6C75.7 2.98071 75.8 2.8807 75.8 2.7807V1.08069C75.8 0.880688 75.7 0.880707 75.6 0.880707H66.9C66.7 0.880707 66.7 0.980688 66.7 1.08069V2.7807C66.7 2.9807 66.8 2.98071 66.9 2.98071H69.7C69.8 2.98071 69.8 3.08069 69.8 3.08069V12.7807C69.8 12.9807 69.9 12.9807 70 12.9807H72.4ZM53.6 12.3807C54.8 12.9807 55.9 13.0807 57.3 13.0807C59.9 13.0807 61.6 11.7807 61.6 9.38071C61.6 7.68071 60.8 6.58069 58.7 5.68069C56.9 4.98069 56.6 4.58071 56.6 3.98071C56.6 3.28071 57.1 2.7807 58.2 2.7807C59 2.7807 59.7 2.88069 60.3 3.18069C60.5 3.28069 60.6 3.18069 60.6 3.08069L61.4 1.48071C61.5 1.38071 61.5 1.28069 61.3 1.18069C60.1 0.680695 59.3 0.480713 57.7 0.480713C55.2 0.480713 53.7 1.98071 53.7 3.98071C53.7 5.78071 54.6 6.8807 56.7 7.7807C58.3 8.4807 58.7 8.88069 58.7 9.58069C58.7 10.2807 58.1 10.7807 57.1 10.7807C55.9 10.7807 55.3 10.5807 54.6 10.1807C54.5 10.0807 54.4 10.1807 54.3 10.2807L53.5 12.0807C53.5 12.2807 53.5 12.3807 53.6 12.3807Z" fill="black"/>
+</svg>
+  <div class="mtf-wordmark">
+    <span class="mtf-line2">Faculty of Materials Science<br>and Technology in Trnava</span>
+  </div>
+</div>
+
+
+<div class="reveal"><div class="slides">
+
+  <!-- ═══ 1 · TITLE SLIDE ═══ -->
+  <section style="text-align:left;">
+    <div class="title-grid">
+      <div>
+        <hr class="top-rule">
+        <h1>Cold Drawing of Seamless Tubes: Theory, Simulation and Validation</h1>
+        <p class="subtitle">Lecture 4 &nbsp;·&nbsp; Modelling and Simulation of Processes II – Forming (<abbr title="course code of Modelling and Simulation of Processes II – Forming">MSPO2_6I</abbr>)</p>
+        <p class="author">Ing. Martin Necpal, PhD.</p>
+        <p class="institution">Winter semester 2026/2027<br>
+          Faculty of Materials Science and Technology &nbsp;·&nbsp; <abbr title="Slovak University of Technology in Bratislava">STU</abbr> Bratislava</p>
+      </div>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/book_sink_strain.jpeg" alt="Simulation of tube sinking in DEFORM – effective strain">
+        <p class="img-caption">Tube sinking Ø16 → Ø12 mm, effective strain in <abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 3D (© Bílik, Necpal, Sobota 2023, Spektrum <abbr title="Slovak University of Technology in Bratislava">STU</abbr>)</p>
+      </div>
+    </div>
+    <div class="nav-help">
+      <strong>How to use this presentation</strong> (bar at the bottom, panel on the right)
+      <ul>
+        <li><kbd>←</kbd> <kbd>→</kbd> or the ‹ › buttons – previous / next main slide</li>
+        <li>Dots at the bottom – jump straight to a slide</li>
+        <li class="deep-help"><span class="deep-hint">▼ Deep dive</span> – the slide has optional sub-slides below it</li>
+        <li class="deep-help"><kbd>↓</kbd> <kbd>↑</kbd> or ▼ ▲ in the right panel – enter / move within a deep dive; <kbd>→</kbd> continues with the next main slide</li>
+        <li>▶ or <kbd>Space</kbd> – play / pause the spoken commentary</li>
+        <li><strong>Auto</strong> on – moves to the next slide when the commentary ends; off – the slide stays</li>
+        <li><kbd>F</kbd> full screen · <kbd>Esc</kbd> slide overview (deep dives as vertical columns)</li>
+        <li><kbd>Alt</kbd> + click (Linux: <kbd>Ctrl</kbd> + click) – zoom into a spot on the slide; click again to zoom out</li>
+        <li>Underlined abbreviations – hover the mouse over them for an explanation</li>
+        <li><strong>A−</strong> / <strong>A+</strong> top right or <kbd>−</kbd> / <kbd>+</kbd> – smaller / larger text on all slides; <strong>A</strong> or <kbd>0</kbd> – original size</li>
+      </ul>
+    </div>
+    <div class="pdf-download-row"><a class="pdf-download" href="18november2026.pdf" download>⬇ Download PDF</a></div>
+    <aside class="notes">[0:00–0:02] Welcome. Today one specific process from technology through analytics and FEM to our own research studies and validation. The lecture is longer than usual.</aside>
+  </section>
+
+  <!-- ═══ 2 · MOTIVATION ═══ -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Introduction</span><span class="band-sub">Motivation</span></div>
+    <h2>Why tube drawing?</h2>
+    <div class="fig-row">
+      <ul class="v-center compact">
+        <li><strong>Precision seamless tubes:</strong> hydraulic cylinders, cars, boilers, heat exchangers</li>
+        <li>Hot working gives the shape, <span class="hl">cold working gives the accuracy</span> of dimensions, surface and strength</li>
+        <li>Internally ribbed tubes – higher heat transfer in power engineering</li>
+        <li class="fragment">Trial-and-error testing in the plant is expensive → <span class="hl"><abbr title="Finite Element Method">FEM</abbr> simulation</span></li>
+        <li class="fragment">Cooperation with <abbr title="Železiarne Podbrezová a.s. (Slovak tube maker)">ŽP</abbr> Podbrezová, projects <abbr title="Slovak Research and Development Agency">APVV</abbr>-15-0319 and <abbr title="Slovak Research and Development Agency">APVV</abbr>-18-0418</li>
+      </ul>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/book_tubes_18.jpeg" alt="Tubes Ø18 before drawing and after sinking to Ø12 mm">
+        <p class="img-caption">Tube Ø18 × 1 mm before drawing and after drawing to Ø12 mm (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:02–0:04] Why this process matters: accuracy, strain hardening, expensive trials in the plant.</aside>
+  </section>
+
+  <!-- ═══ 3 · MATERIALS AND RANGE ═══ -->
+  <section>
+    <div class="band"><span class="band-title">Introduction</span><span class="band-sub">Materials and sizes</span></div>
+    <h2>What tubes are drawn from, and in what sizes</h2>
+    <table class="tight">
+      <tr><th>Group</th><th>Examples</th><th>Cold-drawn range</th><th>Use</th></tr>
+      <tr><td><strong>Carbon and low-alloy steels</strong></td><td>E235, E355, 11353, 11523, 12022, 15020</td><td>precision tubes to <abbr title="European Norm">EN</abbr> 10305-1</td><td>cylinders, mechanical engineering, pressure piping, boilers</td></tr>
+      <tr><td><strong>Stainless steels</strong></td><td>1.4301, 1.4404, 1.4541, duplex 1.4462</td><td>—</td><td>chemical and food industry</td></tr>
+      <tr><td><strong>Copper and its alloys</strong></td><td>Cu 99.9, brasses, Cu–Ni</td><td>Ø2–160 mm, wall 0.15–10 mm</td><td>coolers, food industry</td></tr>
+      <tr><td><strong>Aluminium and its alloys</strong></td><td><abbr title="European Norm">EN</abbr> AW 6060, 6061, 6082, 2024, 7075</td><td>Ø2–180 mm, wall 0.4–10 mm</td><td>transport, lightweight structures</td></tr>
+    </table>
+    <ul class="small" style="margin-top:0.5em;">
+      <li>In our studies: <strong>E235</strong>, <strong>E355</strong> and <strong>SPT360</strong> – ferritic-pearlitic steels with good cold formability</li>
+    </ul>
+    <p class="slide-source">Source: Bílik, Necpal, Sobota 2023, ch. 1</p>
+    <aside class="notes">[0:04–0:06] Materials, size ranges. Stress that all our studies use E235/E355/SPT360 steel.</aside>
+  </section>
+
+  <!-- ═══ 4 · HOT PRODUCTION ═══ -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Introduction</span><span class="band-sub">Production chain</span></div>
+    <h2>First hot: billet and rolling</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.2fr;">
+      <ul class="v-center compact">
+        <li>Continuously cast billet → heating → <strong>piercing</strong> → elongation on a mandrel</li>
+        <li>Cross-roll piercing: <strong>Mannesmann effect</strong> – tensile stress in the core opens a cavity</li>
+        <li>Push bench, walking-beam furnace, <strong>stretch-reducing mill</strong></li>
+        <li>Result: hot-rolled tube, e.g. Ø70 × 6.3 mm or Ø28 × 4 mm</li>
+        <li class="fragment">Eccentricity and the inner “polygon” from rolling carry over into drawing</li>
+      </ul>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/book_zp_hot_route.jpeg" alt="Production route of hot-rolled tubes at ŽP Podbrezová">
+        <p class="img-caption">Hot-rolled tube production at <abbr title="Železiarne Podbrezová a.s. (Slovak tube maker)">ŽP</abbr> a.s. (© Bílik, Necpal, Sobota 2023 after <abbr title="Železiarne Podbrezová a.s. (Slovak tube maker)">ŽP</abbr>)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:06–0:08] Briefly hot production, so it is clear where the input tube and its defects (eccentricity) come from.</aside>
+  </section>
+
+  <!-- ═══ 5 · COLD PRODUCTION ═══ -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Introduction</span><span class="band-sub">Production chain</span></div>
+    <h2>Then cold: the precision tube route</h2>
+    <div class="cols-2" style="grid-template-columns:1fr 1.25fr;">
+      <div>
+        <div class="flow-box">1. Hot-rolled input tube</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">2. Pointing the tube end (hot or cold)</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">3. Chemical treatment: pickling, phosphating, lubricant</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key">4. Cold drawing <span class="flow-note">→ topic of today’s lecture</span></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">5. Intermediate / final annealing in protective atmosphere</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">6. Straightening, cutting, inspection, preservation, dispatch</div>
+      </div>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/book_zp_cold_route.png" alt="Production of precision tubes by cold drawing at ŽP Podbrezová">
+        <p class="img-caption">Production of precision tubes by cold drawing (© Bílik, Necpal, Sobota 2023 after the <abbr title="Železiarne Podbrezová a.s. (Slovak tube maker)">ŽP</abbr> Handbook 2017)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:08–0:10] Route at ŽP Podbrezová. Drawing can be repeated several times, with annealing between draws.</aside>
+  </section>
+
+  <!-- ═══ 6 · WHERE IT FITS ═══ -->
+  <section>
+    <h2>Where today’s lecture fits</h2>
+    <div class="cols-2" style="gap:1.5em;">
+      <div>
+        <div class="flow-box">1. Introduction to forming modelling</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">2. Analytical methods and simulation software</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">3. Material data in <abbr title="Design Environment for FORMing (software name)">DEFORM</abbr></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key">4. Tube drawing – the full model of one process <span class="flow-note">(mesh, boundary conditions, friction, validation)</span></div>
+      </div>
+      <div>
+        <ul class="small" style="line-height:1.8;">
+          <li><strong>Last time:</strong> flow stress and its models – now we use them</li>
+          <li><strong>Today:</strong> technology → analytics → <abbr title="Finite Element Method">FEM</abbr> model setup → case studies → optimisation and validation</li>
+          <li><strong>Goal:</strong> that you can build, verify and critically assess a drawing model yourselves</li>
+        </ul>
+      </div>
+    </div>
+    <aside class="notes">[0:10–0:12] Link to lecture 3 (material) and the promised preprocessing – today on a concrete process.</aside>
+  </section>
+
+  <!-- ═══ 7 · AGENDA ═══ -->
+  <section>
+    <h2>Today’s agenda <span class="subtitle" style="font-size:0.55em;">(152 min, with a break as needed)</span></h2>
+    <table class="agenda mid">
+      <tr><th>Time</th><th>Block</th><th>Content</th></tr>
+      <tr><td>0:00 – 0:14</td><td>Introduction</td><td>Motivation, materials, tube production chain</td></tr>
+      <tr><td>0:14 – 0:40</td><td>I · Drawing fundamentals</td><td>Drawing methods, die and plug, strain, parameters</td></tr>
+      <tr><td>0:40 – 1:00</td><td>II · Analytical methods</td><td>Ideal work, slab method, optimum angle, drawing limit</td></tr>
+      <tr><td>1:00 – 1:32</td><td>III · Numerical simulation</td><td>Implicit / explicit, Lagrange / <abbr title="Arbitrary Lagrangian–Eulerian">ALE</abbr>, model setup</td></tr>
+      <tr class="main"><td>1:32 – 2:08</td><td>IV · Case studies</td><td>Our own papers: friction, angle, wall thickness, <abbr title="Design of Experiments">DOE</abbr>, ribbed tubes</td></tr>
+      <tr><td>2:08 – 2:20</td><td>V · Optimisation and validation</td><td>Calibration vs validation, recommendations, workflow</td></tr>
+      <tr><td>2:20 – 2:32</td><td>Summary and questions</td><td>Key takeaways, review questions</td></tr>
+    </table>
+    <aside class="notes">[0:12–0:14] Agenda. The main block is the case studies from our own research.</aside>
+  </section>
+
+  <!-- ═══ PART I ═══ -->
+  <section class="divider">
+    <h2>Part I — Fundamentals of the drawing process</h2>
+    <p style="color:#f0b0b8;">Wire, bar and tube · die and plug · strain · process parameters</p>
+    <aside class="notes">[0:14] Part I.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Fundamentals</span><span class="band-sub">Principle</span></div>
+    <h2>The principle of drawing</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.1fr;">
+      <ul class="v-center compact">
+        <li>The workpiece is <strong>pulled</strong> through a stationary die – cross-section decreases, length increases</li>
+        <li>The force acts as <span class="hl">tension at the exit</span>; the material is shaped by <strong>compression</strong> in contact with the die</li>
+        <li>Goals: accurate dimensions, good surface, higher strength through work hardening</li>
+        <li class="fragment">Tube = hollow workpiece → in addition <strong>wall thickness</strong> and <strong>inner surface</strong>, often an inner tool (plug)</li>
+      </ul>
+      <div class="figure svgfig">
+        <svg viewBox="0 0 440 260" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial" font-size="13">
+          <polygon points="150,30 230,30 230,95 205,110 150,80" fill="#ddd" stroke="#777"/>
+          <polygon points="150,230 230,230 230,165 205,150 150,180" fill="#ddd" stroke="#777"/>
+          <rect x="20" y="80" width="135" height="100" fill="#fff5f6" stroke="#c8001e"/>
+          <polygon points="155,80 205,110 205,150 155,180" fill="#fff5f6" stroke="#c8001e"/>
+          <rect x="205" y="110" width="160" height="40" fill="#fff5f6" stroke="#c8001e"/>
+          <line x1="365" y1="130" x2="425" y2="130" stroke="#c8001e" stroke-width="3"/>
+          <polygon points="425,130 412,123 412,137" fill="#c8001e"/>
+          <text x="395" y="118" text-anchor="middle" fill="#c8001e" font-weight="700">F</text>
+          <text x="85" y="135" text-anchor="middle">D₀, S₀</text>
+          <text x="300" y="135" text-anchor="middle">D₁, S₁</text>
+          <text x="190" y="22" text-anchor="middle" fill="#555">die</text>
+          <line x1="155" y1="60" x2="205" y2="60" stroke="#8b0014" stroke-dasharray="3 3"/>
+          <text x="168" y="74" fill="#8b0014">α</text>
+          <text x="220" y="250" text-anchor="middle" fill="#555">contact: pressure p and friction μ·p</text>
+          <line x1="20" y1="130" x2="20" y2="130"/>
+        </svg>
+        <p class="img-caption">Drawing of a solid cross-section (own scheme)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:14–0:16] Principle – tension at the exit, compression in the die. A tube adds the wall and the inner surface.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Fundamentals</span><span class="band-sub">Wire, bar, tube</span></div>
+    <h2>Wire, bar and tube – what they share and how they differ</h2>
+    <table class="mid">
+      <tr><th>Product</th><th>Input stock</th><th>Typical machine</th><th>Note</th></tr>
+      <tr><td><strong>Wire</strong></td><td>rolled wire rod in coils</td><td>multi-pass drawing machine with capstans</td><td>many passes in series, high speeds, small reduction per pass</td></tr>
+      <tr><td><strong>Bar</strong></td><td>bars or coils</td><td>draw bench</td><td>fewer passes, larger diameters</td></tr>
+      <tr><td><strong>Tube</strong></td><td>hollow shell</td><td>chain or hydraulic draw bench</td><td>control of wall thickness and inner diameter, plug</td></tr>
+    </table>
+    <ul class="small" style="margin-top:0.6em;">
+      <li>The physics is the same: the <span class="hl">tensile stress at the exit</span> must stay below the yield stress of the drawn material</li>
+    </ul>
+    <aside class="notes">[0:16–0:18] Comparison of wire / bar / tube.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Fundamentals</span><span class="band-sub">Tool</span></div>
+    <h2>Die geometry</h2>
+    <div class="fig-row" style="grid-template-columns:1.1fr 1fr;">
+      <ul class="v-center compact">
+        <li><strong>Entry cone</strong> – guides the lubricant into the die</li>
+        <li><strong>Reduction cone</strong> with angle <span class="hl">2α</span> – this is where deformation happens</li>
+        <li><strong>Bearing (land)</strong> (cylinder, e.g. 4 mm) – sets the final diameter, compensates springback</li>
+        <li><strong>Exit cone</strong> – protects the product at the exit</li>
+        <li class="fragment">Die material: cemented carbide (e.g. G10–G60), tool steel</li>
+      </ul>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/book_die_drawing.png" alt="Drawing of a Ø25 mm die with reduction angle 2α and a 4 mm bearing">
+        <p class="img-caption">Ø25 mm die for a Ø28 × 4 mm tube (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:18–0:20] Four die zones. Watch the notation: the book uses 2α (full angle), the papers use α (half angle).</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Fundamentals</span><span class="band-sub">Drawing methods</span></div>
+    <h2>Four methods of tube drawing</h2>
+    <div class="cols-2 four" style="gap:0.8em;">
+      <div class="figure half"><img src="../../../sk/Lectures/forming_modeling/img/book_sinking.jpeg" alt="Tube sinking without a plug"><p class="img-caption">a) tube sinking (no plug)</p></div>
+      <div class="figure half"><img src="../../../sk/Lectures/forming_modeling/img/book_fixed_plug_cyl.jpeg" alt="Drawing on a fixed cylindrical plug"><p class="img-caption">b) fixed (cylindrical) plug on a rod</p></div>
+      <div class="figure half"><img src="../../../sk/Lectures/forming_modeling/img/book_floating_plug.jpeg" alt="Drawing on a floating plug"><p class="img-caption">c) floating plug</p></div>
+      <div class="figure half"><img src="../../../sk/Lectures/forming_modeling/img/book_mandrel_bar.png" alt="Drawing on a mandrel bar"><p class="img-caption">d) mandrel drawing (moving bar)</p></div>
+    </div>
+    <p class="slide-source">Pictures © Bílik, Necpal, Sobota 2023 (d after Lenfeld 2005)</p>
+    <aside class="notes">[0:20–0:22] Four methods – go through pictures a), b), c), d).</aside>
+  </section>
+  <section>
+    <div class="band"><span class="band-title">Fundamentals</span><span class="band-sub">Drawing methods</span></div>
+    <h2>Comparison of drawing methods</h2>
+    <table class="tight">
+      <tr><th>Method</th><th>Inner tool</th><th>Effect on the tube</th><th>Advantages</th><th>Limitations</th></tr>
+      <tr><td><strong>Sinking</strong></td><td>none</td><td>reduces D, the wall slightly <span class="hl">thickens</span></td><td>simplest</td><td>inner surface and d not controlled</td></tr>
+      <tr><td><strong>Fixed plug</strong></td><td>plug on a rod</td><td>sets both D and d, reduces the wall</td><td>accuracy, inner surface</td><td>tube length limited by the rod, higher force, R ≈ up to 30 %</td></tr>
+      <tr><td><strong>Floating plug</strong></td><td>free plug in equilibrium</td><td>reduces D and the wall</td><td>long tubes from coil, higher speeds, R up to ≈ 45 %</td><td>sensitive to geometry and lubrication</td></tr>
+      <tr><td><strong>Mandrel bar</strong></td><td>bar moves with the tube</td><td>reduces D and the wall</td><td>thin walls (&lt; 1 mm), friction on the bar helps</td><td>the bar must be extracted – reeling of the tube</td></tr>
+    </table>
+    <p class="note-box">Direction of friction: on a fixed plug friction <strong>holds back</strong> the tube (increases the force); on a moving bar it <strong>pulls it forward</strong> (reduces the force).</p>
+    <aside class="notes">[0:22–0:24] Comparison table. Stress the direction of friction – important for the boundary conditions in the simulation.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Fundamentals</span><span class="band-sub">Plugs</span></div>
+    <h2>Plugs and their position</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.2fr;">
+      <ul class="v-center compact">
+        <li><strong>Cylindrical</strong> or <strong>shaped</strong> fixed plug on a plug rod</li>
+        <li>Cemented-carbide ring screwed onto a steel body</li>
+        <li>The plug position relative to the die bearing decides where the wall is thinned</li>
+        <li>Plug wear is usually greater than die wear</li>
+        <li class="fragment">Ribbed (profiled) plug → <span class="hl">internally ribbed</span> tubes (Part IV)</li>
+      </ul>
+      <div class="cols-2" style="gap:0.5em;align-items:center;">
+        <div class="figure half"><img src="../../../sk/Lectures/forming_modeling/img/book_carbide_plug.jpeg" alt="Plug with a carbide ring: 1 ring, 2 body"><p class="img-caption">Plug: 1 – carbide ring, 2 – body</p></div>
+        <div class="figure half"><img src="../../../sk/Lectures/forming_modeling/img/book_plug_position.jpeg" alt="Plug position in the die"><p class="img-caption">Plug position in the die</p></div>
+      </div>
+    </div>
+    <p class="slide-source">Pictures © Bílik, Necpal, Sobota 2023</p>
+    <aside class="notes">[0:24–0:26] Plugs, carbide, plug position. Pointer to ribbed plugs in Part IV.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Fundamentals</span><span class="band-sub">Preparation</span></div>
+    <h2>Pointing – no point, no drawing</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.1fr;">
+      <ul class="v-center compact">
+        <li>The point must pass through the die and be gripped by the draw bench</li>
+        <li><strong>Hot:</strong> rotary swaging (e.g. 850–900 °C, Ø11 for a Ø12 die)</li>
+        <li><strong>Cold:</strong> pressing – suitable for thin walls</li>
+        <li class="fragment">In the simulation: the point and the undrawn end are <strong>not evaluated</strong> – only the steady middle part of the tube</li>
+      </ul>
+      <div class="cols-2" style="gap:0.5em;align-items:center;">
+        <div class="figure half"><img src="../../../sk/Lectures/forming_modeling/img/book_pointing_press.png" alt="Cold pointing by pressing"><p class="img-caption">Cold pointing by pressing</p></div>
+        <div class="figure half"><img src="../../../sk/Lectures/forming_modeling/img/book_tip.png" alt="Tube point"><p class="img-caption">Tube point</p></div>
+      </div>
+    </div>
+    <p class="slide-source">Pictures © Bílik, Necpal, Sobota 2023</p>
+    <aside class="notes">[0:26–0:28] Pointing. Consequence for evaluating the simulation.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Fundamentals</span><span class="band-sub">Strain</span></div>
+    <h2>Reduction, strain and elongation coefficient</h2>
+    <div class="fig-row" style="grid-template-columns:1.15fr 1fr;">
+      <div class="v-center">
+        <ul class="xs">
+          <li><strong>Reduction R</strong> – relative decrease of the tube cross-section area by drawing, in % of the original cross-section S<sub>0</sub>.</li>
+          <li><strong>Strain φ</strong> (logarithmic) – natural logarithm of the ratio of cross-sections before and after drawing; strains of successive draws add up.</li>
+          <li><strong>Elongation coefficient λ</strong> – how many times the tube gets longer; at constant volume it equals the area ratio S<sub>0</sub>/S<sub>r</sub> (λ &gt; 1).</li>
+        </ul>
+        <div class="equation sm">$$S=\frac{\pi}{4}(D^2-d^2)=\pi(D-s)\,s \qquad R=\frac{S_0-S_r}{S_0}\cdot 100\,\%$$</div>
+        <div class="equation sm">$$\varphi=\ln\frac{S_0}{S_r} \qquad \lambda=\frac{S_0}{S_r}=\frac{L_r}{L_0}$$</div>
+        <div class="equation sm">$$\varphi_L+\varphi_d+\varphi_s=0,\quad \varphi_L=\ln\tfrac{L}{L_0},\ \varphi_d=\ln\tfrac{d_s}{d_{s0}},\ \varphi_s=\ln\tfrac{s}{s_0}$$</div>
+        <ul class="xs">
+          <li>\(d_s=D-s\) – mean wall diameter</li>
+          <li class="fragment">Example: Ø70 × 6.3 → Ø55 × 4.75 mm: <span class="hl">R = 40.5 %, φ = 0.52</span></li>
+        </ul>
+      </div>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/book_tube_dims.png" alt="Tube dimensions before and after drawing">
+        <p class="img-caption">Tube dimensions before and after drawing (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:28–0:30] Formulas. Work the example on the board: S0 = 1260.9, S = 749.9 mm².</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Fundamentals</span><span class="band-sub">Stress state</span></div>
+    <h2>Stress and strain state in the die</h2>
+    <div class="fig-row" style="grid-template-columns:1.1fr 1fr;">
+      <div class="v-center">
+        <ul class="xs">
+          <li>Longitudinal: <span class="hl">tensile σ₁</span>; radial and hoop: compressive σ₂, σ₃</li>
+          <li>Axisymmetric state, σ₂ ≈ σ₃</li>
+        </ul>
+        <div class="equation sm">$$\frac{\varphi_1-\varphi_2}{\sigma_1-\sigma_2}=\frac{\varphi_2-\varphi_3}{\sigma_2-\sigma_3}=\frac{3}{2}\,\frac{\varphi_i}{\sigma_i}$$</div>
+        <div class="equation sm">$$\sigma_1=\frac{F_{d}}{S_r},\qquad \sigma_1 &lt; R_{p0.2}\ \text{(of the hardened tube)}$$</div>
+        <ul class="xs">
+          <li class="fragment">If σ₁ exceeds the yield stress behind the die → the tube <strong>stretches or breaks</strong></li>
+        </ul>
+      </div>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/book_stress_states.png" alt="Stress and strain state in fixed-plug drawing">
+        <p class="img-caption">1 – holder, 2 – die, 3 – fixed plug; zones I–III (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:30–0:32] Lévy–Mises; condition σ1 &lt; yield stress of the hardened tube – the fundamental limit of drawing.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Fundamentals</span><span class="band-sub">Parameters</span></div>
+    <h2>Key process parameters</h2>
+    <table class="tight">
+      <tr><th>Parameter</th><th>Influence</th></tr>
+      <tr><td><strong>Die angle α</strong></td><td>small α: long contact, much friction · large α: redundant deformation, pressure on the tool → <span class="hl">optimum</span></td></tr>
+      <tr><td><strong>Reduction</strong></td><td>sets the force and hardening; limited by the strength of the drawn material</td></tr>
+      <tr><td><strong>Friction and lubrication</strong></td><td>force, wear, surface, heat; Coulomb μ or friction factor m</td></tr>
+      <tr><td><strong>Drawing speed</strong></td><td>lubricant film, heating; at slow tube drawing almost no effect on the force</td></tr>
+      <tr><td><strong>Bearing length</strong></td><td>diameter accuracy; too long increases friction</td></tr>
+      <tr><td><strong>Plug geometry</strong></td><td>angle and cylindrical length set d and wall thickness</td></tr>
+      <tr><td><strong>Material</strong></td><td>hardening curve, rate sensitivity, eccentricity of the input tube</td></tr>
+    </table>
+    <aside class="notes">[0:32–0:34] Overview of parameters – each one later appears as an input to the FEM model.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Fundamentals</span><span class="band-sub">Accuracy</span></div>
+    <h2>What affects the accuracy of a drawn tube</h2>
+    <div class="fig-row" style="grid-template-columns:1.2fr 1fr;">
+      <ul class="v-center compact">
+        <li><strong>Input tube:</strong> eccentricity, inner polygon → non-uniform strain</li>
+        <li><strong>Temperature:</strong> deformation and friction heat – thermal camera at the exit <span class="hl">130–180 °C</span></li>
+        <li><strong>Tools:</strong> dimensions, manufacturing accuracy, wear</li>
+        <li><strong>Deformation behind the die</strong> if σ₁ exceeds the yield stress of the hardened tube</li>
+        <li class="fragment">In sinking, the final D is <strong>slightly smaller</strong> than the die diameter</li>
+      </ul>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/book_cmm.jpeg" alt="Measuring a tube on a ZEISS coordinate measuring machine">
+        <p class="img-caption">Measuring tube dimensions on a ZEISS <abbr title="Coordinate Measuring Machine">CMM</abbr> (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:34–0:36] Accuracy factors. CMM measurement – we will use it later for validation.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Fundamentals</span><span class="band-sub">Hardening</span></div>
+    <h2>Cold work hardening: one draw, a big change</h2>
+    <table class="mid">
+      <tr><th>Draw (E235, wall 1 mm)</th><th>R [%]</th><th>R<sub>p0.2</sub> [MPa]</th><th>R<sub>m</sub> [MPa]</th><th>A [%]</th></tr>
+      <tr><td>Ø14 → Ø12</td><td>≈ 13.5</td><td>285 → 415</td><td>412 → 498</td><td>25 → 10</td></tr>
+      <tr><td>Ø16 → Ø12</td><td>≈ 24</td><td>295 → 439</td><td>408 → 531</td><td>28 → 10</td></tr>
+      <tr><td>Ø18 → Ø12</td><td>≈ 32.5</td><td>285 → 469</td><td>399 → 568</td><td>30 → 8</td></tr>
+    </table>
+    <ul class="small" style="margin-top:0.5em;">
+      <li>Strength rises, <span class="hl">elongation drops to a third</span> → after a few draws annealing is needed</li>
+      <li class="fragment">For the simulation: the hardening curve decides both the force and the drawing limit</li>
+    </ul>
+    <p class="slide-source">Source: Bílik, Necpal, Sobota 2023, ch. 3.4 (mean of two tests)</p>
+    <aside class="notes">[0:36–0:38] Hardening after one draw – numbers from tensile tests before and after drawing.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Fundamentals</span><span class="band-sub">Bridge to simulation</span></div>
+    <h2>What the model must capture</h2>
+    <div class="cols-2">
+      <div>
+        <ul class="small">
+          <li><strong>Drawing force and stress</strong> – sizing the draw bench, risk of breakage</li>
+          <li><strong>Dimensions</strong>: D, d, wall thickness, roundness</li>
+          <li><strong>Strain</strong> and hardening in the wall</li>
+          <li><strong>Residual stresses</strong> from non-uniform deformation</li>
+          <li><strong>Loads and wear</strong> of the die and plug</li>
+        </ul>
+      </div>
+      <div>
+        <div class="flow-box">Inputs: geometry, hardening curve, friction, speed</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key"><abbr title="Finite Element Method">FEM</abbr> model</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Outputs: force, σ and ε fields, dimensions</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Verification: analytics and experiment</div>
+      </div>
+    </div>
+    <aside class="notes">[0:38–0:40] Transition: what we want from the model – and what we first estimate analytically.</aside>
+  </section>
+  <!-- ═══ PART II ═══ -->
+  <section class="divider">
+    <h2>Part II — Analytical methods of drawing</h2>
+    <p style="color:#f0b0b8;">Ideal work · slab method · redundant work · drawing limit · optimum angle</p>
+    <aside class="notes">[0:40] Part II.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Analytics</span><span class="band-sub">Why and how</span></div>
+    <h2>Why analytics first – and notation</h2>
+    <div class="cols-2" style="grid-template-columns:1fr 1.2fr;">
+      <ul class="small">
+        <li><strong>Quick estimate</strong> of force and power – sizing the draw bench</li>
+        <li><strong>Trends</strong>: effect of reduction, friction and angle</li>
+        <li><strong>Reference</strong> for checking the simulation</li>
+        <li class="fragment">Rule: <span class="hl">do not trust a simulation until you have compared it</span> with at least a simple estimate</li>
+      </ul>
+      <table class="tight">
+        <tr><th>Symbol</th><th>Meaning</th></tr>
+        <tr><td>\(A_0, A_1\) (\(S_0, S_r\))</td><td>cross-section before / after the draw</td></tr>
+        <tr><td>\(r=(A_0-A_1)/A_0\)</td><td>area reduction</td></tr>
+        <tr><td>\(\varepsilon=\ln(A_0/A_1)\)</td><td>true (logarithmic) strain</td></tr>
+        <tr><td>\(\sigma_f\)</td><td>mean flow stress</td></tr>
+        <tr><td>\(\alpha,\ \mu\)</td><td>die half-angle, friction coefficient</td></tr>
+        <tr><td>\(\sigma_d,\ F=\sigma_d A_1,\ P=F v\)</td><td>drawing stress, force, power</td></tr>
+      </table>
+    </div>
+    <aside class="notes">[0:40–0:42] Why analytics. Notation: ε here = φ from the previous part.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Analytics</span><span class="band-sub">Ideal work</span></div>
+    <h2>Ideal deformation – the lower bound</h2>
+    <div class="fig-row" style="grid-template-columns:1.1fr 1fr;">
+      <div class="v-center">
+        <div class="equation">$$\sigma_d=\sigma_f\,\ln\frac{A_0}{A_1}=\sigma_f\,\varepsilon$$</div>
+        <ul class="xs">
+          <li>Energy balance: work of the external force = work of homogeneous plastic deformation</li>
+          <li>No friction and no redundant (excess) deformation</li>
+          <li class="fragment">The real stress is <span class="hl">always higher</span> – typically 1.5 to 2.5 times</li>
+        </ul>
+      </div>
+      <div class="v-center">
+        <div class="note-box" style="font-size:0.7em;"><strong>Example:</strong> σ<sub>f</sub> = 500 MPa, r = 20 %<br>ε = ln(1/0.8) = 0.223<br>σ<sub>d</sub> = 500 · 0.223 = <strong>112 MPa</strong></div>
+      </div>
+    </div>
+    <aside class="notes">[0:42–0:44] Ideal work, lower bound.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Analytics</span><span class="band-sub">Slab method</span></div>
+    <h2>The slab method</h2>
+    <div class="fig-row" style="grid-template-columns:1.05fr 1fr;">
+      <div class="v-center">
+        <ul class="xs">
+          <li>Thin element in the reduction cone, force equilibrium in the drawing direction</li>
+          <li>Assumptions: constant σ<sub>f</sub>, Coulomb friction, plane sections remain plane</li>
+        </ul>
+        <div class="equation sm">$$\sigma_d=\sigma_f\,\frac{1+B}{B}\left[1-\left(\frac{A_1}{A_0}\right)^{B}\right],\quad B=\mu\cot\alpha$$</div>
+        <ul class="xs">
+          <li class="fragment">Same principle for tubes: B also contains friction on the plug, and wall thickness replaces the area</li>
+          <li class="fragment">Redundant work is <strong>not</strong> included – it is added as a correction</li>
+        </ul>
+      </div>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/book_slab_zone1.png" alt="Equilibrium of an element in the reduction cone">
+        <p class="img-caption">Element in the reduction cone: σ, dσ, normal pressure σn and friction f·σn (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:44–0:46] Slab method – principle and result for wire/bar. For r = 20 %, α = 6°, μ = 0.1: B = 0.951, σd = 196 MPa.</aside>
+  </section>
+  <!-- ═══ DEEP DIVE SM: fixed plug zones ═══ -->
+  <section class="deep-stack">
+    <section class="slide-full">
+      <div class="band"><span class="band-title">Analytics</span><span class="band-sub">Tube on a fixed plug</span></div>
+      <h2>Fixed-plug drawing – three zones</h2>
+      <div class="fig-row" style="grid-template-columns:1fr 1.1fr;">
+        <ul class="v-center compact">
+          <li><strong>Zone I:</strong> only the diameter decreases, the wall stays constant</li>
+          <li><strong>Zone II:</strong> both diameter and wall decrease (plug in contact)</li>
+          <li><strong>Zone III:</strong> bearing – friction on the die <em>and</em> on the plug</li>
+          <li>\(F=\sigma_{IIIc}\,S_r\) – stress at the end of zone III times the final cross-section</li>
+        </ul>
+        <div class="figure">
+          <img src="../../../sk/Lectures/forming_modeling/img/book_plug_zones.png" alt="Zones I, II and III in fixed-plug tube drawing">
+          <p class="img-caption">Zones I–III in fixed-plug drawing (© Bílik, Necpal, Sobota 2023)</p>
+        </div>
+      </div>
+      <div class="deep-hint">▼ Deep dive: 4 slides deriving the forces in zones I–III — press <strong>↓</strong></div>
+      <aside class="notes">[0:46–0:48] Three zones. Optional: down arrow – 4-slide deep dive with the derivation. Otherwise continue right.</aside>
+    </section>
+    <section class="slide-full">
+      <div class="band"><span class="band-title">Fixed plug ↓</span><span class="band-sub">1 · Zone I</span></div>
+      <h2>Zone I – diameter reduction</h2>
+      <div class="fig-row" style="grid-template-columns:1.2fr 1fr;">
+        <div class="v-center">
+          <div class="equation sm">$$A=\frac{1+f\cot\alpha}{1-f\tan\alpha},\qquad r_s=\frac{D-s_0}{2},\ r_{s0}=\frac{D_0-s_0}{2}$$</div>
+          <div class="equation sm">$$\sigma_I=\frac{A}{A-1}\,\sigma_{pI}\left[1-\left(\frac{r_s}{r_{s0}}\right)^{A-1}\right]$$</div>
+          <div class="equation sm">$$\sigma_{Io}=\frac{A}{A-1}\,\sigma_{pI}\left[1-\left(\frac{d_r+s_0}{D_0-s_0}\right)^{A-1}\right]$$</div>
+          <ul class="xs"><li>Boundary condition: at the entry σ<sub>I</sub> = 0 (no back tension)</li></ul>
+        </div>
+        <div class="figure"><img src="../../../sk/Lectures/forming_modeling/img/book_slab_zone1.png" alt="Element in zone I"><p class="img-caption">Element in zone I (© Bílik, Necpal, Sobota 2023)</p></div>
+      </div>
+      <aside class="notes">[SM+0:00–0:01] Zone I – same form as for wire, only with the radius of the wall mid-line.</aside>
+    </section>
+    <section class="slide-full">
+      <div class="band"><span class="band-title">Fixed plug ↓</span><span class="band-sub">2 · Zone II</span></div>
+      <h2>Zone II – reduction of diameter and wall</h2>
+      <div class="equation sm">$$B=\frac{1+f\cot\alpha}{1-f\tan\alpha}+\frac{d_r}{d_r+s_0+s_r}\,f\cot\alpha$$</div>
+      <div class="equation sm">$$\sigma_{IIo}=\sigma_{Io}\,\Big[\tfrac{d_r+s_r}{d_r+s_0}\cdot\tfrac{s_r}{s_0}\Big]^{B-1}+\frac{B}{B-1}\,\sigma_{pII}\left(1-\Big[\tfrac{d_r+s_r}{d_r+s_0}\cdot\tfrac{s_r}{s_0}\Big]^{B-1}\right)$$</div>
+      <ul class="xs">
+        <li>The second term in B = <span class="hl">friction on the plug</span> – that is why B &gt; A and the force grows faster</li>
+        <li>The stress from the end of zone I enters zone II as “back tension”</li>
+        <li>D is replaced by the mean diameter → \(d_r/D\approx d_r/(d_r+s_0+s_r)\)</li>
+      </ul>
+      <aside class="notes">[SM+0:01–0:02] Zone II – the key is the additional plug friction term.</aside>
+    </section>
+    <section class="slide-full">
+      <div class="band"><span class="band-title">Fixed plug ↓</span><span class="band-sub">3 · Zone III and force</span></div>
+      <h2>Zone III – bearing and drawing force</h2>
+      <div class="fig-row" style="grid-template-columns:1.2fr 1fr;">
+        <div class="v-center">
+          <div class="equation sm">$$\sigma_{III}=\sigma_{IIo}\,e^{2f x/s_r}+\sigma_{pIII}\left(1-e^{2f x/s_r}\right)$$</div>
+          <div class="equation sm">$$F=\sigma_{IIIc}\,S_r,\quad \sigma_{IIIc}=\sigma_{III}(x=l),\quad S_r=\pi(D_r-s_r)\,s_r$$</div>
+          <ul class="xs">
+            <li>Exponential growth with bearing length l and friction f on <strong>both</strong> surfaces</li>
+            <li>Simplified: \(F_{d}=\sigma_{pm}\,S_r\,\varphi/\eta_F\), \(\eta_F\) = 0.4–0.6 (φ = 0.15) to 0.7–0.8 (φ = 0.5)</li>
+          </ul>
+        </div>
+        <div class="figure"><img src="../../../sk/Lectures/forming_modeling/img/book_slab_zone3.png" alt="Element in bearing zone III"><p class="img-caption">Element in zone III (© Bílik, Necpal, Sobota 2023)</p></div>
+      </div>
+      <aside class="notes">[SM+0:02–0:03] Zone III – exponential term. Simplified formula with efficiency ηF.</aside>
+    </section>
+    <section class="slide-full">
+      <div class="band"><span class="band-title">Fixed plug ↓</span><span class="band-sub">4 · Summary</span></div>
+      <h2>Summary and questions</h2>
+      <ul class="xs">
+        <li>The stress “accumulates” zone by zone: the output of one zone is the input of the next</li>
+        <li>Plug friction (zones II, III) makes plug drawing more demanding than sinking</li>
+        <li>The method gives the mean force, not the stress distribution in the wall</li>
+      </ul>
+      <ol class="xs">
+        <li class="fragment">Why is B in zone II larger than A in zone I? <button class="answer-btn" data-answer="SM1">answer</button><span class="answer-text">B also contains the plug friction term d_r/(d_r+s_0+s_r)·f·cot α; in zone II the wall is thinned between the die and the plug.</span></li>
+        <li class="fragment">What is the boundary condition at the entry to zone I? <button class="answer-btn" data-answer="SM2">answer</button><span class="answer-text">σ_I = 0 at the entry (no back tension); the stress at the end of zone I is the input to zone II.</span></li>
+        <li class="fragment">How does the stress in the bearing zone change with its length l? <button class="answer-btn" data-answer="SM3">answer</button><span class="answer-text">Exponentially, as e^(2f·l/s_r) – a longer bearing and higher friction increase the drawing force.</span></li>
+        <li class="fragment">What does this method not give you? <button class="answer-btn" data-answer="SM4">answer</button><span class="answer-text">The distribution of stresses and strains in the wall, residual stresses, the change of wall thickness in sinking – for that you need <abbr title="Finite Element Method">FEM</abbr>.</span></li>
+      </ol>
+      <p class="note-box">Press <strong>↑</strong> to return to the main lecture or <strong>→</strong> to continue.</p>
+      <aside class="notes">[SM+0:03–0:04] Deep-dive summary and questions.</aside>
+    </section>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Analytics</span><span class="band-sub">Redundant work</span></div>
+    <h2>Redundant work and a Siebel-type formula</h2>
+    <div class="fig-row" style="grid-template-columns:1.2fr 1fr;">
+      <div class="v-center">
+        <div class="equation">$$\sigma_d=\sigma_f\Big[\underbrace{\varepsilon}_{\text{ideal}}+\underbrace{\varepsilon\,\mu\cot\alpha}_{\text{friction}}+\underbrace{\tfrac{2}{3}\alpha}_{\text{redundant}}\Big]$$</div>
+        <ul class="xs">
+          <li>Shear at the entry and exit of the cone → the material deforms more than the change of shape requires</li>
+          <li>Redundant work <span class="hl">grows with the angle α</span> (α in radians)</li>
+          <li>Alternative: multiply by a redundant-work factor (1.0 to ≈ 1.2 for wire)</li>
+        </ul>
+      </div>
+      <div class="v-center">
+        <div class="note-box" style="font-size:0.7em;"><strong>Example (bar):</strong> σ<sub>f</sub> = 500 MPa, r = 20 %, α = 6°, μ = 0.1<br>ideal: 112 MPa<br>slab method: 196 MPa<br>Siebel: <strong>253 MPa</strong> (2.3 × ideal)</div>
+      </div>
+    </div>
+    <aside class="notes">[0:48–0:50] Three work components. Comparison of three models on one example.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Analytics</span><span class="band-sub">Optimum angle</span></div>
+    <h2>Optimum die angle</h2>
+    <div class="fig-row" style="grid-template-columns:0.9fr 1.3fr;">
+      <div class="v-center">
+        <div class="equation sm">$$\sin\alpha_{opt}\approx\sqrt{1.5\,\mu\,\varepsilon}$$</div>
+        <ul class="xs">
+          <li>Friction falls with α, redundant work rises → <span class="hl">the sum has a minimum</span></li>
+          <li>α<sub>opt</sub> grows with both friction and reduction</li>
+          <li>Example: μ = 0.1, ε = 0.223 → α<sub>opt</sub> ≈ 10.5°</li>
+          <li class="fragment">The minimum is <strong>flat</strong>: 8–14° gives almost the same force, 3° is 47 % worse</li>
+        </ul>
+      </div>
+      <div class="figure svgfig">
+<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial" font-size="13">
+<rect x="55" y="20" width="385" height="235" fill="#fff" stroke="#bbb"/>
+<line x1="55" x2="440" y1="255.0" y2="255.0" stroke="#eee"/><text x="49" y="259.0" text-anchor="end" fill="#555">0</text>
+<line x1="55" x2="440" y1="202.8" y2="202.8" stroke="#eee"/><text x="49" y="206.8" text-anchor="end" fill="#555">100</text>
+<line x1="55" x2="440" y1="150.6" y2="150.6" stroke="#eee"/><text x="49" y="154.6" text-anchor="end" fill="#555">200</text>
+<line x1="55" x2="440" y1="98.3" y2="98.3" stroke="#eee"/><text x="49" y="102.3" text-anchor="end" fill="#555">300</text>
+<line x1="55" x2="440" y1="46.1" y2="46.1" stroke="#eee"/><text x="49" y="50.1" text-anchor="end" fill="#555">400</text>
+<text x="55.0" y="271" text-anchor="middle" fill="#555">2</text>
+<text x="97.8" y="271" text-anchor="middle" fill="#555">4</text>
+<text x="140.6" y="271" text-anchor="middle" fill="#555">6</text>
+<text x="183.3" y="271" text-anchor="middle" fill="#555">8</text>
+<text x="226.1" y="271" text-anchor="middle" fill="#555">10</text>
+<text x="268.9" y="271" text-anchor="middle" fill="#555">12</text>
+<text x="311.7" y="271" text-anchor="middle" fill="#555">14</text>
+<text x="354.4" y="271" text-anchor="middle" fill="#555">16</text>
+<text x="397.2" y="271" text-anchor="middle" fill="#555">18</text>
+<text x="440.0" y="271" text-anchor="middle" fill="#555">20</text>
+<text x="247.5" y="292" text-anchor="middle" fill="#333">die half-angle α [°]</text>
+<text transform="translate(14,137.5) rotate(-90)" text-anchor="middle" fill="#333">stress [MPa]</text>
+<polyline points="55.0,196.7 60.3,196.7 65.7,196.7 71.0,196.7 76.4,196.7 81.7,196.7 87.1,196.7 92.4,196.7 97.8,196.7 103.1,196.7 108.5,196.7 113.8,196.7 119.2,196.7 124.5,196.7 129.9,196.7 135.2,196.7 140.6,196.7 145.9,196.7 151.2,196.7 156.6,196.7 161.9,196.7 167.3,196.7 172.6,196.7 178.0,196.7 183.3,196.7 188.7,196.7 194.0,196.7 199.4,196.7 204.7,196.7 210.1,196.7 215.4,196.7 220.8,196.7 226.1,196.7 231.5,196.7 236.8,196.7 242.2,196.7 247.5,196.7 252.8,196.7 258.2,196.7 263.5,196.7 268.9,196.7 274.2,196.7 279.6,196.7 284.9,196.7 290.3,196.7 295.6,196.7 301.0,196.7 306.3,196.7 311.7,196.7 317.0,196.7 322.4,196.7 327.7,196.7 333.1,196.7 338.4,196.7 343.8,196.7 349.1,196.7 354.4,196.7 359.8,196.7 365.1,196.7 370.5,196.7 375.8,196.7 381.2,196.7 386.5,196.7 391.9,196.7 397.2,196.7 402.6,196.7 407.9,196.7 413.3,196.7 418.6,196.7 424.0,196.7 429.3,196.7 434.7,196.7 440.0,196.7" fill="none" stroke="#777" stroke-width="2" stroke-dasharray="6 4"/>
+<polyline points="55.0,88.2 60.3,106.7 65.7,121.6 71.0,133.7 76.4,143.8 81.7,152.4 87.1,159.7 92.4,166.1 97.8,171.7 103.1,176.6 108.5,181.0 113.8,184.9 119.2,188.4 124.5,191.6 129.9,194.5 135.2,197.1 140.6,199.6 145.9,201.8 151.2,203.9 156.6,205.8 161.9,207.5 167.3,209.2 172.6,210.7 178.0,212.2 183.3,213.5 188.7,214.8 194.0,216.0 199.4,217.1 204.7,218.2 210.1,219.2 215.4,220.2 220.8,221.1 226.1,222.0 231.5,222.8 236.8,223.6 242.2,224.3 247.5,225.0 252.8,225.7 258.2,226.4 263.5,227.0 268.9,227.6 274.2,228.2 279.6,228.7 284.9,229.3 290.3,229.8 295.6,230.3 301.0,230.7 306.3,231.2 311.7,231.6 317.0,232.1 322.4,232.5 327.7,232.9 333.1,233.3 338.4,233.6 343.8,234.0 349.1,234.3 354.4,234.7 359.8,235.0 365.1,235.3 370.5,235.6 375.8,235.9 381.2,236.2 386.5,236.5 391.9,236.8 397.2,237.1 402.6,237.3 407.9,237.6 413.3,237.8 418.6,238.1 424.0,238.3 429.3,238.5 434.7,238.8 440.0,239.0" fill="none" stroke="#e5001e" stroke-width="2" stroke-dasharray=""/>
+<polyline points="55.0,248.9 60.3,248.2 65.7,247.4 71.0,246.6 76.4,245.9 81.7,245.1 87.1,244.4 92.4,243.6 97.8,242.8 103.1,242.1 108.5,241.3 113.8,240.6 119.2,239.8 124.5,239.0 129.9,238.3 135.2,237.5 140.6,236.8 145.9,236.0 151.2,235.3 156.6,234.5 161.9,233.7 167.3,233.0 172.6,232.2 178.0,231.5 183.3,230.7 188.7,229.9 194.0,229.2 199.4,228.4 204.7,227.7 210.1,226.9 215.4,226.1 220.8,225.4 226.1,224.6 231.5,223.9 236.8,223.1 242.2,222.3 247.5,221.6 252.8,220.8 258.2,220.1 263.5,219.3 268.9,218.5 274.2,217.8 279.6,217.0 284.9,216.3 290.3,215.5 295.6,214.7 301.0,214.0 306.3,213.2 311.7,212.5 317.0,211.7 322.4,210.9 327.7,210.2 333.1,209.4 338.4,208.7 343.8,207.9 349.1,207.1 354.4,206.4 359.8,205.6 365.1,204.9 370.5,204.1 375.8,203.4 381.2,202.6 386.5,201.8 391.9,201.1 397.2,200.3 402.6,199.6 407.9,198.8 413.3,198.0 418.6,197.3 424.0,196.5 429.3,195.8 434.7,195.0 440.0,194.2" fill="none" stroke="#8b0014" stroke-width="2" stroke-dasharray="2 3"/>
+<polyline points="55.0,23.8 60.3,41.6 65.7,55.7 71.0,67.1 76.4,76.4 81.7,84.3 87.1,90.8 92.4,96.4 97.8,101.3 103.1,105.4 108.5,109.0 113.8,112.2 119.2,114.9 124.5,117.4 129.9,119.5 135.2,121.4 140.6,123.1 145.9,124.5 151.2,125.8 156.6,127.0 161.9,128.0 167.3,128.9 172.6,129.7 178.0,130.4 183.3,131.0 188.7,131.5 194.0,131.9 199.4,132.3 204.7,132.6 210.1,132.9 215.4,133.1 220.8,133.2 226.1,133.3 231.5,133.4 236.8,133.4 242.2,133.4 247.5,133.3 252.8,133.3 258.2,133.2 263.5,133.0 268.9,132.9 274.2,132.7 279.6,132.5 284.9,132.2 290.3,132.0 295.6,131.7 301.0,131.5 306.3,131.1 311.7,130.8 317.0,130.5 322.4,130.2 327.7,129.8 333.1,129.4 338.4,129.0 343.8,128.6 349.1,128.2 354.4,127.8 359.8,127.4 365.1,126.9 370.5,126.5 375.8,126.0 381.2,125.6 386.5,125.1 391.9,124.6 397.2,124.1 402.6,123.6 407.9,123.1 413.3,122.6 418.6,122.1 424.0,121.6 429.3,121.0 434.7,120.5 440.0,120.0" fill="none" stroke="#c8001e" stroke-width="3.5" stroke-dasharray=""/>
+<line x1="237.7" x2="237.7" y1="20" y2="255" stroke="#c8001e" stroke-dasharray="3 3"/>
+<circle cx="237.7" cy="133.4" r="5" fill="#c8001e"/>
+<text x="243.7" y="123.4" fill="#c8001e" font-weight="700">α<tspan baseline-shift="sub" font-size="9">opt</tspan> ≈ 10.5°</text>
+<line x1="290" x2="316" y1="34" y2="34" stroke="#c8001e" stroke-width="3.5" stroke-dasharray=""/><text x="322" y="38" fill="#222">total σ<tspan baseline-shift="sub" font-size="9">d</tspan></text>
+<line x1="290" x2="316" y1="52" y2="52" stroke="#e5001e" stroke-width="2" stroke-dasharray=""/><text x="322" y="56" fill="#222">friction</text>
+<line x1="290" x2="316" y1="70" y2="70" stroke="#777" stroke-width="2" stroke-dasharray="6 4"/><text x="322" y="74" fill="#222">ideal work</text>
+<line x1="290" x2="316" y1="88" y2="88" stroke="#8b0014" stroke-width="2" stroke-dasharray="2 3"/><text x="322" y="92" fill="#222">redundant work</text>
+</svg>
+        <p class="img-caption">Stress components from a Siebel-type formula, σ<sub>f</sub> = 500 MPa, r = 20 %, μ = 0.1 (own calculation)</p>
+      </div>
+    </div>
+    <aside class="notes">[0:50–0:52] Component chart. Flat minimum – important for interpreting the different “optimum” angles in the studies.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Analytics</span><span class="band-sub">Drawing limit</span></div>
+    <h2>Maximum reduction per pass</h2>
+    <div class="cols-2" style="grid-template-columns:1.1fr 1fr;">
+      <div>
+        <ul class="small">
+          <li>Condition: \(\sigma_d &lt; \sigma_f\) of the material <strong>behind the die</strong></li>
+          <li>Ideal, no hardening: \(\varepsilon_{max}=1\Rightarrow r_{max}=1-1/e\approx 63\,\%\)</li>
+          <li>With hardening \(\sigma=K\varepsilon^n\): \(r_{max}=1-e^{-(1+n)}\)</li>
+          <li class="fragment">With friction, redundant work and a safety margin: <span class="hl">wire 20–30 % per pass</span></li>
+          <li class="fragment">Tubes: fixed plug ≈ up to 30 %, floating plug ≈ up to 45 %, overall ≈ 50 %</li>
+        </ul>
+      </div>
+      <div>
+        <table class="tight">
+          <tr><th>n</th><th>r<sub>max</sub> (ideal)</th></tr>
+          <tr><td>0</td><td>63 %</td></tr>
+          <tr><td>0.2</td><td>70 %</td></tr>
+          <tr><td>0.44</td><td>76 %</td></tr>
+        </table>
+        <p class="note-box">Hardening helps: the drawn part is stronger than the deforming zone.</p>
+      </div>
+    </div>
+    <aside class="notes">[0:52–0:54] Drawing limit, effect of hardening, practical values.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Analytics</span><span class="band-sub">Worked example</span></div>
+    <h2>Worked example: bar Ø10 mm, r = 20 %</h2>
+    <div class="cols-2" style="grid-template-columns:1fr 1.2fr;">
+      <ul class="xs">
+        <li>A₀ = 78.54 mm², A₁ = 62.83 mm², D₁ = 8.94 mm</li>
+        <li>ε = 0.223, σ<sub>f</sub> = 500 MPa, α = 6°, μ = 0.1, v = 1 m/s</li>
+        <li class="fragment">F = 253 · 62.83 ≈ <strong>15.9 kN</strong>, P = F·v ≈ <strong>15.9 kW</strong></li>
+        <li class="fragment">Check: 253 MPa &lt; 500 MPa → the bar is drawn, it does not break (margin ≈ 2×)</li>
+      </ul>
+      <table class="tight">
+        <tr><th>Model</th><th>σ<sub>d</sub> [MPa]</th></tr>
+        <tr><td>Ideal work</td><td>112</td></tr>
+        <tr><td>Slab method (B = 0.951)</td><td>196</td></tr>
+        <tr><td>Siebel, α = 3°</td><td>342</td></tr>
+        <tr><td><strong>Siebel, α = 6°</strong></td><td><strong>253</strong></td></tr>
+        <tr><td>Siebel, α = 10°</td><td>233</td></tr>
+        <tr><td>Siebel, α = 15°</td><td>240</td></tr>
+      </table>
+    </div>
+    <aside class="notes">[0:54–0:56] Example – let the students recompute one row.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Analytics</span><span class="band-sub">Tubes</span></div>
+    <h2>Analytics versus measurement for a tube</h2>
+    <div class="cols-2" style="grid-template-columns:1fr 1fr;">
+      <div>
+        <p style="font-size:0.6em;margin:0;"><strong>a) Tube on a plug Ø30 × 3 → Ø27 × 2.5 mm</strong></p>
+        <ul class="xs">
+          <li>A₀ = 254.5 mm², A₁ = 192.4 mm², r = 24.4 %, ε = 0.28</li>
+          <li>σ<sub>f</sub> = 300 MPa → ideal <strong>F ≈ 16 kN</strong></li>
+          <li>Simplified, η<sub>F</sub> = 0.5 → <strong>F ≈ 32 kN</strong></li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:0.6em;margin:0;"><strong>b) Sinking Ø16 × 2 → Ø12 mm (E235)</strong></p>
+        <ul class="xs">
+          <li>S₀ = 89.6 mm², S = 65.4 mm², φ = 0.315</li>
+          <li>σ<sub>pm</sub> = (295 + 439)/2 ≈ 367 MPa</li>
+          <li class="fragment">Ideal 7.6 kN · η<sub>F</sub> = 0.5–0.6 → 12.6–15.1 kN · Siebel (α ≈ 12°, μ = 0.08) → 13.8 kN</li>
+          <li class="fragment"><span class="hl">Measured 21.5–22 kN</span> · <abbr title="Finite Element Method">FEM</abbr> 20.5 kN</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note-box">Simple analytics <strong>underestimates</strong> the sinking force by ≈ 35 % – it misses wall bending at the entry, wall thickening and real lubrication. Good for the order of magnitude, not for design.</p>
+    <p class="slide-source">Measurement and <abbr title="Finite Element Method">FEM</abbr>: Bílik, Necpal, Sobota 2023, ch. 3.3.2; analytical estimate: own calculation (die angle assumed for the estimate)</p>
+    <aside class="notes">[0:56–0:58] Important slide: analytics vs measurement vs FEM. The 12° angle is only an assumption for the estimate.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Analytics</span><span class="band-sub">Limits</span></div>
+    <h2>What analytics can – and cannot – do</h2>
+    <table class="mid">
+      <tr><th>Analytics can give</th><th>Analytics cannot give</th></tr>
+      <tr><td>mean drawing force and stress</td><td>local distribution of strain, stress, temperature</td></tr>
+      <tr><td>trends: reduction, friction, angle</td><td>residual stresses</td></tr>
+      <tr><td>drawing limit, optimum angle</td><td>tool pressure and wear in detail</td></tr>
+      <tr><td>fast, without software</td><td>eccentricity, ovality, wall thickness distribution</td></tr>
+      <tr><td></td><td>defects (cracks, surface defects)</td></tr>
+    </table>
+    <p class="note-box">Analytics = first design and plausibility check. <abbr title="Finite Element Method">FEM</abbr> = when local fields, dimensions, tools and defects matter.</p>
+    <aside class="notes">[0:58–1:00] Limits of analytics – transition to Part III.</aside>
+  </section>
+  <!-- ═══ PART III ═══ -->
+  <section class="divider">
+    <h2>Part III — Numerical simulation and setting up a drawing model</h2>
+    <p style="color:#f0b0b8;">Implicit / explicit · Lagrange / <abbr title="Arbitrary Lagrangian–Eulerian">ALE</abbr> · material · friction · mesh · boundary conditions</p>
+    <aside class="notes">[1:00] Part III.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method">FEM</abbr></span><span class="band-sub">Four choices</span></div>
+    <h2>A model = four independent choices</h2>
+    <table class="mid">
+      <tr><th>Choice</th><th>Options</th><th>What it answers</th></tr>
+      <tr><td><strong>Time integration</strong></td><td>implicit / explicit</td><td>How is the equation of motion solved in a step?</td></tr>
+      <tr><td><strong>Mesh description</strong></td><td>Lagrange / <abbr title="Arbitrary Lagrangian–Eulerian">ALE</abbr> / Euler</td><td>Does the mesh move with the material?</td></tr>
+      <tr><td><strong>Material formulation</strong></td><td>rigid-plastic / elastic-plastic</td><td>Do we also compute elastic strains?</td></tr>
+      <tr><td><strong>Model dimension</strong></td><td>2D axisymmetric / 3D</td><td>Is the problem symmetric?</td></tr>
+    </table>
+    <p class="note-box">They are often confused – e.g. “explicit” does not mean “3D” and “Lagrange” does not mean “implicit”.</p>
+    <aside class="notes">[1:00–1:02] Four decision axes – independent.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method">FEM</abbr></span><span class="band-sub">Software</span></div>
+    <h2>Typical combinations in software</h2>
+    <table class="tight">
+      <tr><th>Software / study</th><th>Typical combination</th></tr>
+      <tr><td><strong><abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 2D / 3D</strong></td><td>implicit, updated Lagrangian with automatic remeshing; rigid-plastic (flow) or elastic-plastic material; <abbr title="Arbitrary Lagrangian–Eulerian">ALE</abbr> solver for steady-state processes</td></tr>
+      <tr><td><strong>Abaqus/Standard</strong></td><td>implicit, Lagrange, elastic-plastic</td></tr>
+      <tr><td><strong>Abaqus/Explicit</strong></td><td>explicit, Lagrange or adaptive <abbr title="Arbitrary Lagrangian–Eulerian">ALE</abbr> mesh, elastic-plastic</td></tr>
+      <tr><td><strong>LS-DYNA</strong></td><td>explicit and implicit; floating plug solved implicitly, 2D axisymmetric</td></tr>
+      <tr><td><strong>MSC.Superform</strong> (Neves et al.)</td><td>elastic-plastic <abbr title="Finite Element Method">FEM</abbr> of fixed-plug drawing, compared with an upper-bound solution</td></tr>
+    </table>
+    <p class="slide-source">Sources: <abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> and Abaqus documentation; Neves et al. 2005; LS-DYNA conference 2009</p>
+    <aside class="notes">[1:02–1:04] Where you will meet what. Our studies: DEFORM, implicit, Lagrange.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method">FEM</abbr></span><span class="band-sub">Basic model</span></div>
+    <h2>Basic tube drawing model – inputs</h2>
+    <table class="tight">
+      <tr><th>Item</th><th>What to enter</th><th>Practical note</th></tr>
+      <tr><td><strong>Geometry</strong></td><td>tube D₀, s₀, L; die α, bearing; plug</td><td>tube long enough for a steady state</td></tr>
+      <tr><td><strong>Tools</strong></td><td>rigid or elastic</td><td>rigid is enough for force and strain</td></tr>
+      <tr><td><strong>Material</strong></td><td>curve σ(ε, ε̇, T), possibly E, ν</td><td>from a tensile test, e.g. σ = c·εⁿ·ε̇ᵐ + y</td></tr>
+      <tr><td><strong>Friction</strong></td><td>μ or m, separately for die and plug</td><td><span class="hl">the most sensitive input</span> – calibrate by measuring force</td></tr>
+      <tr><td><strong>Boundary conditions</strong></td><td>speed / displacement; plug holding</td><td>9 m/min in our studies</td></tr>
+      <tr><td><strong>Mesh</strong></td><td>element size, elements through the wall</td><td>4–8 elements through the wall in 2D</td></tr>
+      <tr><td><strong>Heat</strong></td><td>deformation and friction heat</td><td>often neglected in slow drawing</td></tr>
+      <tr><td><strong>Several draws</strong></td><td>state after draw 1 = start of draw 2</td><td>without annealing the hardening is carried over too</td></tr>
+    </table>
+    <aside class="notes">[1:04–1:06] Common inputs for every model. The quality of the hardening curve and friction matters more than the choice of solver.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method">FEM</abbr></span><span class="band-sub">Material</span></div>
+    <h2>Material models in our studies</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.25fr;">
+      <div class="v-center">
+        <div class="equation sm">$$\sigma=c\,\bar\varepsilon^{\,n}\,\dot{\bar\varepsilon}^{\,m}+y$$</div>
+        <table class="tight">
+          <tr><th>Steel</th><th>c</th><th>n</th><th>m</th><th>y [MPa]</th></tr>
+          <tr><td>E235</td><td>178</td><td>0.61</td><td>0.02</td><td>235.5</td></tr>
+          <tr><td>E355</td><td>404</td><td>0.63</td><td>0.02</td><td>345</td></tr>
+          <tr><td>SPT360</td><td>632.8</td><td>0.1914</td><td>0</td><td>71.27</td></tr>
+        </table>
+        <ul class="xs">
+          <li>Mild steel: \(\sigma=513\,\bar\varepsilon^{0.44}+325\) MPa (Holmquist–Johnson)</li>
+          <li>Plastic, isotropic hardening, von Mises, no temperature effect</li>
+        </ul>
+      </div>
+      <div class="figure svgfig">
+<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial" font-size="13">
+<rect x="55" y="20" width="385" height="235" fill="#fff" stroke="#bbb"/>
+<line x1="55" x2="440" y1="255.0" y2="255.0" stroke="#eee"/><text x="49" y="259.0" text-anchor="end" fill="#555">0</text>
+<line x1="55" x2="440" y1="215.8" y2="215.8" stroke="#eee"/><text x="49" y="219.8" text-anchor="end" fill="#555">150</text>
+<line x1="55" x2="440" y1="176.7" y2="176.7" stroke="#eee"/><text x="49" y="180.7" text-anchor="end" fill="#555">300</text>
+<line x1="55" x2="440" y1="137.5" y2="137.5" stroke="#eee"/><text x="49" y="141.5" text-anchor="end" fill="#555">450</text>
+<line x1="55" x2="440" y1="98.3" y2="98.3" stroke="#eee"/><text x="49" y="102.3" text-anchor="end" fill="#555">600</text>
+<line x1="55" x2="440" y1="59.2" y2="59.2" stroke="#eee"/><text x="49" y="63.2" text-anchor="end" fill="#555">750</text>
+<line x1="55" x2="440" y1="20.0" y2="20.0" stroke="#eee"/><text x="49" y="24.0" text-anchor="end" fill="#555">900</text>
+<text x="55.0" y="271" text-anchor="middle" fill="#555">0.0</text>
+<text x="132.0" y="271" text-anchor="middle" fill="#555">0.2</text>
+<text x="209.0" y="271" text-anchor="middle" fill="#555">0.4</text>
+<text x="286.0" y="271" text-anchor="middle" fill="#555">0.6</text>
+<text x="363.0" y="271" text-anchor="middle" fill="#555">0.8</text>
+<text x="440.0" y="271" text-anchor="middle" fill="#555">1.0</text>
+<text x="247.5" y="292" text-anchor="middle" fill="#333">effective strain ε̄ [-]</text>
+<text transform="translate(14,137.5) rotate(-90)" text-anchor="middle" fill="#333">flow stress σ [MPa]</text>
+<polyline points="55.0,193.5 58.9,190.7 62.7,189.2 66.5,188.0 70.4,187.0 74.2,186.0 78.1,185.2 82.0,184.3 85.8,183.6 89.7,182.8 93.5,182.1 97.3,181.4 101.2,180.8 105.1,180.1 108.9,179.5 112.8,178.9 116.6,178.3 120.5,177.7 124.3,177.2 128.2,176.6 132.0,176.1 135.8,175.6 139.7,175.1 143.6,174.5 147.4,174.0 151.2,173.6 155.1,173.1 158.9,172.6 162.8,172.1 166.6,171.7 170.5,171.2 174.3,170.8 178.2,170.3 182.1,169.9 185.9,169.4 189.8,169.0 193.6,168.6 197.4,168.2 201.3,167.8 205.2,167.3 209.0,166.9 212.8,166.5 216.7,166.1 220.6,165.7 224.4,165.3 228.2,165.0 232.1,164.6 235.9,164.2 239.8,163.8 243.7,163.4 247.5,163.1 251.3,162.7 255.2,162.3 259.1,162.0 262.9,161.6 266.8,161.2 270.6,160.9 274.4,160.5 278.3,160.2 282.1,159.8 286.0,159.5 289.9,159.1 293.7,158.8 297.6,158.4 301.4,158.1 305.2,157.8 309.1,157.4 312.9,157.1 316.8,156.8 320.6,156.4 324.5,156.1 328.3,155.8 332.2,155.5 336.1,155.1 339.9,154.8 343.8,154.5 347.6,154.2 351.4,153.9 355.3,153.6 359.2,153.3 363.0,152.9 366.9,152.6 370.7,152.3 374.6,152.0 378.4,151.7 382.2,151.4 386.1,151.1 389.9,150.8 393.8,150.5 397.6,150.2 401.5,149.9 405.4,149.6 409.2,149.3 413.1,149.0 416.9,148.8 420.8,148.5 424.6,148.2 428.4,147.9 432.3,147.6 436.1,147.3 440.0,147.0" fill="none" stroke="#777" stroke-width="2.5" stroke-dasharray=""/>
+<line x1="225" x2="251" y1="181" y2="181" stroke="#777" stroke-width="2.5" stroke-dasharray=""/><text x="257" y="185" fill="#222">E235 (02, 03, 04)</text>
+<polyline points="55.0,164.9 58.9,159.1 62.7,155.9 66.5,153.3 70.4,151.0 74.2,148.9 78.1,147.0 82.0,145.2 85.8,143.4 89.7,141.8 93.5,140.2 97.3,138.7 101.2,137.2 105.1,135.7 108.9,134.3 112.8,133.0 116.6,131.7 120.5,130.4 124.3,129.1 128.2,127.9 132.0,126.6 135.8,125.5 139.7,124.3 143.6,123.1 147.4,122.0 151.2,120.9 155.1,119.8 158.9,118.7 162.8,117.6 166.6,116.6 170.5,115.5 174.3,114.5 178.2,113.5 182.1,112.5 185.9,111.5 189.8,110.5 193.6,109.5 197.4,108.5 201.3,107.6 205.2,106.6 209.0,105.7 212.8,104.8 216.7,103.8 220.6,102.9 224.4,102.0 228.2,101.1 232.1,100.2 235.9,99.4 239.8,98.5 243.7,97.6 247.5,96.8 251.3,95.9 255.2,95.0 259.1,94.2 262.9,93.4 266.8,92.5 270.6,91.7 274.4,90.9 278.3,90.1 282.1,89.3 286.0,88.5 289.9,87.7 293.7,86.9 297.6,86.1 301.4,85.3 305.2,84.5 309.1,83.7 312.9,83.0 316.8,82.2 320.6,81.4 324.5,80.7 328.3,79.9 332.2,79.1 336.1,78.4 339.9,77.7 343.8,76.9 347.6,76.2 351.4,75.4 355.3,74.7 359.2,74.0 363.0,73.3 366.9,72.5 370.7,71.8 374.6,71.1 378.4,70.4 382.2,69.7 386.1,69.0 389.9,68.3 393.8,67.6 397.6,66.9 401.5,66.2 405.4,65.5 409.2,64.8 413.1,64.1 416.9,63.5 420.8,62.8 424.6,62.1 428.4,61.4 432.3,60.8 436.1,60.1 440.0,59.4" fill="none" stroke="#8b0014" stroke-width="2.5" stroke-dasharray=""/>
+<line x1="225" x2="251" y1="199" y2="199" stroke="#8b0014" stroke-width="2.5" stroke-dasharray=""/><text x="257" y="203" fill="#222">E355 (02)</text>
+<polyline points="55.0,236.4 58.9,168.0 62.7,158.2 66.5,151.9 70.4,147.2 74.2,143.3 78.1,140.0 82.0,137.1 85.8,134.5 89.7,132.2 93.5,130.1 97.3,128.1 101.2,126.3 105.1,124.6 108.9,123.0 112.8,121.5 116.6,120.0 120.5,118.7 124.3,117.4 128.2,116.2 132.0,115.0 135.8,113.8 139.7,112.7 143.6,111.7 147.4,110.7 151.2,109.7 155.1,108.7 158.9,107.8 162.8,106.9 166.6,106.0 170.5,105.2 174.3,104.3 178.2,103.5 182.1,102.8 185.9,102.0 189.8,101.2 193.6,100.5 197.4,99.8 201.3,99.1 205.2,98.4 209.0,97.7 212.8,97.1 216.7,96.4 220.6,95.8 224.4,95.2 228.2,94.6 232.1,94.0 235.9,93.4 239.8,92.8 243.7,92.2 247.5,91.7 251.3,91.1 255.2,90.6 259.1,90.1 262.9,89.5 266.8,89.0 270.6,88.5 274.4,88.0 278.3,87.5 282.1,87.0 286.0,86.5 289.9,86.1 293.7,85.6 297.6,85.1 301.4,84.7 305.2,84.2 309.1,83.8 312.9,83.4 316.8,82.9 320.6,82.5 324.5,82.1 328.3,81.6 332.2,81.2 336.1,80.8 339.9,80.4 343.8,80.0 347.6,79.6 351.4,79.2 355.3,78.8 359.2,78.4 363.0,78.1 366.9,77.7 370.7,77.3 374.6,76.9 378.4,76.6 382.2,76.2 386.1,75.9 389.9,75.5 393.8,75.2 397.6,74.8 401.5,74.5 405.4,74.1 409.2,73.8 413.1,73.4 416.9,73.1 420.8,72.8 424.6,72.4 428.4,72.1 432.3,71.8 436.1,71.5 440.0,71.2" fill="none" stroke="#e5001e" stroke-width="2.5" stroke-dasharray="6 4"/>
+<line x1="225" x2="251" y1="217" y2="217" stroke="#e5001e" stroke-width="2.5" stroke-dasharray="6 4"/><text x="257" y="221" fill="#222">SPT360 (09)</text>
+<polyline points="55.0,170.1 58.9,152.5 62.7,146.2 66.5,141.5 70.4,137.6 74.2,134.3 78.1,131.3 82.0,128.6 85.8,126.1 89.7,123.7 93.5,121.5 97.3,119.4 101.2,117.4 105.1,115.6 108.9,113.7 112.8,112.0 116.6,110.3 120.5,108.7 124.3,107.2 128.2,105.6 132.0,104.2 135.8,102.7 139.7,101.3 143.6,100.0 147.4,98.7 151.2,97.4 155.1,96.1 158.9,94.8 162.8,93.6 166.6,92.4 170.5,91.3 174.3,90.1 178.2,89.0 182.1,87.9 185.9,86.8 189.8,85.7 193.6,84.7 197.4,83.7 201.3,82.6 205.2,81.6 209.0,80.6 212.8,79.7 216.7,78.7 220.6,77.7 224.4,76.8 228.2,75.9 232.1,75.0 235.9,74.1 239.8,73.2 243.7,72.3 247.5,71.4 251.3,70.5 255.2,69.7 259.1,68.8 262.9,68.0 266.8,67.2 270.6,66.4 274.4,65.5 278.3,64.7 282.1,63.9 286.0,63.2 289.9,62.4 293.7,61.6 297.6,60.8 301.4,60.1 305.2,59.3 309.1,58.6 312.9,57.8 316.8,57.1 320.6,56.4 324.5,55.6 328.3,54.9 332.2,54.2 336.1,53.5 339.9,52.8 343.8,52.1 347.6,51.4 351.4,50.7 355.3,50.1 359.2,49.4 363.0,48.7 366.9,48.1 370.7,47.4 374.6,46.7 378.4,46.1 382.2,45.4 386.1,44.8 389.9,44.2 393.8,43.5 397.6,42.9 401.5,42.3 405.4,41.6 409.2,41.0 413.1,40.4 416.9,39.8 420.8,39.2 424.6,38.6 428.4,38.0 432.3,37.4 436.1,36.8 440.0,36.2" fill="none" stroke="#c8001e" stroke-width="2.5" stroke-dasharray="2 3"/>
+<line x1="225" x2="251" y1="235" y2="235" stroke="#c8001e" stroke-width="2.5" stroke-dasharray="2 3"/><text x="257" y="239" fill="#222">mild steel (05, 07, 10)</text>
+</svg>
+        <p class="img-caption">Flow stress curves at \(\dot{\bar\varepsilon}\) = 1 s⁻¹ (own calculation from the parameters in the papers)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:06–1:08] Link to lecture 3. SPT360: m = 0, because rate sensitivity cannot be determined from a tensile test.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method">FEM</abbr></span><span class="band-sub">Friction</span></div>
+    <h2>Friction – the most sensitive input</h2>
+    <div class="cols-2" style="grid-template-columns:1.1fr 1fr;">
+      <div>
+        <div class="equation sm">$$\text{Coulomb: }\tau=\mu\,p \qquad \text{shear: }\tau=m\,k=m\,\frac{\sigma_f}{\sqrt3}$$</div>
+        <ul class="xs">
+          <li>Coulomb – at low pressure; shear model – at high pressure (bulk forming, <abbr title="Design Environment for FORMing (software name)">DEFORM</abbr>)</li>
+          <li>Literature gives μ ≈ 0.02–0.03 for drawing – <span class="hl">unreliable</span> for a specific lubricant and tool</li>
+          <li class="fragment">Our values: m = 0.08 (general), m ≈ 0.053–0.054 (carbide die, inverse from measurement)</li>
+          <li class="fragment">LS-DYNA, floating plug: die μ 0.05 → 0.10 raises the force by ≈ 20 %</li>
+        </ul>
+      </div>
+      <div>
+        <div class="flow-box">Measure the drawing force</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Simulate for several friction values</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key">Find the friction at which the forces match <span class="flow-note">(inverse analysis, Part IV)</span></div>
+      </div>
+    </div>
+    <aside class="notes">[1:08–1:10] Two friction models. Friction calibration by measurement – in detail in the 2018 study.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method">FEM</abbr></span><span class="band-sub">Implicit</span></div>
+    <h2>Implicit analysis</h2>
+    <div class="cols-2">
+      <div>
+        <ul class="xs">
+          <li>In every step a <strong>system of equations</strong> is solved (Newton–Raphson)</li>
+          <li><strong>Unconditionally stable</strong> – large step, limited only by convergence</li>
+          <li>Solves equilibrium (quasi-statically)</li>
+        </ul>
+        <p style="font-size:0.6em;margin:0.3em 0 0;"><strong>Setup for drawing:</strong></p>
+        <ul class="xs">
+          <li>quasi-static step, displacement-controlled</li>
+          <li>prevent rigid-body motion (hold the plug)</li>
+          <li>die–tube and plug–tube contact with friction, small steps at first contact</li>
+          <li>step: a node must not move more than a fraction of the smallest element</li>
+        </ul>
+      </div>
+      <table class="tight">
+        <tr><th>Advantages</th><th>Disadvantages</th></tr>
+        <tr><td>efficient for slow processes</td><td>expensive steps, lots of memory</td></tr>
+        <tr><td>smooth results</td><td>convergence when contact changes</td></tr>
+        <tr><td>unloading and residual stresses directly</td><td>a floating plug must be stabilised</td></tr>
+        <tr><td>large steps</td><td>mapping errors when remeshing</td></tr>
+      </table>
+    </div>
+    <p class="note-box">LS-DYNA, floating plug: the static solution gave a similar force to the dynamic one in 22 min instead of 104 min.</p>
+    <aside class="notes">[1:10–1:12] Implicit analysis – principle, setup, advantages and disadvantages.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method">FEM</abbr></span><span class="band-sub">Explicit</span></div>
+    <h2>Explicit analysis</h2>
+    <div class="cols-2" style="grid-template-columns:1.1fr 1fr;">
+      <div>
+        <ul class="xs">
+          <li>The new state is computed <strong>directly</strong> from the current one – a cheap step</li>
+          <li><strong>Conditionally stable:</strong> \(\Delta t \le L_{min}/c\), \(c=\sqrt{E/\rho}\)</li>
+          <li>Always dynamic equilibrium – the loading rate matters</li>
+        </ul>
+        <div class="note-box" style="font-size:0.62em;"><strong>Estimate:</strong> c ≈ 5000 m/s, L = 0.25 mm → Δt ≈ 5·10⁻⁸ s<br>50 mm at 9 m/min = 0.33 s → <strong>≈ 7 million steps</strong></div>
+        <ul class="xs">
+          <li class="fragment">Hence: process speed-up and / or <span class="hl">mass scaling</span></li>
+          <li class="fragment">Check: kinetic / internal energy (<abbr title="Abaqus output: total kinetic energy">ALLKE</abbr>/<abbr title="Abaqus output: total internal energy">ALLIE</abbr>) &lt; 5–10 %</li>
+        </ul>
+      </div>
+      <table class="tight">
+        <tr><th>Advantages</th><th>Disadvantages</th></tr>
+        <tr><td>no convergence problems</td><td>very small step</td></tr>
+        <tr><td>cheap steps, little memory</td><td>speed-up can spoil quasi-statics</td></tr>
+        <tr><td>free motion of a floating plug</td><td>noisy results – filter them</td></tr>
+        <tr><td>simple damage / failure</td><td>sensitive to small elements</td></tr>
+      </table>
+    </div>
+    <aside class="notes">[1:12–1:14] Explicit – the step count estimate is an own order-of-magnitude calculation.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method">FEM</abbr></span><span class="band-sub">Comparison</span></div>
+    <h2>Implicit or explicit?</h2>
+    <table class="mid">
+      <tr><th></th><th>Implicit</th><th>Explicit</th></tr>
+      <tr><td><strong>Step</strong></td><td>large, expensive</td><td>small, cheap</td></tr>
+      <tr><td><strong>Stability</strong></td><td>unconditional</td><td>conditional (critical Δt)</td></tr>
+      <tr><td><strong>Contact</strong></td><td>convergence may fail</td><td>robust</td></tr>
+      <tr><td><strong>Force</strong></td><td>smooth</td><td>oscillating – average it</td></tr>
+      <tr><td><strong>Residual stresses</strong></td><td>directly</td><td>by transfer to an implicit solver</td></tr>
+      <tr><td><strong>Typical for drawing</strong></td><td><abbr title="Design Environment for FORMing (software name)">DEFORM</abbr>, Abaqus/Standard</td><td>Abaqus/Explicit, LS-DYNA</td></tr>
+    </table>
+    <p class="note-box"><strong>Hybrid in practice:</strong> forming explicit → transfer the result → springback and residual stresses implicit.</p>
+    <aside class="notes">[1:14–1:16] Summary table and the hybrid workflow.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method">FEM</abbr></span><span class="band-sub">Lagrange</span></div>
+    <h2>Lagrangian description – the mesh moves with the material</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.2fr;">
+      <ul class="v-center xs">
+        <li>Nodes are attached to material points; <abbr title="Design Environment for FORMing (software name)">DEFORM</abbr>: <strong>updated Lagrangian</strong>, the unknowns are velocities</li>
+        <li>Naturally tracks free surfaces, contact and the <strong>history</strong> of every point</li>
+        <li>2D: structured mesh, <strong>4–8 elements through the wall</strong>; at moderate strain without remeshing</li>
+        <li>Phases: <strong>start-up → steady state → run-out</strong>; read the force in the steady part</li>
+        <li class="fragment">Several draws: final mesh and state of draw 1 → start of draw 2</li>
+      </ul>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/p02_phi3.jpeg" alt="2D axisymmetric model of two tube draws in DEFORM with the mesh">
+        <p class="img-caption">2D axisymmetric Lagrangian model, draws 1 and 2, longitudinal strain (© Necpal, Martinkovič 2019, CC BY 3.0)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:16–1:18] Lagrange – the mesh in the picture deforms with the material.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method">FEM</abbr></span><span class="band-sub"><abbr title="Arbitrary Lagrangian–Eulerian">ALE</abbr> and Euler</span></div>
+    <h2><abbr title="Arbitrary Lagrangian–Eulerian">ALE</abbr> and the Eulerian description</h2>
+    <div class="cols-2">
+      <div>
+        <ul class="xs">
+          <li><strong><abbr title="Arbitrary Lagrangian–Eulerian">ALE</abbr>:</strong> the mesh can move independently of the material, keeps its topology → less distortion</li>
+          <li><strong>Euler:</strong> the mesh is fixed in space, the material flows through it (Abaqus <abbr title="Coupled Eulerian–Lagrangian">CEL</abbr>)</li>
+          <li><strong>Steady state:</strong> the geometry in the die does not change → model only a short section with inflow and outflow</li>
+          <li class="fragment">We did <strong>not find</strong> a published <abbr title="Arbitrary Lagrangian–Eulerian">ALE</abbr> setup for tube drawing in the sources – most studies are Lagrangian</li>
+        </ul>
+      </div>
+      <table class="tight">
+        <tr><th>Advantages</th><th>Disadvantages</th></tr>
+        <tr><td>less mesh distortion</td><td>more demanding boundary conditions</td></tr>
+        <tr><td>small domain, short computation</td><td>steady state only – no start-up or run-out</td></tr>
+        <tr><td>smooth fields</td><td>history is transported with an error</td></tr>
+        <tr><td></td><td>not available in every solver</td></tr>
+      </table>
+    </div>
+    <aside class="notes">[1:18–1:20] ALE and Euler – the steady-state principle.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method">FEM</abbr></span><span class="band-sub">Formulation</span></div>
+    <h2>Rigid-plastic versus elastic-plastic formulation</h2>
+    <table class="tight">
+      <tr><th></th><th>Rigid-plastic (flow)</th><th>Elastic-plastic</th></tr>
+      <tr><td><strong>Idea</strong></td><td>elastic strains neglected, velocities unknown, incompressibility by penalty</td><td>both elastic and plastic strains</td></tr>
+      <tr><td><strong>Basis</strong></td><td>Kobayashi, Oh, Altan; the classic <abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> solver</td><td>Abaqus, MSC.Superform, option in <abbr title="Design Environment for FORMing (software name)">DEFORM</abbr></td></tr>
+      <tr><td><strong>Suitable for</strong></td><td>force, strain, wall thickness</td><td><span class="hl">residual stresses</span>, springback</td></tr>
+      <tr><td><strong>Not suitable for</strong></td><td>residual stresses, elastic effects</td><td>– (higher cost, poorer convergence)</td></tr>
+    </table>
+    <div class="equation sm">$$\delta\Pi=\int_V\bar\sigma\,\delta\dot{\bar\varepsilon}\,dV+K\!\int_V\dot\varepsilon_V\,\delta\dot\varepsilon_V\,dV-\int_{S_F}\bar t_i\,\delta v_i\,dS=0$$</div>
+    <p class="note-box">Tools: rigid is enough for force and strain; an <strong>elastic die</strong> (possibly with a shrink-fitted ring) for tool stress and wear.</p>
+    <aside class="notes">[1:20–1:22] Rigid-plastic functional from our 2020 papers. Explain the penalty term K.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method">FEM</abbr></span><span class="band-sub">2D / 3D</span></div>
+    <h2>2D axisymmetric or 3D?</h2>
+    <div class="fig-row" style="grid-template-columns:1.1fr 1fr;">
+      <div class="v-center">
+        <table class="tight">
+          <tr><th></th><th>2D axisymmetric</th><th>3D</th></tr>
+          <tr><td>Valid when</td><td>tube, die, plug are coaxial</td><td>eccentricity, ovality, profile</td></tr>
+          <tr><td>Results</td><td>force, strain, wall</td><td>+ eccentricity, ovality, full picture of residual stresses</td></tr>
+          <tr><td>Time</td><td>low – parametric studies</td><td>high</td></tr>
+          <tr><td>Step (our study)</td><td>1·10⁻⁴ s</td><td>1·10⁻⁵ s</td></tr>
+        </table>
+        <ul class="xs"><li class="fragment">Ribbed plug: <strong>quarter 3D model</strong> (mirror symmetry), refined mesh in the rib</li></ul>
+      </div>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/p10_mesh.jpeg" alt="Tetrahedral mesh refined in the rib region: 0.7 mm and 0.07 mm">
+        <p class="img-caption">Mesh refinement in the rib: 0.7 mm → 0.07 mm (© Necpal, Martinkovič 2019, <abbr title="Danube Adria Association for Automation and Manufacturing (symposium organiser)">DAAAM</abbr>)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:22–1:24] 2D vs 3D. The time step differs by an order of magnitude.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method">FEM</abbr></span><span class="band-sub">Setup in practice</span></div>
+    <h2>How we set up the models in <abbr title="Design Environment for FORMing (software name)">DEFORM</abbr></h2>
+    <table class="tight">
+      <tr><th>Item</th><th>2D (02, 03, 04, 09)</th><th>3D (05, 07, 10; book)</th></tr>
+      <tr><td>Description</td><td>Lagrange, axisymmetric</td><td>Lagrange, quarter model / whole tube</td></tr>
+      <tr><td>Mesh</td><td>4–8 quadrilaterals through the wall, no remeshing</td><td>tetrahedra, 160,000–592,000 elements, remeshing every 50 steps</td></tr>
+      <tr><td>Tools</td><td colspan="2">rigid die, rigid plug</td></tr>
+      <tr><td>Speed</td><td>9 m/min; 60 mm/min (<abbr title="Design of Experiments">DOE</abbr>)</td><td>9 m/min; 1–800 mm/s (parametric studies)</td></tr>
+      <tr><td>Friction</td><td colspan="2">shear, m = 0.08 or 0.054 (from measurement)</td></tr>
+      <tr><td>Boundary condition</td><td>the tube point is pulled</td><td>tube 10: <strong>the tools move</strong>, tube end clamped – better convergence</td></tr>
+      <tr><td>Evaluation</td><td colspan="2">only the steady middle part of the tube; force = mean in the steady state</td></tr>
+    </table>
+    <aside class="notes">[1:24–1:26] Specific settings from our papers – the numbers in brackets are source numbers.</aside>
+  </section>
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method">FEM</abbr></span><span class="band-sub">Expectations</span></div>
+    <h2>What to expect from which simulation</h2>
+    <table class="tight">
+      <tr><th>Result</th><th>Impl. Lagrange rigid-plastic</th><th>Impl. Lagrange elastic-plastic</th><th>Explicit</th><th><abbr title="Arbitrary Lagrangian–Eulerian">ALE</abbr> steady state</th></tr>
+      <tr><td>Drawing force</td><td>yes</td><td>yes</td><td>yes, filter it</td><td>yes</td></tr>
+      <tr><td>Strain, wall thickness</td><td>yes</td><td>yes</td><td>yes</td><td>yes (smooth)</td></tr>
+      <tr><td>Residual stresses</td><td>no</td><td><strong>yes</strong></td><td>by transfer</td><td>depends on solver</td></tr>
+      <tr><td>Pressure / stress in the tool</td><td>pressure only</td><td>yes, elastic die</td><td>pressure only</td><td>yes</td></tr>
+      <tr><td>Start-up and run-out</td><td>yes</td><td>yes</td><td>yes</td><td><strong>no</strong></td></tr>
+      <tr><td>Floating plug position</td><td>difficult</td><td>difficult</td><td>naturally</td><td>unsuitable</td></tr>
+      <tr><td>Defects (damage)</td><td>with a criterion</td><td>yes</td><td>yes</td><td>limited</td></tr>
+    </table>
+    <p class="note-box">Example from the literature: a larger angle 2α (6° → 38°) increased plug wear by more than 80 %, die wear by only ≈ 5 % (Wasilewski et al. 2025).</p>
+    <aside class="notes">[1:26–1:28] Expectation matrix.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method">FEM</abbr></span><span class="band-sub">Problems</span></div>
+    <h2>Typical numerical problems and remedies</h2>
+    <table class="tight">
+      <tr><th>Problem</th><th>Cause</th><th>Remedy</th></tr>
+      <tr><td>Mesh distortion at the entry / near the plug</td><td>large local strain</td><td>finer mesh, remeshing, <abbr title="Arbitrary Lagrangian–Eulerian">ALE</abbr></td></tr>
+      <tr><td>Implicit run does not converge</td><td>contact changes, rigid-body motion</td><td>smaller step, better initial contact, constraints</td></tr>
+      <tr><td>The plug “passes” through the die</td><td>high plug friction, unstable position</td><td>reduce plug friction, self-locating shape</td></tr>
+      <tr><td>Explicit run takes too long</td><td>small elements, slow process</td><td>speed-up, mass scaling + energy check</td></tr>
+      <tr><td>Loss of tube volume</td><td>remeshing, coarse mesh</td><td>finer mesh, volume check</td></tr>
+      <tr><td>Force does not match the measurement</td><td>wrong friction or hardening curve</td><td>calibrate friction, verify the curve</td></tr>
+      <tr><td>Result depends on the mesh</td><td>too few elements through the wall</td><td>mesh sensitivity study</td></tr>
+    </table>
+    <aside class="notes">[1:28–1:30] Problems and remedies – pick 2–3 and comment.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title"><abbr title="Finite Element Method">FEM</abbr></span><span class="band-sub">Decision</span></div>
+    <h2>How to choose a model</h2>
+    <table class="mid">
+      <tr><th>Question</th><th>Choice</th></tr>
+      <tr><td>Force and strain, parametric study (α, R, μ)</td><td>2D axisymmetric, implicit, Lagrange, rigid tools</td></tr>
+      <tr><td>Residual stresses</td><td>elastic-plastic, implicit (or explicit → implicit), 3D for eccentricity</td></tr>
+      <tr><td>Tool stress and wear</td><td>elastic die, wear model</td></tr>
+      <tr><td>Floating plug, start-up</td><td>explicit or implicit with plug stabilisation</td></tr>
+      <tr><td>Long steady process, fine mesh in the die</td><td><abbr title="Arbitrary Lagrangian–Eulerian">ALE</abbr> / steady-state solver</td></tr>
+      <tr><td>Profiled plug, ribs</td><td>3D, symmetry, local mesh refinement</td></tr>
+    </table>
+    <p class="note-box"><strong>Always:</strong> compare with an analytical estimate and with the measured force – exactly what the case studies do.</p>
+    <aside class="notes">[1:30–1:32] Decision table – transition to Part IV.</aside>
+  </section>
+  <!-- ═══ PART IV ═══ -->
+  <section class="divider">
+    <h2>Part IV — Case studies from our own research</h2>
+    <p style="color:#f0b0b8;">Ten publications 2017–2023 · <abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 2D / 3D · experiments at <abbr title="Železiarne Podbrezová a.s. (Slovak tube maker)">ŽP</abbr> Podbrezová and at <abbr title="Faculty of Materials Science and Technology">MTF</abbr></p>
+    <aside class="notes">[1:32] Part IV – the main block.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Studies</span><span class="band-sub">Map</span></div>
+    <h2>Map of the studies: one line of research</h2>
+    <table class="tight">
+      <tr><th>Topic</th><th>Method</th><th>Model</th><th>Validation</th><th>Source</th></tr>
+      <tr><td>Two draws E235 / E355, strain</td><td>fixed plug</td><td><abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 2D</td><td>stereology, <abbr title="Vickers Hardness">HV</abbr>, R<sub>m</sub></td><td>Necpal 2017, 2019</td></tr>
+      <tr><td>Voronoi grains, FLOWNET</td><td>fixed plug</td><td><abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 2D</td><td>analytical</td><td>Necpal 2021</td></tr>
+      <tr><td>Friction coefficient by inverse analysis</td><td>sinking</td><td><abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 2D</td><td>measured force</td><td>Necpal 2018</td></tr>
+      <tr><td>Friction, angle, speed → force</td><td>sinking</td><td><abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 3D</td><td>—</td><td>Kapustová 2019, book</td></tr>
+      <tr><td>Wall thickness, force, dimensions</td><td>sinking</td><td><abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 3D</td><td><abbr title="Coordinate Measuring Machine">CMM</abbr>, force</td><td>book 2023</td></tr>
+      <tr><td><abbr title="Design of Experiments">DOE</abbr> + <abbr title="Analysis of Variance">ANOVA</abbr> of dimensions</td><td>sinking</td><td><abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 2D</td><td>statistics</td><td>Necpal 2022</td></tr>
+      <tr><td>Ribbed plug: groove angle, force, stresses</td><td>profiled plug</td><td><abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 2D / 3D</td><td>2D bounds</td><td>Necpal 2019, 2020</td></tr>
+    </table>
+    <p class="slide-source">Projects <abbr title="Slovak Research and Development Agency">APVV</abbr>-15-0319, <abbr title="Slovak Research and Development Agency">APVV</abbr>-18-0418, <abbr title="Scientific Grant Agency of the Slovak Ministry of Education and the Slovak Academy of Sciences">VEGA</abbr> 1/0122/16 · partner <abbr title="Železiarne Podbrezová a.s. (Slovak tube maker)">ŽP</abbr> Podbrezová</p>
+    <aside class="notes">[1:32–1:34] Map – how the studies build on each other.</aside>
+  </section>
+
+  <!-- Study 1 -->
+  <section>
+    <div class="band"><span class="band-title">Study 1</span><span class="band-sub">Two draws on a fixed plug</span></div>
+    <h2>Two draws without annealing: E235 and E355</h2>
+    <div class="cols-2" style="grid-template-columns:1.15fr 1fr;">
+      <table class="tight">
+        <tr><th>Draw</th><th>Input</th><th>Output</th><th>R [%]</th><th>R wall [%]</th><th>R D [%]</th></tr>
+        <tr><td>1</td><td>Ø70 × 6.3</td><td>Ø55 × 4.75</td><td>40.5</td><td>25</td><td>21</td></tr>
+        <tr><td>2</td><td>Ø55 × 4.75</td><td>Ø50 × 3.75</td><td>27.3</td><td>21</td><td>9</td></tr>
+      </table>
+      <ul class="xs">
+        <li>Hot-rolled tube, <abbr title="Železiarne Podbrezová a.s. (Slovak tube maker)">ŽP</abbr> Podbrezová, point Ø40 mm</li>
+        <li><abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 2D, Lagrange, 9 m/min, m = 0.08</li>
+        <li>8 elements through the wall (draw 2: 6), no remeshing</li>
+        <li><strong>Draw 2 starts from the state after draw 1</strong> – strain and hardening are carried over</li>
+        <li class="fragment">Question: <span class="hl">is the computed strain correct?</span></li>
+      </ul>
+    </div>
+    <p class="slide-source">Necpal, Martinkovič, Buranský 2017 (MATEC 137, 05005); Necpal, Martinkovič 2019 (<abbr title="Institute of Physics (IOP Publishing)">IOP</abbr> <abbr title="Materials Science and Engineering (proceedings series)">MSE</abbr> 465, 012007)</p>
+    <aside class="notes">[1:34–1:36] Two-draw technology. Total reduction ≈ 57 %.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Study 1</span><span class="band-sub">Validation by stereology</span></div>
+    <h2>Strain from the microstructure</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.15fr;">
+      <div class="v-center">
+        <ul class="xs">
+          <li>Sections near the inner (I), middle (M) and outer (O) surface</li>
+          <li>Oriented grain boundaries (Saltykov method) → degree of orientation → <strong>local strain</strong></li>
+        </ul>
+        <table class="tight">
+          <tr><th>E235</th><th>φ₃ stereology</th><th>φ₃ <abbr title="Finite Element Method">FEM</abbr></th><th>ln(S₀/S)</th></tr>
+          <tr><td>Draw 1</td><td>0.520</td><td>0.537</td><td>0.520</td></tr>
+          <tr><td>Draw 2</td><td>0.839</td><td>0.874</td><td>0.839</td></tr>
+        </table>
+        <ul class="xs"><li class="fragment"><abbr title="Finite Element Method">FEM</abbr> overestimates by 3–4 %; stereology matches the calculation from dimensions</li></ul>
+      </div>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/p02_cuts.png" alt="Scheme of metallographic sections I, M, O and strain directions">
+        <img src="../../../sk/Lectures/forming_modeling/img/p02_microstructure.jpeg" alt="Microstructure before drawing and after two draws" style="margin-top:0.3em;">
+        <p class="img-caption">Sections and microstructure before / after two draws (© Necpal, Martinkovič 2019, CC BY 3.0)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:36–1:38] Three independent numbers for the same strain. The ln(S0/S) column is own recalculation from dimensions.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Study 1</span><span class="band-sub">Results</span></div>
+    <h2>Strain through the wall and hardening</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.2fr;">
+      <ul class="v-center xs">
+        <li>φ₁ (hoop): outside −0.24, inside −0.22 → the inner surface deforms <strong>less</strong></li>
+        <li>Draw 1: locally <strong>positive φ₂</strong> in the deformation zone, draw 2 only negative</li>
+        <li>E235 vs E355: <span class="hl">the material hardly changes the strain</span> – geometry decides it</li>
+        <li class="fragment">After 2 draws: E235 R<sub>m</sub> 747 MPa, 177 <abbr title="Vickers Hardness">HV</abbr>; E355 R<sub>m</sub> 893 MPa, 211 <abbr title="Vickers Hardness">HV</abbr></li>
+        <li class="fragment">Conclusion: rigid tools + plastic power-law material <strong>are enough</strong> for strain in cold drawing</li>
+      </ul>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/p02_mech_e235.jpeg" alt="Yield stress, tensile strength, elongation and hardness of E235 before drawing and after draws 1 and 2">
+        <p class="img-caption">E235: R<sub>e</sub>, R<sub>m</sub>, A and <abbr title="Vickers Hardness">HV</abbr> before drawing, after draws 1 and 2 (© Necpal, Martinkovič 2019, CC BY 3.0)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:38–1:40] Results and hardening.</aside>
+  </section>
+
+  <!-- Study 2 -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Study 2</span><span class="band-sub">Multi-scale view</span></div>
+    <h2>Voronoi tessellation as “virtual grains”</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.2fr;">
+      <ul class="v-center xs">
+        <li>Tube Ø28 × 4 → Ø25 × 3.5 mm (plug Ø18), α = 12°, bearing 4 mm</li>
+        <li>Analytically: R = 21.6 %, ε = (S₀ − S)/S = 0.276</li>
+        <li>MATLAB: Voronoi tessellation → <strong>FLOWNET</strong> pattern in <abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 2D</li>
+        <li>FLOWNET deforms with the material and survives remeshing – like an etched grid</li>
+        <li class="fragment">Degree of orientation ω from the “virtual grains” → strain ≈ 0.24–0.27</li>
+      </ul>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/p03_flownet.jpeg" alt="Voronoi tessellation inserted in the tube wall between plug and die">
+        <img src="../../../sk/Lectures/forming_modeling/img/p03_orientation.jpeg" alt="Degree of orientation and principal strain before and after drawing" style="margin-top:0.3em;">
+        <p class="img-caption">Pattern in the tube wall and degree of orientation before / after drawing (© Necpal, Martinkovič, Kuruc 2021, CC BY 3.0)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:40–1:42] Linking macro and micro. Dimensions: the paper gives a 24 mm die, but the 236.4 mm² cross-section corresponds to Ø25 × d18.</aside>
+  </section>
+
+  <!-- Study 3 -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Study 3</span><span class="band-sub">Inverse friction</span></div>
+    <h2>How to measure friction: drawing on a tensile testing machine</h2>
+    <div class="fig-row" style="grid-template-columns:0.8fr 1.2fr;">
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/p09_machine.png" alt="Modified tensile testing machine for tube drawing">
+        <p class="img-caption">Modified tensile testing machine (© Necpal, Martinkovič, Václav 2018)</p>
+      </div>
+      <div class="v-center">
+        <ul class="xs">
+          <li>Tube Ø28 × 4 mm, SPT360 steel, sinking to Ø25 mm</li>
+          <li>4 cemented-carbide dies, α = 6°, 8°, 10°, 12°, bearing 2 mm, vegetable oil</li>
+          <li>The force rises and settles – the <strong>mean of the steady part</strong> is taken</li>
+        </ul>
+        <img src="../../../sk/Lectures/forming_modeling/img/p09_forces.png" alt="Measured forces for four die angles" style="max-height:30vh;">
+        <p class="img-caption">Measured forces: 6° 38.0 kN, 8° 40.3 kN, 10° 42.0 kN, 12° 43.9 kN (© Necpal et al. 2018)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:42–1:44] Experiment. Note: in the experiment the force grows with the angle.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Study 3</span><span class="band-sub">Inverse friction</span></div>
+    <h2>Inverse analysis: the force is linear in friction</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1fr;">
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/p09_force_mu.png" alt="Simulated force versus friction coefficient, linear dependence">
+        <p class="img-caption"><abbr title="Finite Element Method">FEM</abbr>, α = 8°: F(μ) for μ = 0.02–0.06 (© Necpal et al. 2018)</p>
+      </div>
+      <div class="v-center">
+        <div class="equation sm">$$\mu=\frac{F-3.062\cdot10^4}{1.838\cdot10^5}$$</div>
+        <ul class="xs">
+          <li>F = 40,349 N → <span class="hl">μ ≈ 0.053</span> (0.0526 in the paper)</li>
+          <li>Later studies (05, 07, 10) use 0.05421</li>
+          <li class="fragment">Valid only for this die, lubricant and material – <strong>it is not a universal constant</strong></li>
+          <li class="fragment">The paper text gives a range of 0.2–0.6, the chart shows 0.02–0.06 → the result lies <strong>inside</strong> the range</li>
+        </ul>
+      </div>
+    </div>
+    <aside class="notes">[1:44–1:46] Inverse analysis. Point out the text-vs-chart inconsistency in the paper – always check units and ranges.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Study 3</span><span class="band-sub">Die angle</span></div>
+    <h2>With calibrated friction: the effect of the die angle</h2>
+    <div class="fig-row" style="grid-template-columns:1.1fr 1fr;">
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/p09_force_angle.png" alt="Simulated force versus die angle from 2 to 14 degrees">
+        <p class="img-caption"><abbr title="Finite Element Method">FEM</abbr>, μ = 0.0526: force for α = 2–14° (© Necpal et al. 2018)</p>
+      </div>
+      <ul class="v-center xs">
+        <li>2°: 67.2 kN – huge friction over a long contact</li>
+        <li>6–10°: 40.4 / 40.3 / 39.1 kN – <span class="hl">flat minimum</span></li>
+        <li>12–14°: 42.2 / 43.9 kN – redundant work grows</li>
+        <li class="fragment">Exactly the shape of the curve from the Siebel estimate (Part II)</li>
+        <li class="fragment">The experiment at 6–12° showed the force rising with angle – different friction in real dies? → a question for validation</li>
+      </ul>
+    </div>
+    <aside class="notes">[1:46–1:48] Link to the optimum angle. The paper states an optimum ≈ 8°, the chart has its minimum at 10° – the minimum is flat.</aside>
+  </section>
+
+  <!-- Study 4 -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Study 4</span><span class="band-sub">Friction and angle</span></div>
+    <h2>Friction × die angle → force (<abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 3D)</h2>
+    <div class="fig-row" style="grid-template-columns:1.2fr 1fr;">
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/p06_force_chart.jpeg" alt="Maximum force versus friction coefficient for angles 6, 8, 10 and 12 degrees">
+        <p class="img-caption">F<sub>max</sub> for f = 0.06–0.12 and α = 6–12° (© Kapustová, Sobota, Necpal 2019, Trans Tech)</p>
+      </div>
+      <ul class="v-center xs">
+        <li>Ø28 × 4 → Ø25 × 4 mm, E235, 160,000 elements, 200 mm/s</li>
+        <li>The force grows with friction at all angles</li>
+        <li><strong>6°:</strong> 49 → 65 kN – the most sensitive to friction</li>
+        <li><strong>10°:</strong> 46 → 53 kN – the lowest force</li>
+        <li class="fragment">Recommendation: α = 10°, friction 0.06–0.08</li>
+      </ul>
+    </div>
+    <aside class="notes">[1:48–1:50] Interaction of friction and angle – at a small angle friction matters more (B = μ·cot α).</aside>
+  </section>
+  <section>
+    <div class="band"><span class="band-title">Study 4</span><span class="band-sub">Speed</span></div>
+    <h2>Drawing speed hardly changes the force</h2>
+    <table class="tight">
+      <tr><th>f</th><th>2α</th><th>100</th><th>200</th><th>300</th><th>400</th><th>500</th><th>800 mm/s</th></tr>
+      <tr><td>0.08</td><td>20°</td><td>50.8</td><td>50.9</td><td>51.0</td><td>51.0</td><td>51.0</td><td>51.1</td></tr>
+      <tr><td>0.08</td><td>24°</td><td>50.9</td><td>51.0</td><td>51.1</td><td>51.1</td><td>51.1</td><td>51.2</td></tr>
+      <tr><td>0.12</td><td>20°</td><td>56.5</td><td>56.6</td><td>56.6</td><td>56.7</td><td>56.7</td><td>56.8</td></tr>
+      <tr><td>0.12</td><td>24°</td><td>54.7</td><td>54.8</td><td>54.9</td><td>54.9</td><td>54.9</td><td>55.0</td></tr>
+    </table>
+    <ul class="small" style="margin-top:0.4em;">
+      <li>F<sub>max</sub> [kN]: 8× the speed → <span class="hl">+0.6 %</span>; friction 0.08 → 0.12 → <strong>+7 to +11 %</strong></li>
+      <li class="fragment">Caution: the model has no temperature and a small m – speed acts through heating and the lubricant film, which the model does not have</li>
+    </ul>
+    <p class="slide-source">Source: Bílik, Necpal, Sobota 2023, tab. 3.7 (Kapustová 2019)</p>
+    <aside class="notes">[1:50–1:52] Speed vs friction. Critical view: the model could not have shown anything else.</aside>
+  </section>
+
+  <!-- Study 5 -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Study 5</span><span class="band-sub">Wall thickness</span></div>
+    <h2>Tube sinking: the wall thickens</h2>
+    <div class="fig-row" style="grid-template-columns:1.15fr 1fr;">
+      <div class="v-center">
+        <table class="tight">
+          <tr><th>Draw (s₀ ≈ 1 mm)</th><th>R [%]</th><th>Δs [mm]</th><th>Δs [%]</th></tr>
+          <tr><td>Ø14 → Ø12</td><td>13.4–13.9</td><td>0.018–0.024</td><td>1.8–2.3</td></tr>
+          <tr><td>Ø16 → Ø12</td><td>23.8–23.9</td><td>0.045</td><td>4.4–4.6</td></tr>
+          <tr><td>Ø18 → Ø12</td><td>32.2–32.7</td><td>0.045–0.053</td><td>4.4–5.2</td></tr>
+        </table>
+        <ul class="xs">
+          <li>E235, R35 die, Molykote, 60 mm/min, ZEISS <abbr title="Coordinate Measuring Machine">CMM</abbr> measurement (500 points per circle)</li>
+          <li class="fragment">Set Ø14–18 × 1 and 2 mm (Sobota 2022): <abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 3D Δs = 0.04–0.10 mm, experiment 0.04–0.14 mm – <span class="hl">same order and trend</span></li>
+          <li class="fragment">Scatter of the input wall thickness limits the accuracy of the comparison</li>
+        </ul>
+      </div>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/book_wall_histogram.jpeg" alt="Wall thickness histogram from DEFORM and colour field of thickness on the tube">
+        <p class="img-caption">Wall thickness in <abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 3D – histogram of the steady part (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:52–1:54] Wall thickening – experiment, simulation. Why: part of the hoop compression goes into the thickness.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Study 5</span><span class="band-sub">Force and stress</span></div>
+    <h2>Experiment versus <abbr title="Finite Element Method">FEM</abbr>: Ø16 → Ø12 mm</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.1fr;">
+      <div class="v-center">
+        <table class="tight">
+          <tr><th></th><th>Experiment</th><th><abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 3D</th></tr>
+          <tr><td>Force [kN]</td><td>21.5–22.0</td><td>≈ 20.5</td></tr>
+          <tr><td>Strain φ</td><td>0.29–0.32</td><td>0.3–0.4</td></tr>
+          <tr><td>Stress [MPa]</td><td>328–330</td><td>280–350</td></tr>
+        </table>
+        <ul class="xs">
+          <li>Hydraulic machine EU 40 (400 kN), 1 mm/s, 220,000 elements, m = 0.08</li>
+          <li class="fragment"><abbr title="Finite Element Method">FEM</abbr> ≈ 5 % lower: tubes lubricated by hand with mineral oil → friction <strong>was not constant</strong></li>
+        </ul>
+      </div>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/book_sink_force.jpeg" alt="Drawing force versus stroke from DEFORM">
+        <p class="img-caption">Force history in <abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 3D: start-up and steady state ≈ 20 kN (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+    </div>
+    <aside class="notes">[1:54–1:56] Force validation. Explanation of the deviation – lubrication.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Study 5</span><span class="band-sub">Dimensions</span></div>
+    <h2>Angle and friction versus tube dimensions</h2>
+    <div class="fig-row" style="grid-template-columns:1.2fr 1fr;">
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/book_diam_vs_angle.jpeg" alt="Inner and outer diameter for angles 12 to 24 degrees at friction 0.08">
+        <p class="img-caption">d and D for 2α = 12–24°, f = 0.08 – evaluated in GOM Inspect (© Bílik, Necpal, Sobota 2023)</p>
+      </div>
+      <ul class="v-center xs">
+        <li>Ø28 × 4 → Ø25, 16 simulations (f 0.06–0.12 × 2α 12–24°)</li>
+        <li>Friction: <strong>no significant effect</strong> on dimensions, roundness and coaxiality</li>
+        <li>Larger 2α → <span class="hl">smaller D and d</span>: D 24.65 → 24.26 mm for a Ø25 die</li>
+        <li>Roundness and coaxiality: differences ≤ 0.03 mm – not demonstrated</li>
+        <li class="fragment">Force ↔ dimensions is a trade-off: a larger angle saves force but increases the deviation from the die Ø</li>
+      </ul>
+    </div>
+    <aside class="notes">[1:56–1:58] Dimensions from STL results in GOM Inspect – in a simulation you can “measure” as in metrology.</aside>
+  </section>
+
+  <!-- Study 6: DOE deep dive -->
+  <section class="deep-stack">
+    <section class="slide-full">
+      <div class="band"><span class="band-title">Study 6</span><span class="band-sub"><abbr title="Design of Experiments">DOE</abbr> in <abbr title="Finite Element Method">FEM</abbr></span></div>
+      <h2>Designed experiment in simulation</h2>
+      <div class="fig-row" style="grid-template-columns:1fr 1.1fr;">
+        <ul class="v-center xs">
+          <li>Tube sinking, full factorial design <strong>2³</strong>, 5 replicates = 40 simulations</li>
+          <li>A: tube Ø 16 / 18 · B: wall 1 / 2 · C: die Ø 12 / 14 mm</li>
+          <li>Responses: final D and wall thickness; Minitab 17 – regression and <abbr title="Analysis of Variance">ANOVA</abbr></li>
+          <li class="fragment"><strong>D:</strong> C decides, then A and the A×C interaction; wall B does not</li>
+          <li class="fragment"><strong>Wall:</strong> everything is significant, most of all B (input wall) and A</li>
+        </ul>
+        <div class="figure">
+          <img src="../../../sk/Lectures/forming_modeling/img/p04_main_od.png" alt="Main effects plot for the outer diameter">
+          <p class="img-caption">Main effects on the final D (© Necpal, Morovič, Bočáková 2022, CC BY 3.0)</p>
+        </div>
+      </div>
+      <div class="deep-hint">▼ Deep dive: 3 slides on <abbr title="Design of Experiments">DOE</abbr> and <abbr title="Analysis of Variance">ANOVA</abbr> — press <strong>↓</strong></div>
+      <aside class="notes">[1:58–2:00] DOE in FEM. Optional: down arrow – 3 slides on the design and ANOVA. Otherwise right.</aside>
+    </section>
+    <section>
+      <div class="band"><span class="band-title"><abbr title="Design of Experiments">DOE</abbr> ↓</span><span class="band-sub">1 · Design</span></div>
+      <h2>How to design an experiment in <abbr title="Finite Element Method">FEM</abbr></h2>
+      <div class="cols-2" style="grid-template-columns:1fr 1fr;">
+        <ol class="xs">
+          <li>Define the problem (screening, optimisation, validation)</li>
+          <li>The response and how to measure it (postprocessor)</li>
+          <li>Factors and levels</li>
+          <li>Type of design (curvature, replicates, run order)</li>
+          <li>Run it in the software (<abbr title="Design of Experiments">DOE</abbr> module in <abbr title="Design Environment for FORMing (software name)">DEFORM</abbr>)</li>
+          <li>Measurement system (postprocessor capabilities)</li>
+          <li>Statistical software (Minitab, SPSS)</li>
+          <li>Interpret in the context of the problem</li>
+        </ol>
+        <table class="tight">
+          <tr><th>Run</th><th>A Ø</th><th>B s</th><th>C die Ø</th></tr>
+          <tr><td>1</td><td>16</td><td>1</td><td>12</td></tr>
+          <tr><td>2</td><td>18</td><td>1</td><td>12</td></tr>
+          <tr><td>3</td><td>16</td><td>2</td><td>12</td></tr>
+          <tr><td>4</td><td>18</td><td>2</td><td>12</td></tr>
+          <tr><td>5–8</td><td colspan="3">the same with a Ø14 die</td></tr>
+        </table>
+      </div>
+      <p class="note-box">Model: Lagrange 2D, α = 8°, bearing 4 mm, m = 0.08, 4 elements through the wall, 60 mm/min.</p>
+      <aside class="notes">[DO+0:00–0:01] Eight steps after Montgomery and the design matrix.</aside>
+    </section>
+    <section>
+      <div class="band"><span class="band-title"><abbr title="Design of Experiments">DOE</abbr> ↓</span><span class="band-sub">2 · <abbr title="Analysis of Variance">ANOVA</abbr></span></div>
+      <h2><abbr title="Analysis of Variance">ANOVA</abbr> results</h2>
+      <div class="cols-2">
+        <table class="tight">
+          <tr><th>Final D</th><th>F</th><th>p</th></tr>
+          <tr><td>A tube Ø</td><td>31.3</td><td>0.000</td></tr>
+          <tr><td>B wall</td><td>3.1</td><td>0.090</td></tr>
+          <tr><td><strong>C die Ø</strong></td><td><strong>46.8</strong></td><td>0.000</td></tr>
+          <tr><td>A×C</td><td>26.8</td><td>0.000</td></tr>
+          <tr><td>B×C</td><td>4.0</td><td>0.055</td></tr>
+        </table>
+        <table class="tight">
+          <tr><th>Final wall</th><th>F</th><th>p</th></tr>
+          <tr><td>A tube Ø</td><td>315</td><td>0.000</td></tr>
+          <tr><td><strong>B wall</strong></td><td><strong>325</strong></td><td>0.000</td></tr>
+          <tr><td>C die Ø</td><td>258</td><td>0.000</td></tr>
+          <tr><td>A×C</td><td>283</td><td>0.000</td></tr>
+          <tr><td>A×B, B×C</td><td>6.3 / 5.3</td><td>0.017 / 0.028</td></tr>
+        </table>
+      </div>
+      <ul class="xs">
+        <li>Residuals: normal, no outliers; a slight trend in run order → more replicates</li>
+        <li>Observation: D comes out <strong>smaller</strong> than the die (≈ 11.4–11.6 for Ø12), the wall thickens</li>
+      </ul>
+      <aside class="notes">[DO+0:01–0:02] ANOVA tables – F and p values.</aside>
+    </section>
+    <section>
+      <div class="band"><span class="band-title"><abbr title="Design of Experiments">DOE</abbr> ↓</span><span class="band-sub">3 · Summary</span></div>
+      <h2>Summary and questions</h2>
+      <ul class="xs">
+        <li><abbr title="Design of Experiments">DOE</abbr> + <abbr title="Finite Element Method">FEM</abbr> = cheap parameter screening, but a real experiment is still needed for validation</li>
+        <li>“Replicates” in a deterministic simulation are not random – the scatter comes from numerics (mesh, steps)</li>
+      </ul>
+      <ol class="xs">
+        <li class="fragment">How many simulations does a 2³ design with five replicates have? <button class="answer-btn" data-answer="DO1">answer</button><span class="answer-text">2³ = 8 combinations × 5 replicates = 40 simulations.</span></li>
+        <li class="fragment">Which factor affects the final D most? <button class="answer-btn" data-answer="DO2">answer</button><span class="answer-text">The die diameter C (F = 46.8), then the input tube diameter A and the A×C interaction.</span></li>
+        <li class="fragment">What does a significant A×C interaction mean? <button class="answer-btn" data-answer="DO3">answer</button><span class="answer-text">The effect of the tube diameter on the result depends on the die diameter – the effects cannot be added independently.</span></li>
+        <li class="fragment">Why does <abbr title="Design of Experiments">DOE</abbr> in <abbr title="Finite Element Method">FEM</abbr> not replace a real experiment? <button class="answer-btn" data-answer="DO4">answer</button><span class="answer-text">The model contains assumptions (friction, material, rigid tools); the statistics assess the model, not reality – validation is needed.</span></li>
+      </ol>
+      <p class="note-box">Press <strong>↑</strong> to return to the main lecture or <strong>→</strong> to continue.</p>
+      <aside class="notes">[DO+0:02–0:03] Summary and questions.</aside>
+    </section>
+  </section>
+
+  <!-- Study 7 -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Study 7</span><span class="band-sub">Ribbed tubes</span></div>
+    <h2>Internally ribbed tubes: the plug groove angle</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.15fr;">
+      <div class="v-center">
+        <ul class="xs">
+          <li>Heat exchangers, evaporators – ribs increase the inner surface</li>
+          <li>The last draw on a <strong>ribbed plug</strong>; quality = <span class="hl">rib filling</span></li>
+          <li><abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> 3D, tetrahedra, remeshing every 50 steps, m = 0.05421, R = 12.5 %</li>
+        </ul>
+        <table class="tight">
+          <tr><th>δ [°]</th><th>5</th><th>10</th><th>15</th><th>−5</th><th>−10</th><th>−15</th></tr>
+          <tr><td>gap [mm]</td><td>0.22</td><td>0.21</td><td>0.21</td><td>0.18</td><td>0.17</td><td><strong>0.15</strong></td></tr>
+        </table>
+        <ul class="xs"><li class="fragment">A <strong>negative groove angle</strong> fills the ribs better – best at −15°</li></ul>
+      </div>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/p05_gaps.jpeg" alt="Gap between tube and plug for six groove angles">
+        <p class="img-caption">Groove filling for δ = ±5°, ±10°, ±15° (© Necpal, Hodúlová, Martinkovič 2020, Trans Tech)</p>
+      </div>
+    </div>
+    <aside class="notes">[2:00–2:02] Optimising tool geometry by simulation – without making six plugs.</aside>
+  </section>
+
+  <!-- Study 8 -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Study 8</span><span class="band-sub">2D versus 3D</span></div>
+    <h2>Is a 2D model enough for the force with a ribbed plug?</h2>
+    <div class="fig-row" style="grid-template-columns:1fr 1.1fr;">
+      <div class="v-center">
+        <table class="tight">
+          <tr><th>Model</th><th>R [%]</th><th>Die [N]</th><th>Plug [N]</th></tr>
+          <tr><td>2D, smooth plug Ø17</td><td>12.5</td><td>39,550</td><td>1,026</td></tr>
+          <tr><td><strong>3D, ribbed plug</strong></td><td>17</td><td><strong>44,890</strong></td><td>1,238</td></tr>
+          <tr><td>2D, smooth plug Ø18</td><td>21.6</td><td>47,010</td><td>5,245</td></tr>
+        </table>
+        <ul class="xs">
+          <li>Two 2D models <span class="hl">bound</span> the 3D result from below and above</li>
+          <li class="fragment">2D is enough for a rough force estimate – cheaply; ribs and stresses need 3D</li>
+        </ul>
+      </div>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/p07_die_force.png" alt="Die force history for the 3D model and two 2D models">
+        <p class="img-caption">Die force: 3D and 2D (Ø17, Ø18) (© Necpal, Kapustová, Martinkovič 2020, Trans Tech)</p>
+      </div>
+    </div>
+    <aside class="notes">[2:02–2:04] Bounding 3D with two 2D models – a practical trick.</aside>
+  </section>
+
+  <!-- Study 9 -->
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Study 9</span><span class="band-sub">Ribbed tube</span></div>
+    <h2>Stresses in the wall of an internally ribbed tube</h2>
+    <div class="fig-row" style="grid-template-columns:0.9fr 1.3fr;">
+      <ul class="v-center xs">
+        <li>Force: die ≈ <strong>45 kN</strong>, plug ≈ <strong>1.5 kN</strong> in steady state, a peak at the start (profile filling) → size the plug rod</li>
+        <li>Longitudinal stress: <span class="hl">compression near the inner surface, tension near the outer</span></li>
+        <li>Max normal stress near the outer surface</li>
+        <li class="fragment">Design rule: maximum compression inside (rib filling), tension outside below the strength (cracks)</li>
+        <li class="fragment">Computation ≈ 40 min; the tools move, the tube end is clamped</li>
+      </ul>
+      <div class="figure">
+        <img src="../../../sk/Lectures/forming_modeling/img/p10_stress.jpeg" alt="Effective stress distribution in a cross-section and stresses through the wall">
+        <p class="img-caption">Effective stress in the section and stresses through the wall (© Necpal, Martinkovič 2019, <abbr title="Danube Adria Association for Automation and Manufacturing (symposium organiser)">DAAAM</abbr>)</p>
+      </div>
+    </div>
+    <aside class="notes">[2:04–2:06] Stresses through the wall – what analytics never gives.</aside>
+  </section>
+  <section>
+    <div class="band"><span class="band-title">Studies</span><span class="band-sub">Lessons</span></div>
+    <h2>What the studies taught us</h2>
+    <div class="cols-2">
+      <ul class="xs">
+        <li><strong>Friction</strong> must be measured, not taken from the literature</li>
+        <li><strong>Force</strong> grows linearly with friction, and hardly at all with speed</li>
+        <li><strong>Die angle</strong> has a flat optimum that depends on friction</li>
+        <li><strong>Strain</strong> is set by the geometry, not by the steel</li>
+      </ul>
+      <ul class="xs">
+        <li><strong>Sinking</strong> thickens the wall by 2–5 % and D is smaller than the die</li>
+        <li><strong>2D</strong> is enough for force and strain, <strong>3D</strong> for profiles and stresses</li>
+        <li><strong>Plug geometry</strong> can be optimised virtually</li>
+        <li><strong>Every model</strong> needs independent verification</li>
+      </ul>
+    </div>
+    <aside class="notes">[2:06–2:08] Eight lessons – transition to Part V.</aside>
+  </section>
+  <!-- ═══ PART V ═══ -->
+  <section class="divider">
+    <h2>Part V — Optimisation and validation</h2>
+    <p style="color:#f0b0b8;">Calibration versus validation · verification ladder · recommendations · optimisation workflow · uncertainties</p>
+    <aside class="notes">[2:08] Part V – synthesis.</aside>
+  </section>
+
+  <section class="slide-full">
+    <div class="band"><span class="band-title">Validation</span><span class="band-sub">Verification ladder</span></div>
+    <h2>The verification ladder of a drawing model</h2>
+    <div class="fig-row" style="grid-template-columns:1.25fr 1fr;">
+      <div class="figure svgfig">
+        <svg viewBox="0 0 470 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial" font-size="13">
+          <rect x="10" y="240" width="300" height="44" rx="4" fill="#fff5f6" stroke="#c8001e"/>
+          <text x="22" y="260" font-weight="700" fill="#8b0014">1 · Analytical estimate</text><text x="22" y="277" fill="#555">order of the force, trend with α, μ, R</text>
+          <rect x="45" y="187" width="300" height="44" rx="4" fill="#fff5f6" stroke="#c8001e"/>
+          <text x="57" y="207" font-weight="700" fill="#8b0014">2 · Measured force</text><text x="57" y="224" fill="#555">steady part, testing machine / draw bench</text>
+          <rect x="80" y="134" width="300" height="44" rx="4" fill="#fff5f6" stroke="#c8001e"/>
+          <text x="92" y="154" font-weight="700" fill="#8b0014">3 · Dimensions</text><text x="92" y="171" fill="#555">D, d, wall – <tspan style="cursor:help"><title>Coordinate Measuring Machine</title>CMM</tspan>, GOM Inspect</text>
+          <rect x="115" y="81" width="300" height="44" rx="4" fill="#fff5f6" stroke="#c8001e"/>
+          <text x="127" y="101" font-weight="700" fill="#8b0014">4 · Local strain</text><text x="127" y="118" fill="#555">stereology, grain orientation</text>
+          <rect x="150" y="28" width="300" height="44" rx="4" fill="#c8001e" stroke="#8b0014"/>
+          <text x="162" y="48" font-weight="700" fill="#fff">5 · Properties and stresses</text><text x="162" y="65" fill="#ffe"><tspan style="cursor:help"><title>Vickers Hardness</title>HV</tspan>, R<tspan baseline-shift="sub" font-size="9">m</tspan>, residual stresses</text>
+          <line x1="440" y1="282" x2="460" y2="40" stroke="#777" stroke-width="2"/>
+          <polygon points="460,32 453,47 465,47" fill="#777"/>
+          <text x="430" y="18" fill="#777" text-anchor="end">cost and confidence both rise ↗</text>
+        </svg>
+        <p class="img-caption">Verification levels used in our studies (own scheme)</p>
+      </div>
+      <ul class="v-center xs">
+        <li>Each higher level is more expensive but tells more</li>
+        <li>We used level 2 for <strong>calibrating</strong> friction</li>
+        <li class="fragment">Levels 3–5 are therefore <span class="hl">independent validation</span></li>
+      </ul>
+    </div>
+    <aside class="notes">[2:08–2:10] Verification ladder. Calibration on one level, validation on the others.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Validation</span><span class="band-sub">Methodology</span></div>
+    <h2>Calibration is not validation</h2>
+    <div class="cols-2">
+      <div>
+        <div class="flow-box"><strong>Calibration</strong>: set an unknown parameter (friction) so the model matches the measurement</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key"><strong>Validation</strong>: compare the model with a <em>different</em> quantity or a <em>different</em> case that was not used for calibration</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box"><strong>Prediction</strong>: only then use the model for new parameters</div>
+      </div>
+      <ul class="xs">
+        <li>Friction from the <strong>force at 8°</strong> → validate on the force at other angles, on <strong>dimensions</strong>, on <strong>strain</strong></li>
+        <li class="fragment">If we calibrated friction at each angle separately, the model would always “fit” – and prove nothing</li>
+        <li class="fragment">Split the data: part for calibration, part for validation (as in machine learning)</li>
+      </ul>
+    </div>
+    <aside class="notes">[2:10–2:12] The most important methodological slide of Part V.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Validation</span><span class="band-sub">Summary</span></div>
+    <h2>Model versus reality – summary of our comparisons</h2>
+    <table class="tight">
+      <tr><th>Quantity</th><th>Experiment / reference</th><th><abbr title="Finite Element Method">FEM</abbr></th><th>Deviation</th><th>Source</th></tr>
+      <tr><td>φ₃ after draw 1</td><td>0.520 (stereology)</td><td>0.537</td><td>+3 %</td><td>Necpal 2019</td></tr>
+      <tr><td>φ₃ after draw 2</td><td>0.839 (stereology)</td><td>0.874</td><td>+4 %</td><td>Necpal 2019</td></tr>
+      <tr><td>Force Ø16 → Ø12</td><td>21.5–22.0 kN</td><td>20.5 kN</td><td>−5 to −7 %</td><td>book 3.3.2</td></tr>
+      <tr><td>Drawing stress</td><td>328–330 MPa</td><td>280–350 MPa</td><td>within range</td><td>book 3.3.2</td></tr>
+      <tr><td>Δs in sinking</td><td>0.04–0.14 mm</td><td>0.04–0.10 mm</td><td>same trend</td><td>book 3.3.1</td></tr>
+      <tr><td>Force, ribbed plug (3D)</td><td>2D bounds 39.6–47.0 kN</td><td>44.9 kN</td><td>inside</td><td>Necpal 2020</td></tr>
+      <tr><td>Analytics Ø16 → Ø12</td><td>21.5–22.0 kN</td><td>12.6–15.1 kN (analyt.)</td><td>≈ −35 %</td><td>own estimate</td></tr>
+    </table>
+    <p class="note-box">Integral quantities (force, mean strain) match within <strong>±5 %</strong>; local ones (wall thickness) rather in trend – sensitive to the scatter of the input tube and to the mesh.</p>
+    <aside class="notes">[2:12–2:14] Validation summary table.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Optimisation</span><span class="band-sub">Die angle</span></div>
+    <h2>Which die angle is optimal? It depends on the conditions</h2>
+    <table class="tight">
+      <tr><th>Source</th><th>Optimum</th><th>Conditions</th></tr>
+      <tr><td>Siebel (analytical)</td><td>α ≈ 10.5°</td><td>bar, μ = 0.1, r = 20 %</td></tr>
+      <tr><td>Necpal 2018 (<abbr title="Finite Element Method">FEM</abbr> + measurement)</td><td>α ≈ 8° (chart: minimum at 10°, 6–10° flat)</td><td>carbide, μ ≈ 0.053, bearing 2 mm</td></tr>
+      <tr><td>Kapustová 2019 (<abbr title="Finite Element Method">FEM</abbr> 3D)</td><td>α = 10°</td><td>f = 0.06–0.12, 200 mm/s</td></tr>
+      <tr><td>Book 3.3.3 (<abbr title="Finite Element Method">FEM</abbr> 3D)</td><td>2α = 24° (α = 12°)</td><td>f = 0.08–0.12</td></tr>
+      <tr><td>Počta 1963 (practice)</td><td>2α = 24–28°</td><td>industrial drawing of steel tubes</td></tr>
+    </table>
+    <ul class="small" style="margin-top:0.4em;">
+      <li>All lie in the band <span class="hl">α ≈ 8–14°</span> – that is a flat minimum, not a contradiction</li>
+      <li class="fragment">Tool life, dimensions (larger α → smaller D) and lubrication stability also matter</li>
+    </ul>
+    <aside class="notes">[2:14–2:16] Apparent contradiction of optimum angles – explained by the flat minimum and different friction.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Optimisation</span><span class="band-sub">Workflow</span></div>
+    <h2>Process optimisation workflow by simulation</h2>
+    <div class="cols-2" style="grid-template-columns:1fr 1fr;">
+      <div>
+        <div class="flow-box">1. Goal and constraints <span class="flow-note">(min. force, D in tolerance, σ₁ &lt; R<sub>p0.2</sub>)</span></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">2. Calibrated and validated base model</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box key">3. <abbr title="Design of Experiments">DOE</abbr>: factor screening → <abbr title="Analysis of Variance">ANOVA</abbr></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">4. Finer design around the optimum (response surface)</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">5. Verification simulation + trial draw</div>
+      </div>
+      <table class="tight">
+        <tr><th>Goal</th><th>Lever</th></tr>
+        <tr><td>lower force</td><td>α in the 8–12° band, better lubrication</td></tr>
+        <tr><td>accurate D</td><td>die Ø (+ correction for the drop in D), smaller α</td></tr>
+        <tr><td>wall thickness</td><td>input wall, plug, reduction</td></tr>
+        <tr><td>rib filling</td><td>negative plug groove angle, pressure inside</td></tr>
+        <tr><td>no breakage</td><td>reduction per pass, σ₁ below the yield stress</td></tr>
+      </table>
+    </div>
+    <aside class="notes">[2:16–2:18] Workflow and levers – all studies summed up in one table.</aside>
+  </section>
+
+  <section>
+    <div class="band"><span class="band-title">Validation</span><span class="band-sub">Uncertainties</span></div>
+    <h2>Uncertainties and limitations – be critical</h2>
+    <div class="cols-2">
+      <ul class="xs">
+        <li><strong>Friction</strong> 0.0526 vs 0.05421 in follow-up papers – the same test, a different number</li>
+        <li><strong>Temperature</strong> neglected, although the tube leaves at 130–180 °C</li>
+        <li><strong>Rigid tools</strong> – no die springback and no die wear</li>
+        <li><strong>Input tube</strong> ideal – no eccentricity or polygon</li>
+      </ul>
+      <ul class="xs">
+        <li><strong>Typos</strong> in the papers: die 24 vs 25 mm, 10° vs 12°, “stainless” steel for E235</li>
+        <li><strong>Hand lubrication</strong> in the experiment → non-constant friction</li>
+        <li><strong>Mesh</strong>: 4 elements through the wall in the <abbr title="Design of Experiments">DOE</abbr> – no sensitivity study</li>
+        <li class="fragment"><span class="hl">A simulation is only as good as its inputs and its verification</span></li>
+      </ul>
+    </div>
+    <aside class="notes">[2:18–2:20] A critical look at our own studies – even published results must be read carefully.</aside>
+  </section>
+
+  <!-- ═══ SUMMARY ═══ -->
+  <section style="text-align:left;">
+    <hr class="top-rule">
+    <h2>Summary</h2>
+    <ul class="compact">
+      <li><strong>Fundamentals:</strong> four drawing methods; σ₁ must stay below the yield stress of the hardened tube</li>
+      <li><strong>Analytics:</strong> ideal &lt; slab method &lt; Siebel; flat angle optimum, drawing limit</li>
+      <li><strong><abbr title="Finite Element Method">FEM</abbr>:</strong> four independent choices; friction and the hardening curve matter most</li>
+      <li><strong>Studies:</strong> friction by inverse analysis, force independent of speed, the wall thickens, 2D bounds 3D, negative groove angle</li>
+      <li><strong>Validation:</strong> calibrate on one quantity, verify on others</li>
+    </ul>
+    <p class="institution" style="margin-top:1.2em;">Next time: preprocessing in <abbr title="Design Environment for FORMing (software name)">DEFORM</abbr> – mesh, boundary conditions and friction in practice</p>
+    <aside class="notes">[2:20–2:22] Five sentences – one for each part.</aside>
+  </section>
+
+  <!-- ═══ REVIEW QUESTIONS ═══ -->
+  <section>
+    <h2>Review questions</h2>
+    <ol class="compact" style="font-size:0.6em;line-height:1.6;">
+      <li class="fragment">A Ø70 × 6.3 mm tube is drawn to Ø55 × 4.75 mm. Calculate the reduction R and the strain φ. <button class="answer-btn" data-answer="1">answer</button><span class="answer-text">S₀ = π·63.7·6.3 = 1260.9 mm², S = π·50.25·4.75 = 749.9 mm²; R = 40.5 %, φ = ln(1260.9/749.9) = 0.52.</span></li>
+      <li class="fragment">Why is there an optimum die angle? <button class="answer-btn" data-answer="2">answer</button><span class="answer-text">Friction work falls with the angle, redundant work rises; their sum with the ideal work has a flat minimum (≈ 8–14°).</span></li>
+      <li class="fragment">What is the condition for the drawing limit, and its ideal value without hardening? <button class="answer-btn" data-answer="3">answer</button><span class="answer-text">The drawing stress must be lower than the flow stress of the material behind the die; ideally r_max = 1 − 1/e ≈ 63 %.</span></li>
+      <li class="fragment">How does the wall thickness change in sinking and in fixed-plug drawing? <button class="answer-btn" data-answer="4">answer</button><span class="answer-text">In sinking the wall thickens slightly (≈ 2–5 %); on a fixed plug it thins, because the plug sets the inner diameter.</span></li>
+      <li class="fragment">Why does an explicit simulation of slow drawing need speed-up or mass scaling, and how do you check it is quasi-static? <button class="answer-btn" data-answer="5">answer</button><span class="answer-text">A stable step of ≈ 5·10⁻⁸ s would give millions of steps; the check is the ratio of kinetic to internal energy below 5–10 %.</span></li>
+      <li class="fragment">How is the friction coefficient found by inverse analysis? <button class="answer-btn" data-answer="6">answer</button><span class="answer-text">Measure the steady force, simulate several friction values, and from the linear dependence F(μ) find μ for the measured force (≈ 0.053).</span></li>
+      <li class="fragment">Why can a model not be validated with the same force that was used to calibrate friction? <button class="answer-btn" data-answer="7">answer</button><span class="answer-text">The agreement is forced by the calibration; validation needs an independent quantity – dimensions, strain, force under other conditions.</span></li>
+      <li class="fragment">When is a 2D axisymmetric model enough, and when is 3D needed? <button class="answer-btn" data-answer="8">answer</button><span class="answer-text">2D for a coaxial, symmetric problem (force, strain, wall); 3D for eccentricity, ovality, profiled plugs and for stresses in ribs.</span></li>
+    </ol>
+    <aside class="notes">[2:22–2:32] Reveal the questions one at a time, let the students answer. Then time for their questions.</aside>
+  </section>
+
+  <!-- ═══ SOURCES ═══ -->
+  <section style="text-align:left;">
+    <hr class="top-rule">
+    <h2>Sources and further reading</h2>
+    <ul class="xs" style="line-height:1.45;font-size:0.58em;">
+      <li>Bílik, J.; Necpal, M.; Sobota, R.: <em>Výroba bezšvových rúr. Teoreticko-technologické aspekty výroby.</em> Spektrum <abbr title="Slovak University of Technology in Bratislava">STU</abbr>, 2023 (in Slovak)</li>
+      <li>Necpal, M.; Sobota, R.: <em>Modelovanie a simulácia procesov tvárnenia.</em> Spektrum <abbr title="Slovak University of Technology in Bratislava">STU</abbr>, 2023 (in Slovak)</li>
+      <li>Necpal, M.; Martinkovič, M.: Evaluation of material deformation… carbon steel tube cold draw forming. <abbr title="Institute of Physics (IOP Publishing)">IOP</abbr> <abbr title="Materials Science and Engineering (proceedings series)">MSE</abbr> 465 (2019) 012007</li>
+      <li>Necpal, M.; Martinkovič, M.; Buranský, I.: Deformation prediction and FEA of precision seamless tubes. MATEC 137 (2017) 05005</li>
+      <li>Necpal, M.; Martinkovič, M.; Kuruc, M.: Crystal plasticity… FEM and Voronoi tessellation. <abbr title="Institute of Physics (IOP Publishing)">IOP</abbr> <abbr title="Materials Science and Engineering (proceedings series)">MSE</abbr> 1050 (2021) 012011</li>
+      <li>Necpal, M.; Morovič, L.; Bočáková, B.: A statistical approach in the FEM simulation… J. Phys. Conf. Ser. 2413 (2022) 012009</li>
+      <li>Necpal, M.; Martinkovič, M.; Václav, Š.: Determination of the coefficient of friction… Research Papers <abbr title="Faculty of Materials Science and Technology">MTF</abbr> <abbr title="Slovak University of Technology in Bratislava">STU</abbr> 26(42) (2018) 29–34</li>
+      <li>Kapustová, M.; Sobota, R.; Necpal, M.: The influence of technological parameters on drawing force… Solid State Phen. 294 (2019) 124–128</li>
+      <li>Necpal, M.; Hodúlová, E.; Martinkovič, M.: Numerical simulation… contoured internal surface tubes. Key Eng. Mater. 841 (2020) 54–58</li>
+      <li>Necpal, M.; Kapustová, M.; Martinkovič, M.: Using 2D/3D FEM simulation to determine drawing force… Solid State Phen. 304 (2020) 121–125</li>
+      <li>Necpal, M.; Martinkovič, M.: Finite element modelling of cold drawing inner finned tube. 30th <abbr title="Danube Adria Association for Automation and Manufacturing (symposium organiser)">DAAAM</abbr> Proc. (2019) 0622–0627</li>
+      <li>Kobayashi, S.; Oh, S.-I.; Altan, T.: <em>Metal Forming and the Finite Element Method.</em> Oxford University Press, 1989 · Hosford, W.; Caddell, R.: <em>Metal Forming.</em> Cambridge University Press, 2011</li>
+      <li>Palkowski, H. et al.: Residual stress state of drawn tubes. Materials 6 (2013) 5118 · Neves, F. O. et al.: Tube drawing with fixed plug. <abbr title="Journal of the Brazilian Society of Mechanical Sciences and Engineering">JBSMSE</abbr> 27 (2005) 426</li>
+    </ul>
+    <p class="institution" style="margin-top:0.6em;">Pictures © their owners (publishers and authors), used for teaching purposes</p>
+  </section>
+
+</div></div>
+
+<audio id="narration"></audio>
+<div id="vNav"></div>
+
+<div id="navBar">
+  <button class="nav-btn" id="prevBtn" title="Previous slide (←)">
+    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+  </button>
+  <div id="slideIndicators"></div>
+  <span id="slideCounter"></span>
+  <button class="nav-btn" id="playBtn" title="Play commentary (Space)">
+    <svg viewBox="0 0 24 24"><path id="playIconPath" d="M8 5v14l11-7z"/></svg>
+  </button>
+  <button class="nav-btn" id="nextBtn" title="Next slide (→)">
+    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+  </button>
+  <label id="autoLabel" title="Auto-advance to next slide when narration ends">
+    <input type="checkbox" id="autoPlay" checked> Auto
+  </label>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/zoom/zoom.js"></script>
+<script>
+  /* ══ CONFIG ══════════════════════════════════════════════════════════════
+     NARRATION  – true: plays voice_for_18november2026/slide_NN.mp3 for main slide N (1-based)
+                  and slide_NN_V.mp3 for deep-dive sub-slide N.V
+                  false: hides play button and Auto toggle (answer buttons still show the text)
+  ═══════════════════════════════════════════════════════════════════════ */
+  const CONFIG = {
+    NARRATION:  true,
+    AUDIO_PATH: (n, v) => `voice_for_18november2026/slide_${String(n).padStart(2, '0')}${v ? '_' + v : ''}.mp3`,
+    ANSWER_PATH: id => `voice_for_18november2026/answer${id}.mp3`,
+    AUTO_DELAY: 800,
+  };
+
+  if (!CONFIG.NARRATION) document.body.classList.add('no-narration');
+  if (!document.querySelector('.slides > section > section')) document.body.classList.add('no-deep');
+
+  /* ── Missing images → link placeholder (no internet or moved file) ── */
+  document.querySelectorAll('.slides img').forEach(img => {
+    img.addEventListener('error', () => {
+      if (img.closest('.video-card')) return;
+      const box = document.createElement('div');
+      box.className = 'img-missing';
+      box.innerHTML = `Picture not available offline:<br><strong>${img.alt}</strong><br>
+        <a href="${img.src}" target="_blank">${img.src}</a>`;
+      img.replaceWith(box);
+    });
+  });
+
+  /* ── YouTube cards: thumbnail opens YouTube; "Play here" embeds ── */
+  document.querySelectorAll('.video-card[data-yt]').forEach(card => {
+    const id = card.dataset.yt;
+    const url = `https://www.youtube.com/watch?v=${id}`;
+    card.innerHTML = `<a class="thumb" href="${url}" target="_blank" title="Open on YouTube">
+        <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="Video preview"></a><span class="play"></span>`;
+  });
+  document.querySelectorAll('.video-actions[data-yt]').forEach(bar => {
+    const id = bar.dataset.yt;
+    const link = document.createElement('a');
+    link.href = `https://www.youtube.com/watch?v=${id}`; link.target = '_blank';
+    link.textContent = 'open on YouTube';
+    const btn = document.createElement('button');
+    btn.textContent = '▶ Play here';
+    btn.addEventListener('click', () => {
+      const card = bar.previousElementSibling;
+      card.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0"
+        allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+    });
+    bar.append(' · ', link, btn);
+  });
+  /* ── Popup buttons: open media in a separate window ── */
+  document.querySelectorAll('.popup-btn[data-popup]').forEach(btn => {
+    btn.addEventListener('click', () =>
+      window.open(btn.dataset.popup, 'media-popup', 'width=1100,height=500'));
+  });
+  /* stop embedded videos when leaving a slide */
+  function stopVideos(slide) {
+    slide?.querySelectorAll('.video-card iframe').forEach(f => {
+      const card = f.parentElement, id = card.dataset.yt;
+      card.innerHTML = `<a class="thumb" href="https://www.youtube.com/watch?v=${id}" target="_blank">
+        <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="Video preview"></a><span class="play"></span>`;
+    });
+    slide?.querySelectorAll('.video-card video').forEach(v => v.pause());
+  }
+
+  /* ── Audio ── */
+  const narration    = document.getElementById('narration');
+  const playIconPath = document.getElementById('playIconPath');
+  const PLAY_D  = 'M8 5v14l11-7z';
+  const PAUSE_D = 'M6 19h4V5H6v14zm8-14v14h4V5h-4z';
+
+  const setPlayIcon = playing => playIconPath.setAttribute('d', playing ? PAUSE_D : PLAY_D);
+
+  function loadAudio(idx, v = 0) {
+    if (!CONFIG.NARRATION) return;
+    const custom = Reveal.getCurrentSlide()?.dataset.audio;
+    narration.src = custom || CONFIG.AUDIO_PATH(idx + 1, v);
+  }
+  function playAudio()   { if (CONFIG.NARRATION) narration.play().catch(() => {}); }
+  /* start narration on open; if the browser blocks autoplay, start on first click/key */
+  function autoStart() {
+    if (!CONFIG.NARRATION || /print-pdf/.test(location.search)) return;
+    narration.play().catch(() => {
+      const events = ['pointerdown', 'keydown'];
+      const start = e => {
+        events.forEach(t => document.removeEventListener(t, start, true));
+        /* bottom bar and space start audio themselves; playing here would toggle it off */
+        if (e.target.closest?.('#navBar') || e.key === ' ') return;
+        if (narration.paused) playAudio();
+      };
+      events.forEach(t => document.addEventListener(t, start, true));
+    });
+  }
+  function toggleAudio() {
+    if (!CONFIG.NARRATION) return;
+    narration.paused ? narration.play().catch(() => {}) : narration.pause();
+  }
+
+  /* a slide video and the narration should not talk over each other */
+  document.querySelectorAll('.video-card video').forEach(v =>
+    v.addEventListener('play', () => narration.pause()));
+
+  /* ── Answer buttons: show the .answer-text after the button; with NARRATION also play
+        CONFIG.ANSWER_PATH(id) (id = 1…N for Review questions, XX1… in deep dives) ── */
+  const answerAudio = new Audio();
+  let answerBtn = null;
+  function stopAnswer() {
+    answerAudio.pause();
+    if (answerBtn) {
+      answerBtn.classList.remove('playing');
+      answerBtn.nextElementSibling?.classList.remove('show');
+    }
+    answerBtn = null;
+  }
+  answerAudio.addEventListener('ended', () => answerBtn?.classList.remove('playing'));
+  document.querySelectorAll('.answer-btn[data-answer]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      if (answerBtn === btn) { stopAnswer(); return; }
+      stopAnswer();
+      btn.nextElementSibling?.classList.add('show');
+      answerBtn = btn;
+      if (!CONFIG.NARRATION) return;
+      narration.pause();
+      answerAudio.src = CONFIG.ANSWER_PATH(btn.dataset.answer);
+      answerAudio.play().catch(() => {});
+      btn.classList.add('playing');
+    });
+  });
+  narration.addEventListener('play', stopAnswer);
+
+  narration.addEventListener('play',  () => setPlayIcon(true));
+  narration.addEventListener('pause', () => setPlayIcon(false));
+  narration.addEventListener('ended', () => {
+    setPlayIcon(false);
+    if (document.getElementById('autoPlay').checked) {
+      setTimeout(() => (Reveal.getIndices().v > 0 && Reveal.availableRoutes().down) ? Reveal.down() : goRight(),
+                 CONFIG.AUTO_DELAY);
+    }
+  });
+
+  /* ── Dot indicators ── */
+  function buildIndicators(total) {
+    const bar = document.getElementById('slideIndicators');
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 'dot';
+      d.setAttribute('aria-label', `Slide ${i + 1}`);
+      d.addEventListener('click', () => Reveal.slide(i));
+      bar.appendChild(d);
+    }
+  }
+  function updateNav(idx, total) {
+    document.querySelectorAll('#slideIndicators .dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+    document.getElementById('slideCounter').textContent = `${idx + 1} / ${total}`;
+    document.getElementById('prevBtn').style.opacity = idx === 0         ? '0.3' : '1';
+    document.getElementById('nextBtn').style.opacity = idx === total - 1 ? '0.3' : '1';
+  }
+
+  /* ← → step fragments, then move between MAIN slides (landing on top of a stack); ↑ ↓ inside a deep dive */
+  function goRight() {
+    if (Reveal.availableFragments().next) return Reveal.nextFragment();
+    Reveal.slide(Reveal.getIndices().h + 1, 0);
+  }
+  function goLeft() {
+    if (Reveal.availableFragments().prev) return Reveal.prevFragment();
+    const h = Reveal.getIndices().h;
+    if (h > 0) Reveal.slide(h - 1, 0);
+  }
+  /* right-side panel for deep-dive stacks: ▲, square = main slide, dots = sub-slides, ▼ */
+  function updateVNav(slide, h, v) {
+    const nav = document.getElementById('vNav');
+    const stack = slide.parentElement.classList.contains('stack') ? slide.parentElement : null;
+    const n = stack ? stack.querySelectorAll(':scope > section').length : 0;
+    if (n < 2) { nav.style.display = 'none'; nav.innerHTML = ''; return; }
+    nav.innerHTML = '';
+    const btn = (txt, title, fn, off) => { const b = document.createElement('button'); b.className = 'vbtn';
+      b.textContent = txt; b.title = title; b.onclick = fn; b.style.opacity = off ? 0.3 : 1; nav.appendChild(b); };
+    btn('▲', 'Hore (↑)', () => Reveal.up(), v === 0);
+    for (let i = 0; i < n; i++) {
+      const d = document.createElement('button'); d.className = 'dot' + (i === v ? ' active' : '');
+      d.title = i === 0 ? 'Main slide' : `Sub-slide ${i}`;
+      if (i === 0) d.style.borderRadius = '2px';
+      d.onclick = () => Reveal.slide(h, i); nav.appendChild(d);
+    }
+    btn('▼', 'Dole (↓)', () => Reveal.down(), v === n - 1);
+    const lb = document.createElement('span'); lb.className = 'vlabel';
+    lb.textContent = v === 0 ? `${n - 1}↓` : `${v}/${n - 1}`; nav.appendChild(lb);
+    nav.style.display = 'flex';
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', () => goLeft());
+  document.getElementById('nextBtn').addEventListener('click', () => goRight());
+  document.getElementById('playBtn').addEventListener('click', () => toggleAudio());
+
+  /* ── Font size (all slides, remembered per browser) ── */
+  const fontCtl = document.createElement('div');
+  fontCtl.id = 'fontCtl';
+  fontCtl.innerHTML = '<button data-d="-1" title="Smaller text (−)">A−</button>'
+    + '<button data-d="0" title="Original size (0)">A</button>'
+    + '<span class="pct"></span>'
+    + '<button data-d="1" title="Larger text (+)">A+</button>';
+  document.body.appendChild(fontCtl);
+  let fontScale = 1;
+  try { fontScale = parseFloat(localStorage.getItem('fontScale')) || 1; } catch (e) { fontScale = 1; }
+  function setFont(s) {
+    fontScale = Math.min(1.6, Math.max(0.7, Math.round(s * 10) / 10));
+    document.documentElement.style.setProperty('--fs', fontScale);
+    fontCtl.querySelector('.pct').textContent = Math.round(fontScale * 100) + ' %';
+    try { localStorage.setItem('fontScale', fontScale); } catch (e) { /* storage blocked */ }
+    if (window.Reveal && Reveal.isReady()) Reveal.layout();
+  }
+  function stepFont(d) { setFont(d === 0 ? 1 : fontScale + d * 0.1); }
+  fontCtl.addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (b) { stepFont(+b.dataset.d); b.blur(); }
+  });
+  setFont(fontScale);
+
+  /* ── Reveal ── */
+  Reveal.initialize({
+    hash: true,
+    slideNumber: false,
+    transition: 'slide',
+    backgroundTransition: 'none',
+    controls: false,
+    progress: false,
+    plugins: [RevealNotes, RevealMath.KaTeX, RevealZoom],
+    keyboard: {
+      32: () => toggleAudio(),
+      37: () => goLeft(),
+      39: () => goRight(),
+      38: () => Reveal.up(),
+      40: () => Reveal.down(),
+      187: () => stepFont(1), 107: () => stepFont(1), 61: () => stepFont(1),     /* + (61: Firefox) */
+      189: () => stepFont(-1), 109: () => stepFont(-1), 173: () => stepFont(-1), /* − (173: Firefox) */
+      48: () => stepFont(0), 96: () => stepFont(0),     /* 0 */
+    },
+  });
+
+  Reveal.on('ready', () => {
+    const total = Reveal.getHorizontalSlides().length;
+    const ix = Reveal.getIndices();          /* deep link (#/17/2) opens on that slide */
+    buildIndicators(total);
+    updateNav(ix.h, total);
+    updateVNav(Reveal.getCurrentSlide(), ix.h, ix.v || 0);
+    loadAudio(ix.h, ix.v || 0);
+    autoStart();
+  });
+
+  Reveal.on('slidechanged', e => {
+    const total = Reveal.getHorizontalSlides().length;
+    updateNav(e.indexh, total);
+    updateVNav(e.currentSlide, e.indexh, e.indexv);
+    stopVideos(e.previousSlide);
+    stopAnswer();
+    loadAudio(e.indexh, e.indexv);
+    playAudio();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+Because B also contains the friction term on the plug. In zone two the wall is thinned between the die and the plug, so friction acts on both surfaces.

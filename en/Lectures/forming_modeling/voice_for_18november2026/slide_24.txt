@@ -1,0 +1,4 @@
+The simplest estimate comes from an energy balance. The work of the external force equals the work of homogeneous plastic deformation. We get the relation: the drawing stress equals the flow stress times the logarithm of the area ratio, so sigma d equals sigma f times epsilon.
+This relation contains neither friction nor redundant work, that is, the work the material spends on needless changes of flow direction. It is therefore a lower bound of the drawing stress.
+In the example on the right, the material has a flow stress of five hundred megapascals and the reduction is twenty percent. The strain is the logarithm of one over zero point eight, which is zero point two two three. The drawing stress comes out at one hundred and twelve megapascals.
+The real stress is always higher, typically one and a half to two and a half times the ideal value. By exactly how much, the slab method will tell us.

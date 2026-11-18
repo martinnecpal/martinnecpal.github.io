@@ -1,0 +1,3 @@
+Pri ťahaní rúry na pevnom tŕni sa deformačná oblasť delí na tri zóny. V zóne jedna sa zmenšuje iba priemer, rúra sa ešte nedotýka tŕňa a hrúbka steny ostáva konštantná. V zóne dva sa rúra dotkne tŕňa a zmenšuje sa priemer aj hrúbka steny. V zóne tri, v kalibračnej časti, sa rúra kalibruje a trenie pôsobí na prievlaku aj na tŕni zároveň.
+Ťažná sila sa potom rovná napätiu na konci zóny tri krát výsledný prierez. V každej zóne sa použije metóda rezov s inými okrajovými podmienkami a výstup jednej zóny je vstupom do ďalšej.
+Celé odvodenie je v knihe Výroba bezšvových rúr, v kapitole tri celé dva. Kto chce vidieť vzorce pre každú zónu, nájde ich v hĺbkovom pohľade pod touto snímkou. My pokračujeme ďalej.

@@ -1,0 +1,4 @@
+Zóna tri je kalibračná časť. Rúra sa tu už nezmenšuje, ale trenie pôsobí na oboch povrchoch, na prievlaku aj na tŕni. Napätie preto rastie exponenciálne s dĺžkou x, podľa výrazu e na dva ef x lomeno s er.
+Na konci kalibrácie, teda pri x rovnom dĺžke l, dostaneme napätie sigma tri c. Ťažná sila je potom sigma tri c krát výsledný prierez, ktorý je pí krát rozdiel vonkajšieho priemeru a steny krát stena.
+Z exponenciálneho člena je vidieť, prečo príliš dlhá kalibrácia škodí. Dlhšia kalibrácia a vyššie trenie zvyšujú silu veľmi rýchlo, najmä pri tenkej stene.
+Pre praktický odhad uvádza kniha aj zjednodušený vzorec. Sila sa rovná strednému pretvárnemu odporu krát výsledný prierez krát pretvorenie, lomeno účinnosť éta ef. Účinnosť je nula celá štyri až nula celá šesť pre malé pretvorenie okolo nula celá pätnásť a nula celá sedem až nula celá osem pre pretvorenie okolo nula celá päť.

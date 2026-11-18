@@ -1,0 +1,6 @@
+Zhrňme hĺbkový pohľad. Napätie sa pri ťahaní na tŕni postupne načítava zónou po zóne a výstup jednej zóny je vstupom do ďalšej. Trenie na tŕni v zónach dva a tri robí ťahanie na tŕni náročnejším ako prievlačné ťahanie. A metóda dáva strednú silu, nie rozloženie napätí v stene.
+Otázka jedna: Prečo je parameter B v zóne dva väčší ako parameter A v zóne jedna?
+Otázka dva: Čo je okrajová podmienka na vstupe do zóny jedna?
+Otázka tri: Ako sa mení napätie v kalibračnej zóne s jej dĺžkou?
+Otázka štyri: Čo z tejto metódy nezískate?
+Stlačte šípku hore pre návrat do hlavnej prednášky alebo šípku doprava pre pokračovanie.

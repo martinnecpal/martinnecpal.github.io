@@ -1,0 +1,1 @@
+The stress at the entry is zero, because there is no back tension. The stress at the end of zone one then becomes the input to zone two.

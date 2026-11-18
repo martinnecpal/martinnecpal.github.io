@@ -1,0 +1,1 @@
+The stable time step is about five times ten to the minus eight seconds, which would mean millions of steps. To check that the result is quasi-static, keep the ratio of kinetic to internal energy below five to ten percent.

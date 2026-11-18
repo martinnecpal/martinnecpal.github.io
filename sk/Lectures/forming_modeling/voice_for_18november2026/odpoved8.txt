@@ -1,0 +1,1 @@
+Dvojrozmerný model stačí pri súosovej, symetrickej úlohe, na silu, pretvorenie a hrúbku steny. Trojrozmerný treba pri excentricite, ovalite, profilových tŕňoch a na napätia v rebrách.

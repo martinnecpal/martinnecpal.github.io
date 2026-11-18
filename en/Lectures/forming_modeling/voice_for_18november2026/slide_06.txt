@@ -1,0 +1,3 @@
+Where are we in the course? In the first lecture we talked about what forming modelling is and why we do it. In the second we went through analytical methods and an overview of software. In the third we dealt with material data in DEFORM.
+At the end of the last lecture I promised you preprocessing, that is, the mesh, boundary conditions and friction. Today we will do that on one whole process, from the technology all the way to verifying the result. This is how you will meet it in practice: nobody will tell you "set up the mesh", but rather "find out why our tube cracks on the third draw".
+My goal is that by the end you can build a drawing model yourselves, verify it, and critically assess its results, even when they come from a published paper.

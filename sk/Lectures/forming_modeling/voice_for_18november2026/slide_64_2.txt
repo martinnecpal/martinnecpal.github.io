@@ -1,0 +1,4 @@
+Tabuľky ukazujú výsledky analýzy rozptylu. Hodnota F hovorí, aký veľký je efekt v porovnaní so šumom. Hodnota p hovorí, aká je pravdepodobnosť, že taký efekt vznikol náhodou. Ak je p menšie ako nula celá nula päť, považujeme efekt za významný.
+Pre výsledný vonkajší priemer má najvyššie F priemer prievlaku, štyridsaťšesť celých osem. Nasleduje priemer rúry s tridsaťjeden a interakcia priemeru rúry a prievlaku s dvadsaťsedem. Hrúbka steny má p nula celá nula deväť, teda nie je významná.
+Pre výslednú hrúbku steny sú významné všetky faktory aj interakcie. Najvyššie F má vstupná hrúbka steny, tristodvadsaťpäť, a priemer rúry, tristopätnásť.
+Rezíduá, teda rozdiely medzi modelom a dátami, mali normálne rozdelenie a žiadne odľahlé hodnoty. V poradí behov bol mierny trend, preto článok odporúča viac opakovaní. Ešte jedno pozorovanie: výsledný priemer vychádza menší ako prievlak, asi jedenásť a pol milimetra pre prievlak dvanásť, a stena sa zhrubne, presne ako v experimente.

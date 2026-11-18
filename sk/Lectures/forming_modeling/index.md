@@ -34,6 +34,11 @@ lang: "sk"
       <td><a href="21october2026.html" target="_blank" rel="noopener">Materiálové údaje v programe DEFORM</a></td>
       <td>Okno Material, elastické údaje, pretvárny odpor a jeho modely (mocninový zákon, Johnson–Cook, Zerilli–Armstrong, sinh-Arrhenius) s hĺbkovými pohľadmi, podmienky plasticity a spevnenie, tečenie, tepelné údaje, mikroštruktúra a porušenie.</td>
     </tr>
+    <tr>
+      <td>18. 11. 2026</td>
+      <td><a href="18november2026.html" target="_blank" rel="noopener">Ťahanie bezšvových rúr: teória, simulácia a validácia</a></td>
+      <td>Spôsoby ťahania, prievlak a tŕň, pretvorenie a parametre procesu; analytické metódy (ideálna práca, metóda rezov, optimálny uhol prievlaku, medzná redukcia); nastavenie modelu MKP (implicitne / explicitne, Lagrange / ALE, trenie, sieť); prípadové štúdie z vlastného výskumu a kalibrácia verzus validácia.</td>
+    </tr>
   </tbody>
 </table>
 

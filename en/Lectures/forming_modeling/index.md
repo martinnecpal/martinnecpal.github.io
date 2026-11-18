@@ -34,6 +34,11 @@ lang: "en"
       <td><a href="21october2026.html" target="_blank" rel="noopener">Material data in DEFORM</a></td>
       <td>The Material window, elastic data, flow stress and its models (power law, Johnson–Cook, Zerilli–Armstrong, sinh-Arrhenius) with deep dives, yield criteria and hardening, creep, thermal data, microstructure and fracture.</td>
     </tr>
+    <tr>
+      <td>18 Nov 2026</td>
+      <td><a href="18november2026.html" target="_blank" rel="noopener">Cold drawing of seamless tubes: theory, simulation and validation</a></td>
+      <td>Drawing methods, die and plug, strain and process parameters; analytical methods (ideal work, slab method, optimum die angle, drawing limit); FEM model setup (implicit / explicit, Lagrange / ALE, friction, mesh); case studies from our own research and calibration versus validation.</td>
+    </tr>
   </tbody>
 </table>
 

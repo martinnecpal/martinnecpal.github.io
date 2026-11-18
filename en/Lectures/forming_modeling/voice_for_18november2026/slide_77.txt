@@ -1,0 +1,10 @@
+Let us check what has stayed in your heads. I will show the questions one by one; try to answer before I continue.
+Question one: A tube with a diameter of seventy millimetres and a wall of six point three is drawn to a diameter of fifty-five and a wall of four point seven five. Calculate the reduction and the strain.
+Question two: Why is there an optimum die angle?
+Question three: What is the condition for the drawing limit, and what is its ideal value without hardening?
+Question four: How does the wall thickness change in sinking and in fixed-plug drawing?
+Question five: Why does an explicit simulation of slow drawing need speed-up or mass scaling, and how do you check that the result is quasi-static?
+Question six: How is the friction coefficient found by inverse analysis?
+Question seven: Why can a model not be validated with the same force that was used to calibrate friction?
+Question eight: When is a two-dimensional axisymmetric model enough, and when is a three-dimensional one needed?
+Thank you. We have a few minutes left. Do you have any questions of your own?

@@ -1,0 +1,3 @@
+Let us sum up what the studies taught us in eight points. Friction must be measured, not taken from the literature. The force grows linearly with friction, and hardly at all with speed. The die angle has a flat optimum that depends on friction. The strain is set by the geometry, not by the steel.
+In sinking the wall thickens by two to five percent, and the final diameter is smaller than the die diameter. A two-dimensional model is enough for force and strain; we need a three-dimensional one for profiles and stresses. Plug geometry can be optimised virtually. And every model needs independent verification.
+That last point brings us to the fifth part.

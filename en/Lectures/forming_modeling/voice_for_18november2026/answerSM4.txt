@@ -1,0 +1,1 @@
+You do not get the distribution of stresses and strains in the wall, the residual stresses, or the change of wall thickness in sinking. For that you need the finite element method.

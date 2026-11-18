@@ -1,0 +1,4 @@
+Tabuľka zhŕňa kľúčové parametre. Uhol prievlaku: pri malom uhle je kontakt dlhý a veľa energie sa stráca trením, pri veľkom uhle materiál zbytočne mení smer toku a zvyšuje sa tlak na nástroj. Medzi tým je optimum, ktoré si v analytickej časti aj vypočítame.
+Redukcia určuje silu a spevnenie a je obmedzená pevnosťou ťahaného materiálu. Trenie a mazanie ovplyvňujú silu, opotrebenie, povrch a teplo. V simulácii ho zadávame Coulombovým súčiniteľom mí alebo faktorom trenia m.
+Rýchlosť ťahania ovplyvňuje mazací film a ohrev. Pri pomalom ťahaní rúr však na silu takmer nevplýva, uvidíme to v štúdiách. Kalibračná dĺžka určuje presnosť priemeru, ale ak je príliš dlhá, zvyšuje trenie. Geometria tŕňa určuje vnútorný priemer a hrúbku steny. Materiál vstupuje krivkou spevnenia a citlivosťou na rýchlosť deformácie, ale aj excentricitou vstupnej rúry.
+Všimnite si, že každý z týchto parametrov je zároveň vstupom do modelu metódou konečných prvkov.

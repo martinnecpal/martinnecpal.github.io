@@ -1,0 +1,4 @@
+S akými problémami sa stretnete? Spomeniem tie najčastejšie. Sieť sa skreslí na vstupe do prievlaku alebo pri hrote tŕňa, kde je pretvorenie najväčšie. Pomôže jemnejšia sieť, preskieťovanie alebo ALE.
+Implicitný výpočet nekonverguje. Príčinou sú zmeny kontaktu alebo to, že sa niektoré teleso môže voľne pohybovať. Pomôže menší krok, lepší počiatočný kontakt a správne väzby. Tŕň prejde prievlakom, čo sa stáva pri plávajúcom tŕni pri vysokom trení na tŕni.
+Rúra stráca objem. To je typický dôsledok preskieťovania a hrubej siete. Kontrolujte objem pred a po ťahaní, mal by sa zachovať. A najčastejší problém: sila nesedí s meraním. Príčinou je takmer vždy zlé trenie alebo zlá krivka spevnenia, nie riešič.
+Nakoniec, ak výsledok závisí od veľkosti siete, máte málo prvkov cez stenu. Vtedy treba urobiť štúdiu citlivosti siete, teda zjemňovať sieť dovtedy, kým sa výsledok nemení.

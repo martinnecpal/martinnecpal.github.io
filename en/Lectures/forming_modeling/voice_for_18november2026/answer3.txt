@@ -1,0 +1,1 @@
+The drawing stress must be lower than the flow stress of the material behind the die. Without hardening, the ideal maximum reduction is one minus one over e, about sixty-three percent.

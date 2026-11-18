@@ -1,0 +1,4 @@
+Aký je stav napätosti v prievlaku? V pozdĺžnom smere je ťahové napätie sigma jedna, v radiálnom a tangenciálnom smere sú tlakové napätia sigma dva a sigma tri. Úloha je osovo symetrická, takže sigma dva a sigma tri sú približne rovnaké.
+Vzťah medzi pretvoreniami a napätiami opisujú Lévyho a Misesove rovnice. Rozdiely pretvorení sú úmerné rozdielom napätí a konštanta úmernosti je tri polovice krát pomer intenzity pretvorenia a intenzity napätia. Na obrázku vpravo vidíte prievlak, pevný tŕň a tri zóny, v ktorých sa stav napätosti mení. K týmto zónam sa vrátime v analytickej časti.
+Najdôležitejší je druhý vzorec. Napätie sigma jedna sa rovná ťažnej sile lomeno výsledný prierez. A toto napätie musí byť menšie ako medza klzu rúry, ktorá je už spevnená ťahaním.
+Ak sigma jedna prekročí medzu klzu za prievlakom, rúra sa začne predlžovať, stenčovať a nakoniec sa pretrhne. Zároveň tým stratíte presnosť rozmerov, pretože rúra sa deformuje aj mimo prievlaku.

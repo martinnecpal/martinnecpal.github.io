@@ -1,0 +1,1 @@
+Napätie na vstupe je nulové, pretože nemáme protiťah. Napätie na konci zóny jedna je potom vstupom do zóny dva.

@@ -1,0 +1,1 @@
+Because friction work falls as the angle grows, while redundant work rises. Their sum with the ideal work has a flat minimum, roughly between eight and fourteen degrees.

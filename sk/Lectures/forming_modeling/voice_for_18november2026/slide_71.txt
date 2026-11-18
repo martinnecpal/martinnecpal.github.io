@@ -1,0 +1,4 @@
+Toto je podľa mňa najdôležitejšia metodická snímka dnešnej prednášky. Kalibrácia znamená, že nastavíme neznámy parameter, napríklad trenie, tak, aby model sedel s meraním. Validácia znamená, že model porovnáme s inou veličinou alebo s iným prípadom, ktorý sme na kalibráciu nepoužili. Až potom môžeme model použiť na predikciu pre nové parametre.
+Konkrétne: ak sme trenie kalibrovali zo sily pri uhle osem stupňov, model musíme overiť na sile pri iných uhloch, na rozmeroch alebo na pretvorení.
+Predstavte si, že by sme trenie kalibrovali pri každom uhle zvlášť. Model by potom sedel vždy, a nič by to nedokazovalo. Zhoda by bola vynútená. Mimochodom, presne to sme videli v tretej štúdii: experiment ukázal rast sily s uhlom, ktorý model s jedným trením nevystihol. To je cenná informácia, nie chyba, ktorú treba schovať.
+Praktická rada: rozdeľte si dáta. Časť použite na kalibráciu a časť si odložte na validáciu, rovnako ako sa to robí pri strojovom učení.

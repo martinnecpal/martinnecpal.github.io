@@ -1,0 +1,3 @@
+Kde sme v rámci predmetu? Na prvej prednáške sme si povedali, čo je modelovanie tvárnenia a prečo ho robíme. Na druhej sme prešli analytické metódy a prehľad softvéru. Na tretej sme sa zaoberali materiálovými údajmi v DEFORM.
+Na konci minulej prednášky som vám sľúbil preprocesing, teda sieť, okrajové podmienky a trenie. Dnes to urobíme na celom jednom procese, od technológie až po overenie výsledku. Takto sa s tým stretnete v praxi: nikto vám nepovie „nastavte sieť“, ale „zistite, prečo nám praská rúra na treťom ťahu“.
+Mojím cieľom je, aby ste na konci vedeli sami zostaviť model ťahania, overiť ho a kriticky posúdiť jeho výsledky, aj keď pochádzajú z publikovaného článku.

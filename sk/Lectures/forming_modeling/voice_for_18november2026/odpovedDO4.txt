@@ -1,0 +1,1 @@
+Pretože model obsahuje predpoklady o trení, materiáli a tuhých nástrojoch. Štatistika hodnotí model, nie realitu, preto je validácia stále potrebná.

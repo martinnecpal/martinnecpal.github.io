@@ -1,0 +1,1 @@
+Stabilný časový krok je asi päť krát desať na mínus ôsmu sekundy, čo by znamenalo milióny krokov. Kvázistatickosť overíte tak, že pomer kinetickej a vnútornej energie ostane pod päť až desať percent.

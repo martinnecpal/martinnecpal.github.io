@@ -1,0 +1,1 @@
+Napätie ťahania musí byť menšie ako pretvárny odpor materiálu za prievlakom. Bez spevnenia je ideálna medzná redukcia jedna mínus jedna lomeno e, teda asi šesťdesiattri percent.

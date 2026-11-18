@@ -1,0 +1,6 @@
+Zhrňme. Plánovaný experiment v kombinácii so simuláciou je lacný spôsob, ako vybrať dôležité parametre. Reálny experiment je však stále potrebný na validáciu. A jedna jemná poznámka: simulácia je deterministická. Rovnaký vstup dá rovnaký výsledok. Rozptyl medzi opakovaniami preto nepochádza z náhody ako v skutočnom experimente, ale z numeriky, napríklad zo siete alebo z veľkosti kroku.
+Otázka jedna: Koľko simulácií má plán dva na tretiu s piatimi opakovaniami?
+Otázka dva: Ktorý faktor najviac ovplyvňuje výsledný vonkajší priemer?
+Otázka tri: Čo znamená významná interakcia priemeru rúry a priemeru prievlaku?
+Otázka štyri: Prečo plánovaný experiment v simulácii nenahradí reálny experiment?
+Stlačte šípku hore pre návrat do hlavnej prednášky alebo šípku doprava pre pokračovanie.

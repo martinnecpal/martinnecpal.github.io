@@ -1,0 +1,4 @@
+What problems will you meet? I will mention the most common ones. The mesh gets distorted at the die entry or near the plug tip, where the strain is largest. A finer mesh, remeshing or ALE will help.
+The implicit computation does not converge. The cause is changes in contact, or a body that can move freely. A smaller step, better initial contact and correct constraints will help. The plug passes through the die, which happens with a floating plug when plug friction is high.
+The tube loses volume. This is a typical consequence of remeshing and a coarse mesh. Check the volume before and after drawing; it should be preserved. And the most common problem: the force does not match the measurement. The cause is almost always wrong friction or a wrong hardening curve, not the solver.
+Finally, if the result depends on the mesh size, you have too few elements through the wall. Then you need a mesh sensitivity study, that is, refine the mesh until the result stops changing.

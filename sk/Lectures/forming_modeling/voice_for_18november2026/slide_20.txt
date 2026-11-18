@@ -1,0 +1,4 @@
+Ako veľmi sa materiál pri ťahaní spevní? Tabuľka ukazuje výsledky ťahových skúšok ocele E dvestotridsaťpäť s hrúbkou steny jeden milimeter pred jedným ťahom a po ňom.
+Pri ťahu z priemeru štrnásť na dvanásť, teda pri redukcii asi trinásť a pol percenta, stúpne medza klzu z dvestoosemdesiatpäť na štyristopätnásť megapascalov. Pri ťahu z osemnástich na dvanásť, s redukciou vyše tridsaťdva percent, stúpne medza klzu z dvestoosemdesiatpäť až na štyristošesťdesiatdeväť megapascalov a pevnosť z tristodeväťdesiatdeväť na päťstošesťdesiatosem.
+Najväčšia zmena je však v ťažnosti. Z približne tridsiatich percent klesne na osem. Ťažnosť teda klesne na tretinu po jedinom ťahu. Preto sa po niekoľkých ťahoch musí žíhať.
+Pre simuláciu to znamená, že krivka spevnenia rozhoduje o sile aj o medznej redukcii. Ak zadáte materiál bez spevnenia, model vám ukáže nesprávnu silu a nesprávne riziko pretrhnutia.
